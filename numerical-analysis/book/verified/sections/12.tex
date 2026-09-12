@@ -1,0 +1,786 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={加速算法设计:重差加速技术},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{加速算法设计:重差加速技术}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{* 第 12 章　加速算法设计：重差加速技术}\label{ux7b2c-12-ux7ae0-ux52a0ux901fux7b97ux6cd5ux8bbeux8ba1ux91cdux5deeux52a0ux901fux6280ux672f}
+
+\subsection{12.1　千古疑案}\label{ux5343ux53e4ux7591ux6848}
+
+\subsubsection{12.1.1　阿基米德的``穷竭法''}\label{ux963fux57faux7c73ux5fb7ux7684ux7a77ux7aedux6cd5}
+
+在数学史上，圆周率这个奇妙的数字牵动着一代又一代数学家的心，不少人为之耗费了毕生的精力。据文献记载，在这方面做出过突出贡献的，当首推古希腊的阿基米德。在公元前 3 世纪，阿基米德求出了 \(\pi\) 的近似值 3.14，突破了古率 \(\pi=3\) 的传统观念。阿基米德开创了圆周率科学计算的新纪元。
+
+被誉为``古代数学之神''的阿基米德，其重大数学成就之一，是用所谓``穷竭法''计算一些曲边图形的面积，例如用内接与外切正多边形的周长来``穷竭''圆周，当多边形边数足够多时，作为正多边形的周长获得圆周率的近似值。他从正 6 边形做起，割到 12 边形、24 边形、48 边形，一直割到内接与外切正 96 边形，得到 \(\pi\) 的弱近似值 \(\dfrac{223}{71}\) 与强近似值 \(\dfrac{22}{7}\)，据此得知 \(\pi\) 约等于 3.14。
+
+此后一直到 17 世纪，在长达两千年的漫长岁月中，许多数学家都效仿阿基米德的做法，用内接与外切多边形的周长逼近圆周长，令边数逐步增多，从而获得越来越准确的圆周率。
+
+譬如，在 15 世纪，阿拉伯数学家阿尔·卡西从正 6 边形、正 12 边形一直割到正 \(6\times2^{27}\)（约 8 亿）边形，求得准确到小数点后 17 位的圆周率
+
+\[
+\pi=3.141\,592\,653\,589\,792\,23.
+\]
+
+17 世纪初，德国人鲁道夫从圆的内接与外切正方形做起，用正 \(2^{64}\)（约 1800 亿亿）边形的周长逼近圆周长，得出准确到小数点后 35 位的圆周率。鲁道夫为此感到自豪，要求在他的墓碑上铭刻这项成就。因此德国人常称 \(\pi\) 为``鲁道夫数''。
+
+总之，为了计算圆周率，从阿基米德到鲁道夫，西方人孜孜不倦地探索了两千年，除了阿基米德的穷竭法以外，再没有找到更好的方法和途径。然而这种方法由于收敛速度缓慢，在近代科学计算中已被人们摈弃了。
+
+\subsubsection{12.1.2　祖冲之``缀术''之谜}\label{ux7956ux51b2ux4e4bux7f00ux672fux4e4bux8c1c}
+
+祖冲之是公元 5 世纪南北朝时期的数学家。
+
+\begin{quote}
+校注（agent 补充）：原页印作``作为正多边形的周长获得圆周率的近似值''，语句疑有排印问题，转录保留原文。
+
+校注（agent 补充）：本页阿尔·卡西圆周率末段印作 \(\ldots792\,23\)，PDF302（书页289）同一结果印作 \(\ldots793\,23\)。独立高精度计算所得 \(\pi=3.141\,592\,653\,589\,793\,238\ldots\)，支持本页``792''为排印错误；此处仍保留原数值。
+\end{quote}
+
+\href{../../source-images/pdf-295.jpeg}{原页图像}
+
+祖冲之在数学方面的重大成就，当首推关于圆周率的计算。据《隋书·律历志》记载：
+
+``祖冲之更造密法，以圆径一亿为一丈，圆周盈数三丈一尺四寸一分五厘九毫二秒七忽，肭数三丈一尺四寸一分五厘九毫二秒六忽，正数在盈肭二限之间。''
+
+这就是说，祖冲之定出了圆周率的取值范围为
+
+\[
+3.141\,592\,6<\pi<3.141\,592\,7
+\]
+
+这个惊人的纪录领先世界一千多年。
+
+此后一直到 15 世纪，再没有出现比这更好的结果。这项辉煌的数学成就，在千年漫长岁月中一直处于世界领先的地位。
+
+祖冲之的 \(\pi\) 值究竟是怎样求出来的呢？据考证祖冲之的算法载于他的《缀术》一书中，可惜该书久已失传，致使这一奇妙算法成了数学史上一桩千古疑案。
+
+后人提出了诸多猜测和假说。
+
+华罗庚先生在《高等数学引论》一书中，以``祖冲之计算圆周率的方法''为题提出了自己的见解，他说：``祖冲之证明了圆周率 \(\pi\) 落在
+
+\[
+3.141\,592\,6<\pi<3.141\,592\,7
+\]
+
+之间，这是数学史上的一个光辉成就。他的算法也是极限的最好说明！他从单位圆的内接的和外切的正六边形出发，显然圆夹在这两个六边形之间，再作内接的和外切的正 12 边形、正 24 边形、\ldots\ldots、正 \(6\cdot2^{n-1}\) 边形等等，边数愈多，内接的和外切的正 \(6\cdot2^{n-1}\) 边形的面积就愈接近圆的面积，由此可以逐步地精确地算出圆周的长度。''
+
+钱宝琮先生主编的《中国数学史》指出，``缀术失传，祖冲之推算圆周率的方法难以详考。''不过，如果用多边形逼近实现如此高的精度，需要割到 24 576 边形。在筹算的古代，完成如此繁浩的计算量是极为困难的。
+
+一个无可置疑的事实是，祖冲之计算圆周率肯定使用了某种``绝技''。
+
+祖冲之称他的计算技术为``缀术''。据史书记载，缀术``时人称之精妙''，赞扬它``指要精密，算氏之最''。《隋书·律历志》说，祖冲之所著之书名《缀术》，``学官莫能究其深奥''。传说唐代指定《缀术》一书为朝廷钦定的数学教材。
+
+``缀术''是什么？
+
+祖冲之的原著《缀术》已千年失传，无从查察，人们还能还原其``真面目''吗？
+
+\subsection{12.2　神来之笔}\label{ux795eux6765ux4e4bux7b14}
+
+\subsubsection{12.2.1　数学史上一篇千古奇文}\label{ux6570ux5b66ux53f2ux4e0aux4e00ux7bc7ux5343ux53e4ux5947ux6587}
+
+成书于汉代的《九章算术》是我国古代最重要的数学经典。该书``圆田术''给出了
+
+\begin{quote}
+校注（agent 补充）：《隋书·律历志》引文中``肭数''\,``盈肭''的``肭''按原页字形保留。
+\end{quote}
+
+\href{../../source-images/pdf-296.jpeg}{原页图像}
+
+圆面积的计算公式：
+
+``半周半径相乘得积步。''
+
+即圆面积等于半圆周长与半径的乘积。
+
+这一事实是人们所熟知的，然而由于圆是曲边图形，对古人来说，计算圆面积是个数学难题。
+
+刘徽在注《九章算术》时撰写了《圆田术注》，约 1 800 字，后人称之为《割圆术》。割圆术证明了圆面积公式，并且提供了一个计算圆周率的优秀算法。
+
+\textbf{刘徽的《割圆术》是一篇千古奇文。书中有许多亮点，譬如，早在 1800 年前，刘徽就在人类数学史上首次提出了极限观念。}
+
+刘徽从圆的内接正六边形做起，令边数逐步倍增，计算圆内接正 \(n\) 边形面积 \(S_n\)（\(n=6,12,24,\cdots\)），并建立了圆面积 \(S^*\) 的一个逼近序列
+
+\[
+S_6\to S_{12}\to S_{24}\to S_{48}\to\cdots\to S^*.
+\]
+
+\textbf{这种加工手续开创了极限计算的先河。}
+
+相比之下，古希腊人畏惧无穷，阿基米德的穷竭法同极限思想毫不相干，因而与刘徽的``割圆术''不可同日而语。
+
+其次，刘徽的割圆术中提出了一种高明的逼近策略，建立了下列\textbf{双侧逼近公式}
+
+\[
+S_{2n}<S^*<S_{2n}+(S_{2n}-S_n).
+\]
+
+\textbf{在逼近过程中，刘徽直接用数据的偏差 \(S_{2n}-S_n\) 作为校正量，生成圆面积 \(S^*\) 的强近似值，从而舍弃了圆的外切多边形的计算，相比阿基米德的穷竭法显著地节省了计算量。}
+
+最后，特别值得指出的是，\textbf{刘徽的割圆术提出了一种逼近加速技术，在《割圆术》末尾，刘徽突然发力给出了一个神奇的精加工算式------我们称之为``刘徽神算''。}
+
+\textbf{本章推荐的逼近加速技术正是从刘徽神算中感悟并提炼出来的。}
+
+\subsubsection{12.2.2　``一飞冲天''的``刘徽神算''}\label{ux4e00ux98deux51b2ux5929ux7684ux5218ux5fbdux795eux7b97}
+
+前已指出，阿基米德用穷竭法割到内接与外切正 96 边形，获得圆周率 \(\pi=3.14\)，这项成就开创了圆周率科学计算的新纪元。
+
+人们自然会问，阿基米德为什么割到正 96 边形就终止了呢？他为什么不再继续割下去？显然更高精度的圆周率是诱人的。
+
+这个问题的原因很简单，实际计算就会明白，在割圆过程中，每二分一次都要耗费相当大的计算量（对于古人来说，这种计算量是很大的），而且，少数几次割圆对改善精度意义不大。面对这种现实，阿基米德终止于正 96 边形得出圆周率 3.14，这种做法是明智的。
+
+然而刘徽却不满足这个现状。他取圆半径 \(r=10\) 寸（即 1 尺）进行计算，发现正 96 边形二分割圆前后的两个结果
+
+\href{../../source-images/pdf-297.jpeg}{原页图像}
+
+\[
+S_{96}=313\frac{584}{625},\quad S_{192}=314\frac{64}{625}
+\]
+
+都相当于 \(\pi=3.14\)，它们太粗糙了。面对这种情况，刘徽突发奇想：在几乎不耗费计算量的前提下，能否通过某种简单的加工手续，将两个粗糙的近似值 \(S_{96}\)，\(S_{192}\) 加工成高精度的结果呢？
+
+又想化粗为精，又不愿耗费计算量，这似乎有点异想天开。
+
+《割圆术》下篇一开头，刘徽突然``发力''，他将偏差值
+
+\[
+\Delta=S_{192}-S_{96}=\frac{105}{625}
+\]
+
+乘以因子
+
+\[
+\omega=\frac{36}{105}
+\tag{12.2.1}
+\]
+
+作为 \(S_{192}\) 的校正量，求得
+
+\[
+\begin{aligned}
+\widehat S&=S_{192}+\frac{36}{105}(S_{192}-S_{96})\\
+&=314\frac{64}{625}+\frac{36}{105}\left(314\frac{64}{625}-313\frac{584}{625}\right)=314\frac{4}{25}.
+\end{aligned}
+\tag{12.2.2}
+\]
+
+\textbf{刘徽指出，这样加工的结果 \(314\dfrac{4}{25}\) 相当于正 3 072 边形的面积。}
+
+\textbf{这样得出的结果 \(S_{3\,072}=314\dfrac{4}{25}\) 相当于圆周率 \(\pi=3.141\,6\)，比 \(\pi=3.14\) 一下子提高了两个数量级。真是一跃千里，一飞冲天。}
+
+我们称这个数学案例为``刘徽神算''。
+
+\textbf{刘徽神算化粗为精的加工效果太神奇了。它的设计机理已大大地超出了人们想象力的限度，因而虽历经千年，至今尚未获得人们的理解和接纳，而一直被禁锢在数学古籍之中。}
+
+该怎样破解刘徽神算的玄机呢？
+
+``探赜索隐，钩深致远。''（《周易·系辞》）本章试图直面这样的课题：探究刘徽神算的隐秘事理，钩取深沉的规律和法则，以破解长期困扰数学界的逼近加速问题。
+
+探索将针对刘徽神算围绕下列三个问题展开：
+
+（1）刘徽神算的校正因子 \(\omega=\dfrac{36}{105}\) 是从哪里来的？
+
+（2）感悟刘徽神算，校正因子应当具有怎样的特质？
+
+（3）推广刘徽神算，归纳出一类普适性的逼近加速法则。
+
+\subsection{12.3　奇光异彩}\label{ux5947ux5149ux5f02ux5f69}
+
+我们看到，尽管二分割圆生成的多边形面积 \(S_n\) 逼近于圆面积 \(S^*\)，但逼近过程收
+
+\href{../../source-images/pdf-298.jpeg}{原页图像}
+
+敛缓慢，为了获得高精度的圆周率，所要耗费的计算量可能变得很大。譬如，需要割到 24 576 边形，才能得出祖冲之的``密率''3.141 592 6。在古代用算筹一类简单的计算工具，实现如此浩大的计算工程是难以想象的。
+
+\subsubsection{12.3.1　刘徽的新视野}\label{ux5218ux5fbdux7684ux65b0ux89c6ux91ce}
+
+面对这个现实，刘徽独具慧眼地提出了这样一个挑战性的课题：设法将已经获得的数据进行``再加工''，希望以尽量少的计算量为代价获得高精度的结果。
+
+刘徽用一个具体的算例
+
+\[
+\widehat S=S_{192}+\frac{36}{105}(S_{192}-S_{96})\approx S_{3\,072}
+\]
+
+演示了这种设计方案的可行性。
+
+被称为``刘徽神算''的这个数学案例，实际上表达了一种数据精加工的方法。推广刘徽神算，自然可提出下述\textbf{校正技术}：
+
+设法寻求某个\textbf{松弛因子} \(\omega\)，将偏差 \(\Delta_n=S_{2n}-S_n\) 的 \(\omega\) 倍作为数据 \(S_{2n}\) 的\textbf{校正量}，而使\textbf{校正值}
+
+\[
+\widehat S=S_{2n}+\omega(S_{2n}-S_n),\quad 0<\omega<1
+\tag{12.3.1}
+\]
+
+比 \(S_n\) 和 \(S_{2n}\) 具有更高的精度。
+
+自然会问，作为校正技术的式（12.3.1），为什么要选取形如 \(\omega(S_{2n}-S_n)\) 的校正项呢？
+
+前已指出刘徽在《割圆术》中导出了圆面积的双侧挤压公式
+
+\[
+S_{2n}<S^*<S_{2n}+(S_{2n}-S_n),
+\]
+
+借助于偏差 \(\Delta_n=S_{2n}-S_n\) 这个公式可表达为
+
+\[
+0\cdot\Delta_n<S^*-S_{2n}<1\cdot\Delta_n,
+\]
+
+即误差 \(S^*-S_{2n}\) 被夹在系数分别为 0 和 1 的左右两极之间。
+
+中华文化崇尚``中庸之道''，无论处理什么事情都要避免走极端，尽量不左不右，不偏不倚，执中致和。因此，依据上述挤压公式，应令
+
+\[
+S^*-S_{2n}\approx\omega\Delta_n,
+\]
+
+式中 \(0<\omega<1\)，即取式（12.3.1）作为校正公式。
+
+另一方面，校正公式（12.3.1）亦可改写成两个数据 \(S_n\) 与 \(S_{2n}\) 的组合形式：
+
+\[
+\widehat S=(1+\omega)S_{2n}-\omega S_n.
+\]
+
+按这种理解，所述精加工方法也是一种\textbf{组合技术}。
+
+问题在于，这里组合系数为什么采取一正一负的逆反形式呢？
+
+事实上，比较 \(S_n\) 和 \(S_{2n}\) 两个近似值，虽然它们都很粗糙，但 \(S_{2n}\) 总比 \(S_n\) 更为精确，即 \(S_{2n}\) 为``优''值而 \(S_n\) 则为``劣''值，所以加权平均应采取``激浊扬清''的态势，充分激发 \(S_{2n}\) 的``优''势而抑制 \(S_n\) 的``劣''势，为此令 \(S_n\) 的权系数 \(-\omega<0\)，而令 \(S_{2n}\) 的权系数 \(1+\omega>1\)。
+
+\href{../../source-images/pdf-299.jpeg}{原页图像}
+
+激浊扬清、优劣互补的态势，标志着这种技术从属于高效算法设计的二分演化模式。
+
+总之，\textbf{作为刘徽神算推广的校正公式（12.3.1），是校正技术与组合技术两种技术的综合。}为使这类技术真正保证提高精度的要求，该怎样具体地选取松弛因子 \(\omega\) 呢？
+
+\subsubsection{12.3.2　偏差比中传出好``消息''}\label{ux504fux5deeux6bd4ux4e2dux4f20ux51faux597dux6d88ux606f}
+
+再换一种视角考察前述数据校正技术。针对无穷逼近过程 \(\{S_n\}\)，能否设计更``好''的逼近过程 \(\{\widehat S_n\}\)，使之具有更快的收敛速度呢？这就是逼近加速问题。
+
+欲使\textbf{校正公式}（12.3.1）成为逼近加速公式，校正因子 \(\omega\) 应当是驾驭逼近过程的某个数学不变量，即与逼近过程相关的某个普适常数，称之为\textbf{加速因子}。前已指出，这个常数 \(\omega\) 应当在 0 与 1 之间，即 \(0<\omega<1\)。
+
+数学常数通常采取比率的形式，刘徽指出，比率的本意是相关事物的比例关系。
+
+在二分割圆过程中，需要考虑什么样的``相关量''呢？
+
+《割圆术》称偏差 \(\Delta_n=S_{2n}-S_n\) 为\textbf{差幂}，刘徽特别关注\textbf{幂率} \(\delta_n=\Delta_n/\Delta_{2n}\)。在割圆计算过程中，利用差幂 \(\Delta_n\) 计算幂率 \(\delta_n\)，割圆术实际上已造出下列数据表 12.1。
+
+\textbf{表 12.1}
+
+\begingroup
+\renewcommand{\arraystretch}{2.2}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}rrrr@{}}
+\toprule\noalign{}
+\(n\) & \(S_n\) & \(\Delta_n\) & \(\delta_n\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+12 & 300 & \(10\dfrac{364}{625}\) & 3.95 \\
+24 & \(310\dfrac{364}{625}\) & \(2\dfrac{425}{625}\) & 3.99 \\
+48 & \(313\dfrac{164}{625}\) & \(\dfrac{420}{625}\) & 4.00 \\
+96 & \(313\dfrac{584}{625}\) & \(\dfrac{105}{625}\) & \\
+192 & \(314\dfrac{64}{625}\) & & \\
+\end{longtable}
+}
+
+\endgroup
+
+从这些数据中能获得什么样的信息呢？无需用高深的数学知识进行理论分析，\textbf{直接观察幂率 \(\delta_n\) 的数据表（见表 12.1）即可发现，幂率几乎为定值 4。}
+
+\textbf{刘徽由此发现了一个奇妙的事实：表面上杂乱无章的数据 \(S_n\) 中竟蕴藏着极其鲜明的规律性。}
+
+\subsubsection{12.3.3　只要做一次``俯冲''}\label{ux53eaux8981ux505aux4e00ux6b21ux4fefux51b2}
+
+偏差比几乎是个定值，基于这个奇妙的规律，分析误差只是一蹴而就的事，据此只要做一次``俯冲''便能捕捉到所要的校正公式。
+
+事实上，由于在割圆计算过程中偏差比近似等于 4，从而得出一系列近似关系
+
+\href{../../source-images/pdf-300.jpeg}{原页图像}
+
+式：
+
+\[
+\begin{aligned}
+S_{2n}-S_n&\approx4(S_{4n}-S_{2n}),\\
+S_{4n}-S_{2n}&\approx4(S_{8n}-S_{4n}),\\
+S_{8n}-S_{4n}&\approx4(S_{16n}-S_{8n}),\\
+&\vdots\\
+S_{2N}-S_N&\approx4(S_{4N}-S_{2N}),
+\end{aligned}
+\]
+
+式中，\(N\) 是某个远大于 \(n\) 的正整数。
+
+将这些式子累加在一起，其中间项相互抵消，得
+
+\[
+S_{2N}-S_n\approx4(S_{4N}-S_{2n}).
+\]
+
+这样，若取 \(S_{4N}\) 和 \(S_{2N}\) 作为 \(S_{2n}\) 的校正值 \(\widehat S\)，则有
+
+\[
+\widehat S-S_n=4(\widehat S-S_{2n}),
+\tag{12.3.2}
+\]
+
+即有
+
+\[
+\frac{\widehat S-S_n}{\widehat S-S_{2n}}\approx4.
+\]
+
+如果称近似值 \(S_n\) 与校正值 \(\widehat S\) 两者之差为\textbf{残差}，则上式说明，\textbf{若偏差比几乎为定值 4，那么残差比也近似等于 4。}
+
+这样一来，精加工方法的设计就水到渠成了。事实上，从式（12.3.2）解出未知的 \(\widehat S\)，有
+
+\[
+\widehat S=S_{2n}+\frac{1}{3}(S_{2n}-S_n).
+\tag{12.3.3}
+\]
+
+这个式子的含义是，在偏差比``几乎''为定值 4 的情况下，近似值的残差比也近似等于 4，因而残差 \(\widehat S-S_{2n}\) 几乎等于偏差 \(S_{2n}-S_n\) 的 \(\dfrac13\)，从而立即导出所求的加速公式（12.3.3）。
+
+值得指出的是，刘徽神算（12.2.2）即
+
+\[
+\widehat S=S_{192}+\frac{36}{105}(S_{192}-S_{96})
+\]
+
+中的校正因子 \(\omega=\dfrac{36}{105}\) 非常接近实际精加工公式（12.3.3）中的校正因子 \(\omega=\dfrac13=\dfrac{35}{105}\)。至于刘徽为什么这样处理，\textbf{一个明显的理由是，刘徽过于偏爱计算公式与计算结果的简洁美。}
+
+\subsubsection{12.3.4　差之毫厘，失之千里}\label{ux5deeux4e4bux6bebux5398ux5931ux4e4bux5343ux91cc}
+
+加速因子究竟怎样选取才算合适呢？循着刘徽割圆术的思路，精确地计算直
+
+\href{../../source-images/pdf-301.jpeg}{原页图像}
+
+到正 3 072 边形的面积，直接选取加速因子 \(\omega=\dfrac13\)，再按式（12.3.3）计算，计算结果列于表 12.2 中，表中括弧 \(\langle\,\cdot\,\rangle\) 标明数据准确到小数点后第几位。\(\pi\) 的真值为 3.141 592 653 5\ldots。
+
+\textbf{表 12.2}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(S_n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\widehat S_n\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+12 & \(3.000\,000\,000\quad\langle0\rangle\) & \\
+24 & \(3.105\,828\,541\quad\langle1\rangle\) & \(3.141\,104\,722\quad\langle3\rangle\) \\
+48 & \(3.132\,628\,613\quad\langle1\rangle\) & \(3.141\,561\,971\quad\langle4\rangle\) \\
+96 & \(3.139\,350\,203\quad\langle1\rangle\) & \(3.141\,590\,733\quad\langle5\rangle\) \\
+192 & \(3.141\,031\,951\quad\langle3\rangle\) & \(3.141\,592\,534\quad\langle6\rangle\) \\
+384 & \(3.141\,452\,472\quad\langle3\rangle\) & \(3.141\,592\,646\quad\langle7\rangle\) \\
+768 & \(3.141\,557\,608\quad\langle4\rangle\) & \(3.141\,592\,653\quad\langle8\rangle\) \\
+1 536 & \(3.141\,583\,892\quad\langle4\rangle\) & \(3.141\,592\,654\quad\langle8\rangle\) \\
+3 072 & \(3.141\,590\,463\quad\langle5\rangle\) & \(3.141\,592\,654\quad\langle8\rangle\) \\
+\end{longtable}
+}
+
+在割圆计算中，刘徽已获知直到正 3 072 边形的数据。以上数据表显示，利用这些数据按照刘徽加速技术进行精加工，即可获得祖冲之的``密率''3.141 592 65。
+
+刘徽如果这样做，那么中华数学史乃至世界数学史上有关圆周率科学计算部分就要彻底改写了。
+
+\textbf{差之毫厘，失之千里。刘徽的校正技术极为精彩，只是由于校正因子的处理稍欠精细，从而失之交臂，把一项千年称雄的数学成就留给了两百年后的祖冲之。}
+
+\subsubsection{12.3.5　``缀术''再剖析}\label{ux7f00ux672fux518dux5256ux6790}
+
+本章一开头指出，南北朝数学家祖冲之给出了高精度的圆周率，这项成就领先世界一千多年。
+
+祖冲之的圆周率是怎样得出来的？如果直接用内接正多边形来逼近，要一直算到正 \(24\,576=6\times2^{12}\) 边形。耗费如此巨大的计算量，在筹算的古代是难以想象的。
+
+中华民族是个智慧的民族，是个善于创新的民族。\textbf{刘徽的加速技术是中华文明前瞻性思维的一个明证。}
+
+据隋唐古书记载，祖冲之的算法设计技术称为``缀术''。史书盛赞缀术``指要精密，
+
+\begin{quote}
+校注（agent 补充）：表 12.2 的 \(S_n\) 数值从 3.000 000 000 开始，按原表保留；此前半径 \(r=10\) 寸的表 12.1 数值从 300 开始。本页未明说此处改用单位圆或作了归一化，转录未擅自改变尺度。
+\end{quote}
+
+\href{../../source-images/pdf-302.jpeg}{原页图像}
+
+算氏之最''。但关于缀术的具体内容已无从考证，仅仅靠``缀术''这个名词能够窥探出其中的奥秘吗？
+
+查看汉语词典，\textbf{``缀''字有两个含义：一是``缀合''，即组合，因此``缀术''就是组合技术；另一个含义是``缀补''，即修补和校正，在这个意义上，``缀术''亦可理解为校正技术。}
+
+\textbf{这样，所谓``缀术''其实就是组合技术与校正技术。}本节一开头就指出，刘徽的精加工技术正是这种技术。也许，据此可以断定，\textbf{祖冲之的``缀术''正是继承了刘徽的``衣钵''------特别是刘徽的割圆术，归纳总结出来的。}
+
+数学史先辈钱宝琮先生早就猜测过祖冲之与刘徽之间的传承关系。我们深信，\textbf{祖冲之将自己的算法设计技术命名为``缀术''，目的也是试图向世人表白：自己的数学成就，只是前人特别是刘徽的研究工作的缀补和修正。因此，``缀术''实质上只是《九章算术》刘徽注的祖冲之注。}
+
+也许这就是历史的真相。
+
+\subsubsection{12.3.6　平庸的新纪录}\label{ux5e73ux5eb8ux7684ux65b0ux7eaaux5f55}
+
+前已指出，祖冲之于公元 5 世纪所获得的准确到小数点后 7 位的圆周率 3.141 592 6\ldots 千年称雄于世界。这项纪录直到 15 世纪才被打破。阿拉伯人阿尔·卡西于 1424 年写成《圆周论》，发表了当时世界上最为精确的圆周率。
+
+阿尔·卡西的割圆过程袭用阿基米德的做法：从正六边形做起，逐步计算圆的内接与外切多边形的周长。每分割一次，令多边形的边数倍增。到了 15 世纪，阿拉伯数字和十进小数记数法的使用，给实际计算提供了很大方便。阿尔·卡西反复割圆，一直算到
+
+\[
+6\times2^{27}=805\,306\,368
+\]
+
+即正 8 亿多多边形，得出准确到小数点后 17 位的圆周率
+
+\[
+\pi=3.141\,592\,653\,589\,793\,23,
+\]
+
+从而打破了祖冲之千年称雄的世界纪录。
+
+阿尔·卡西的这项计算其实是平庸的。其一，他所使用的其实就是刘徽公式；其二，后文将会看到，运用刘徽的加速技术，用正 24 576 边形的数据就能加工出阿尔·卡西正 8 亿多多边形的结果。
+
+这里再现阿尔·卡西所获得的数据。令直径为 1，则内接正 \(n\) 边形的边长
+
+\[
+L_n=n\cdot\sin\frac{\pi}{n}.
+\]
+
+设取 \(n=6,12,24,\cdots\) 反复进行计算，计算结果列于表 12.3 中。表中数据是借助于数学软件 Mathematica 获得的，计算过程避开了舍入误差的积累。
+
+\begin{quote}
+校注（agent 补充）：本页圆周率末段印作 \(\ldots793\,23\)，PDF294（书页281）同一阿尔·卡西结果印作 \(\ldots792\,23\)，两处原文不一致，均按原页保留。
+
+校注（agent 补充）：原文称 \(L_n=n\sin(\pi/n)\) 为``边长''，该式实际为直径 1 的圆内接正 \(n\) 边形的周长；单边长应为 \(\sin(\pi/n)\)。这是原书文字与所列公式的不一致，正文未作替换。
+\end{quote}
+
+\href{../../source-images/pdf-303.jpeg}{原页图像}
+
+\textbf{表 12.3}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(L_n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\delta_n\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+6 & \(3.000\,000\,000\,000\,000\,000\quad\langle0\rangle\) & \(3.948\,815\,549\,036\,689\,1\) \\
+12 & \(3.105\,828\,541\,230\,249\,148\quad\langle1\rangle\) & \(3.987\,162\,707\,851\,017\,4\) \\
+24 & \(3.132\,628\,613\,281\,238\,197\quad\langle1\rangle\) & \(3.996\,788\,098\,191\,334\,7\) \\
+48 & \(3.139\,350\,203\,046\,867\,207\quad\langle1\rangle\) & \(3.999\,196\,863\,295\,489\,2\) \\
+96 & \(3.141\,031\,950\,890\,509\,638\quad\langle3\rangle\) & \(3.999\,799\,205\,744\,363\,9\) \\
+192 & \(3.141\,452\,472\,285\,462\,075\quad\langle3\rangle\) & \(3.999\,949\,800\,806\,102\,4\) \\
+384 & \(3.141\,557\,607\,911\,857\,645\quad\langle4\rangle\) & \(3.999\,987\,450\,162\,151\,0\) \\
+768 & \(3.141\,583\,892\,148\,318\,408\quad\langle4\rangle\) & \(3.999\,996\,862\,538\,076\,8\) \\
+1 536 & \(3.141\,590\,463\,228\,050\,095\quad\langle5\rangle\) & \(3.999\,999\,215\,634\,365\,4\) \\
+3 072 & \(3.141\,592\,105\,999\,271\,550\quad\langle6\rangle\) & \(3.999\,999\,803\,908\,581\,7\) \\
+6 144 & \(3.141\,592\,516\,692\,157\,447\quad\langle6\rangle\) & \(3.999\,999\,950\,977\,144\,8\) \\
+12 288 & \(3.141\,592\,619\,365\,383\,955\quad\langle7\rangle\) & \(3.999\,999\,987\,744\,286\,1\) \\
+24 576 & \(3.141\,592\,645\,033\,690\,896\quad\langle7\rangle\) & \(3.999\,999\,996\,936\,071\,5\) \\
+49 152 & \(3.141\,592\,651\,450\,767\,651\quad\langle8\rangle\) & \(3.999\,999\,999\,234\,017\,8\) \\
+98 304 & \(3.141\,592\,653\,055\,036\,841\quad\langle9\rangle\) & \(3.999\,999\,999\,808\,504\,4\) \\
+196 608 & \(3.141\,592\,653\,456\,104\,139\quad\langle9\rangle\) & \(3.999\,999\,999\,952\,126\,1\) \\
+393 216 & \(3.141\,592\,653\,556\,370\,963\quad\langle10\rangle\) & \(3.999\,999\,999\,988\,031\,5\) \\
+786 432 & \(3.141\,592\,653\,581\,437\,669\quad\langle11\rangle\) & \(3.999\,999\,999\,997\,007\,8\) \\
+1 572 864 & \(3.141\,592\,653\,587\,704\,346\quad\langle11\rangle\) & \(3.999\,999\,999\,999\,251\,9\) \\
+3 145 728 & \(3.141\,592\,653\,589\,271\,015\quad\langle12\rangle\) & \(3.999\,999\,999\,999\,812\,9\) \\
+6 291 456 & \(3.141\,592\,653\,589\,662\,682\quad\langle12\rangle\) & \(3.999\,999\,999\,999\,953\,2\) \\
+12 582 912 & \(3.141\,592\,653\,589\,760\,599\quad\langle13\rangle\) & \(3.999\,999\,999\,999\,988\,3\) \\
+25 165 824 & \(3.141\,592\,653\,589\,785\,078\quad\langle13\rangle\) & \(3.999\,999\,999\,999\,997\,0\) \\
+50 331 648 & \(3.141\,592\,653\,589\,791\,198\quad\langle14\rangle\) & \(3.999\,999\,999\,999\,999\,2\) \\
+100 663 296 & \(3.141\,592\,653\,589\,792\,728\quad\langle14\rangle\) & \(3.999\,999\,999\,999\,999\,8\) \\
+201 326 592 & \(3.141\,592\,653\,589\,793\,110\quad\langle15\rangle\) & \(3.999\,999\,999\,999\,999\,9\) \\
+402 653 184 & \(3.141\,592\,653\,589\,793\,206\quad\langle16\rangle\) & \\
+805 306 368 & \(3.141\,592\,653\,589\,793\,230\quad\langle17\rangle\) & \\
+\end{longtable}
+}
+
+\href{../../source-images/pdf-304.jpeg}{原页图像}
+
+表 12.3 所列的计算结果表明，在二分逼近过程中，反复计算内接正 \(n\) 边形的周长 \(L_n\)，发现阿尔·卡西的``新纪录''果然是对的。
+
+为了运用刘徽方法进行精加工，首先需要澄清偏差比是否``几乎''为定值。利用逼近数据 \(L_n\) 计算偏差 \(\Delta_n=L_{2n}-L_n\)，进而求出偏差比 \(\delta_n=\Delta_n/\Delta_{2n}\)，计算结果 \(\delta_n\) 列于表 12.3 的右侧。我们看到，这里偏差比 \(\delta_n\) 越来越逼近定值 4，因此加速公式仍具有式（12.3.3）的形式：
+
+\[
+\widehat L_n=L_{2n}+\frac13(L_{2n}-L_n).
+\]
+
+依这一公式加工表 12.3 的数据 \(L_n\)，加工结果 \(\widehat L_n\) 列于表 12.4 中。数据尾部依然标明准确到小数第几位。
+
+\textbf{表 12.4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4300}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4300}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\widehat L_n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\widehat L_n\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+6 & \(3.141\,104\,721\,640\,332\,197\quad\langle3\rangle\) & 768 & \(3.141\,592\,653\,587\,960\,658\quad\langle11\rangle\) \\
+12 & \(3.141\,561\,970\,631\,567\,880\quad\langle4\rangle\) & 1 536 & \(3.141\,592\,653\,589\,678\,702\quad\langle12\rangle\) \\
+24 & \(3.141\,590\,732\,968\,743\,543\quad\langle5\rangle\) & 3 072 & \(3.141\,592\,653\,589\,786\,079\quad\langle13\rangle\) \\
+48 & \(3.141\,592\,533\,505\,057\,115\quad\langle6\rangle\) & 6 144 & \(3.141\,592\,653\,589\,792\,791\quad\langle14\rangle\) \\
+96 & \(3.141\,592\,646\,083\,779\,554\quad\langle7\rangle\) & 12 288 & \(3.141\,592\,653\,589\,793\,210\quad\langle16\rangle\) \\
+192 & \(3.141\,592\,653\,120\,656\,168\quad\langle9\rangle\) & 24 576 & \(3.141\,592\,653\,589\,793\,236\quad\langle17\rangle\) \\
+384 & \(3.141\,592\,653\,560\,471\,996\quad\langle10\rangle\) & & \\
+\end{longtable}
+}
+
+对照表 12.3 和表 12.4 可以看出，\textbf{为了获得阿尔·卡西割到正 8 亿多多边形所创造的新纪录，运用刘徽的精加工方法只要割到正 24 576 边形，后者相当于祖冲之已经掌握的逼近数据。}
+
+\textbf{刘徽加速技术的效果简直令人难以置信！}
+
+\subsection{12.4　万能引擎}\label{ux4e07ux80fdux5f15ux64ce}
+
+数学研究中常常碰到复杂的数学对象。面对复杂，数学家往往不是进行正面的``攻击''，而是设法用某种简单去逼近它。例如用正多边形逼近圆周计算圆周长与圆面积。通常这种化繁为简、以简御繁的逼近过程是个无穷过程。
+
+无穷逼近过程的收敛速度决定逼近方法的成败和优劣，一个过于缓慢的逼近过程是没有实用价值的，因此人们特别关注逼近过程的加速技术。
+
+\begin{quote}
+校注（agent 补充）：按本页原式，表中 \(\widehat L_{24\,576}\) 需要 \(L_{24\,576}\) 和 \(L_{49\,152}\) 两个数据。正文``只要割到正 24 576 边形''与公式及表下标所表示的数据需求不一致；原文和数值均予保留。
+\end{quote}
+
+\href{../../source-images/pdf-305.jpeg}{原页图像}
+
+\subsubsection{12.4.1　逼近加速的重差公设}\label{ux903cux8fd1ux52a0ux901fux7684ux91cdux5deeux516cux8bbe}
+
+\textbf{逼近加速是个难题，如果没有一个深邃的思想作为指导是很难圆满解决的。}重差术是刘徽学说又一亮点。限于篇幅，这里避开重差术的历史渊源以及它在测高望远领域中的广泛应用，而仅仅着眼于它同逼近加速技术的联系。
+
+讨论一般形式的逼近过程
+
+\[
+\{a_n\}:a_0,a_1,a_2,\cdots.
+\]
+
+设逼近数列 \(\{a_n\}\) 单调有界，则它必有极限 \(a^*\)。记其\textbf{偏差} \(\Delta_n=a_{n+1}-a_n\)，相邻偏差的比值
+
+\[
+\delta_n=\frac{\Delta_n}{\Delta_{n+1}}=\frac{a_{n+1}-a_n}{a_{n+2}-a_{n+1}}
+\]
+
+称为\textbf{重差}。
+
+\textbf{顾名思义，重差就是差数的重叠，即偏差比。}
+
+如果逼近过程的重差 \(\delta_n\) ``几乎''是个定值 \(\delta\)，则称它满足\textbf{重差公设}。容易想象，重差公设是逼近数列的一个本质属性。我们将会看到，重差公设是保证逼近加速的一台万能引擎。
+
+\subsubsection{12.4.2　重差加速法则}\label{ux91cdux5deeux52a0ux901fux6cd5ux5219}
+
+考察收敛的逼近数列 \(\{a_n\}\)：
+
+\[
+a_1,a_2,\cdots,a_n\to a^*.
+\]
+
+假设它满足重差公设，即其偏差比 \(\delta_n=\Delta_n/\Delta_{n+1}\)，\(\Delta_n=a_{n+1}-a_n\) ``几乎''为定值 \(\delta\)，亦即
+
+\[
+\frac{a_{n+1}-a_n}{a_{n+2}-a_{n+1}}\approx\delta,\quad\delta>1,
+\tag{12.4.1}
+\]
+
+则所生成的数列
+
+\[
+\begin{aligned}
+\widehat a_n&=a_{n+1}+\frac{1}{\delta-1}(a_{n+1}-a_n)\\
+&=\left(1+\frac{1}{\delta-1}\right)a_{n+1}-\frac{1}{\delta-1}a_n
+\end{aligned}
+\tag{12.4.2}
+\]
+
+远比原先的数列 \(\{a_n\}\) 收敛得更快，即 \(\widehat a_n\) 比 \(a_n\) 具有更高的精度。
+
+这一加速方法称作\textbf{重差加速法则}。式（12.4.2）称作\textbf{重差加速公式}，或称精加工公式。\(\widehat a_n\) 称作 \(a_n\) 的\textbf{改进值}。
+
+重差加速的提出显然是前述刘徽加速的推广。仿照上一节的讨论不难证明重差加速的合理性。这里无需赘述。
+
+\textbf{值得强调指出的是，刘徽重差加速技术是极度并行的。因为松弛因子 \(\delta\) 是整个逼近过程 \(\{a_n\}\) 的普适常数，所以精加工公式（12.4.2）对任何数据 \(\{a_n\}\) 均有效。}
+
+\href{../../source-images/pdf-306.jpeg}{原页图像}
+
+\subsubsection{12.4.3　重差加速的逻辑推理}\label{ux91cdux5deeux52a0ux901fux7684ux903bux8f91ux63a8ux7406}
+
+假定所给逼近数列 \(\{a_n\}\) 由迭代公式
+
+\[
+a_{n+1}=\Phi(a_n)
+\]
+
+所生成，则有
+
+\[
+\begin{aligned}
+a^*-a_{n+1}&=\Phi(a^*)-\Phi(a_n)\\
+&=\Phi'(\xi_1)(a^*-a_n).
+\end{aligned}
+\]
+
+又
+
+\[
+\begin{aligned}
+a_{n+2}-a_{n+1}&=\Phi(a_{n+1})-\Phi(a_n)\\
+&=\Phi'(\xi_2)(a_{n+1}-a_n),
+\end{aligned}
+\]
+
+假定导数 \(\Phi'(\xi)\) 在所考察的范围内改变不大，则据上式得知
+
+\[
+\frac{a^*-a_{n+1}}{a^*-a_n}\approx\frac{a_{n+2}-a_{n+1}}{a_{n+1}-a_n}.
+\]
+
+这样，利用重差公设（12.4.1）可以断定
+
+\[
+\frac{a^*-a_{n+1}}{a^*-a_n}\approx\frac1\delta,
+\]
+
+即有
+
+\[
+a^*\approx\frac{\delta}{\delta-1}a_{n+1}-\frac1{\delta-1}a_n,
+\]
+
+因而有加速公式（12.4.2），重差加速法则得证。
+
+上述推理过程自然会令人联想起经典数值分析中的松弛技术（参看第 4 章 4.3 节），两种加速公式的形式相同。
+
+不过，更要区分传统的松弛技术与刘徽的重差技术两者的差异：
+
+其一，松弛技术的前提是给出了具体的迭代函数 \(\Phi\)，并且要求函数 \(\Phi\) 具有一定的光滑性，而重差加速的理论分析所针对的迭代函数 \(\Phi\) 是虚构的，实际问题中并不存在。前述理论分析只是``借题发挥''而已。
+
+其二，传统的松弛技术是近代学者的研究成果，而重差加速是中华先贤刘徽在两千年前提出的大智慧，两者不可同日而语。
+
+其三，传统的松弛技术仅仅解决一些简单的数值分析例题，而刘徽的重差加速普遍适用于形形色色的大规模的计算工程，两者相比，真是``小巫见大巫''了。
+
+值得指出的是，这里关于刘徽加速的讨论其实不能算作证明，充其量只是一种``说明''而已。逼近过程的收敛性与逼近加速的关系能否给出严格的逻辑证明，有待人们进一步深入研究。
+
+\begin{quote}
+校注（agent 补充）：原文``参看第 4 章 4.3 节''已保留。回看 PDF101（书页88），该节实际标题为``4.3 Romberg 算法''，此处对``松弛技术''的章节指引疑有误；未推定或代填作者意指的章节号。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH12-E001}：原书 PDF 页 294
+\item
+  \texttt{CH12-E002}：原书 PDF 页 294, 302
+\item
+  \texttt{CH12-E003}：原书 PDF 页 302
+\item
+  \texttt{CH12-E004}：原书 PDF 页 302, 304
+\item
+  \texttt{CH12-E005}：原书 PDF 页 306
+\end{itemize}
+
+\end{document}

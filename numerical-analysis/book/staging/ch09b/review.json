@@ -1,0 +1,421 @@
+{
+  "lane": "ch09b",
+  "reviewer": "Codex agent ch09b",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 247,
+      "printed_page": 234,
+      "path": "staging/ch09b/pages/pdf-247.md",
+      "sha256": "8b3561b7c8f1f6a6fe63a400e988aa230405e9defc50314c5bce7cb6809406a9",
+      "source_image_sha256": "89055580780c44e7729e9d0778fd57a6865158fe3d634c7e9973756c764dd84b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.3.2",
+          "title": "用正交相似变换约化矩阵"
+        }
+      ],
+      "formula_ids": [
+        "9.3.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E01: P^T y 展开式原印 lambda_k^{-1}，与初等反射阵使用 rho_k^{-1} 不一致；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 248,
+      "printed_page": 235,
+      "path": "staging/ch09b/pages/pdf-248.md",
+      "sha256": "68a7b19ab97b5aa9783bc77879b7b5eeef8f0b7df9e7a6e1402a2c0ba9db265a",
+      "source_image_sha256": "76389197f9a198a3a717e371a1beb5381ed08048f3836eb753f9d4bde8c8c409",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.3.2",
+          "title": "用正交相似变换约化矩阵"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E02: 算法 3 步 3（2）第一个求和上限原印 n，按下三角存储算法疑应为 i；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 249,
+      "printed_page": 236,
+      "path": "staging/ch09b/pages/pdf-249.md",
+      "sha256": "7a055793b65c3653b943d42443932151325989c8914c15d513e3f35020117cb4",
+      "source_image_sha256": "221cbe015719888e7d8ae80bfb21f9f9908f1804be220845bb42de5f541ac95b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.3.2",
+          "title": "用正交相似变换约化矩阵"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E03: 例 9.5（1）u_1 式原印 sigma_1 rho_1，结合列向量疑应为 sigma_1 e_1；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 250,
+      "printed_page": 237,
+      "path": "staging/ch09b/pages/pdf-250.md",
+      "sha256": "3099ed483f813fe3da7589be4b5d6531b84ad2dc043da232ed3c3e555b92e6d3",
+      "source_image_sha256": "6ae3904cfbac215fcae84e1f5353f76f6258a4772e1870d630e3b32d2be89b3e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4",
+          "title": "QR算法"
+        },
+        {
+          "id": "9.4.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [
+        "9.4.1",
+        "9.4.2",
+        "9.4.3",
+        "9.4.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 251,
+      "printed_page": 238,
+      "path": "staging/ch09b/pages/pdf-251.md",
+      "sha256": "c085bc0d336f52f5cf6481ab440d3d5cf5029aafbddc1b1d7b7af902d41302cc",
+      "source_image_sha256": "77bd8f14ca51563753605266f4aa9955fdaa7e5b1bd3c5fa99453a46766272d0",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [
+        "9.4.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E04: 引理 1 证明首式末项原印 c alpha_i，按矩阵乘法及下一行疑应为 c alpha_j；保留原文。",
+        "ch09b-E05: 定理 9.15 证明末行原印 a_{2j}^{(2)}，按第 2 列消元疑应为 a_{j2}^{(2)}；保留原文。",
+        "ch09b-E06: 算法 1 零向量分支未赋值输出 v，按定义应为 0；原步骤保留。"
+      ]
+    },
+    {
+      "pdf_page": 252,
+      "printed_page": 239,
+      "path": "staging/ch09b/pages/pdf-252.md",
+      "sha256": "54698d8ca3503a1ee85858fec172c68dcdfaf3e8aa2704bc96d3ecdd587f3bf9",
+      "source_image_sha256": "7abdf15b71745f369b7e9ca379aee7a10fa17fd91e3b423d2700ca88bbdc154b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.1",
+          "title": "引言"
+        },
+        {
+          "id": "9.4.2",
+          "title": "QR算法"
+        }
+      ],
+      "formula_ids": [
+        "9.4.6",
+        "9.4.7",
+        "9.4.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E11: 定理 9.16 证明首句原印由定理 9.12；所用平面旋转矩阵三角化结论对应定理 9.15，原引用保留。"
+      ]
+    },
+    {
+      "pdf_page": 253,
+      "printed_page": 240,
+      "path": "staging/ch09b/pages/pdf-253.md",
+      "sha256": "7e761dc97f1167bec0f4e11c5952198aa538f361950f146439b0ef8eeae5bc49",
+      "source_image_sha256": "840a3ede9f7e82ac7d6a9314770344bd57c3499f4f4c83dee3739b7284aef6fa",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.2",
+          "title": "QR算法"
+        }
+      ],
+      "formula_ids": [
+        "9.4.9",
+        "9.4.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E07: QR 分解左变换引用原印为定理 9.13，所指上三角阵结论对应定理 9.15；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 254,
+      "printed_page": 241,
+      "path": "staging/ch09b/pages/pdf-254.md",
+      "sha256": "bce292295fcc61b7adb289f9b7ba7262f391992e20e08a26718dcd53be708c9e",
+      "source_image_sha256": "5cc04a2fcf37f59c61e7b9d54f74ecfed77b976dc9cbe30fa2b2ca6758a6f350",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.2",
+          "title": "QR算法"
+        }
+      ],
+      "formula_ids": [
+        "9.4.11",
+        "9.4.12",
+        "9.4.13",
+        "9.4.14",
+        "9.4.15",
+        "9.4.16",
+        "9.4.17"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E08: 式（9.4.16）前原印引用式（4.15），本页对应为（9.4.15）；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 255,
+      "printed_page": 242,
+      "path": "staging/ch09b/pages/pdf-255.md",
+      "sha256": "20113387bb0f8d7fe9ec3ef8305acbf6349f520c37acbb88d31292cf76a2e052",
+      "source_image_sha256": "999ed1398b4312b59c48447f257b35b7055b649f529ec93f5e74bbd86f579b21",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.2",
+          "title": "QR算法"
+        },
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E12: 分块上三角阵第一个二阶对角块原印 B_l，与末块同名；按顺序编号疑应为 B_1。已据交叉复核回看原图，保留原印并校注。"
+      ]
+    },
+    {
+      "pdf_page": 256,
+      "printed_page": 243,
+      "path": "staging/ch09b/pages/pdf-256.md",
+      "sha256": "714b953db0db3b952442b23586d1e212b8fe8aac8c66ea0b2b2cda9d7417db25",
+      "source_image_sha256": "c22a34b929d0369805f2d816648a66aa46cd11057c6b14476e6aa33e5bff2c15",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 257,
+      "printed_page": 244,
+      "path": "staging/ch09b/pages/pdf-257.md",
+      "sha256": "a26a4e6ac44108b9ba5ed5953f1f47728c4d7cc2e2caa80e89c6dd12560b1507",
+      "source_image_sha256": "47513f86f165071b3bbbca9e0ba68f3d304677e02f5850366dfa1e16950cde03",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "ch09b-E09: 第 i 次左变换原印及 v_k，对应矩阵为 v_i；保留原印下标。",
+        "ch09b-E10: P_{i,i+1} 的范围原印 i=1,2,...,n+1，按 n 阶矩阵应至 n-1；保留原文。"
+      ]
+    },
+    {
+      "pdf_page": 258,
+      "printed_page": 245,
+      "path": "staging/ch09b/pages/pdf-258.md",
+      "sha256": "efbd6c855feb71c1c3865dcfe4b1ec66dc744b10e7c90252f64394777c273691",
+      "source_image_sha256": "2b251a273d6207ca3287239f462ea5351fa8365d218748ef563cb66794bd9d96",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 259,
+      "printed_page": 246,
+      "path": "staging/ch09b/pages/pdf-259.md",
+      "sha256": "49b29dd5e30167a234829198813c7d74b96e113021a7ff726f7027784e755b0e",
+      "source_image_sha256": "00971c33b64203bb52b8c24d77e86a04f95d194e1d1e1773e202a222f39221e1",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法"
+        },
+        {
+          "id": "9.summary",
+          "title": "小结"
+        },
+        {
+          "id": "9.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 260,
+      "printed_page": 247,
+      "path": "staging/ch09b/pages/pdf-260.md",
+      "sha256": "d047aa2793a7b8441fdb415e7f92f9e02e084b379a4affc64025c6327e8b5603",
+      "source_image_sha256": "8b51c013b2767a76ee87d416baf4465be3a6e20b65fb0cb13962fa9c68818879",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch09b-E12",
+      "pdf_page": 255,
+      "description": "分块上三角阵第一个二阶对角块原印 B_l，与末块同名；按顺序编号疑应为 B_1。已据交叉复核回看原图，保留原印并校注。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "id": "ch09b-E11",
+      "pdf_page": 252,
+      "description": "定理 9.16 证明首句原印由定理 9.12；所用平面旋转矩阵三角化结论对应定理 9.15，原引用保留。",
+      "type": "suspected_source_reference_error"
+    },
+    {
+      "id": "ch09b-E09",
+      "pdf_page": 257,
+      "description": "第 i 次左变换原印及 v_k，对应矩阵为 v_i；保留原印下标。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "id": "ch09b-E10",
+      "pdf_page": 257,
+      "description": "P_{i,i+1} 的范围原印 i=1,2,...,n+1，按 n 阶矩阵应至 n-1；保留原文。",
+      "type": "source_index_bound_error"
+    },
+    {
+      "id": "ch09b-E07",
+      "pdf_page": 253,
+      "description": "QR 分解左变换引用原印为定理 9.13，所指上三角阵结论对应定理 9.15；保留原文。",
+      "type": "suspected_source_reference_error"
+    },
+    {
+      "id": "ch09b-E08",
+      "pdf_page": 254,
+      "description": "式（9.4.16）前原印引用式（4.15），本页对应为（9.4.15）；保留原文。",
+      "type": "source_reference_typo"
+    },
+    {
+      "id": "ch09b-E04",
+      "pdf_page": 251,
+      "description": "引理 1 证明首式末项原印 c alpha_i，按矩阵乘法及下一行疑应为 c alpha_j；保留原文。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "id": "ch09b-E05",
+      "pdf_page": 251,
+      "description": "定理 9.15 证明末行原印 a_{2j}^{(2)}，按第 2 列消元疑应为 a_{j2}^{(2)}；保留原文。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "id": "ch09b-E06",
+      "pdf_page": 251,
+      "description": "算法 1 零向量分支未赋值输出 v，按定义应为 0；原步骤保留。",
+      "type": "suspected_source_algorithm_omission"
+    },
+    {
+      "id": "ch09b-E01",
+      "pdf_page": 247,
+      "description": "P^T y 展开式原印 lambda_k^{-1}，与初等反射阵使用 rho_k^{-1} 不一致；保留原文。",
+      "type": "suspected_source_symbol_error"
+    },
+    {
+      "id": "ch09b-E02",
+      "pdf_page": 248,
+      "description": "算法 3 步 3（2）第一个求和上限原印 n，按下三角存储算法疑应为 i；保留原文。",
+      "type": "suspected_source_formula_error"
+    },
+    {
+      "id": "ch09b-E03",
+      "pdf_page": 249,
+      "description": "例 9.5（1）u_1 式原印 sigma_1 rho_1，结合列向量疑应为 sigma_1 e_1；保留原文。",
+      "type": "suspected_source_symbol_error"
+    }
+  ],
+  "validation_notes": [
+    "逐页以 tools.view_image 打开原图，关键疑误另打开原尺寸局部裁切核对。未使用 GPU OCR，也未用 OCR 候选替代目视。",
+    "PDF247 接续 9.3.2；跨页推导只转录各页实际内容。",
+    "PDF247–260 共 14 页均已逐页打开原图并完成正文、公式、算法、例题、小结及习题 1–10 转录；不存在编号图表。矩阵图式已转成 LaTeX，保留方框与分块标示。",
+    "所有独立及行内数学已用 XeLaTeX -no-pdf 编译通过；检查文件见 staging/ch09b/validation/math-check.tex 和 math-check.log。编译仅验证语法，不代替内容目视核对。",
+    "公式号覆盖 9.3.3 及 9.4.1–9.4.17；逐页图与 Markdown SHA-256 均现场计算。疑似原书错误保持原文，另列 source_errata；这些不是未辨认的文字。"
+  ]
+}

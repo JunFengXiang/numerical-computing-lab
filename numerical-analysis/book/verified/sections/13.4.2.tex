@@ -1,0 +1,98 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={刘徽的``割圆术''},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{刘徽的``割圆术''}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{13.4.2 刘徽的``割圆术''}\label{ux5218ux5fbdux7684ux5272ux5706ux672f}
+
+在数学史上，圆周率这个奇妙的数字牵动着一代又一代数学家的心，不少人为之耗费了毕生精力。据现存文献记载，在这方面作出过突出贡献的，当首推古希腊的 Archimedes。公元前 3 世纪，他用圆内接与外切正 96 边形逼近圆周，得出 \(\pi\) 的近似值
+
+\href{../../source-images/pdf-314.jpeg}{原页图像}
+
+为 3.14。这是公元前最好的结果。
+
+关于圆周率的计算问题，我国古代数学家也作出过杰出的贡献。魏晋大数学家刘徽（公元 3 世纪）曾提出过``割圆术''，他从内接正 6 边形割到正 12 边形，再割到正 24 边形，如此一直割到内接正 3072 边形，得出 \(\pi\) 的近似值 3.1416。这是当时最好的结果。
+
+刘徽不但提供了一种圆周率计算的迭代算法，而且还给出了一个加速逼近公式。这是刘徽割圆术中最为精彩的部分。
+
+刘徽用内接正 \(n\) 边形的面积 \(S_n\) 来逼近面积 \(S\)，并取半径 \(r=10\) 进行实际计算。这时 \(S=100\pi\)。他利用 \(S_{96}=313\frac{584}{625}\) 与 \(S_{192}=314\frac{64}{625}\) 两个粗糙的数据进行加工，并提供了如下加工过程：
+
+\[
+\begin{aligned}
+S_{192}+\frac{36}{105}(S_{192}-S_{96})
+&=314\frac{64}{625}+\frac{36}{105}\times\frac{105}{625}\\
+&=314\frac{100}{625}=314\frac{4}{25}\approx S_{3072}.
+\end{aligned}
+\]
+
+据此获知 \(\pi=3.1416\)。
+
+就这样，\textbf{刘徽利用两个粗糙的近似值 \(S_{96},S_{192}\) 进行松弛，结果获得了高精度的近似值 \(S_{3072}\)，从而实现了圆周率计算的一次革命性飞跃。}
+
+\textbf{刘徽的``割圆术''在数学史上占有重要的地位，它开创了加速算法设计的先河。直到 1700 多年后的 20 世纪，西方数学家才基于余项展开式获知逼近过程的加速方法。}
+
+\end{document}

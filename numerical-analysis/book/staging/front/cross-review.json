@@ -1,0 +1,125 @@
+{
+  "lane": "front",
+  "reviewer": "Codex agent back (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 1,
+      "sha256": "dc555036cc910c3c8e78ba19bff9fab34aebe37a5349eec917c8c82fe4e06b9f",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整封面原图，对照标题、三位编者、版次、获奖说明、四条说明及出版社网址，未见差异。"
+      ]
+    },
+    {
+      "pdf_page": 2,
+      "sha256": "7f5f8a4aa91a90a3a03452baebb222598b27866ee74d320991ca2f3efc8a8abc",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整扉页原图，主标题、副标题、编者和中国·武汉一致。"
+      ]
+    },
+    {
+      "pdf_page": 3,
+      "sha256": "6b7a8c61b018c94c314c6bd756225a2667c7e4cb045fe38aeea5f265ec0c505a",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整版权页原图，内容提要、CIP 2018.4与060527、ISBN、版次2018年4月第5版第1次印刷、责任编辑与排印信息、定价及电话均对照一致。",
+        "封面/扉页/版权页均无印刷页码，YAML null正确。"
+      ]
+    },
+    {
+      "pdf_page": 4,
+      "sha256": "433106b0b01a874084e6cf5046fd5a1889c76a306bca3065d7b5e7e3e38b94de",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，第5版前言全部正文逐句对照；1981、37年、1988、第10～13章、2018年1月与署名均一致。"
+      ]
+    },
+    {
+      "pdf_page": 5,
+      "sha256": "072348014aea73cce02ad1cf3541075d7c7311235a833c60871556e44e9fda9e",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，第2版前言全部正文逐句对照；1980年7月/12月、1981年元月、1982年元月、72学时、三位作者分工、1982年7月均一致。"
+      ]
+    },
+    {
+      "pdf_page": 6,
+      "sha256": "039724569214a536284e31ed2036ba20ba398e604b97b6ee2d58e63ccb8e44fd",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，30个目录条目的编号、标题、目标正文书页码逐项核对一致。",
+        "页底独立目录页码1与YAML printed_page=1一致，未与正文页码混用。"
+      ]
+    },
+    {
+      "pdf_page": 7,
+      "sha256": "b82f09a08cea4fa2b934b49b0bd59c54bfd5eede1607382e7205fbc1387b187d",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整原图，逐项核对36个目录条目的编号、中文标题、英文人名/术语与目标书页码，一致。",
+        "独立目录页码2与YAML printed_page=2一致。"
+      ]
+    },
+    {
+      "pdf_page": 8,
+      "sha256": "b29e2c92daa5aff220fb7efb7897da8f5d5069e77d080b0e7d7469a0f6b33573",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整原图，逐项核对36个目录条目的编号、中文标题、英文人名/术语与目标书页码，一致。",
+        "独立目录页码3与YAML printed_page=3一致。"
+      ]
+    },
+    {
+      "pdf_page": 9,
+      "sha256": "a73a954d32eb4c403a764c32dd6107da107b9104d87652fe683b2391a8f9f919",
+      "source_visual_review": "completed",
+      "notes": [
+        "已打开完整原图，逐项核对36个目录条目的编号、中文标题、英文人名/术语与目标书页码，一致。",
+        "独立目录页码4与YAML printed_page=4一致。"
+      ]
+    },
+    {
+      "pdf_page": 10,
+      "sha256": "2011a0902bfcd5dee5a6574abe43a08b5b03655605641c37db6669b31a9bc409",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，36项目录逐项核对编号、标题与目标页码，一致；独立目录页码5正确。"
+      ]
+    },
+    {
+      "pdf_page": 11,
+      "sha256": "138067cb765dad69b10e8d658c5a17129dc2fc85a751b4546746c63ac8a22032",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，33项目录逐项核对；已清楚保留第10章前的星号及上下篇分界。",
+        "第7章习题目录数字确实残损，末位8可辨；已打开原裁图与正文PDF212，确认书页199的习题起始位置。现稿明确区分正文定位与残损目录原印数字，未猜补。",
+        "独立目录页码6正确。"
+      ]
+    },
+    {
+      "pdf_page": 12,
+      "sha256": "41619f048f4229ea275fb1990ae2fc00406e84cc73835e8ce981ba838b95827f",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，35项目录编号、标题与目标页码一致；第11、12章的星号、Hadamard、FWT、三对角方程组及“缀术”等文字均保持。",
+        "独立目录页码7正确。"
+      ]
+    },
+    {
+      "pdf_page": 13,
+      "sha256": "e137b726e4a58d8741c0627cfcafd5d910c2a8d71c75aa2aba749fb65c53a076",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整原图已打开，33项目录编号、标题和书页码逐项一致；部分习题答案305、参考文献308与实际后置页一致。",
+        "独立目录页码8正确。",
+        "全目录8页共275条目（30、36、36、36、36、33、35、33），计数检查与逐页目视复核分开记录。",
+        "13份当前MD哈希均与独立复核记录及primary review.json一致；本回执只判定原文/数学转录，不将排版编译纳入pass含义。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

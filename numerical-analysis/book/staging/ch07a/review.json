@@ -1,0 +1,481 @@
+{
+  "lane": "ch07a",
+  "reviewer": "Codex agent ch07a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 177,
+      "printed_page": 164,
+      "path": "staging/ch07a/pages/pdf-177.md",
+      "sha256": "56e679dbcd600a69080b08db5703d19685ff5275b3866de5b3276d3d9ac501e7",
+      "source_image_sha256": "c0c11cf76aee259a840ca4942724900b0dbf51514b83c2e5f4de49f4f5fbbd9c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7",
+          "title": "解线性方程组的直接方法"
+        },
+        {
+          "id": "7.1",
+          "title": "引言"
+        },
+        {
+          "id": "7.2",
+          "title": "Gauss 消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐段对照原页；本页书页码为164。"
+      ]
+    },
+    {
+      "pdf_page": 178,
+      "printed_page": 165,
+      "path": "staging/ch07a/pages/pdf-178.md",
+      "sha256": "bc691dfba45ff93e99c04196d0b5fc7286cc6170900b69ee452841812eb235a3",
+      "source_image_sha256": "fd7454910a85250fb01833a6ebf10baf2af95a89d940ce2660aef6eed162fbd9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.2.1",
+          "title": "消元手续"
+        }
+      ],
+      "formula_ids": [
+        "7.2.1",
+        "7.2.2",
+        "7.2.3",
+        "7.2.4",
+        "7.2.5",
+        "7.2.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原图逐式复核7.2.1–7.2.6及三次增广矩阵；保留脚注和跨页断句。"
+      ]
+    },
+    {
+      "pdf_page": 179,
+      "printed_page": 166,
+      "path": "staging/ch07a/pages/pdf-179.md",
+      "sha256": "7ba16bbc71d991a9ad86934f9ee615864518c294fd466753c1120f1e8b01b381",
+      "source_image_sha256": "bd48715a48ed34b8b399e5e330c755a5771451c320bc00cf7790acb486869c13",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.2.7",
+        "7.2.8",
+        "7.2.9",
+        "7.2.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐式目视复核上标迭代次数和乘数下标；原7.2.7及A^(k)用细框标示右下角待消元子块，转录保留其全部元素。"
+      ]
+    },
+    {
+      "pdf_page": 180,
+      "printed_page": 167,
+      "path": "staging/ch07a/pages/pdf-180.md",
+      "sha256": "23193a80e79c3bf1d386f6ff6b01f5c29b32b5c6dd761c8fe3ade8528e2e8b9a",
+      "source_image_sha256": "50c9997c777a6bbe255cefc96218f7535e9058ba2030e71047c313482d3261b7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.2.11",
+        "7.2.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐式复核三角回代、换行下标i_1、引理与证明；7.2.12原书a_1k保留并附校注和裁图。"
+      ]
+    },
+    {
+      "pdf_page": 181,
+      "printed_page": 168,
+      "path": "staging/ch07a/pages/pdf-181.md",
+      "sha256": "96eba9d86019adbaff6c29d637e0cecc8cdba9d5a4fe1405695f1058a99a917e",
+      "source_image_sha256": "ec46708b88f75f0766f605aaeba5131aa293a35bb3c85ccdd470ab939068930f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.2.2",
+          "title": "矩阵的三角分解"
+        }
+      ],
+      "formula_ids": [
+        "7.2.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "对照原页复核行列式乘积、主元与顺序主子式关系、L1负号及单位对角。"
+      ]
+    },
+    {
+      "pdf_page": 182,
+      "printed_page": 169,
+      "path": "staging/ch07a/pages/pdf-182.md",
+      "sha256": "147bc483749b6f72fb7c9aec03102e948236a8ea29de4cefd87817deb1c169ac",
+      "source_image_sha256": "1b6d9d08d2ed626ce89527c79108fee8dabd20870c8b3704e27c89ec10b64c0d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.2.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页逐式核对L_k、逆矩阵乘积次序、LU唯一性论证及例7.2跨页。"
+      ]
+    },
+    {
+      "pdf_page": 183,
+      "printed_page": 170,
+      "path": "staging/ch07a/pages/pdf-183.md",
+      "sha256": "de9fa270f6e0d622bfcc7c6c0f294d42b986e1242456eb75be63741b17a3d903",
+      "source_image_sha256": "6c3886b8b276de33aebdc86f54f1b3f6b40915244b50b66da378898e7aa8fbb9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.2.3",
+          "title": "计算量"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "7.1"
+      ],
+      "notes": [
+        "原图逐项复核表7.1、全部运算次数公式；例7.2矩阵乘积和乘数已二次对照。"
+      ]
+    },
+    {
+      "pdf_page": 184,
+      "printed_page": 171,
+      "path": "staging/ch07a/pages/pdf-184.md",
+      "sha256": "ae59df7cb409a910a7c7a95157a003ebb18faa71975db7f32b6703f2f4f98a3b",
+      "source_image_sha256": "3cb00159badd01869bbfa51f5b431725d76e3c6b18a26711c91f99e863806f40",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.3",
+          "title": "Gauss 主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已逐个目视核对例7.3所有矩阵及四位有效数字，包括0.05104、0.09980、5.922和负乘数。"
+      ]
+    },
+    {
+      "pdf_page": 185,
+      "printed_page": 172,
+      "path": "staging/ch07a/pages/pdf-185.md",
+      "sha256": "6a485d3757c5fbcf4fd487ec817fac8771ad8ebd0c47e3f15b30d4da97eed0f3",
+      "source_image_sha256": "b5b764dc6aea76ff7fc9ed5631319d6826387082f17943961ecfcd33458d43b7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.3.1",
+          "title": "完全主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原图逐数复核例7.3续算；逐式核对双下标i_1、j_1及最大值范围；原末矩阵细框标示右下待消元子块。"
+      ]
+    },
+    {
+      "pdf_page": 186,
+      "printed_page": 173,
+      "path": "staging/ch07a/pages/pdf-186.md",
+      "sha256": "fc45105811ef522adc8af4b1308fc619b01c2615ff07964fb56bd15d5d913629",
+      "source_image_sha256": "9a263f636c9309f015f1eccda7d7c52087c939f8827a1af5bb1fa994bb99438b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.3.2",
+          "title": "列主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "算法1所有8步、循环界和脚注逐项目视核对；Iz为原书整型数组名。步8(1)原排印异常已保留另注。"
+      ]
+    },
+    {
+      "pdf_page": 187,
+      "printed_page": 174,
+      "path": "staging/ch07a/pages/pdf-187.md",
+      "sha256": "e2a5283510c6b289a6353d705fb88b7a8c33b81d7b8fac3b4bf96b70f0be57e5",
+      "source_image_sha256": "1faa962720a02b0c7d3facc20069f0074d1e8ee1dd849a5ad931dd8918b9ddb4",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.3.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页算法2九步、行列式符号翻转、乘数上界和排列矩阵逐项复核；首矩阵b_n^(n)保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 188,
+      "printed_page": 175,
+      "path": "staging/ch07a/pages/pdf-188.md",
+      "sha256": "8e001cc2c2aa29ffcc3295791908fe500e405cb0629991599d916011a75b841e",
+      "source_image_sha256": "b5160f0f18dd23c667ff71b0878183cc2cf33d87a35b2ffeb71434d9d2545dde",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.3.3",
+          "title": "Gauss-Jordan 消去法"
+        }
+      ],
+      "formula_ids": [
+        "7.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐因子复核7.3.2的排列/消元乘积及其展开；原式L_{2i_2}保留并以本页tilde L1定义作独立校注。"
+      ]
+    },
+    {
+      "pdf_page": 189,
+      "printed_page": 176,
+      "path": "staging/ch07a/pages/pdf-189.md",
+      "sha256": "5291feb26ed2b52aeea4cb6dd5ed053d9be132ebd26907db16ac573ed10089b8",
+      "source_image_sha256": "25dac2b715b47e69a5414548445907975a27dcc400213cc08b2ae74605349e14",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐项核对Gauss-Jordan五步中乘数负号及消元加号、全行范围i≠k；完整转录例7.4两次矩阵与方框c3标注。"
+      ]
+    },
+    {
+      "pdf_page": 190,
+      "printed_page": 177,
+      "path": "staging/ch07a/pages/pdf-190.md",
+      "sha256": "1730331789677d0f9f8ab6290b6236f4c93fb22adbaf209051ed151a8f0390db",
+      "source_image_sha256": "7030fc41c76622d6c840a19ea8ef833b9ee6f0fb72efe108f133b3ddaf925ad4",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐项核对例7.4后两次矩阵、c2/c1框注以及算法3九步；步8放大确认条件是j≠k；解释段m_k中心-1保留另注。"
+      ]
+    },
+    {
+      "pdf_page": 191,
+      "printed_page": 178,
+      "path": "staging/ch07a/pages/pdf-191.md",
+      "sha256": "af95a7c87ff3f01688d23fcbcfbf0a706088bdfde12d809649e3763abdfa57e6",
+      "source_image_sha256": "2bb138d03ce90c85494c17a8774349eab3138f0376d62528d345a88fd6417088",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.4",
+          "title": "Gauss 消去法的变形"
+        },
+        {
+          "id": "7.4.1",
+          "title": "直接三角分解法"
+        }
+      ],
+      "formula_ids": [
+        "7.4.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目视核对LU矩阵中小写l/u、行列递推及两个三角方程；保持标题与全部假设。"
+      ]
+    },
+    {
+      "pdf_page": 192,
+      "printed_page": 179,
+      "path": "staging/ch07a/pages/pdf-192.md",
+      "sha256": "308bc0f2e6bb6da1c0cf825e044ff96add52de7e872f61d55027673661222f60",
+      "source_image_sha256": "13c4500273f3ed654cd4578c59dcb3a97840255a954a6859036f81d8b8e951f7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.4.2",
+        "7.4.3",
+        "7.4.4",
+        "7.4.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐式核对7.4.2–7.4.5循环上下界、例7.5矩阵/中间解、LU存储的16个元素；原存储图以阶梯虚线区分l与u。"
+      ]
+    },
+    {
+      "pdf_page": 193,
+      "printed_page": 180,
+      "path": "staging/ch07a/pages/pdf-193.md",
+      "sha256": "b4b4fc43c1a8c98cad0cb0044f906b626568579c61d6a57d2502edc2204eda9e",
+      "source_image_sha256": "6f4ce8bd4c0667df1e9d445ac917923614e83ac2588a6ca4079a9ae2e443e577",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐式目视核对s_i与换行次序、算法4起始4步及跨页公式；原存储矩阵u_{n-1,n}保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 194,
+      "printed_page": 181,
+      "path": "staging/ch07a/pages/pdf-194.md",
+      "sha256": "01f68c12f49b42c4eb5cd2d85195661cd46e8aa65f7c87c99f1f19815ea08dc6",
+      "source_image_sha256": "931b4e38fd3cdb95128befc602bf53f0e650b369130100f13170ef7e235fe77f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.4.2",
+          "title": "平方根法"
+        }
+      ],
+      "formula_ids": [
+        "7.4.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐式核对算法4后半、逆矩阵乘积次序与单位上三角分解U=DU0。"
+      ]
+    },
+    {
+      "pdf_page": 195,
+      "printed_page": 182,
+      "path": "staging/ch07a/pages/pdf-195.md",
+      "sha256": "eb8df11229975e30dd5bb6b188595831c90b0bd8942e206b563ebbae439a4693",
+      "source_image_sha256": "e61adedb7bc37c6beeb9953ab0fb45c85711ec7f8bb46d646904eded7cf8f466",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.4.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原图逐式复核正定假设、d_i与D_i、LDL^T至Cholesky分解、平方根指数1/2及递推上下界。步2本页未印公式编号。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch07a-E001",
+      "pdf_page": 180,
+      "printed_page": 167,
+      "formula_id": "7.2.12",
+      "type": "suspected_source_typo",
+      "original": "D_i 的矩阵右上角为 a_{1k}",
+      "agent_note": "按第i阶顺序主子式应为a_{1i}；原式保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-180-principal-minor-detail.png"
+    },
+    {
+      "id": "ch07a-E002",
+      "pdf_page": 186,
+      "printed_page": 173,
+      "location": "算法1步8(1)",
+      "type": "suspected_source_typo",
+      "original": "a_i, Iz(i) ← b_i（Iz在基线）",
+      "agent_note": "调整次序应把b_i暂存a_{1,Iz(i)}，再按(2)复制a_{1i}；原排印保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-186-step8-detail.png"
+    },
+    {
+      "id": "ch07a-E003",
+      "pdf_page": 187,
+      "printed_page": 174,
+      "location": "页首增广矩阵右下角",
+      "type": "suspected_source_typo",
+      "original": "b_n^{(n)}",
+      "agent_note": "此处为第k步前的b^(k)，右下角应为b_n^(k)；原上标保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-187-rhs-detail.png"
+    },
+    {
+      "id": "ch07a-E004",
+      "pdf_page": 188,
+      "printed_page": 175,
+      "formula_id": "7.3.2",
+      "type": "suspected_source_typo",
+      "original": "第二行第二个括号含L_{2i_2}",
+      "agent_note": "本页tilde L1定义对应I_{2i_2}；原L保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-188-permutation-detail.png"
+    },
+    {
+      "id": "ch07a-E005",
+      "pdf_page": 190,
+      "printed_page": 177,
+      "location": "解释段m_k列向量",
+      "type": "suspected_source_formula_error",
+      "original": "m_k第k个分量为-1",
+      "agent_note": "与m_kk=1/a_kk、例7.4的c3以及算法3步6不符；原式保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-190-multiplier-detail.png"
+    },
+    {
+      "id": "ch07a-E006",
+      "pdf_page": 193,
+      "printed_page": 180,
+      "location": "分解存储矩阵第r-1行末项",
+      "type": "suspected_source_typo",
+      "original": "u_{n-1,n}",
+      "agent_note": "所在行为r-1，应对应u_{r-1,n}；原下标保留另注。",
+      "evidence": "staging/ch07a/assets/pdf-193-storage-detail.png"
+    }
+  ],
+  "validation_notes": [
+    "逐一打开PDF177–195全部19张原图，转录完整正文、全部公式矩阵、表7.1、例题与算法步骤；发现的6项疑似原书错另注且保留原文。",
+    "所有写入限定staging/ch07a；未运行额外OCR，未改原PDF或source-images。",
+    "调用audit_lane只读检查并将结果写入本lane：19/19页通过，0结构错误、0缺页、0未决识别项；尚无独立交叉复核。",
+    "全部页从Markdown导出LaTeX并用XeLaTeX编译通过，0 Overfull、Missing character或LaTeX Error告警。QA排版为38页，不是原书分页复刻。",
+    "已查看38页QA接触表，并放大检查表7.1、Gauss-Jordan算法和平方根法公式；表7.1由Markdown表改为标准LaTeX数组以使各列对齐，原数据不变。",
+    "SymPy复核例7.1解、例7.2 LU、例7.4逆矩阵、例7.5 LU和前后代入均通过；例7.3精确解舍入与原书一致，精确末主元约5.92200424013。"
+  ]
+}

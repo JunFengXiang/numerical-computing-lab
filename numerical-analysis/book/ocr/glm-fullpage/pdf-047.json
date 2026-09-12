@@ -1,0 +1,20 @@
+{
+  "pdf_page": 47,
+  "source_image": "source-images/pdf-047.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "b7ff017518b8b865bbab332b70c36e9fc0de8756c96969e710f8fae5a39251b5",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 966,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.4,
+  "created_utc": "2026-09-12T09:38:49.926602+00:00",
+  "raw_text_sha256": "b4261f325335b61215cc4b091fe9df21b54a3b3bc2ac21e22b629c0df2b926da",
+  "raw_text": "$$1 = \\sum_{j=0}^{n} l_j(x) = l_k(x) + l_{k+1}(x), \\quad f(x) = [l_k(x) + l_{k+1}(x)]f(x).$$\n\n另一方面，这时\n\n$$I_h(x) = f_k l_k(x) + f_{k+1} l_{k+1}(x).$$\n\n图2.6\n\n现在证明 $\\lim_{h \\to 0} I_h(x) = f(x)$. 考虑\n\n$$|f(x) - I_h(x)| \\leqslant l_k(x) |f(x) - f_k| + l_{k+1}(x) |f(x) - f_{k+1}|$$\n\n$$\\leqslant [l_k(x) + l_{k+1}(x)]\\omega(h_k)$$\n\n$$= \\omega(h_k) \\leqslant \\omega(h),$$\n\n(2.7.4)\n\n这里 $\\omega(h)$ 是函数 $f(x)$ 在区间 $[a,b]$ 上的连续模, 即对于任意两点 $x', x'' \\in [a,b]$, 只要 $|x' - x''| \\leqslant h$, 就有\n\n$$|f(x') - f(x'')| \\leqslant \\omega(h),$$\n\n称 $\\omega(h)$ 为 $f(x)$ 在 $[a,b]$ 上的连续模, 当 $f(x) \\in C[a,b]$ 时, 就有 $\\lim_{h \\to 0} \\omega(h) = 0$.\n\n由前式可知, 当 $x \\in [a,b]$ 时有 $\\max_{a \\leqslant x \\leqslant b} |f(x) - I_h(x)| \\leqslant \\omega(h)$, 因此, 只要 $f(x) \\in C[a,b]$, 就有 $\\lim_{h \\to 0} I_h(x) = f(x)$ 在 $[a,b]$ 上一致成立, 故 $I_h(x)$ 在 $[a,b]$ 上一致收敛到 $f(x)$.\n\n2.7.3 分段三次 Hermite 插值\n\n分段线性插值函数 $I_h(x)$ 的导数是间断的, 若在节点 $x_k (k=0,1,\\dots,n)$ 上除已知函数值 $f_k$ 外还给出导数值 $f'_k = m_k (k=0,1,\\dots,n)$, 就可构造一个导数连续的分段插值函数 $I_h(x)$, 它满足如下条件:\n\n(1) $I_h(x) \\in C^1 [a,b]$ ($C^1 [a,b]$ 代表区间 $[a,b]$ 上一阶导数连续的函数集合);\n\n(2) $I_h(x_k) = f_k, I'_h(x_k) = f'_k (k=0,1,\\dots,n)$;\n\n(3) $I_h(x)$ 在每个小区间 $[x_k, x_{k+1}]$ 上是三次多项式.\n\n根据两点三次插值多项式(2.6.10)可知, $I_h(x)$ 在区间 $[x_k, x_{k+1}]$ 上的表达式为\n\n$$I_h(x) = \\left(\\frac{x - x_{k+1}}{x_k - x_{k+1}}\\right)^2 \\left(1 + 2 \\frac{x - x_k}{x_{k+1} - x_k}\\right) f_k + \\left(\\frac{x - x_k}{x_{k+1} - x_k}\\right)^2 \\left(1 + 2 \\frac{x - x_{k+1}}{x_k - x_{k+1}}\\right) f_{k+1}$$\n\n$$+ \\left(\\frac{x - x_{k+1}}{x_k - x_{k+1}}\\right)^2 \\left(x - x_k\\right) f'_k + \\left(\\frac{x - x_k}{x_{k+1} - x_k}\\right)^2 \\left(x - x_{k+1}\\right) f'_{k+1}.$$\n\n(2.7.5)\n\n若在整个区间 $[a,b]$ 上定义一组分段三次插值基函数 $\\alpha_j(x)$ 及 $\\beta_j(x)$ ($j=0$,\n\n• 34 •"
+}

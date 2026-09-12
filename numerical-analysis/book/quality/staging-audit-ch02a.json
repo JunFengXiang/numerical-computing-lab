@@ -1,0 +1,366 @@
+{
+  "updated_utc": "2026-09-12T10:27:43.402626+00:00",
+  "scope": "structural integrity; visual judgments supplied by named agents",
+  "lanes": [
+    {
+      "lane": "ch02a",
+      "expected_pages": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "checked_pages": [
+        {
+          "pdf_page": 27,
+          "path": "staging/ch02a/pages/pdf-027.md",
+          "sha256": "8dfc4fe3b016b92632d58e28849182cac6371132c850ed4672df043ed3d9c0e0",
+          "printed_page": 14,
+          "headings": [
+            {
+              "id": "2",
+              "title": "插值法"
+            },
+            {
+              "id": "2.1",
+              "title": "引言"
+            }
+          ],
+          "formula_ids": [
+            "2.1.1",
+            "2.1.2"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 28,
+          "path": "staging/ch02a/pages/pdf-028.md",
+          "sha256": "0d52141ab1f8e061c1df3e4df0c3e35c44317b5e81f2a6af721c49ed878033f7",
+          "printed_page": 15,
+          "headings": [
+            {
+              "id": "2.2",
+              "title": "Lagrange 插值"
+            },
+            {
+              "id": "2.2.1",
+              "title": "插值多项式的存在唯一性"
+            }
+          ],
+          "formula_ids": [
+            "2.2.1",
+            "2.2.2"
+          ],
+          "figures": [
+            "2.1"
+          ],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 29,
+          "path": "staging/ch02a/pages/pdf-029.md",
+          "sha256": "c4ef01fc3a6de363d1b255575c4c40997244d017154a8d71fcd45d67abf8b979",
+          "printed_page": 16,
+          "headings": [
+            {
+              "id": "2.2.2",
+              "title": "线性插值与抛物插值"
+            }
+          ],
+          "formula_ids": [
+            "2.2.3",
+            "2.2.4",
+            "2.2.5"
+          ],
+          "figures": [
+            "2.2",
+            "2.3"
+          ],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 30,
+          "path": "staging/ch02a/pages/pdf-030.md",
+          "sha256": "4e1104711fc5eef1773b298f74cd4d3b70f4382f36beb41848490e3cf095f6e8",
+          "printed_page": 17,
+          "headings": [],
+          "formula_ids": [
+            "2.2.6",
+            "2.2.7"
+          ],
+          "figures": [
+            "2.4"
+          ],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 31,
+          "path": "staging/ch02a/pages/pdf-031.md",
+          "sha256": "e65eb2d31dcf61c0671290bbe763206c7cd1fbc240aecef7915decfd98823340",
+          "printed_page": 18,
+          "headings": [
+            {
+              "id": "2.2.3",
+              "title": "Lagrange 插值多项式"
+            }
+          ],
+          "formula_ids": [
+            "2.2.8",
+            "2.2.9",
+            "2.2.10",
+            "2.2.11",
+            "2.2.12"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 32,
+          "path": "staging/ch02a/pages/pdf-032.md",
+          "sha256": "19293cad658a005a311e364caf8fb5329be086e488cb475771b4876eb765b5c1",
+          "printed_page": 19,
+          "headings": [
+            {
+              "id": "2.2.4",
+              "title": "插值余项"
+            }
+          ],
+          "formula_ids": [
+            "2.2.13",
+            "2.2.14",
+            "2.2.15",
+            "2.2.16"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 33,
+          "path": "staging/ch02a/pages/pdf-033.md",
+          "sha256": "9395747081471b3adb3ab18975ce68fdbf1e7827872889fc178f143b126bda2b",
+          "printed_page": 20,
+          "headings": [],
+          "formula_ids": [
+            "2.2.17",
+            "2.2.18"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 34,
+          "path": "staging/ch02a/pages/pdf-034.md",
+          "sha256": "206788dfd931eb8402d5913e69d0c4ddf3186802506877a06918adb042bac095",
+          "printed_page": 21,
+          "headings": [
+            {
+              "id": "2.3",
+              "title": "逐次线性插值法"
+            }
+          ],
+          "formula_ids": [],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 35,
+          "path": "staging/ch02a/pages/pdf-035.md",
+          "sha256": "74a51ad2264181116b96782605b59817040893af0419941b0aad4f8cf586d836",
+          "printed_page": 22,
+          "headings": [],
+          "formula_ids": [
+            "2.3.1",
+            "2.3.2"
+          ],
+          "figures": [],
+          "tables": [
+            "2.1",
+            "2.2"
+          ],
+          "pass": true
+        },
+        {
+          "pdf_page": 36,
+          "path": "staging/ch02a/pages/pdf-036.md",
+          "sha256": "63a34b9eebcae45663561cc037a3e92f2d4c4943d62b53892b2aed4188734705",
+          "printed_page": 23,
+          "headings": [
+            {
+              "id": "2.4",
+              "title": "差商与 Newton 插值公式"
+            },
+            {
+              "id": "2.4.1",
+              "title": "差商及其性质"
+            }
+          ],
+          "formula_ids": [
+            "2.4.1"
+          ],
+          "figures": [],
+          "tables": [
+            "2.3"
+          ],
+          "pass": true
+        },
+        {
+          "pdf_page": 37,
+          "path": "staging/ch02a/pages/pdf-037.md",
+          "sha256": "6f5795780f018b4598714b6ac7c3638746c9e59d1a5f8c109c9efec9136cede3",
+          "printed_page": 24,
+          "headings": [
+            {
+              "id": "2.4.2",
+              "title": "Newton 插值公式"
+            }
+          ],
+          "formula_ids": [
+            "2.4.2",
+            "2.4.3",
+            "2.4.4",
+            "2.4.5"
+          ],
+          "figures": [],
+          "tables": [
+            "2.4"
+          ],
+          "pass": true
+        },
+        {
+          "pdf_page": 38,
+          "path": "staging/ch02a/pages/pdf-038.md",
+          "sha256": "e6d6dd66e7cc2f4838da3aab3bd4f2d3209572b4d524539b2771eddcbb7f96a7",
+          "printed_page": 25,
+          "headings": [],
+          "formula_ids": [
+            "2.4.6",
+            "2.4.7"
+          ],
+          "figures": [],
+          "tables": [
+            "2.5"
+          ],
+          "pass": true
+        },
+        {
+          "pdf_page": 39,
+          "path": "staging/ch02a/pages/pdf-039.md",
+          "sha256": "1c77e05c0409970d1f48d7b1e87ce6e7c143cab5848ae29881139e6dbf267384",
+          "printed_page": 26,
+          "headings": [
+            {
+              "id": "2.5",
+              "title": "差分与等距节点插值公式"
+            },
+            {
+              "id": "2.5.1",
+              "title": "差分及其性质"
+            }
+          ],
+          "formula_ids": [
+            "2.5.1",
+            "2.5.2",
+            "2.5.3"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 40,
+          "path": "staging/ch02a/pages/pdf-040.md",
+          "sha256": "d5f1f05c036e5f88e5cf450844c04272f3f4c9e1776c77abce7557ad74918d9f",
+          "printed_page": 27,
+          "headings": [],
+          "formula_ids": [
+            "2.5.4",
+            "2.5.5",
+            "2.5.6",
+            "2.5.7",
+            "2.5.8",
+            "2.5.9"
+          ],
+          "figures": [],
+          "tables": [
+            "2.6"
+          ],
+          "pass": true
+        },
+        {
+          "pdf_page": 41,
+          "path": "staging/ch02a/pages/pdf-041.md",
+          "sha256": "95b8a8cd65da13772093d58da85c7465851ef0c31e87822bbff2cac6525aa154",
+          "printed_page": 28,
+          "headings": [
+            {
+              "id": "2.5.2",
+              "title": "等距节点插值公式"
+            }
+          ],
+          "formula_ids": [
+            "2.5.10",
+            "2.5.11",
+            "2.5.12"
+          ],
+          "figures": [],
+          "tables": [],
+          "pass": true
+        },
+        {
+          "pdf_page": 42,
+          "path": "staging/ch02a/pages/pdf-042.md",
+          "sha256": "eab284389168df83ad7ecb709fab8d94fd01c59019abd5d8de0fb1433364900f",
+          "printed_page": 29,
+          "headings": [
+            {
+              "id": "2.6",
+              "title": "Hermite 插值"
+            }
+          ],
+          "formula_ids": [],
+          "figures": [],
+          "tables": [
+            "2.7"
+          ],
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "structural_pass": true,
+      "primary_review_complete": true,
+      "cross_review_complete": false,
+      "missing_pages": [],
+      "primary_receipt_sha256": "82a60103fd7ce0aadf0b91cf4aa1bd86256c543d9362f54e222612a945cb43df",
+      "source_errata_count": 6,
+      "cross_review_status": "in_progress"
+    }
+  ],
+  "primary_pages": 16,
+  "passing_primary_pages": 16,
+  "primary_complete_lanes": [
+    "ch02a"
+  ],
+  "cross_review_complete_lanes": []
+}

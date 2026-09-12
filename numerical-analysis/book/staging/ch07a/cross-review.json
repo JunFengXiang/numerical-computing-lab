@@ -1,0 +1,216 @@
+{
+  "lane": "ch07a",
+  "reviewer": "Codex agent ch06 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 177,
+      "sha256": "56e679dbcd600a69080b08db5703d19685ff5275b3866de5b3276d3d9ac501e7",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重新打开原图，全部段落、标题和年代/规模数字逐项匹配。"
+      ]
+    },
+    {
+      "pdf_page": 178,
+      "sha256": "bc691dfba45ff93e99c04196d0b5fc7286cc6170900b69ee452841812eb235a3",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对7.2.1–7.2.6、三个增广矩阵及行操作和脚注；全部元素与符号匹配。"
+      ]
+    },
+    {
+      "pdf_page": 179,
+      "sha256": "7ba16bbc71d991a9ad86934f9ee615864518c294fd466753c1120f1e8b01b381",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对7.2.7–7.2.10、各阶段上标、乘数下标、循环界和两个矩阵；转录匹配。"
+      ]
+    },
+    {
+      "pdf_page": 180,
+      "sha256": "23193a80e79c3bf1d386f6ff6b01f5c29b32b5c6dd761c8fe3ade8528e2e8b9a",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对回代7.2.11、换行论证、引理矩阵及证明；7.2.12右上角a_1k的原印字与E001校注均已确认。"
+      ]
+    },
+    {
+      "pdf_page": 181,
+      "sha256": "96eba9d86019adbaff6c29d637e0cecc8cdba9d5a4fe1405695f1058a99a917e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对全部行列式乘积、主元与顺序主子式关系、算法循环界和L1每个负号/对角元素；匹配。"
+      ]
+    },
+    {
+      "pdf_page": 182,
+      "sha256": "147bc483749b6f72fb7c9aec03102e948236a8ea29de4cefd87817deb1c169ac",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对7.2.14乘积次序、L_k、L、逆矩阵、唯一性证明与例7.2矩阵；匹配。"
+      ]
+    },
+    {
+      "pdf_page": 183,
+      "sha256": "de9fa270f6e0d622bfcc7c6c0f294d42b986e1242456eb75be63741b17a3d903",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图逐格核对表7.1及所有乘除/加减次数公式、例7.2矩阵乘积；转录匹配。"
+      ]
+    },
+    {
+      "pdf_page": 184,
+      "sha256": "ae59df7cb409a910a7c7a95157a003ebb18faa71975db7f32b6703f2f4f98a3b",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图逐项核对例7.3四位浮点矩阵、三角化结果、精确/计算解、所有乘数及5.922说明；匹配。"
+      ]
+    },
+    {
+      "pdf_page": 185,
+      "sha256": "6a485d3757c5fbcf4fd487ec817fac8771ad8ebd0c47e3f15b30d4da97eed0f3",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对例7.3续算的每个数字、完全主元素增广矩阵双下标和max范围；匹配。"
+      ]
+    },
+    {
+      "pdf_page": 186,
+      "sha256": "fc45105811ef522adc8af4b1308fc619b01c2615ff07964fb56bd15d5d913629",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图逐条核对算法1八步、Iz数组、回代与脚注；E002原印a_i、基线Iz异常与校注匹配。"
+      ]
+    },
+    {
+      "pdf_page": 187,
+      "sha256": "e2a5283510c6b289a6353d705fb88b7a8c33b81d7b8fac3b4bf96b70f0be57e5",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图逐条核对算法2九步、行列式符号、乘数界与7.3.1；原矩阵b_n^(n)确如E003，保留及校注恰当。"
+      ]
+    },
+    {
+      "pdf_page": 188,
+      "sha256": "8e001cc2c2aa29ffcc3295791908fe500e405cb0629991599d916011a75b841e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对7.3.2全部因子与tilde L定义、排列次序、定理和Gauss-Jordan矩阵；E004的L_{2i2}原印确实与定义冲突，校注匹配。"
+      ]
+    },
+    {
+      "pdf_page": 189,
+      "sha256": "5291feb26ed2b52aeea4cb6dd5ed053d9be132ebd26907db16ac573ed10089b8",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对Gauss–Jordan五步、单位化后的增广矩阵、定理7.6和例7.4前两矩阵；各符号、倒数、行列范围和元素匹配。"
+      ]
+    },
+    {
+      "pdf_page": 190,
+      "sha256": "1730331789677d0f9f8ab6290b6236f4c93fb22adbaf209051ed151a8f0390db",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图及局部放大核对例7.4续算全部元素、原地求逆乘数与算法3九步；E005原印对角分量−1确实存在，校注与前页1/a_kk及算法相符。"
+      ]
+    },
+    {
+      "pdf_page": 191,
+      "sha256": "af95a7c87ff3f01688d23fcbcfbf0a706088bdfde12d809649e3763abdfa57e6",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对7.4.1及LU元素递推推导，全部下标、求和界、三角结构和适用条件匹配。"
+      ]
+    },
+    {
+      "pdf_page": 192,
+      "sha256": "308bc0f2e6bb6da1c0cf825e044ff96add52de7e872f61d55027673661222f60",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图逐项核对直接三角分解五步7.4.2–7.4.5、例7.5全部矩阵/向量、原地存储矩阵和运算量；匹配。"
+      ]
+    },
+    {
+      "pdf_page": 193,
+      "sha256": "b4b4fc43c1a8c98cad0cb0044f906b626568579c61d6a57d2502edc2204eda9e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图及存储矩阵放大核对选主元LU说明、s_i定义、算法4前四步和全部矩阵下标；E006原印u_{n−1,n}确认，按第r−1行校注合理。"
+      ]
+    },
+    {
+      "pdf_page": 194,
+      "sha256": "01f68c12f49b42c4eb5cd2d85195661cd46e8aa65f7c87c99f1f19815ea08dc6",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对算法4续步、前后代入、逆矩阵乘积次序及U=DU_0分解；符号、求和界、行列交换描述匹配。"
+      ]
+    },
+    {
+      "pdf_page": 195,
+      "sha256": "eb8df11229975e30dd5bb6b188595831c90b0bd8942e206b563ebbae439a4693",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立原图核对LDL^T与Cholesky两定理、正定条件、全部矩阵和7.4.7及步2；对角平方根正号与递推下标匹配，步2原图无编号。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch07a-cross-001",
+      "pdf_page": 180,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E001",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "7.2.12原印a_{1k}；第i阶顺序主子式应对应a_{1i}，已保留并校注。"
+    },
+    {
+      "id": "ch07a-cross-002",
+      "pdf_page": 186,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E002",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "算法1步8(1)原印a_i及基线Iz(i)；校注与下一步用第1行暂存的逻辑一致。"
+    },
+    {
+      "id": "ch07a-cross-003",
+      "pdf_page": 187,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E003",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "第k阶段增广矩阵末项原印b_n^(n)，应与该列其余项同为第k阶段。"
+    },
+    {
+      "id": "ch07a-cross-004",
+      "pdf_page": 188,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E004",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "7.3.2括号中原印L_{2i_2}，同页tilde L_1定义为I_{2i_2}；校注依据充分。"
+    },
+    {
+      "id": "ch07a-cross-005",
+      "pdf_page": 190,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E005",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "m_k的第k分量原印−1；前页定义、例题列向量与算法3均要求1/a_kk，保留原印并明确校注。"
+    },
+    {
+      "id": "ch07a-cross-006",
+      "pdf_page": 193,
+      "type": "source_erratum_independently_confirmed",
+      "primary_id": "ch07a-E006",
+      "status": "resolved_by_preserving_source_and_agent_note",
+      "note": "存储矩阵第r−1行最后一项原印u_{n−1,n}，校注u_{r−1,n}符合所在行。"
+    }
+  ],
+  "unresolved": [],
+  "validation_notes": [
+    "19页均由独立agent实际重新打开原图逐段逐式核对；未依赖OCR代替目视。",
+    "所有19页最终SHA-256与现有Markdown及primary review一致。",
+    "6项既有原书疑误的印字及校注独立确认；无未解决的转录问题。"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "status": "pass",
+  "human_review": false,
+  "updated_utc": "2026-09-12T11:20:47.702494+00:00",
+  "pdf": "textbook.pdf",
+  "pdf_sha256": "78e9bc52a78e11fda17e6ca4f6f6b8a4e859dc307f855eea6fa4a62a0bedae11",
+  "rendered_pages": 582,
+  "pages_identical_to_individually_reviewed_lane_pages": 561,
+  "merged_pages_visually_reviewed": [
+    1,
+    246,
+    325,
+    326,
+    327,
+    335,
+    337,
+    338,
+    339,
+    340,
+    343,
+    346,
+    347,
+    348,
+    349,
+    387,
+    389,
+    393,
+    478,
+    482,
+    485
+  ],
+  "all_pages_covered": true,
+  "comparison_clip_rule": "Entire page below y=30pt; only running page number header excluded. Body starts at y=45.35pt.",
+  "receipts": [
+    {
+      "path": "quality/book-visual-root.json",
+      "sha256": "250795e5e6cdf274f6c64488f8373b0a90036c1f3bcaedf993ea38d2a6c0a246",
+      "pages_reviewed": [
+        1,
+        246
+      ]
+    },
+    {
+      "path": "quality/book-visual-ch07.json",
+      "sha256": "33de18b8f14e0c346f10f115cef99cc9d6db5bad4886e4843fa42695a5ebf981",
+      "pages_reviewed": [
+        325,
+        326,
+        327,
+        335,
+        337,
+        338,
+        339,
+        340,
+        343,
+        346,
+        347,
+        348,
+        349,
+        387,
+        389,
+        393
+      ]
+    },
+    {
+      "path": "quality/book-visual-ch09.json",
+      "sha256": "ab05e7c9622712629617520b64a59f6196f2549226271f0afc657f40b3ce7699",
+      "pages_reviewed": [
+        478,
+        482,
+        485
+      ]
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "21分章稿的602个排版页均已实看；合并稿删除重复批次封面并新增一页全书封面。",
+    "全书581个内容排版页中，561页正文逐像素相同；其余20页及新增封面完成逐页回归。",
+    "统一array包引起的矩阵间距差异已复核，生成的脚注标号从批次计数改为全书计数；脚注内容无改动。",
+    "数学正文与校注的逐式内容/顺序一致另见book-math-sequence.json；视觉复核不把原书疑误变成正确结论。"
+  ]
+}

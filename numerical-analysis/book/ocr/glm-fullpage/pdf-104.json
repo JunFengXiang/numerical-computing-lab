@@ -1,0 +1,20 @@
+{
+  "pdf_page": 104,
+  "source_image": "source-images/pdf-104.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "01def00924b090e59a27b320de37ba447cc2bba3b9dbaf0b315f22a18d0010ea",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 966,
+  "possibly_truncated": false,
+  "elapsed_seconds": 33.629,
+  "created_utc": "2026-09-12T10:21:37.604592+00:00",
+  "raw_text_sha256": "b67751a76faaf7a643e9c3ca78646fe0c05f1fe683d90c2d02592b4b38c195cb",
+  "raw_text": "4.3.3 Richardson 外推加速法\n\n上述加速过程还可以再继续下去，其理论依据是梯形法的余项可展开成下列级数形式.\n\n定理 4.3 设 $f(x) \\in C^\\infty [a, b]$, 则成立\n$$T(h) = I + a_1 h^2 + a_2 h^4 + a_3 h^6 + \\cdots + a_k h^{2k} + \\cdots,$$\n(4.3.7)\n\n其中系数 $a_k$ ($k=1, 2, \\cdots$) 与 $h$ 无关.\n\n这一余项公式的推导将在 4.3.4 节给出.\n\n按式 (4.3.7), 有\n$$T\\left(\\frac{h}{2}\\right) = I + \\frac{\\alpha_1}{4} h^2 + \\frac{\\alpha_2}{16} h^4 + \\frac{\\alpha_3}{64} h^6 + \\cdots.$$ (4.3.8)\n\n注意, 这里的 $\\hat{\\alpha}_k$ 与将要出现的 $\\beta_k, \\gamma_k$ 等均为与 $h$ 无关的系数.\n\n设将式 (4.3.7) 与式 (4.3.8) 按以下方式作线性组合:\n$$T_1(h) = \\frac{4}{3} T\\left(\\frac{h}{2}\\right) - \\frac{1}{3} T(h),$$\n(4.3.9)\n\n则可以从余项展开式中消去误差的主要部分 $h^2$ 项, 从而得到\n$$T_1(h) = I + \\beta_1 h^4 + \\beta_2 h^6 + \\beta_3 h^8 + \\cdots.$$ (4.3.10)\n\n比较式 (4.3.9) 与式 (4.3.4) 知, 这样构造出的 $\\{T_1(h)\\}$ 其实就是 Simpson 值序列.\n\n又根据式 (4.3.10), 有\n$$T_1\\left(\\frac{h}{2}\\right) = I + \\frac{\\beta_1}{16} h^4 + \\hat{\\beta}_2 h^6 + \\beta_3 h^8 + \\cdots,$$\n若令\n$$T_2(h) = \\frac{16}{15} T_1\\left(\\frac{h}{2}\\right) - \\frac{1}{15} T_1(h),$$\n则又可进一步从余项展开式中消去 $h^4$ 项, 从而有\n$$T_2(h) = I + \\gamma_1 h^6 + \\gamma_2 h^8 + \\cdots.$$\n这样构造出的 $\\{T_2(h)\\}$ 其实就是 Cotes 值序列.\n\n如此继续下去, 每加速一次, 误差的量级便提高二阶. 一般地, 将 $T_0(h) = T(h)$ 按公式\n$$T_m(h) = \\frac{4^m}{4^m - 1} T_{m-1}\\left(\\frac{h}{2}\\right) - \\frac{1}{4^m - 1} T_{m-1}(h)$$\n(4.3.11)\n\n经过 $m(m=1, 2, \\cdots)$ 次加速后, 余项便取下列形式:\n$$T_m(h) = I + \\delta_1 h^{2(m+1)} + \\delta_2 h^{2(m+2)} + \\cdots.$$ (4.3.12)\n\n上述处理方法通常称为 Richardson 外推加速方法.\n\n设以 $T_0^{(k)}$ 表示二分 $k$ 次后求得的梯形值, 且以 $T_m^{(k)}$ 表示序列 $\\{T_0^{(k)}\\}$ 的 $m$ 次加速值, 则依递推公式 (4.3.11), 即\n$$T_m^{(k)} = \\frac{4^m}{4^m - 1} T_{m-1}^{(k+1)} - \\frac{1}{4^m - 1} T_{m-1}^{(k)} \\quad (k=1, 2, \\cdots)$$\n(4.3.13)"
+}

@@ -1,0 +1,223 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={习题},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{习题}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{习题}\label{ux4e60ux9898}
+
+\textbf{1.} （1）利用区间变换推出区间为 \([a,b]\) 的 Bernstein 多项式。
+
+\begin{quote}
+校注（agent 补充）：步 5、步 6 的差式中，第二个读取地址的偏移量原书均印为 \(2^{q-1}\)，与式 (3.7.16) 的 \(2^{p-1}\) 不一致；正文保留原式。步 6 的 \(j\) 循环上界原印为 \(2^{q-1}\)，相较式 (3.7.16) 与步 5 少了``\(-1\)''。按该上界执行会多计算一个 \(j\)，在 \(q=p\) 时也会越出 \(N\) 个数组单元范围。见 \href{../assets/ch03b/p090-fft-steps.png}{原程序步骤裁切}。
+\end{quote}
+
+\href{../../source-images/pdf-091.jpeg}{查看原页}
+
+（2）对 \(f(x)=\sin x\) 在 \([0,\pi/2]\) 上求一次和三次 Bernstein 多项式，画出图形，并与相应的 Taylor 级数部分和误差作比较。
+
+\textbf{2.} 求证：
+
+（1）当 \(m\leqslant f(x)\leqslant M\) 时，\(m\leqslant B_n(f,x)\leqslant M\)；（2）当 \(f(x)=x\) 时，\(B_n(f,x)=x\)。
+
+\textbf{3.} 在次数不超过 \(6\) 的多项式中，求 \(f(x)=\sin4x\) 在 \([0,2\pi]\) 上的最佳一致逼近多项式。
+
+\textbf{4.} 假设 \(f(x)\) 在 \([a,b]\) 上连续，求 \(f(x)\) 的零次最佳一致逼近多项式。
+
+\textbf{5.} 选取常数 \(a\)，使 \(\max\limits_{0\leqslant x\leqslant1}|x^3-ax|\) 达到极小，又问这个解是否唯一。
+
+\textbf{6.} 求 \(f(x)=\sin x\) 在 \([0,\pi/2]\) 上的最佳一次逼近多项式，并估计误差。
+
+\textbf{7.} 求 \(f(x)=\mathrm e^x\) 在 \([0,1]\) 上的最佳一次逼近多项式。
+
+\textbf{8.} 如何选取 \(r\)，使 \(p(x)=x^2+r\) 在 \([-1,1]\) 上与零偏差最小？\(r\) 是否唯一？
+
+\textbf{9.} 设 \(f(x)=x^4+3x^3-1\)，在 \([0,1]\) 上求三次最佳逼近多项式。
+
+\textbf{10.} 令 \(T_n(x)=T_n(2x-1),x\in[0,1]\)，求 \(T_0^*(x),T_1^*(x),T_2^*(x),T_3^*(x)\)。
+
+\textbf{11.} 试证 \(\{T_n^*(x)\}\) 是在 \([0,1]\) 上带权 \(\rho=\dfrac1{\sqrt{x-x^2}}\) 的正交多项式。
+
+\textbf{12.} \(f(x)\) 是 \([-a,a]\) 上的连续奇（偶）函数，证明：不管 \(n\) 是奇数或偶数，\(f(x)\) 的最佳逼近多项式 \(F_n^*(x)\in H_n\) 也是奇（偶）函数。
+
+\textbf{13.} 求 \(a,b\)，使 \(\displaystyle\int_0^{\frac\pi2}[ax+b-\sin x]^2\,\mathrm dx\) 为最小，并与题 1 及题 6 的一次逼近多项式误差作比较。
+
+\textbf{14.} \(f(x),g(x)\in C^1[a,b]\)，定义
+
+（1）\((f,g)=\displaystyle\int_a^b f'(x)g'(x)\,\mathrm dx\)，
+
+（2）\((f,g)=\displaystyle\int_a^b f'(x)g'(x)\,\mathrm dx+f(a)g(a)\)，
+
+它们是否构成内积？
+
+\textbf{15.} 用 Schwarz 不等式 (3.4.5) 估计 \(\displaystyle\int_0^1\frac{x^6}{1+x}\,\mathrm dx\) 的上界，并用积分中值定理估计同一积分的上、下界，并比较其结果。
+
+\textbf{16.} 选择 \(a\)，使积分 \(\displaystyle\int_{-1}^1(x-ax^2)^2\,\mathrm dx\)，\(\displaystyle\int_{-1}^1|x-ax^2|\,\mathrm dx\) 取得最小值。
+
+\textbf{17.} 设 \(\varphi_1=\operatorname{span}\{1,x\},\varphi_2=\operatorname{span}\{x^{100},x^{101}\}\)，分别在 \(\varphi_1,\varphi_2\) 上求一元素，使其为 \(x^2\in C[0,1]\) 的最佳平方逼近，并比较其结果。
+
+\textbf{18.} \(f(x)=|x|\) 在 \([-1,1]\) 上，求在 \(\varphi_1=\operatorname{span}\{1,x^2,x^4\}\) 上的最佳平方逼近。
+
+\textbf{19.} \(u_n(x)=\dfrac{\sin[(n+1)\arccos x]}{\sqrt{1-x^2}}\) 是第二类 Chebyshev 多项式，证明它有递推关系
+
+\[
+u_{n+1}(x)=2xu_n(x)-u_{n-1}(x).
+\]
+
+\textbf{20.} 将 \(f(x)=\sin\dfrac12x\) 在 \([-1,1]\) 上按 Legendre 多项式及 Chebyshev 多项式展开，求三次最佳平方逼近多项式并画出误差图形，再计算均方误差。
+
+\textbf{21.} 把 \(f(x)=\arccos x\) 在 \([-1,1]\) 上展开成 Chebyshev 级数。
+
+\textbf{22.} 用最小二乘法求一个形如 \(y=a+bx^2\) 的经验公式，使它与表 3.6 所示数据相拟合，并求均方误差。
+
+\begin{quote}
+校注（agent 补充）：题 10 的定义左端原书为 \(T_n(x)\)，后面要求的是 \(T_0^*,T_1^*,T_2^*,T_3^*\)，且题 11 使用 \(T_n^*\)；定义左端疑漏星号，应为 \(T_n^*(x)=T_n(2x-1)\)。题 15 的 Schwarz 不等式引用原书印为 (3.4.5)，本章 Schwarz 不等式的编号为 (3.3.5)，疑为交叉引用误印。两处均保留原文，见 \href{../assets/ch03b/p091-exercise-10.png}{题10原图裁切}、\href{../assets/ch03b/p091-exercise-15.png}{题15原图裁切}。
+\end{quote}
+
+\href{../../source-images/pdf-092.jpeg}{查看原页}
+
+\textbf{表 3.6}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrrr@{}}
+\toprule\noalign{}
+\(x_i\) & 19 & 25 & 31 & 38 & 44 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(y_i\) & 19.0 & 32.3 & 49.0 & 73.3 & 97.8 \\
+\end{longtable}
+}
+
+\textbf{23.} 观察物体的直线运动，得出时间 \(t\) 与距离 \(s\) 的关系如表 3.7 所示，求运动方程。
+
+\textbf{表 3.7}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrrrr@{}}
+\toprule\noalign{}
+\(t/\mathrm s\) & 0 & 0.9 & 1.9 & 3.0 & 3.9 & 5.0 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(s/\mathrm m\) & 0 & 10 & 30 & 50 & 80 & 110 \\
+\end{longtable}
+}
+
+\textbf{24.} 在某化学反应里，根据实验所得分解物的质量分数 \(y\) 与时间 \(t\) 的关系如表 3.8 所示，用最小二乘拟合求 \(y=F(t)\)。
+
+\textbf{表 3.8}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrrrr@{}}
+\toprule\noalign{}
+\(t/\mathrm{min}\) & 0 & 5 & 10 & 15 & 20 & 25 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(y/\times10^{-4}\) & 0 & 1.27 & 2.16 & 2.86 & 3.44 & 3.87 \\
+\(t/\mathrm{min}\) & 30 & 35 & 40 & 45 & 50 & 55 \\
+\(y/\times10^{-4}\) & 4.15 & 4.37 & 4.51 & 4.58 & 4.62 & 4.64 \\
+\end{longtable}
+}
+
+\textbf{25.} 编出用正交多项式作最小二乘拟合的程序框图。
+
+\textbf{26.} 编出改进 FFT 算法的程序框图。
+
+\textbf{27.} 已知 \(\{x_k\}=(4,\allowbreak 3,\allowbreak 2,\allowbreak 1,\allowbreak 0,\allowbreak 1,\allowbreak 2,\allowbreak 3)\)，用改进 FFT 算法求 \(\{x_k\}\) 离散频谱 \(\{C_k\}\)（\(k=0,1,\cdots,7\)）。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03b-E020}：原书 PDF 页 90
+\item
+  \texttt{ch03b-E021}：原书 PDF 页 90
+\item
+  \texttt{ch03b-E022}：原书 PDF 页 91
+\item
+  \texttt{ch03b-E023}：原书 PDF 页 91
+\end{itemize}
+
+\end{document}

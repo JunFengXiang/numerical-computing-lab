@@ -1,0 +1,249 @@
+{
+  "43": {
+    "notes": [
+      "接上页正文；已补回原图末式求和限制 k≠j，候选漏识。"
+    ]
+  },
+  "44": {
+    "notes": [
+      "已补回式 (2.6.4) 的 k≠j；原图中 α′_{k+1} 与 β′_{k+1} 下标清楚，候选误作 k。"
+    ]
+  },
+  "45": {
+    "notes": [
+      "例 2.5、四阶导数余项与 2.7/2.7.1 标题逐项核对。"
+    ]
+  },
+  "46": {
+    "figures": [
+      "2.5"
+    ],
+    "notes": [
+      "式 (2.7.1)–(2.7.3) 编号在候选中漏识，已补回；式 (2.7.3) 第二分支保留原书疑误并加独立校注。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E001",
+        "pdf_page": 46,
+        "printed_page": 33,
+        "formula_id": "2.7.3",
+        "status": "suspected_source_error",
+        "original": "\\frac{x_j-x_{j+1}}{x-x_{j+1}}",
+        "suggested": "\\frac{x-x_{j+1}}{x_j-x_{j+1}}",
+        "reason": "原式在右端点分母为零，违反分段线性、连续及节点基函数条件；原图确认原式分子分母倒置。",
+        "evidence": "staging/ch02b/assets/pdf-046-eq-2-7-3-detail.png"
+      }
+    ]
+  },
+  "47": {
+    "figures": [
+      "2.6"
+    ],
+    "notes": [
+      "已核对连续模证明及分段三次 Hermite 条件、四项公式。"
+    ]
+  },
+  "48": {
+    "notes": [
+      "候选漏识 (2.7.8) 编号；已核对分段函数端点、省略条件与 4/27、8/27 常数、最大值下标。"
+    ]
+  },
+  "49": {
+    "notes": [
+      "补回候选漏掉的页首“时”；已核对 C² 条件、参数计数及前两类边界条件。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E002",
+        "pdf_page": 49,
+        "printed_page": 36,
+        "related_pdf_page": 48,
+        "formula_id": "2.7.13",
+        "status": "suspected_source_omission",
+        "original": "当 f(x)∈C[a,b] 时分段三次 Hermite 插值一致收敛。",
+        "reason": "由 (2.7.13) 推出收敛还需 h max_k |f′_k|→0；仅连续不足以保证节点导数存在及随网格加密的一致控制。",
+        "suggested": "补充适当导数控制条件，例如 f∈C¹[a,b]；正文保留原文。"
+      }
+    ]
+  },
+  "50": {
+    "notes": [
+      "已核对自然和周期边界条件、三转角方程的分段四项表达式；页末第三项分母按原扫描保留平方。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E003",
+        "pdf_page": 50,
+        "printed_page": 37,
+        "formula_id": "unnumbered S″ on [x_{j-1},x_j]",
+        "status": "suspected_source_error",
+        "original": "第三项分母 h_{j-1}²",
+        "suggested": "第三项分母 h_{j-1}³",
+        "reason": "由同页前一个区间公式换下标及下页端点导数式交叉核对，分母应为三次幂。",
+        "evidence": "staging/ch02b/assets/pdf-050-second-derivative-detail.png"
+      }
+    ]
+  },
+  "51": {
+    "notes": [
+      "核对式 (2.8.8) 右端 h_{j-1}²，重建候选错行的两个三对角矩阵；保留原文“m0=f′0 则 mn=f′n”。"
+    ]
+  },
+  "52": {
+    "notes": [
+      "周期系统原式及角元素逐项放大核对，原书疑误原样保留；三弯矩表达式和导数式已核对。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E004",
+        "pdf_page": 52,
+        "printed_page": 39,
+        "formula_id": "unnumbered lambda_n",
+        "status": "suspected_source_error",
+        "original": "λ_n=h_{n-1}/(h_0+h_{n-1})",
+        "suggested": "λ_n=h_0/(h_0+h_{n-1})",
+        "reason": "由前一行未归一化周期方程直接除以 1/h0+1/h_{n-1}。",
+        "evidence": "staging/ch02b/assets/pdf-052-periodic-system-detail.png"
+      },
+      {
+        "id": "ch02b-E005",
+        "pdf_page": 52,
+        "printed_page": 39,
+        "formula_id": "2.8.15",
+        "status": "suspected_source_error",
+        "original": "周期方程系数矩阵右上、左下角均为 0。",
+        "suggested": "右上角 λ_1；左下角 μ_n。",
+        "reason": "分别由 m0=mn 代入首行及本页周期端点方程得；普通三对角追赶法需要相应循环系统处理。",
+        "evidence": "staging/ch02b/assets/pdf-052-periodic-system-detail.png"
+      }
+    ]
+  },
+  "53": {
+    "notes": [
+      "保留原图“步6”及其两端一阶导数条件；三弯矩 μ、λ 排序及全部步骤已核对。"
+    ]
+  },
+  "54": {
+    "tables": [
+      "2.8"
+    ],
+    "notes": [
+      "表2.8全部21个采样点已按扫描转录；OCR漏掉左半最后一行 x=−2.5，已补回。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E006",
+        "pdf_page": 54,
+        "printed_page": 41,
+        "formula_id": "2.8.21",
+        "status": "suspected_source_error",
+        "original": "max_{1≤i≤n}|x_j|",
+        "suggested": "max_{1≤i≤n}|x_i|",
+        "reason": "最大值指标 i 与被取最大值分量 j 不一致。",
+        "evidence": "staging/ch02b/assets/pdf-054-norm-detail.png"
+      },
+      {
+        "id": "ch02b-E007",
+        "pdf_page": 54,
+        "printed_page": 41,
+        "formula_id": "2.8.23",
+        "status": "suspected_source_error",
+        "original": "min(|a_ij|−sum_{j≠i}|a_ij|)",
+        "suggested": "min_i(|a_ii|−sum_{j≠i}|a_ij|)",
+        "reason": "逆范数上界的对角占优余量首项应为对角元素。",
+        "evidence": "staging/ch02b/assets/pdf-054-norm-detail.png"
+      },
+      {
+        "id": "ch02b-E008",
+        "pdf_page": 54,
+        "printed_page": 41,
+        "table": "2.8",
+        "status": "source_table_condition_mismatch",
+        "original": "S10(−4.8)=0.03758, S10(−4.5)=0.04248",
+        "reason": "按PDF53明定的两端一阶导数条件精确解得0.04162183和0.04716801，原表数字已保持不变。",
+        "evidence": "staging/ch02b/table-2-8-check.txt"
+      }
+    ]
+  },
+  "55": {
+    "notes": [
+      "小结正文已完整转录至跨页处；原书矩阵、向量、幂次和引用编号疑误均保留并校注。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E009",
+        "pdf_page": 55,
+        "printed_page": 42,
+        "formula_id": "2.8.24 following matrix/vector",
+        "status": "suspected_source_error",
+        "original": "自然边界矩阵末行次对角元 λ_n；m 向量第二项 m2。",
+        "suggested": "次对角元 1；向量第二项 m1。",
+        "reason": "与本页引用的自然边界方程 (2.8.14) 不一致；此处未定义自然边界 λ_n。",
+        "evidence": "staging/ch02b/assets/pdf-055-matrix-detail.png"
+      },
+      {
+        "id": "ch02b-E010",
+        "pdf_page": 55,
+        "printed_page": 42,
+        "formula_id": "2.8.27",
+        "status": "suspected_source_error",
+        "original": "末项 ||g||_∞^m",
+        "suggested": "||g||_∞",
+        "reason": "由 ||A^{-1}||∞≤1 得 ||m||∞≤||g||∞；原图多余 m 清楚。",
+        "evidence": "staging/ch02b/assets/pdf-055-eq-2-8-27-detail.png"
+      },
+      {
+        "id": "ch02b-E011",
+        "pdf_page": 55,
+        "printed_page": 42,
+        "formula_id": "reference after 2.8.28",
+        "status": "suspected_source_error",
+        "original": "将式 (2.8.9) 及式 (2.8.28) 代入式 (2.8.26)",
+        "suggested": "式 (2.8.9) 应指 (2.8.27)",
+        "reason": "当前推导需将 m 的范数界与 g 的界结合。"
+      }
+    ]
+  },
+  "56": {
+    "tables": [
+      "2.9"
+    ],
+    "notes": [
+      "习题1–13及14题条件完整；保留角分步长、差分上下标和表2.9原始数值。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E012",
+        "pdf_page": 56,
+        "printed_page": 43,
+        "table": "2.9",
+        "status": "suspected_source_error",
+        "original": "ln(0.7)=−0.357765",
+        "suggested": "−0.356675 (六位小数)",
+        "reason": "ln(0.7)≈−0.356674944；原表数字原样保留。",
+        "evidence": "staging/ch02b/assets/table-2-9.png"
+      }
+    ]
+  },
+  "57": {
+    "tables": [
+      "2.10"
+    ],
+    "notes": [
+      "14题续式及15–26题逐字逐式核对；第18题残缺来自原书，不猜补；25题二阶导数和端点项已核对。"
+    ],
+    "source_errata": [
+      {
+        "id": "ch02b-E013",
+        "pdf_page": 57,
+        "printed_page": 44,
+        "exercise": 18,
+        "status": "source_exercise_incomplete",
+        "original": "P(0)=P(−k+1)，并由此求出分段三次 Hermite 插值的误差限。",
+        "reason": "k 未定义，多项式条件不完整，末句重复前题要求；原意无法从扫描可靠恢复。",
+        "suggested": "保留原文并提示题目疑误，不猜补。",
+        "evidence": "staging/ch02b/assets/pdf-057-exercise-18-detail.png"
+      }
+    ]
+  }
+}

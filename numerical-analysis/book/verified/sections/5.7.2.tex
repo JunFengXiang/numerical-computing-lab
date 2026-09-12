@@ -1,0 +1,209 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={差分方程的建立},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{差分方程的建立}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.7.2 差分方程的建立}\label{ux5deeux5206ux65b9ux7a0bux7684ux5efaux7acb}
+
+应用差分方法的关键，在于恰当地选取差商逼近微分方程中的导数。我们知道，逼近一阶导数 \(y'(x)\) 可用向前差商 \(\dfrac{y(x+h)-y(x)}h\)，亦可用向后差商 \(\dfrac{y(x)-y(x-h)}h\) 或中心差商 \(\dfrac{y(x+h)-y(x-h)}{2h}\)。中心差商是向前差商与向后差商的算术平均。为逼近二阶导数 \(y''(x)\)，一般用二阶差商------向前差商的向后差商（即向后差商的向前差商）
+
+\href{../../source-images/pdf-149.jpeg}{原页}
+
+\[
+y''(x)\approx\frac{\dfrac{y(x+h)-y(x)}h-\dfrac{y(x)-y(x-h)}h}{h}
+=\frac{y(x+h)-2y(x)+y(x-h)}{h^2}.
+\]
+
+设将积分区间 \([a,b]\) 划分为 \(N\) 等份，步长 \(h=\dfrac{b-a}{N}\)，节点 \(x_n=x_0+nh,n=0,1,\cdots,N\)。用差商替代相应的导数，可将边值问题（5.7.1）、（5.7.3）离散化得下列计算公式：
+
+\[
+\frac{y_{n+1}-2y_n+y_{n-1}}{h^2}=f\left(x_n,y_n,\frac{y_{n+1}-y_{n-1}}{2h}\right)\qquad(n=1,2,\cdots,N-1),
+\tag{5.7.4}
+\]
+
+\[
+y_0=\alpha,\quad y_N=\beta.
+\tag{5.7.5}
+\]
+
+如果函数 \(f\) 是非线性的，那么所归结出的差分方程也是非线性的，这时实际求解比较困难。
+
+如果所给方程（5.7.1）是如下形式的线性方程：
+
+\[
+y''+p(x)y'+q(x)y=r(x),
+\tag{5.7.6}
+\]
+
+则差分方程（5.7.4）相应的形式为
+
+\[
+\frac{y_{n+1}-2y_n+y_{n-1}}{h^2}+p_n\frac{y_{n+1}-y_{n-1}}{2h}+q_ny_n=r_n\qquad(n=1,\cdots,N-1),
+\tag{5.7.7}
+\]
+
+其中 \(p,q,r\) 的下标 \(n\) 表示在节点 \(x_n\) 取值。
+
+利用边界条件（5.7.5）消去式（5.7.7）中的 \(y_0\) 和 \(y_N\)，整理得到关于 \(y_n\)（\(1\le n\le N-1\)）的下列方程组：
+
+\[
+\begin{cases}
+\displaystyle(-2+h^2q_1)y_1+\left(1+\frac h2p_1\right)y_2=h^2r_1-\left(1-\frac h2p_1\right)\alpha,\\[6pt]
+\displaystyle\left(1-\frac h2p_n\right)y_{n-1}+(-2+h^2q_n)y_n+\left(1+\frac h2p_n\right)y_{n+1}=h^2r_n\quad(2\le n\le N-2),\\[6pt]
+\displaystyle\left(1-\frac h2p_{N-1}\right)y_{N-2}+(-2+h^2q_{N-1})y_{N-1}=h^2r_{N-1}-\left(1+\frac h2p_{N-1}\right)\beta.
+\end{cases}
+\tag{5.7.8}
+\]
+
+这样归结出的方程组是所谓\textbf{三对角型}的，即
+
+\[
+\begin{pmatrix}
+-2+h^2q_1 & 1+\dfrac h2p_1 & & & \\
+1-\dfrac h2p_2 & -2+h^2q_2 & 1+\dfrac h2p_2 & & \\
+& \ddots & \ddots & \ddots & \\
+& & 1-\dfrac h2p_{N-2} & -2+h^2q_{N-2} & 1+\dfrac h2p_{N-2} \\
+& & & 1-\dfrac h2p_{N-1} & -2+h^2q_{N-1}
+\end{pmatrix},
+\]
+
+\href{../../source-images/pdf-150.jpeg}{原页}
+
+因为它的系数矩阵仅在主对角线及其相邻的两条对角线上有非零元素。求解这种三对角型方程组，用所谓\textbf{追赶法}特别有效。在 7.4.3 节将介绍追赶法。
+
+\textbf{例 5.7} 用差分方法解边值问题 \(\begin{cases}y''-y=x,\quad0<x<1,\\y(0)=0,\quad y(1)=1.\end{cases}\)
+
+\textbf{解} 取步长 \(h=0.1\)，节点 \(x_n=\dfrac n{10}\)（\(n=0,1,2,\cdots,10\)），差分方程（5.7.8）的形式是
+
+\[
+\begin{pmatrix}
+-2-10^{-2}&1&&&\\
+1&-2-10^{-2}&1&&\\
+&\ddots&\ddots&\ddots&\\
+&&1&-2-10^{-2}&1\\
+&&&1&-2-10^{-2}
+\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\\\vdots\\y_8\\y_9\end{pmatrix}
+=
+\begin{pmatrix}0.1\times10^{-2}\\0.2\times10^{-2}\\\vdots\\0.8\times10^{-2}\\-1+0.9\times10^{-2}\end{pmatrix}.
+\]
+
+表 5.11 列出了差分方法的计算结果，表中最末一列是按解的表达式
+
+\[
+y=\frac{2(\mathrm e^x-\mathrm e^{-x})}{\mathrm e-\mathrm e^{-1}}-x
+\]
+
+算出的准确值。
+
+\textbf{表 5.11}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+\(x_n\) & \(y_n\) & \(y(x_n)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0.1 & 0.0704894 & 0.0704673 \\
+0.2 & 0.1426836 & 0.1426409 \\
+0.3 & 0.2183048 & 0.2182436 \\
+0.4 & 0.2991089 & 0.2990332 \\
+0.5 & 0.3869042 & 0.3868189 \\
+0.6 & 0.4835684 & 0.4834801 \\
+0.7 & 0.5910684 & 0.5909852 \\
+0.8 & 0.7114791 & 0.7114109 \\
+0.9 & 0.8470045 & 0.8469633 \\
+\end{longtable}
+}
+
+附带指出，在应用上，有时边界条件按以下方式给出：
+
+当 \(x=a\) 时，\(y'=\alpha_0y+\beta_0\)；当 \(x=b\) 时，\(y'=\alpha_1y+\beta_1\)。
+
+这里 \(\alpha_0,\beta_0,\alpha_1,\beta_1\) 均为已知常数，这时，边界条件中所包含的微商也要替换成相应的差商
+
+\[
+\frac{y_1-y_0}{h}=\alpha_0y_0+\beta_0,\qquad
+\frac{y_N-y_{N-1}}h=\alpha_1y_N+\beta_1.
+\]
+
+它们和差分方程（5.7.7）一起，仍然构成包含 \(N+1\) 个未知数的线性方程组。
+
+\end{document}

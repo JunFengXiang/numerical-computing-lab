@@ -1,0 +1,135 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={刘徽的新视野},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{刘徽的新视野}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.3.1　刘徽的新视野}\label{ux5218ux5fbdux7684ux65b0ux89c6ux91ce}
+
+面对这个现实，刘徽独具慧眼地提出了这样一个挑战性的课题：设法将已经获得的数据进行``再加工''，希望以尽量少的计算量为代价获得高精度的结果。
+
+刘徽用一个具体的算例
+
+\[
+\widehat S=S_{192}+\frac{36}{105}(S_{192}-S_{96})\approx S_{3\,072}
+\]
+
+演示了这种设计方案的可行性。
+
+被称为``刘徽神算''的这个数学案例，实际上表达了一种数据精加工的方法。推广刘徽神算，自然可提出下述\textbf{校正技术}：
+
+设法寻求某个\textbf{松弛因子} \(\omega\)，将偏差 \(\Delta_n=S_{2n}-S_n\) 的 \(\omega\) 倍作为数据 \(S_{2n}\) 的\textbf{校正量}，而使\textbf{校正值}
+
+\[
+\widehat S=S_{2n}+\omega(S_{2n}-S_n),\quad 0<\omega<1
+\tag{12.3.1}
+\]
+
+比 \(S_n\) 和 \(S_{2n}\) 具有更高的精度。
+
+自然会问，作为校正技术的式（12.3.1），为什么要选取形如 \(\omega(S_{2n}-S_n)\) 的校正项呢？
+
+前已指出刘徽在《割圆术》中导出了圆面积的双侧挤压公式
+
+\[
+S_{2n}<S^*<S_{2n}+(S_{2n}-S_n),
+\]
+
+借助于偏差 \(\Delta_n=S_{2n}-S_n\) 这个公式可表达为
+
+\[
+0\cdot\Delta_n<S^*-S_{2n}<1\cdot\Delta_n,
+\]
+
+即误差 \(S^*-S_{2n}\) 被夹在系数分别为 0 和 1 的左右两极之间。
+
+中华文化崇尚``中庸之道''，无论处理什么事情都要避免走极端，尽量不左不右，不偏不倚，执中致和。因此，依据上述挤压公式，应令
+
+\[
+S^*-S_{2n}\approx\omega\Delta_n,
+\]
+
+式中 \(0<\omega<1\)，即取式（12.3.1）作为校正公式。
+
+另一方面，校正公式（12.3.1）亦可改写成两个数据 \(S_n\) 与 \(S_{2n}\) 的组合形式：
+
+\[
+\widehat S=(1+\omega)S_{2n}-\omega S_n.
+\]
+
+按这种理解，所述精加工方法也是一种\textbf{组合技术}。
+
+问题在于，这里组合系数为什么采取一正一负的逆反形式呢？
+
+事实上，比较 \(S_n\) 和 \(S_{2n}\) 两个近似值，虽然它们都很粗糙，但 \(S_{2n}\) 总比 \(S_n\) 更为精确，即 \(S_{2n}\) 为``优''值而 \(S_n\) 则为``劣''值，所以加权平均应采取``激浊扬清''的态势，充分激发 \(S_{2n}\) 的``优''势而抑制 \(S_n\) 的``劣''势，为此令 \(S_n\) 的权系数 \(-\omega<0\)，而令 \(S_{2n}\) 的权系数 \(1+\omega>1\)。
+
+\href{../../source-images/pdf-299.jpeg}{原页图像}
+
+激浊扬清、优劣互补的态势，标志着这种技术从属于高效算法设计的二分演化模式。
+
+总之，\textbf{作为刘徽神算推广的校正公式（12.3.1），是校正技术与组合技术两种技术的综合。}为使这类技术真正保证提高精度的要求，该怎样具体地选取松弛因子 \(\omega\) 呢？
+
+\end{document}

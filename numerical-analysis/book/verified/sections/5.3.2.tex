@@ -1,0 +1,108 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Runge-Kutta 方法的基本思想},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Runge-Kutta 方法的基本思想}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.3.2 Runge-Kutta 方法的基本思想}\label{runge-kutta-ux65b9ux6cd5ux7684ux57faux672cux601dux60f3}
+
+Runge-Kutta 方法实质上是间接地使用 Taylor 级数法的一种方法。
+
+考察差商 \(\dfrac{y(x_{n+1})-y(x_n)}{h}\)，根据微分中值定理，存在 \(0<\theta<1\)，使得
+
+\[
+\frac{y(x_{n+1})-y(x_n)}{h}=y'(x_n+\theta h),
+\]
+
+于是，利用所给方程 \(y'=f(x,y)\) 得到
+
+\[
+y(x_{n+1})=y(x_n)+hf(x_n+\theta h,y(x_n+\theta h)).\tag{5.3.4}
+\]
+
+设 \(K^*=f(x_n+\theta h,y(x_n+\theta h))\)，称 \(K^*\) 为区间 \([x_n,x_{n+1}]\) 上的\textbf{平均斜率}。由此可见，只要对平均斜率提供一种算法，那么由式 (5.3.4) 便相应地导出一种计算格式。
+
+Euler 格式 (5.2.1) 简单地取点 \(x_n\) 的斜率值 \(K_1=f(x_n,y_n)\) 作为平均斜率 \(K^*\)，
+
+\href{../../source-images/pdf-128.jpeg}{原页}
+
+精度自然很低。
+
+再考察改进的 Euler 格式 (5.2.10)、(5.2.11)，它可改写成下列平均化的形式：
+
+\[
+\begin{cases}
+y_{n+1}=y_n+\dfrac{h}{2}(K_1+K_2),\\
+K_1=f(x_n,y_n),\\
+K_2=f(x_{n+1},y_n+hK_1).
+\end{cases}
+\]
+
+可见，改进的 Euler 格式可以这样理解：它用 \(x_n\) 与 \(x_{n+1}\) 两个点的斜率值 \(K_1\) 与 \(K_2\) 取算术平均作为平均斜率 \(K^*\)，而 \(x_{n+1}\) 处的斜率值 \(K_2\) 则通过已知信息 \(y_n\) 来预测。
+
+这个处理过程启示我们，如果设法在 \((x_n,x_{n+1})\) 内多预测几个点的斜率值，然后将它们加权平均作为平均斜率 \(K^*\)，则有可能构造出具有更高精度的计算格式。这就是 Runge-Kutta 方法的基本思想。
+
+\end{document}

@@ -1,0 +1,276 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Adams 预测-校正系统},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Adams 预测-校正系统}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.5.4 Adams 预测-校正系统}\label{adams-ux9884ux6d4b-ux6821ux6b63ux7cfbux7edf}
+
+可以同前述 Euler 方法一样分析 Adams 方法的误差。譬如，对于格式（5.5.6），假设 \(y_{n-k}=y(x_{n-k})\)（\(k=0,1,2,3\)），这时
+
+\[
+f_{n-k}=f(x_{n-k},y_{n-k})=f(x_{n-k},y(x_{n-k}))=y'(x_{n-k})\qquad(k=0,1,2,3),
+\]
+
+代入式（5.5.6），有
+
+\[
+y_{n+1}=y(x_n)+\frac h{24}[55y'(x_n)-59y'(x_{n-1})+37y'(x_{n-2})-9y'(x_{n-3})].
+\]
+
+将上式右端各项在点 \(x_n\) 展开，得
+
+\[
+\begin{aligned}
+y_{n+1}={}&y(x_n)+hy'(x_n)+\frac{h^2}{2}y''(x_n)+\frac{h^3}{6}y'''(x_n)\\
+&+\frac{h^4}{24}y^{(4)}(x_n)-\frac{49}{144}h^5y^{(5)}(x_n)+\cdots.
+\end{aligned}
+\]
+
+另一方面，对于准确解 \(y(x_{n+1})\)，有
+
+\[
+y(x_{n+1})=y(x_n)+hy'(x_n)+\frac{h^2}{2}y''(x_n)+\frac{h^3}{6}y'''(x_n)+\frac{h^4}{24}y^{(4)}(x_n)+\frac{h^5}{120}y^{(5)}(x_n)+\cdots,
+\]
+
+于是显式格式（5.5.6）的局部截断误差为
+
+\[
+y(x_{n+1})-y_{n+1}\approx\frac{251}{720}h^5y^{(5)}(x_n).
+\tag{5.5.10}
+\]
+
+类似地可以导出隐式格式（5.5.9）的局部截断误差为
+
+\[
+y(x_{n+1})-y_{n+1}\approx-\frac{19}{720}h^5y^{(5)}(x_n).
+\tag{5.5.11}
+\]
+
+注意，显式格式（5.5.6）与隐式格式（5.5.9）都具有四阶精度，这两种格式可匹配成下列 Adams \textbf{预测-校正系统}：
+
+预测
+
+\[
+\bar y_{n+1}=y_n+\frac h{24}(55f_n-59f_{n-1}+37f_{n-2}-9f_{n-3}),
+\tag{5.5.12}
+\]
+
+\[
+\bar f_{n+1}=f(x_{n+1},\bar y_{n+1});
+\]
+
+校正
+
+\[
+y_{n+1}=y_n+\frac h{24}(9\bar f_{n+1}+19f_n-5f_{n-1}+f_{n-2}),
+\tag{5.5.13}
+\]
+
+\[
+f_{n+1}=f(x_{n+1},y_{n+1}).
+\]
+
+这种预测-校正方法是四步法，用它在计算 \(y_{n+1}\) 时，不但要用到前一步的信息 \(y_n,f_n\)，而且要用到更前三步的信息 \(f_{n-1},f_{n-2},f_{n-3}\)，因此它不是自开始的。实际计算时，必须借助某种单步法，如四阶 Taylor 格式（见 5.3.1 节）或四阶 Runge-Kutta 格式（见 5.3.5 节）为它提供开始值 \(y_1,y_2,y_3\)。
+
+\textbf{例 5.6} 用 Adams 预测-校正系统（5.5.12）、（5.5.13）求解初值问题（5.2.2）。
+
+\textbf{解} 取步长 \(h=0.1\) 计算。用例 5.3 按四阶 Taylor 格式求得的结果 \(y_1,y_2,y_3\) 作为开始值，然后启动格式（5.5.12）、（5.5.13）进行计算。计算结果如表 5.10 所示。表
+
+\href{../../source-images/pdf-141.jpeg}{原页}
+
+（接上页）中 \(\bar y_n\) 和 \(y_n\) 分别为预测值和校正值，同时列出了准确值 \(y(x_n)\) 以比较计算结果的精度。
+
+依据误差公式（5.5.10）和式（5.5.11），对于系统（5.5.12）、（5.5.13）中的预测值 \(\bar y_{n+1}\) 和校正值 \(y_{n+1}\)，分别有
+
+\[
+y(x_{n+1})-\bar y_{n+1}\approx\frac{251}{720}h^5y^{(5)}(x_n),
+\]
+
+\[
+y(x_{n+1})-y_{n+1}\approx-\frac{19}{720}h^5y^{(5)}(x_n).
+\]
+
+于是有下列事后估计式：
+
+\[
+y(x_{n+1})-\bar y_{n+1}\approx-\frac{251}{720}(\bar y_{n+1}-y_{n+1}),
+\]
+
+\[
+y(x_{n+1})-y_{n+1}\approx\frac{19}{720}(\bar y_{n+1}-y_{n+1}).
+\]
+
+\textbf{表 5.10}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrr@{}}
+\toprule\noalign{}
+\(x_n\) & \(\bar y_n\) & \(y_n\) & \(y(x_n)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & & 1 & 1 \\
+0.1 & & 1.0954 & 1.0954 \\
+0.2 & & 1.1832 & 1.1832 \\
+0.3 & & 1.2649 & 1.2649 \\
+0.4 & 1.3415 & 1.3416 & 1.3416 \\
+0.5 & 1.4141 & 1.4142 & 1.4142 \\
+0.6 & 1.4832 & 1.4832 & 1.4832 \\
+0.7 & 1.5491 & 1.5492 & 1.5492 \\
+0.8 & 1.6125 & 1.6125 & 1.6125 \\
+0.9 & 1.6734 & 1.6734 & 1.6733 \\
+1.0 & 1.7321 & 1.7321 & 1.7231 \\
+\end{longtable}
+}
+
+利用这一结果，可将 Adams 预测-校正系统（5.5.12）、（5.5.13）进一步加工成下列计算方案：
+
+预测
+
+\[
+p_{n+1}=y_n+\frac h{24}(55y'_n-59y'_{n-1}+37y'_{n-2}-9y'_{n-3}),
+\]
+
+改进
+
+\[
+m_{n+1}=p_{n+1}+\frac{251}{720}(c_n-p_n),
+\]
+
+计算
+
+\[
+m_{n+1}=f(x_{n+1},m_{n+1}),
+\]
+
+校正
+
+\[
+c_{n+1}=y_n+\frac h{24}(9m'_{n+1}+19y'_n-5y'_{n-1}+y'_{n-2}),
+\]
+
+改进
+
+\[
+y_{n+1}=c_{n+1}-\frac{19}{720}(c_{n+1}-p_{n+1}),
+\]
+
+计算
+
+\[
+y'_{n+1}=f(x_{n+1},y_{n+1}).
+\]
+
+关于这种计算方案，读者可参看 5.2 节末的有关论述。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 141 的校注}\label{ux539fux4e66-pdf-ux9875-141-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-141.md}{完整原页转录} · \href{../../source-images/pdf-141.jpeg}{原页图像}
+
+校注记录：ch05b-E002, ch05b-E003, ch05b-E004。
+
+\begin{quote}
+校注（agent 补充，ch05b-E002）：本页两条``事后估计式''及计算方案两条``改进''式的分母均印为 \(720\)，已照录。由本页前两条局部误差式相减，\(y_{n+1}-\bar y_{n+1}\approx(270/720)h^5y^{(5)}(x_n)\)，消去 \(h^5y^{(5)}(x_n)\) 后，事后估计的系数应为 \(251/270\) 和 \(19/270\)；相应改进式中的分母也应为 \(270\)。这是原书疑误，非 OCR 错。
+
+校注（agent 补充，ch05b-E003）：计算方案第一条``计算''式左端印为 \(m_{n+1}\)，未带撇号；已照录。按下一条校正式使用的 \(m'_{n+1}\) 及导数定义，此处疑漏印撇号，应为 \(m'_{n+1}=f(x_{n+1},m_{n+1})\)。
+
+校注（agent 补充，ch05b-E004）：表 5.10 末行准确值原印为 \(1.7231\)，已照录。已另行目视核对 PDF 120（书 107 页）式（5.2.2）后所列解析解 \(y=\sqrt{1+2x}\) 及表 5.1；\(y(1)=\sqrt3\approx1.7321\)，因此本格疑有数字对调。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch05b-E002}：原书 PDF 页 141
+\item
+  \texttt{ch05b-E003}：原书 PDF 页 141
+\item
+  \texttt{ch05b-E004}：原书 PDF 页 141
+\end{itemize}
+
+\end{document}

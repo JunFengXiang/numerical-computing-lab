@@ -1,0 +1,226 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Romberg 公式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Romberg 公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.3.2 Romberg 公式}\label{romberg-ux516cux5f0f}
+
+梯形法的算法简单，但精度较差，收敛的速度缓慢。如何提高收敛速度以节省计算量，自然是人们极为关心的课题。
+
+根据梯形法的误差公式（4.2.15），积分值 \(T_n\) 的截断误差大致与 \(h^2\) 成正比，因此当步长二分后，截断误差将减至原有误差的 \(1/4\)，即有
+
+\[
+\frac{I-T_{2n}}{I-T_n}\approx\frac14.
+\]
+
+将上式移项整理，可得
+
+\[
+I-T_{2n}\approx\frac13(T_{2n}-T_n).
+\tag{4.3.2}
+\]
+
+由此可见，只要二分前后的两个积分值 \(T_n\) 与 \(T_{2n}\) 相当接近，就可以保证计算结果 \(T_{2n}\) 的误差很小。这种直接用计算结果来估计误差的方法通常称为误差的事后估计法。
+
+按式（4.3.2），积分近似值 \(T_{2n}\) 的误差大致等于 \(\dfrac13(T_{2n}-T_n)\)，因此，如果用这个误差值作为 \(T_{2n}\) 的一种补偿，可以期望，所得到的
+
+\[
+\overline T=T_{2n}+\frac13(T_{2n}-T_n)=\frac43T_{2n}-\frac13T_n
+\tag{4.3.3}
+\]
+
+可能是更好的结果。
+
+再考察例 4.2，所求得的两个梯形值 \(T_4=0.944\,513\,5\) 和 \(T_8=0.945\,690\,9\) 的精
+
+\href{../../source-images/pdf-103.jpeg}{原页图像}
+
+度都很差（与准确值 \(I=0.946\,083\,1\) 比较，只有两三位有效数字），但如果将它们按式（4.3.3）作线性组合，则新的近似值
+
+\[
+\overline T=\frac43T_8-\frac13T_4=0.946\,083\,3
+\]
+
+却有六位有效数字。
+
+按公式（4.3.3）组合得到的近似值 \(\overline T\)，其实质究竟是什么呢？直接验证易知
+
+\[
+S_n=\frac43T_{2n}-\frac13T_n,
+\tag{4.3.4}
+\]
+
+这就是说，用梯形法二分前后的两个积分值 \(T_n\) 与 \(T_{2n}\)，按式（4.3.3）作线性组合，结果得到 Simpson 法的积分值 \(S_n\)。
+
+再考察 Simpson 法，按误差公式（4.2.16），其截断误差大致与 \(h^4\) 成正比，因此，若将步长折半，则误差将减至原有误差的 \(1/16\)，即有
+
+\[
+\frac{I-S_{2n}}{I-S_n}\approx\frac1{16},\quad I\approx\frac{16}{15}S_{2n}-\frac1{15}S_n.
+\]
+
+不难直接验证，上式右端的值其实等于 \(C_n\)，就是说，用 Simpson 法二分前后的两个积分值 \(S_n\) 与 \(S_{2n}\)，按式（4.3.3）作线性组合，结果得到 Cotes 法的积分值 \(C_n\)，即
+
+\[
+C_n=\frac{16}{15}S_{2n}-\frac1{15}S_n.
+\tag{4.3.5}
+\]
+
+重复同样的手续，依据 Cotes 法的误差公式（4.2.17）可进一步导出下列 Romberg 公式：
+
+\[
+R_n=\frac{64}{63}C_{2n}-\frac1{63}C_n.
+\tag{4.3.6}
+\]
+
+在变步长的过程中运用式（4.3.4）、式（4.3.5）和式（4.3.6），就能将粗糙的梯形值 \(T_n\) 逐步加工成精度较高的 Simpson 值 \(S_n\)、Cotes 值 \(C_n\) 和 Romberg 值 \(R_n\)。
+
+\textbf{例 4.3} 用加速公式（4.3.4）、（4.3.5）和（4.3.6）加工例 4.2 得到的梯形值，计算结果如表 4.4（\(k\) 代表二分次数）所示。
+
+表 4.4
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(T_2^k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(S_2^{k-1}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_2^{k-2}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(R_2^{k-3}\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & \(0.920\,735\,5\) & & & \\
+1 & \(0.939\,793\,3\) & \(0.946\,145\,9\) & & \\
+2 & \(0.944\,513\,5\) & \(0.946\,086\,9\) & \(0.946\,083\,0\) & \\
+3 & \(0.945\,690\,9\) & \(0.946\,083\,3\) & \(0.946\,083\,1\) & \(0.946\,083\,1\) \\
+\end{longtable}
+}
+
+我们看到，这里利用二分 3 次的数据（它们的精度都很差，只有两三位是有效数字），通过三次加速求得 \(R_1=0.946\,083\,1\)，这个结果的每一位数字都是有效数字，可见加速效果是十分显著的。
+
+\begin{quote}
+校注（agent 补充）：表 4.4 的上、下标按原扫描字位保留为 \(T_2^k\)、\(S_2^{k-1}\)、\(C_2^{k-2}\)、\(R_2^{k-3}\)。由本页``\(k\) 代表二分次数''及公式（4.3.4）至（4.3.6），各列数据对应的分段数实际上为 \(2^k\)、\(2^{k-1}\)、\(2^{k-2}\)、\(2^{k-3}\)，即通常记作 \(T_{2^k}\)、\(S_{2^{k-1}}\)、\(C_{2^{k-2}}\)、\(R_{2^{k-3}}\)。另本页由 Simpson 值组合为 Cotes 值的文字仍引用``式（4.3.3）''，已按原文保留；该处实际所列权为 \(16/15\) 和 \(-1/15\)，见式（4.3.5）。
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 102 的校注}\label{ux539fux4e66-pdf-ux9875-102-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-102.md}{完整原页转录} · \href{../../source-images/pdf-102.jpeg}{原页图像}
+
+校注记录：CH04A-E03, CH04A-E04, CH04A-E07。
+
+\begin{quote}
+校注（agent 补充，CH04A-E03）：表 4.3 的 \(k=3\) 单元格原扫描确实印为 \(9.945\,690\,9\)，这里按原表保留。由例 4.1 的 \(T_8\) 和本页下段的 \(T_8\) 可知首位应为 \(0\)，即 \(0.945\,690\,9\)，这是原书排印错误。
+
+校注（agent 补充，CH04A-E04）：本页说明 \(k\) 为二分次数，表中 \(k=9\) 为 \(0.946\,083\,0\)，\(k=10\) 才列出 \(0.946\,083\,1\)。故表后``二分 9 次得到了这个结果''与本页表格、次数定义不一致；原句已保留。
+
+校注（agent 补充，CH04A-E07）：表 4.3 的 \(k=5\) 单元格原扫描印为 \(0.946\,059\,6\)，这里按原表保留。对本例 \(f(x)=\sin x/x\)（\(f(0)=1\)）在 \([0,1]\) 上取 \(n=32\) 独立高精度计算复化梯形值，得 \(T_{32}=0.946\,058\,560\,962\,768\,067\ldots\)，保留七位小数应为 \(0.946\,058\,6\)；原表数值有误。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04A-E03}：原书 PDF 页 102
+\item
+  \texttt{CH04A-E04}：原书 PDF 页 102
+\item
+  \texttt{CH04A-E07}：原书 PDF 页 102
+\end{itemize}
+
+\end{document}

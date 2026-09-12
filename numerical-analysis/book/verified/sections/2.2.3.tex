@@ -1,0 +1,150 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Lagrange插值多项式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Lagrange插值多项式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{2.2.3 Lagrange 插值多项式}\label{lagrange-ux63d2ux503cux591aux9879ux5f0f}
+
+上面对 \(n=1\) 及 \(n=2\) 的情况，得到了一次与二次插值多项式 \(L_1(x)\) 及 \(L_2(x)\)，它们分别由式（2.2.5）和式（2.2.7）表示。这种用插值基函数表示的方法容易推广到一般情形。下面讨论通过 \(n+1\) 个节点 \(x_0<x_1<\cdots<x_n\) 的 \(n\) 次插值多项式 \(L_n(x)\)，假定它满足条件
+
+\[
+L_n(x_j)=y_j\qquad(j=0,1,\cdots,n).
+\tag{2.2.8}
+\]
+
+为了构造 \(L_n(x)\)，先定义 \(n\) 次插值基函数。
+
+\textbf{定义 2.2} 若 \(n\) 次多项式 \(l_j(x)\)（\(j=0,1,\cdots,n\)）在 \(n+1\) 个节点 \(x_0<x_1<\cdots<x_n\) 上满足条件
+
+\[
+l_j(x_k)=
+\begin{cases}
+1,&k=j,\\
+0,&k\ne j
+\end{cases}
+\qquad(j,k=0,1,\cdots,n),
+\tag{2.2.9}
+\]
+
+就称这 \(n+1\) 个 \(n\) 次多项式 \(l_0(x),l_1(x),\cdots,l_n(x)\) 为节点 \(x_0,x_1,\cdots,x_n\) 上的 \textbf{\(n\) 次插值基函数}。
+
+\(n=1\) 及 \(n=2\) 时的情况前面已经讨论。用类似的推导方法，可得到 \(n\) 次插值基函数为
+
+\[
+l_k(x)=
+\frac{(x-x_0)\cdots(x-x_{k-1})(x-x_{k+1})\cdots(x-x_n)}
+{(x_k-x_0)\cdots(x_k-x_{k-1})(x_k-x_{k+1})\cdots(x_k-x_n)}
+\quad(k=0,1,\cdots,n).
+\tag{2.2.10}
+\]
+
+显然它满足条件（2.2.9）。于是，满足条件（2.2.8）的插值多项式 \(L_n(x)\) 可表示为
+
+\[
+L_n(x)=\sum_{k=0}^{n}y_kl_k(x).
+\tag{2.2.11}
+\]
+
+由 \(l_k(x)\) 的定义知
+
+\[
+L_n(x_j)=\sum_{k=0}^{n}y_kl_k(x_j)=y_j
+\qquad(j=0,1,\cdots,n).
+\]
+
+形如式（2.2.11）的插值多项式 \(L_n(x)\) 称为 \textbf{Lagrange 插值多项式}，而式（2.2.5）和式（2.2.7）是其 \(n=1\) 和 \(n=2\) 的特殊情形。若引入记号
+
+\[
+\omega_{n+1}(x)=(x-x_0)(x-x_1)\cdots(x-x_n),
+\tag{2.2.12}
+\]
+
+容易求得
+
+\[
+\omega'_{n+1}(x_k)
+=(x_k-x_0)\cdots(x_k-x_{k-1})(x_k-x_{k+1})\cdots(x_k-x_n),
+\]
+
+于是式（2.2.11）可改写成
+
+\href{../../source-images/pdf-032.jpeg}{原页：书页 19／PDF 32}
+
+\begin{quote}
+页首接 PDF 31；页末线性插值余项续 PDF 33。
+\end{quote}
+
+\[
+L_n(x)=\sum_{k=0}^{n}y_k
+\frac{\omega_{n+1}(x)}
+{(x-x_k)\omega'_{n+1}(x_k)}.
+\tag{2.2.13}
+\]
+
+注意，\(n\) 次插值多项式 \(L_n(x)\) 通常是次数为 \(n\) 的多项式，特殊情况次数可能小于 \(n\)。例如，通过三点 \((x_0,\allowbreak y_0),\allowbreak (x_1,\allowbreak y_1),\allowbreak (x_2,\allowbreak y_2)\) 的二次插值多项式 \(L_2(x)\)，如果三点共线，则 \(y=L_2(x)\) 就是一直线，而不是抛物线，这时 \(L_2(x)\) 是一次式。
+
+\end{document}

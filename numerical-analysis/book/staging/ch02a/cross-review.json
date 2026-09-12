@@ -1,0 +1,217 @@
+{
+  "lane": "ch02a",
+  "reviewer": "Codex agent ch01 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 27,
+      "sha256": "8dfc4fe3b016b92632d58e28849182cac6371132c850ed4672df043ed3d9c0e0",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页14，逐段核引言及定义2.1、2.1.1/2.1.2；NA5E-E001原印x0≤x1及非唯一反例成立。",
+        "发现定义2.1中漏字“为”；primary已补回，独立重读修改后正文并核对当前SHA与primary回执一致。"
+      ]
+    },
+    {
+      "pdf_page": 28,
+      "sha256": "0d52141ab1f8e061c1df3e4df0c3e35c44317b5e81f2a6af721c49ed878033f7",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页15，核续文、图2.1全部标签、线性方程组、Vandermonde行列式与双重乘积上下限；与转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 29,
+      "sha256": "c4ef01fc3a6de363d1b255575c4c40997244d017154a8d71fcd45d67abf8b979",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页16，逐段核正文、点斜/两点式、l_k与L_1大小写和节点条件；图2.2/2.3的线型、节点与全部标签一致。"
+      ]
+    },
+    {
+      "pdf_page": 30,
+      "sha256": "4e1104711fc5eef1773b298f74cd4d3b70f4382f36beb41848490e3cf095f6e8",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页17，核三条基函数0/1条件、三个分母各因子与2.2.7系数；图2.4三条抛物基函数及负值区间与文字一致。"
+      ]
+    },
+    {
+      "pdf_page": 31,
+      "sha256": "e65eb2d31dcf61c0671290bbe763206c7cd1fbc240aecef7915decfd98823340",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页18，核三项L2展开、定义2.2的j/k和0/1条件、2.2.10省略因子k、2.2.11求和k=0至n及omega导数乘积；逐文逐式一致。"
+      ]
+    },
+    {
+      "pdf_page": 32,
+      "sha256": "19293cad658a005a311e364caf8fb5329be086e488cb475771b4876eb765b5c1",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页19，核2.2.13导数分母、定理2.2的n/n+1阶假设与开闭区间、Rolle证明各零点数、阶乘及2.2.16绝对值；与转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 33,
+      "sha256": "9395747081471b3adb3ab18975ce68fdbf1e7827872889fc178f143b126bda2b",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页20，核二/三阶导数余项、例2.1全部输入数值、两次线性插值与第二个L1/R1波浪号；两段M2区间与误差估计一致。"
+      ]
+    },
+    {
+      "pdf_page": 34,
+      "sha256": "206788dfd931eb8402d5913e69d0c4ddf3186802506877a06918adb042bac095",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页21，核例2.1续算、三项抛物插值、2.3逐次线性插值及全部正文；NA5E-E002中三个印值均在原页可见。",
+        "独立复算cos(0.32)、两条误差上界及印刷中间乘积，确认E002校注数值与推理支持原书疑误。"
+      ]
+    },
+    {
+      "pdf_page": 35,
+      "sha256": "74a51ad2264181116b96782605b59817040893af0419941b0aad4f8cf586d836",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页22，逐式核Aitken/Neville递推及端点代入；表2.1与表2.2所有符号单元格逐格一致。",
+        "重点确认表2.2最右列首行原印x-x0，其余行为xi-x0；当前转录及说明正确。"
+      ]
+    },
+    {
+      "pdf_page": 36,
+      "sha256": "63a34b9eebcae45663561cc037a3e92f2d4c4943d62b53892b2aed4188734705",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页23，表2.3五个节点与四行全部插值结果逐格一致，最后一行0.60/0.63665、0.244049/0.232479/0.232034均保留。",
+        "a2原图确有总分母x2-x1，两个内层分母分别x2-x0及x1-x0；当前式完整。代入行x无下标1的原书记号及校注一致。"
+      ]
+    },
+    {
+      "pdf_page": 37,
+      "sha256": "6f5795780f018b4598714b6ac7c3638746c9e59d1a5f8c109c9efec9136cede3",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页24，核定义2.3续式、四条编号差商性质、导数阶数与n!；表2.4全部节点/差商、对角下划线和末行省略号一致。"
+      ]
+    },
+    {
+      "pdf_page": 38,
+      "sha256": "e6d6dd66e7cc2f4838da3aab3bd4f2d3209572b4d524539b2771eddcbb7f96a7",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页25，核Newton推导、2.4.6/2.4.7及原印不配括号f(...]；CH02A-S01照原印且解释成立。",
+        "表2.5全部6行数值与下划线逐格一致，包括末行0.03126和-0.00012；使用原表输入的独立精确分数差商重算支持CH02A-S03，中间舍入混用分析成立。"
+      ]
+    },
+    {
+      "pdf_page": 39,
+      "sha256": "1c77e05c0409970d1f48d7b1e87ce6e7c143cab5848ae29881139e6dbf267384",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页26，逐字逐式核例2.3续算、定义2.4、三类差分及其算子等式；上下标、半节点和正文均一致。",
+        "独立Decimal代入原印N4，得0.63191751982370304，支持CH02A-S04；原印五阶差商乘积为3.62320293888E-9，支持现有误差估计范围校注。"
+      ]
+    },
+    {
+      "pdf_page": 40,
+      "sha256": "d5f1f05c036e5f88e5cf450844c04272f3f4c9e1776c77abce7557ad74918d9f",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页27，逐式核差分二项式展开、2.5.4至2.5.9及全部正文；2.5.5的(-1)^(n-j)配合j-n索引正确。",
+        "表2.6全部三角单元格和省略号一致；原印首列标题x_k与f_k内容不一致，CH02A-S02校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 41,
+      "sha256": "95b8a8cd65da13772093d58da85c7465851ef0c31e87822bbff2cac6525aa154",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页28，核前插/后插推导、2.5.10至2.5.12、两条余项的阶乘/幂次/开区间以及t取值范围；应用说明和例2.4起句逐字一致。"
+      ]
+    },
+    {
+      "pdf_page": 42,
+      "sha256": "eab284389168df83ad7ecb709fab8d94fd01c59019abd5d8de0fb1433364900f",
+      "source_visual_review": "completed",
+      "notes": [
+        "实际重开原图书页29，核例2.4续文、区间分界、全部输入量和公式及2.6开头；表2.7的15行及39个差分值逐格一致。",
+        "独立Decimal从原图15个函数值重算一至三阶差分，39个差分值全部相符；例题计算1.6228，保留两位小数为1.62。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CH02A-CROSS-001",
+      "pdf_page": 27,
+      "type": "transcription_omitted_character",
+      "description": "原图“方法称为插值法”，MD漏“为”。",
+      "status": "resolved",
+      "resolution": "primary补回“为”，独立重读修订正文；当前MD与primary receipt的SHA-256一致。"
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-E002",
+      "pdf_page": 34,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "NA5E-E002原印与独立数值复算一致。",
+      "independent_values": {
+        "cos0.32": 0.9492354180824408,
+        "printed_bound_product": 1.7720069399999997e-07,
+        "corrected_bound": 2.0330997500000003e-07,
+        "printed_interpolation": 0.3302826531125
+      }
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-S03",
+      "pdf_page": 38,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "表2.5原印和混用舍入的校注支持；独立以Fraction从原图6行输入重算。",
+      "independent_values": {
+        "third_second_difference": "3251/7500",
+        "fourth_differences": [
+          "82/2625",
+          "11/350"
+        ],
+        "fifth_difference": "2/6825",
+        "fifth_decimal": 0.00029304029304029304
+      }
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-E001",
+      "pdf_page": 27,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "原印x0≤x1与相异节点要求不一致；独立核反例P(x)=c+tx，非唯一结论成立。"
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-S01",
+      "pdf_page": 38,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "原印末个差商左圆括号右方括号f(...]，primary忠实保留并加校注。"
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-S02",
+      "pdf_page": 40,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "表2.6原印首列表头x_k、表体f_k，独立按差分定义核校注成立。"
+    },
+    {
+      "id": "CH02A-CROSS-SOURCE-S04",
+      "pdf_page": 39,
+      "type": "documented_source_erratum_checked",
+      "status": "confirmed",
+      "description": "原印N4(0.596)=0.63195与上一页原印多项式代入值不符，校注成立。",
+      "independent_values": {
+        "N4_at_0.596": "0.63191751982370304",
+        "omega5_at_0.596": "-0.000030193357824",
+        "printed_error_product": "3.62320293888E-9"
+      }
+    }
+  ],
+  "unresolved": []
+}

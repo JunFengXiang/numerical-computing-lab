@@ -1,0 +1,20 @@
+{
+  "pdf_page": 3,
+  "source_image": "source-images/pdf-003.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f94340d4667eddf09e6b36d7a2eec71c065eff742b4f0fdfbfd1f78d47e24993",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 564,
+  "possibly_truncated": false,
+  "elapsed_seconds": 21.653,
+  "created_utc": "2026-09-12T09:45:57.397894+00:00",
+  "raw_text_sha256": "c45be5909430d47cd52089b4aeb18dd939affe435d61ae980bae91c16d03f0ae",
+  "raw_text": "内容提要\n\n本书是为理工科院校各专业普遍开设的“数值分析”课程而编写的教材.其上篇内容包括插值\n与逼近、数值积分与数值微分、常微分方程与线性方程组的数值解法、矩阵的特征值与特征向量计\n算等.每章附有习题并在书末给出部分答案.\n\n本书下篇(高效算法设计)以讲座形式介绍快速算法、并行算法与加速算法方面的几个典型案\n例,力图普及推广超级计算方面的基础知识.全书阐述严谨,脉络分明,深入浅出,便于教学.\n\n本书可作为理工科院校应用数学、力学、物理、计算机等专业的教材,也可供从事科学计算的\n科技工作者参考.\n\n图书在版编目(CIP)数据\n数值分析/李庆扬,王能超,易大义编.—5版.一武汉:华中科技大学出版社,2018.4\nISBN 978-7-5680-3946-8\nI. $\\textcircled{1}$数… II. $\\textcircled{1}$李… $\\textcircled{2}$王… $\\textcircled{3}$易… III. $\\textcircled{1}$数值分析-高等学校-教材 IV. $\\textcircled{1}$O241\n\n中国版本图书馆 CIP 数据核字(2018)第 060527 号\n\n数值分析(第5版)\nShuzhi Fenxi\n李庆扬 王能超 易大义 编\n\n策划编辑:王汉江\n责任编辑:王汉江\n封面设计:原色设计\n责任校对:张会军\n责任监印:周治超\n出版发行:华中科技大学出版社(中国·武汉)\n武汉市东湖新技术开发区华工科技园\n电话:(027)81321913\n邮编:430223\n录 排:武汉市洪山区佳年华文印部\n印 刷:武汉华工鑫宏印务有限公司\n开 本:710mm×1000mm 1/16\n印 张:20\n字 数:415千字\n版 次:2018年4月第5版第1次印刷\n定 价:39.80元\n\n本书若有印装质量问题,请向出版社营销中心调换\n全国免费服务热线:400-6679-118 竭诚为您服务\n版权所有 侵权必究"
+}

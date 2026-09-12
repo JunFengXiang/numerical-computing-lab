@@ -1,0 +1,20 @@
+{
+  "pdf_page": 63,
+  "source_image": "source-images/pdf-063.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "6e228d8601640cb0e18692e86fbef12b1d0f2c0c910c3b20b15fbcf8076748e6",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 961,
+  "possibly_truncated": false,
+  "elapsed_seconds": 27.896,
+  "created_utc": "2026-09-12T09:54:50.254793+00:00",
+  "raw_text_sha256": "fcab17a58e149d841428625af5f3eb4f1a5332cf6eb25d5ade33c5594628e4ce",
+  "raw_text": "$Q(x)$ 也在 $n+2$ 个点上轮流取符号“+”、“-”. 由连续函数性质, 它在 $(a,b)$ 内有 $n+1$ 个零点, 但 $P(x)-Q(x) \\neq 0$ 是不超过 $n$ 次的多项式, 它的零点不超过 $n$. 这个矛盾说明假设不对, 故 $P(x)$ 就是所求最佳逼近多项式. 充分性得证.\n\n必要性证明较繁, 但证明思想类似定理 3.3, 此处从略.\n\n定理 3.4 说明, 用 $P(x)$ 逼近 $f(x)$ 的误差曲线 $y=P(x)-f(x)$ 是均匀分布的. 由定理 3.4 还可得出以下重要推论.\n\n推论 1 若 $f(x) \\in C[a,b]$, 则在 $H_n$ 中存在唯一的最佳逼近多项式.\n\n证明 若 $H_n$ 中有两个最佳逼近多项式 $P(x)$ 与 $Q(x)$, 则对于一切 $x \\in [a,b]$, 都有\n$$-E_n \\leqslant P(x)-f(x) \\leqslant E_n, \\quad -E_n \\leqslant Q(x)-f(x) \\leqslant E_n,$$\n于是\n$$-E_n \\leqslant \\frac{P(x)+Q(x)}{2}-f(x) \\leqslant E_n.$$\n它表明 $R(x)=\\frac{Q(x)+P(x)}{2}$ 也是 $H_n$ 中的最佳逼近多项式, 因而 $R(x)-f(x)$ 的 $n+2$ 个点的交错点组 $\\{x_k\\}$ 满足\n$$R(x_k)-f(x_k)=(-1)^k \\sigma E_n \\quad (k=1,2,\\cdots,n+2),$$\n$$E_n=\\left|R(x_k)-f(x_k)\\right|=\\left|\\frac{P(x_k)-f(x_k)}{2}+\\frac{Q(x_k)-f(x_k)}{2}\\right|.$$ (3.2.5)\n由于 $\\left|P(x_k)-f(x_k)\\right| \\leqslant E_n, \\quad \\left|Q(x_k)-f(x_k)\\right| \\leqslant E_n$, 故当且仅当\n$$\\frac{P(x_k)-f(x_k)}{2}=\\frac{Q(x_k)-f(x_k)}{2}=\\pm \\frac{E_n}{2}$$\n\n时式 (3.2.5) 才能成立, 于是\n$$P(x_k)-f(x_k)=Q(x_k)-f(x_k).$$\n这就得到 $P(x_k)=Q(x_k)$ ($k=1,2,\\cdots,n+2$), 从而表明 $P(x)-Q(x)$ 有 $n+2$ 个根. 这个矛盾说明 $Q(x) \\equiv P(x)$, 推论 1 得证.\n\n推论 2 若 $f(x) \\in C[a,b]$, 则其最佳逼近多项式 $P_n^*(x) \\in H_n$ 就是 $f(x)$ 的一个 Lagrange 插值多项式.\n\n证明 由定理 3.4 可知, $P_n^*(x)-f(x)$ 在 $[a,b]$ 上要么恒为零, 要么有 $n+2$ 个轮流取“正”、“负”的偏差点, 于是存在 $n+1$ 个点 $x_k \\leqslant \\overline{x_k} \\leqslant x_{k+1}$ ($k=1,2,\\cdots,n+1$), 使 $P_n^*(\\overline{x_k})-f(\\overline{x_k})=0$. 以 $\\overline{x_k}$ 为插值节点的 Lagrange 插值多项式就是 $P_n^*(x)$.\n\n3.2.3 最佳一次逼近多项式\n\n定理 3.4给出了最佳逼近多项式 $P(x)$ 的特性, 但要求出 $P(x)$ 却相当困难. 下面先讨论 $n=1$ 的情形.\n\n假定 $f(x) \\in C^2[a,b]$, 且 $f''(x)$ 在 $(a,b)$ 内不变号, 要求最佳一次逼近多项式\n\n• 50 •"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "check": "例7.1解(1,2,3)",
+    "passed": true
+  },
+  {
+    "check": "例7.2 A=LU",
+    "passed": true
+  },
+  {
+    "check": "例7.3精确解",
+    "value": [
+      "-0.490396463272",
+      "-0.0510351813044",
+      "0.367520253024"
+    ]
+  },
+  {
+    "check": "例7.3精确末主元",
+    "value": "5.92200424013"
+  },
+  {
+    "check": "例7.4 A*A^-1=I",
+    "passed": true
+  },
+  {
+    "check": "例7.5 A=LU",
+    "passed": true
+  },
+  {
+    "check": "例7.5 Ly=b",
+    "passed": true
+  },
+  {
+    "check": "例7.5 Ux=y",
+    "passed": true
+  }
+]

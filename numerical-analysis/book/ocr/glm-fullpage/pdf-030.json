@@ -1,0 +1,20 @@
+{
+  "pdf_page": 30,
+  "source_image": "source-images/pdf-030.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "974689e5f9be2b2c7ee664fd2bd69bb19c869ed90856bb9ab6de495a444677c0",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 844,
+  "possibly_truncated": false,
+  "elapsed_seconds": 24.841,
+  "created_utc": "2026-09-12T09:30:48.004035+00:00",
+  "raw_text_sha256": "b33b42ef07189cdda28ead3a30d6f4953deaa13c965dcac2ab68fb9a27938ecc",
+  "raw_text": "$L_2(x_j) = y_j \\quad (j = k - 1, k, k + 1).$\n\n我们知道, $y = L_2(x)$ 在几何上就是通过三点 $(x_{k-1}, y_{k-1}), (x_k, y_k), (x_{k+1}, y_{k+1})$ 的抛物线. 为了求出 $L_2(x)$ 的表达式, 可采用基函数方法, 此时基函数 $l_{k-1}(x), l_k(x)$ 及 $l_{k+1}(x)$ 是二次函数, 且在节点上满足条件\n\n$$\\begin{cases} l_{k-1}(x_{k-1}) = 1, & l_{k-1}(x_j) = 0 \\quad (j = k, k + 1), \\\\ l_k(x_k) = 1, & l_k(x_j) = 0 \\quad (j = k - 1, k + 1), \\\\ l_{k+1}(x_{k+1}) = 1, & l_{k+1}(x_j) = 0 \\quad (j = k - 1, k). \\end{cases}$$\n\n(2.2.6)\n\n满足条件式(2.2.6)的插值基函数是很容易求出的, 例如求 $l_{k-1}(x)$, 因它有两个零点 $x_k$ 及 $x_{k+1}$, 故可表示为\n\n$$l_{k-1}(x) = A(x - x_k)(x - x_{k+1}),$$\n\n其中 $A$ 为待定系数, 可由条件 $l_{k-1}(x_{k-1}) = 1$ 定出, 即\n\n$$A = \\frac{1}{(x_{k-1} - x_k)(x_{k-1} - x_{k+1})},$$\n\n故\n\n$$l_{k-1}(x) = \\frac{(x - x_k)(x - x_{k+1})}{(x_{k-1} - x_k)(x_{k-1} - x_{k+1})}.$$\n\n同理,\n\n$$l_k(x) = \\frac{(x - x_{k-1})(x - x_{k+1})}{(x_k - x_{k-1})(x_k - x_{k+1})}, \\quad l_{k+1}(x) = \\frac{(x - x_{k-1})(x - x_k)}{(x_{k+1} - x_{k-1})(x_{k+1} - x_k)}.$$\n\n函数 $l_{k-1}(x), l_k(x), l_{k+1}(x)$ 称为二次插值基函数或抛物插值基函数, 它们在区间 $[x_{k-1}, x_{k+1}]$ 上的图形分别如图 2.4(a)、(b)、(c)所示.\n\n![图 2.4](image)\n\n利用二次插值基函数 $l_{k-1}(x), l_k(x), l_{k+1}(x)$, 立即可得到二次插值多项式\n\n$$L_2(x) = y_{k-1}l_{k-1}(x) + y_kl_k(x) + y_{k+1}l_{k+1}(x),$$\n\n(2.2.7)\n\n显然, 它满足条件\n\n$$L_2(x_j) = y_j \\quad (j = k - 1, k, k + 1).$$\n\n将上面求得的 $l_{k-1}(x), l_k(x), l_{k+1}(x)$ 代入式(2.2.7), 得"
+}

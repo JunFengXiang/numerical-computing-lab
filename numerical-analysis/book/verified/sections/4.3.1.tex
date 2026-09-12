@@ -1,0 +1,224 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={梯形法的递推化},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{梯形法的递推化}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.3.1 梯形法的递推化}\label{ux68afux5f62ux6cd5ux7684ux9012ux63a8ux5316}
+
+上一节介绍的复化求积方法对提高精度是行之有效的，但在使用求积公式之前必须给出合适的步长。步长太大，精度难以保证；步长太小，又会导致计算量的增加。而事先给出一个恰当的步长往往是困难的。
+
+实际计算中常常采用变步长的计算方案，即在步长逐次分半（即步长二分）的过程中，反复利用复化求积公式进行计算，直至所求得的积分值满足精度要求为止。
+
+下面，我们在变步长的过程中探讨梯形法的计算规律。
+
+设将求积区间 \([a,b]\) 分成 \(n\) 等份，则一共有 \(n+1\) 个分点，按梯形公式（4.2.9）计算积分值 \(T_n\)，需要提供 \(n+1\) 个函数值。如果将求积区间再二分一次，则分点增至 \(2n+1\) 个。将二分前后两个积分值联系起来加以考察，注意到每个子区间 \([x_k,x_{k+1}]\) 经过二分只增加了一个分点 \(x_{k+\frac12}=\dfrac12(x_k+x_{k+1})\)，用复化梯形公式求得该子区间上的积分值为
+
+\[
+\frac h4[f(x_k)+2f(x_{k+\frac12})+f(x_{k+1})].
+\]
+
+注意，这里 \(h=\dfrac{b-a}{n}\) 代表二分前的步长。将每个子区间上的积分值相加，得
+
+\[
+T_{2n}=\frac h4\sum_{k=0}^{n-1}[f(x_k)+f(x_{k+1})]+\frac h2\sum_{k=0}^{n-1}f(x_{k+\frac12}),
+\]
+
+从而利用式（4.2.9）可导出下列递推公式：
+
+\[
+T_{2n}=\frac12T_n+\frac h2\sum_{k=0}^{n-1}f(x_{k+\frac12}).
+\tag{4.3.1}
+\]
+
+\textbf{例 4.2} 计算积分值 \(I=\displaystyle\int_0^1\frac{\sin x}{x}\,\mathrm{d}x\)。
+
+\textbf{解} 先对整个区间 \([0,1]\) 使用梯形公式。对于函数 \(f(x)=\dfrac{\sin x}{x}\)，它在 \(x=0\) 的值定义为 \(f(0)=1\)，而 \(f(1)=0.841\,470\,9\)，据梯形公式计算得
+
+\[
+T_1=\frac12[f(0)+f(1)]=0.920\,735\,5.
+\]
+
+然后将区间二等分，再求出中点的函数值 \(f(1/2)=0.958\,851\,0\)，从而利用递推公式（4.3.1），有
+
+\href{../../source-images/pdf-102.jpeg}{原页图像}
+
+\[
+T_2=\frac12T_1+\frac12f\left(\frac12\right)=0.939\,793\,3.
+\]
+
+进一步二分求积区间，并计算新分点上的函数值，得
+
+\[
+f(1/4)=0.989\,615\,8,\quad f(3/4)=0.908\,851\,6.
+\]
+
+再利用式（4.3.1），有
+
+\[
+T_4=\frac12T_2+\frac14\left[f\left(\frac14\right)+f\left(\frac34\right)\right]=0.944\,513\,5.
+\]
+
+这样不断二分下去，计算结果如表 4.3 所示（表中 \(k\) 代表二分次数，区间等份数 \(n=2^k\)）。
+
+表 4.3
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(T_n\) & \(0.939\,793\,3\) & \(0.944\,513\,5\) & \(9.945\,690\,9\) & \(0.945\,985\,0\) & \(0.946\,059\,6\) \\
+\end{longtable}
+}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+10
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(T_n\) & \(0.946\,076\,9\) & \(0.946\,081\,5\) & \(0.946\,082\,7\) & \(0.946\,083\,0\) & \(0.946\,083\,1\) \\
+\end{longtable}
+}
+
+积分 \(I\) 的准确值为 \(0.946\,083\,1\)，用变步长方法二分 9 次得到了这个结果。
+
+\begin{quote}
+校注（agent 补充，CH04A-E03）：表 4.3 的 \(k=3\) 单元格原扫描确实印为 \(9.945\,690\,9\)，这里按原表保留。由例 4.1 的 \(T_8\) 和本页下段的 \(T_8\) 可知首位应为 \(0\)，即 \(0.945\,690\,9\)，这是原书排印错误。
+
+校注（agent 补充，CH04A-E04）：本页说明 \(k\) 为二分次数，表中 \(k=9\) 为 \(0.946\,083\,0\)，\(k=10\) 才列出 \(0.946\,083\,1\)。故表后``二分 9 次得到了这个结果''与本页表格、次数定义不一致；原句已保留。
+
+校注（agent 补充，CH04A-E07）：表 4.3 的 \(k=5\) 单元格原扫描印为 \(0.946\,059\,6\)，这里按原表保留。对本例 \(f(x)=\sin x/x\)（\(f(0)=1\)）在 \([0,1]\) 上取 \(n=32\) 独立高精度计算复化梯形值，得 \(T_{32}=0.946\,058\,560\,962\,768\,067\ldots\)，保留七位小数应为 \(0.946\,058\,6\)；原表数值有误。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04A-E03}：原书 PDF 页 102
+\item
+  \texttt{CH04A-E04}：原书 PDF 页 102
+\item
+  \texttt{CH04A-E07}：原书 PDF 页 102
+\end{itemize}
+
+\end{document}

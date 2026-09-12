@@ -1,0 +1,306 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={直接三角分解法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{直接三角分解法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.4.1 直接三角分解法}\label{ux76f4ux63a5ux4e09ux89d2ux5206ux89e3ux6cd5}
+
+将 Gauss 消去法改写为紧凑形式，可以直接从矩阵 \(A\) 的元素得到计算 \(L,U\) 元素的递推公式，而不需任何中间步骤，这就是所谓\textbf{直接三角分解法}。一旦实现了矩阵 \(A\) 的 LU 分解，那么求解式（7.2.1）的问题就等价于求解以下两个三角方程组：
+
+（1）\(Ly=b\)，求 \(y\)；（2）\(Ux=y\)，求 \(x\)。
+
+\textbf{1. 不选主元的三角分解法}
+
+设 \(A\) 为非奇异矩阵，且有分解式 \(A=LU\)，其中 \(L\) 为单位下三角阵，\(U\) 为上三角阵，即
+
+\[
+A=\begin{pmatrix}
+1&&&\\
+l_{21}&1&&\\
+\vdots&\ddots&\ddots&\\
+l_{n1}&\cdots&l_{n,n-1}&1
+\end{pmatrix}
+\begin{pmatrix}
+u_{11}&u_{12}&\cdots&u_{1n}\\
+&u_{22}&\cdots&u_{2n}\\
+&&\ddots&\vdots\\
+&&&u_{nn}
+\end{pmatrix}.
+\tag{7.4.1}
+\]
+
+下面说明 \(L,U\) 的元素可以由 \(n\) 步直接计算定出，其中第 \(r\) 步定出 \(U\) 的第 \(r\) 行和 \(L\) 的第 \(r\) 列元素。由式（7.4.1），有
+
+\[a_{1i}=u_{1i}\quad(i=1,2,\cdots,n),\]
+
+于是得 \(U\) 的第 1 行元素；
+
+\[a_{i1}=l_{i1}u_{11},\quad l_{i1}=a_{i1}/u_{11}\quad(i=2,\cdots,n),\]
+
+于是得 \(L\) 的第 1 列元素。
+
+设已经定出 \(U\) 的第 1 行到第 \(r-1\) 行元素与 \(L\) 的第 1 列到第 \(r-1\) 列元素。由式（7.4.1），利用矩阵乘法，有
+
+\[a_{ri}=\sum_{k=1}^{n}l_{rk}u_{ki}=\sum_{k=1}^{r-1}l_{rk}u_{ki}+u_{ri}\quad\text{（当 $r<k$，$l_{rk}=0$ 时）},\]
+
+故
+
+\[u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r,r+1,\cdots,n),\]
+
+又由式（7.4.1）有
+
+\[a_{ir}=\sum_{k=1}^{n}l_{ik}u_{kr}=\sum_{k=1}^{r-1}l_{ik}u_{kr}+l_{ir}u_{rr}.\]
+
+总结上述讨论，得到用直接三角分解法解 \(Ax=b\)（要求 \(A\) 所有顺序主子式都不为零）的计算公式，步骤如下。
+
+\href{../../source-images/pdf-192.jpeg}{原页扫描}
+
+\textbf{步 1} \(u_{1i}=a_{1i}\)（\(i=1,2,\cdots,n\)），\(l_{i1}=a_{i1}/u_{11}\)（\(i=2,3,\cdots,n\)），计算 \(U\) 第 \(r\) 行，\(L\) 的第 \(r\) 列元素，\(r=2,3,\cdots,n\)。
+
+\textbf{步 2}
+
+\[u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r,r+1,\cdots,n).\tag{7.4.2}\]
+
+\textbf{步 3}
+
+\[l_{ir}=\left(a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\right)/u_{rr}\quad(i=r+1,\cdots,n;\;r\ne n),\tag{7.4.3}\]
+
+求解 \(Ly=b,Ux=y\) 计算公式。
+
+\textbf{步 4}
+
+\[
+\begin{cases}
+y_1=b_1,\\
+y_i=\displaystyle b_i-\sum_{k=1}^{i-1}l_{ik}y_k\quad(i=2,3,\cdots,n).
+\end{cases}
+\tag{7.4.4}
+\]
+
+\textbf{步 5}
+
+\[
+\begin{cases}
+x_n=y_n/u_{nn},\\
+x_i=\displaystyle\left(y_i-\sum_{k=i+1}^{n}u_{ik}x_k\right)/u_{ii}\quad(i=n-1,n-2,\cdots,1).
+\end{cases}
+\tag{7.4.5}
+\]
+
+\textbf{例 7.5} 用直接三角分解法解 \(\begin{pmatrix}1&2&3\\2&5&2\\3&1&5\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}14\\18\\20\end{pmatrix}\)。
+
+\textbf{解} 用分解公式（7.4.2）、（7.4.3）计算，得
+
+\[A=\begin{pmatrix}1&0&0\\2&1&0\\3&-5&1\end{pmatrix}
+\begin{pmatrix}1&2&3\\0&1&-4\\0&0&-24\end{pmatrix}=LU.\]
+
+求解
+
+\[Ly=(14,18,20)^{\mathrm T},\]
+
+得
+
+\[y=(14,-10,-72)^{\mathrm T},\]
+
+求解
+
+\[Ux=(14,-10,-72)^{\mathrm T},\]
+
+得
+
+\[x=(1,2,3)^{\mathrm T}.\]
+
+在用计算机计算时，由于计算好 \(u_{ri}\) 后 \(a_{ri}\) 就不用了，因此计算好 \(L,U\) 的元素后就存放在 \(A\) 的相应位置。例如
+
+\[
+A=\begin{pmatrix}
+a_{11}&a_{12}&a_{13}&a_{14}\\
+a_{21}&a_{22}&a_{23}&a_{24}\\
+a_{31}&a_{32}&a_{33}&a_{34}\\
+a_{41}&a_{42}&a_{43}&a_{44}
+\end{pmatrix}
+\to\begin{pmatrix}
+u_{11}&u_{12}&u_{13}&u_{14}\\
+l_{21}&u_{22}&u_{23}&u_{24}\\
+l_{31}&l_{32}&u_{33}&u_{34}\\
+l_{41}&l_{42}&l_{43}&u_{44}
+\end{pmatrix}.
+\]
+
+最后在存放 \(A\) 的数组中得到 \(L,U\) 的元素。
+
+由直接三角分解计算公式，需要计算形如 \(\sum a_i b_i\) 的式子，可采用``双精度累加''，以提高精度。
+
+直接分解法大约需要 \(n^3/3\) 次乘、除法运算，和 Gauss 消去法的计算量基本相同。
+
+如果已经实现了 \(A=LU\) 的分解计算，且 \(L,U\) 保存在 \(A\) 的相应位置，则用直接三
+
+\href{../../source-images/pdf-193.jpeg}{原页扫描}
+
+角分解法解具有相同系数的方程组 \(Ax=(b_1,b_2,\cdots,b_m)\) 是相当方便的，每解一个方程组 \(Ax=b_j\) 仅需要增加 \(n^2\) 次乘除法运算。
+
+矩阵 \(A\) 的分解公式（7.4.2）、（7.4.3）又称为 \textbf{Doolittle 分解公式}。
+
+\textbf{2. 选主元的三角分解法}
+
+从直接三角分解公式可看出，当 \(u_{rr}=0\) 时计算将中断或者当 \(u_{rr}\) 绝对值很小时，按分解公式计算可能引起舍入误差的累积。但如果 \(A\) 非奇异，就可通过交换 \(A\) 的行实现矩阵 \(PA\) 的 LU 分解，因此可采用与列主元素消去法类似的方法（可以证明下述方法与列主元素消去法等价），将直接三角分解法修改为（部分）选主元的三角分解法。
+
+设第 \(r-1\) 步分解已完成，这时有
+
+\[
+A\to\begin{pmatrix}
+u_{11}&u_{12}&\cdots&\cdots&\cdots&\cdots&u_{1n}\\
+l_{21}&u_{22}&&&&&\vdots\\
+l_{31}&l_{32}&\ddots&&&&\vdots\\
+\vdots&&\ddots&u_{r-1,r-1}&\cdots&\cdots&u_{n-1,n}\\
+\vdots&&&l_{r,r-1}&a_{rr}&\cdots&a_{rn}\\
+\vdots&&&\vdots&\vdots&&\vdots\\
+l_{n1}&l_{n2}&\cdots&l_{n,r-1}&a_{nr}&\cdots&a_{nn}
+\end{pmatrix}.
+\]
+
+第 \(r\) 步分解需用到式（7.4.2）及式（7.4.3），为了避免用小的数 \(u_{rr}\) 作除数，引进量
+
+\[s_i=a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\quad(i=r,r+1,\cdots,n),\]
+
+于是有
+
+\[u_{rr}=s_r,\quad l_{ir}=s_i/s_r\quad(i=r+1,\cdots,n),\quad \max_{r\le i\le n}|s_i|=|s_{i_r}|.\]
+
+用 \(s_{i_r}\) 作为 \(u_{rr}\)，交换 \(A\) 的 \(r\) 行与 \(i_r\) 行元素（将 \((i,j)\) 位置的新元素仍记作 \(l_{ij}\) 及 \(a_{ij}\)），于是有 \(|l_{ir}|\le1\)（\(i=r+1,\cdots,n\)）。由此再进行第 \(r\) 步分解计算。
+
+\textbf{算法 4} 选主元的三角分解法，其步骤如下：
+
+设 \(Ax=b\)，其中 \(A\) 为非奇异矩阵。本算法采用列主元的三角分解法，用 \(PA=I_{n-1,i_{n-1}}\cdots I_{1i_1}A\) 的三角分解冲掉 \(A\)，用整型数组 \(\mathrm{Ip}(n)\) 记录主行，解 \(x\) 存放在 \(b\) 内。
+
+对于 \(r=1,2,\cdots,n\)，做到步 4。
+
+\textbf{步 1} 计算 \(s_i\)
+
+\[a_{ir}\leftarrow s_i=a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\quad(i=r,r+1,\cdots,n).\]
+
+\textbf{步 2} 选主元 \(|s_{i_r}|=\max_{r\le i\le n}|s_i|\)，\(\mathrm{Ip}(r)\leftarrow i_r\)。
+
+\textbf{步 3} 交换 \(A\) 的 \(r\) 行与 \(i_r\) 行元素 \(a_{ri}\leftrightarrow a_{i_ri}\)（\(i=1,2,\cdots,n\)）。
+
+\textbf{步 4} 计算 \(U\) 的第 \(r\) 行元素，\(L\) 的第 \(r\) 列元素
+
+\[a_{rr}=u_{rr}=s_r,\]
+
+\begin{quote}
+校注（agent 补充）：本页分解存储矩阵在对角元 \(u_{r-1,r-1}\) 所在行的最右侧，原书印作 \(u_{n-1,n}\)，已保留；按该行是第 \(r-1\) 行，应为 \(u_{r-1,n}\)。疑似原书下标排印错误，参见\href{../assets/ch07a/pdf-193-storage-detail.png}{原矩阵放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-194.jpeg}{原页扫描}
+
+\[a_{ir}\leftarrow l_{ir}=s_i/u_{rr}=a_{ir}/a_{rr}\quad(i=r+1,\cdots,n),\]
+
+\[a_{ri}\leftarrow u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r+1,\cdots,n),\]
+
+这时有 \(|l_{ir}|\le1\)。
+
+上述计算过程完成后就实现了 \(PA\) 的 LU 分解，且 \(U\) 保存在 \(A\) 上三角部分，\(L\) 保存在 \(A\) 的下三角部分，排列阵 \(P\) 由 \(\mathrm{Ip}(n)\) 最后记录可知。
+
+求解 \(Ly=Pb\) 及 \(Ux=y\)。
+
+\textbf{步 5} \(i=1,2,\cdots,n-1\)。
+
+（1）\(t\leftarrow\mathrm{Ip}(i)\)；（2）如果 \(i=t\)，则转（3），否则 \(b_i\leftrightarrow b_t\)；（3）继续循环。
+
+\textbf{步 6}
+
+\[b_i\leftarrow b_i-\sum_{k=1}^{i-1}l_{ik}b_k\quad(i=2,3,\cdots,n).\]
+
+\textbf{步 7}
+
+\[b_n\leftarrow b_n/u_{nn},\quad b_i\leftarrow\left(b_i-\sum_{k=i+1}^{n}u_{ik}b_k\right)/u_{ii}\quad(i=n-1,\cdots,1).\]
+
+利用算法 4 的结果（实现 \(PA=LU\) 三角分解），则可以计算 \(A\) 的逆矩阵
+
+\[A^{-1}=U^{-1}L^{-1}P.\]
+
+利用 \(PA\) 的三角分解计算 \(A^{-1}\) 步骤：
+
+（1）计算上三角阵的逆矩阵 \(U^{-1}\)；
+
+（2）计算 \(U^{-1}L^{-1}\)；
+
+（3）交换 \(U^{-1}L^{-1}\) 列（利用 \(\mathrm{Ip}(n)\) 最后记录）。
+
+上述方法求 \(A^{-1}\) 大约需要 \(n^3\) 次乘法运算。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E006}：原书 PDF 页 193
+\end{itemize}
+
+\end{document}

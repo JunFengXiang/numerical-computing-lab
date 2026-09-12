@@ -1,0 +1,155 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={问题的提出},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{问题的提出}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{3.1.1 问题的提出}\label{ux95eeux9898ux7684ux63d0ux51fa}
+
+在数值计算中经常遇到求函数值的问题. 用手工计算时常常通过函数表求得; 用计算机计算时, 若把函数表存入内存进行查表, 则占用单元太多, 不如直接用公式计算方便. 因此, 我们希望求出便于计算且计算量省的公式近似已知函数 \(f(x)\). 例如, Taylor 展开式的部分和
+
+\[
+P_n(x) = f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n \tag{3.1.1}
+\]
+
+就是 \(f(x)\)的一种近似公式. 用它求 \(x_0\) 附近的函数值 \(f(x)\) 误差较小, 当 \(|x-x_0|\) 较大时误差就很大. 例如 \(f(x)=e^x\) 在 \([-1,1]\) 上用
+
+\[
+P_4(x) = 1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4
+\]
+
+近似 \(e^x\), 其误差
+
+\[
+R_4(x)=e^x-P_4(x)=\frac{1}{120}x^5e^\epsilon, \quad \epsilon \in(-1,1),
+\]
+
+于是
+
+\[
+|R_4(x)| \leqslant \frac{e}{120}|x^5|, \quad \max_{-1 \leqslant x \leqslant 1}|R_4(x)| \leqslant \frac{e}{120} \approx 0.0226.
+\]
+
+误差分布如图3.1所示, 它在整个区间上误差较大. 若在计算机上用这种方法计算 \(e^x\), 如精度要求较高, 则需取很多项, 这样既费时又多占存储单元, 因此, 要求在给定精度下求计算次数最少的近似公式, 这就是函数逼近与计算要解决的问题. 这问题可叙述为: ``对于函数类 \(A\) 中给定的函数 \(f(x)\), 要求在另一类较简单的便于计算的函数类 \(B\) 中, 求函数 \(P(x) \in B \subseteq A\), 使 \(P(x)\) 与 \(f(x)\) 之差在某种度量意义下最小.'' 函数类 \(A\) 通常是区间 \([a,b]\) 上的连续函数, 记作 \(C[a,b]\); 函数类 \(B\) 通常是代数多项式、分式有理函数或三角多项式. 而度量标准最常用的有两种,一种是
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 3.1 原图裁切}]{../assets/ch03a/fig-3-1.png}
+
+图 3.1（原图）。图中为上文误差分布曲线，横轴 \(x\)、纵轴 \(y\)；标签为 \(-1\)、\(1\)、\(O\)。曲线在负半轴下方、正半轴上方，通过原点；在 \(x=-1\) 和 \(x=1\) 处有竖向辅助线。
+
+\href{../../source-images/pdf-059.jpeg}{查看原页}
+
+\[
+\| f(x) - P(x) \|_{\infty} = \max_{a \leqslant x \leqslant b} |f(x) - P(x)|, \tag{3.1.2}
+\]
+
+在这种度量意义下的函数逼近称为一致逼近或均匀逼近；另一种度量标准是 \[
+\| f(x) - P(x) \|_{2} = \sqrt{\int_{a}^{b} [f(x) - P(x)]^{2} \mathrm{d}x}, \tag{3.1.3}
+\]
+
+用这种度量的函数逼近称为均方逼近或平方逼近. 这里, 符号 \(\| \cdot \|_{\infty}\) 及 \(\| \cdot \|_{2}\) 是范数. 本章主要研究在这两种度量标准下用代数多项式 \(P_{n}(x)\) 逼近 \(f(x) \in C[a,b]\), 也就是用最佳一致逼近多项式与最佳平方逼近多项式逼近 \(f(x) \in C[a,b]\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 59 的校注}\label{ux539fux4e66-pdf-ux9875-59-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-059.md}{完整原页转录} · \href{../../source-images/pdf-059.jpeg}{原页图像}
+
+校注记录：ch03a-E01。
+
+\begin{quote}
+校注（agent 补充，原书疑误）：原页 Lagrange 插值式后的求和明确印为 \(\sum_{k=0}^{n}l_k(x_k)=1\)，此处按原文保留。由基函数性质 \(l_k(x_k)=1\)，左端应为 \(n+1\)；通常的恒等式应为 \(\sum_{k=0}^{n}l_k(x)=1\)。这不是 OCR 误识。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03a-E01}：原书 PDF 页 59
+\end{itemize}
+
+\end{document}

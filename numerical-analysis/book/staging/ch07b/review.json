@@ -1,0 +1,663 @@
+{
+  "lane": "ch07b",
+  "reviewer": "Codex agent ch07b",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 196,
+      "printed_page": 183,
+      "path": "staging/ch07b/pages/pdf-196.md",
+      "sha256": "96304bcd8e29eba38bacf12cf938488f468e362894018718c8216f69b60e7cc4",
+      "source_image_sha256": "38aca7affdcc7e1058e09a225057acb869042a0b082ea768b9c9f6d5013e5917",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.4.8",
+        "7.4.9"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "续7.4.2；已放大复核步4、LDL转置矩阵及乘积展开。",
+        "原书疑误两处：步4 b_i；转置矩阵 l_{n-1,n-1}。"
+      ]
+    },
+    {
+      "pdf_page": 197,
+      "printed_page": 184,
+      "path": "staging/ch07b/pages/pdf-197.md",
+      "sha256": "be6eaabc86a68c1b8c03b4f754bfb4ad1fc599dcddf156affc0b40f8d1e2878c",
+      "source_image_sha256": "9611d4bef7e198dc79ad3df794c72c18b08008554a8e7015b64ed81da696ccfa",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.4.3",
+          "title": "追赶法"
+        }
+      ],
+      "formula_ids": [
+        "7.4.10",
+        "7.4.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "7.4.2续页及7.4.3起始；三对角方程组跨页。",
+        "原书疑误：式(7.4.11)求和项 y_h。"
+      ]
+    },
+    {
+      "pdf_page": 198,
+      "printed_page": 185,
+      "path": "staging/ch07b/pages/pdf-198.md",
+      "sha256": "3e5eeebdf588f883c84978759ea1cf895acec9a0310c6b5c5ce1118e2c7bdaea",
+      "source_image_sha256": "f08f88fccfab0ccdba2c530a71d878c821a046b4ab951ff7cd19f0755862b87f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.4.12",
+        "7.4.13",
+        "7.4.14",
+        "7.4.15"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 199,
+      "printed_page": 186,
+      "path": "staging/ch07b/pages/pdf-199.md",
+      "sha256": "4c98fb77ee3ba070796305e63cea57cfa84a5924f259f586e5be1e87ccca535a",
+      "source_image_sha256": "31eefc5b003e891adc60b763ac3266c80514f7db99b1caa425f4115b7a985ac7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.5",
+          "title": "向量和矩阵的范数"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 200,
+      "printed_page": 187,
+      "path": "staging/ch07b/pages/pdf-200.md",
+      "sha256": "eca6421f2aae2b8760a59085802c1c7f2a4124a67f7e8e674f10705e97408afb",
+      "source_image_sha256": "24590816b1896c29528f6b5c755944adbbb4cd04a8f8bf05292a3db8537fbb53",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.5.1",
+        "7.5.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 201,
+      "printed_page": 188,
+      "path": "staging/ch07b/pages/pdf-201.md",
+      "sha256": "f08d186ef54eafcf311acf569e663ae2d380fa5f087b8605bd254468ec3d6e54",
+      "source_image_sha256": "83c69897ae10aac2a3b0898d62fc2a78840977de7649a33f3ff6234359361327",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.5.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 202,
+      "printed_page": 189,
+      "path": "staging/ch07b/pages/pdf-202.md",
+      "sha256": "7070e9baf9fb70c91be4b8db31ace0b98246d34f96e4b46c8f0d7df786d3f478",
+      "source_image_sha256": "1b95e2f92cbf1239e8ca453ef1b44fbf1a720ca23e42cffe5acff994c6193ec0",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.5.4",
+        "7.5.5",
+        "7.5.6",
+        "7.5.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "疑误处已放大原图复核，保留原文并加agent校注。"
+      ]
+    },
+    {
+      "pdf_page": 203,
+      "printed_page": 190,
+      "path": "staging/ch07b/pages/pdf-203.md",
+      "sha256": "c8d70f661ad316eac27796c0bee3bfdb014760490390ca280046f31b395e3382",
+      "source_image_sha256": "5710a6188aea612ca490706aa0b5042b52bf9b9fcd3818c0e7ce25904d0bffde",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.5.8",
+        "7.5.9"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "疑误处已放大原图复核，保留原文并加agent校注。"
+      ]
+    },
+    {
+      "pdf_page": 204,
+      "printed_page": 191,
+      "path": "staging/ch07b/pages/pdf-204.md",
+      "sha256": "72c06f07d8a9ddf256759b0cbc194b045c475b0ff1a3228a7da1e0f18a9039dc",
+      "source_image_sha256": "94944722942cb5f6751eb7c170d786c14727a0c23bbaf85c754f0de37d77ade3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "疑误处已局部放大确认并保留原式。"
+      ]
+    },
+    {
+      "pdf_page": 205,
+      "printed_page": 192,
+      "path": "staging/ch07b/pages/pdf-205.md",
+      "sha256": "dcbe02ec20b7f5d71ec01dac20c3fdd0dd47d581e79048a39652d25f79dc6ff3",
+      "source_image_sha256": "bba4613b67dcad6b1c32f3706fdaa84cce4c90b401d85e6c9d2cb4d82d04b098",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.6",
+          "title": "误差分析"
+        },
+        {
+          "id": "7.6.1",
+          "title": "矩阵的条件数"
+        }
+      ],
+      "formula_ids": [
+        "7.6.1",
+        "7.6.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "疑误处已局部放大确认并保留原式。"
+      ]
+    },
+    {
+      "pdf_page": 206,
+      "printed_page": 193,
+      "path": "staging/ch07b/pages/pdf-206.md",
+      "sha256": "3e4553d8f5b4336740ff8621b9b1e1b1585c73f59012b2f03127861d39738e7f",
+      "source_image_sha256": "7e6d55d2e53e336281522f58ed8049840349f9529ff39f65e665e3f0299fefa6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.6.3",
+        "7.6.4",
+        "7.6.5",
+        "7.6.6",
+        "7.6.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 207,
+      "printed_page": 194,
+      "path": "staging/ch07b/pages/pdf-207.md",
+      "sha256": "a9e75427c8cb94c3d442a161e59dbda9125e6fb57d6e97d86da23b59c8ec4e61",
+      "source_image_sha256": "bf16009a40eaff9ea588ba1e7a6df588a149cb47c8f8666018942180a3309168",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。"
+      ]
+    },
+    {
+      "pdf_page": 208,
+      "printed_page": 195,
+      "path": "staging/ch07b/pages/pdf-208.md",
+      "sha256": "3a8bf05d43606a6e1d27d38ad1485431500044df1e878158245e21c32af2656e",
+      "source_image_sha256": "f5b54ec4d4201f525ab5be8f30ce1d87ad6c8cc4eb6b911bf303130ffe42ccab",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.6.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "条件数疑误已放大原图，并用精确有理运算复核。",
+        "独立交叉复核提示后，再以有理数核算式7.6.8，保留原小数向量并追加E014。"
+      ]
+    },
+    {
+      "pdf_page": 209,
+      "printed_page": 196,
+      "path": "staging/ch07b/pages/pdf-209.md",
+      "sha256": "5b692206274166bfb645aa8906a0d70c9aeb64320ba38bcf52e17c1cb97e070b",
+      "source_image_sha256": "3e7818ff46c99292adb4e41290bb3cd9bf75098ef5ee56a2da9b470b5d3f07c3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "7.6.9",
+        "7.6.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "条件数疑误已放大原图，并用精确有理运算复核。"
+      ]
+    },
+    {
+      "pdf_page": 210,
+      "printed_page": 197,
+      "path": "staging/ch07b/pages/pdf-210.md",
+      "sha256": "ba3fe67af180731d5cc583c7e16c4778be0196c8278e9fe6dbc340ad6b09dc95",
+      "source_image_sha256": "d82ac2516b68686626bbd69a53f20e3057824fc10c2ea124e15fe37b48047ea5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.6.2",
+          "title": "舍入误差"
+        }
+      ],
+      "formula_ids": [
+        "7.6.11",
+        "7.6.12",
+        "7.6.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "扰动方程符号或精度估计缺符已放大原图确认；原文保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 211,
+      "printed_page": 198,
+      "path": "staging/ch07b/pages/pdf-211.md",
+      "sha256": "cb2c688b3fa1ad72efd14fc3527450e7ee9adb431effcbdd476502a1fef3ccba",
+      "source_image_sha256": "05e8129cd31a64014981fb92ad5f8ba924bf126d6ae9934ac85bf9ad538aa48c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.summary",
+          "title": "小结"
+        }
+      ],
+      "formula_ids": [
+        "7.6.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "扰动方程符号或精度估计缺符已放大原图确认；原文保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 212,
+      "printed_page": 199,
+      "path": "staging/ch07b/pages/pdf-212.md",
+      "sha256": "8b3a863a56187d85ff26403acfb889d51665c6d9e596c06e7010994d19f0a727",
+      "source_image_sha256": "c342dea825ea6690fa94f0a3e7df22c576ddb97746c03501b35057c3820528a7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "7.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "完整转录习题1–7(1)，未代做习题。"
+      ]
+    },
+    {
+      "pdf_page": 213,
+      "printed_page": 200,
+      "path": "staging/ch07b/pages/pdf-213.md",
+      "sha256": "397b0f0281e7bb4c91e1935e89943c65396b36d1bb9a79a1ec3c67786de6d9c6",
+      "source_image_sha256": "55670a03985dbe4b0f99c377d9f8bafd28b18282d39bd6fdae7d8f592823f30b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "完整转录习题7(2)–15，未代做习题。"
+      ]
+    },
+    {
+      "pdf_page": 214,
+      "printed_page": 201,
+      "path": "staging/ch07b/pages/pdf-214.md",
+      "sha256": "7827a467329bcdc223a0540f8ba00e3271b667804640d53e1183d123bed7ef08",
+      "source_image_sha256": "ee731a4ed85853853e3fb33d0a8910b3a1299ed95afaba27e72393c45d3bb1f0",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "已打开整页原图逐字逐式核对，页内全部内容转录。",
+        "完整转录习题16–33，未代做习题。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch07b-E001",
+      "pdf_page": 196,
+      "location": "式(7.4.8)步4",
+      "original": "b_i",
+      "suggested": "y_i",
+      "reason": "L^T x=y 的回代右端应为 y。",
+      "evidence": "staging/ch07b/assets/196-step4.png"
+    },
+    {
+      "id": "ch07b-E002",
+      "pdf_page": 196,
+      "location": "LDL^T展开最右矩阵次末行末项",
+      "original": "l_{n-1,n-1}",
+      "suggested": "l_{n,n-1}",
+      "reason": "该元素应为左侧 L 最后一行次末列的转置对应。",
+      "evidence": "staging/ch07b/assets/196-ldlt.png"
+    },
+    {
+      "id": "ch07b-E003",
+      "pdf_page": 197,
+      "location": "式(7.4.11)步4",
+      "original": "y_h",
+      "suggested": "y_k",
+      "reason": "求和指标为 k，原方程为 Ly=b。",
+      "evidence": "staging/ch07b/assets/197-solves.png"
+    },
+    {
+      "id": "ch07b-E004",
+      "pdf_page": 202,
+      "location": "定理7.13证明中所引用定理号",
+      "original": "定理7.11",
+      "suggested": "定理7.12",
+      "reason": "两侧范数比较是向量范数等价性定理7.12。",
+      "evidence": "staging/ch07b/assets/202-reference.png"
+    },
+    {
+      "id": "ch07b-E005",
+      "pdf_page": 203,
+      "location": "Ax_0第i_0个分量表达式首个求和下限",
+      "original": "i=1",
+      "suggested": "j=1",
+      "reason": "求和项 a_{i_0j}x_j 的自由变化指标为 j。",
+      "evidence": "staging/ch07b/assets/203-sum-index.png"
+    },
+    {
+      "id": "ch07b-E006",
+      "pdf_page": 204,
+      "location": "复矩阵2-范数公式中间项",
+      "original": "max Rayleigh商，未开平方",
+      "suggested": "max Rayleigh商的平方根",
+      "reason": "商的最大值为lambda_max(A^HA)=||A||_2^2。",
+      "evidence": "staging/ch07b/assets/204-complex-norm.png"
+    },
+    {
+      "id": "ch07b-E007",
+      "pdf_page": 205,
+      "location": "定理7.18证明起始及逆矩阵恒等式",
+      "original": "Bx_0=x_0；(I±B)^-1=I∓B(I-B)^-1",
+      "suggested": "Bx_0=∓x_0；(I±B)^-1=I∓B(I±B)^-1",
+      "reason": "原式仅减号分支一致，未同时涵盖加号分支。",
+      "evidence": "staging/ch07b/assets/205-inverse-signs.png"
+    },
+    {
+      "id": "ch07b-E008",
+      "pdf_page": 208,
+      "location": "例7.9 H6条件数",
+      "original": "2.9×10^6",
+      "suggested": "2.9×10^7（无穷范数）",
+      "reason": "精确有理数计算 cond_inf(H6)=29070279。",
+      "evidence": "staging/ch07b/assets/208-h6-cond.png"
+    },
+    {
+      "id": "ch07b-E009",
+      "pdf_page": 209,
+      "location": "例7.10缩放后条件数分式",
+      "original": "1/(1-10^-4)≈4",
+      "suggested": "4/(1-10^-4)≈4",
+      "reason": "矩阵行范数2乘逆矩阵行范数2/(1-10^-4)。",
+      "evidence": "staging/ch07b/assets/209-scaled-cond.png"
+    },
+    {
+      "id": "ch07b-E010",
+      "pdf_page": 210,
+      "related_pdf_pages": [
+        211
+      ],
+      "location": "向后误差段及定理7.22(2)扰动方程",
+      "original": "计算解x_bar精确满足(A+deltaA)x=b",
+      "suggested": "(A+deltaA)x_bar=b",
+      "reason": "本段定义x为精确解、x_bar为计算解。",
+      "evidence": [
+        "staging/ch07b/assets/210-backward-error.png",
+        "staging/ch07b/assets/211-computed-solution.png"
+      ]
+    },
+    {
+      "id": "ch07b-E011",
+      "pdf_page": 211,
+      "location": "式(7.6.14)关系符和适用条件",
+      "original": "左右两式间无关系符号；定理未列分母为正条件",
+      "suggested": "补≤，并要求cond(A)_inf*||deltaA||_inf/||A||_inf<1",
+      "reason": "由7.6.7所得前向误差界要求扰动小条件，分母须正。",
+      "evidence": "staging/ch07b/assets/211-error-estimate.png"
+    },
+    {
+      "id": "ch07b-E012",
+      "pdf_page": 214,
+      "location": "习题27分子",
+      "original": "||A||_{y∞}（y排在范数闭合符外的下标位置）",
+      "suggested": "||Ay||_∞",
+      "reason": "原书y的位置不在范数内部，按题意应为矩阵作用后的向量范数。",
+      "evidence": "staging/ch07b/assets/214-ex27.png"
+    },
+    {
+      "id": "ch07b-E013",
+      "pdf_page": 214,
+      "location": "习题30(2)左端",
+      "original": "cond(A_2)",
+      "suggested": "cond(A)_2",
+      "reason": "本题定义的是矩阵A，所用下标2表示范数。",
+      "evidence": "staging/ch07b/assets/214-ex30.png"
+    },
+    {
+      "id": "ch07b-E014",
+      "pdf_page": 208,
+      "location": "例7.9所称精确解的小数向量",
+      "original": "(1.089512538,0.487967062,1.491002798)^T",
+      "suggested": "(153971,68960,210710)^T/141321",
+      "reason": "对式7.6.8原印矩阵和右端进行精确有理数求解，所印向量末几位不符；不影响51.2%的结论。",
+      "evidence": "source-images/pdf-208.jpeg"
+    }
+  ],
+  "validation_notes": [
+    "逐页打开原图并对可疑公式局部放大；未使用OCR底稿。",
+    "原书疑误保留原式，附agent校注。",
+    "SymPy精确有理运算复核H6无穷范数条件数29070279，以及例7.10缩放后矩阵条件数40000/9999。",
+    "习题共1–33题，跨页第7题已接续，全部矩阵及小题转录；未生成习题答案。",
+    "完整19页Markdown经Pandoc导出与XeLaTeX语法编译通过（39页QA稿）；无LaTeX错误、缺字、overfull警告和越页文本。",
+    "已查看39页导出稿联系表，并按原尺寸查看导出页2、4、26、34、37、39；E014追加后仅导出页27像素发生变化，已单独重开核对新校注，其余38页像素保持一致。",
+    "语法编译和导出排版检查不替代原页数学核对；本回执为agent初次核验，human_review=false；独立交叉复核另见由ch07a完成的cross-review.json。",
+    "交叉复核后追加E014：式7.6.8的精确解为(153971,68960,210710)^T/141321；原印小数向量保留。",
+    "E014已同步最终Markdown/LaTeX/PDF/页面27渲染及联系表，39页QA稿无编译错误、缺字、overfull警告或越页文本。"
+  ],
+  "assets": [
+    {
+      "path": "staging/ch07b/assets/196-ldlt.png",
+      "sha256": "4b7ab4377029b779d2c986e6e3de1e601e84dc8e3a08610484f34b8397c608ee",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/196-product.png",
+      "sha256": "3cfe90d1465ad2f06959d9d953b31c6f1ec88a5fc2e197e8b023cc81d3fbddf0",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/196-step4.png",
+      "sha256": "25eb7b841b5de3e7b49961aba1f8ee7bb94777bb5a86126d6b0c0b4f17e66046",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/197-solves.png",
+      "sha256": "4ccafd350830696631bee3494013598c20e4b498876f7277a9a67790f5859389",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/200-wording.png",
+      "sha256": "87de5d09856cfaee668bb61739960b52bc662eee2c46ce2939af34255d0cb7d7",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/201-norm.png",
+      "sha256": "e1ed514dc3e41cd3e3cde2a7befd14ecc050a5e75c3dd6c7b318561a89beb099",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/202-reference.png",
+      "sha256": "33531135b1d2393f1048029e321ffce11e8457338063e4d0b0948fc9e121a315",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/202-spaces.png",
+      "sha256": "474fc9274798fb96501d8f19b0c48867d7020c29e1ac989ed7ac964c3a1a901d",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/203-sum-index.png",
+      "sha256": "744ac0ed2930db740921ccb8280d429c24ecfa33bff85d9a985819b8713928ce",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/204-complex-norm.png",
+      "sha256": "5f0bd24b3834c9ecaf7bc6532d20ff5666172c0171fe63c710c45b5a597a6584",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/205-inverse-signs.png",
+      "sha256": "922a0be05ad3ab1de4f99df1eb9ead3bc121d4fc285c4ca54880ad5c871bf910",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/208-h6-cond.png",
+      "sha256": "b8b641a03e1ef68d1f1b5c9eac5110370b5a6fc3ef0d48d0c3b5ddede6a93e9a",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/209-scaled-cond.png",
+      "sha256": "e6b11e5b679dc9c1e8308a5c35389ec5ea2aa1334316fb87b28779a2040e33a2",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/210-backward-error.png",
+      "sha256": "3be0dfd3a943096294dc5766efdcffe039fd8f245d9229a65fc05bc88ca1e698",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/211-computed-solution.png",
+      "sha256": "d20cf7fe317b084cfbd127d3430efa3f5137d6c78436604e71a1c64d24072bd5",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/211-error-estimate.png",
+      "sha256": "477a15b45ca5a31330fe01b9baa0c1f58f959fcd7e6e4ca7cd8b51ce8cb6906a",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/212-ex3.png",
+      "sha256": "48b9909c98b8a7e62248793d08d3d10ad82ec5b06188586aa6495107512d1adf",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/213-ex8-symbol.png",
+      "sha256": "42d991d42b1afaae9110a09c19824495790d38cce88758dbc3b6004bdf904082",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/214-ex17.png",
+      "sha256": "4a7f8d750db28084822abaae1324461ba79cec593afd4eedb97ebf14960e9c7a",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/214-ex27.png",
+      "sha256": "0881366ade15fcf0297c8af57ff1f7e4448e988adea8bf79163c48cbbbcf3c63",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    },
+    {
+      "path": "staging/ch07b/assets/214-ex30.png",
+      "sha256": "3c01a5011487a5331ac99a136abb0c889413fb9d5c781edc3598b0672fbda28c",
+      "purpose": "原页局部放大核对或原书疑误证据"
+    }
+  ],
+  "qa_artifacts": {
+    "validation": "staging/ch07b/qa/validation.json",
+    "latex": "staging/ch07b/qa/content.tex",
+    "pdf": "staging/ch07b/qa/content.pdf",
+    "structural_audit": "staging/ch07b/qa/structural-audit.json"
+  }
+}

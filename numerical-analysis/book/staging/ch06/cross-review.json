@@ -1,0 +1,302 @@
+{
+  "lane": "ch06",
+  "reviewer": "Codex agent ch05b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 155,
+      "sha256": "0430cad3f8d952537107ca6424c749e9b11a24cdbaa2585702b2e811d5b3b66a",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐张重新打开原图，对照完整正文、公式与本页图表；内容匹配。",
+        "表6.1及脚注①已核。"
+      ]
+    },
+    {
+      "pdf_page": 156,
+      "sha256": "da6442a8db4d8c9b52badf711ff4a5835c237c825fc57df28f1104f92f6f02b6",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐张重新打开原图，对照完整正文、公式与本页图表；内容匹配。",
+        "图6.1全部标签已核；原书6.1.1引用缺可见编号，见X001。",
+        "重新读取primary新增校注后的整页，确认原文保留及独立校注正确；哈希已更新。"
+      ]
+    },
+    {
+      "pdf_page": 157,
+      "sha256": "7ee7297612c268d17289fd2741be78fbeff703072bc89094df453cb6a78d0c5f",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐张重新打开原图，对照完整正文、公式与本页图表；内容匹配。",
+        "表6.2保留原表空格，步3及式6.2.1–6.2.2已核。"
+      ]
+    },
+    {
+      "pdf_page": 158,
+      "sha256": "d56b92227d8dbece8be07bb3bb1876f17d548a3e8d7c631fb51f5cb81185a9d8",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐张重新打开原图，对照完整正文、公式与本页图表；内容匹配。",
+        "图6.2、表6.3、立方根迭代与L条件已核。"
+      ]
+    },
+    {
+      "pdf_page": 159,
+      "sha256": "d3e0ce79ae7bc1172d9d9127917c22b4b4a13973ef768a6624685b5fd8fb6572",
+      "source_visual_review": "completed",
+      "notes": [
+        "定理6.1两条件、误差估计式6.2.5–6.2.8、两条脚注逐项匹配。"
+      ]
+    },
+    {
+      "pdf_page": 160,
+      "sha256": "7dd1bf562ae9563eb83f40250498227fb66cdc307256e88fcc893e9c1e9cc3a7",
+      "source_visual_review": "completed",
+      "notes": [
+        "局部收敛定义、定理6.2、算法步1–3、表6.4逐项匹配。",
+        "原书停机阈值为相邻差<=epsilon，不能脱离前页L因子视为严格根误差<=epsilon。"
+      ]
+    },
+    {
+      "pdf_page": 161,
+      "sha256": "1890453ebe67125c1e68df3fa674e6bb9fb2ba1b1984001b319b6e5dd857adc2",
+      "source_visual_review": "completed",
+      "notes": [
+        "式6.2.9–6.2.10、表6.5、Aitken推导逐项匹配。",
+        "式6.2.9原印等号，近似推导意义已报primary，见X002。",
+        "重新读取primary新增校注后的整页，确认原文保留及独立校注正确；哈希已更新。"
+      ]
+    },
+    {
+      "pdf_page": 162,
+      "sha256": "a0107fab6d92427b7ecf9fda4f7372097be6ee655710264f62901c69547a88c2",
+      "source_visual_review": "completed",
+      "notes": [
+        "tilde/bar区分、式6.2.11–6.2.12、表6.6及Newton开头逐项匹配。"
+      ]
+    },
+    {
+      "pdf_page": 163,
+      "sha256": "1beea366dc3dad55437ab506ce66ba0a9484ae1a20dd409ada6c49fc47083dee",
+      "source_visual_review": "completed",
+      "notes": [
+        "式6.3.1–6.3.4、简化Newton的M/L关系及图6.3完整匹配；另放大核过首个bar x。"
+      ]
+    },
+    {
+      "pdf_page": 164,
+      "sha256": "23a24317ca5cc2eb0afc96348e9e091800d49e9a8ca83063444d44eb0163acc0",
+      "source_visual_review": "completed",
+      "notes": [
+        "收敛阶定义、非零渐近常数、定理6.3各阶导数与zeta、证明完整匹配。"
+      ]
+    },
+    {
+      "pdf_page": 165,
+      "sha256": "1d6109551791cbb711022c79b3545000a03649874ac20700ae156182c9783069",
+      "source_visual_review": "completed",
+      "notes": [
+        "Newton公式、表6.7、步1–4和开方推导完整匹配。",
+        "独立确认原书步4 f prime缺下标，primary E002保留与校注正确。",
+        "首段单根与精确平方收敛的条件差别见X003。",
+        "重新读取primary新增校注后的整页，确认原文保留及独立校注正确；哈希已更新。"
+      ]
+    },
+    {
+      "pdf_page": 166,
+      "sha256": "b69a93c0c8bbb6874002e1bc0e5e230d00206314d1c3785683a302d611f67168",
+      "source_visual_review": "completed",
+      "notes": [
+        "式6.3.8、二重幂2^k、表6.8、倒数算法的0<x0<2/a条件逐项匹配。"
+      ]
+    },
+    {
+      "pdf_page": 167,
+      "sha256": "3c468bc8181fcefb27aa607c1148c82764ed968bae81aa6930956a59cb15438c",
+      "source_visual_review": "completed",
+      "notes": [
+        "Newton下山法四个编号式、bar x、lambda范围、递减搜索与原书“在希望挑选”文字匹配。"
+      ]
+    },
+    {
+      "pdf_page": 168,
+      "sha256": "034e8e4e6bfbf0a785c3e6fc3dbd5941dc65d2533cd358c8c769280bdd2dda4e",
+      "source_visual_review": "completed",
+      "notes": [
+        "弦截式6.4.1–6.4.2、图6.4、表6.9逐项匹配。",
+        "原书称弦线方程的未编号式右端为0，实为弦与x轴交点条件；原式保留，已报告范围说明。",
+        "新增页末条件校注已对照再次重开的原图核验，原正文未变；记录最终SHA256。"
+      ]
+    },
+    {
+      "pdf_page": 169,
+      "sha256": "73060662a6fcd842b8ec2449467c333557bd0107a9f1550b969356628a21b39e",
+      "source_visual_review": "completed",
+      "notes": [
+        "定理6.4续页、算法步1–4、Aitken弦线推导、图6.5所有符号及抛物线法开头匹配。",
+        "原书仅列f prime非零即称精确黄金比例阶，按其严格阶定义还需非退化二阶导数条件；已报告。",
+        "新增页末条件校注已对照再次重开的原图核验，原正文未变；记录最终SHA256。"
+      ]
+    },
+    {
+      "pdf_page": 170,
+      "sha256": "32eee0e359fb7cb8f0cc57b846a6a32042b7bd31e7b9c3fb983086354790b21a",
+      "source_visual_review": "completed",
+      "notes": [
+        "图6.6、差商公式6.4.3、omega正负号选择、例6.10、收敛阶及算法步1逐项匹配。",
+        "独立确认E003原印f(0.6)负号，E004原印引用6.4.8；primary已保留并正确校注。"
+      ]
+    },
+    {
+      "pdf_page": 171,
+      "sha256": "f8b075d72fd10becddd9daf04bf717e02cd728023552d11b67506fdc9d730fc5",
+      "source_visual_review": "completed",
+      "notes": [
+        "抛物线法步2–4、6.5/6.5.1标题及秦九韶推导式6.5.1–6.5.2逐项匹配；P/p大小写按原文保留。"
+      ]
+    },
+    {
+      "pdf_page": 172,
+      "sha256": "7f16df47e71cbaecc30e037f7ccd26ccafbbabb6c1cbeedd18aa000bf16a657a",
+      "source_visual_review": "completed",
+      "notes": [
+        "Taylor展开各阶导数与阶乘、6.5.3–6.5.6递推下标和脚注①完整匹配。"
+      ]
+    },
+    {
+      "pdf_page": 173,
+      "sha256": "ab24853dec3f9a6cfa0b66ced60840b1bd8b1903207b8f7fa1e43f4aeb1c3abc",
+      "source_visual_review": "completed",
+      "notes": [
+        "劈因子法6.5.7–6.5.9、二元Newton线性化、余式与系数比较逐项匹配，p/P大小写按原文保留。"
+      ]
+    },
+    {
+      "pdf_page": 174,
+      "sha256": "53aedb11b9e8e8c833b5328f54531c92aa05b98fe2832feacf0e21a0264f4b91",
+      "source_visual_review": "completed",
+      "notes": [
+        "6.5.10–6.5.12及对u/v的偏导推导、所有递推界限匹配。",
+        "独立确认E005：原商叙述和展开漏负号，与6.5.11不一致；primary保留原文并校注正确。"
+      ]
+    },
+    {
+      "pdf_page": 175,
+      "sha256": "8440ed6bb7b21ea70d0863865f6a4eae801ca67c0649e7f8ed83e6e86b05f0c4",
+      "source_visual_review": "completed",
+      "notes": [
+        "小结全文、引用6.3.5/6.3.1/6.4.1及文献9、习题1–7各参数/根式/有效位数逐项匹配。",
+        "独立确认E006：习题2原印区间(0,1)，确不含1-x sin x的根；primary保留原题与校注正确。"
+      ]
+    },
+    {
+      "pdf_page": 176,
+      "sha256": "047195ae6d12add1655e45833241c796c8f78c9c4d3aaa6d6051f8e53c500088",
+      "source_visual_review": "completed",
+      "notes": [
+        "习题8–15完整匹配；逐项核过R_k负号、分母平方、分段函数的根号范围、根次数和最后两道误差极限的2/3次幂。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch06-X001",
+      "pdf_page": 156,
+      "kind": "source_reference",
+      "description": "原文引用误差估计式（6.1.1），原图相应误差式未印编号；当前转录未补tag正确，已请primary单列校注。",
+      "status": "resolved",
+      "resolution": "primary已保留原文并补独立校注；交叉复核再次核验修改后的整页及SHA256。"
+    },
+    {
+      "id": "ch06-X002",
+      "pdf_page": 161,
+      "kind": "source_approximation",
+      "description": "式6.2.9原图等号已正确转录，但由上一行近似关系一般只能得到近似结论；已请primary保留原式并加校注。",
+      "status": "resolved",
+      "resolution": "primary已保留原文并补独立校注；交叉复核再次核验修改后的整页及SHA256。"
+    },
+    {
+      "id": "ch06-X003",
+      "pdf_page": 165,
+      "kind": "source_condition_scope",
+      "description": "首段单根=>平方收敛，按PDF164非零渐近常数定义要精确二阶还需f double prime(x*)非零；一般仅至少二阶。已请primary保留原文加独立条件校注。",
+      "status": "resolved",
+      "resolution": "primary已保留原文并补独立校注；交叉复核再次核验修改后的整页及SHA256。"
+    },
+    {
+      "id": "ch06-X004",
+      "pdf_page": 168,
+      "kind": "source_formula_scope",
+      "description": "原文称弦线方程，但未编号式右端=0，实际为弦与x轴交点条件；转录正确保留，已报告primary/root。",
+      "status": "resolved",
+      "resolution": "primary分别加入E009/E010及独立校注；再次逐张重开PDF168/169原图核对完整正文和新增说明，最终SHA256匹配。"
+    },
+    {
+      "id": "ch06-X005",
+      "pdf_page": 169,
+      "kind": "source_condition_scope",
+      "description": "原书定理6.4精确黄金比例收敛阶表述，按前页严格阶定义需f double prime(x*)非零等非退化条件；只由单根可出现更高阶或有限步，转录正确保留，已报告primary/root。",
+      "status": "resolved",
+      "resolution": "primary分别加入E009/E010及独立校注；再次逐张重开PDF168/169原图核对完整正文和新增说明，最终SHA256匹配。"
+    }
+  ],
+  "unresolved": [],
+  "reviewed_assets": [
+    {
+      "path": "staging/ch06/assets/fig-6.1.png",
+      "sha256": "822d114e5ef6ba7e0b34c9607aa21da7ac993d455f6620274b272982489c7027",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    },
+    {
+      "path": "staging/ch06/assets/fig-6.2.png",
+      "sha256": "89e7f6035c9aa5e5eb64881d2fd75d1dd5dc48da007171c614cec04d4732552c",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    },
+    {
+      "path": "staging/ch06/assets/fig-6.3.png",
+      "sha256": "d1973147c066bd1a8690b9b23b2c3d455b58ef71522f210fdbc98aff92ad06c5",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    },
+    {
+      "path": "staging/ch06/assets/fig-6.4.png",
+      "sha256": "bcc45d8a30847b4c52ca458b8032099f661469d4958ecaf638394e6353e63246",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    },
+    {
+      "path": "staging/ch06/assets/fig-6.5.png",
+      "sha256": "9753e67721cdd86c8203e5f2d27cbac2522cfb969c52ab9c5c8736951c3bd1df",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    },
+    {
+      "path": "staging/ch06/assets/fig-6.6.png",
+      "sha256": "3afb0f645ec3e42ebcf41b248edc768f6ecc4823ca303018e7c04f8321d77bee",
+      "visual_review": "completed",
+      "notes": [
+        "实际打开裁切图检查，图号及全部轴/点/曲线标签完整，与已复核原页一致。"
+      ]
+    }
+  ],
+  "validation_notes": [
+    "PDF155–176共22张原图均逐张重新打开，全文、39个编号公式、9张文本表、6幅图及习题1–15均已独立对照。",
+    "primary原书疑误/条件说明E001–E010均已独立确认，原文保留，agent补注与原书正文分开。",
+    "已读取并核验primary在PDF156、161、165新增校注后的整页；PDF168/169新增校注后再次重开原图核对全页。",
+    "结构检查为只读调用audit_lane，未写中央审计文件；errors=[]，primary_review_complete=true。",
+    "这是Codex agent独立目视复核，不是人工复核。"
+  ]
+}

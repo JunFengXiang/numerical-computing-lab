@@ -1,0 +1,20 @@
+{
+  "pdf_page": 114,
+  "source_image": "source-images/pdf-114.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "3597ede42bfda5408d1352d4d2a26277a7a0057374a855dcc76f190bb1330f89",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 875,
+  "possibly_truncated": false,
+  "elapsed_seconds": 32.217,
+  "created_utc": "2026-09-12T10:26:59.621275+00:00",
+  "raw_text_sha256": "595542b0ccb9473fcc6c32c33d9732a29f63cf3fe4c10242a79df8583625a931",
+  "raw_text": "这时有余项公式\n$$f'(x_k) - P_n'(x_k) = \\frac{f^{(n+1)}(\\xi)}{(n+1)!} \\omega'_{n+1}(x_k).$$\n(4.5.2)\n\n下面仅仅考察节点处的导数值. 为简化讨论, 假定所给的节点是等距的.\n\n1. 两点公式\n设已给出两个节点 $x_0, x_1$ 上面的函数值 $f(x_0), f(x_1)$, 作线性插值公式\n$$P_1(x) = \\frac{x-x_1}{x_0-x_1} f(x_0) + \\frac{x-x_0}{x_1-x_0} f(x_1).$$\n对上式两端求导, 记 $x_1-x_0=h$, 有\n$$P_1'(x) = \\frac{1}{h} \\left[ -f(x_0) + f(x_1) \\right],$$\n于是有下列求导公式:\n$$P_1'(x_0) = \\frac{1}{h} \\left[ f(x_1) - f(x_0) \\right], \\quad P_1'(x_1) = \\frac{1}{h} \\left[ f(x_1) - f(x_0) \\right].$$\n而利用余项公式(4.5.2)知, 带余项的两点公式是\n$$f'(x_0) = \\frac{1}{h} \\left[ f(x_1) - f(x_0) \\right] - \\frac{h}{2} f''(\\xi),$$\n$$f'(x_1) = \\frac{1}{h} \\left[ f(x_1) - f(x_0) \\right] + \\frac{h}{2} f''(\\xi).$$\n\n2. 三点公式\n设已给出三个节点 $x_0, x_1=x_0+h, x_2=x_0+2h$ 上的函数值, 作二次插值\n$$P_2(x) = \\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} f(x_0) + \\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} f(x_1)$$\n$$+ \\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)} f(x_2),$$\n令 $x=x_0+th$, 上式可表示为\n$$P_2(x_0+th) = \\frac{1}{2}(t-1)(t-2)f(x_0) - t(t-2)f(x_1) + \\frac{1}{2}t(t-1)f(x_2),$$\n两端对 $t$ 求导, 有\n$$P_2'(x_0+th) = \\frac{1}{2h} \\left[ (2t-3)f(x_0) - (4t-4)f(x_1) + (2t-1)f(x_2) \\right].$$\n(4.5.3)\n\n这里撇号表示对变量 $x$ 求导数. 上式分别取 $t=0,1,2$, 得到以下三种三点公式:\n$$P_2'(x_0) = \\frac{1}{2h} \\left[ -3f(x_0) + 4f(x_1) - f(x_2) \\right],$$\n$$P_2'(x_1) = \\frac{1}{2h} \\left[ -f(x_0) + f(x_2) \\right],$$"
+}

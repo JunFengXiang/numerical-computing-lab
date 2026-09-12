@@ -1,0 +1,20 @@
+{
+  "pdf_page": 61,
+  "source_image": "source-images/pdf-061.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "3ec6e18a736fd6b1c068392d1fa8a69d499ed3ed53580ca89caa4c57c90b40d1",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 988,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.638,
+  "created_utc": "2026-09-12T09:53:44.973135+00:00",
+  "raw_text_sha256": "6c43167cf318085f4b2e0baee6e51dc83e993ce04d40f2452b5e93448c489b1d",
+  "raw_text": "而是固定 $n$, 记次数不大于 $n$ 的多项式集合为 $H_n$, 显然 $H_n \\subseteq C[a,b]$. 又记 $H_n = \\text{span}\\{1,x,\\cdots,x^n\\}$, 其中 $1,x,\\cdots,x^n$ 是 $[a,b]$ 上一组线性无关的函数组, 是 $H_n$ 中的一组基. $H_n$ 中的元素 $P_n(x)$ 可表示为\n$$P_n(x) = a_0 + a_1x + \\cdots + a_nx^n,$$\n其中 $a_0,a_1,\\cdots,a_n$ 为任意实数. 要在 $H_n$ 中求 $P_n^*(x)$ 逼近 $f(x) \\in C[a,b]$, 使其误差\n$$\\max_{a \\leqslant x \\leqslant b} |f(x) - P_n^*(x)| = \\min_{P_n \\in H_n} \\max_{a \\leqslant x \\leqslant b} |f(x) - P_n(x)|,$$\n这就是通常所谓最佳一致逼近或 Chebyshev 逼近问题. 为了说明这一概念, 先给出以下定义.\n\n定义 3.1 $P_n(x) \\in H_n, f(x) \\in C[a,b]$, 称\n$$\\Delta(f,P_n) = \\|f - P_n\\|_\\infty = \\max_{a \\leqslant x \\leqslant b} |f(x) - P_n(x)|$$ (3.2.1)\n为 $f(x)$ 与 $P_n(x)$ 在 $[a,b]$ 上的偏差.\n\n显然, $\\Delta(f,P_n) \\geqslant 0, \\Delta(f,P_n)$ 的全体组成一个集合, 记作 $\\{\\Delta(f,P_n)\\}$, 它有下界 0. 若记集合的下确界为\n$$E_n = \\inf_{P_n \\in H_n} \\{\\Delta(f,P_n)\\} = \\inf_{P_n \\in H_n} \\max_{a \\leqslant x \\leqslant b} |f(x) - P_n(x)|$$ (3.2.2)\n则称 $E_n$ 为 $f(x)$ 在 $[a,b]$ 上的最小偏差.\n\n定义 3.2 假定 $f(x) \\in C[a,b]$, 若存在\n$$P_n^*(x) \\in H_n, \\Delta(f,P_n^*) = E_n$$ (3.2.3)\n则称 $P_n^*(x)$ 是 $f(x)$ 在 $[a,b]$ 上的最佳一致逼近多项式或最小偏差逼近多项式, 简称最佳逼近多项式.\n\n注意, 定义并未说明最佳逼近多项式是否存在, 但可证明下面的存在定理.\n\n定理 3.2 若 $f(x) \\in C[a,b]$, 则总存在 $P_n^*(x) \\in H_n$, 使\n$$\\|f(x) - P_n^*(x)\\|_\\infty = E_n.$$\n证明过程见文献[4], 此处从略.\n\n3.2.2 Chebyshev 定理\n\n这一节要研究最佳逼近多项式的特性, 为此先引进偏差点定义.\n\n定义 3.3 设 $f(x) \\in C[a,b], P(x) \\in H_n$, 若在 $x = x_0$ 上有\n$$|P(x_0) - f(x_0)| = \\max_{a \\leqslant x \\leqslant b}|P(x) - f(x)| = \\mu,$$\n则称 $x_0$ 是 $P(x)$ 的偏差点.\n\n若 $P(x_0) - f(x_0) = \\mu$, 则称 $x_0$ 为“正”偏差点.\n\n若 $P(x_0) - f(x_0) = -\\mu$, 则称 $x_0$ 为“负”偏差点.\n\n由于函数 $P(x) - f(x)$ 在 $[a,b]$ 上连续, 因此, 至少存在一个点 $x_0 \\in [a,b]$, 使得\n$$|P(x_0) - f(x_0)| = \\mu,$$\n也就是说, $P(x)$ 的偏差点总是存在的. 下面讨论最佳逼近多项式的偏差点性质.\n\n• 48 •"
+}

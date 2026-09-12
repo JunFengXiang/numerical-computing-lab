@@ -1,0 +1,344 @@
+{
+  "lane": "ch13",
+  "reviewer": "Codex agent ch13",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 307,
+      "printed_page": 294,
+      "path": "staging/ch13/pages/pdf-307.md",
+      "sha256": "a1e99930703a3a97d301727b71382af5f31a2f139ebf89bf7a329f7e988d7607",
+      "source_image_sha256": "c11a6e84ea49b68a9c56e826594d04a0fb440f72c19f5ca28fdcb4497be9be6e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13",
+          "title": "总览"
+        },
+        {
+          "id": "13.1",
+          "title": "算法重在设计"
+        },
+        {
+          "id": "13.1.1",
+          "title": "算法设计关系到科学计算的成败"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "章标题前原印星号已保留。",
+        "CH13-E001: 原书运算时间分母指数与正文速度和近似结果不一致；已放大核对。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 308,
+      "printed_page": 295,
+      "path": "staging/ch13/pages/pdf-308.md",
+      "sha256": "7b0019d11afb44ddd8609708825a6070a427ac9c1126bdf1fa1a07eb3afce980",
+      "source_image_sha256": "3af85fd8dc261bb1015043fcd77893b0dceca761f6fe5a0bc626ea2e9686091e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.1.2",
+          "title": "算法设计追求简单与统一"
+        },
+        {
+          "id": "13.2",
+          "title": "直接法的缩减技术"
+        },
+        {
+          "id": "13.2.1",
+          "title": "数列求和的累加算法"
+        }
+      ],
+      "formula_ids": [
+        "13.2.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页末句及所引递推式续 PDF 309，未补入本页。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 309,
+      "printed_page": 296,
+      "path": "staging/ch13/pages/pdf-309.md",
+      "sha256": "0b88c695da3719c1094ef2c8345b1144bda79181e107909cc81d23584d250944",
+      "source_image_sha256": "0fba13b942de20123068136a0892dcae9d55eab602ea34292f730c67a8223a8d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.2.2",
+          "title": "缩减技术的设计机理"
+        }
+      ],
+      "formula_ids": [
+        "13.2.2",
+        "13.2.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页首承 PDF 308。无编号和式规模演变链及其计算模型、所求结果标签已完整转录。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 310,
+      "printed_page": 297,
+      "path": "staging/ch13/pages/pdf-310.md",
+      "sha256": "dd15eaed557f8eb1dca2af5ad48eb736e4d1cbec5cc616e534046dccb943a990",
+      "source_image_sha256": "563b10d54c8db6dde3de999df38f094bf842505304435fa25e4cba96af3de875",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.2.3",
+          "title": "多项式求值的秦九韶算法"
+        }
+      ],
+      "formula_ids": [
+        "13.2.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐项乘法次数和六个无编号公式完整保留。放大核对中间变量字形为 v。页末续 PDF 311。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 311,
+      "printed_page": 298,
+      "path": "staging/ch13/pages/pdf-311.md",
+      "sha256": "453f5c651b8b53af1204af4b66df1ccff9ac2ac7d95b32592cadd47585e0c345",
+      "source_image_sha256": "f1cef9c50819e18d54e08b2a2b2c085f0510455a698f2fc3bd6d7bc85a145d4a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.3",
+          "title": "迭代法的校正技术"
+        },
+        {
+          "id": "13.3.1",
+          "title": "开方算法"
+        }
+      ],
+      "formula_ids": [
+        "13.2.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "承 PDF 310 页末。算法 13.1 与无编号求值流程链及标签完整保留。"
+      ],
+      "algorithms": [
+        "13.1"
+      ],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 312,
+      "printed_page": 299,
+      "path": "staging/ch13/pages/pdf-312.md",
+      "sha256": "f3834c910df69a6393189e78c9c4142932d6fc0eea1574d4f08a22a4e2db2009",
+      "source_image_sha256": "8929a5b6923c2c3e4f9491ff490920c3d802f27f7cae7cbdb9745c970f752311",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.3.2",
+          "title": "校正技术的设计机理"
+        }
+      ],
+      "formula_ids": [
+        "13.3.1",
+        "13.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "算法 13.2 停止条件及输出 x_k 按原页保留。页末句续 PDF 313。"
+      ],
+      "algorithms": [
+        "13.2"
+      ],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 313,
+      "printed_page": 300,
+      "path": "staging/ch13/pages/pdf-313.md",
+      "sha256": "acad6ea27ab8b5fa5dc33064903a2f0c77136f06581408d925aecfad2e03f95a",
+      "source_image_sha256": "41d813a52ecb0911b417ebbdde7b42ca88a96ee221a76d7b91f39d2dabaf6703",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.4",
+          "title": "迭代优化的超松弛技术"
+        },
+        {
+          "id": "13.4.1",
+          "title": "超松弛技术的设计机理"
+        },
+        {
+          "id": "13.4.2",
+          "title": "刘徽的“割圆术”"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "承 PDF 312 页末。两组无编号松弛公式已逐式核对。页末圆周率句续 PDF 314。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 314,
+      "printed_page": 301,
+      "path": "staging/ch13/pages/pdf-314.md",
+      "sha256": "d6498e184d3a9b2af928d9afcdb4e6d1aaf618bcecafd0f8ffde190fb07df720",
+      "source_image_sha256": "175f672a8365178746e7c146ae92149682c8a661ffb3c08799e4d92617073aae",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.5",
+          "title": "递推加速的二分技术"
+        },
+        {
+          "id": "13.5.1",
+          "title": "“结绳记数”的快速算法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "承 PDF 313 页末。割圆面积数据、带分数及整段加速式完整保留。页末句续 PDF 315。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 315,
+      "printed_page": 302,
+      "path": "staging/ch13/pages/pdf-315.md",
+      "sha256": "aa6ed37700cb52f6b4bead027b40bf41bf4fabaa41d633a9c372fb34f1ecd9df",
+      "source_image_sha256": "c01c788ff55933f6ba876a4929d10c1382353c29d1daf432243c1ae10a8501c6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.5.2",
+          "title": "二分技术的设计机理"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "13.1",
+        "13.2"
+      ],
+      "tables": [],
+      "notes": [
+        "承 PDF 314 页末。两图已裁切保存并再次打开核对；全部步数、奇偶、空实结点和 1101 标签已转录。图意说明与正文分开。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 316,
+      "printed_page": 303,
+      "path": "staging/ch13/pages/pdf-316.md",
+      "sha256": "2f9833e1f41db34145e63b57fb4658d80e1e7690b53b5a742e4d1f564b527439",
+      "source_image_sha256": "b63fbd532b9cfe95196e727614849b0be00544caa70280248d289a4684ddaa07",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "13.summary",
+          "title": "小结"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "13.1"
+      ],
+      "notes": [
+        "表 13.1 已完整转为 Markdown 表，并另行放大核对。年代性宇宙年龄表述照原书保留。页末“本”字续 PDF 317“质上”。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    },
+    {
+      "pdf_page": 317,
+      "printed_page": 304,
+      "path": "staging/ch13/pages/pdf-317.md",
+      "sha256": "6c4dd31cd16c3050f2f4a09c67769e310c6abaa5a862a0936970c29316d070af",
+      "source_image_sha256": "caa6815927b690ce5c62489f6fca585ed89003865dc7187b1c8f3ec45d24ac97",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页首承 PDF 316“本”字。正文仅顶部两段；下方浅色反向文字为透印，非本页正文。第 13 章至此结束，本章无习题。"
+      ],
+      "algorithms": [],
+      "second_visual_pass": "completed"
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH13-E001",
+      "pdf_page": 307,
+      "printed_page": 294,
+      "description": "正文每秒 30 万亿次与原式分母 3×10^11 不一致；按原分母约 105.7 年，而原书印约 1 年。保留原文原式并单列校注。",
+      "evidence": "staging/ch13/assets/inspection/pdf-307-calculation.png"
+    }
+  ],
+  "validation_notes": [
+    "PDF 307–317 共 11 页均实际逐页打开；仅为 agent 核验，不称人工核验。",
+    "所有页的正文、公式、两项算法、图 13.1–13.2 与表 13.1 均已转录。无习题。",
+    "原章标题前印有星号，按原页保留；中央索引的 source_prefix_star 值与原页不一致，未修改中央索引。",
+    "原图是转录依据；未启动 OCR 或使用未核验 OCR 代替逐页阅读。",
+    "最终结构检查通过：11 页 YAML、页码、文件与源图 SHA-256、原页和图裁切链接、7 个式号与公式定界符均一致。11 张全页原图已再次打开作第二遍核对；公式字形、停止条件、跨页接续和图表标签另作重点核对。",
+    "结构检查结果见 staging/ch13/validation.json；结构检查不代替原图内容核对。"
+  ],
+  "assets": [
+    {
+      "path": "staging/ch13/assets/fig-13-1.png",
+      "sha256": "5ca477a883c9f84819a308cd45186c2bbe9001263855abb992d4d7157948d3bc",
+      "source_pdf_page": 315,
+      "kind": "source_figure_crop"
+    },
+    {
+      "path": "staging/ch13/assets/fig-13-2.png",
+      "sha256": "408fc5622092a7ba58535972000ade5eaf5c1111c219dc81b168dd394e806b9e",
+      "source_pdf_page": 315,
+      "kind": "source_figure_crop"
+    }
+  ],
+  "completed_at_utc": "2026-09-12T10:17:25.068163+00:00",
+  "status": "agent_reviewed_transcription"
+}

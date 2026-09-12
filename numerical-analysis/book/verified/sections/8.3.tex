@@ -1,0 +1,580 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={迭代法的收敛性},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{迭代法的收敛性}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{8.3　迭代法的收敛性}\label{ux8fedux4ee3ux6cd5ux7684ux6536ux655bux6027}
+
+\textbf{定义 8.2}　设有矩阵序列 \(A_k=(a_{ij}^{(k)})_{n\times n}\)（\(k=1,2,\cdots\)）及 \(A=(a_{ij})_{n\times n}\)，如果
+
+\[
+\lim_{k\to\infty}a_{ij}^{(k)}=a_{ij}\quad(i,j=1,2,\cdots,n)
+\]
+
+成立，则称 \(\{A_k\}\) \textbf{收敛于} \(A\)，记作 \(\lim\limits_{k\to\infty}A_k=A\)。
+
+\textbf{例 8.4}　矩阵序列
+
+\[
+A=\begin{pmatrix}\lambda&1\\0&\lambda\end{pmatrix},\quad
+A^2=\begin{bmatrix}\lambda^2&2\lambda\\0&\lambda^2\end{bmatrix},\quad\cdots,\quad
+A^k=\begin{bmatrix}\lambda^k&k\lambda^{k-1}\\0&\lambda^k\end{bmatrix},\quad\cdots,
+\]
+
+当 \(|\lambda|<1\) 时，\(A^k\to\begin{pmatrix}0&0\\0&0\end{pmatrix}\)（当 \(k\to\infty\) 时）。
+
+矩阵序列极限的概念可以用任何矩阵范数来描述。
+
+\begin{quote}
+校注（agent 补充）：例 8.2 的原页误差范数明确印为 \(0.001\,57\)，已保留。由本页所印近似向量与精确解 \((3,2,1)^{\mathrm T}\) 计算，无穷范数为 \(0.000157\)；不作中间舍入而以有理数迭代 5 次，误差无穷范数约为 \(0.0001576134\)。所印误差范数疑为原书小数位错误，并非 OCR 错误。
+\end{quote}
+
+\href{../../source-images/pdf-220.jpeg}{原页图像}
+
+\textbf{定理 8.1}　\(\lim\limits_{k\to\infty}A_k=A\) 的充要条件是 \(\|A_k-A\|\to0\)（\(k\to\infty\)）。证明过程留给读者进行。
+
+由 8.1 节知，要考虑序列 \(\{x^{(k)}\}\) 的收敛性，就要研究 \(B\) 在什么条件下误差向量趋于零向量，即
+
+\[
+\varepsilon^{(k)}=x^{(k)}-x^*=B^k\varepsilon^{(0)}\to0\quad(k\to\infty).
+\]
+
+\textbf{定理 8.2}　设 \(B=(b_{ij})_{n\times n}\)，则 \(B^k\to O\)（\(k\to\infty\)）的充要条件是 \(\rho(B)<1\)。
+
+\textbf{证明}　由矩阵 \(B\) 的 Jordan 标准形，存在非奇异矩阵 \(P\)，使
+
+\[
+P^{-1}BP=\begin{bmatrix}
+J_1&&&\\
+&J_2&&\\
+&&\ddots&\\
+&&&J_r
+\end{bmatrix}\equiv J,\quad
+\text{其中 }J_i=\begin{bmatrix}
+\lambda_i&1&&&\\
+&\lambda_i&1&&\\
+&&\ddots&\ddots&\\
+&&&\ddots&1\\
+&&&&\lambda_i
+\end{bmatrix}_{n_i\times n_i},
+\]
+
+其中 \(\sum\limits_{i=1}^r n_i=n\)。显然 \(B=PJP^{-1}\)，故
+
+\[
+B^k=PJ^kP^{-1},
+\]
+
+其中
+
+\[
+J^k=\begin{bmatrix}
+J_1^k&&&\\
+&J_2^k&&\\
+&&\ddots&\\
+&&&J_r^k
+\end{bmatrix}\quad(k=1,2,\cdots).
+\]
+
+于是
+
+\[
+B^k\to O\quad(k\to\infty)\iff J^k\to O\quad(k\to\infty),
+\]
+
+\[
+J^k\to O\quad(k\to\infty)\iff J_i^k\to O\quad(k\to\infty)\quad(i=1,2,\cdots,r).
+\]
+
+引进记号
+
+\[
+E_{tk}=\left[\begin{array}{ccccccc}
+\multicolumn{3}{c}{\overbrace{0\quad\cdots\quad0}^{k\text{个}}}&1&0&\cdots&0\\
+&\ddots&&\ddots&\ddots&\ddots&\vdots\\
+&&\ddots&&\ddots&\ddots&0\\
+&&&\ddots&&\ddots&1\\
+&&&&\ddots&&0\\
+&&&&&\ddots&\vdots\\
+&&&&&&0
+\end{array}\right]_{t\times t}\quad\text{（其中 }t=n_i\text{）},
+\]
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={原书无编号矩阵示意：E\_tk}]{../assets/ch08/pdf-220-Etk-matrix.png}
+
+原图矩阵符号标签：\(E_{tk}\)，首行前 \(k\) 个元素为零（括注``\(k\) 个''），随后为 \(1,0,\cdots,0\)；第 \(k\) 条上副对角线为 \(1\)，其余为零；矩阵尺寸 \(t\times t\)，其中 \(t=n_i\)。
+
+一般有 \((E_{t1})^k=E_{tk}\)，当 \(k\geqslant t\) 时 \(E_{tk}=O\)。由于
+
+\[
+J_i=\begin{bmatrix}
+\lambda_i&&&&\\
+&\lambda_i&&&\\
+&&\ddots&&\\
+&&&\ddots&\\
+&&&&\lambda_i
+\end{bmatrix}
++\begin{bmatrix}
+0&1&&&\\
+&0&1&&\\
+&&\ddots&\ddots&\\
+&&&\ddots&1\\
+&&&&0
+\end{bmatrix}
+=\lambda_i I+E_{t1},
+\]
+
+\href{../../source-images/pdf-221.jpeg}{原页图像}
+
+于是
+
+\[
+\begin{aligned}
+J_i^k&=(\lambda_i I+E_{t1})^k
+=\sum_{j=0}^k\binom{k}{j}\lambda_i^{k-j}(E_{t1})^j
+=\sum_{j=0}^k\binom{k}{j}\lambda_i^{k-j}E_{tj}
+=\sum_{j=0}^{t-1}\binom{k}{j}\lambda_i^{k-j}E_{tj}\\[6pt]
+&=\begin{bmatrix}
+\lambda_i^k&\binom{k}{1}\lambda_i^{k-1}&\cdots&\cdots&\binom{k}{t-1}\lambda_i^{k-(t-1)}\\[5pt]
+&\lambda_i^k&\binom{k}{1}\lambda_i^{k-1}&\cdots&\binom{k}{t-2}\lambda_i^{k-(t-2)}\\[5pt]
+&&\ddots&\ddots&\vdots\\[5pt]
+&&&\ddots&\binom{k}{1}\lambda_i^{k-1}\\[5pt]
+&&&&\lambda_i^k
+\end{bmatrix}_{t\times t}\quad(i=1,2,\cdots,r),
+\end{aligned}
+\]
+
+其中
+
+\[
+E_{t0}=I,\qquad\binom{k}{j}=\frac{k!}{j!(k-j)!}=\frac{k(k-1)\cdots(k-j+1)}{j!}.
+\]
+
+利用极限 \(\lim\limits_{k\to\infty}k^r c^k=0\)（\(0<c<1,r\geqslant0\)），得到
+
+\[
+\binom{k}{j}\lambda^{k-j}\to0\quad(k\to\infty)\iff|\lambda|<1,
+\]
+
+所以 \(J_i^k\to O\)（\(k\to\infty\)）充要条件是 \(|\lambda_i|<1\)（\(i=1,2,\cdots,r\)），即 \(\rho(B)<1\)。
+
+\textbf{定理 8.3（迭代法基本定理）}　设有方程组
+
+\[
+x=Bx+f,
+\tag{8.3.1}
+\]
+
+对于任意初始向量 \(x^{(0)}\) 及任意 \(f\)，解此方程组的迭代法（即 \(x^{(k+1)}=Bx^{(k)}+f\)）收敛的充要条件是 \(\rho(B)<1\)。
+
+\textbf{证明}　充分性。设 \(\rho(B)<1\)，易知 \(Ax=f\)（其中 \(A=I-B\)）有唯一解，记作
+
+\[
+x^*=Bx^*+f.
+\tag{8.3.2}
+\]
+
+误差向量
+
+\[
+\varepsilon^{(k)}=x^{(k)}-x^*=B^k\varepsilon^{(0)},\qquad\varepsilon^{(0)}=x^{(0)}-x^*.
+\]
+
+由设 \(\rho(B)<1\)，应用定理 8.2，有 \(B^k\to O\)（\(k\to\infty\)）。于是对于任意 \(x^{(0)}\) 及 \(f\)，有 \(\varepsilon^{(k)}\to0\)（\(k\to\infty\)），即 \(x^{(k)}\to x^*\)（\(k\to\infty\)）。
+
+必要性。设对于任意 \(x^{(0)}\) 及任意 \(f\)，皆有 \(\lim\limits_{k\to\infty}x^{(k)}=x^*\)，其中 \(x^{(k+1)}=Bx^{(k)}+f\)。显然，
+
+（1）极限 \(x^*\) 是方程组（8.3.1）的解，
+
+（2）对于任意 \(x^{(0)}\) 及任意 \(f\)，有
+
+\[
+\varepsilon^{(k)}=x^{(k)}-x^*=B^k\varepsilon^{(0)}\to0\quad(k\to\infty).
+\]
+
+显然
+
+\[
+B^k\to O\quad(k\to\infty).
+\]
+
+再由定理 8.2，即得 \(\rho(B)<1\)。
+
+\href{../../source-images/pdf-222.jpeg}{原页图像}
+
+\textbf{例 8.5}　考察用 Jacobi 方法解例 8.1 方程组的收敛性。迭代矩阵 \(B_0\) 的特征方程为
+
+\[
+\det(\lambda I-B_0)=\lambda^3+0.034\,090\,909\lambda+0.039\,772\,727=0,
+\]
+
+解得
+
+\[
+\begin{gathered}
+\lambda_1=-0.308\,2,\\
+\lambda_2=0.154\,1+\mathrm i0.324\,5,\\
+\lambda_3=0.154\,1-\mathrm i0.324\,5,\\
+|\lambda_2|=|\lambda_3|=0.359\,2<1,\qquad|\lambda_1|<1,
+\end{gathered}
+\]
+
+即 \(\rho(B_0)<1\)。所以用 Jacobi 迭代法解方程组（8.3.1）是收敛的。
+
+\textbf{例 8.6}　考察用迭代过程的收敛性：\(x^{(k+1)}=Bx^{(k)}+f\)（\(k=0,1,2,\cdots\)），其中
+
+\[
+B=\begin{pmatrix}0&2\\3&0\end{pmatrix},\qquad f=\begin{pmatrix}5\\5\end{pmatrix}.
+\]
+
+特征方程为
+
+\[
+\det(\lambda I-B)=\lambda^2-6=0,
+\]
+
+特征根 \(\lambda_{1,2}=\pm\sqrt6\)，即 \(\rho(B)>1\)。这说明此迭代过程不收敛。
+
+现讨论迭代法的收敛速度。考察误差向量 \(\varepsilon^{(k)}=x^{(k)}-x^*=B^k\varepsilon^{(0)}\)。设 \(B\) 有 \(n\) 个线性无关的特征向量 \(u_1,u_2,\cdots,u_n\)，相应的特征值为 \(\lambda_1,\lambda_2,\cdots,\lambda_n\)。由 \(\varepsilon^{(0)}=\sum\limits_{i=1}^n a_i u_i\)，得
+
+\[
+\varepsilon^{(k)}=B^k\varepsilon^{(0)}=\sum_{i=1}^n a_i B^k u_i=\sum_{i=1}^n a_i\lambda_i^k u_i.
+\]
+
+可以看出，当 \(\rho(B)<1\) 愈小时，\(\lambda_i^k\to0\)（\(i=1,2,\cdots,n;\ k\to\infty\)）愈快，即 \(\varepsilon^{(k)}\to0\) 愈快，故可用量 \(\rho(B)\) 来刻画迭代法的收敛快慢。现在依据给定精度要求确定迭代次数 \(k\)，即使
+
+\[
+[\rho(B)]^k\leqslant10^{-s},
+\tag{8.3.3}
+\]
+
+取对数得
+
+\[
+k\geqslant\frac{s\ln10}{-\ln\rho(B)}.
+\]
+
+\textbf{定义 8.3}　称 \(R(B)=-\ln\rho(B)\) 为迭代法的收敛速度。
+
+可以看出，\(\rho(B)<1\) 愈小，\(-\ln\rho(B)\) 就愈大，式（8.3.3）成立所需迭代次数就愈少。
+
+由于一般当 \(n\) 较大时，矩阵特征值计算比较困难，基本定理的条件比较难验证，所以最好建立与矩阵元素直接有关的条件来判别迭代法的收敛性。由于 \(\rho(B)\leqslant\|B\|_v\)（\(v=1,2,\infty\) 或 \(F\)），所以可用 \(\|B\|_v\) 来作为 \(\rho(B)\) 上界的一种估计。
+
+\textbf{定理 8.4（迭代法收敛的充分条件）}　如果方程组（8.3.1）的迭代公式为 \(x^{(k+1)}=Bx^{(k)}+f\)（\(x^{(0)}\) 为任意初始向量），且迭代矩阵的某一种范数 \(\|B\|_v=q<1\)，则：
+
+\(1^\circ\) 迭代法收敛；
+
+\href{../../source-images/pdf-223.jpeg}{原页图像}
+
+\(2^\circ\) \(\|x^*-x^{(k)}\|_v\leqslant\dfrac{q}{1-q}\|x^{(k)}-x^{(k-1)}\|_v\)；
+
+\(3^\circ\) \(\|x^*-x^{(k)}\|_v\leqslant\dfrac{q^k}{1-q}\|x^{(1)}-x^{(0)}\|_v\)。
+
+\textbf{证明}　利用定理 8.3，结论 \(1^\circ\) 是显然的。现证结论 \(2^\circ\)、\(3^\circ\)。据题设显然有
+
+\[
+x^*-x^{(k+1)}=B(x^*-x^{(k)}),
+\tag{8.3.4}
+\]
+
+\[
+\|x^{(k+1)}-x^{(k)}\|_v\leqslant q\|x^{(k)}-x^{(k-1)}\|_v\quad(k=1,2,\cdots),
+\tag{8.3.5}
+\]
+
+\[
+\|x^*-x^{(k+1)}\|_v\leqslant q\|x^*-x^{(k)}\|_v.
+\tag{8.3.6}
+\]
+
+于是
+
+\[
+\begin{aligned}
+\|x^{(k+1)}-x^{(k)}\|_v
+&=\|x^*-x^{(k)}-(x^*-x^{(k+1)})\|_v\\
+&\geqslant\|x^*-x^{(k)}\|_v-\|x^*-x^{(k+1)}\|_v\\
+&\geqslant(1-q)\|x^*-x^{(k)}\|_v,
+\end{aligned}
+\]
+
+即
+
+\[
+\begin{aligned}
+\|x^*-x^{(k)}\|_v
+&\leqslant\frac1{1-q}\|x^{(k+1)}-x^{(k)}\|_v\\
+&\leqslant\frac{q}{1-q}\|x^{(k)}-x^{(k-1)}\|_v\quad(k=1,2,\cdots).
+\end{aligned}
+\]
+
+反复利用式（8.3.5）即得到结论 \(3^\circ\)。
+
+\textbf{例 8.7}　仍然考察例 8.1，Jacobi 方法迭代矩阵 \(B_0\) 的 \(\infty\)-范数为
+
+\[
+\|B_0\|_\infty=\max\left\{\frac58,\frac5{11},\frac9{12}\right\}=\frac9{12}<1,
+\]
+
+所以对例 8.1 应用 Jacobi 迭代方法是收敛的。
+
+\textbf{例 8.8}　设有迭代过程 \(x^{(k+1)}=Bx^{(k)}+f\)（\(k=0,1,2,\cdots\)），其中
+
+\[
+B=\begin{pmatrix}0.9&0\\0.3&0.8\end{pmatrix},\qquad f=\begin{pmatrix}1\\2\end{pmatrix},
+\]
+
+则
+
+\[
+\|B\|_\infty=1.1,\qquad\|B\|_1=1.2,\qquad\|B\|_2=1.021,\qquad\|B\|_F=\sqrt{1.54}.
+\]
+
+虽然 \(B\) 的这些范数都大于 1，但 \(B\) 的特征值为 \(\lambda_1=0.9,\lambda_2=0.8\)，由定理 8.3 知，此迭代过程还是收敛的。
+
+由定理 8.4 可知，\(\|B\|=q<1\) 愈小，迭代法收敛愈快。
+
+当 \(B\) 的某一种范数 \(\|B\|<1\) 时，如果相邻两次迭代 \(\|x^{(k)}-x^{(k-1)}\|<\varepsilon_0\)（\(\varepsilon_0\) 为给定的精度要求），则 \(\|x^*-x^{(k)}\|\leqslant\dfrac{q}{1-q}\varepsilon_0\)，所以在用计算机计算时通常利用 \(\|x^{(k)}-x^{(k-1)}\|<\varepsilon_0\) 来作为控制迭代的终止条件。不过要注意，当 \(q\approx1\) 时，\(\dfrac{q}{1-q}\) 较大，尽管 \(\|x^{(k)}-x^{(k-1)}\|\) 已非常小，但误差向量的模 \(\|\varepsilon^{(k)}\|=\|x^*-x^{(k)}\|\) 可能较大，迭代法收敛将是缓慢的。定理 8.4 中结论 \(3^\circ\) 的估计还可以用来事先确定需要迭代多少次才能保证 \(\|\varepsilon^{(k)}\|<\varepsilon_0\)。
+
+\textbf{定理 8.5}　解方程组（8.2.1）的 Gauss-Seidel 迭代法收敛的充要条件是 \(\rho(G)<1\)，
+
+\href{../../source-images/pdf-224.jpeg}{原页图像}
+
+其中 \(G\) 为 Gauss-Seidel 迭代法的迭代矩阵。
+
+\textbf{证明}　由式（8.2.6）再应用定理 8.3 即得定理 8.5。
+
+在实际应用中常遇到一些线性代数方程组，其系数矩阵具有某些性质，如系数矩阵的对角元素占优，系数矩阵为对称正定等。充分利用这些性质往往可使判定迭代法收敛的问题变得简单。
+
+\textbf{定义 8.4（对角占优阵）}　设 \(A=(a_{ij})_{n\times n}\in\mathbb R^{n\times n}\)（或 \(\mathbb C^{n\times n}\)），
+
+\(1^\circ\) 如果矩阵 \(A\) 满足条件
+
+\[
+|a_{ii}|>\sum_{\substack{j=1\\j\neq i}}^n|a_{ij}|\quad(i=1,2,\cdots,n),
+\tag{8.3.7}
+\]
+
+即 \(A\) 的每一行对角元素的绝对值都严格大于同行其他元素绝对值之和，则称 \(A\) 为\textbf{严格对角占优阵}。
+
+\(2^\circ\) 如果 \(|a_{ii}|\geqslant\sum\limits_{\substack{j=1\\j\neq i}}^n|a_{ij}|\)（\(i=1,2,\cdots,n\)）且至少有一个不等式严格成立，称 \(A\) 为\textbf{弱对角占优阵}。
+
+\textbf{例 8.9}　\(A=\begin{bmatrix}-4&1&0&0\\1&-4&1&0\\0&1&-4&1\\0&0&1&-4\end{bmatrix}\) 为严格对角占优阵，\(B=\begin{bmatrix}1&1&0\\1&1&0\\0&1&2\end{bmatrix}\) 为弱对角占优阵。
+
+\textbf{定义 8.5（可约与不可约矩阵）}　设 \(A=(a_{ij})_n\in\mathbb R^{n\times n}\)（或 \(\mathbb C^{n\times n}\)），当 \(n\geqslant2\) 时，如果存在 \(n\) 阶置换阵 \(P\) 使
+
+\[
+P^{\mathrm T}AP=\begin{bmatrix}A_{11}&A_{12}\\O&A_{22}\end{bmatrix}
+\tag{8.3.8}
+\]
+
+成立，其中 \(A_{11}\) 为 \(r\) 阶子矩阵，\(A_{22}\) 为 \(n-r\) 阶子矩阵（\(1\leqslant r\leqslant n\)），则称 \(A\) 是\textbf{可约矩阵}。如果不存在置换阵 \(P\) 使式（8.3.8）成立，则称 \(A\) 是\textbf{不可约矩阵}。
+
+\(A\) 是可约矩阵，意味着 \(Ax=b\) 可经过若干行列重排（若 \(A\) 经过两行交换的同时进行相应的两列的交换，称对 \(A\) 进行一次行列重排），化为两个低阶方程组求解。
+
+事实上，由 \(Ax=b\) 可化为 \(P^{\mathrm T}AP(P^{\mathrm T}x)=P^{\mathrm T}b\)，且记
+
+\[
+y=P^{\mathrm T}x=\begin{pmatrix}y_1\\y_2\end{pmatrix},\qquad
+P^{\mathrm T}b=\begin{pmatrix}d_1\\d_2\end{pmatrix},
+\]
+
+其中 \(y_1,d_1\) 为 \(r\) 维向量。于是，求解 \(Ax=b\) 化为求解
+
+\[
+\begin{cases}
+A_{11}y_1+A_{12}y_2=d_1,\\
+A_{22}y_2=d_2.
+\end{cases}
+\]
+
+\textbf{例 8.10}　在例 8.9 中矩阵 \(B\) 是可约矩阵，即存在置换阵 \(P=I_{13}\)，使
+
+\begin{quote}
+校注（agent 补充）：定义 8.5 的原页范围明确印为 \(1\leqslant r\leqslant n\)，已保留。可约分块需要两个非空低阶方阵，通常应要求 \(1\leqslant r\leqslant n-1\)；若容许 \(r=n\)，第二块阶数为零，定义不能区分可约与不可约。此处疑为原书边界排印错误，并非 OCR 错误。
+\end{quote}
+
+\href{../../source-images/pdf-225.jpeg}{原页图像}
+
+\[
+P^{\mathrm T}BP=\left[\begin{array}{c|cc}2&1&0\\\hline0&1&1\\0&1&1\end{array}\right].
+\]
+
+\textbf{定理 8.6（对角占优定理）}　如果 \(A=(a_{ij})_n\in\mathbb R^{n\times n}\)（或 \(\mathbb C^{n\times n}\)）为严格对角占优阵或为不可约弱对角占优阵，则 \(A\) 是非奇异矩阵。
+
+\textbf{证明}　设 \(A\) 为严格对角占优阵，下面只就这种情况证明此定理。若 \(\det A=0\)，则 \(Ax=0\) 有非零解，记作
+
+\[
+x=(x_1,x_2,\cdots,x_n)^{\mathrm T}.
+\]
+
+又记 \(|x_k|=\max\limits_{1\leqslant i\leqslant n}|x_i|\neq0\)，由齐次方程组的第 \(k\) 个方程
+
+\[
+\sum_{j=1}^n a_{kj}x_j=0,
+\]
+
+得
+
+\[
+|a_{kk}x_k|=\left|\sum_{\substack{j=1\\j\neq k}}^n a_{kj}x_j\right|
+\leqslant\sum_{\substack{j=1\\j\neq k}}^n|a_{kj}|\,|x_j|
+\leqslant|x_k|\sum_{\substack{j=1\\j\neq k}}^n|a_{kj}|,
+\]
+
+\[
+|a_{kk}|\leqslant\sum_{\substack{j=1\\j\neq k}}^n|a_{kj}|,
+\tag{8.3.9}
+\]
+
+与假设矛盾，故 \(\det A\neq0\)，即 \(A\) 非奇异。
+
+\textbf{定理 8.7}　如果 \(A\in\mathbb R^{n\times n}\) 为严格对角占优阵或为不可约弱对角占优阵，则对于任意的 \(x^{(0)}\)，解方程组（8.2.1）的 Jacobi 迭代法、Gauss-Seidel 迭代法均收敛。
+
+\textbf{证明}　设 \(A\) 为不可约弱对角占优阵，现证明 Gauss-Seidel 迭代法收敛。其他证明留作习题。
+
+由设知 \(a_{ii}\neq0\)（\(i=1,2,\cdots,n\)），方程组（8.2.1）的 Gauss-Seidel 迭代法的迭代矩阵为
+
+\[
+G=(D-L)^{-1}U.
+\]
+
+又
+
+\[
+\begin{aligned}
+\det(\lambda I-G)&=\det(\lambda I-(D-L)^{-1}U)\\
+&=\det(D-L)^{-1}\cdot\det(\lambda(D-L)-U)=0,
+\end{aligned}
+\]
+
+即
+
+\[
+\det(\lambda(D-L)-U)=0.
+\]
+
+记
+
+\[
+G=\lambda(D-L)-U=\begin{bmatrix}
+\lambda a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\
+\lambda a_{21}&\lambda a_{22}&a_{23}&\cdots&a_{2n}\\
+\vdots&\lambda a_{32}&\ddots&\ddots&\vdots\\
+\vdots&\vdots&\ddots&\ddots&a_{n-1,n}\\
+\lambda a_{n1}&\lambda a_{n2}&\cdots&\lambda a_{n,n-1}&\lambda a_{nn}
+\end{bmatrix}=(c_{ij})_{n\times n}.
+\]
+
+下面说明当 \(|\lambda|\geqslant1\) 时 \(\det G\neq0\)，如果这个结论是正确的，那么 \(\det G=0\) 的根均满足 \(|\lambda|<1\)。这说明解式（8.2.1）的 Gauss-Seidel 迭代法收敛。
+
+事实上，由 \(A\) 为不可约矩阵，则 \(G\) 亦为不可约矩阵，且又由 \(A\) 为弱对角占优阵得
+
+\begin{quote}
+校注（agent 补充）：本页先用 \(G\) 表示 Gauss-Seidel 迭代矩阵，随后在证明中又记 \(G=\lambda(D-L)-U\)。原页第二处字母无上横线或其他修饰，转录保留此符号重用；后面的 \(\det G\) 指随后定义的矩阵。
+\end{quote}
+
+\href{../../source-images/pdf-226.jpeg}{原页图像}
+
+到（当 \(|\lambda|\geqslant1\) 时）
+
+\[
+|c_{ii}|=|\lambda|\,|a_{ii}|
+\geqslant\sum_{j=1}^{i-1}|\lambda a_{ij}|+\sum_{j=i+1}^n|a_{ij}|
+=\sum_{j\neq i}|c_{ij}|,
+\]
+
+且至少有一不等式严格成立，也就是说当 \(|\lambda|\geqslant1\) 时，\(G\) 为不可约弱对角占优阵，于是由定理 8.6（当 \(|\lambda|\geqslant1\) 时）有 \(\det G\neq0\)，故 \(\rho(G)<1\)。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch08-E004}：原书 PDF 页 224
+\item
+  \texttt{ch08-E003}：原书 PDF 页 219
+\end{itemize}
+
+\end{document}

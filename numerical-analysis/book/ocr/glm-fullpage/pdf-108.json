@@ -1,0 +1,20 @@
+{
+  "pdf_page": 108,
+  "source_image": "source-images/pdf-108.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "a1babdcdbf7f9cd0d555cf153cf28ae6667f53a0263f8d08618c337f2461abe2",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 802,
+  "possibly_truncated": false,
+  "elapsed_seconds": 32.104,
+  "created_utc": "2026-09-12T10:23:49.450431+00:00",
+  "raw_text_sha256": "f6b88b255463a0b52edce0c8e73e8de1ca49d532d3b20b0ee7b54a08e3b794a4",
+  "raw_text": "可见求积公式(4.4.1)对于一切次数不超过 $2n+1$ 的多项式均能准确成立，因此 $x_k(k=0,1,\\cdots,n)$ 是 Gauss 点. 证毕.\n\n4.4.2 Gauss-Legendre 公式\n\n不失一般性，可取 $a=-1,b=1$ 而考察区间 $[-1,1]$ 上的 Gauss 公式$\\textcircled{1}$\n\n$$\\int_{-1}^{1} f(x) \\mathrm{d}x \\approx \\sum_{k=0}^{n} A_k f(x_k).$$\n\n(4.4.4)\n\n我们知道，Legendre 多项式（见式(3.4.1)）是区间 $[-1,1]$ 上的正交多项式，因此，Legendre 多项式 $P_{n+1}(x)$ 的零点就是求积公式(4.4.4)的 Gauss 点. 形如式(4.4.4)的 Gauss 公式特别地称为 Gauss-Legendre 公式.\n\n若取 $P_1(x)=x$ 的零点 $x_0=0$ 作节点构造求积公式\n\n$$\\int_{-1}^{1} f(x) \\mathrm{d}x \\approx A_0 f(0),$$\n\n令它对 $f(x)=1$ 准确成立，即可定出 $A_0=2$. 这样构造出的一点 Gauss-Legendre 公式是中矩形公式.\n\n再取 $P_2(x)=\\frac{1}{2}(3x^2-1)$ 的两个零点 $\\pm \\frac{1}{\\sqrt{3}}$ 构造求积公式：\n\n$$\\int_{-1}^{1} f(x) \\mathrm{d}x \\approx A_0 f\\left(-\\frac{1}{\\sqrt{3}}\\right)+A_1 f\\left(\\frac{1}{\\sqrt{3}}\\right),$$\n\n令它对于 $f(x)=1,x$ 都准确成立，有\n\n$$\\begin{cases} A_0+A_1=2, \\\\ A_0\\left(-\\frac{1}{\\sqrt{3}}\\right)+A_1\\left(\\frac{1}{\\sqrt{3}}\\right)=0. \\end{cases}$$\n\n由此解出 $A_0=A_1=1$，从而得到两点 Gauss-Legendre 公式\n\n$$\\int_{-1}^{1} f(x) \\mathrm{d}x \\approx f\\left(-\\frac{1}{\\sqrt{3}}\\right)+f\\left(\\frac{1}{\\sqrt{3}}\\right).$$\n\n三点 Gauss-Legendre 公式的形式是\n\n$$\\int_{-1}^{1} f(x) \\mathrm{d}x$$\n\n$$\\approx \\frac{5}{9} f\\left(-\\frac{\\sqrt{15}}{5}\\right)+\\frac{8}{9} f(0)+\\frac{5}{9} f\\left(\\frac{\\sqrt{15}}{5}\\right).$$\n\n表4.5列出了 Gauss-Legendre 公式(4.4.4)的节点\n\n$\\textcircled{1}$ 对于任意求积区间 $[a,b]$，通过变换 $x=\\frac{b-a}{2}t+\\frac{a+b}{2}$ 可以化到区间 $[-1,1]$ 上，这时 $\\int_a^b f(x) \\mathrm{d}x=\\frac{b-a}{2} \\int_{-1}^{1} f\\left(\\frac{b-a}{2}t+\\frac{a+b}{2}\\right) \\mathrm{d}t.$"
+}

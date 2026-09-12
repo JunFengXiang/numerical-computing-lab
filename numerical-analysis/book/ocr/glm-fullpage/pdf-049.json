@@ -1,0 +1,20 @@
+{
+  "pdf_page": 49,
+  "source_image": "source-images/pdf-049.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f9dfabc2efcd58e8f2f06c3dfaecf9b9491c4b1d5c1c84c7319c09ab9c128086",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 768,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.175,
+  "created_utc": "2026-09-12T09:39:48.155491+00:00",
+  "raw_text_sha256": "ee8edcdd99caa8049ad5359d306e5c06b175a7850c98480de824779e2f3d507f",
+  "raw_text": "$$\\lim_{h \\to 0} I_h(x) = f(x).$$\n这就证明了 $I_h(x)$ 在 $[a,b]$ 上一致收敛到 $f(x)$.\n\n2.8 三次样条插值\n\n上面讨论的分段低次插值函数都有一致收敛性，但光滑性较差，对于像高速飞机的机翼、船体放样等的型值线，往往要求有二阶光滑度，即有二阶连续导数。早期工程师制图时，把富有弹性的细长木条（所谓样条）用压铁固定在样点上，在其他地方让它自由弯曲，然后画下长条的曲线，称为样条曲线。它实际上是由分段三次曲线并接而成，在连接点即样点上要求二阶导数连续，从数学上加以概括就得到数学样条这一概念。下面讨论最常用的三次样条函数。\n\n2.8.1 三次样条函数\n\n定义2.5 若函数 $S(x) \\in C^2 [a,b]$，且在每个小区间 $[x_j, x_{j+1}]$ 上是三次多项式，其中 $a = x_0 < x_1 < \\cdots < x_n = b$ 是给定节点，则称 $S(x)$ 是节点 $x_0, x_1, \\cdots, x_n$ 上的三次样条函数。若在节点 $x_j$ 上给定函数值 $y_j = f(x_j)$ ($j = 0, 1, \\cdots, n$)，且\n$$S(x_j) = y_j \\quad (j = 0, 1, \\cdots, n) \\tag{2.8.1}$$\n成立，则称 $S(x)$ 为三次样条插值函数。\n\n从定义知，要求出 $S(x)$，在每个小区间 $[x_j, x_{j+1}]$ 上要确定4个待定系数，共有 $n$ 个小区间，故应确定 $4n$ 个参数。根据 $S(x)$ 在 $[a,b]$ 上二阶导数连续，在节点 $x_j$ ($j = 1, 2, \\cdots, n-1$)处应满足连续性条件\n$$S(x_j - 0) = S(x_j + 0), \\quad S'(x_j - 0) = S'(x_j + 0),$$\n$$S''(x_j - 0) = S''(x_j + 0), \\tag{2.8.2}$$\n共有 $3n-3$ 个条件，再加上 $S(x)$ 满足插值条件(2.8.1)，共有 $4n-2$ 个条件，因此还需要2个条件才能确定 $S(x)$。通常可在区间 $[a,b]$ 端点 $a = x_0, b = x_n$ 上各加一个条件（称为边界条件），边界条件可根据实际问题的要求给定。常见的有以下三种：\n\n（1）已知两端的一阶导数值，即\n$$\\begin{cases} S'(x_0) = f_0' \\\\ S'(x_n) = f_n' \\end{cases} \\tag{2.8.3}$$\n\n（2）两端的二阶导数已知，即\n$$\\begin{cases} S''(x_0) = f_0'' \\\\ S''(x_n) = f_n'' \\end{cases} \\tag{2.8.4}$$\n\n特殊情况下的边界条件\n\n·36·"
+}

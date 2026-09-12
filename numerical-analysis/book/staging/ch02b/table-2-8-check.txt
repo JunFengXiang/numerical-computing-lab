@@ -1,0 +1,6 @@
+Independent agent check of page 53 stated clamped boundary data, using exact rational linear solve.
+m0=5/338; mn=-5/338
+x=-24/5; exact_clamped_S=15620073/375285625; decimal=0.04162183
+x=-9/2; exact_clamped_S=2265789/48036560; decimal=0.04716801
+x=-43/10; exact_clamped_S=308927303/6004570000; decimal=0.05144870
+x=-23/10; exact_clamped_S=968934893/6004570000; decimal=0.16136624

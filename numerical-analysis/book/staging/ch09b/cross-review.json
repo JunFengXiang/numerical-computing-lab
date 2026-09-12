@@ -1,0 +1,157 @@
+{
+  "lane": "ch09b",
+  "reviewer": "Codex agent ch09a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 247,
+      "sha256": "8b3561b7c8f1f6a6fe63a400e988aa230405e9defc50314c5bce7cb6809406a9",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开书页 234 全页原图；逐项核对 9.3.3 两个分块矩阵、Hessenberg 终态、定理 9.13/9.14 与三对角阵、末尾反射阵展开；原印 λ_1^-1、λ_(n-2)^-1 已确认，E01 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 248,
+      "sha256": "68a7b19ab97b5aa9783bc77879b7b5eeef8f0b7df9e7a6e1402a2c0ba9db265a",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开书页 235 全页原图；核对 r_k/t_k 与算法 3 全部步骤、循环范围、赋值箭头、两个求和及末端 c/b 赋值；第一求和上限原印 n，E02 原式保留和解释吻合。"
+      ]
+    },
+    {
+      "pdf_page": 249,
+      "sha256": "7a055793b65c3653b943d42443932151325989c8914c15d513e3f35020117cb4",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开书页 236 全页原图；核对例 9.5 的初始矩阵、分块 U_1、列向量 u_1、ρ_1、三个中间数值矩阵和最终 Hessenberg 阵全部数值/符号；原印 σ_1ρ_1，E03 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 250,
+      "sha256": "3099ed483f813fe3da7589be4b5d6531b84ad2dc043da232ed3c3e555b92e6d3",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 237；核对 QR 历史文字、P_ij 的 11 行/列展开及正负 s、i/j 行列标签、引理 1 和 9.4.2–9.4.4。"
+      ]
+    },
+    {
+      "pdf_page": 251,
+      "sha256": "c085bc0d336f52f5cf6481ab440d3d5cf5029aafbddc1b1d7b7af902d41302cc",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 238；核对引理证明、二分量旋转、算法 1 全 8 步、9.4.5 及首列消元矩阵；原印 cα_i、a_(2j)^(2) 与零分支未赋 v 均确认，E04–E06 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 252,
+      "sha256": "54698d8ca3503a1ee85858fec172c68dcdfaf3e8aa2704bc96d3ecdd587f3bf9",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 239；核对 P_2P_1 A 分块、QR 唯一性证明及 9.4.6–9.4.8。原印“由定理 9.12”照录正确，但需要新增引用疑误校注（应关联 9.15），已反馈原 agent。",
+        "已独立复读新增 E11 校注并核新 SHA，CR01 已解决。"
+      ]
+    },
+    {
+      "pdf_page": 253,
+      "sha256": "7e761dc97f1167bec0f4e11c5952198aa538f361950f146439b0ef8eeae5bc49",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 240；核对定理 9.17 三项结论、归纳乘积顺序、引理 2 的两行极限、9.4.9/9.4.10、定理 9.18 假设及上三角终态；原印引用 9.13，E07 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 254,
+      "sha256": "bce292295fcc61b7adb289f9b7ba7262f391992e20e08a26718dcd53be708c9e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 241；核对定理 9.18 证明、E_k 全部下三角元素与比值幂次、9.4.11–9.4.17、D_k 左右位置；原印“4.15”已确认，E08 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 255,
+      "sha256": "20113387bb0f8d7fe9ec3ef8305acbf6349f520c37acbb88d31292cf76a2e052",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 242；核对 RDR^-1 及 g_k 变换、定理 9.19、分块极限和带位移方法首段。另内存裁切原图 (830,1510,1270,2070) 放大，确认首个二阶块与末块原印均为 B_l；MD 首块 B_1 需改回并另注，CR02 已反馈。",
+        "CR02 修订已独立复核：正文首块恢复 B_l，新增校注明确按序疑为 B_1；当前文件哈希与 primary 回执一致。"
+      ]
+    },
+    {
+      "pdf_page": 256,
+      "sha256": "714b953db0db3b952442b23586d1e212b8fe8aac8c66ea0b2b2cda9d7417db25",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 243；核对带位移 QR 六步、乘积 φ(A)、Hessenberg 初始阵、两次带框消元图式的全部下标、已完成行和未完成子阵；保留原页方框语义。"
+      ]
+    },
+    {
+      "pdf_page": 257,
+      "sha256": "a26a4e6ac44108b9ba5ed5953f1f47728c4d7cc2e2caa80e89c6dd12560b1507",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 244；核对第 i 次带框左变换、两次右变换元素上标、Hessenberg 终态和交错左右变换的乘积顺序；v_k 及上限 n+1 原印均确认，E09/E10 校注吻合。"
+      ]
+    },
+    {
+      "pdf_page": 258,
+      "sha256": "efbd6c855feb71c1c3865dcfe4b1ec66dc744b10e7c90252f64394777c273691",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 245；核对收缩分块矩阵、两个充分小准则、ε=10^-t、两种位移选择、复特征值限制文字及例 9.6 中 R/A_2/A_3/A_4 全部数值、正负号和零元。"
+      ]
+    },
+    {
+      "pdf_page": 259,
+      "sha256": "49b29dd5e30167a234829198813c7d74b96e113021a7ff726f7027784e755b0e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 246；核对 A_5/收缩子阵/A_6、三个框选值、±号与 10^-5 幂次、三组近似和精确特征值、小结全段及文献编号；习题 1 的两矩阵和终止条件、习题 2 页内上三角分块全部吻合。"
+      ]
+    },
+    {
+      "pdf_page": 260,
+      "sha256": "d047aa2793a7b8441fdb415e7f92f9e02e084b379a4affc64025c6327e8b5603",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立以原尺寸重开书页 247；完整核对习题 2 跨页条件及并集公式，习题 3–10 全部要求、题内全部数值矩阵（含第 9 题两个矩阵）及向量分量及小题；第 5 题正交假设、第 7 题行列与旋转转置、第 8 题反变换乘积及第 10 题 QR 要求均对照原图。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch09b-CR01",
+      "pdf_page": 252,
+      "status": "resolved",
+      "type": "missing_source_erratum_note",
+      "description": "定理 9.16 证明原印“由定理 9.12”，现有转录正确，但该处上三角化结论对应 9.15；请保留原文补校注和 source_errata。",
+      "notified": [
+        "/root/ch09b",
+        "/root"
+      ],
+      "resolution": "原 agent 已补 ch09b-E11；独立复读新增校注，正文仍保留 9.12，解释指向 9.15。",
+      "resolved_sha256": "54698d8ca3503a1ee85858fec172c68dcdfaf3e8aa2704bc96d3ecdd587f3bf9"
+    },
+    {
+      "id": "ch09b-CR02",
+      "pdf_page": 255,
+      "status": "resolved",
+      "type": "silent_source_correction",
+      "description": "分块极限矩阵首个二阶块原印 B_l，与末块一致，现有 MD 写 B_1；需保留原式 B_l 并另校注按序应为 B_1。",
+      "visual_evidence": "原图内存裁切 box=(830,1510,1270,2070)，已实际打开。",
+      "notified": [
+        "/root/ch09b",
+        "/root"
+      ],
+      "resolution": "原 agent 已将首个二阶块恢复为原印 B_l 并补 ch09b-E12；独立复读新正文中首末两块和校注，与实际放大原图一致。",
+      "resolved_sha256": "20113387bb0f8d7fe9ec3ef8305acbf6349f520c37acbb88d31292cf76a2e052"
+    }
+  ],
+  "unresolved": [],
+  "completion_notes": [
+    "PDF 247–260 共 14 张原页均已独立重新打开并逐字逐式对照。",
+    "已核对 Householder、QR、平面旋转矩阵及算法和习题 1–10；10 项原有原书疑误及证据已实看，交叉复核新增 2 项已由 primary 修订并核新哈希。",
+    "最终 14 个 Markdown SHA-256 均与当前文件及 primary 回执一致；本回执为 agent 独立复核，非人工审定。"
+  ]
+}

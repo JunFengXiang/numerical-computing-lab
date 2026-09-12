@@ -1,0 +1,20 @@
+{
+  "pdf_page": 37,
+  "source_image": "source-images/pdf-037.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "d23c0c0d65e1f7e76f3f0bbe5f69afad0b16a6e63d01a0ea24184e93f5af1519",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 978,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.558,
+  "created_utc": "2026-09-12T09:34:16.205861+00:00",
+  "raw_text_sha256": "8ac8461dde99c0f8886311ce3ecb828357d63cce0ac4c98a8922e5da5732865b",
+  "raw_text": "$f[x_0, x_1, x_k] = \\frac{f[x_0, x_k] - f[x_0, x_1]}{x_k - x_1}$\n\n为 $f(x)$ 关于点 $x_0, x_1, x_k$ 的二阶差商. 一般地, 称\n\n$f[x_0, x_1, \\dots, x_k] = \\frac{f[x_0, x_1, \\dots, x_{k-2}, x_k] - f[x_0, x_1, \\dots, x_{k-1}]}{x_k - x_{k-1}}$ (2.4.2)\n\n为 $f(x)$ 的 $k$ 阶差商.\n\n差商有如下的基本性质:\n\n(1) $k$ 阶差商可表示为函数值 $f(x_0), f(x_1), \\dots, f(x_k)$ 的线性组合, 即\n\n$f[x_0, x_1, \\dots, x_k] = \\sum_{j=0}^{k} \\frac{f(x_j)}{(x_j - x_0) \\cdots (x_j - x_{j-1})(x_j - x_{j+1}) \\cdots (x_j - x_k)}$ (2.4.3)\n\n这个性质可用归纳法证明. 这个性质也表明差商与节点的排列次序无关, 称为差商的对称性, 即\n\n$f[x_0, x_1, \\dots, x_k] = f[x_1, x_0, x_2, \\dots, x_k] = \\cdots = f[x_1, x_2, \\dots, x_k, x_0]$.\n\n(2) 由性质(1)及式(2.4.2)可得\n\n$f[x_0, x_1, \\dots, x_k] = \\frac{f[x_1, x_2, \\dots, x_k] - f[x_0, x_1, \\dots, x_{k-1}]}{x_k - x_0}$ (2.4.4)\n\n(3) 若 $f(x)$ 在 $[a, b]$ 上存在 $n$ 阶导数, 且节点 $x_0, x_1, \\dots, x_n \\in [a, b]$, 则 $n$ 阶差商与导数关系为\n\n$f[x_0, x_1, \\dots, x_n] = \\frac{f^{(n)}(\\xi)}{n!}, \\quad \\xi \\in [a, b]$ (2.4.5)\n\n这个公式可直接用 Rolle 定理证明.\n\n差商的其他性质还可见本章习题. 差商计算可列差商表如表 2.4 所示.\n\n表 2.4\n\n| $x_k$ | $f(x_k)$ | 一阶差商 | 二阶差商 | 三阶差商 | 四阶差商 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| $x_0$ | $\\underline{f(x_0)}$ | | | | |\n| $x_1$ | $f(x_1)$ | $\\underline{f[x_0, x_1]}$ | | | |\n| $x_2$ | $f(x_2)$ | $f[x_1, x_2]$ | $\\underline{f[x_0, x_1, x_2]}$ | | |\n| $x_3$ | $f(x_3)$ | $f[x_2, x_3]$ | $f[x_1, x_2, x_3]$ | | |\n| $x_4$ | $f(x_4)$ | $f[x_3, x_4]$ | $f[x_2, x_3, x_4]$ | | |\n| $\\vdots$ | $\\vdots$ | $\\vdots$ | $\\vdots$ | $\\vdots$ | $\\vdots$ |\n\n2.4.2 Newton 插值公式\n\n根据差商定义, 把 $x$ 看成 $[a, b]$ 上一点, 可得\n\n$f(x) = f(x_0) + f[x, x_0](x - x_0),$\n\n• 24 •"
+}

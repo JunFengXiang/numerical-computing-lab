@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 01 矩阵与向量相乘 | [HTML](materials/01-matvec.html) / [PDF](materials/lecture1.pdf) | [笔记](01-matvec/notes.md) / [作业](01-matvec/homework.md) / [实验](01-matvec/lab.py) |
 | 02 正交向量与矩阵 | [HTML](materials/02-orthogonal.html) / [PDF](materials/lecture2.pdf) | [笔记](02-orthogonal/notes.md) / [作业](02-orthogonal/homework.md) / [实验](02-orthogonal/lab.py) |
-| 03 范数 | [PDF](materials/lecture3.pdf) | 学到时再添加 |
+| 03 范数 | [HTML](materials/03-norms.html) / [PDF](materials/lecture3.pdf) | 学到时再添加 |
 | 04 奇异值分解 | [PDF](materials/lecture4.pdf) | 学到时再添加 |
 | 05 SVD 的更多讨论 | [PDF](materials/lecture5.pdf) | 学到时再添加 |
 

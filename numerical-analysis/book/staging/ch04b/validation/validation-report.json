@@ -1,0 +1,149 @@
+{
+  "lane": "ch04b",
+  "source_pdf_sha256_verified": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "page_count": 13,
+  "checks": [
+    {
+      "pdf_page": 106,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 21
+    },
+    {
+      "pdf_page": 107,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 40
+    },
+    {
+      "pdf_page": 108,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 52
+    },
+    {
+      "pdf_page": 109,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 25
+    },
+    {
+      "pdf_page": 110,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 22
+    },
+    {
+      "pdf_page": 111,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 17
+    },
+    {
+      "pdf_page": 112,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 36
+    },
+    {
+      "pdf_page": 113,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 68
+    },
+    {
+      "pdf_page": 114,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 19
+    },
+    {
+      "pdf_page": 115,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 22
+    },
+    {
+      "pdf_page": 116,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 65
+    },
+    {
+      "pdf_page": 117,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 18
+    },
+    {
+      "pdf_page": 118,
+      "metadata_hash_links_math_delimiters": "passed",
+      "math_expressions": 49
+    }
+  ],
+  "numbered_formula_count": 18,
+  "numbered_formula_ids": [
+    "4.3.16",
+    "4.3.17",
+    "4.3.18",
+    "4.4.1",
+    "4.4.2",
+    "4.4.3",
+    "4.4.4",
+    "4.4.5",
+    "4.4.6",
+    "4.4.7",
+    "4.4.8",
+    "4.5.1",
+    "4.5.2",
+    "4.5.3",
+    "4.5.4",
+    "4.5.5",
+    "4.5.6",
+    "4.5.7"
+  ],
+  "math_expression_count": 454,
+  "fivepoint_polynomial_checks": [
+    {
+      "derivative_order": 1,
+      "node": 0,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 1,
+      "node": 1,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 1,
+      "node": 2,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 1,
+      "node": 3,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 1,
+      "node": 4,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 2,
+      "node": 0,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 2,
+      "node": 1,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 2,
+      "node": 2,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 2,
+      "node": 3,
+      "degrees_0_through_4": "passed"
+    },
+    {
+      "derivative_order": 2,
+      "node": 4,
+      "degrees_0_through_4": "passed"
+    }
+  ],
+  "latex_math_syntax_compile": "passed",
+  "latex_layout_warnings": [],
+  "scope_note": "Supplemental structural, file integrity, formula syntax and coefficient checks; original-page agent visual review remains the transcription evidence. No exercise answers were generated."
+}

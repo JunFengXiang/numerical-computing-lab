@@ -1,0 +1,137 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={三弯矩方程},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{三弯矩方程}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{2.8.3 三弯矩方程}\label{ux4e09ux5f2fux77e9ux65b9ux7a0b}
+
+三次样条插值函数 \(S(x)\) 可以有多种表达方法，有时用二阶导数值 \(S''(x_j)=M_j\)（\(j=0,1,\cdots,n\)）表示使用起来更方便。\(M_j\) 在力学上解释为细梁在 \(x_j\) 截面处的弯矩，并且得到的弯矩与相邻两个弯矩有关，故称之为\textbf{三弯矩方程}。
+
+由于 \(S(x)\) 在区间 \([x_j,x_{j+1}]\) 上是三次多项式，故 \(S''(x)\) 在 \([x_j,x_{j+1}]\) 上是线性函数，可表示为
+
+\[S''(x)=M_j\frac{x_{j+1}-x}{h_j}+M_{j+1}\frac{x-x_j}{h_j}.\tag{2.8.16}\]
+
+对 \(S''(x)\) 积分两次并利用 \(S(x_j)=y_j\) 及 \(S(x_{j+1})=y_{j+1}\)，可定出积分常数，于是
+
+\[\begin{aligned}
+S(x)={}&M_j\frac{(x_{j+1}-x)^3}{6h_j}+M_{j+1}\frac{(x-x_j)^3}{6h_j}+\left(y_j-\frac{M_jh_j^2}6\right)\frac{x_{j+1}-x}{h_j}\\
+&+\left(y_{j+1}-\frac{M_{j+1}h_j^2}6\right)\frac{x-x_j}{h_j}\quad(j=0,1,\cdots,n-1).
+\end{aligned}\tag{2.8.17}\]
+
+对 \(S(x)\) 求导，得
+
+\[S'(x)=-M_j\frac{(x_{j+1}-x)^2}{2h_j}+M_{j+1}\frac{(x-x_j)^2}{2h_j}+\frac{y_{j+1}-y_j}{h_j}-\frac{M_{j+1}-M_j}6h_j.\tag{2.8.18}\]
+
+\begin{quote}
+\textbf{校注（agent 补充；原书疑误）}：本页 \(\lambda_n\) 原式与 \(\mu_n\) 同为 \(h_{n-1}/(h_0+h_{n-1})\)，已保留。由上一行未归一化方程，\(m_{n-1}\) 的系数应为 \(\lambda_n=h_0/(h_0+h_{n-1})\)。此外，（2.8.15）的右上角、左下角在原书均印为 \(0\)；由 \(m_0=m_n\) 及本页的周期方程，应分别为 \(\lambda_1\)、\(\mu_n\)。对应系统是有两个角元素的循环三对角系统，不能不作处理便直接套用普通三对角追赶法。参见\href{../assets/ch02b/pdf-052-periodic-system-detail.png}{原文和矩阵放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-053.jpeg}{查看原页}
+
+\begin{quote}
+本页接上页 2.8.3 正文。
+\end{quote}
+
+由此可求得
+
+\[S'(x_j+0)=-\frac{h_j}3M_j-\frac{h_j}6M_{j+1}+\frac{y_{j+1}-y_j}{h_j}.\]
+
+类似地，可求出 \(S(x)\) 在区间 \([x_{j-1},x_j]\) 上的表达式，从而得
+
+\[S'(x_j-0)=\frac{h_{j-1}}6M_{j-1}+\frac{h_{j-1}}3M_j+\frac{y_j-y_{j-1}}{h_{j-1}},\]
+
+利用 \(S'(x_j+0)=S'(x_j-0)\) 可得
+
+\[\mu_jM_{j-1}+2M_j+\lambda_jM_{j+1}=d_j\quad(j=1,2,\cdots,n-1),\tag{2.8.19}\]
+
+其中 \(\mu_j,\lambda_j\) 由式（2.8.10）求得，而
+
+\[d_j=6\frac{f[x_j,x_{j+1}]-f[x_{j-1},x_j]}{h_{j-1}+h_j}=6f[x_{j-1},x_j,x_{j+1}]\quad(j=1,2,\cdots,n-1).\tag{2.8.20}\]
+
+方程（2.8.19）与方程（2.8.9）完全类似，只要加上式（2.8.3）～（2.8.5）的任一种边界条件就可得到三弯矩 \(M_j\) 的方程组。例如，若边界条件为式（2.8.3），则端点方程为
+
+\[2M_0+M_1=\frac6{h_0}(f[x_0,x_1]-f'_0),\quad M_{n-1}+2M_n=\frac6{h_{n-1}}(f'_n-f[x_{n-1},x_n]).\]
+
+若边界条件为式（2.8.4），则端点方程为
+
+\[M_0=f''_0,\quad M_n=f''_n.\]
+
+同样，通过追赶法，可求出三弯矩方程的解 \(M_j\)（\(j=0,1,\cdots,n\)），代入式（2.8.17）则得到三次插值样条函数 \(S(x)\)。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch02b-E004}：原书 PDF 页 52
+\item
+  \texttt{ch02b-E005}：原书 PDF 页 52
+\end{itemize}
+
+\end{document}

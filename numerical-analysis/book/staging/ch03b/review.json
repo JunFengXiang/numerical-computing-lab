@@ -1,0 +1,632 @@
+{
+  "lane": "ch03b",
+  "reviewer": "Codex agent ch03b",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 76,
+      "printed_page": 63,
+      "path": "staging/ch03b/pages/pdf-076.md",
+      "sha256": "1ad027de5a46df69e40dcb97cc22f224bad89b26faaf56bfaaf6eccc858beeac",
+      "source_image_sha256": "8b3730f4499559f812f4c399fbe70b87c2d030e3fe1e7de40664c8082767565f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.5",
+          "title": "函数按正交多项式展开"
+        }
+      ],
+      "formula_ids": [
+        "3.4.11",
+        "3.4.12",
+        "3.5.1",
+        "3.5.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "续3.4.4；核对第二类Chebyshev、Laguerre及Hermite多项式。式3.4.11原书e^n保留并校注。"
+      ]
+    },
+    {
+      "pdf_page": 77,
+      "printed_page": 64,
+      "path": "staging/ch03b/pages/pdf-077.md",
+      "sha256": "39464846790c43f19a52a1439a44d1a64952b4fec4a6180afd4cb11f0212b966",
+      "source_image_sha256": "9b9bf5eaf40362854bb81e25fd7c49591cdf5524043026a3adc1f7fdea12ce45",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.5.3",
+        "3.5.4",
+        "3.5.5",
+        "3.5.6",
+        "3.5.7",
+        "3.5.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式3.5.8原书delta_k保留并校注；例3.4跨页。"
+      ]
+    },
+    {
+      "pdf_page": 78,
+      "printed_page": 65,
+      "path": "staging/ch03b/pages/pdf-078.md",
+      "sha256": "e4c11662adc358fc5ad48c58ea9ded7dd5c023fcb3efd2f50391045c9f7b80e1",
+      "source_image_sha256": "7a6d8b6d99f688cbf10c0038c014d0fbf300d81012b2ee6c6a73d31f8df4e055",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.6",
+          "title": "曲线拟合的最小二乘法"
+        },
+        {
+          "id": "3.6.1",
+          "title": "一般的最小二乘逼近"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "续例3.4；最大误差式原书S_3无星号保留。页尾3.6.1跨页。"
+      ]
+    },
+    {
+      "pdf_page": 79,
+      "printed_page": 66,
+      "path": "staging/ch03b/pages/pdf-079.md",
+      "sha256": "d2d0fb4bee83cc03e8617c7769b41424027fd6cd2a47e443a4c1870614b0a2a9",
+      "source_image_sha256": "06ab2dc0a7370fe63c3dbb01e47e696b4757d322d86f11902fa87c93c7473898",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.6.1",
+        "3.6.2",
+        "3.6.3",
+        "3.6.4",
+        "3.6.5",
+        "3.6.6",
+        "3.6.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "续3.6.1；式3.6.1右端下限i=1及空间小写varphi均按原书保留。"
+      ]
+    },
+    {
+      "pdf_page": 80,
+      "printed_page": 67,
+      "path": "staging/ch03b/pages/pdf-080.md",
+      "sha256": "64688efe2bed89c761323b731b2632de6d5009d8085776a8307d0a17f28a3de8",
+      "source_image_sha256": "937ef525ed2813151c6aeb0d68ae9a6b0dc6a54725e986642e5a5d565f6addad",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [
+        "3.6"
+      ],
+      "tables": [
+        "3.3",
+        "3.4"
+      ],
+      "notes": [
+        "图3.6裁切并转录标签；表3.3与3.4数值逐项核对。权函数后星号按原书保留。"
+      ]
+    },
+    {
+      "pdf_page": 81,
+      "printed_page": 68,
+      "path": "staging/ch03b/pages/pdf-081.md",
+      "sha256": "edb1d9359d2a6530035f14debc1ffbc03172fb775160ae241d9e20c618e75271",
+      "source_image_sha256": "28a5761613cfeab5533c730d40e951a8277c461eb4a0eba12307b145bbae8297",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [
+        "3.7"
+      ],
+      "tables": [],
+      "notes": [
+        "图3.7裁切并转录标签；F^(2)原书指数为-1.0567t，保留并校注。"
+      ]
+    },
+    {
+      "pdf_page": 82,
+      "printed_page": 69,
+      "path": "staging/ch03b/pages/pdf-082.md",
+      "sha256": "75ceb07e2a2f42fede7d1d6a5c3ef8e8370be3f12eafcb80e72f11b15b3a945e",
+      "source_image_sha256": "38a7cafb07b731023c7f58875ece275a7da9482223a784c4ffcdad309877770f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.6.2",
+          "title": "用正交函数作最小二乘拟合"
+        }
+      ],
+      "formula_ids": [
+        "3.6.8",
+        "3.6.9",
+        "3.6.10",
+        "3.6.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式3.6.10、3.6.11及共同k范围已从原图核对；a与alpha不一致保留。"
+      ]
+    },
+    {
+      "pdf_page": 83,
+      "printed_page": 70,
+      "path": "staging/ch03b/pages/pdf-083.md",
+      "sha256": "21513096ae8d8124e1733d421794f4ed0a496e4429c1425c8ed68d4900edcd6d",
+      "source_image_sha256": "be8906fd76fc7f52e8740c82b3b734321a44c613f0864f4bb47461ea1a5cb306",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.6.12",
+        "3.6.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "完整转录归纳证明；原书下标l与1及a_k/alpha_k星号记法均保留校注。"
+      ]
+    },
+    {
+      "pdf_page": 84,
+      "printed_page": 71,
+      "path": "staging/ch03b/pages/pdf-084.md",
+      "sha256": "bcab6452c5529c60e3a4f1df021603c9fc652d7b38ac66c8a6984170c512e669",
+      "source_image_sha256": "a8e3f57cbe5775d34f0bf84cdaba7b8d3834c0210fb45e4009e3a179b428edad",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.6.3",
+          "title": "多元最小二乘拟合"
+        },
+        {
+          "id": "3.7",
+          "title": "Fourier 逼近与快速 Fourier 变换"
+        },
+        {
+          "id": "3.7.1",
+          "title": "最佳平方三角逼近与三角插值"
+        }
+      ],
+      "formula_ids": [
+        "3.7.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "3.6.3多个系数及内积下标不一致保留另注；3.7.1公式号原图可辨为3.7.1。"
+      ]
+    },
+    {
+      "pdf_page": 85,
+      "printed_page": 72,
+      "path": "staging/ch03b/pages/pdf-085.md",
+      "sha256": "9ad3423e906477e4c5922cda5e2681647a71ea75ba4bbf8c1028d3f1a1912e50",
+      "source_image_sha256": "72c04ff83c4588b32a59a980bf8abd0e8cc78b77edaafde74bff903f0abd4e23",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.7.2",
+        "3.7.3",
+        "3.7.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "正交性第三行条件原印k,j，保留并校注；3.7.2至3.7.4编号补全。"
+      ]
+    },
+    {
+      "pdf_page": 86,
+      "printed_page": 73,
+      "path": "staging/ch03b/pages/pdf-086.md",
+      "sha256": "57d8e36d2b20773f66a901b161157175cf02861d4f0ee41fb2c9706acff2821f",
+      "source_image_sha256": "5289b6ea76cef8d6fa9ba0e23edd363185c8e7ff0244c28cf73c0d0fc9ce15bc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.7.5",
+        "3.7.6",
+        "3.7.7",
+        "3.7.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "复向量正交证明、离散正反变换公式全部核对，未发现需要登记的原书疑误。"
+      ]
+    },
+    {
+      "pdf_page": 87,
+      "printed_page": 74,
+      "path": "staging/ch03b/pages/pdf-087.md",
+      "sha256": "6fc5dcb72b6b51adbbbad978fd043667c02e35d4c366a87e6077ea239c4d69ab",
+      "source_image_sha256": "adb0549848f2749c666efec66526779cfc1d98a43ff3577a03b09e67bc458e9d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.7.2",
+          "title": "快速 Fourier 变换"
+        }
+      ],
+      "formula_ids": [
+        "3.7.9",
+        "3.7.10",
+        "3.7.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "FFT二进制分解及3.7.11编号完整转录；不同值数目与同余数表述原文保留另注。"
+      ]
+    },
+    {
+      "pdf_page": 88,
+      "printed_page": 75,
+      "path": "staging/ch03b/pages/pdf-088.md",
+      "sha256": "790288fea97a3cc9bd4fd70d994e2e86bb6941efb0e26e11c653c3821d7c1b4e",
+      "source_image_sha256": "b6edf3a644bb3b458e195ef8609051f47e0343a6d8483628e15ef9158b084343",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.7.12",
+        "3.7.13",
+        "3.7.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "3.7.12–3.7.14逐项核对；A_2指数的二进制末位0补全OCR漏字。"
+      ]
+    },
+    {
+      "pdf_page": 89,
+      "printed_page": 76,
+      "path": "staging/ch03b/pages/pdf-089.md",
+      "sha256": "b2b8783698ee6934dbaf9d77917b393da8334cbcf13d595b5106526e3506a344",
+      "source_image_sha256": "2f42fe5d38f1edae4649df42b6a844fcbdad3df9d187255ec28b49672b478b8b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.7.15",
+        "3.7.16"
+      ],
+      "figures": [],
+      "tables": [
+        "3.5"
+      ],
+      "notes": [
+        "表3.5全部公式及无标签幂次行已转为Markdown表格；3.7.16按原图校正OCR的p/q误读。"
+      ]
+    },
+    {
+      "pdf_page": 90,
+      "printed_page": 77,
+      "path": "staging/ch03b/pages/pdf-090.md",
+      "sha256": "82c733557745e62640f18a2ee9b36899585398183d22773e660c09408b98542b",
+      "source_image_sha256": "43e5e8377ea969c08e368527c9ffecd480fa6883a6830760ff020954aec8e795",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.summary",
+          "title": "小结"
+        },
+        {
+          "id": "3.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "完整转录算法8步、小结、习题1(1)；步5、6差式偏移及步6循环上界疑误另注。"
+      ]
+    },
+    {
+      "pdf_page": 91,
+      "printed_page": 78,
+      "path": "staging/ch03b/pages/pdf-091.md",
+      "sha256": "e92a6efc3e420b15f9511994eba5fa7ba32d4c956ca23ccdcaf8f07719757e96",
+      "source_image_sha256": "05a5c80b500c0bd07da83a83e0def14470f357a0f137cc202fa8ed2703ef04e9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "习题1(2)、2–22全部转录且只转录不解题；题5范围放大核对；题10与15原书疑误另注。"
+      ]
+    },
+    {
+      "pdf_page": 92,
+      "printed_page": 79,
+      "path": "staging/ch03b/pages/pdf-092.md",
+      "sha256": "2df9a1fb92ecf83abea74d85d7b9e7da7bca8c27610f836903ca13ce19dc41fa",
+      "source_image_sha256": "4f5db0f791206b1d02a31ae441ef27851453ba0cc8426e3a62e8d0dd63289b23",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "3.6",
+        "3.7",
+        "3.8"
+      ],
+      "notes": [
+        "题22所用表3.6补全OCR整表遗漏；题23–27及表3.7、3.8完整转录；下半页仅背页透印不作本页正文。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch03b-E001",
+      "pdf_page": 76,
+      "printed_page": 63,
+      "formula_id": "3.4.11",
+      "type": "suspected_source_error",
+      "original": "e^n",
+      "suggested": "e^x",
+      "note": "原图明确为e^n；取n=0与同页L_0(x)=1矛盾，保留原式另注。"
+    },
+    {
+      "id": "ch03b-E002",
+      "pdf_page": 77,
+      "printed_page": 64,
+      "formula_id": "3.5.8",
+      "type": "suspected_source_error",
+      "original": "\\|\\delta_k\\|_2^2",
+      "suggested": "\\|\\delta_n\\|_2^2",
+      "note": "左端原书下标k，右端求和上限n；保留原式另注。"
+    },
+    {
+      "id": "ch03b-E003",
+      "pdf_page": 78,
+      "printed_page": 65,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "S_3(x)",
+      "suggested": "S_3^*(x)",
+      "note": "例3.4最大误差式未加星号，保留原书记法。"
+    },
+    {
+      "id": "ch03b-E004",
+      "pdf_page": 79,
+      "printed_page": 66,
+      "formula_id": "3.6.1",
+      "type": "suspected_source_error",
+      "original": "右端求和i=1，且最小值下标S(x) in varphi",
+      "suggested": "右端求和i=0，函数空间Phi",
+      "note": "原图已放大确认；与同式左侧下限及上页定义不一致，保留并校注。"
+    },
+    {
+      "id": "ch03b-E005",
+      "pdf_page": 80,
+      "printed_page": 67,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "右端omega(x_i)后有上标星号",
+      "suggested": "移除未定义的星号",
+      "note": "不等式原印星号保留并校注。"
+    },
+    {
+      "id": "ch03b-E006",
+      "pdf_page": 81,
+      "printed_page": 68,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "exp(-1.0567t)",
+      "suggested": "exp(-1.0567/t)",
+      "note": "最终指数模型原印为乘t；与本页y=a exp(b/t)及趋向a的描述矛盾。"
+    },
+    {
+      "id": "ch03b-E007",
+      "pdf_page": 81,
+      "printed_page": 68,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "拟合数据(x_i,y_i)",
+      "suggested": "拟合数据(x_i,hat y_i)",
+      "note": "变换后拟合数据原文漏帽号，保留并校注。"
+    },
+    {
+      "id": "ch03b-E008",
+      "pdf_page": 82,
+      "printed_page": 69,
+      "formula_id": "3.6.11",
+      "type": "source_notation_inconsistency",
+      "original": "a_{k+1}",
+      "suggested": "alpha_{k+1}",
+      "note": "式3.6.11原印为拉丁a，递推式为希腊alpha；保留。"
+    },
+    {
+      "id": "ch03b-E009",
+      "pdf_page": 82,
+      "printed_page": 69,
+      "formula_id": "3.6.11",
+      "type": "suspected_source_error",
+      "original": "两行共同范围k=0,...,n-1",
+      "suggested": "beta_k范围k=1,...,n-1",
+      "note": "beta_0涉及未定义的P_-1；递推只使用beta_1起。"
+    },
+    {
+      "id": "ch03b-E010",
+      "pdf_page": 83,
+      "printed_page": 70,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "首式(P_l,P_1)，归纳假设(P_1,P_s)",
+      "suggested": "首式(P_0,P_1)，归纳假设(P_l,P_s)",
+      "note": "l与1已在放大原图核对，原印保留另注。"
+    },
+    {
+      "id": "ch03b-E011",
+      "pdf_page": 83,
+      "printed_page": 70,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "系数a_k，随后累加alpha_k^*并表示拟合曲线",
+      "suggested": "统一为同一拟合系数记号",
+      "note": "保留原文；不得与递推alpha_k混同。"
+    },
+    {
+      "id": "ch03b-E012",
+      "pdf_page": 84,
+      "printed_page": 71,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "S_n求和k=1，后文a_0起；列表a_0,a_2,...,a_n",
+      "suggested": "统一系数范围且完整列出a_1",
+      "note": "原书多元拟合的系数范围不一致，保留另注。"
+    },
+    {
+      "id": "ch03b-E013",
+      "pdf_page": 84,
+      "printed_page": 71,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "内积右端第二因子varphi_i",
+      "suggested": "varphi_j",
+      "note": "左端为(varphi_k,varphi_j)，右端原图下标明确为i；保留。"
+    },
+    {
+      "id": "ch03b-E014",
+      "pdf_page": 85,
+      "printed_page": 72,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "离散正交性第三行0<=k,j<=m",
+      "suggested": "0<=k,l<=m",
+      "note": "j为求和指标，频率为k,l；原印保留。"
+    },
+    {
+      "id": "ch03b-E015",
+      "pdf_page": 87,
+      "printed_page": 74,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "N=2^p时只有N/2个不同的值",
+      "suggested": "利用正负号对称可由N/2个值表示N个值",
+      "note": "j=1时有N个不同的N次单位根，原文缺少限定；保留并解释。"
+    },
+    {
+      "id": "ch03b-E016",
+      "pdf_page": 87,
+      "printed_page": 74,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "用w的N同余数r代替m",
+      "suggested": "用m的N同余数r代替m",
+      "note": "本段原文保留；前段余数定义作用于整数指数m。"
+    },
+    {
+      "id": "ch03b-E017",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "表3.5 A_2行单元1为A_1(0)+A_1(5)",
+      "suggested": "A_1(1)+A_1(5)",
+      "note": "与3.7.14代入k=0,j=1矛盾；原表保留。"
+    },
+    {
+      "id": "ch03b-E018",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "表3.5末行C_i=A_3(j)",
+      "suggested": "C_j=A_3(j)",
+      "note": "与正文记法不一致；原表保留。"
+    },
+    {
+      "id": "ch03b-E019",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "2^{p-q}2^{q/1}=N/2",
+      "suggested": "2^{p-q}2^{q-1}=N/2",
+      "note": "原图指数斜杠已放大确认；与循环次数不一致。"
+    },
+    {
+      "id": "ch03b-E020",
+      "pdf_page": 90,
+      "printed_page": 77,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "步5、6差式第二个读地址加2^{q-1}",
+      "suggested": "加2^{p-1}",
+      "note": "与3.7.16和对应和式偏移不一致；原文保留。"
+    },
+    {
+      "id": "ch03b-E021",
+      "pdf_page": 90,
+      "printed_page": 77,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "步6 j从0到2^{q-1}",
+      "suggested": "j从0到2^{q-1}-1",
+      "note": "原文少-1，循环范围与3.7.16、步5不一致，并可能越界。"
+    },
+    {
+      "id": "ch03b-E022",
+      "pdf_page": 91,
+      "printed_page": 78,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "题10 T_n(x)=T_n(2x-1)",
+      "suggested": "T_n^*(x)=T_n(2x-1)",
+      "note": "定义左端原图无星号，后文与题11均为T_n星号；保留另注。"
+    },
+    {
+      "id": "ch03b-E023",
+      "pdf_page": 91,
+      "printed_page": 78,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "题15 Schwarz不等式(3.4.5)",
+      "suggested": "(3.3.5)",
+      "note": "原图引用为3.4.5，本章Schwarz实际编号为3.3.5；保留另注。"
+    }
+  ],
+  "validation_notes": [
+    "全部状态表示agent对照原页核验，不表示人工核验。PDF76–78已实际打开全页图；疑误另外放大裁切辨认。",
+    "PDF79–81已逐页打开原图；求和下限、权函数星号和指数另做放大裁切；图3.6、3.7忠实裁切。",
+    "PDF82–84逐页打开；递推、归纳起始和多元拟合疑误均从原图裁切复核；补全OCR漏掉的3.6.10、3.7.1编号及3.6.11下标范围。",
+    "PDF85–87逐页打开并完整核对；补全OCR漏掉的3.7.2、3.7.3、3.7.4和3.7.11编号；三角正交性条件按原印保留。",
+    "PDF88–90逐页打开；表3.5、FFT通式、运算量及程序步骤额外裁切复核；表格所有单元转录。",
+    "PDF91–92逐页打开并核对全部习题及3张数据表；全lane共17页原图均已实际打开，未决字形0。",
+    "最终结构校验通过：17页YAML、页及原图SHA-256、全部相对链接、39个连续编号公式一致。提取724个数学片段以XeLaTeX及Fandol字体成功编译为23页语法检查PDF；这不替代原图内容核对或整书版式验收。报告：staging/ch03b/qa/validation.json。",
+    "ch03a另行对PDF76–92全部17页独立交叉复核，报告staging/ch03a/cross-review.json，反馈findings=0、unresolved=0；最终MD未在其核验后修改。"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 70,
+  "source_image": "source-images/pdf-070.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "13627fd6ee46be27fe9e5c05a055075a3b93c28a3827e6efb0bb1c9a5da42e69",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 849,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.052,
+  "created_utc": "2026-09-12T09:58:06.540306+00:00",
+  "raw_text_sha256": "046aa578652576676f2006a8dd3507a9789cdfc30c4be897e72f61ff7cc23654",
+  "raw_text": "3.4 正交多项式\n\n3.4.1 正交手续\n\n定义3.9 设 $g_n(x)$ 是首项系数 $a_n \\neq 0$ 的 $n$ 次多项式，如果多项式序列 $g_0(x)$, $g_1(x)$, $\\cdots$ 满足\n$$(g_j, g_k) = \\int_a^b \\rho(x) g_j(x) g_k(x) \\mathrm{d}x = \\begin{cases} 0, & j \\neq k, \\\\ A_k > 0, & j = k \\end{cases} \\quad (j, k = 0, 1, \\cdots),$$\n则称多项式序列 $g_0(x), g_1(x), \\cdots$ 在 $[a, b]$ 上带权 $\\rho(x)$ 正交，并称 $g_n(x)$ 是 $[a, b]$ 上带权 $\\rho(x)$ 的 $n$ 次正交多项式.\n\n一般来说，当权函数 $\\rho(x)$ 及区间 $[a, b]$ 给定以后，可以由线性无关的一组基 $\\{1, x, x^2, \\cdots, x^n, \\cdots\\}$ 并利用正交方法构造出正交多项式\n$$g_0(x) = 1, \\quad g_n(x) = x^n - \\sum_{k=0}^{n-1} \\frac{(x^n, g_k)}{(g_k, g_k)} \\cdot g_k(x), \\quad k = 1, 2, \\cdots.$$\n这样构造的正交多项式有以下性质：\n(1) $g_n(x)$ 是最高项系数为 1 的 $n$ 次多项式.\n(2) 任一 $n$ 次多项式 $P_n(x) \\in H_n$ 均可表示为 $g_0(x), g_1(x), \\cdots, g_n(x)$ 的线性组合.\n(3) 当 $n \\neq m$ 时，$(g_n, g_m) = 0$ 且 $g_n(x)$ 与任一次数小于 $n$ 的多项式正交.\n(4) 有递推关系\n$$g_{n+1}(x) = (x - \\alpha_n)g_n(x) - \\beta_n g_{n-1}(x), \\quad n = 0, 1, \\cdots,$$\n其中\n$$g_0(x) = 1, \\quad g_{n-1}(x) = 0,$$\n$$\\alpha_n = \\frac{(xg_n, g_n)}{(g_n, g_n)}, \\quad n = 0, 1, \\cdots,$$\n$$\\beta_n = \\frac{(g_n, g_n)}{(g_{n-1}, g_{n-1})}, \\quad n = 1, 2, \\cdots.$$\n这里 $(xg_n, g_n) = \\int_a^b xg_n^2(x) \\rho(x) \\mathrm{d}x.$\n(5) 设 $g_0(x), g_1(x), \\cdots$ 是在 $[a, b]$ 上带权 $\\rho(x)$ 的正交多项式序列，则 $g_n(x)$ ($n \\geq 1$) 的 $n$ 个根都是单重实根，且都在区间 $(a, b)$ 内.\n以上性质的证明可参看相关文献. 下面主要给出几类常见的而又十分重要的正交多项式.\n\n3.4.2 Legendre多项式\n\n当区间为 $[-1, 1]$、权函数 $\\rho(x) \\equiv 1$ 时，由 $\\{1, x, x^2, \\cdots, x^n, \\cdots\\}$ 正交得到的多"
+}

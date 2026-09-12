@@ -1,0 +1,485 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss 消去法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss 消去法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{7.2 Gauss 消去法}\label{gauss-ux6d88ux53bbux6cd5}
+
+本节介绍 Gauss 消去法（逐次消去法）以及消去法和矩阵三角分解之间的关系。虽然 Gauss 消去法是一个古老的求解线性方程组的方法（早在公元前 250 年我国就掌握了解三元一次联立方程组的方法），但由它改进、变形得到的主元素消去法、三角分解法仍然是目前计算机上常用的有效方法。
+
+\href{../../source-images/pdf-178.jpeg}{原页扫描}
+
+\subsubsection{7.2.1 消元手续}\label{ux6d88ux5143ux624bux7eed}
+
+设有线性方程组
+
+\[
+\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\
+\qquad\qquad\vdots\\
+a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n,
+\end{cases}
+\tag{7.2.1}
+\]
+
+或写成矩阵形式 \(Ax=b\)，其中
+
+\[
+A=\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{pmatrix},\quad
+x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\quad
+b=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},
+\]
+
+\(A\) 为非奇异矩阵。下面举一个简单的例子来说明消去法的基本思想。
+
+\textbf{例 7.1} 用消去法解方程组
+
+\[x_1+x_2+x_3=6,\tag{7.2.2}\]
+
+\[4x_2-x_3=5,\tag{7.2.3}\]
+
+\[2x_1-2x_2+x_3=1.\tag{7.2.4}\]
+
+\textbf{解} 第一步，将式（7.2.2）乘以 \(-2\) 加到式（7.2.4）上去，消去式（7.2.4）中的未知数 \(x_1\)，得到
+
+\[-4x_2-x_3=-11.\tag{7.2.5}\]
+
+第二步，将式（7.2.3）加到式（7.2.5）上，消去式（7.2.5）中的未知数 \(x_2\)，得到与原方程组等价的三角方程组
+
+\[
+\begin{cases}
+x_1+x_2+x_3=6,\\
+4x_2-x_3=5,\\
+-2x_3=-6.
+\end{cases}
+\tag{7.2.6}
+\]
+
+显然方程组（7.2.6）是容易求解的，解为 \(x^*=(1,2,3)^{\mathrm T}\)。上述过程相当于
+
+\[
+(A\mathbin{\vdots}b)=
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\2&-2&1&1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\0&-4&-1&-11\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\0&0&-2&-6\end{array}\right).
+\]
+
+\[(-2)\times r_1{}^{\text{①}}+r_3\to r_3,\qquad r_2+r_3\to r_3.\]
+
+由此看出，用消去法解方程组的基本思想是，用逐次消去未知数的方法把原来方程组 \(Ax=b\) 化为与其等价的三角方程组，而求解三角方程组就容易了。换句话说，上
+
+\begin{quote}
+① \(r_i\) 表示矩阵的第 \(i\) 行。
+\end{quote}
+
+\href{../../source-images/pdf-179.jpeg}{原页扫描}
+
+述过程就是用行的初等变换将原方程组系数矩阵化为简单形式，从而将求解原方程组（7.2.1）的问题转化为求解简单方程组的问题。
+
+下面来讨论一般的解 \(n\) 阶方程组的 Gauss 消去法。
+
+将式（7.2.1）记作 \(A^{(1)}x=b^{(1)}\)，其中 \(A^{(1)}=(a_{ij}^{(1)})=(a_{ij})\)，\(b^{(1)}=b\)。
+
+（1）第一次消元。设 \(a_{11}^{(1)}\ne0\)，首先对行计算乘数 \(m_{i1}=a_{i1}^{(1)}/a_{11}^{(1)}\)（\(i=2,3,\cdots,n\)），用 \(-m_{i1}\) 乘式（7.2.1）的第 1 个方程，加到第 \(i\)（\(i=2,3,\cdots,n\)）个方程上，消去式（7.2.1）的第 2 个方程直到第 \(n\) 个方程中的未知数 \(x_1\)，得与式（7.2.1）等价的方程组
+
+\[
+\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1n}^{(1)}\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+\vdots&\vdots&&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}
+=\begin{pmatrix}b_1^{(1)}\\b_2^{(2)}\\\vdots\\b_n^{(2)}\end{pmatrix},
+\tag{7.2.7}
+\]
+
+简记作 \(A^{(2)}x=b^{(2)}\)，其中
+
+\[
+a_{ij}^{(2)}=a_{ij}^{(1)}-m_{i1}a_{1j}^{(1)},\quad
+b_i^{(2)}=b_i^{(1)}-m_{i1}b_1^{(1)}\quad(i,j=2,3,\cdots,n).
+\]
+
+（2）一般第 \(k\)（\(1\le k\le n-1\)）次消元。设第 \(k-1\) 步计算已经完成，即已计算好与式（7.2.1）等价的方程组
+
+\[A^{(k)}x=b^{(k)},\tag{7.2.8}\]
+
+且已消去未知数 \(x_1,x_2,\cdots,x_{k-1}\)，其中 \(A^{(k)}\) 具有如下形式：
+
+\[
+A^{(k)}=\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}\\
+&&\ddots&&&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}\\
+&&&\vdots&&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}
+\end{pmatrix}.
+\]
+
+设 \(a_{kk}^{(k)}\ne0\)，计算乘数 \(m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}\)（\(i=k+1,\cdots,n\)），用 \(-m_{ik}\) 乘式（7.2.8）的第 \(k\) 个方程加上第 \(i\)（\(i=k+1,\cdots,n\)）个方程，消去第 \(k+1\) 个方程直到第 \(n\) 个方程的未知数 \(x_k\)，得到与式（7.2.1）等价的方程组 \(A^{(k+1)}x=b^{(k+1)}\)。
+
+\(A^{(k+1)}\) 元素的计算公式为
+
+\[
+\begin{cases}
+a_{ij}^{(k+1)}=a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}& (i,j=k+1,\cdots,n),\\
+b_i^{(k+1)}=b_i^{(k)}-m_{ik}b_k^{(k)}& (i=k+1,\cdots,n).
+\end{cases}
+\tag{7.2.9}
+\]
+
+显然 \(A^{(k+1)}\) 的第 1 行直到第 \(k\) 行与 \(A^{(k)}\) 相同。
+
+（3）继续这一过程，直到完成第 \(n-1\) 次消元。最后得到与原方程组等价的三角方程组
+
+\[A^{(n)}x=b^{(n)}\tag{7.2.10}\]
+
+\href{../../source-images/pdf-180.jpeg}{原页扫描}
+
+或
+
+\[
+\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+&&\ddots&\vdots\\
+&&&a_{nn}^{(n)}
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}
+=\begin{pmatrix}b_1^{(1)}\\b_2^{(2)}\\\vdots\\b_n^{(n)}\end{pmatrix}.
+\]
+
+由式（7.2.1）约化为式（7.2.10）的过程称为\textbf{消元过程}。
+
+求解三角方程组（7.2.10），设 \(a_{ii}^{(i)}\ne0\)（\(i=1,2,\cdots,n-1\)），易得求解公式
+
+\[
+\begin{cases}
+x_n=b_n^{(n)}/a_{nn}^{(n)},\\
+x_k=\displaystyle\left(b_k^{(k)}-\sum_{j=k+1}^{n}a_{kj}^{(k)}x_j\right)/a_{kk}^{(k)}
+\end{cases}
+\quad(k=n-1,n-2,\cdots,2,1).
+\tag{7.2.11}
+\]
+
+式（7.2.10）的求解过程称为\textbf{回代过程}。
+
+如果 \(a_{11}^{(1)}=0\)，那么，由于 \(A\) 为非奇异矩阵，所以 \(A\) 的第 1 列一定有元素不等于零，例如 \(a_{i_1,1}\ne0\)，于是可交换两行元素（\(r_1\leftrightarrow r_{i_1}\)），将 \(a_{i_1,1}\) 调到第 1 行第 1 列的位置，然后进行消元计算，这时 \(A^{(2)}\) 右下角矩阵（\(n-1\) 阶）亦为非奇异矩阵。继续这一过程，Gauss 消去法照样可进行计算。
+
+总结上述讨论即有如下定理。
+
+\textbf{定理 7.1} 如果 \(A\) 为 \(n\) 阶非奇异矩阵，则可通过 Gauss 消去法（及交换两行的初等变换）将方程组（7.2.1）化为三角方程组（7.2.10）。
+
+\(A\) 在什么条件下才能保证 \(a_{kk}^{(k)}\ne0\)（\(k=1,2,\cdots,n\)）？下面的引理给出了这个条件。
+
+\textbf{引理} 约化的主元素 \(a_{ii}^{(i)}\ne0\)（\(i=1,2,\cdots,k\)）的充要条件是矩阵 \(A\) 的顺序主子式 \(D_i\ne0\)（\(i=1,2,\cdots,k\)），即
+
+\[D_1=a_{11}\ne0,\]
+
+\[
+D_i=\begin{vmatrix}
+a_{11}&\cdots&a_{1k}\\
+\vdots&&\vdots\\
+a_{i1}&\cdots&a_{ii}
+\end{vmatrix}\ne0\quad(i=2,3,\cdots,k).
+\tag{7.2.12}
+\]
+
+\textbf{证明} 利用归纳法证明引理的充分性。显然，当 \(k=1\) 时引理的充分性是成立的，现假设引理对 \(k-1\) 是成立的，求证引理对 \(k\) 亦成立。由归纳法，设 \(a_{ii}^{(i)}\ne0\)（\(i=1,2,\cdots,k-1\)），于是可用 Gauss 消去法将 \(A^{(1)}=A\) 约化到 \(A^{(k)}\) 中，即
+
+\[
+A^{(1)}\to A^{(k)}=\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}\\
+&&\ddots&&&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}\\
+&&&\vdots&&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}
+\end{pmatrix},
+\]
+
+\begin{quote}
+校注（agent 补充）：式（7.2.12）原书矩阵右上角清楚印作 \(a_{1k}\)，此处忠实保留。按同式左端 \(D_i\)、左下角 \(a_{i1}\) 和右下角 \(a_{ii}\)，第 \(i\) 阶顺序主子式的右上角应为 \(a_{1i}\)；这是疑似原书下标排印错误，不是 OCR 改写。参见\href{../assets/ch07a/pdf-180-principal-minor-detail.png}{原式放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-181.jpeg}{原页扫描}
+
+且有
+
+\[
+D_2=\begin{vmatrix}a_{11}^{(1)}&a_{12}^{(1)}\\0&a_{22}^{(2)}\end{vmatrix}
+=a_{11}^{(1)}a_{22}^{(2)},\qquad
+D_3=a_{11}^{(1)}a_{22}^{(2)}a_{33}^{(3)},
+\]
+
+\[
+D_k=\begin{vmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1k}^{(1)}\\
+&a_{22}^{(2)}&\cdots&a_{2k}^{(2)}\\
+&&\ddots&\vdots\\
+&&&a_{kk}^{(k)}
+\end{vmatrix}
+=a_{11}^{(1)}a_{22}^{(2)}\cdots a_{kk}^{(k)}.
+\tag{7.2.13}
+\]
+
+由设 \(D_i\ne0\)（\(i=1,2,\cdots,k\)）及式（7.2.13），有 \(a_{kk}^{(k)}\ne0\)，即引理的充分性对 \(k\) 成立。
+
+显然，由假设 \(a_{ii}^{(i)}\ne0\)（\(i=1,2,\cdots,k\)），利用式（7.2.13）亦可推出 \(D_i\ne0\)（\(i=1,2,\cdots,k\)）。
+
+\textbf{推论} 如果 \(A\) 的顺序主子式 \(D_k\ne0\)（\(k=1,2,\cdots,n-1\)），则
+
+\[
+\begin{cases}
+a_{11}^{(1)}=D_1,\\
+a_{kk}^{(k)}=D_k/D_{k-1}\quad(k=2,3,\cdots,n).
+\end{cases}
+\]
+
+\textbf{定理 7.2} 如果 \(n\) 阶矩阵 \(A\) 的所有顺序主子式均不为零，即 \(D_i\ne0\)（\(i=1,2,\cdots,n\)），则可通过 Gauss 消去法（不进行交换两行的初等变换），将方程组（7.2.1）约化为三角方程组（7.2.10）。
+
+计算公式如下：
+
+（1）消元计算（\(k=1,2,\cdots,n-1\)）。
+
+\[m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}\quad(i=k+1,\cdots,n),\]
+
+\[a_{ij}^{(k+1)}=a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}\quad(i,j=k+1,\cdots,n),\]
+
+\[b_i^{(k+1)}=b_i^{(k)}-m_{ik}b_k^{(k)}\quad(i=k+1,\cdots,n).\]
+
+（2）回代计算。求解公式为式（7.2.11）。
+
+\subsubsection{7.2.2 矩阵的三角分解}\label{ux77e9ux9635ux7684ux4e09ux89d2ux5206ux89e3}
+
+下面借助矩阵理论进一步对消去法作些分析，从而建立 Gauss 消去法与矩阵因式分解的关系。
+
+设式（7.2.1）中 \(A\) 的各顺序主子式均不为零。由于对 \(A\) 施行行的初等变换相当于用初等矩阵左乘 \(A\)，于是对式（7.2.1）施行第一次消元后化为式（7.2.7），这时 \(A^{(1)}\) 化为 \(A^{(2)}\)，\(b^{(1)}\) 化为 \(b^{(2)}\)，即
+
+\[L_1A^{(1)}=A^{(2)},\qquad L_1b^{(1)}=b^{(2)},\]
+
+其中
+
+\[
+L_1=\begin{pmatrix}
+1&&&&\\
+-m_{21}&1&&&\\
+-m_{31}&&1&&\\
+\vdots&&&\ddots&\\
+-m_{n1}&&&&1
+\end{pmatrix}.
+\]
+
+\href{../../source-images/pdf-182.jpeg}{原页扫描}
+
+一般第 \(k\) 步消元，\(A^{(k)}\) 化为 \(A^{(k+1)}\)，\(b^{(k)}\) 化为 \(b^{(k+1)}\)，相当于
+
+\[L_kA^{(k)}=A^{(k+1)},\qquad L_kb^{(k)}=b^{(k+1)}.\]
+
+重复这一过程，最后得到
+
+\[
+\begin{cases}
+L_{n-1}\cdots L_2L_1A^{(1)}=A^{(n)},\\
+L_{n-1}\cdots L_2L_1b^{(1)}=b^{(n)},
+\end{cases}
+\tag{7.2.14}
+\]
+
+其中
+
+\[
+L_k=\begin{pmatrix}
+1&&&&&\\
+&\ddots&&&&\\
+&&1&&&\\
+&&-m_{k+1,k}&1&&\\
+&&\vdots&&\ddots&\\
+&&-m_{nk}&&&1
+\end{pmatrix}.
+\]
+
+将上三角矩阵 \(A^{(n)}\) 记作 \(U\)，由式（7.2.14）得到
+
+\[A=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}U=LU,\]
+
+其中
+
+\[
+L=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}
+=\begin{pmatrix}
+1&&&&\\
+m_{21}&1&&&\\
+m_{31}&m_{32}&1&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+m_{n1}&m_{n2}&\cdots&m_{n,n-1}&1
+\end{pmatrix}.
+\]
+
+为单位下三角矩阵。
+
+这就是说，Gauss 消去法实质上产生了一个将 \(A\) 分解为两个三角矩阵相乘的因式分解，于是得到如下重要定理，它在解方程组的直接法中起着重要作用。
+
+\textbf{定理 7.3（矩阵的 LU 分解）} 设 \(A\) 为 \(n\) 阶矩阵，如果 \(A\) 的顺序主子式 \(D_i\ne0\)（\(i=1,2,\cdots,n-1\)），则 \(A\) 可分解为一个单位下三角矩阵 \(L\) 和一个上三角矩阵 \(U\) 的乘积，且这种分解是唯一的。
+
+\textbf{证明} 根据以上 Gauss 消去法的矩阵分析，\(A=LU\) 的存在性已经得到证明，现仅在 \(A\) 为非奇异矩阵的假定下来证明它的唯一性，当 \(A\) 为奇异矩阵的情况留作课外练习。
+
+设
+
+\[A=LU=L_1U_1,\]
+
+其中 \(L,L_1\) 为单位下三角矩阵；\(U,U_1\) 为上三角矩阵。
+
+由于 \(U_1^{-1}\) 存在，故
+
+\[L^{-1}L_1=UU_1^{-1}.\]
+
+上式右端为上三角矩阵，左端为单位下三角矩阵，从而上式两端都必须等于单位矩阵，故 \(U=U_1\)，\(L=L_1\)。证毕。
+
+\textbf{例 7.2} 对于例 7.1，系数矩阵 \(A=\begin{pmatrix}1&1&1\\0&4&-1\\2&-2&1\end{pmatrix}\)，由 Gauss 消去法，有
+
+\href{../../source-images/pdf-183.jpeg}{原页扫描}
+
+\[m_{21}=0,\quad m_{31}=2,\quad m_{32}=-1,\]
+
+故
+
+\[
+A=\begin{pmatrix}1&0&0\\0&1&0\\2&-1&1\end{pmatrix}
+\begin{pmatrix}1&1&1\\0&4&-1\\0&0&-2\end{pmatrix}=LU.
+\]
+
+\subsubsection{7.2.3 计算量}\label{ux8ba1ux7b97ux91cf}
+
+下面考虑解式（7.2.1）的 Gauss 消去法的计算量。
+
+（1）消元过程的计算量。第一步计算乘数 \(m_{i1}\)（\(i=2,3,\cdots,n\)）需要 \(n-1\) 次除法运算，计算 \(a_{ij}^{(2)}\)（\(i,j=2,3,\cdots,n\)）需要 \((n-1)^2\) 次乘法运算及 \((n-1)^2\) 次加、减法运算。一般可列表（见表 7.1）计算。
+
+\textbf{表 7.1}
+
+\[
+\begin{array}{c|c|c|c}
+\text{第 }k\text{ 步}&\text{加、减法次数}&\text{乘法次数}&\text{除法次数}\\\hline
+1&(n-1)^2&(n-1)^2&n-1\\
+2&(n-2)^2&(n-2)^2&n-2\\
+\vdots&\vdots&\vdots&\vdots\\
+n-1&1&1&1\\\hline
+\text{合计}&\dfrac{n(n-1)(2n-1)}{6}&\dfrac{n(n-1)(2n-1)}{6}&\dfrac{n(n-1)}{2}
+\end{array}
+\]
+
+这里利用了求和公式
+
+\[\sum_{i=1}^{n}i=n(n+1)/2,\quad \sum_{i=1}^{n}i^2=n(n+1)(2n+1)/6\quad(n\ge1).\]
+
+消元过程所需的乘、除法次数 \(MD\) 及加、减法次数 \(AS\) 分别为
+
+\[MD=n(n^2-1)/3,\quad AS=n(n-1)(2n-1)/6.\]
+
+（2）计算 \(b^{(n)}\) 的计算量。
+
+\[MD=(n-1)+(n-2)+\cdots+2+1=n(n-1)/2,\quad AS=n(n-1)/2.\]
+
+（3）解 \(A^{(n)}x=b^{(n)}\) 所需的计算量。\(MD=n(n+1)/2\)，\(AS=n(n-1)/2\)。解式（7.2.1）所需的总的乘除法次数及加减法次数分别为
+
+\[MD=n^3/3+n^2-n/3\approx n^3/3\quad\text{（当 $n$ 比较大时）},\]
+
+\[AS=n(n-1)(2n+5)/6\approx n^3/3\quad\text{（当 $n$ 比较大时）}.\]
+
+\textbf{定理 7.4} 如果 \(A\) 为 \(n\) 阶非奇异矩阵，则用 Gauss 消去法解式（7.2.1）所需乘除法次数及加减法次数分别为
+
+\(1^\circ\;MD=n^3/3+n^2-n/3\)；
+
+\(2^\circ\;AS=n(n-1)(2n+5)/6\)。
+
+如果用 Cramer 法则解式（7.2.1），就需要计算 \(n+1\) 个 \(n\) 阶行列式，若行列式计
+
+\href{../../source-images/pdf-184.jpeg}{原页扫描}
+
+算是用子式展开，总共需要 \((n+1)!\) 次乘法运算。例如 \(n=10\) 时，Gauss 消去法需要 430 次乘、除法运算，而 Cramer 法则却需要 39 916 800 次乘法运算。由此可见，用 Cramer 法则解式（7.2.1）工作量太大，不便使用。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E001}：原书 PDF 页 180
+\end{itemize}
+
+\end{document}

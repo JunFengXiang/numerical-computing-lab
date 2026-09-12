@@ -1,0 +1,127 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={FWT 的算法实现},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{FWT 的算法实现}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{10.4.4　FWT 的算法实现}\label{fwt-ux7684ux7b97ux6cd5ux5b9eux73b0}
+
+回头考察一般形式的 Walsh 变换 \(N\)-WT（10.4.1）。仍设 \(N=2^n\)，\(n\) 为正整数。前已指出，其快速算法设计分 \(n=\log_2N\) 步，每一步将计算问题的规模减半。记 \(N_k=N/2^k\)。快速 Walsh 变换 FWT 的第 \(k\) 步将所给 \(N\)-WT 化归为 \(2^k\) 个 \(N_k\)-WT，其输入数据 \(x_k(i)\) 被分割成 \(2^k\) 段，每段含有 \(N_k\) 个数据，具体地说，其 \(l\)（\(l=1,2,\cdots,2^k\)）段数据为
+
+\[
+x_k((l-1)N_k+j),\quad j=0,1,\cdots,N_k-1.
+\]
+
+这样，二分过程的第 \(k\) 步是先将 \(k-1\) 步生成的数据段
+
+\[
+x_{k-1}((l-1)N_{k-1}+j),\quad j=0,1,\cdots,N_{k-1}-1
+\]
+
+再对半切成两部分，其前半部分与后半部分分别是
+
+\[
+x_{k-1}((l-1)N_{k-1}+j);\quad x_{k-1}((l-1)N_{k-1}+N_k+j),\quad j=0,1,\cdots,N_k-1.
+\]
+
+然后将这两组数据按式（10.4.2）进行加工，结果有
+
+\[
+\begin{gathered}
+\begin{cases}
+x_k((l-1)N_{k-1}+j)=x_{k-1}((l-1)N_{k-1}+j)+x_{k-1}((l-1)N_{k-1}+N_k+j),\\
+x_k((l-1)N_{k-1}+N_k+j)=x_{k-1}((l-1)N_{k-1}+j)-x_{k-1}((l-1)N_{k-1}+N_k+j),
+\end{cases}\\
+j=0,1,\cdots,N_k-1;\quad l=1,2,\cdots,2^k.
+\end{gathered}
+\tag{10.4.4}
+\]
+
+\begin{quote}
+校注（agent 补充，CH10-E004）：式（10.4.4）原印 \(l=1,2,\cdots,2^k\)，上文照录。此式用 \((l-1)N_{k-1}\) 定位第 \(k-1\) 步的数据段，该步只有 \(2^{k-1}\) 段，因此上限应为 \(2^{k-1}\)。例如 \(N=8,k=1\) 时，按原印取 \(l=2\) 会访问从索引 8 开始的数据，越过 \(0,\ldots,7\)。本页前文用于描述第 \(k\) 步结果分段数的 \(2^k\) 则正确。下一页算法 10.1 引用此式，也受该范围疑误影响。\href{../assets/ch10/erratum-p274-range.png}{原式放大裁片}。
+\end{quote}
+
+\href{../../source-images/pdf-275.jpeg}{原页}
+
+这就是第 \(k\) 步所要施行的二分手续。反复施行这种二分手续即得所求的结果。于是有下列快速 Walsh 变换 FWT（算法 10.1）。
+
+\textbf{算法 10.1}　令 \(x_0(i)=x(i)\)，\(i=0,1,\cdots,N-1\)，对 \(k=1,2,\cdots\) 直到 \(n=\log_2N\) 执行算式（10.4.4），结果有
+
+\[
+X(i)=x_n(i),\quad i=0,1,\cdots,N-1.
+\]
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH10-E004}：原书 PDF 页 274
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,120 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={偏差比中传出好``消息''},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{偏差比中传出好``消息''}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.3.2　偏差比中传出好``消息''}\label{ux504fux5deeux6bd4ux4e2dux4f20ux51faux597dux6d88ux606f}
+
+再换一种视角考察前述数据校正技术。针对无穷逼近过程 \(\{S_n\}\)，能否设计更``好''的逼近过程 \(\{\widehat S_n\}\)，使之具有更快的收敛速度呢？这就是逼近加速问题。
+
+欲使\textbf{校正公式}（12.3.1）成为逼近加速公式，校正因子 \(\omega\) 应当是驾驭逼近过程的某个数学不变量，即与逼近过程相关的某个普适常数，称之为\textbf{加速因子}。前已指出，这个常数 \(\omega\) 应当在 0 与 1 之间，即 \(0<\omega<1\)。
+
+数学常数通常采取比率的形式，刘徽指出，比率的本意是相关事物的比例关系。
+
+在二分割圆过程中，需要考虑什么样的``相关量''呢？
+
+《割圆术》称偏差 \(\Delta_n=S_{2n}-S_n\) 为\textbf{差幂}，刘徽特别关注\textbf{幂率} \(\delta_n=\Delta_n/\Delta_{2n}\)。在割圆计算过程中，利用差幂 \(\Delta_n\) 计算幂率 \(\delta_n\)，割圆术实际上已造出下列数据表 12.1。
+
+\textbf{表 12.1}
+
+\begingroup
+\renewcommand{\arraystretch}{2.2}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}rrrr@{}}
+\toprule\noalign{}
+\(n\) & \(S_n\) & \(\Delta_n\) & \(\delta_n\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+12 & 300 & \(10\dfrac{364}{625}\) & 3.95 \\
+24 & \(310\dfrac{364}{625}\) & \(2\dfrac{425}{625}\) & 3.99 \\
+48 & \(313\dfrac{164}{625}\) & \(\dfrac{420}{625}\) & 4.00 \\
+96 & \(313\dfrac{584}{625}\) & \(\dfrac{105}{625}\) & \\
+192 & \(314\dfrac{64}{625}\) & & \\
+\end{longtable}
+}
+
+\endgroup
+
+从这些数据中能获得什么样的信息呢？无需用高深的数学知识进行理论分析，\textbf{直接观察幂率 \(\delta_n\) 的数据表（见表 12.1）即可发现，幂率几乎为定值 4。}
+
+\textbf{刘徽由此发现了一个奇妙的事实：表面上杂乱无章的数据 \(S_n\) 中竟蕴藏着极其鲜明的规律性。}
+
+\end{document}

@@ -1,0 +1,186 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss-Seidel 迭代法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss-Seidel 迭代法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{8.2.2　Gauss-Seidel 迭代法}\label{gauss-seidel-ux8fedux4ee3ux6cd5}
+
+由 Jacobi 方法迭代公式（8.2.4）可知，迭代的每一步计算过程，都是用 \(x^{(k)}\) 的全部分量来计算 \(x^{(k+1)}\) 的所有分量，显然在计算第 \(i\) 个分量 \(x_i^{(k+1)}\) 时，已经计算出的最新分量 \(x_1^{(k+1)},x_2^{(k+1)},\cdots,x_{i-1}^{(k+1)}\) 没有被利用。从直观上看，最新计算出的分量可能比旧的分量要好些。因此，对这些最新计算出来的第 \(k+1\) 次近似 \(x^{(k+1)}\) 的分量 \(x_j^{(k+1)}\) 加以利用，就得到所谓解方程组的 \textbf{Gauss-Seidel 迭代法（简称 G-S 方法）}：
+
+\[
+\begin{gathered}
+x^{(0)}=(x_1^{(0)},x_2^{(0)},\cdots,x_n^{(0)})^{\mathrm T}\quad\text{（初始向量）},\\[4pt]
+x_i^{(k+1)}=\frac1{a_{ii}}\left(b_i-\sum_{j=1}^{i-1}a_{ij}x_j^{(k+1)}-\sum_{j=i+1}^{n}a_{ij}x_j^{(k)}\right)\quad(k=0,1,2,\cdots;\ i=1,2,\cdots,n),
+\end{gathered}
+\tag{8.2.5}
+\]
+
+或写为
+
+\[
+\begin{cases}
+x_i^{(k+1)}=x_i^{(k)}+\Delta x_i\quad(k=0,1,2,\cdots;\ i=1,2,\cdots,n),\\[4pt]
+\Delta x_i=\dfrac1{a_{ii}}\left(b_i-\displaystyle\sum_{j=1}^{i-1}a_{ij}x_j^{(k+1)}-\displaystyle\sum_{j=i}^{n}a_{ij}x_j^{(k)}\right).
+\end{cases}
+\tag{8.2.5'}
+\]
+
+上面第 2 个式子利用了最新计算出的分量 \(x_1^{(k+1)}\)，第 \(i\) 个式子利用了计算出的最新分量 \(x_j^{(k+1)}\)（\(j=1,2,\cdots,i-1\)）。式（8.2.5）还可写成矩阵形式
+
+\[
+Dx^{(k+1)}=b+Lx^{(k+1)}+Ux^{(k)},\qquad(D-L)x^{(k+1)}=b+Ux^{(k)},
+\]
+
+若设 \((D-L)^{-1}\) 存在，则
+
+\begin{quote}
+校注（agent 补充）：式（8.2.3）的求和下限原页明确印为 \(i=1\)，下一行仍为 \(j\neq i\)，已按原样保留。由本页式（8.2.2）可知，此处求和指标应为 \(j=1\)，属于疑似原书排印错误，并非 OCR 错误。
+\end{quote}
+
+\href{../../source-images/pdf-219.jpeg}{原页图像}
+
+\[
+x^{(k+1)}=(D-L)^{-1}Ux^{(k)}+(D-L)^{-1}b,
+\]
+
+于是 Gauss-Seidel 迭代公式的矩阵形式为
+
+\[
+x^{(k+1)}=Gx^{(k)}+f,
+\tag{8.2.6}
+\]
+
+其中
+
+\[
+G=(D-L)^{-1}U,\qquad f=(D-L)^{-1}b.
+\]
+
+由此可以看出，应用 Gauss-Seidel 迭代法解式（8.2.1），就是对方程组 \(x=Gx+f\) 应用迭代法。\(G\) 称为解式（8.2.1）的 Gauss-Seidel 迭代法的迭代矩阵。
+
+Gauss-Seidel 迭代法的一个明显的优点是，在用计算机计算时，只需一组工作单元，以便存放近似解。由式（8.2.5）\('\) 可以看出，每迭代一步只需计算一次矩阵与向量的乘法。
+
+\textbf{例 8.2}　用 Gauss-Seidel 迭代法解例 8.1。取 \(x^{(0)}=0\)，迭代公式为
+
+\[
+\begin{cases}
+x_1^{(k+1)}=(20+3x_2^{(k)}-2x_3^{(k)})/8,\\
+x_2^{(k+1)}=(33-4x_1^{(k+1)}+x_3^{(k)})/11,\\
+x_3^{(k+1)}=(36-6x_1^{(k+1)}-3x_2^{(k+1)})/12.
+\end{cases}
+\]
+
+迭代到第 5 次时，有
+
+\[
+x^{(5)}=(2.999\,843,\ 2.000\,072,\ 1.000\,061)^{\mathrm T},\qquad
+\|\varepsilon^{(5)}\|_\infty=0.001\,57.
+\]
+
+从此例看出，Gauss-Seidel 迭代法比 Jacobi 迭代法收敛快（达到同样的精度所需的迭代次数较少），但这个结论在一定条件下才是对的。甚至有这样的方程组，Jacobi 方法收敛，而 Gauss-Seidel 迭代法却是发散的。
+
+\textbf{例 8.3}　方程组
+
+\[
+\begin{cases}
+x_1+2x_2-2x_3=1,\\
+x_1+x_2+x_3=1,\\
+2x_1+2x_2+x_3=1
+\end{cases}
+\]
+
+能够说明解此方程组的 Jacobi 迭代法收敛而 Gauss-Seidel 迭代法发散。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 219 的校注}\label{ux539fux4e66-pdf-ux9875-219-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-219.md}{完整原页转录} · \href{../../source-images/pdf-219.jpeg}{原页图像}
+
+校注记录：ch08-E003。
+
+\begin{quote}
+校注（agent 补充）：例 8.2 的原页误差范数明确印为 \(0.001\,57\)，已保留。由本页所印近似向量与精确解 \((3,2,1)^{\mathrm T}\) 计算，无穷范数为 \(0.000157\)；不作中间舍入而以有理数迭代 5 次，误差无穷范数约为 \(0.0001576134\)。所印误差范数疑为原书小数位错误，并非 OCR 错误。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch08-E003}：原书 PDF 页 219
+\item
+  \texttt{ch08-E002}：原书 PDF 页 218
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,106 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={小结},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{小结}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+本章阐述快速 Walsh 变换 FWT 的设计机理与设计方法。可以看到，FWT 本质上是一类二分法，其设计思想是，逐步二分所给计算模型 \(N\)-WT，令其规模 \(N\) 逐次减半，直到规模为 1 时，所归结出的 1-WT 即为所要的结果：
+
+\[
+\underset{\text{（计算模型）}}{N\text{-WT}}\Rightarrow2\text{ 个 }N/2\text{-WT}\Rightarrow4\text{ 个 }N/4\text{-WT}\Rightarrow\cdots\Rightarrow\underset{\text{（所求结果）}}{N\text{ 个 }1\text{-WT}}.
+\]
+
+注意到 \(N\)-WT 的变换矩阵是 Hadamard 阵 \(H_N\)，上述 FWT 的设计过程本质上是 Hadamard 阵的加工过程
+
+\[
+H_N\Rightarrow H_{N/2}\Rightarrow H_{N/4}\Rightarrow\cdots\Rightarrow H_1.
+\]
+
+再对比 Hadamard 阵的生成过程（10.3.4 小节）
+
+\[
+H_1\Rightarrow H_2\Rightarrow H_4\Rightarrow\cdots\Rightarrow H_N,
+\]
+
+可以看到，快速 Walsh 变换的演化过程同 Hadamard 阵的生成过程，它们两者互为反过程。如果后者视为\textbf{进化过程}（矩阵阶数逐步倍增），那么前者则是\textbf{退化过程}（矩阵阶数逐次减半）。在适当定义``规模''的前提下，它们两者全都从属于二分演化模式。
+
+Walsh 分析处处都渗透了对立统一的辩证思维。
+
+正因为 Walsh 函数具有极度的数学美，正由于 Walsh 分析展现了一种新的思维方式，因而在 Walsh 分析的基础上可以开展许多重要的研究。
+
+快速 Walsh 变换是快速变换的一个重要的组成部分。运用变异技术，基于 Walsh 变换可以派生出其他种种快速变换，诸如 Haar 变换、斜变换、Hartly 变换等等，从而实现快速变换方法的大统一。
+
+Walsh 分析有着广泛的应用前景。然而更为重要的是，它展现了一种新的数学方法------\textbf{演化数学方法}。
+
+宇宙是演化的，生物是演化的。时至今日，辩证法关于发展变化的观点，即事物从低级到高级不断演化的观点，已经被科学界认为是无须论证的常识了。
+
+Walsh 函数的演化分析用数学语言表述了这种``常识''。
+
+Walsh 函数的演化分析无疑是新的数学革命即将爆发的先兆。还是 Harmuth 有远见：\textbf{Walsh 分析的研究将导致一场数学革命，就像 17、18 世纪的微积分那样。}
+
+\end{document}

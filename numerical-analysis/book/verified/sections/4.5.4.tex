@@ -1,0 +1,136 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={样条求导},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{样条求导}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.5.4 样条求导}\label{ux6837ux6761ux6c42ux5bfc}
+
+我们知道，样条函数 \(S(x)\) 作为 \(f(x)\) 的近似函数，不但彼此的函数值很接近，导数值也很接近。例如，对于三次样条 \(S_3(x)\)，有
+
+\[
+|f^{(a)}(x)-S_3^{(a)}(x)|=O(h^{4-a})\qquad(a=0,1,2,3),
+\]
+
+因此，用样条函数建立数值微分公式是很自然的，即
+
+\[
+f^{(a)}(x)\approx S_3^{(a)}(x)\qquad(a=0,1,2,3).
+\tag{4.5.6}
+\]
+
+与前述插值型微分公式（4.5.1）不同，样条微分公式（4.5.6）可以用来计算插值范围内任何一点 \(x\)（不仅是节点 \(x_i\)）上的导数值。对于等距分划
+
+\[
+\pi:a=x_0<x_1<x_2<\cdots<x_n=b,\quad x_{k+1}-x_k=h,
+\]
+
+三次样条 \(S_3(x)\) 在节点上的导数值 \(S_3'(x_k)=m_k\) 满足下列连续性方程组
+
+（方程组续下页。）
+
+\begin{quote}
+校注（agent 补充，原表记法说明）：表 4.8 后两列表头按原扫描保留为 \(M_i/\times10^3\) 与 \(f''(x_i)/\times10^3\)，未改写原表头。表内数值对应导数乘 \(10^3\) 后的数值，例如 \(f''(100)=-1/(4\cdot100^{3/2})=-0.00025\)，表中列为 \(-0.25000\)；此说明仅解释该页缩放记法。\href{../assets/ch04b/review-table-4-8.png}{表 4.8 原扫描局部}。
+\end{quote}
+
+\href{../../source-images/pdf-117.jpeg}{原页图像}
+
+\subsubsection{4.5.4 样条求导（续）}\label{ux6837ux6761ux6c42ux5bfcux7eed}
+
+\[
+m_{k-1}+4m_k+m_{k+1}=3(y_{k+1}-y_{k-1})/h,\quad k=1,2,\cdots,n-1.
+\tag{4.5.7}
+\]
+
+设已给出端点处的一阶导数值 \(m_0=y_0',m_n=y_n'\)，则求解方程组（4.5.7）得出的 \(m_k\) 即可作为导数 \(f'(x_k)\) 的近似值。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 117 的校注}\label{ux539fux4e66-pdf-ux9875-117-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-117.md}{完整原页转录} · \href{../../source-images/pdf-117.jpeg}{原页图像}
+
+校注记录：CH04B-E005。
+
+\begin{quote}
+校注（agent 补充，CH04B-E005）：第 1 题（4）首项的分母在原扫描中明确印为``1''，故保留 \(h[f(0)+f(h)]/1\)。该处疑为原书排印错误：仅作排印一致性检查，当 \(f\equiv1\) 时，积分为 \(h\)，而所印右端为 \(2h\)，并且导数项为零；疑应将分母印为``2''。此处不求解题中参数或代数精度。\href{../assets/ch04b/review-p117-exercises.png}{习题原扫描局部}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04B-E005}：原书 PDF 页 117
+\end{itemize}
+
+\end{document}

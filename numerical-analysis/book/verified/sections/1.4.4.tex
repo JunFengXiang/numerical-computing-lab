@@ -1,0 +1,124 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={注意简化计算步骤，减少运算次数},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{注意简化计算步骤，减少运算次数}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\paragraph{1.4.4 注意简化计算步骤，减少运算次数}\label{ux6ce8ux610fux7b80ux5316ux8ba1ux7b97ux6b65ux9aa4ux51cfux5c11ux8fd0ux7b97ux6b21ux6570}
+
+同样一个计算问题, 若能减少运算次数, 不但可节省计算机的计算时间, 还能减小舍入误差. 这是数值计算必须遵从的原则, 也是``数值分析''要研究的重要内容.
+
+\textbf{例1.9} 计算 \(x^{255}\) 的值.
+
+\textbf{解} 如果逐个相乘要用 254 次乘法, 但若写成
+
+\[
+x^{255} = x \cdot x^2 \cdot x^4 \cdot x^8 \cdot x^{16} \cdot x^{32} \cdot x^{64} \cdot x^{128},
+\]
+
+只要做 14 次乘法运算即可. 又如计算多项式
+
+\[
+P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0
+\]
+
+的值时, 若直接计算 \(a_k x^k\) 再逐项相加, 一共需做
+
+\[
+n + (n-1) + \cdots + 2 + 1 = \frac{n(n+1)}{2}
+\]
+
+\begin{quote}
+校注（agent 补充）：本页末尾乘法次数公式的说明续下页``次乘法和 \(n\) 次加法''。
+\end{quote}
+
+\href{../../source-images/pdf-025.jpeg}{查看原页}
+
+次乘法和 \(n\) 次加法. 若采用秦九韶算法
+
+\[
+\begin{cases} S_n = a_n, \\ S_k = xS_{k+1} + a_k & (k=n-1,n-2,\cdots,0), \\ P_n(x) = S_0, \end{cases} \tag{1.4.1}
+\]
+
+只要做 \(n\) 次乘法和 \(n\) 次加法就可算出 \(P_n(x)\) 的值.
+
+在``数值分析''中, 这种节省计算次数的算法还有不少. 本书第 3 章介绍的 FFT 算法, 就是一个最成功的范例.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 25 的校注}\label{ux539fux4e66-pdf-ux9875-25-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-025.md}{完整原页转录} · \href{../../source-images/pdf-025.jpeg}{原页图像}
+
+\begin{quote}
+校注（agent 补充）：习题3第五个数的原图清楚写为 \(x_5^*=7\times1.0\)，未作简化或改写。习题11在本页仅给出条件，题目后半句续下页。
+\end{quote}
+
+\end{document}

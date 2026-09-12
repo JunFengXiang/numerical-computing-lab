@@ -1,0 +1,20 @@
+{
+  "pdf_page": 105,
+  "source_image": "source-images/pdf-105.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "95ed15f9136419bc671d7ad572fc1938abdc37effe4996ead25bffc59d8570ef",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1112,
+  "possibly_truncated": false,
+  "elapsed_seconds": 34.257,
+  "created_utc": "2026-09-12T10:22:11.877876+00:00",
+  "raw_text_sha256": "4401cca0301d01b491005c15633aeb30239d8e20b09698cad6bc7f2e54f7c5f9",
+  "raw_text": "可以逐行构造出下列三角形数表——$T$ 数表：\n\n$$T_{0}^{(0)} \\quad T_{1}^{(0)} \\quad T_{2}^{(0)} \\quad T_{3}^{(0)} \\quad \\vdots \\quad \\vdots \\quad \\vdots \\quad \\ddots$$\n\n可以证明，如果 $f(x)$ 充分光滑，那么 $T$ 数表每一列的元素及对角线元素均收敛到所求的积分值 $I$，即\n\n$$\\lim_{k \\to \\infty} T_{m}^{(k)} = I \\quad (m \\text{ 固定}), \\quad \\lim_{m \\to \\infty} T_{m}^{(0)} = I.$$\n\n电子计算机上的所谓 Romberg 算法，就是在二分过程中逐步形成 $T$ 数表的具体方法，其步骤如下：\n\n步 1 准备初值. 计算 $T_{0}^{(0)} = \\frac{b-a}{2}[f(a) + f(b)]$ 且令 $1 \\to k$ ($k$ 记录二分的次数).\n\n步 2 求梯形值. 按递推公式(4.3.1)计算梯形值 $T_{0}^{(k)}$.\n\n步 3 求加速值. 按加速公式(4.3.13)逐个求出 $T$ 数表第 $k+1$ 行其余各元素 $T_{j}^{(k-j)}$ ($j=1,2,\\cdots,k$).\n\n步 4 精度控制. 对于指定精度 $\\varepsilon$, 若 $|T_{k}^{(0)} - T_{k-1}^{(0)}| < \\varepsilon$, 则终止计算, 并取 $T_{k}^{(0)}$ 作为所求的结果; 否则令 $k+1 \\to k$ (意即二分一次), 转步 2 继续计算.\n\n4.3.4 梯形法的余项展开式\n\n前述外推方法的基础是梯形法的余项展开式(4.3.7). 现在运用 Taylor 展开方法推导这个公式.\n\n将 $f(x)$ 在子区间 $[x_k, x_{k+1}]$ 的中点 $x_{k+1} \\frac{1}{2} = \\frac{1}{2}(x_k + x_{k+1})$ 展开，有\n\n$$f(x) = f_{k+\\frac{1}{2}} + (x - x_{k+\\frac{1}{2}})f'_{k+\\frac{1}{2}} + \\frac{(x - x_{k+\\frac{1}{2}})^2}{2!}f''_{k+\\frac{1}{2}} + \\frac{(x - x_{k+\\frac{1}{2}})^3}{3!}f'''_{k+\\frac{1}{2}}$$\n\n$$+ \\frac{(x - x_{k+\\frac{1}{2}})^4}{4!}f^{(4)}_{k+\\frac{1}{2}} + \\frac{(x - x_{k+\\frac{1}{2}})^5}{5!}f^{(5)}_{k+\\frac{1}{2}} + \\frac{(x - x_{k+\\frac{1}{2}})^6}{6!}f^{(6)}_{k+\\frac{1}{2}} + \\cdots,$$\n\n其中 $f^{(j)}_{k+\\frac{1}{2}}$ 是 $f^{(j)}(x_{k+\\frac{1}{2}})$ 的缩写. 据此写出 $f(x_k)$ 和 $f(x_{k+1})$ 的展开式, 易知\n\n$$\\frac{h}{2}[f(x_k) + f(x_{k+1})] = hf_{k+\\frac{1}{2}} + \\frac{h}{2!}\\left(\\frac{h}{2}\\right)^2f''_{k+\\frac{1}{2}} + \\frac{h}{4!}\\left(\\frac{h}{2}\\right)^4f^{(4)}_{k+\\frac{1}{2}} + \\frac{h}{6!}\\left(\\frac{h}{2}\\right)^6f^{(6)}_{k+\\frac{1}{2}} + \\cdots,$$\n\n求和得\n\n$$T(h) = \\frac{h}{2}\\sum [f(x_k) + f(x_{k+1})]$$\n\n$$= h\\sum f_{k+\\frac{1}{2}} + \\frac{h^3}{2! \\times 2^2}\\sum f''_{k+\\frac{1}{2}} + \\frac{h^5}{4! \\times 2^4}\\sum f^{(4)}_{k+\\frac{1}{2}} + \\frac{h^7}{6! \\times 2^6}\\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots.$$\n\n(4.3.15)"
+}

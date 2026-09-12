@@ -1,0 +1,20 @@
+{
+  "pdf_page": 41,
+  "source_image": "source-images/pdf-041.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "79555bd4c5f5649a88c692b1a884d983b55d16a75b49975e5700395c5624d681",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1012,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.87,
+  "created_utc": "2026-09-12T09:36:03.690362+00:00",
+  "raw_text_sha256": "7abf829bd0781b7175dd1ba1f609b5f7ad4b26991e809f4171c4ecfe854667ba",
+  "raw_text": "2.5.2 等距节点插值公式\n\n将 Newton 差商插值多项式(2.4.6)中各阶差商用相应差分代替,就可得到各种形式的等距节点插值公式.这里只推导常用的前插公式与后插公式.\n\n如果节点 $x_k = x_0 + kh$ ($k=0,1,\\cdots,n$),要计算 $x_0$ 附近点 $x$ 的函数 $f(x)$ 的值,可令 $x = x_0 + th$, $0 \\leqslant t \\leqslant 1$,于是\n\n$$\\omega_{k+1}(x) = \\prod_{j=0}^{k} (x - x_j) = t(t-1) \\cdots (t-k) h^{k+1}.$$\n\n将此式及式(2.5.7)代入式(2.4.6),得\n\n$$N_n(x_0 + th) = f_0 + t \\Delta f_0 + \\frac{t(t-1)}{2!} \\Delta^2 f_0 + \\cdots + \\frac{t(t-1) \\cdots (t-n+1)}{n!} \\Delta^n f_0.$$\n\n(2.5.10)\n\n式(2.5.10)称为 Newton 前插公式,其余项由式(2.2.14)得\n\n$$R_n(x) = \\frac{t(t-1) \\cdots (t-n)}{(n+1)!} h^{n+1} f^{(n+1)}(\\xi), \\quad \\xi \\in (x_0, x_n).$$\n\n(2.5.11)\n\n如果要求表示函数在 $x_n$ 附近的值 $f(x)$,此时应用 Newton 插值公式(2.4.6),插值点应按 $x_n, x_{n-1}, \\cdots, x_0$ 的次序排列,有\n\n$$N_n(x) = f(x_n) + f[x_n, x_{n-1}](x - x_n) + f[x_n, x_{n-1}, x_{n-2}](x - x_n)(x - x_{n-1})$$\n\n$$+ \\cdots + f[x_n, x_{n-1}, \\cdots, x_0](x - x_n) \\cdots (x - x_1).$$\n\n作变换 $x = x_n + th$ ($-1 \\leqslant t \\leqslant 0$),并利用式(2.5.8),代入上式得\n\n$$N_n(x_n + th) = f_n + t \\nabla f_n + \\frac{t(t+1)}{2!} \\nabla^2 f_n + \\cdots$$\n\n$$+ \\frac{t(t+1) \\cdots (t+n-1)}{n!} \\nabla^n f_n.$$\n\n(2.5.12)\n\n式(2.5.12)称为 Newton 后插公式,其余项\n\n$$R_n(x) = f(x) - N_n(x_n + th) = \\frac{t(t+1) \\cdots (t+n) h^{n+1} f^{(n+1)}(\\xi)}{(n+1)!}, \\quad \\xi \\in (x_0, x_n).$$\n\n利用 Newton 前插公式(2.5.10)计算函数值时,其系数就是 $f(x)$ 在 $x_0$ 的各阶向前差分(见表2.6).若用 Newton 后插公式(2.5.12)求 $f(x)$ 的值,因 $x$ 在 $x_n$ 附近,则其系数为 $f(x)$ 在点 $x_n$ 的各阶向后差分.\n\n等距节点插值公式有不少实际应用,例如,很多工程设计计算都需要查各种函数表,用计算机计算时就必须解决计算机查表问题.如果把整个函数表存入内存,往往占用单元太多;如果用一个解析表达式近似该函数,又可能达不到精度要求.因此,采用存放大间隔函数表,并用插值公式计算函数近似值,是一种可行的方案.\n\n例2.4 在微电机设计计算中需要查磁化曲线表,通常给出的表(见表2.7)是磁密 $B$ 每间隔100高斯磁路每厘米长所需安匝数 $at$ 的值，下面要解决 $B$ 从4000至\n\n·28·"
+}

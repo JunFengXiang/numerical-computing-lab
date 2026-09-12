@@ -1,0 +1,112 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Walsh函数的矩阵表示},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Walsh函数的矩阵表示}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{10.2.2　Walsh 函数的矩阵表示}\label{walsh-ux51fdux6570ux7684ux77e9ux9635ux8868ux793a}
+
+Walsh 函数仅取 \(+1\) 与 \(-1\) 两个值。为简约起见，后文常将 \(+1\) 与 \(-1\) 简记为``\(+\)''与``\(-\)''。
+
+由于 Walsh 函数在二分集的每个子段上取值 \(+\) 或 \(-\)，因而它们可表示为某个向量，而第 \(n\) 族 Walsh 函数的全体则可表达为一个 \(N=2^n\) 阶方阵，称作 \textbf{Walsh 方阵}。
+
+据图 10.1 容易看出，前面几个 Walsh 方阵分别是
+
+\[
+W_1=[\,+\,],
+\]
+
+\[
+W_2=\begin{pmatrix}+&+\\+&-\end{pmatrix},
+\]
+
+\[
+W_4=\begin{pmatrix}
++&+&+&+\\
++&+&-&-\\
++&-&-&+\\
++&-&+&-
+\end{pmatrix},
+\]
+
+\[
+W_8=\begin{pmatrix}
++&+&+&+&+&+&+&+\\
++&+&+&+&-&-&-&-\\
++&+&-&-&-&-&+&+\\
++&+&-&-&+&+&-&-\\
++&-&-&+&+&-&-&+\\
++&-&-&+&-&+&+&-\\
++&-&+&-&-&+&-&+\\
++&-&+&-&+&-&+&-
+\end{pmatrix}.
+\]
+
+请读者据图 10.1 列出 Walsh 方阵 \(W_{16}\)。
+
+Walsh 方阵看上去是个复杂系统，这个复杂系统中究竟潜藏着怎样的规律性呢？
+
+\end{document}

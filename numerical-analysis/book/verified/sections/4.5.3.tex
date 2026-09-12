@@ -1,0 +1,190 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={实用的五点公式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{实用的五点公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.5.3 实用的五点公式}\label{ux5b9eux7528ux7684ux4e94ux70b9ux516cux5f0f}
+
+设已给出五个节点 \(x_i=x_0+ih,\allowbreak \quad i=0,\allowbreak 1,\allowbreak 2,\allowbreak 3,\allowbreak 4\) 上的函数值，重复同样的手续，不难导出下列五点公式：
+
+\[
+m_0=\frac1{12h}[-25f(x_0)+48f(x_1)-36f(x_2)+16f(x_3)-3f(x_4)],
+\]
+
+\[
+m_1=\frac1{12h}[-3f(x_0)-10f(x_1)+18f(x_2)-6f(x_3)+f(x_4)],
+\]
+
+\[
+m_2=\frac1{12h}[f(x_0)-8f(x_1)+8f(x_3)-f(x_4)],
+\]
+
+\[
+m_3=\frac1{12h}[-f(x_0)+6f(x_1)-18f(x_2)+10f(x_3)+3f(x_4)],
+\]
+
+\[
+m_4=\frac1{12h}[3f(x_0)-16f(x_1)+36f(x_2)-48f(x_3)+25f(x_4)].
+\]
+
+其中 \(m_i\) 代表一阶导数 \(f'(x_i)\) 的近似值，读者不难导出这些求导公式的余项。
+
+再记 \(M_i\) 表示二阶导数 \(f''(x_i)\) 的近似值，二阶五点公式如下：
+
+（公式续下页。）
+
+\href{../../source-images/pdf-116.jpeg}{原页图像}
+
+\subsubsection{4.5.3 实用的五点公式（续）}\label{ux5b9eux7528ux7684ux4e94ux70b9ux516cux5f0fux7eed}
+
+\[
+M_0=\frac1{12h^2}[35f(x_0)-104f(x_1)+114f(x_2)-56f(x_3)+11f(x_4)],
+\]
+
+\[
+M_1=\frac1{12h^2}[11f(x_0)-20f(x_1)+6f(x_2)+4f(x_3)-f(x_4)],
+\]
+
+\[
+M_2=\frac1{12h^2}[-f(x_0)+16f(x_1)-30f(x_2)+16f(x_3)-f(x_4)],
+\]
+
+\[
+M_3=\frac1{12h^2}[-f(x_0)+4f(x_1)+6f(x_2)-20f(x_3)+11f(x_4)],
+\]
+
+\[
+M_4=\frac1{12h^2}[11f(x_0)-56f(x_1)+114f(x_2)-104f(x_3)+35f(x_4)].
+\]
+
+对于给定的一张数据表，用五点公式求节点上的导数值往往可以获得满意的结果。五个相邻节点的选择原则，一般是在所考察的节点的两侧各取两个邻近的节点，如果一侧的节点数不足两个（即一侧只有一个节点或没有节点），则用另一侧的节点补足。
+
+\textbf{例 4.4}　利用 \(f(x)=\sqrt{x}\) 的一张数据表，按五点公式求节点上的导数值 \(m_i\) 与 \(M_i\)，并与导数的准确值比较，如表 4.8 所示。
+
+\textbf{表 4.8}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(x_i\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(f(x_i)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(m_i\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(f'(x_i)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(M_i/\times10^3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(f''(x_i)/\times10^3\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(100\) & \(10.000\,000\) & \(0.050\,000\) & \(0.050\,000\) & \(-0.247\,58\) & \(-0.250\,00\) \\
+\(101\) & \(10.049\,875\) & \(0.049\,751\) & \(0.049\,752\) & \(-0.245\,91\) & \(-0.246\,30\) \\
+\(102\) & \(10.099\,504\) & \(0.049\,507\) & \(0.049\,507\) & \(-0.241\,91\) & \(-0.242\,68\) \\
+\(103\) & \(10.148\,891\) & \(0.049\,267\) & \(0.049\,266\) & \(-0.239\,58\) & \(-0.239\,16\) \\
+\(104\) & \(10.198\,039\) & \(0.049\,029\) & \(0.049\,029\) & \(-0.236\,91\) & \(-0.235\,72\) \\
+\(105\) & \(10.246\,950\) & \(0.048\,795\) & \(0.048\,795\) & \(-0.236\,66\) & \(-0.232\,36\) \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 116 的校注}\label{ux539fux4e66-pdf-ux9875-116-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-116.md}{完整原页转录} · \href{../../source-images/pdf-116.jpeg}{原页图像}
+
+\begin{quote}
+校注（agent 补充，原表记法说明）：表 4.8 后两列表头按原扫描保留为 \(M_i/\times10^3\) 与 \(f''(x_i)/\times10^3\)，未改写原表头。表内数值对应导数乘 \(10^3\) 后的数值，例如 \(f''(100)=-1/(4\cdot100^{3/2})=-0.00025\)，表中列为 \(-0.25000\)；此说明仅解释该页缩放记法。\href{../assets/ch04b/review-table-4-8.png}{表 4.8 原扫描局部}。
+\end{quote}
+
+\end{document}

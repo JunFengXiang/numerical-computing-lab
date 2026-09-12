@@ -1,0 +1,155 @@
+{
+  "lane": "ch05b",
+  "reviewer": "Codex agent ch05a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 137,
+      "sha256": "43d418e61975c7ed2d527c854e39482ef8c249c5b4b8f64aa1d8ff23dc3ec8bb",
+      "source_visual_review": "completed",
+      "notes": [
+        "已独立重开原图逐行核对；表 5.5 全部节点、符号、八个算法数值及后退 Euler 因子 1/3.5 一致；5.5.1 文字与式 (5.5.1) 完整。"
+      ]
+    },
+    {
+      "pdf_page": 138,
+      "sha256": "afb9cfe6489fdfff2f30cde7effea7a59ef38f850c423696fd73c1fe5cc4ca4f",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；表 5.6 四个系数、式 (5.5.2)–(5.5.4) 与原页一致；ch05b-E001 原印 r 上限及 f_(n-j) 已确认，j=r=1 的反例校注依据成立。"
+      ]
+    },
+    {
+      "pdf_page": 139,
+      "sha256": "906ebedcfc17320be3d9aa0f083e4829488c877b96032cc2410dcf5b69de47c0",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；表 5.7–5.9 的全部分数和正负号一致；Adams 显/隐式的节点、积分限及式 (5.5.5)–(5.5.9) 一致。"
+      ]
+    },
+    {
+      "pdf_page": 140,
+      "sha256": "01ec46455bc270376a5de8c587c980a5e3a7929b8f58e3be7199445063b094e3",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；Taylor 展开 -49/144 与误差 251/720、-19/720、预测/校正横线及四个历史节点全部一致；例 5.6 跨页保留正确。"
+      ]
+    },
+    {
+      "pdf_page": 141,
+      "sha256": "97560efd6f89e659f6df309e896fc373383859e40189ad3787f3a85ff48569bc",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开核图，表 5.10 全部 11 行与正文完整；E002 的四处分母 720、E003 无撇号 m、E004 准确值 1.7231 均原印确认。独立消元 251+19=270，校注成立；sqrt(3) 数值校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 142,
+      "sha256": "e9ee3583ebb485432b7d254143dc572e11e3047afa949f1ab069f1307e94570d",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；式 (5.5.14)–(5.5.20) 的全部求和上下限、阶数 j/p、负号与四阶条件五行逐项一致。"
+      ]
+    },
+    {
+      "pdf_page": 143,
+      "sha256": "9ec355ffaf33767d32fac4087db8e801af004ac80cf760b8f9add5883b4aef3e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图及式 (5.5.21) 内存放大：原印确为 α0 y_(n+1) α1 y_(n−1)，没有正常项间加号；E005 对照 (5.5.19)/(5.5.22) 的校注成立。其余全部系数、Milne 式及 14/45 误差系数一致。"
+      ]
+    },
+    {
+      "pdf_page": 144,
+      "sha256": "7ea03d11cabe9c7dbddec398b13aa76e144fbd2793e7afb36454fa7da701458d",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；Simpson/Milne 匹配和 Hamming 公式全部节点、正负号及 112/121、9/121 一致，六环节中的前五项与跨页标记完整。"
+      ]
+    },
+    {
+      "pdf_page": 145,
+      "sha256": "4b33aebab392a160d1fbe697d87af3617f8875b915ad9b7ea3a9118bc85ce317",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；向量粗体、小写 k 与分量大写 K，所有 i/n/阶段下标、四组 N 维阶段公式逐项一致；原页 y^0 与初值 y_0 记号均忠实保留。"
+      ]
+    },
+    {
+      "pdf_page": 146,
+      "sha256": "14f83ef1b9c9b5fcee58d5a4e0b03a83406514f61aab78968a03166a0cbe4555",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；双变量 RK4 的 K/L 八阶段、计算顺序及 m 阶方程降阶条件完整一致；(5.6.1)–(5.6.5) 各下标/导数阶数已逐项对照。"
+      ]
+    },
+    {
+      "pdf_page": 147,
+      "sha256": "161f5671db609ade7a74c982cc661665e0cc9eecf4171f412c3f0d2e13bd2daa",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；二阶方程转一阶系统及 K 消元后 L_1–L_4 的 h/2、h²/4、h²/2 系数逐项一致；(5.6.6) 初值与 5.7 开头跨页完整。"
+      ]
+    },
+    {
+      "pdf_page": 148,
+      "sha256": "f91275eb64f16a14c8ed890de88cd813df32dd97aa7500d93aca5ad5359720b6",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；初值/边值定义、试射法插值斜率公式及全部差商一致。图 5.5 标签 x,y,O,a,b,β,y(x) 与曲线描述均忠实，未自行加入函数或数值。",
+        "另行打开图 5.5 独立裁图核对，曲线及 x、y、O、a、b、β、y(x) 标签完整，与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 149,
+      "sha256": "622055e0390066ec473a2fdf0cc16bda0068171dea04dc3bc5e89a05f849b75d",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核图；(5.7.4)–(5.7.8) 的边界项 α/β 正负号、n/N 取值范围及三对角矩阵五行的全部可见元素一致。"
+      ]
+    },
+    {
+      "pdf_page": 150,
+      "sha256": "9d2c509ef50b7a70d5fe1f6a5d6cac2537cb96d274ff7880e1b36c6523a4a9d7",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；例 5.7 三对角系统和末项右端 -1+0.9×10^-2 一致；表 5.11 全部 9 行、18 个数值逐项核对；一般边界导数离散与 (5.7.9)/(5.7.10) 的 q 符号完整。"
+      ]
+    },
+    {
+      "pdf_page": 151,
+      "sha256": "83182f33e4f7d189ae760bbbe1a3d42d0341cfe27b12922dc3fe33ba2299e9f1",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；定理 5.2–5.4 假设、正最大/负最小条件、不等号及 1/96 误差界一致。原页负侧确为严格 l<0；校注通过 -y 运用 l≥0 补足齐次引用有据。"
+      ]
+    },
+    {
+      "pdf_page": 152,
+      "sha256": "e34d37925ec8b228d460f66cc377e95a209351a5fffa4e300ce68ab4e7c8d732",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；e/ε/ρ 的三个差分问题、边界零值及上下界证明均完整；E006 括注波浪号在 y 上已确认，按所定义的 tilde l 校注有据；(5.7.13)–(5.7.15) 与二次函数最大值一致。"
+      ]
+    },
+    {
+      "pdf_page": 153,
+      "sha256": "e7e0225eaffebb2a3ac3006be35fac5b326b4f2e1e22d3acff3a8678a19b2bdc",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；小结全文、五处 7.* 原印节号及习题 1–5 的全部条件/解析解/积分上限一致；E007 对应本版 5.* 实际标题的校注已独立对照。"
+      ]
+    },
+    {
+      "pdf_page": 154,
+      "sha256": "16355ccd92c578fe0578a0970924e43b86b5c6f8cddf3cd5a41a95c79895066b",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核图；习题 6–15 含全部小题、四个 RK 格式、12(3) 四个初值、13–15 边界条件逐项一致；E008 原印“初值问题”及两端 y(0)=y(1)=0 已确认，按已审 PDF148 的定义校注成立。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 53,
+  "source_image": "source-images/pdf-053.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "373a09d83f4f2a05d357f4b05a5d49f1e67e10115293a280a7fe1d26d5022224",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1105,
+  "possibly_truncated": false,
+  "elapsed_seconds": 37.704,
+  "created_utc": "2026-09-12T09:42:33.962706+00:00",
+  "raw_text_sha256": "63ff5b67a3e40bcb39705cc9344ca0e41d824e7a27e9dde9339e0b914ffac208",
+  "raw_text": "由此可求得\n$$S'(x_j + 0) = -\\frac{h_j}{3}M_j - \\frac{h_j}{6}M_{j+1} + \\frac{y_{j+1} - y_j}{h_j}.$$\n类似地，可求出 $S(x)$ 在区间 $[x_{j-1}, x_j]$ 上的表达式，从而得\n$$S'(x_j - 0) = \\frac{h_{j-1}}{6}M_{j-1} + \\frac{h_{j-1}}{3}M_j + \\frac{y_j - y_{j-1}}{h_{j-1}}.$$\n利用 $S'(x_j + 0) = S'(x_j - 0)$ 可得\n$$\\mu_j M_{j-1} + 2M_j + \\lambda_j M_{j+1} = d_j \\quad (j = 1, 2, \\dots, n-1), \\tag{2.8.19}$$\n其中 $\\mu_j, \\lambda_j$ 由式(2.8.10)求得，而\n$$d_j = 6 \\frac{f[x_j, x_{j+1}] - f[x_{j-1}, x_j]}{h_{j-1} + h_j} = 6f[x_{j-1}, x_j, x_{j+1}] \\quad (j = 1, 2, \\dots, n-1). \\tag{2.8.20}$$\n方程(2.8.19)与方程(2.8.9)完全类似，只要加上式(2.8.3)～(2.8.5)的任一种边界条件就可得到三弯矩 $M_j$ 的方程组.例如，若边界条件为式(2.8.3)，则端点方程为\n$$2M_0 + M_1 = \\frac{6}{h_0}(f[x_0, x_1] - f'_0), \\quad M_{n-1} + 2M_n = \\frac{6}{h_{n-1}}(f'_n - f[x_{n-1}, x_n]).$$\n若边界条件为式(2.8.4)，则端点方程为\n$$M_0 = f''_0, \\quad M_n = f''_n.$$\n同样，通过追赶法，可求出三弯矩方程的解 $M_j (j=0, 1, \\dots, n)$，代入式(2.8.17)则得到三次插值样条函数 $S(x)$.\n\n2.8.4 计算步骤与例题\n\n样条函数，特别是三次样条在实际中有广泛的应用，在计算机上也容易实现.下面以方程(2.8.12)为例，说明在计算机上求 $S(x)$ 的算法步骤：\n步1 输入初始数据 $x_j, y_j (j=0, 1, \\dots, n)$ 及 $f'_0, f'_n$ 和 $n$.\n步2 $j$ 从 0 到 $n-1$ 计算 $h_j = x_{j+1} - x_j$ 及 $f[x_j, x_{j+1}]$.\n步3 $j$ 从 1 到 $n-1$ 由式(2.8.10)及式(2.8.11)计算 $\\lambda_j, \\mu_j, g_j$.\n步4 用追赶法(公式见7.4.3节)解方程(2.8.12)，求出 $m_j (j=1, 2, \\dots, n-1)$.\n步5 计算 $S(x)$ 的系数或计算 $S(x)$ 在若干点上的值，并打印结果.\n步6 给定函数 $f(x) = \\frac{1}{1+x^2}, -5 \\leq x \\leq 5$，节点 $x_k = -5+k (k=0, 1, \\dots, 10)$，用三次样条插值求 $S_{10}(x)$.取 $S_{10}(x_k) = f(x_k) (k=0, 1, \\dots, 10)$，有\n$$S'_{10}(-5) = f'(-5), \\quad S'_{10}(5) = f'(5).$$\n利用上述步骤编制的程序计算 $S_{10}(x)$ 在表2.8所列各点的值，并与 $f(x)$ 及2.7节计算出的 $L_{10}(x)$比较，结果也如表2.8所示.由表2.8可看出，用三次样条插值得到的 $S_{10}(x)$ 能很好地逼近 $f(x)$，不会出现Lagrange插值 $L_{10}(x)$的“Runge”现象.\n\n• 40 •"
+}

@@ -1,0 +1,13 @@
+{
+  "lane": "front",
+  "page_count": 13,
+  "toc_entry_count": 275,
+  "yaml_hash_link_page_marker_math_delimiter_checks": "passed",
+  "issues": [],
+  "visual_evidence": "review.json; each page actually opened",
+  "source_damage_records": 1,
+  "not_checked_here": [
+    "standalone LaTeX export and compilation",
+    "full book merge and rendering"
+  ]
+}

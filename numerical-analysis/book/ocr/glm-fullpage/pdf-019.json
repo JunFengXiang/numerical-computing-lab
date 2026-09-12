@@ -1,0 +1,20 @@
+{
+  "pdf_page": 19,
+  "source_image": "source-images/pdf-019.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "96c66c6c6ac818dfe5ead63ac5e9b00e66df305e9b5de3af7da25e2c8066f86e",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1040,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.263,
+  "created_utc": "2026-09-12T09:49:05.602055+00:00",
+  "raw_text_sha256": "23e8cbdeecd8e83019152f217a49f64039058d015334f8f0d099597646e76eb6",
+  "raw_text": "1.3.3 有效数字\n\n当准确值 $x$ 有多位数时，常常按四舍五入的原则得到 $x$ 的前几位近似值 $x^*$. 例如\n$$x = \\pi = 3.14159265\\cdots,$$\n取前三位，$x_3^* = 3.14, \\varepsilon_3^* \\leqslant 0.002$；取前五位，$x_5^* = 3.1416, \\varepsilon_5^* \\leqslant 0.000008$：它们的误差都不超过末位数字的半个单位，即\n$$|\\pi - 3.14| \\leqslant \\frac{1}{2} \\times 10^{-2}, \\quad |\\pi - 3.1416| \\leqslant \\frac{1}{2} \\times 10^{-4}.$$\n若近似值 $x^*$ 的误差限是某一位的半个单位，该位到 $x^*$ 的第一位非零数字共有 $n$ 位，就说 $x^*$ 有 $n$ 位有效数字. 如取 $x^* = 3.14$ 作 $\\pi$ 的近似值，$x^*$ 就有三位有效数字；取 $x^* = 3.1416$ 作 $\\pi$ 的近似值，$x^*$ 就有五位有效数字. $x^*$ 有 $n$ 位有效数字可写成标准形式\n$$x^* = \\pm 10^m \\times (a_1 + a_2 \\times 10^{-1} + \\cdots + a_n \\times 10^{-(n-1)})$$\n(1.3.1)\n其中，$a_1$ 是 1 到 9 中的一个数字；$a_2, \\cdots, a_n$ 是 0 到 9 中的一个数字；$m$ 为整数，且\n$$|x - x^*| \\leqslant \\frac{1}{2} \\times 10^{m-n+1}.$$\n(1.3.2)\n\n例 1.2 按四舍五入原则写出下列各数具有五位有效数字的近似数：\n187.932 5，0.037 855 51，8.000 033，2.718 281 8.\n\n解 按定义，上述各数具有五位有效数字的近似数分别是\n187.93，0.037 856，8.000 0，2.718 3.\n\n注意 $x = 8.000033$ 的五位有效数字近似数是 8.0000 而不是 8，因为 8 只有一位有效数字.\n\n例 1.3 重力常数 $g$，如果以 $m/s^2$ 为单位，$g \\approx 9.80 \\text{ m/s}^2$；若以 $km/s^2$ 为单位，$g \\approx 0.00980 \\text{ km/s}^2$，它们都具有三位有效数字. 按第一种写法，有\n$$|g - 9.80| \\leqslant \\frac{1}{2} \\times 10^{-2},$$\n据式(1.3.1)，这里 $m=0, n=3$；按第二种写法，有\n$$|g - 0.00980| \\leqslant \\frac{1}{2} \\times 10^{-5},$$\n这里 $m=-3, n=3$. 它们虽然写法不同，但都具有三位有效数字. 至于绝对误差限，由于单位不同，结果也不同，$\\varepsilon_1^* = \\frac{1}{2} \\times 10^{-2} \\text{ m/s}^2, \\varepsilon_2^* = \\frac{1}{2} \\times 10^{-5} \\text{ km/s}^2$，而相对误差都是\n$$\\varepsilon_r^* = 0.005/9.80 = 0.000005/0.00980.$$\n注意 相对误差与相对误差限是无量纲的，而绝对误差与误差限是有量纲的.\n例 1.3 说明有效位数与小数点后有多少位数无关. 然而，从式(1.3.2)可得到具\n\n·6·"
+}

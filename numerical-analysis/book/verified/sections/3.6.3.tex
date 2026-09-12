@@ -1,0 +1,126 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={多元最小二乘拟合},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{多元最小二乘拟合}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{3.6.3 多元最小二乘拟合}\label{ux591aux5143ux6700ux5c0fux4e8cux4e58ux62dfux5408}
+
+上面介绍的最小二乘法的有关概念与方法可推广到多元函数，例如，已知多元函数
+
+\[
+y=f(x_1,x_2,\cdots,x_l)
+\]
+
+的一组测量数据 \((x_{1i},x_{2i},\cdots,x_{li},y_i)\)（\(i=1,2,\cdots,m\)），以及一组权系数 \(\omega_i>0\)（\(i=1,2,\cdots,m\)），要求函数
+
+\[
+S_n(x_1,x_2,\cdots,x_l)=\sum_{k=1}^na_k\varphi_k(x_1,x_2,\cdots,x_l),\quad n\leqslant m,
+\]
+
+使得
+
+\[
+F(a_0,a_1,\cdots,a_n)=\sum_{i=1}^m\omega_i[y_i-S_n(x_{1i},x_{2i},\cdots,x_{li})]^2
+\]
+
+最小，这与式 (3.6.4) 的极值问题完全一样，系数 \(a_0,a_2,\cdots,a_n\) 同样满足法方程组 (3.6.6)，只是这里
+
+\[
+(\varphi_k,\varphi_j)=\sum_{i=1}^m\omega_i\varphi_k(x_{1i},x_{2i},\cdots,x_{li})\varphi_i(x_{1i},x_{2i},\cdots,x_{li}).
+\]
+
+求解法方程组 (3.6.6) 就可得到 \(a_k\)（\(k=0,1,\cdots,n\)），从而得到 \(S_n(x_1,x_2,\cdots,x_l)\)。称 \(S_n(x_1,x_2,\cdots,x_l)\) 为函数 \(f(x_1,x_2,\cdots,x_l)\) 的最小二乘拟合。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 84 的校注}\label{ux539fux4e66-pdf-ux9875-84-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-084.md}{完整原页转录} · \href{../../source-images/pdf-084.jpeg}{原页图像}
+
+校注记录：ch03b-E012, ch03b-E013。
+
+\begin{quote}
+校注（agent 补充）：3.6.3 原书的 \(S_n\) 求和从 \(k=1\) 开始，但后续使用 \(F(a_0,a_1,\ldots,a_n)\) 和 \(a_k\;(k=0,\ldots,n)\)；段中系数列表印为 \(a_0,a_2,\ldots,a_n\)；内积公式右端第二因子的原印下标为 \(i\)，而左端为 \(j\)，相容写法应使用 \(\varphi_j\)。这些原书记号不一致均已保留，见 \href{../assets/ch03b/p084-multivariate-formulas.png}{原文裁切}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03b-E012}：原书 PDF 页 84
+\item
+  \texttt{ch03b-E013}：原书 PDF 页 84
+\end{itemize}
+
+\end{document}

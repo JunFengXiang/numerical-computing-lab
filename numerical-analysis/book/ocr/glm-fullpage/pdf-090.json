@@ -1,0 +1,20 @@
+{
+  "pdf_page": 90,
+  "source_image": "source-images/pdf-090.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "43e5e8377ea969c08e368527c9ffecd480fa6883a6830760ff020954aec8e795",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 877,
+  "possibly_truncated": false,
+  "elapsed_seconds": 38.047,
+  "created_utc": "2026-09-12T10:13:24.886644+00:00",
+  "raw_text_sha256": "b8aba3256be8671f8582326ad0734609b517c564b1bfa83dcc49881abc7ac1d1",
+  "raw_text": "也快一倍. 式(3.7.16)的计算公式称为改进的 FFT 算法, 下面给出这一算法的程序步骤:\n\n步 1 给出数组 $A_1(N), A_2(N)$ 及 $w(N/2)$.\n步 2 将已知的记录复数数组 $\\{x_k\\}$ 输入到单元 $A_1(k)$ (k 从 0 到 $N-1$) 中.\n步 3 计算 $w^m = \\exp \\left(-i \\frac{2\\pi}{N} m\\right)$ 或 $w^m = \\exp \\left(i \\frac{2\\pi}{N} m\\right)$, 存放在单元 $w(m)$ (m 从 0 到 $(N/2)-1$) 中.\n步 4 $q$ 循环从 1 到 $p$, 若 $q$ 为奇数做步 5, 否则做步 6.\n步 5 $k$ 循环从 0 到 $2^{p-q}-1$, $j$ 循环从 0 到 $2^{q-1}-1$, 计算\n$$A_2(k2^q+j) = A_1(k2^{q-1}+j) + A_1(k2^{q-1}+j+2^{p-1}),$$\n$$A_2(k2^q+j+2^{q-1}) = \\left[ A_1(k2^{q-1}+j) - A_1(k2^{q-1}+j+2^{q-1}) \\right] w(k2^{q-1}),$$\n转步 7.\n步 6 $k$ 循环从 0 到 $2^{p-q}-1$, $j$ 循环从 0 到 $2^{q-1}$, 计算\n$$A_1(k2^q+j) = A_2(k2^{q-1}+j) + A_2(k2^{q-1}+j+2^{p-1}),$$\n$$A_1(k2^q+j+2^{q-1}) = \\left[ A_2(k2^{q-1}+j) - A_2(k2^{q-1}+j+2^{q-1}) \\right] w(k2^{q-1}),$$\n$k, j$ 循环结束, 做下一步.\n步 7 若 $q=p$ 转步 8, 否则 $q+1 \\rightarrow q$ 转步 4.\n步 8 $q$ 循环结束, 若 $p=偶数$, 将 $A_1(j) \\rightarrow A_2(j)$, 则 $C_j = A_2(j)$ (j = 0, 1, $\\cdots$, $N-1$) 即为所求.\n\n小 结\n\n函数逼近是数学中一个很重要的课题, 本章只介绍了函数逼近最基本的概念及常用的正交多项式, 并从函数计算观点介绍了用多项式逼近连续函数的主要方法. 这些都是计算数学的基础, 需要详细了解的读者可参看文献[4]. 本章对函数逼近与计算的另一重要课题——有理逼近没有涉及, 这方面内容可参看文献[5].\n\n本章介绍的曲线拟合的最小二乘法和离散 Fourier 变换都可从最佳平方逼近得到, 它们在实际中都有广泛的应用, 本章着重介绍了在计算机上有效和节省时间的算法, 而不要求理论上的详细讨论. 特别是 FFT 算法, 不但应用中意义重大, 而且也是计算数学中节省运算次数的一个典范. 本章介绍的改进 FFT 算法比目前使用的 FFT 算法计算次数又减少了, 程序也较简单, 这一算法的推导与应用可参看文献[6].\n\n习 题\n\n1. (1) 利用区间变换推出区间为 $[a,b]$ 的 Bernstein 多项式."
+}

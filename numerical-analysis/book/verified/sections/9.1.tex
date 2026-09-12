@@ -1,0 +1,200 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={引言},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{引言}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{9.1 引言}\label{ux5f15ux8a00}
+
+物理、力学和工程技术中的很多问题在数学上都归结为求矩阵特征值的问题，例如振动问题（桥梁的振动、机械的振动、电磁振荡、地震引起的建筑物的振动等）、物理学中某些临界值的确定问题以及理论物理中的一些问题。这些实际问题可归结为如下数学问题。
+
+（1）已知 \(A=(a_{ij})_{n\times n}\)，要求代数方程
+
+\[
+\varphi(\lambda)=\det(\lambda I-A)=0
+\tag{9.1.1}
+\]
+
+的根。\(\varphi(\lambda)\) 称为 \(A\) 的特征多项式。式（9.1.1）展开即有
+
+\[
+\varphi(\lambda)=\lambda^n+c_1\lambda^{n-1}+\cdots+c_n=0.
+\]
+
+一般 \(\varphi(\lambda)\) 有 \(n\) 个零点，称为 \(A\) 的特征值。
+
+（2）设 \(\lambda\) 为 \(A\) 的特征值，要求相应的齐次方程组
+
+\[
+(\lambda I-A)x=0
+\tag{9.1.2}
+\]
+
+的非零解（即求 \(Ax=\lambda x\) 的非零解）。
+
+式（9.1.2）的非零解 \(x\) 称为矩阵 \(A\) 的对应于 \(\lambda\) 的特征向量。下面叙述一些有关特征值问题的结论。
+
+\textbf{定理 9.1} 如果 \(\lambda_i\ (i=1,2,\cdots,n)\) 是矩阵 \(A\) 的特征值，则有
+
+\[
+1^\circ\quad \sum_{i=1}^n\lambda_i=\sum_{i=1}^na_{ii}=\operatorname{tr}A;
+\]
+
+\[
+2^\circ\quad \det A=\lambda_1\lambda_2\cdots\lambda_n.
+\]
+
+\textbf{定理 9.2} 设 \(A\) 与 \(B\) 为相似矩阵（即存在非奇异阵 \(T\) 使 \(B=T^{-1}AT\)），则
+
+\(1^\circ\) \(A\) 与 \(B\) 有相同的特征值；
+
+\(2^\circ\) 若 \(x\) 是 \(B\) 的一个特征向量，则 \(Tx\) 是 \(A\) 的特征向量。
+
+\textbf{定理 9.3（Gerschgorin's 定理）} 设 \(A=(a_{ij})_{n\times n}\)，则 \(A\) 的每一个特征值必属于下述某个圆盘之中：
+
+\[
+|\lambda-a_{ii}|\leq\sum_{\substack{j=1\\j\ne i}}^n|a_{ij}|\qquad(i=1,2,\cdots,n).
+\]
+
+\textbf{证明} 设 \(\lambda\) 为 \(A\) 的任意一个特征值，\(x\) 为对应的特征向量，即
+
+\[
+(\lambda I-A)x=0,
+\]
+
+\href{../../source-images/pdf-234.jpeg}{原页图像}
+
+记 \(x=(x_1,x_2,\cdots,x_n)^{\mathrm T}\ne0\) 及 \(|x_i|=\max_k|x_k|\)，\(x_i\ne0\)，所以从式（9.1.2）的第 \(i\) 个方程
+
+\[
+(\lambda-a_{ii})x_i=\sum_{\substack{j=1\\j\ne i}}^na_{ij}x_j
+\]
+
+以及 \(|x_j/x_i|\leq1\ (j\ne i)\)，有
+
+\[
+|\lambda-a_{ii}|\leq\sum_{j\ne i}|a_{ij}|,\quad |x_j/x_i|\leq\sum_{j\ne i}|a_{ij}|.
+\]
+
+这说明 \(\lambda\) 属于复平面上以 \(a_{ii}\) 为圆心、\(\sum_{j\ne i}|a_{ij}|\) 为半径的一个圆盘。
+
+定理的证明，不仅指出了 \(A\) 的每一个特征值必属于 \(A\) 的一个圆盘中，而且指出，若一个特征向量的第 \(i\) 个分量最大，则对应的特征值一定属于第 \(i\) 个圆盘中。
+
+\textbf{定义 9.1} 设 \(A\) 为 \(n\) 阶实对称矩阵，对于任一非零向量 \(x\)，称 \(R(x)=\dfrac{(Ax,x)}{(x,x)}\) 为对应于向量 \(x\) 的 Rayleigh 商。
+
+\textbf{定理 9.4} 设 \(A\in\mathbf R^{n\times n}\) 为对称矩阵（其特征值依次记作 \(\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_n\)，对应的特征向量 \(x_1,x_2,\cdots,x_n\) 组成规范化正交组，即 \((x_i,x_j)=\delta_{ij}\)），则
+
+\[
+1^\circ\quad \lambda_n\leq\frac{(Ax,x)}{(x,x)}\leq\lambda_1\qquad\text{（对于任何非零 }x\in\mathbf R^n\text{）};
+\]
+
+\[
+2^\circ\quad \lambda_1=\max_{\substack{x\in\mathbf R^n\\x\ne0}}\frac{(Ax,x)}{(x,x)};
+\]
+
+\[
+3^\circ\quad \lambda_n=\min_{\substack{x\in\mathbf R^n\\x\ne0}}\frac{(Ax,x)}{(x,x)}.
+\]
+
+\textbf{证明} 只证结论 \(1^\circ\)，结论 \(2^\circ\)、\(3^\circ\) 留作习题。
+
+设 \(x\ne0\) 为 \(\mathbf R^n\) 中任一向量，则有展开式
+
+\[
+x=\sum_{i=1}^na_ix_i,\quad \|x\|_2=\left(\sum_{i=1}^na_i^2\right)^2\ne0,
+\]
+
+于是
+
+\[
+\frac{(Ax,x)}{(x,x)}=\frac{\displaystyle\sum_{i=1}^na_i^2\lambda_i}{\displaystyle\sum_{i=1}^na_i^2},
+\]
+
+从而结论 \(1^\circ\) 成立。结论 \(1^\circ\) 说明 Rayleigh 商必位于 \(\lambda_n\) 和 \(\lambda_1\) 之间。
+
+关于计算矩阵 \(A\) 的特征值问题，当 \(n=2,3\) 时，还可按行列式展开的办法求 \(\varphi(\lambda)=0\) 的根。但当 \(n\) 较大时，如果按展开行列式的办法，首先求出 \(\varphi(\lambda)\) 的系数，再求 \(\varphi(\lambda)\) 的根，工作量就非常大了。用这种办法求矩阵特征值是不切实际的，由此需要研究求 \(A\) 的特征值及特征向量的数值方法。
+
+本章将介绍计算机上常用的两类方法，一类是幂法及反幂法（迭代法），另一类是正交相似变换的方法（变换法）。
+
+\begin{quote}
+\textbf{校注（agent 补充，ch09a-E001）} 原图中 Gerschgorin 证明的上述不等式在 \(\sum_{j\ne i}|a_{ij}|\) 后印有逗号，接着印 \(|x_j/x_i|\leq\sum_{j\ne i}|a_{ij}|\)，已照录。由上一行除以 \(x_i\) 后取绝对值，能推出的是 \(|\lambda-a_{ii}|\leq\sum_{j\ne i}|a_{ij}|\,|x_j/x_i|\leq\sum_{j\ne i}|a_{ij}|\)；故原排式疑有标点或连乘排版错误。见\href{../assets/ch09a/review-p234-gershgorin.png}{放大原式}。
+
+\textbf{校注（agent 补充，ch09a-E002）} 原图范数展开式的括号外指数印为 \(2\)，已照录。由规范化正交性，\(\|x\|_2^2=\sum_i a_i^2\)，故该处指数应为 \(1/2\)；这是原书疑误，非转录时补成的指数。见\href{../assets/ch09a/review-p234-norm.png}{放大原式}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch09a-E001}：原书 PDF 页 234
+\item
+  \texttt{ch09a-E002}：原书 PDF 页 234
+\end{itemize}
+
+\end{document}

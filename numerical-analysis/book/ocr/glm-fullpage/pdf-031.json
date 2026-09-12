@@ -1,0 +1,20 @@
+{
+  "pdf_page": 31,
+  "source_image": "source-images/pdf-031.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "a914e81a9056f56f00fb8d1c8be0b70cea1449c4d47ae55f1d826e023bf22437",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 944,
+  "possibly_truncated": false,
+  "elapsed_seconds": 24.729,
+  "created_utc": "2026-09-12T09:31:12.743052+00:00",
+  "raw_text_sha256": "1df2f97d8889e0076ff48b6addbcc8debb2ca60c89258349cef82eec9a621a94",
+  "raw_text": "$$L_2(x) = y_{k-1} \\frac{(x - x_k)(x - x_{k+1})}{(x_{k-1} - x_k)(x_{k-1} - x_{k+1})} + y_k \\frac{(x - x_{k-1})(x - x_{k+1})}{(x_k - x_{k-1})(x_k - x_{k+1})} + y_{k+1} \\frac{(x - x_{k-1})(x - x_k)}{(x_{k+1} - x_{k-1})(x_{k+1} - x_k)}.$$\n\n2.2.3 Lagrange 插值多项式\n\n上面对 $n=1$ 及 $n=2$ 的情况，得到了一次与二次插值多项式 $L_1(x)$ 及 $L_2(x)$，它们分别由式(2.2.5)和式(2.2.7)表示。这种用插值基函数表示的方法容易推广到一般情形。下面讨论通过 $n+1$ 个节点 $x_0 < x_1 < \\cdots < x_n$ 的 $n$ 次插值多项式 $L_n(x)$，假定它满足条件\n\n$$L_n(x_j) = y_j \\quad (j = 0, 1, \\cdots, n).$$\n\n为了构造 $L_n(x)$，先定义 $n$ 次插值基函数。\n\n定义2.2 若 $n$ 次多项式 $l_j(x)$ ($j=0, 1, \\cdots, n$) 在 $n+1$ 个节点 $x_0 < x_1 < \\cdots < x_n$ 上满足条件\n\n$$l_j(x_k) = \\begin{cases} 1, & k = j, \\\\ 0, & k \\neq j \\end{cases} \\quad (j, k = 0, 1, \\cdots, n),$$\n\n就称这 $n+1$ 个 $n$ 次多项式 $l_0(x), l_1(x), \\cdots, l_n(x)$ 为节点 $x_0, x_1, \\cdots, x_n$ 上的 $n$ 次插值基函数。\n\n$n=1$ 及 $n=2$ 时的情况前面已经讨论。用类似的推导方法，可得到 $n$ 次插值基函数为\n\n$$l_k(x) = \\frac{(x - x_0) \\cdots (x - x_{k-1})(x - x_{k+1}) \\cdots (x - x_n)}{(x_k - x_0) \\cdots (x_k - x_{k-1})(x_k - x_{k+1}) \\cdots (x_k - x_n)} \\quad (k = 0, 1, \\cdots, n).$$\n\n显然它满足条件(2.2.9)。于是，满足条件(2.2.8)的插值多项式 $L_n(x)$ 可表示为\n\n$$L_n(x) = \\sum_{k=0}^{n} y_k l_k(x).$$\n\n由 $l_k(x)$ 的定义知\n\n$$L_n(x_j) = \\sum_{k=0}^{n} y_k l_k(x_j) = y_j \\quad (j = 0, 1, \\cdots, n).$$\n\n形如式(2.2.11)的插值多项式 $L_n(x)$ 称为 Lagrange 插值多项式，而式(2.2.5)和式(2.2.7)是其 $n=1$ 和 $n=2$ 的特殊情形。若引入记号\n\n$$\\omega_{n+1}(x) = (x - x_0)(x - x_1) \\cdots (x - x_n),$$\n\n容易求得\n\n$$\\omega'_{n+1}(x_k) = (x_k - x_0) \\cdots (x_k - x_{k-1})(x_k - x_{k+1}) \\cdots (x_k - x_n),$$\n\n于是式(2.2.11)可改写成\n\n• 18 •"
+}

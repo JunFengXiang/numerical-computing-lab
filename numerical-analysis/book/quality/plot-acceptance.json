@@ -1,0 +1,81 @@
+{
+  "request_resolution": {
+    "query": "根据2.2.1的线性插值画出图",
+    "status": "resolved_with_conflict",
+    "requested_section": "2.2.1",
+    "resolved_section": "2.2.2",
+    "title": "线性插值与抛物插值",
+    "warnings": [
+      "编号 2.2.1 对应“插值多项式的存在唯一性”；主题匹配 2.2.2“线性插值与抛物插值”。"
+    ],
+    "entry": {
+      "id": "2.2.2",
+      "title": "线性插值与抛物插值",
+      "kind": "section",
+      "parent_id": "2.2",
+      "printed_page_start": 16,
+      "pdf_page_start_hint": 29,
+      "toc_source_pdf_page": 6,
+      "toc_review_status": "agent_visual_checked",
+      "body_status": "independently_agent_verified_transcription",
+      "locator_status": "body_start_visually_verified",
+      "aliases": [
+        "线性插值",
+        "一次插值",
+        "两点插值",
+        "抛物插值",
+        "二次插值",
+        "一次插值基函数"
+      ],
+      "verified_markdown": "verified/sections/2.2.2.md",
+      "verified_latex": "verified/sections/2.2.2.tex",
+      "pdf_pages": [
+        29,
+        30,
+        31
+      ],
+      "printed_pages": [
+        16,
+        17,
+        18
+      ],
+      "source_errata": [],
+      "body_heading": "2.2.2 线性插值与抛物插值",
+      "body_prefix_star": false,
+      "adjacent_source_errata": [],
+      "markdown_sha256": "b46a76b75f91b78839fe89fb460885182c4069a677e8d29d5efbf24c170a0115",
+      "use_rule": "Read adjacent agent errata annotations before mathematical use."
+    }
+  },
+  "formula_source": "verified/sections/2.2.2.md",
+  "formula_source_sha256": "b46a76b75f91b78839fe89fb460885182c4069a677e8d29d5efbf24c170a0115",
+  "formula_id": "2.2.4",
+  "basis_source": "2.2.2 linear basis display equations",
+  "function": "1+log(x)",
+  "nodes": [
+    1.0,
+    3.0
+  ],
+  "values": [
+    1.0,
+    2.09861228866811
+  ],
+  "example_status": "agent_chosen_demonstration_not_original_book_data",
+  "node_residual_max": 0.0,
+  "outputs": [
+    "figures/generated/section-2.2.2-linear.svg",
+    "figures/generated/section-2.2.2-linear.png"
+  ],
+  "visual_review_status": "passed_by_Codex",
+  "visual_review_utc": "2026-09-12T11:06:58.963654+00:00",
+  "visual_checks": [
+    "三个坐标系、标签及说明完整无重叠",
+    "插值线通过两个节点",
+    "两个基函数端点值与原图一致",
+    "自选函数和节点明确标为演示例子"
+  ],
+  "output_sha256": {
+    "figures/generated/section-2.2.2-linear.svg": "366ae03206e569dc68d240b86e6c426ff93dad11de90899993505c07b262ba05",
+    "figures/generated/section-2.2.2-linear.png": "0edc71f36779845f1757e0ff40f4aaea220e55c0d4721e5c4ead120c1f495bb1"
+  }
+}

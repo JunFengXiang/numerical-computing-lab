@@ -1,0 +1,140 @@
+{
+  "lane": "ch04a",
+  "reviewer": "Codex agent ch03b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 93,
+      "sha256": "64210cadabfded597ffdfc87d12b5c8b58d0e9add42eb446cc12ee9e3f355ee9",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；逐段正文、4.1.1、图4.1各标签及跨页末句一致。章节首页无印刷页码的说明准确。",
+        "另打开对应图4.1裁切资产，图形、坐标、函数标签及图题均完整。"
+      ]
+    },
+    {
+      "pdf_page": 94,
+      "sha256": "5c36723fea3f428aae44a8cf4be7822a7ccb146a1d2705232f934d7371eda83a",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；图4.2、4.1.2–4.1.4、代数精度定义和公式省略求和上下限的说明完整一致。",
+        "另打开对应图4.2裁切资产，图形、坐标、函数标签及图题均完整。"
+      ]
+    },
+    {
+      "pdf_page": 95,
+      "sha256": "c6d2a7f87cfd3d2589ffc08b4841f044fbb119a5015787cf241ef76466f3d20f",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；插值型求积充分必要性证明与4.1.5–4.1.7一致；原印f^{n+1}导数阶数无括号及校注已确认。"
+      ]
+    },
+    {
+      "pdf_page": 96,
+      "sha256": "775c3059968486df6d97c6d52d00678f049cb18dc763b52b713b75783634c850",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；4.2.1–4.2.4、Cotes系数公式符号和表4.1的n=1至5全部分数一致。"
+      ]
+    },
+    {
+      "pdf_page": 97,
+      "sha256": "9003208edca18daed1e4abb2e58178aa06804e9b8f7f1641e36accd6567a35da",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；表4.1的n=6、7、8全部分数与负号一致；偶阶精度证明的积分限、h^(n+2)和变量代换一致。独立按4.2.2符号积分核验n=9十个权值，与CH04A-E01所列逐个相等、全正且和为1，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 98,
+      "sha256": "bea2ed38144638debf4e3b224458f3d540e80518fb9fa9b608908d1c8f6b70bb",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；奇函数证明、梯形/Simpson/Cotes余项均完整一致；重点确认负号、12/180/945、四阶/六阶导数与h的4/6次方。"
+      ]
+    },
+    {
+      "pdf_page": 99,
+      "sha256": "b7e19e7eadcc2ea177eddea8c6a685596c28d43a76952413dd77243098348a36",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；复化梯形、Simpson、Cotes公式的全部求和限、端点权值和余项阶数一致；例4.1跨页衔接完整。"
+      ]
+    },
+    {
+      "pdf_page": 100,
+      "sha256": "4f05c5c3c37198bf5db5f38db98883ee46ea6a4c319478a8cea11d0256cd4530",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；表4.2九组数据及两条脚注完整；4.2.15–4.2.17符号/导数阶数一致。CH04A-E02的0.0003922误差确落在0.00005与0.0005之间，三位有效数字校注成立。发现首条未编号渐近推导式漏求和上下限，已通知原agent修正。",
+        "原agent已补回求和限k=0至n−1；重新查看原图与修订MD，内容一致并核定新SHA-256。"
+      ]
+    },
+    {
+      "pdf_page": 101,
+      "sha256": "476f0f65a080a36d7d946707d5ff622b395c340d1675360f044c025c4e8f240d",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；梯形二分递推的h含义、全部求和限、4.3.1以及例4.2数值和跨页末句一致。"
+      ]
+    },
+    {
+      "pdf_page": 102,
+      "sha256": "7f306a6c29b269746b34610f4c7598ff254f808fc8f9e190607c92e39a03a423",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图并以原尺寸复看表4.3，全部十个表项和正文、4.3.2–4.3.3一致。CH04A-E03的9.9456909确为原印，CH04A-E04的二分9次与表中k=10矛盾亦确认。独立复算n=32发现k=5原表另有数值疑误，已通知primary补注。",
+        "新增CH04A-E07已独立复核：原表0.9460596保留，校注所列T32=0.946058560962768067…与独立50位计算一致；修订MD及primary回执新SHA-256一致。"
+      ]
+    },
+    {
+      "pdf_page": 103,
+      "sha256": "308d3197aa99f945435a25f937dbfc22a3ffc798910ec20b7ccb315ea8c3f9d5",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；表4.4每个数值、三角空项与原印上下标一致；4.3.4–4.3.6的4/3、16/15、64/63及全部负号一致。表头索引含义和正文错引4.3.3的校注有原图及公式支持。"
+      ]
+    },
+    {
+      "pdf_page": 104,
+      "sha256": "46a1e0e8b5cfd04e9d1075417a91ffd5271c8253f61109cd7492cc4783271111",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图并以原尺寸复看所有系数字形；4.3.7–4.3.13、hat-alpha、hat-beta、4^m与余项幂次均一致。CH04A-E05中原印k从1开始与下一页算法需k=0的矛盾成立；CH04A-E06将C∞条件下无穷等式解释为带余项的有限阶渐近展开，数学判断成立。"
+      ]
+    },
+    {
+      "pdf_page": 105,
+      "sha256": "dcc284c682a5976311b25a2f8aafaf2d0e7c89d4e823e6dfb26a5f0cea9b89d0",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新打开原图；T数表全部指标、两个极限、四步算法完整，4.3.14逐项Taylor导数0至6阶、4.3.15所有阶乘与2的幂一致；省略求和限与原文相同，4.3.4推导续106页的接续标记准确。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CH04A-X01",
+      "pdf_page": 100,
+      "status": "resolved",
+      "location": "先研究梯形法下第一条未编号式",
+      "finding": "原图sum_{k=0}^{n-1}，MD仅sum，遗漏上下限。",
+      "requested_change": "补为\\sum_{k=0}^{n-1}并刷新primary review哈希。",
+      "resolution": "原agent补回求和上下限；复核原图和新MD通过。",
+      "resolved_sha256": "4f05c5c3c37198bf5db5f38db98883ee46ea6a4c319478a8cea11d0256cd4530"
+    },
+    {
+      "id": "CH04A-X02",
+      "pdf_page": 102,
+      "status": "resolved",
+      "location": "表4.3的k=5、n=32单元格",
+      "finding": "原印与MD一致为0.9460596，但独立高精度复化梯形求积为0.946058560962768067…，七位小数为0.9460586；新增原书数值疑误需校注。",
+      "requested_change": "保留表内原印数值，新增agent校注并更新primary review哈希。",
+      "independent_numeric_check": "50位十进制精度：T32=(f(0)+f(1)+2*sum_{j=1}^{31}f(j/32))/64=0.94605856096276806717841406481438041，其中f(x)=sin(x)/x且f(0)=1。",
+      "resolution": "原agent独立重看原图并以80位精度复算，新增CH04A-E07；原表数值保留，校注已复核。",
+      "resolved_sha256": "7f306a6c29b269746b34610f4c7598ff254f808fc8f9e190607c92e39a03a423"
+    }
+  ],
+  "unresolved": []
+}

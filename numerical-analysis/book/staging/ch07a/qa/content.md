@@ -1,0 +1,1399 @@
+---
+title: ch07a逐页转录排版检查
+date: ""
+---
+
+
+\clearpage
+
+原书 PDF 177；书页 164。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-177.jpeg)
+
+<!-- source-page: 177 -->
+
+# 第 7 章 解线性方程组的直接方法
+
+## 7.1 引言
+
+在自然科学和工程技术中，很多问题的解决常常归结为求解线性代数方程组，例如，电学中的网络问题，船体数学放样中建立三次样条函数问题，用最小二乘法求实验数据的曲线拟合问题，解非线性方程组问题，用差分法或者有限元方法解常微分方程、偏微分方程边值问题等，都导致求解线性代数方程组。而这些方程组的系数矩阵大致分为两种，一种是低阶稠密矩阵（例如，阶数上界大约为 150 的矩阵），另一种是大型稀疏矩阵（即阶数高且零元素较多的矩阵）。
+
+关于线性方程组的数值解法一般有两类。
+
+**1. 直接法**
+
+直接法就是经过有限步算术运算即可求得方程组精确解的方法（若计算过程中没有舍入误差）。但实际计算中由于舍入误差的存在和影响，这种方法也只能求得线性方程组的近似解。本章将阐述这类算法中最基本的 Gauss 消去法及其某些变形。这类方法是解低阶稠密矩阵方程组的有效方法，近几十年来直接法在求解具有较大型稀疏矩阵方程组方面也取得了较大进展。
+
+**2. 迭代法**
+
+迭代法就是用某种极限过程去逐步逼近线性方程组精确解的方法。迭代法具有存储单元较少、程序设计简单、原始系数矩阵在计算过程中始终不变等优点，但存在收敛性及收敛速度方面的问题。迭代法是解大型稀疏矩阵方程组（尤其是由微分方程离散后得到的大型方程组）的重要方法（见第 8 章）。
+
+## 7.2 Gauss 消去法
+
+本节介绍 Gauss 消去法（逐次消去法）以及消去法和矩阵三角分解之间的关系。虽然 Gauss 消去法是一个古老的求解线性方程组的方法（早在公元前 250 年我国就掌握了解三元一次联立方程组的方法），但由它改进、变形得到的主元素消去法、三角分解法仍然是目前计算机上常用的有效方法。
+
+
+\clearpage
+
+原书 PDF 178；书页 165。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-178.jpeg)
+
+<!-- source-page: 178 -->
+
+### 7.2.1 消元手续
+
+设有线性方程组
+
+$$
+\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\
+\qquad\qquad\vdots\\
+a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n,
+\end{cases}
+\tag{7.2.1}
+$$
+
+或写成矩阵形式 $Ax=b$，其中
+
+$$
+A=\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{pmatrix},\quad
+x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\quad
+b=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},
+$$
+
+$A$ 为非奇异矩阵。下面举一个简单的例子来说明消去法的基本思想。
+
+**例 7.1** 用消去法解方程组
+
+$$x_1+x_2+x_3=6,\tag{7.2.2}$$
+
+$$4x_2-x_3=5,\tag{7.2.3}$$
+
+$$2x_1-2x_2+x_3=1.\tag{7.2.4}$$
+
+**解** 第一步，将式（7.2.2）乘以 $-2$ 加到式（7.2.4）上去，消去式（7.2.4）中的未知数 $x_1$，得到
+
+$$-4x_2-x_3=-11.\tag{7.2.5}$$
+
+第二步，将式（7.2.3）加到式（7.2.5）上，消去式（7.2.5）中的未知数 $x_2$，得到与原方程组等价的三角方程组
+
+$$
+\begin{cases}
+x_1+x_2+x_3=6,\\
+4x_2-x_3=5,\\
+-2x_3=-6.
+\end{cases}
+\tag{7.2.6}
+$$
+
+显然方程组（7.2.6）是容易求解的，解为 $x^*=(1,2,3)^{\mathrm T}$。上述过程相当于
+
+$$
+(A\mathbin{\vdots}b)=
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\2&-2&1&1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\0&-4&-1&-11\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r}1&1&1&6\\0&4&-1&5\\0&0&-2&-6\end{array}\right).
+$$
+
+$$(-2)\times r_1{}^{\text{①}}+r_3\to r_3,\qquad r_2+r_3\to r_3.$$
+
+由此看出，用消去法解方程组的基本思想是，用逐次消去未知数的方法把原来方程组 $Ax=b$ 化为与其等价的三角方程组，而求解三角方程组就容易了。换句话说，上
+
+> ① $r_i$ 表示矩阵的第 $i$ 行。
+
+<!-- 本页末句未完，续 PDF179。 -->
+
+
+\clearpage
+
+原书 PDF 179；书页 166。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-179.jpeg)
+
+<!-- source-page: 179 -->
+
+<!-- 接 PDF178 页末。 -->
+
+述过程就是用行的初等变换将原方程组系数矩阵化为简单形式，从而将求解原方程组（7.2.1）的问题转化为求解简单方程组的问题。
+
+下面来讨论一般的解 $n$ 阶方程组的 Gauss 消去法。
+
+将式（7.2.1）记作 $A^{(1)}x=b^{(1)}$，其中 $A^{(1)}=(a_{ij}^{(1)})=(a_{ij})$，$b^{(1)}=b$。
+
+（1）第一次消元。设 $a_{11}^{(1)}\ne0$，首先对行计算乘数 $m_{i1}=a_{i1}^{(1)}/a_{11}^{(1)}$（$i=2,3,\cdots,n$），用 $-m_{i1}$ 乘式（7.2.1）的第 1 个方程，加到第 $i$（$i=2,3,\cdots,n$）个方程上，消去式（7.2.1）的第 2 个方程直到第 $n$ 个方程中的未知数 $x_1$，得与式（7.2.1）等价的方程组
+
+$$
+\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1n}^{(1)}\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+\vdots&\vdots&&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}
+=\begin{pmatrix}b_1^{(1)}\\b_2^{(2)}\\\vdots\\b_n^{(2)}\end{pmatrix},
+\tag{7.2.7}
+$$
+
+简记作 $A^{(2)}x=b^{(2)}$，其中
+
+$$
+a_{ij}^{(2)}=a_{ij}^{(1)}-m_{i1}a_{1j}^{(1)},\quad
+b_i^{(2)}=b_i^{(1)}-m_{i1}b_1^{(1)}\quad(i,j=2,3,\cdots,n).
+$$
+
+（2）一般第 $k$（$1\le k\le n-1$）次消元。设第 $k-1$ 步计算已经完成，即已计算好与式（7.2.1）等价的方程组
+
+$$A^{(k)}x=b^{(k)},\tag{7.2.8}$$
+
+且已消去未知数 $x_1,x_2,\cdots,x_{k-1}$，其中 $A^{(k)}$ 具有如下形式：
+
+$$
+A^{(k)}=\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}\\
+&&\ddots&&&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}\\
+&&&\vdots&&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}
+\end{pmatrix}.
+$$
+
+设 $a_{kk}^{(k)}\ne0$，计算乘数 $m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}$（$i=k+1,\cdots,n$），用 $-m_{ik}$ 乘式（7.2.8）的第 $k$ 个方程加上第 $i$（$i=k+1,\cdots,n$）个方程，消去第 $k+1$ 个方程直到第 $n$ 个方程的未知数 $x_k$，得到与式（7.2.1）等价的方程组 $A^{(k+1)}x=b^{(k+1)}$。
+
+$A^{(k+1)}$ 元素的计算公式为
+
+$$
+\begin{cases}
+a_{ij}^{(k+1)}=a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}& (i,j=k+1,\cdots,n),\\
+b_i^{(k+1)}=b_i^{(k)}-m_{ik}b_k^{(k)}& (i=k+1,\cdots,n).
+\end{cases}
+\tag{7.2.9}
+$$
+
+显然 $A^{(k+1)}$ 的第 1 行直到第 $k$ 行与 $A^{(k)}$ 相同。
+
+（3）继续这一过程，直到完成第 $n-1$ 次消元。最后得到与原方程组等价的三角方程组
+
+$$A^{(n)}x=b^{(n)}\tag{7.2.10}$$
+
+
+\clearpage
+
+原书 PDF 180；书页 167。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-180.jpeg)
+
+<!-- source-page: 180 -->
+
+或
+
+$$
+\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+&&\ddots&\vdots\\
+&&&a_{nn}^{(n)}
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}
+=\begin{pmatrix}b_1^{(1)}\\b_2^{(2)}\\\vdots\\b_n^{(n)}\end{pmatrix}.
+$$
+
+由式（7.2.1）约化为式（7.2.10）的过程称为**消元过程**。
+
+求解三角方程组（7.2.10），设 $a_{ii}^{(i)}\ne0$（$i=1,2,\cdots,n-1$），易得求解公式
+
+$$
+\begin{cases}
+x_n=b_n^{(n)}/a_{nn}^{(n)},\\
+x_k=\displaystyle\left(b_k^{(k)}-\sum_{j=k+1}^{n}a_{kj}^{(k)}x_j\right)/a_{kk}^{(k)}
+\end{cases}
+\quad(k=n-1,n-2,\cdots,2,1).
+\tag{7.2.11}
+$$
+
+式（7.2.10）的求解过程称为**回代过程**。
+
+如果 $a_{11}^{(1)}=0$，那么，由于 $A$ 为非奇异矩阵，所以 $A$ 的第 1 列一定有元素不等于零，例如 $a_{i_1,1}\ne0$，于是可交换两行元素（$r_1\leftrightarrow r_{i_1}$），将 $a_{i_1,1}$ 调到第 1 行第 1 列的位置，然后进行消元计算，这时 $A^{(2)}$ 右下角矩阵（$n-1$ 阶）亦为非奇异矩阵。继续这一过程，Gauss 消去法照样可进行计算。
+
+总结上述讨论即有如下定理。
+
+**定理 7.1** 如果 $A$ 为 $n$ 阶非奇异矩阵，则可通过 Gauss 消去法（及交换两行的初等变换）将方程组（7.2.1）化为三角方程组（7.2.10）。
+
+$A$ 在什么条件下才能保证 $a_{kk}^{(k)}\ne0$（$k=1,2,\cdots,n$）？下面的引理给出了这个条件。
+
+**引理** 约化的主元素 $a_{ii}^{(i)}\ne0$（$i=1,2,\cdots,k$）的充要条件是矩阵 $A$ 的顺序主子式 $D_i\ne0$（$i=1,2,\cdots,k$），即
+
+$$D_1=a_{11}\ne0,$$
+
+$$
+D_i=\begin{vmatrix}
+a_{11}&\cdots&a_{1k}\\
+\vdots&&\vdots\\
+a_{i1}&\cdots&a_{ii}
+\end{vmatrix}\ne0\quad(i=2,3,\cdots,k).
+\tag{7.2.12}
+$$
+
+**证明** 利用归纳法证明引理的充分性。显然，当 $k=1$ 时引理的充分性是成立的，现假设引理对 $k-1$ 是成立的，求证引理对 $k$ 亦成立。由归纳法，设 $a_{ii}^{(i)}\ne0$（$i=1,2,\cdots,k-1$），于是可用 Gauss 消去法将 $A^{(1)}=A$ 约化到 $A^{(k)}$ 中，即
+
+$$
+A^{(1)}\to A^{(k)}=\begin{pmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}\\
+&&\ddots&&&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}\\
+&&&\vdots&&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}
+\end{pmatrix},
+$$
+
+<!-- 证明续 PDF181。 -->
+
+> 校注（agent 补充）：式（7.2.12）原书矩阵右上角清楚印作 $a_{1k}$，此处忠实保留。按同式左端 $D_i$、左下角 $a_{i1}$ 和右下角 $a_{ii}$，第 $i$ 阶顺序主子式的右上角应为 $a_{1i}$；这是疑似原书下标排印错误，不是 OCR 改写。参见[原式放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-180-principal-minor-detail.png)。
+
+
+\clearpage
+
+原书 PDF 181；书页 168。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-181.jpeg)
+
+<!-- source-page: 181 -->
+
+且有
+
+$$
+D_2=\begin{vmatrix}a_{11}^{(1)}&a_{12}^{(1)}\\0&a_{22}^{(2)}\end{vmatrix}
+=a_{11}^{(1)}a_{22}^{(2)},\qquad
+D_3=a_{11}^{(1)}a_{22}^{(2)}a_{33}^{(3)},
+$$
+
+$$
+D_k=\begin{vmatrix}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&a_{1k}^{(1)}\\
+&a_{22}^{(2)}&\cdots&a_{2k}^{(2)}\\
+&&\ddots&\vdots\\
+&&&a_{kk}^{(k)}
+\end{vmatrix}
+=a_{11}^{(1)}a_{22}^{(2)}\cdots a_{kk}^{(k)}.
+\tag{7.2.13}
+$$
+
+由设 $D_i\ne0$（$i=1,2,\cdots,k$）及式（7.2.13），有 $a_{kk}^{(k)}\ne0$，即引理的充分性对 $k$ 成立。
+
+显然，由假设 $a_{ii}^{(i)}\ne0$（$i=1,2,\cdots,k$），利用式（7.2.13）亦可推出 $D_i\ne0$（$i=1,2,\cdots,k$）。
+
+**推论** 如果 $A$ 的顺序主子式 $D_k\ne0$（$k=1,2,\cdots,n-1$），则
+
+$$
+\begin{cases}
+a_{11}^{(1)}=D_1,\\
+a_{kk}^{(k)}=D_k/D_{k-1}\quad(k=2,3,\cdots,n).
+\end{cases}
+$$
+
+**定理 7.2** 如果 $n$ 阶矩阵 $A$ 的所有顺序主子式均不为零，即 $D_i\ne0$（$i=1,2,\cdots,n$），则可通过 Gauss 消去法（不进行交换两行的初等变换），将方程组（7.2.1）约化为三角方程组（7.2.10）。
+
+计算公式如下：
+
+（1）消元计算（$k=1,2,\cdots,n-1$）。
+
+$$m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}\quad(i=k+1,\cdots,n),$$
+
+$$a_{ij}^{(k+1)}=a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}\quad(i,j=k+1,\cdots,n),$$
+
+$$b_i^{(k+1)}=b_i^{(k)}-m_{ik}b_k^{(k)}\quad(i=k+1,\cdots,n).$$
+
+（2）回代计算。求解公式为式（7.2.11）。
+
+### 7.2.2 矩阵的三角分解
+
+下面借助矩阵理论进一步对消去法作些分析，从而建立 Gauss 消去法与矩阵因式分解的关系。
+
+设式（7.2.1）中 $A$ 的各顺序主子式均不为零。由于对 $A$ 施行行的初等变换相当于用初等矩阵左乘 $A$，于是对式（7.2.1）施行第一次消元后化为式（7.2.7），这时 $A^{(1)}$ 化为 $A^{(2)}$，$b^{(1)}$ 化为 $b^{(2)}$，即
+
+$$L_1A^{(1)}=A^{(2)},\qquad L_1b^{(1)}=b^{(2)},$$
+
+其中
+
+$$
+L_1=\begin{pmatrix}
+1&&&&\\
+-m_{21}&1&&&\\
+-m_{31}&&1&&\\
+\vdots&&&\ddots&\\
+-m_{n1}&&&&1
+\end{pmatrix}.
+$$
+
+
+\clearpage
+
+原书 PDF 182；书页 169。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-182.jpeg)
+
+<!-- source-page: 182 -->
+
+一般第 $k$ 步消元，$A^{(k)}$ 化为 $A^{(k+1)}$，$b^{(k)}$ 化为 $b^{(k+1)}$，相当于
+
+$$L_kA^{(k)}=A^{(k+1)},\qquad L_kb^{(k)}=b^{(k+1)}.$$
+
+重复这一过程，最后得到
+
+$$
+\begin{cases}
+L_{n-1}\cdots L_2L_1A^{(1)}=A^{(n)},\\
+L_{n-1}\cdots L_2L_1b^{(1)}=b^{(n)},
+\end{cases}
+\tag{7.2.14}
+$$
+
+其中
+
+$$
+L_k=\begin{pmatrix}
+1&&&&&\\
+&\ddots&&&&\\
+&&1&&&\\
+&&-m_{k+1,k}&1&&\\
+&&\vdots&&\ddots&\\
+&&-m_{nk}&&&1
+\end{pmatrix}.
+$$
+
+将上三角矩阵 $A^{(n)}$ 记作 $U$，由式（7.2.14）得到
+
+$$A=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}U=LU,$$
+
+其中
+
+$$
+L=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}
+=\begin{pmatrix}
+1&&&&\\
+m_{21}&1&&&\\
+m_{31}&m_{32}&1&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+m_{n1}&m_{n2}&\cdots&m_{n,n-1}&1
+\end{pmatrix}.
+$$
+
+为单位下三角矩阵。
+
+这就是说，Gauss 消去法实质上产生了一个将 $A$ 分解为两个三角矩阵相乘的因式分解，于是得到如下重要定理，它在解方程组的直接法中起着重要作用。
+
+**定理 7.3（矩阵的 LU 分解）** 设 $A$ 为 $n$ 阶矩阵，如果 $A$ 的顺序主子式 $D_i\ne0$（$i=1,2,\cdots,n-1$），则 $A$ 可分解为一个单位下三角矩阵 $L$ 和一个上三角矩阵 $U$ 的乘积，且这种分解是唯一的。
+
+**证明** 根据以上 Gauss 消去法的矩阵分析，$A=LU$ 的存在性已经得到证明，现仅在 $A$ 为非奇异矩阵的假定下来证明它的唯一性，当 $A$ 为奇异矩阵的情况留作课外练习。
+
+设
+
+$$A=LU=L_1U_1,$$
+
+其中 $L,L_1$ 为单位下三角矩阵；$U,U_1$ 为上三角矩阵。
+
+由于 $U_1^{-1}$ 存在，故
+
+$$L^{-1}L_1=UU_1^{-1}.$$
+
+上式右端为上三角矩阵，左端为单位下三角矩阵，从而上式两端都必须等于单位矩阵，故 $U=U_1$，$L=L_1$。证毕。
+
+**例 7.2** 对于例 7.1，系数矩阵 $A=\begin{pmatrix}1&1&1\\0&4&-1\\2&-2&1\end{pmatrix}$，由 Gauss 消去法，有
+
+<!-- 例7.2续 PDF183。 -->
+
+
+\clearpage
+
+原书 PDF 183；书页 170。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-183.jpeg)
+
+<!-- source-page: 183 -->
+
+$$m_{21}=0,\quad m_{31}=2,\quad m_{32}=-1,$$
+
+故
+
+$$
+A=\begin{pmatrix}1&0&0\\0&1&0\\2&-1&1\end{pmatrix}
+\begin{pmatrix}1&1&1\\0&4&-1\\0&0&-2\end{pmatrix}=LU.
+$$
+
+### 7.2.3 计算量
+
+下面考虑解式（7.2.1）的 Gauss 消去法的计算量。
+
+（1）消元过程的计算量。第一步计算乘数 $m_{i1}$（$i=2,3,\cdots,n$）需要 $n-1$ 次除法运算，计算 $a_{ij}^{(2)}$（$i,j=2,3,\cdots,n$）需要 $(n-1)^2$ 次乘法运算及 $(n-1)^2$ 次加、减法运算。一般可列表（见表 7.1）计算。
+
+**表 7.1**
+
+$$
+\begin{array}{c|c|c|c}
+\text{第 }k\text{ 步}&\text{加、减法次数}&\text{乘法次数}&\text{除法次数}\\\hline
+1&(n-1)^2&(n-1)^2&n-1\\
+2&(n-2)^2&(n-2)^2&n-2\\
+\vdots&\vdots&\vdots&\vdots\\
+n-1&1&1&1\\\hline
+\text{合计}&\dfrac{n(n-1)(2n-1)}{6}&\dfrac{n(n-1)(2n-1)}{6}&\dfrac{n(n-1)}{2}
+\end{array}
+$$
+
+这里利用了求和公式
+
+$$\sum_{i=1}^{n}i=n(n+1)/2,\quad \sum_{i=1}^{n}i^2=n(n+1)(2n+1)/6\quad(n\ge1).$$
+
+消元过程所需的乘、除法次数 $MD$ 及加、减法次数 $AS$ 分别为
+
+$$MD=n(n^2-1)/3,\quad AS=n(n-1)(2n-1)/6.$$
+
+（2）计算 $b^{(n)}$ 的计算量。
+
+$$MD=(n-1)+(n-2)+\cdots+2+1=n(n-1)/2,\quad AS=n(n-1)/2.$$
+
+（3）解 $A^{(n)}x=b^{(n)}$ 所需的计算量。$MD=n(n+1)/2$，$AS=n(n-1)/2$。解式（7.2.1）所需的总的乘除法次数及加减法次数分别为
+
+$$MD=n^3/3+n^2-n/3\approx n^3/3\quad\text{（当 $n$ 比较大时）},$$
+
+$$AS=n(n-1)(2n+5)/6\approx n^3/3\quad\text{（当 $n$ 比较大时）}.$$
+
+**定理 7.4** 如果 $A$ 为 $n$ 阶非奇异矩阵，则用 Gauss 消去法解式（7.2.1）所需乘除法次数及加减法次数分别为
+
+$1^\circ\;MD=n^3/3+n^2-n/3$；
+
+$2^\circ\;AS=n(n-1)(2n+5)/6$。
+
+如果用 Cramer 法则解式（7.2.1），就需要计算 $n+1$ 个 $n$ 阶行列式，若行列式计
+
+<!-- 本页末句未完，续 PDF184。 -->
+
+
+\clearpage
+
+原书 PDF 184；书页 171。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-184.jpeg)
+
+<!-- source-page: 184 -->
+
+<!-- 接 PDF183 页末。 -->
+
+算是用子式展开，总共需要 $(n+1)!$ 次乘法运算。例如 $n=10$ 时，Gauss 消去法需要 430 次乘、除法运算，而 Cramer 法则却需要 39 916 800 次乘法运算。由此可见，用 Cramer 法则解式（7.2.1）工作量太大，不便使用。
+
+## 7.3 Gauss 主元素消去法
+
+由 Gauss 消去法知道，在消元过程中可能出现 $a_{kk}^{(k)}=0$ 的情况，这时消去法将无法进行；即使在主元素 $a_{kk}^{(k)}\ne0$ 但很小时，用其作除数，也会导致其他元素数量级的严重增长和舍入误差的扩散，最后会使得计算解不可靠。
+
+**例 7.3** 求解方程组
+
+$$
+\begin{pmatrix}
+0.001&2.000&3.000\\
+-1.000&3.712&4.623\\
+-2.000&1.072&5.643
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=\begin{pmatrix}1.000\\2.000\\3.000\end{pmatrix}.
+$$
+
+用四位浮点数进行计算。精确解舍入到四位有效数字为
+
+$$x^*=(-0.490\,4,\;-0.051\,04,\;0.367\,5)^{\mathrm T}.$$
+
+**解** ［方法 1］用 Gauss 消去法求解。
+
+$$
+(A,b)=\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+-1.000&3.712&4.623&2.000\\
+-2.000&1.072&5.643&3.000
+\end{array}\right)
+$$
+
+$$m_{21}=-1.000/0.001=-1000,\quad m_{31}=-2.000/0.001=-2000$$
+
+$$
+\longrightarrow\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+0&2004&3005&1002\\
+0&4001&6006&2003
+\end{array}\right),\qquad m_{32}=4001/2004=1.997
+$$
+
+$$
+\longrightarrow\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+0&2004&3005&1002\\
+0&0&5.000&2.000
+\end{array}\right),
+$$
+
+计算解为
+
+$$\bar{x}=(-0.400\,0,\;-0.099\,80,\;0.400\,0)^{\mathrm T}.$$
+
+显然，计算解 $\bar{x}$ 是一个很坏的结果，不能作为方程组的近似解。其原因是在消元计算时用了小主元 0.001，使得约化后的方程组元素数量级大大增长，经再舍入使得在计算第 3 行第 3 列的元素时发生了严重的相消情况（第 3 行第 3 列的元素舍入到第四位数字的正确值是 5.922），因此经消元后得到的三角方程组就不准确了。
+
+［方法 2］交换行，避免绝对值小的主元作除数。
+
+$$
+(A,b)\xrightarrow{r_1\leftrightarrow r_3}
+\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+-1.000&3.712&4.623&2.000\\
+0.001&2.000&3.000&1.000
+\end{array}\right)
+$$
+
+$$m_{21}=0.500\,0,\qquad m_{31}=-0.000\,5$$
+
+<!-- 例7.3方法2续 PDF185。 -->
+
+
+\clearpage
+
+原书 PDF 185；书页 172。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-185.jpeg)
+
+<!-- source-page: 185 -->
+
+$$
+\longrightarrow\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+0&3.176&1.801&0.500\,0\\
+0&2.001&3.003&1.002
+\end{array}\right),\qquad m_{32}=0.630\,0
+$$
+
+$$
+\longrightarrow\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+0&3.176&1.801&0.500\,0\\
+0&0&1.868&0.687\,0
+\end{array}\right),
+$$
+
+得计算解为
+
+$$x=(-0.490\,0,\;-0.051\,13,\;0.367\,8)^{\mathrm T}\approx x^*.$$
+
+这个例子告诉我们，在采用 Gauss 消去法解方程组时，小主元可能产生麻烦，故应避免采用绝对值小的主元素 $a_{kk}^{(k)}$。对一般矩阵来说，最好每一步都选取系数矩阵（或消元后的低阶矩阵）中绝对值最大的元素作为主元素，以使 Gauss 消去法具有较好的数值稳定性。
+
+下面介绍主元素消去法。本节总假定方程组（7.2.1）的 $A$ 非奇异。
+
+### 7.3.1 完全主元素消去法
+
+设方程组（7.2.1）的增广矩阵为
+
+$$
+B=\left(\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&a_{1j_1}&\cdots&a_{1n}&b_1\\
+a_{21}&a_{22}&\cdots&a_{2j_1}&\cdots&a_{2n}&b_2\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{i_1 1}&a_{i_1 2}&\cdots&a_{i_1j_1}&\cdots&a_{i_1 n}&b_{i_1}\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nj_1}&\cdots&a_{nn}&b_n
+\end{array}\right).
+$$
+
+首先在 $A$ 中选取绝对值最大的元素作为主元素，例如 $|a_{i_1j_1}|=\max_{\substack{1\le i\le n\\1\le j\le n}}|a_{ij}|\ne0$，然后交换 $B$ 的第 1 行与第 $i_1$ 行，第 1 列与第 $j_1$ 列，经第一次消元计算得
+
+$$(A,b)\to(A^{(2)},b^{(2)}).$$
+
+重复上述过程，设已完成第 $k-1$ 步的选主元素，交换两行及交换两列，消元计算，$(A,b)$ 约化为
+
+$$
+(A^{(k)},b^{(k)})=\left[\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&\cdots&\cdots&a_{1n}&b_1\\
+&a_{22}&\cdots&\cdots&\cdots&a_{2n}&b_2\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right],
+$$
+
+其中 $A^{(k)}$ 元素仍记作 $a_{ij}$，$b^{(k)}$ 元素仍记作 $b_i$（$k=1,2,\cdots,n-1$）。
+
+
+\clearpage
+
+原书 PDF 186；书页 173。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-186.jpeg)
+
+<!-- source-page: 186 -->
+
+第 $k$ 步选主元素（在 $A^{(k)}$ 右下角方框内选），即确定 $i_k,j_k$ 使
+
+$$|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|\ne0.$$
+
+交换 $(A^{(k)},b^{(k)})$ 第 $k$ 行与 $i_k$ 行元素，交换 $(A^{(k)})$ 第 $k$ 列与 $j_k$ 列元素，将 $a_{i_kj_k}$ 调到 $(k,k)$ 位置，再进行消元计算，最后将原方程组化为
+
+$$
+\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+&a_{22}&\cdots&a_{2n}\\
+&&\ddots&\vdots\\
+&&&a_{nn}
+\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}
+=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},
+$$
+
+其中 $y_1,y_2,\cdots,y_n$ 的次序为未知数 $x_1,x_2,\cdots,x_n$ 调换后的次序。回代求解得
+
+$$
+\begin{cases}
+y_n=b_n/a_{nn},\\
+y_i=\displaystyle\left(b_i-\sum_{j=i+1}^{n}a_{ij}y_j\right)/a_{ii}\quad(i=n-1,\cdots,2,1).
+\end{cases}
+$$
+
+**算法 1** 完全主元素消去法，其步骤如下：
+
+设 $Ax=b$。本算法用 $A$ 的带有行、列交换的 Gauss 消去法①，消元结果冲掉 $A$，乘数 $m_{ij}$ 冲掉 $a_{ij}$，计算解 $x$ 冲掉常数项 $b$，用 $k$ 表示对 $A$ 的消元次数。用一整型数组 $\mathrm{Iz}(n)$ 开始记录未知数 $x_1,x_2,\cdots,x_n$ 的次序（即下标 $1,2,\cdots,n$），最后记录调换后未知数的下标。
+
+**步 1** 对于 $i=1,2,\cdots,n$，有 $\mathrm{Iz}(i)\leftarrow i$；对于 $k=1,2,\cdots,n-1$，做到步 6。
+
+**步 2** 选主元素 $|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|$。
+
+**步 3** 如果 $a_{i_kj_k}=0$，则计算停止（这时 $\det A=0$）。
+
+**步 4** （1）如果 $i_k=k$，则转（2），否则换行：$a_{kj}\leftrightarrow a_{i_kj}$（$j=k,k+1,\cdots,n$），$b_k\leftrightarrow b_{i_k}$；（2）如果 $j_k=k$，则转步 5，否则换列：$a_{ik}\leftrightarrow a_{ij_k}$（$i=1,2,\cdots,n$），$\mathrm{Iz}(k)\leftrightarrow\mathrm{Iz}(j_k)$。
+
+**步 5** 计算乘数
+
+$$a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n).$$
+
+**步 6** 消元计算
+
+$$a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i=k+1,\cdots,n;\;j=k+1,\cdots,n);$$
+
+$$b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).$$
+
+**步 7** 回代求解
+
+（1）$b_n\leftarrow b_n/a_{n,n}$；（2）对于 $i=n-1,n-2,\cdots,2,1$，$b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}$。
+
+**步 8** 调整未知数的次序
+
+（1）对于 $i=1,2,\cdots,n$；$a_i,\mathrm{Iz}(i)\leftarrow b_i$；（2）对于 $i=1,2,\cdots,n$；$b_i\leftarrow a_{1i}$。
+
+### 7.3.2 列主元素消去法
+
+完全主元素消去法在选主元素时要花费较多机器时间。下面介绍另一种常用的
+
+> ① 在实际计算中可以考虑设计不进行行、列交换的算法。
+
+<!-- 本页末句未完，续 PDF187。 -->
+
+> 校注（agent 补充）：算法 1 步 8（1）原书印作 $a_i,\mathrm{Iz}(i)\leftarrow b_i$（逗号及 Iz 为基线排印），本转录保留。按该步（2）$b_i\leftarrow a_{1i}$ 及“调整未知数的次序”，（1）应把 $b_i$ 暂存到第一行第 $\mathrm{Iz}(i)$ 列，即 $a_{1,\mathrm{Iz}(i)}\leftarrow b_i$；疑似原书下标排印错误。参见[原步骤放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-186-step8-detail.png)。
+
+
+\clearpage
+
+原书 PDF 187；书页 174。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-187.jpeg)
+
+<!-- source-page: 187 -->
+
+<!-- 接 PDF186 页末。 -->
+
+方法即列主元素消去法。它仅考虑依次按列选主元素，然后换行使之变到主元位置上，再进行消元计算。设用列主元素消去法解 $Ax=b$ 已完成 $k-1$ 步计算，即有
+
+$$
+(A,b)\to(A^{(k)},b^{(k)})=
+\left(\begin{array}{cccccc|c}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}&b_1^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}&b_2^{(2)}\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}&b_k^{(k)}\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}&b_n^{(n)}
+\end{array}\right),
+$$
+
+且 $A^{(k)}x=b^{(k)}$ 与 $Ax=b$ 等价，第 $k$ 步选主元素（在 $A^{(k)}$ 第 $k$ 列方框内选），即确定 $i_k$ 使
+
+$$|a_{i_k,k}^{(k)}|=\max_{k\le i\le n}|a_{ik}^{(k)}|.$$
+
+**算法 2** 列主元素消去法，其步骤如下：
+
+设 $Ax=b$。本算法用 $A$ 的具有行交换的列主元素消去法①，消元结果冲掉 $A$，乘数 $m_{ij}$ 冲掉 $a_{ij}$，计算解 $x$ 冲掉常数项 $b$，行列式存放在 $\det A$。
+
+**步 1** $\det A\leftarrow1$，对于 $k=1,2,\cdots,n-1$ 做到步 7。
+
+**步 2** 按列选主元素 $|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|$。
+
+**步 3** 如果 $a_{i_kk}=0$，则 $\det A\leftarrow0$，计算停止。
+
+**步 4** 如果 $i_k=k$，则转步 5，否则换行：
+
+$$a_{kj}\leftrightarrow a_{i_kj}\quad(j=k,k+1,\cdots,n),\quad b_k\leftrightarrow b_{i_k},\quad \det A\leftarrow-\det A.$$
+
+**步 5** 计算乘数 $m_{ik}$
+
+$$a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n)\;(|m_{ik}|\le1).$$
+
+**步 6** 消元计算
+
+$$a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i,j=k+1,\cdots,n),\quad b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).$$
+
+**步 7** $\det A\leftarrow a_{kk}\det A$。
+
+**步 8** 回代求解
+
+$$b_n\leftarrow b_n/a_{nn},\quad b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}\quad(i=n-1,n-2,\cdots,1).$$
+
+**步 9** $\det A\leftarrow a_{nn}\det A$。
+
+例 7.3 的方法 2 用的就是列主元素消去法。
+
+下面用矩阵运算来描述解式（7.2.1）的列主元素消去法：
+
+$$
+\begin{cases}
+L_1I_{1i_1}A^{(1)}=A^{(2)},\quad L_1I_{1i_1}b^{(1)}=b^{(2)},\\
+L_kI_{ki_k}A^{(k)}=A^{(k+1)},\quad L_kI_{ki_k}b^{(k)}=b^{(k+1)},
+\end{cases}
+\tag{7.3.1}
+$$
+
+其中 $L_k$ 的元素满足 $|m_{ik}|\le1$（$k=1,2,\cdots,n-1$），$I_{ki_k}$ 是初等排列矩阵（由交换单位矩阵 $I$ 的第 $k$ 行与第 $i_k$ 行得到）。
+
+> ① 在列主元素消去法中，可考虑用一整型数组 $\mathrm{Ip}(n)$ 来记录主行。
+
+> 校注（agent 补充）：本页首个增广矩阵右下角原书印作 $b_n^{(n)}$，已保留。此处描述第 $k-1$ 步完成后的 $(A^{(k)},b^{(k)})$，同列第 $k$ 行是 $b_k^{(k)}$，所以末行相应应为 $b_n^{(k)}$；疑似原书上标排印错误。参见[原矩阵放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-187-rhs-detail.png)。
+
+
+\clearpage
+
+原书 PDF 188；书页 175。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-188.jpeg)
+
+<!-- source-page: 188 -->
+
+利用式（7.3.1）得到
+
+$$L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}A=A^{(n)}=U,$$
+
+简记作
+
+$$\widetilde{P}A=U,\quad\widetilde{P}b=b^{(n)},$$
+
+其中
+
+$$\widetilde{P}=L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}.$$
+
+下面就 $n=4$ 的情况来考察一下矩阵 $\widetilde{P}$。
+
+$$
+\begin{aligned}
+U=A^{(4)}&=L_3I_{3i_3}L_2I_{2i_2}L_1I_{1i_1}A\\
+&=L_3(I_{3i_3}L_2I_{3i_3})(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3})(I_{3i_3}I_{2i_2}I_{1i_1})A\\
+&\equiv\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1PA,
+\end{aligned}
+\tag{7.3.2}
+$$
+
+其中
+
+$$\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3},\quad
+\widetilde{L}_2=I_{3i_3}L_2I_{3i_3},\quad
+\widetilde{L}_3=L_3,\quad P=I_{3i_3}I_{2i_2}I_{1i_1}.$$
+
+由本章的习题 8 知 $\widetilde{L}_k$（$k=1,2,3$）亦为单位下三角阵，其元素的绝对值不大于 1。记 $L^{-1}=\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1$，由式（7.3.2）得到 $PA=LU$，其中 $P$ 为排列矩阵，$L$ 为单位下三角阵，$U$ 为上三角阵。这说明对式（7.2.1）应用列主元素消去法，相当于对 $(A\mid b)$ 先进行一系列行交换后再对 $PAx=Pb$ 应用 Gauss 消去法。在实际计算中只能在计算过程中进行行的交换。
+
+总结以上的讨论可得如下定理。
+
+**定理 7.5（列主元素的三角分解定理）** 如果 $A$ 为非奇异矩阵，则存在排列矩阵 $P$，使
+
+$$PA=LU,$$
+
+其中 $L$ 为单位下三角阵，$U$ 为上三角阵。
+
+$L$ 元素存放在数组 $A$ 的下三角部分，$U$ 元素存放在 $A$ 上三角部分，由整型数组 $\mathrm{Ip}(n)$ 记录可知 $P$ 的情况。
+
+### 7.3.3 Gauss-Jordan 消去法
+
+Gauss 消去法始终是消去对角线下方的元素，现考虑 Gauss 消去法的一种修正，即消去对角线下方和上方的元素，这种方法称为 Gauss-Jordan 消去法。
+
+设用 Gauss-Jordan 消去法已完成 $(k-1)$ 步，于是 $Ax=b$ 化为等价方程组 $A^{(k)}x=b^{(k)}$，其中
+
+$$
+(A^{(k)},b^{(k)})=\left(\begin{array}{ccccccc|c}
+1&&&&a_{1k}&\cdots&a_{1n}&b_1\\
+&1&&&\vdots&&\vdots&\vdots\\
+&&\ddots&&\vdots&&\vdots&\vdots\\
+&&&1&a_{k-1,k}&\cdots&a_{k-1,n}&\vdots\\
+&&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&&\vdots&&\vdots&\vdots\\
+&&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right),\quad k=1,2,\cdots,n.
+$$
+
+> 校注（agent 补充）：式（7.3.2）第二行第二个括号内原书印作 $I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3}$，其中 $L_{2i_2}$ 在本段未定义。本页紧接着定义 $\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3}$，因而该处 $L_{2i_2}$ 疑为 $I_{2i_2}$ 的排印错误；此处保留原式。参见[原式放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-188-permutation-detail.png)。
+
+
+\clearpage
+
+原书 PDF 189；书页 176。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-189.jpeg)
+
+<!-- source-page: 189 -->
+
+在第 $k$ 步计算时，考虑对上述矩阵的第 $k$ 行上、下都进行消元计算。
+
+**步 1** 按列选主元素，即确定 $i_k$ 使 $|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|$。
+
+**步 2** 换行（当 $i_k\ne k$）交换 $(A,b)$ 第 $k$ 行与第 $i_k$ 行元素。
+
+**步 3** 计算乘数
+
+$$m_{ik}=-a_{ik}/a_{kk}\quad(i=1,2,\cdots,n;\;i\ne k),\quad m_{kk}=1/a_{kk}.$$
+
+（$m_{ik}$ 可保存在存放 $a_{ik}$ 的单元中。）
+
+**步 4** 消元计算
+
+$$a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k;\\j=k+1,\cdots,n\end{array}\right),$$
+
+$$b_i\leftarrow b_i+m_{ik}b_k\quad(i=1,2,\cdots,n;\;i\ne k).$$
+
+**步 5** 计算主行 $a_{kj}\leftarrow a_{kj}\cdot m_{kk}$（$j=k,k+1,\cdots,n$），$b_k\leftarrow b_k\cdot m_{kk}$。
+
+上述过程结束后，有
+
+$$
+(A,b)\to(A^{(k+1)},b^{(k+1)})=
+\left(\begin{array}{cccc|c}
+1&&&&\widehat{b}_1\\
+&1&&&\widehat{b}_2\\
+&&\ddots&&\vdots\\
+&&&1&\widehat{b}_n
+\end{array}\right)
+$$
+
+这说明用 Gauss-Jordan 消去法将 $A$ 约化为单位矩阵，计算解就在常数项位置得到，因此用不着回代求解。用 Gauss-Jordan 消去法解方程组的计算量大约需要 $n^3/2$ 次乘除法运算，比 Gauss 消去法计算量大，但用 Gauss-Jordan 消去法求一个矩阵的逆矩阵还是比较合适的。
+
+**定理 7.6（Gauss-Jordan 消去法求逆矩阵）** 设 $A$ 为非奇异矩阵，方程组 $AX=I_n$ 的增广矩阵为 $C=(A\mathbin{\vdots}I_n)$。如果对 $C$ 应用 Gauss-Jordan 消去法化为 $(I_n\mathbin{\vdots}T)$，则 $A^{-1}=T$。
+
+事实上，求 $A$ 的逆矩阵 $A^{-1}$，即求 $n$ 阶矩阵 $X$，使 $AX=I_n$，其中 $I_n$ 为单位矩阵。将 $X$ 按列分块 $X=(x_1,x_2,\cdots,x_n)$，$I=(e_1,e_2,\cdots,e_n)$，于是求解 $AX=I_n$ 等价于求解 $n$ 个方程组 $Ax_j=e_j$（$j=1,2,\cdots,n$）。我们可用 Gauss-Jordan 消去法求解 $AX=I_n$。
+
+**例 7.4** 用 Gauss-Jordan 消去法求 $A=\begin{pmatrix}1&2&3\\2&4&5\\3&5&6\end{pmatrix}$ 的逆矩阵 $A^{-1}$。
+
+**解**
+
+$$
+C=\left(\begin{array}{rrr|rrr}
+1&2&3&1&0&0\\
+2&4&5&0&1&0\\
+3&5&6&0&0&1
+\end{array}\right)
+\xrightarrow{r_1\leftrightarrow r_3}
+\left(\begin{array}{rrr|rrr}
+\boxed{3}&5&6&0&0&1\\
+2&4&5&0&1&0\\
+1&2&3&1&0&0
+\end{array}\right)
+$$
+
+$$
+\xrightarrow{\text{第一次消元}}
+\left(\begin{array}{rrr|rrr}
+1&5/3&2&0&0&1/3\\
+0&2/3&1&0&1&-2/3\\
+0&1/3&1&1&0&-1/3
+\end{array}\right)
+$$
+
+原图标注：上述最后一列 $\begin{pmatrix}1/3\\-2/3\\-1/3\end{pmatrix}$ 以方框标出，标为 $c_3$。
+
+<!-- 例7.4续 PDF190。 -->
+
+
+\clearpage
+
+原书 PDF 190；书页 177。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-190.jpeg)
+
+<!-- source-page: 190 -->
+
+$$
+\xrightarrow{\text{第二次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&-1/2&0&-5/2&2\\
+0&1&3/2&0&3/2&-1\\
+0&0&\boxed{1/2}&1&-1/2&0
+\end{array}\right)
+$$
+
+原图标注：上述右侧第二列 $\begin{pmatrix}-5/2\\3/2\\-1/2\end{pmatrix}$ 以方框标出，标为 $c_2$。
+
+$$
+\xrightarrow{\text{第三次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&0&1&-3&2\\
+0&1&0&-3&3&-1\\
+0&0&1&2&-1&0
+\end{array}\right)=(I_n\mid A^{-1}).
+$$
+
+原图标注：上述右侧第一列 $\begin{pmatrix}1\\-3\\2\end{pmatrix}$ 以方框标出，标为 $c_1$。
+
+小方框内为每次按列所选的主元素，且
+
+$$m_1=(m_{11},m_{21},m_{31})^{\mathrm T}=c_3,\quad
+m_2=(m_{12},m_{22},m_{32})^{\mathrm T}=c_2,\quad
+m_3=(m_{13},m_{23},m_{33})^{\mathrm T}=c_1.$$
+
+为了节省内存单元，不必将单位矩阵存放起来，$c_3$ 存放在 $A$ 的第 1 列位置，$c_2$ 存放在 $A$ 的第 2 列位置，$c_1$ 存放在 $A$ 的第 3 列位置，经消元计算，最后再调整一下列就可在 $A$ 的位置得到 $A^{-1}$。注意第 $k$ 步消元时，由 $A$ 的第 $k$ 列
+
+$$a_k=(a_{1k},\cdots,a_{kk},\cdots,a_{nk})^{\mathrm T}$$
+
+计算 $m_k=\left(-\dfrac{a_{1k}}{a_{kk}},\cdots,-1,\cdots,-\dfrac{a_{nk}}{a_{kk}}\right)^{\mathrm T}$ 且冲掉 $a_k$。
+
+最后，在 $A$ 位置如何调整列呢？事实上，在 $A$ 位置最后得到矩阵 $PA\equiv A_1$（其中 $P$ 为排列矩阵）的逆矩阵 $A_1^{-1}$，于是 $A^{-1}=A_1^{-1}P$。
+
+**算法 3** Gauss-Jordan 列主元素方法求逆，其步骤如下。
+
+本算法是用列主元素的 Gauss-Jordan 方法求 $A^{-1}$，计算结果存放在原矩阵 $A$ 的数组中。用整型数组 $\mathrm{Ip}(n)$ 记录主行，$A$ 的行列式值存放在 $\det A$。
+
+**步 1** $\det A\leftarrow1$；对于 $k=1,2,\cdots,n$ 做到步 8。
+
+**步 2** 按列选主元素 $|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|$；$c_0\leftarrow a_{i_kk}$，$\mathrm{Ip}(k)\leftarrow i_k$。
+
+**步 3** 如果 $c_0=0$，则计算停止（此时 $A$ 为奇异矩阵）。
+
+**步 4** 如果 $i_k=k$，则转步 5，否则换行：$a_{kj}\leftrightarrow a_{i_kj}$（$j=1,2,\cdots,n$），$\det A\leftarrow-\det A$。
+
+**步 5** $\det A\leftarrow\det A\cdot c_0$。
+
+**步 6** 计算 $h\leftarrow a_{kk}\leftarrow1/c_0$；$a_{ik}\leftarrow m_{ik}=-a_{ik}\cdot h$（$i=1,2,\cdots,n;\;i\ne k$）。
+
+**步 7** 消元计算
+
+$$a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k\\j=1,2,\cdots,n;\;j\ne k\end{array}\right).$$
+
+**步 8** 计算主行 $a_{kj}\leftarrow a_{kj}\cdot h$（$j=1,2,\cdots,n;\;j\ne k$）。
+
+**步 9** 交换列对于 $k=n-1,n-2,\cdots,2,1$，
+
+（1）$t=\mathrm{Ip}(k)$；
+
+（2）如果 $t\le k$，则转（3），否则换列：$a_{ik}\leftrightarrow a_{it}$（$i=1,2,\cdots,n$）；
+
+（3）继续循环。
+
+> 校注（agent 补充）：解释段中 $m_k$ 的第 $k$ 个分量原书印作 $-1$，此处保留。按上一页所给 $m_{kk}=1/a_{kk}$、本页算法 3 步 6 的 $a_{kk}\leftarrow1/c_0$，以及例 7.4 第一次消元的 $m_1=c_3=(1/3,-2/3,-1/3)^{\mathrm T}$，用于原地求逆时该位置应为 $1/a_{kk}$；疑似原书公式错误。参见[原文放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-190-multiplier-detail.png)。
+
+
+\clearpage
+
+原书 PDF 191；书页 178。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-191.jpeg)
+
+<!-- source-page: 191 -->
+
+## 7.4 Gauss 消去法的变形
+
+Gauss 消去法有很多变形，有的是 Gauss 消去法的改进、改写，有的是用于某一类特殊性质矩阵的 Gauss 消去法的简化。
+
+### 7.4.1 直接三角分解法
+
+将 Gauss 消去法改写为紧凑形式，可以直接从矩阵 $A$ 的元素得到计算 $L,U$ 元素的递推公式，而不需任何中间步骤，这就是所谓**直接三角分解法**。一旦实现了矩阵 $A$ 的 LU 分解，那么求解式（7.2.1）的问题就等价于求解以下两个三角方程组：
+
+（1）$Ly=b$，求 $y$；（2）$Ux=y$，求 $x$。
+
+**1. 不选主元的三角分解法**
+
+设 $A$ 为非奇异矩阵，且有分解式 $A=LU$，其中 $L$ 为单位下三角阵，$U$ 为上三角阵，即
+
+$$
+A=\begin{pmatrix}
+1&&&\\
+l_{21}&1&&\\
+\vdots&\ddots&\ddots&\\
+l_{n1}&\cdots&l_{n,n-1}&1
+\end{pmatrix}
+\begin{pmatrix}
+u_{11}&u_{12}&\cdots&u_{1n}\\
+&u_{22}&\cdots&u_{2n}\\
+&&\ddots&\vdots\\
+&&&u_{nn}
+\end{pmatrix}.
+\tag{7.4.1}
+$$
+
+下面说明 $L,U$ 的元素可以由 $n$ 步直接计算定出，其中第 $r$ 步定出 $U$ 的第 $r$ 行和 $L$ 的第 $r$ 列元素。由式（7.4.1），有
+
+$$a_{1i}=u_{1i}\quad(i=1,2,\cdots,n),$$
+
+于是得 $U$ 的第 1 行元素；
+
+$$a_{i1}=l_{i1}u_{11},\quad l_{i1}=a_{i1}/u_{11}\quad(i=2,\cdots,n),$$
+
+于是得 $L$ 的第 1 列元素。
+
+设已经定出 $U$ 的第 1 行到第 $r-1$ 行元素与 $L$ 的第 1 列到第 $r-1$ 列元素。由式（7.4.1），利用矩阵乘法，有
+
+$$a_{ri}=\sum_{k=1}^{n}l_{rk}u_{ki}=\sum_{k=1}^{r-1}l_{rk}u_{ki}+u_{ri}\quad\text{（当 $r<k$，$l_{rk}=0$ 时）},$$
+
+故
+
+$$u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r,r+1,\cdots,n),$$
+
+又由式（7.4.1）有
+
+$$a_{ir}=\sum_{k=1}^{n}l_{ik}u_{kr}=\sum_{k=1}^{r-1}l_{ik}u_{kr}+l_{ir}u_{rr}.$$
+
+总结上述讨论，得到用直接三角分解法解 $Ax=b$（要求 $A$ 所有顺序主子式都不为零）的计算公式，步骤如下。
+
+<!-- 步骤续 PDF192。 -->
+
+
+\clearpage
+
+原书 PDF 192；书页 179。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-192.jpeg)
+
+<!-- source-page: 192 -->
+
+**步 1** $u_{1i}=a_{1i}$（$i=1,2,\cdots,n$），$l_{i1}=a_{i1}/u_{11}$（$i=2,3,\cdots,n$），计算 $U$ 第 $r$ 行，$L$ 的第 $r$ 列元素，$r=2,3,\cdots,n$。
+
+**步 2**
+
+$$u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r,r+1,\cdots,n).\tag{7.4.2}$$
+
+**步 3**
+
+$$l_{ir}=\left(a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\right)/u_{rr}\quad(i=r+1,\cdots,n;\;r\ne n),\tag{7.4.3}$$
+
+求解 $Ly=b,Ux=y$ 计算公式。
+
+**步 4**
+
+$$
+\begin{cases}
+y_1=b_1,\\
+y_i=\displaystyle b_i-\sum_{k=1}^{i-1}l_{ik}y_k\quad(i=2,3,\cdots,n).
+\end{cases}
+\tag{7.4.4}
+$$
+
+**步 5**
+
+$$
+\begin{cases}
+x_n=y_n/u_{nn},\\
+x_i=\displaystyle\left(y_i-\sum_{k=i+1}^{n}u_{ik}x_k\right)/u_{ii}\quad(i=n-1,n-2,\cdots,1).
+\end{cases}
+\tag{7.4.5}
+$$
+
+**例 7.5** 用直接三角分解法解 $\begin{pmatrix}1&2&3\\2&5&2\\3&1&5\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}14\\18\\20\end{pmatrix}$。
+
+**解** 用分解公式（7.4.2）、（7.4.3）计算，得
+
+$$A=\begin{pmatrix}1&0&0\\2&1&0\\3&-5&1\end{pmatrix}
+\begin{pmatrix}1&2&3\\0&1&-4\\0&0&-24\end{pmatrix}=LU.$$
+
+求解
+
+$$Ly=(14,18,20)^{\mathrm T},$$
+
+得
+
+$$y=(14,-10,-72)^{\mathrm T},$$
+
+求解
+
+$$Ux=(14,-10,-72)^{\mathrm T},$$
+
+得
+
+$$x=(1,2,3)^{\mathrm T}.$$
+
+在用计算机计算时，由于计算好 $u_{ri}$ 后 $a_{ri}$ 就不用了，因此计算好 $L,U$ 的元素后就存放在 $A$ 的相应位置。例如
+
+$$
+A=\begin{pmatrix}
+a_{11}&a_{12}&a_{13}&a_{14}\\
+a_{21}&a_{22}&a_{23}&a_{24}\\
+a_{31}&a_{32}&a_{33}&a_{34}\\
+a_{41}&a_{42}&a_{43}&a_{44}
+\end{pmatrix}
+\to\begin{pmatrix}
+u_{11}&u_{12}&u_{13}&u_{14}\\
+l_{21}&u_{22}&u_{23}&u_{24}\\
+l_{31}&l_{32}&u_{33}&u_{34}\\
+l_{41}&l_{42}&l_{43}&u_{44}
+\end{pmatrix}.
+$$
+
+最后在存放 $A$ 的数组中得到 $L,U$ 的元素。
+
+由直接三角分解计算公式，需要计算形如 $\sum a_i b_i$ 的式子，可采用“双精度累加”，以提高精度。
+
+直接分解法大约需要 $n^3/3$ 次乘、除法运算，和 Gauss 消去法的计算量基本相同。
+
+如果已经实现了 $A=LU$ 的分解计算，且 $L,U$ 保存在 $A$ 的相应位置，则用直接三
+
+<!-- 本页末句未完，续 PDF193。 -->
+
+
+\clearpage
+
+原书 PDF 193；书页 180。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-193.jpeg)
+
+<!-- source-page: 193 -->
+
+<!-- 接 PDF192 页末。 -->
+
+角分解法解具有相同系数的方程组 $Ax=(b_1,b_2,\cdots,b_m)$ 是相当方便的，每解一个方程组 $Ax=b_j$ 仅需要增加 $n^2$ 次乘除法运算。
+
+矩阵 $A$ 的分解公式（7.4.2）、（7.4.3）又称为 **Doolittle 分解公式**。
+
+**2. 选主元的三角分解法**
+
+从直接三角分解公式可看出，当 $u_{rr}=0$ 时计算将中断或者当 $u_{rr}$ 绝对值很小时，按分解公式计算可能引起舍入误差的累积。但如果 $A$ 非奇异，就可通过交换 $A$ 的行实现矩阵 $PA$ 的 LU 分解，因此可采用与列主元素消去法类似的方法（可以证明下述方法与列主元素消去法等价），将直接三角分解法修改为（部分）选主元的三角分解法。
+
+设第 $r-1$ 步分解已完成，这时有
+
+$$
+A\to\begin{pmatrix}
+u_{11}&u_{12}&\cdots&\cdots&\cdots&\cdots&u_{1n}\\
+l_{21}&u_{22}&&&&&\vdots\\
+l_{31}&l_{32}&\ddots&&&&\vdots\\
+\vdots&&\ddots&u_{r-1,r-1}&\cdots&\cdots&u_{n-1,n}\\
+\vdots&&&l_{r,r-1}&a_{rr}&\cdots&a_{rn}\\
+\vdots&&&\vdots&\vdots&&\vdots\\
+l_{n1}&l_{n2}&\cdots&l_{n,r-1}&a_{nr}&\cdots&a_{nn}
+\end{pmatrix}.
+$$
+
+第 $r$ 步分解需用到式（7.4.2）及式（7.4.3），为了避免用小的数 $u_{rr}$ 作除数，引进量
+
+$$s_i=a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\quad(i=r,r+1,\cdots,n),$$
+
+于是有
+
+$$u_{rr}=s_r,\quad l_{ir}=s_i/s_r\quad(i=r+1,\cdots,n),\quad \max_{r\le i\le n}|s_i|=|s_{i_r}|.$$
+
+用 $s_{i_r}$ 作为 $u_{rr}$，交换 $A$ 的 $r$ 行与 $i_r$ 行元素（将 $(i,j)$ 位置的新元素仍记作 $l_{ij}$ 及 $a_{ij}$），于是有 $|l_{ir}|\le1$（$i=r+1,\cdots,n$）。由此再进行第 $r$ 步分解计算。
+
+**算法 4** 选主元的三角分解法，其步骤如下：
+
+设 $Ax=b$，其中 $A$ 为非奇异矩阵。本算法采用列主元的三角分解法，用 $PA=I_{n-1,i_{n-1}}\cdots I_{1i_1}A$ 的三角分解冲掉 $A$，用整型数组 $\mathrm{Ip}(n)$ 记录主行，解 $x$ 存放在 $b$ 内。
+
+对于 $r=1,2,\cdots,n$，做到步 4。
+
+**步 1** 计算 $s_i$
+
+$$a_{ir}\leftarrow s_i=a_{ir}-\sum_{k=1}^{r-1}l_{ik}u_{kr}\quad(i=r,r+1,\cdots,n).$$
+
+**步 2** 选主元 $|s_{i_r}|=\max_{r\le i\le n}|s_i|$，$\mathrm{Ip}(r)\leftarrow i_r$。
+
+**步 3** 交换 $A$ 的 $r$ 行与 $i_r$ 行元素 $a_{ri}\leftrightarrow a_{i_ri}$（$i=1,2,\cdots,n$）。
+
+**步 4** 计算 $U$ 的第 $r$ 行元素，$L$ 的第 $r$ 列元素
+
+$$a_{rr}=u_{rr}=s_r,$$
+
+<!-- 算法4步4续 PDF194。 -->
+
+> 校注（agent 补充）：本页分解存储矩阵在对角元 $u_{r-1,r-1}$ 所在行的最右侧，原书印作 $u_{n-1,n}$，已保留；按该行是第 $r-1$ 行，应为 $u_{r-1,n}$。疑似原书下标排印错误，参见[原矩阵放大裁图](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/staging/ch07a/assets/pdf-193-storage-detail.png)。
+
+
+\clearpage
+
+原书 PDF 194；书页 181。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-194.jpeg)
+
+<!-- source-page: 194 -->
+
+<!-- 接 PDF193 算法4步4。 -->
+
+$$a_{ir}\leftarrow l_{ir}=s_i/u_{rr}=a_{ir}/a_{rr}\quad(i=r+1,\cdots,n),$$
+
+$$a_{ri}\leftarrow u_{ri}=a_{ri}-\sum_{k=1}^{r-1}l_{rk}u_{ki}\quad(i=r+1,\cdots,n),$$
+
+这时有 $|l_{ir}|\le1$。
+
+上述计算过程完成后就实现了 $PA$ 的 LU 分解，且 $U$ 保存在 $A$ 上三角部分，$L$ 保存在 $A$ 的下三角部分，排列阵 $P$ 由 $\mathrm{Ip}(n)$ 最后记录可知。
+
+求解 $Ly=Pb$ 及 $Ux=y$。
+
+**步 5** $i=1,2,\cdots,n-1$。
+
+（1）$t\leftarrow\mathrm{Ip}(i)$；（2）如果 $i=t$，则转（3），否则 $b_i\leftrightarrow b_t$；（3）继续循环。
+
+**步 6**
+
+$$b_i\leftarrow b_i-\sum_{k=1}^{i-1}l_{ik}b_k\quad(i=2,3,\cdots,n).$$
+
+**步 7**
+
+$$b_n\leftarrow b_n/u_{nn},\quad b_i\leftarrow\left(b_i-\sum_{k=i+1}^{n}u_{ik}b_k\right)/u_{ii}\quad(i=n-1,\cdots,1).$$
+
+利用算法 4 的结果（实现 $PA=LU$ 三角分解），则可以计算 $A$ 的逆矩阵
+
+$$A^{-1}=U^{-1}L^{-1}P.$$
+
+利用 $PA$ 的三角分解计算 $A^{-1}$ 步骤：
+
+（1）计算上三角阵的逆矩阵 $U^{-1}$；
+
+（2）计算 $U^{-1}L^{-1}$；
+
+（3）交换 $U^{-1}L^{-1}$ 列（利用 $\mathrm{Ip}(n)$ 最后记录）。
+
+上述方法求 $A^{-1}$ 大约需要 $n^3$ 次乘法运算。
+
+### 7.4.2 平方根法
+
+应用有限元法解结构力学问题，最后归结为求解线性方程组，这时系数矩阵大多具有对称正定性质。所谓平方根法，就是利用对称正定矩阵的三角分解而得到的求解对称正定方程组的一种有效方法，目前在计算机上广泛应用平方根法解此类方程组。
+
+设 $A$ 为对称阵，且 $A$ 的所有顺序主子式均不为零。由定理 7.3 知，$A$ 可唯一分解为式（7.4.1）的形式。
+
+为了利用 $A$ 的对称性，将 $U$ 再分解，即
+
+$$
+U=\begin{pmatrix}
+u_{11}&&&\\
+&u_{22}&&\\
+&&\ddots&\\
+&&&u_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+1&\dfrac{u_{12}}{u_{11}}&\cdots&\dfrac{u_{1n}}{u_{11}}\\
+&\ddots&\ddots&\vdots\\
+&&\ddots&\dfrac{u_{n-1,n}}{u_{n-1,n-1}}\\
+&&&1
+\end{pmatrix}=DU_0,
+$$
+
+其中 $D$ 为对角阵，$U_0$ 为单位上三角阵。于是
+
+$$A=LU=LDU_0.\tag{7.4.6}$$
+
+
+\clearpage
+
+原书 PDF 195；书页 182。
+
+
+[原页扫描](/Users/xiangjunfeng/Desktop/数值计算专用/numerical-analysis/book/source-images/pdf-195.jpeg)
+
+<!-- source-page: 195 -->
+
+又
+
+$$A=A^{\mathrm T}=U_0^{\mathrm T}(DL^{\mathrm T}),$$
+
+由分解的唯一性即得 $U_0^{\mathrm T}=L$，代入式（7.4.6）得到对称矩阵 $A$ 的分解式 $A=LDL^{\mathrm T}$。
+
+总结上述讨论，有以下定理。
+
+**定理 7.7（对称阵的三角分解定理）** 设 $A$ 为 $n$ 阶对称阵，且 $A$ 的所有顺序主子式均不为零，则 $A$ 可唯一分解为
+
+$$A=LDL^{\mathrm T},$$
+
+其中 $L$ 为单位下三角阵，$D$ 为对角阵。
+
+现设 $A$ 为对称正定矩阵。首先说明 $A$ 的分解式 $A=LDL^{\mathrm T}$ 中 $D$ 的对角元素 $d_i$ 均为正数。事实上，由 $A$ 的对称正定性，7.2 节的推论成立，即
+
+$$d_1=D_1>0,\quad d_i=D_i/D_{i-1}>0\quad(i=2,3,\cdots,n).$$
+
+于是
+
+$$
+D=\begin{pmatrix}d_1&&\\&\ddots&\\&&d_n\end{pmatrix}
+=\begin{pmatrix}\sqrt{d_1}&&\\&\ddots&\\&&\sqrt{d_n}\end{pmatrix}
+\begin{pmatrix}\sqrt{d_1}&&\\&\ddots&\\&&\sqrt{d_n}\end{pmatrix}
+=D^{\frac12}D^{\frac12},
+$$
+
+由定理 7.7 得到
+
+$$A=LDL^{\mathrm T}=LD^{\frac12}D^{\frac12}L^{\mathrm T}=(LD^{\frac12})(LD^{\frac12})^{\mathrm T}=L_1L_1^{\mathrm T},$$
+
+其中 $L_1=LD^{\frac12}$ 为下三角阵。
+
+**定理 7.8（对称正定矩阵的三角分解或 Cholesky 分解）** 如果 $A$ 为 $n$ 阶对称正定矩阵，则存在一个实的非奇异下三角阵 $L$ 使 $A=LL^{\mathrm T}$，当限定 $L$ 的对角元素为正时，这种分解是唯一的。
+
+下面用直接分解方法来确定计算 $L$ 元素的递推公式。因为
+
+$$
+A=\begin{pmatrix}
+l_{11}&&&\\
+l_{21}&l_{22}&&\\
+\vdots&\vdots&\ddots&\\
+l_{n1}&l_{n2}&\cdots&l_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+l_{11}&l_{21}&\cdots&l_{n1}\\
+&l_{22}&\cdots&l_{n2}\\
+&&\ddots&\vdots\\
+&&&l_{nn}
+\end{pmatrix},
+$$
+
+其中 $l_{ii}>0$（$i=1,2,\cdots,n$）。由矩阵乘法及 $l_{jk}=0$（当 $j<k$ 时），得
+
+$$a_{ij}=\sum_{k=1}^{n}l_{ik}l_{jk}=\sum_{k=1}^{j-1}l_{ik}l_{jk}+l_{jj}l_{ij},$$
+
+于是得到以下解对称正定方程组 $Ax=b$ 的平方根法计算公式。
+
+对于 $j=1,2,\cdots,n$，
+
+**步 1**
+
+$$l_{jj}=\left(a_{jj}-\sum_{k=1}^{j-1}l_{jk}^2\right)^{\frac12}.\tag{7.4.7}$$
+
+**步 2**
+
+$$l_{ij}=\left(a_{ij}-\sum_{k=1}^{j-1}l_{ik}l_{jk}\right)/l_{jj}\quad(i=j+1,\cdots,n),$$
+
+<!-- 平方根法步骤续 PDF196。本页步2式旁未印编号，不补写下一页编号。 -->

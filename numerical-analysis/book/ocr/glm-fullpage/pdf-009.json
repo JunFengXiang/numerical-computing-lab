@@ -1,0 +1,20 @@
+{
+  "pdf_page": 9,
+  "source_image": "source-images/pdf-009.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "09560211c4bec5d3c2d4f1082a12d3d8a5614dd5ed39b77dc94a16cad997815c",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 606,
+  "possibly_truncated": false,
+  "elapsed_seconds": 18.663,
+  "created_utc": "2026-09-12T09:28:12.717822+00:00",
+  "raw_text_sha256": "f2777899962230c109f5f24ae09775e7ef9de9e941da23ed8bb4869ece57710b",
+  "raw_text": "5.2.3 梯形格式 ····· (109)\n5.2.4 改进的 Euler 格式 ····· (110)\n5.2.5 Euler 两步格式 ····· (111)\n\n5.3 Runge-Kutta 方法 ····· (113)\n5.3.1 Taylor 级数法 ····· (113)\n5.3.2 Runge-Kutta 方法的基本思想 ····· (114)\n5.3.3 二阶 Runge-Kutta 方法 ····· (115)\n5.3.4 三阶 Runge-Kutta 方法 ····· (116)\n5.3.5 四阶 Runge-Kutta 方法 ····· (118)\n5.3.6 变步长的 Runge-Kutta 方法 ····· (119)\n\n5.4 单步法的收敛性和稳定性 ····· (120)\n5.4.1 单步法的收敛性 ····· (120)\n5.4.2 单步法的稳定性 ····· (122)\n\n5.5 线性多步法 ····· (124)\n5.5.1 基于数值积分的构造方法 ····· (124)\n5.5.2 Adams 显式格式 ····· (125)\n5.5.3 Adams 隐式格式 ····· (126)\n5.5.4 Adams 预测-校正系统 ····· (127)\n5.5.5 基于 Taylor 展开的构造方法 ····· (128)\n5.5.6 Milne 格式 ····· (130)\n5.5.7 Hamming 格式 ····· (131)\n\n5.6 方程组与高阶方程的情形 ····· (132)\n5.6.1 一阶方程组 ····· (132)\n5.6.2 化高阶方程组为一阶方程组 ····· (133)\n\n5.7 边值问题的数值解法 ····· (134)\n5.7.1 试射法 ····· (135)\n5.7.2 差分方程的建立 ····· (135)\n5.7.3 差分问题的可解性 ····· (137)\n5.7.4 差分方法的收敛性 ····· (138)\n\n小结 ····· (140)\n习题 ····· (140)\n\n第 6 章 方程求根 ····· (142)\n\n6.1 根的搜索 ····· (142)\n6.1.1 逐步搜索法 ····· (142)\n6.1.2 二分法 ····· (142)\n6.2 迭代法 ····· (144)\n\n· 4 ·"
+}

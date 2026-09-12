@@ -1,0 +1,201 @@
+{
+  "lane": "ch08",
+  "reviewer": "Codex agent ch07b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 215,
+      "sha256": "824aa0e1c23e7f5c5bd25f866e0f7f7c0d156b3895d6fc66244396122cf54ce5",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整对照原页正文、矩阵、式号及上下标。"
+      ]
+    },
+    {
+      "pdf_page": 216,
+      "sha256": "c196ee769fc9bf023c0bbb08c083b930fad860cad783bb6180e60705fe23cc54",
+      "source_visual_review": "completed",
+      "notes": [
+        "完整对照原页正文、矩阵、式号及上下标。",
+        "E001原图数值独立确认；按原递推从零向量精确分数计算10次为[3.00003181406973, 1.9998740186108068, 0.9998812605453542]，误差无穷范数0.0001259813891930972，支持primary校注。"
+      ]
+    },
+    {
+      "pdf_page": 217,
+      "sha256": "631c70ada9f36fa49ce8a73b71162d4c753069b856a715b3f13464caf173c3f4",
+      "source_visual_review": "completed",
+      "notes": [
+        "原页全文、A=D-L-U及L/U负号、对角矩阵与初始误差递推已核；原印非零条件下标ij已确认。",
+        "已复核修订后的a_{ij}保留原印及E013校注；原非零条件按Jacobi方法应针对a_{ii}。"
+      ]
+    },
+    {
+      "pdf_page": 218,
+      "sha256": "409d5e90fc58ec4180789a9bccdc38fd67c22aa28a7ed304bdc84528320802da",
+      "source_visual_review": "completed",
+      "notes": [
+        "原页全文、式8.2.2–8.2.5及8.2.5撇号、G-S新旧迭代索引、校正量求和范围已核。",
+        "E002独立目视确认式8.2.3原印下限i=1，primary保留原式并指出j=1。"
+      ]
+    },
+    {
+      "pdf_page": 219,
+      "sha256": "5fa143611ebb643bb482597d73ddb7cf6b8dd72332334f82ebf7343c52718310",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文和G-S分裂矩阵/索引、例8.2/8.3、矩阵序列定义已核；E003原印0.00157已目视确认。",
+        "独立精确分数G-S迭代5次的误差无穷范数为0.00015761335888942013，支持E003原印小数位错误校注。"
+      ]
+    },
+    {
+      "pdf_page": 220,
+      "sha256": "7bfa84c349c46e9e88f9ae805f4439550e8afdc9c8abeef8f8aaf37cf4f43241",
+      "source_visual_review": "completed",
+      "notes": [
+        "定理8.1–8.2、Jordan标准形及E_tk图/文字、幂次归零条件均已对照。",
+        "J_i第三行上副对角线省略号已补回，已检查修订源文和新SHA。"
+      ]
+    },
+    {
+      "pdf_page": 221,
+      "sha256": "5060f0a76fdccd7bd1e4c952050a79251a0b448ae915dc9f74b2e608ab950e3e",
+      "source_visual_review": "completed",
+      "notes": [
+        "定理8.2证明续页的二项式系数、矩阵幂以及基本定理充分/必要性全文核对完成。"
+      ]
+    },
+    {
+      "pdf_page": 222,
+      "sha256": "77f2271336bb5315b422de97b1d6fc144f67d815e3a3b86b48d29745dbdd071f",
+      "source_visual_review": "completed",
+      "notes": [
+        "特征多项式、复根数值、误差展开、收敛速度定义、范数充分条件及8.3.3均核对完成。"
+      ]
+    },
+    {
+      "pdf_page": 223,
+      "sha256": "e5e630bac3e6d1efe81e498d45715353bb64a3390367a50387970ec0ac7bc6e9",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、误差界8.3.4–8.3.6、例8.7/8.8范数与停机条件核对完成。"
+      ]
+    },
+    {
+      "pdf_page": 224,
+      "sha256": "b41fae63a8d20123bb094759ce0ef44358f8facd83f202883ae0eddbcc4dbb65",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、严格/弱对角占优条件、可约矩阵定义和分块形式8.3.8、例8.9/8.10核对完成。",
+        "E004独立确认原印r≤n，而非r≤n−1；primary保留并校注。"
+      ]
+    },
+    {
+      "pdf_page": 225,
+      "sha256": "7441322dda7a7a6b274ae3c83bb07b791088844f5196d22d1d3e2ddd7e5fdc82",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、置换矩阵结果、定理8.6/8.7及证明和式8.3.9已核；原印G符号重用的解释与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 226,
+      "sha256": "a1076f9ff4d83a5e4232fb72a149207b6520fcda98bc3d4d89aac53ccc4ab226",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、定理8.7证明末段、SOR标量推导8.4.1–8.4.6、两组求和下限和k/k+1索引均已核。"
+      ]
+    },
+    {
+      "pdf_page": 227,
+      "sha256": "fece01e9f8c05169b78e491b331891702fd6b5224cecaf49c9420ea41880894e",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、例8.11四分量SOR递推、原印向量、表8.1十行及8.4.7/8.4.8矩阵形式已核；E005原印数值及误差界已独立确认。",
+        "E005独立有理数迭代11次误差2范数4.4938645772629555e-06，所印向量误差2范数4.810083159364296e-06，确认primary校注。",
+        "表8.1逐行原图核对通过；另独立浮点复算十组ω，迭代次数22,17,12,11,14,17,23,33,53,109与原印全部一致。"
+      ]
+    },
+    {
+      "pdf_page": 228,
+      "sha256": "b7f06e86112b076a547950e219ff1e108ef366f049ebfcc0d27ece5c93b0b35d",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、L_ω与f定义、谱半径充要条件、0<ω<2必要条件及对称正定收敛证明前半均已核。"
+      ]
+    },
+    {
+      "pdf_page": 229,
+      "sha256": "7e943a9d2710427ff99dd98fe80fbac51f5deab9b54f7ee7e995b6e937b05edd",
+      "source_visual_review": "completed",
+      "notes": [
+        "全文、8.4.9–8.4.10、复数共轭和特征值表达式、最佳松弛因子公式、SOR算法步1–6逐项核对。",
+        "E006和E007已独立放大原图确认；平方差因子原印σ+2σ，分母非零条件原印σ+2ω。代数展开及上式分母支持primary校注。",
+        "E008已独立确认步5(1)第二求和从j=i+1起，结合原印x_i←x_i+p，确漏校正量中的对角项；保留原式及校注。"
+      ]
+    },
+    {
+      "pdf_page": 230,
+      "sha256": "375be8146ddcfcfa202f46a78c671af6aa1759179bf72c4b52bea4568790fc62",
+      "source_visual_review": "completed",
+      "notes": [
+        "SOR算法步7–8、小结五段、文献号、习题1–4及第5题引导语完整核对。"
+      ]
+    },
+    {
+      "pdf_page": 231,
+      "sha256": "d632e157b746002b7953ede0afe33bdef285a634343bebacf39150702c33d29a",
+      "source_visual_review": "completed",
+      "notes": [
+        "习题5–12全文逐项核对，包含方程组所有系数、迭代索引、范数、误差条件及题间引用。",
+        "E009原印第5(1)第二行最后项0.8x_2已独立确认；第8(2)原印G-S矩阵也记B_0，primary保持原印。",
+        "E010、E011和E012独立放大目视确认：残差求和内原印x_i，误差定义原印λ*，递推校正项原印减号；校注的符号矛盾判断与前后式一致。"
+      ]
+    },
+    {
+      "pdf_page": 232,
+      "sha256": "c68588353de97fd4fa9290cd7c660c7a3b91e04aee835cdad0b56851c1c134e5",
+      "source_visual_review": "completed",
+      "notes": [
+        "习题12续式与(3)(4)、习题13–20完整核对，包含两种分块迭代的新旧索引、矩阵全部元素、SOR条件及cond式。",
+        "E012续页原印残差正号已确认，与上页ε=x−λ*及减号递推的矛盾说明一致。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch08-cross-001",
+      "pdf_page": 215,
+      "severity": "transcription",
+      "location": "正文首段",
+      "source": "第7章讨论的选主元素消去法",
+      "transcription": "第7章所讨论的选主元素消去法",
+      "status": "withdrawn",
+      "requested_fix": "删除多出的所字并更新primary SHA。",
+      "resolution": "复看staging/ch08/assets/check-p215-intro.png确认原图确有“所”，原MD正确；不需变更。"
+    },
+    {
+      "id": "ch08-cross-002",
+      "pdf_page": 217,
+      "severity": "source_symbol_check",
+      "location": "非奇异阵后非零条件",
+      "source": "原图局部看为a_{ij}≠0",
+      "transcription": "a_{ii}≠0",
+      "status": "resolved",
+      "requested_fix": "确认原印后保留原符号，若为ij则另注应ii。",
+      "resolution": "primary保留a_{ij}并补ch08-E013校注，已核新文件和SHA。"
+    },
+    {
+      "id": "ch08-cross-003",
+      "pdf_page": 220,
+      "severity": "transcription",
+      "location": "Jordan块J_i第三行上副对角线",
+      "source": "主对角和上副对角两组ddots",
+      "transcription": "仅主对角ddots",
+      "status": "resolved",
+      "requested_fix": "补回第三行上副对角线ddots。",
+      "resolution": "已复核primary补回的上副对角线ddots和新SHA。"
+    }
+  ],
+  "unresolved": []
+}

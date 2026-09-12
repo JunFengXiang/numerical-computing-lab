@@ -1,0 +1,501 @@
+{
+  "lane": "ch08",
+  "reviewer": "Codex agent ch08",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 215,
+      "printed_page": 202,
+      "path": "staging/ch08/pages/pdf-215.md",
+      "sha256": "824aa0e1c23e7f5c5bd25f866e0f7f7c0d156b3895d6fc66244396122cf54ce5",
+      "source_image_sha256": "3378edfd3995ce8dceb4837a807c963a6f4f0571b8c114fb37dfdf2266480fef",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8",
+          "title": "解线性方程组的迭代法"
+        },
+        {
+          "id": "8.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [
+        "8.1.1",
+        "8.1.2",
+        "8.1.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 216,
+      "printed_page": 203,
+      "path": "staging/ch08/pages/pdf-216.md",
+      "sha256": "c196ee769fc9bf023c0bbb08c083b930fad860cad783bb6180e60705fe23cc54",
+      "source_image_sha256": "3a8ed92c6f5779d328b449a28058a4228a6e7603e1af73c94b9d19ac0c51bfe6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.1.4",
+        "8.1.5",
+        "8.1.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对例8.1第10次迭代结果；第二分量和误差无穷范数与有理数复算不符，原值保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 217,
+      "printed_page": 204,
+      "path": "staging/ch08/pages/pdf-217.md",
+      "sha256": "631c70ada9f36fa49ce8a73b71162d4c753069b856a715b3f13464caf173c3f4",
+      "source_image_sha256": "ae963a398201e584901739c911508b6a919f729f5c7a684704fef6f1d45c39b9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8.2",
+          "title": "Jacobi 迭代法与 Gauss-Seidel 迭代法"
+        },
+        {
+          "id": "8.2.1",
+          "title": "Jacobi 迭代法"
+        }
+      ],
+      "formula_ids": [
+        "8.2.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "独立交叉复核发现式8.2.1下方原印a_ij非零，已回图内存裁切独立确认并按原印修订，追加ch08-E013校注。"
+      ]
+    },
+    {
+      "pdf_page": 218,
+      "printed_page": 205,
+      "path": "staging/ch08/pages/pdf-218.md",
+      "sha256": "409d5e90fc58ec4180789a9bccdc38fd67c22aa28a7ed304bdc84528320802da",
+      "source_image_sha256": "5f2b7172ce7ff7a1922007be84a7c0279149e09d623314911c9758ef4562b609",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8.2.2",
+          "title": "Gauss-Seidel 迭代法"
+        }
+      ],
+      "formula_ids": [
+        "8.2.2",
+        "8.2.3",
+        "8.2.4",
+        "8.2.5",
+        "8.2.5'"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对式8.2.3求和下限确印i=1；与应为j的求和指标不一致，原式保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 219,
+      "printed_page": 206,
+      "path": "staging/ch08/pages/pdf-219.md",
+      "sha256": "5fa143611ebb643bb482597d73ddb7cf6b8dd72332334f82ebf7343c52718310",
+      "source_image_sha256": "e19d31adf6a4f545dad024545d1388a6ec02c628298b7922cc06ee1c0531b6aa",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8.3",
+          "title": "迭代法的收敛性"
+        }
+      ],
+      "formula_ids": [
+        "8.2.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对例8.2误差无穷范数确印0.00157，与所印向量差一位小数；原值保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 220,
+      "printed_page": 207,
+      "path": "staging/ch08/pages/pdf-220.md",
+      "sha256": "7bfa84c349c46e9e88f9ae805f4439550e8afdc9c8abeef8f8aaf37cf4f43241",
+      "source_image_sha256": "1ba5fb423c32d92546b52f6d3673e2b65af6401d8cd564a9dd1b7c98c1f94a37",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "Jordan块与E_tk矩阵均完整转为LaTeX；无编号E_tk矩阵原图裁切另作视觉依据，标签与元素模式均有检索文字。",
+        "独立交叉复核指出Jordan块第三行上副对角线漏一组斜点，已重新打开原图确认并补齐。"
+      ]
+    },
+    {
+      "pdf_page": 221,
+      "printed_page": 208,
+      "path": "staging/ch08/pages/pdf-221.md",
+      "sha256": "5060f0a76fdccd7bd1e4c952050a79251a0b448ae915dc9f74b2e608ab950e3e",
+      "source_image_sha256": "9a298eed45e0c48b2523bd92bbd4141144adc3f7a6f5a558a1a219203270d349",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.3.1",
+        "8.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 222,
+      "printed_page": 209,
+      "path": "staging/ch08/pages/pdf-222.md",
+      "sha256": "77f2271336bb5315b422de97b1d6fc144f67d815e3a3b86b48d29745dbdd071f",
+      "source_image_sha256": "83221da2a675bafcae4902137b9d41be071083740dd99c63344c91a20db59e9e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.3.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 223,
+      "printed_page": 210,
+      "path": "staging/ch08/pages/pdf-223.md",
+      "sha256": "e5e630bac3e6d1efe81e498d45715353bb64a3390367a50387970ec0ac7bc6e9",
+      "source_image_sha256": "57b6f450bc95833df455266ff2299bcde0734fc7a0999002627d23761e4f6463",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.3.4",
+        "8.3.5",
+        "8.3.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 224,
+      "printed_page": 211,
+      "path": "staging/ch08/pages/pdf-224.md",
+      "sha256": "b41fae63a8d20123bb094759ce0ef44358f8facd83f202883ae0eddbcc4dbb65",
+      "source_image_sha256": "62cb689d8afb6b445ce187e313475cf5314636a9d0b62eb3c7513dc12f036d73",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.3.7",
+        "8.3.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对定义8.5的范围确印1<=r<=n；可约分块通常应要求r<=n-1，原文保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 225,
+      "printed_page": 212,
+      "path": "staging/ch08/pages/pdf-225.md",
+      "sha256": "7441322dda7a7a6b274ae3c83bb07b791088844f5196d22d1d3e2ddd7e5fdc82",
+      "source_image_sha256": "07704ad9ce5816f10a03492ada649926d5a76ea46d0544d68e3661267d1f54d9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.3.9"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对证明中第二个G无修饰；原书将G从迭代矩阵重用于lambda(D-L)-U，原文保留并解释指代。"
+      ]
+    },
+    {
+      "pdf_page": 226,
+      "printed_page": 213,
+      "path": "staging/ch08/pages/pdf-226.md",
+      "sha256": "a1076f9ff4d83a5e4232fb72a149207b6520fcda98bc3d4d89aac53ccc4ab226",
+      "source_image_sha256": "c121e5301b4a22dd5709fde035e99d6354c31be848248dd64d47f64660c7327e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8.4",
+          "title": "解线性方程组的超松弛迭代法"
+        }
+      ],
+      "formula_ids": [
+        "8.4.1",
+        "8.4.2",
+        "8.4.3",
+        "8.4.4",
+        "8.4.5",
+        "8.4.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 227,
+      "printed_page": 214,
+      "path": "staging/ch08/pages/pdf-227.md",
+      "sha256": "fece01e9f8c05169b78e491b331891702fd6b5224cecaf49c9420ea41880894e",
+      "source_image_sha256": "6837b019b453cea5c8255f759d2d87600ad36b7207c77e7179f704c0d289ebbe",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.4.7",
+        "8.4.8"
+      ],
+      "figures": [],
+      "tables": [
+        "8.1"
+      ],
+      "notes": [
+        "完整转录表8.1全部10组松弛因子与迭代次数；放大核对例8.11所印迭代向量与2范数上界的数值不一致，原值保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 228,
+      "printed_page": 215,
+      "path": "staging/ch08/pages/pdf-228.md",
+      "sha256": "b7f06e86112b076a547950e219ff1e108ef366f049ebfcc0d27ece5c93b0b35d",
+      "source_image_sha256": "d871cdbb7b11ea2348e09a4e32eab71dce4df6e1cae3ce9ee2f7cd0449a23996",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 229,
+      "printed_page": 216,
+      "path": "staging/ch08/pages/pdf-229.md",
+      "sha256": "7e943a9d2710427ff99dd98fe80fbac51f5deab9b54f7ee7e995b6e937b05edd",
+      "source_image_sha256": "7d7563c5ece5da8ae89cc992ee2d0c7a2e29e436190d740e80658fe03f62a97a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "8.4.9",
+        "8.4.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "放大核对证明中sigma+2sigma、sigma+2omega，以及SOR算法步5(1)第二求和下限j=i+1；三处原式均保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 230,
+      "printed_page": 217,
+      "path": "staging/ch08/pages/pdf-230.md",
+      "sha256": "375be8146ddcfcfa202f46a78c671af6aa1759179bf72c4b52bea4568790fc62",
+      "source_image_sha256": "3ed9af0f3e86c1e12a0e5b544f4df798373c82c7ac68d6153787bb6105b3103e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8.summary",
+          "title": "小结"
+        },
+        {
+          "id": "8.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 231,
+      "printed_page": 218,
+      "path": "staging/ch08/pages/pdf-231.md",
+      "sha256": "d632e157b746002b7953ede0afe33bdef285a634343bebacf39150702c33d29a",
+      "source_image_sha256": "9278a02f35d8d46dcbce2c16662a88803be87073c443578e348cc10db4ac1522",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "完整转录习题5续至12(2)；放大核对习题5(1)重复x2、习题12残差下标xi、lambda*以及误差递推负号，原文保留并另注。",
+        "第8题(2)原书同样使用B0表示G-S迭代矩阵，保留。第9/10题条件已与back及ch13核对。"
+      ]
+    },
+    {
+      "pdf_page": 232,
+      "printed_page": 219,
+      "path": "staging/ch08/pages/pdf-232.md",
+      "sha256": "c68588353de97fd4fa9290cd7c660c7a3b91e04aee835cdad0b56851c1c134e5",
+      "source_image_sha256": "44db0fe5ce3d17d1fac25162828a40b0ec9fec941fd20b5322e873bd692b2379",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "完整转录习题12(2)续至20；页首残差表达式与上页误差定义的符号关系已交叉标注。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch08-E013",
+      "pdf_page": 217,
+      "printed_page": 204,
+      "location": "式8.2.1下方非零条件",
+      "source_text": "a_ij!=0 (i=1,2,...,n)",
+      "assessment": "疑似原书下标错误",
+      "evidence": "独立交叉复核ch07b指出后，以原图内存裁切独立确认j有下伸；原文没有j的范围，而后续除数为对角元a_ii。已保留原印a_ij并另注。"
+    },
+    {
+      "id": "ch08-E009",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题5(1)第二个方程",
+      "source_text": "0.4x1+x2+0.8x2=2",
+      "assessment": "疑似原书下标错误",
+      "evidence": "原图已放大目视重复x2。习题7将该组作为对称正定矩阵的考察对象，最后项为0.8x3时才与所示对称结构一致。原式保留。"
+    },
+    {
+      "id": "ch08-E010",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12残差定义",
+      "source_text": "第二个求和内a_ij x_i^(k)",
+      "assessment": "疑似原书下标错误",
+      "evidence": "原图已放大目视xi。对照G-S公式及本题(1)，被加项应含x_j^(k)。原式保留。"
+    },
+    {
+      "id": "ch08-E011",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12(2)误差定义",
+      "source_text": "epsilon^(k)=x^(k)-lambda*",
+      "assessment": "疑似原书符号错误",
+      "evidence": "原图已放大目视lambda*；紧随原文解释的是精确解x*。原式保留。"
+    },
+    {
+      "id": "ch08-E012",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12(2)误差递推",
+      "source_text": "epsilon_i^(k+1)=epsilon_i^(k)-r_i^(k+1)/a_ii",
+      "assessment": "原书误差符号与递推不一致",
+      "evidence": "若按本题定义epsilon=x-x*，由(1)的加号更新可知误差递推也应为加号。原印负号保留，并标注矛盾；PDF232的正号残差式也与该定义不一致，若误差定义改用x*-x则两式一致。"
+    },
+    {
+      "id": "ch08-E006",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "定理8.10证明平方差因式",
+      "source_text": "omega sigma (sigma+2sigma)(omega-2)",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视。展开左侧平方差得omega sigma (sigma+2alpha)(omega-2)，与8.4.10一致。原式保留。"
+    },
+    {
+      "id": "ch08-E007",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "定理8.10证明分母非零说明",
+      "source_text": "(sigma+2omega)^2+omega^2 beta^2!=0",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视。上文lambda的分母模方为(sigma+alpha omega)^2+omega^2 beta^2。原式保留。"
+    },
+    {
+      "id": "ch08-E008",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "SOR算法步5(1)",
+      "source_text": "第二个求和下限j=i+1",
+      "assessment": "疑似原书算法漏项",
+      "evidence": "原图已放大目视。步5(3)执行xi<-xi+p，因此p为校正量；对照8.4.6，第二求和应从j=i开始，当前原式漏aii xi。原式保留。"
+    },
+    {
+      "id": "ch08-E005",
+      "pdf_page": 227,
+      "printed_page": 214,
+      "location": "例8.11第11次迭代向量与误差界",
+      "source_text": "x^(11)=(-0.99999646,-1.00000310,-0.99999953,-0.99999912)^T; ||epsilon^(11)||_2<=0.46e-5",
+      "assessment": "原书所印数值相互不一致",
+      "evidence": "原图已放大目视，原值保留。所印向量实际2范数误差4.8100831594e-6，大于4.6e-6；有理数从零迭代11次的误差为4.4938645773e-6。"
+    },
+    {
+      "id": "ch08-E004",
+      "pdf_page": 224,
+      "printed_page": 211,
+      "location": "定义8.5分块阶数范围",
+      "source_text": "1<=r<=n",
+      "assessment": "疑似原书边界排印错误",
+      "evidence": "原图已放大目视。为保证A11与A22均为非空低阶方阵，应要求1<=r<=n-1；r=n导致A22为零阶。原文保留并另注。"
+    },
+    {
+      "id": "ch08-E003",
+      "pdf_page": 219,
+      "printed_page": 206,
+      "location": "例8.2误差无穷范数",
+      "source_text": "||epsilon^(5)||_inf=0.00157",
+      "assessment": "疑似原书小数位错误",
+      "evidence": "原图已放大目视，原值保留。由所印向量与精确解计算为0.000157；有理数G-S迭代5次得误差无穷范数0.00015761335888942013。"
+    },
+    {
+      "id": "ch08-E001",
+      "pdf_page": 216,
+      "printed_page": 203,
+      "location": "例8.1第10次迭代数值",
+      "source_text": "x^(10)=(3.000032,1.999838,0.9998813)^T; ||epsilon^(10)||_inf=0.000187",
+      "assessment": "疑似原书数值错误",
+      "evidence": "原图已放大目视。按式8.1.4从零向量用有理数作10次迭代得(3.00003181406973,1.9998740186108068,0.9998812605453542)，误差无穷范数0.0001259813891930972；按原印向量计算的无穷范数则为0.000162。原文保留，另注。"
+    },
+    {
+      "id": "ch08-E002",
+      "pdf_page": 218,
+      "printed_page": 205,
+      "location": "式8.2.3求和下限",
+      "source_text": "i=1, j!=i",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视下限为i=1；对照式8.2.2及被加项a_ij x_j^(k)，求和下限应为j=1。原式保留，另注。"
+    }
+  ],
+  "validation_notes": [
+    "结构核验通过：18页元数据、原页链接、资产链接、Markdown数学块、LaTeX环境配对和文件SHA256均一致；32个编号公式无重复。",
+    "从18页提取的601个行内与独立数学片段用XeLaTeX和amsmath成功编译；该验证仅针对语法，不替代原图内容核验，产物位于staging/ch08/validation。",
+    "PDF215–232共18页均已逐一打开原图；正文、公式、矩阵、表8.1、SOR算法、小结和习题1–20完整转录。",
+    "表8.1所列10组omega对应的迭代次数已以双精度数值计算复核一致；例8.1/8.2/8.11另以有理数迭代定位原印数值疑误。",
+    "逐一打开原始页图并以目视转录；疑难处另存放大裁切。仅记录实际已经保存且目视核对完成的页。",
+    "本lane实际章名为第8章解线性方程组的迭代法；指定PDF页范围215–232。"
+  ]
+}

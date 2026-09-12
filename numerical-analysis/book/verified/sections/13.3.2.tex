@@ -1,0 +1,88 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={校正技术的设计机理},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{校正技术的设计机理}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{13.3.2 校正技术的设计机理}\label{ux6821ux6b63ux6280ux672fux7684ux8bbeux8ba1ux673aux7406}
+
+开方算法虽然结构简单，但它深刻地揭示了校正技术的设计思想。前已指出，\textbf{算法设计的基本原则是将复杂计算化归为一系列简单计算的重复。}迭代法突出地体现了这一原则，其设计机理可概括为``以简御繁，逐步求精''。
+
+\textbf{所谓``以简御繁''是指构造某个简化方程近似替代原先比较复杂的方程，以确定所给预报值的校正量。}这种用于计算校正量的简化方程称作\textbf{校正方程}。关于校正方程有以下两项基本要求。
+
+（1）\textbf{逼近性}：它与所给方程是近似的。逼近程度越高，所获得的校正量越准确。
+
+（2）\textbf{简单性}：校正方程越简单，所需计算越小。求校正量通常采取显式计算。
+
+应当指出的是，在设计校正方程时，上述逼近性与简单性两项要求往往会顾此失彼。逼近性高会导致校正方程的复杂化，使计算量显著增加。在具体设计校正方程时需要权衡得失。
+
+如何利用简单的校正方程获得原方程的解呢？为使简单转化为复杂，一种行之有效的方法是递推。对于给定的某个预报值 \(x_0\)，利用校正方程计算校正量，从而得出校正值 \(x_1\)，这就完成了迭代过程的一步。是否需要继续迭代取决于校正量是否满足
+
+\href{../../source-images/pdf-313.jpeg}{原页图像}
+
+精度要求。如果不满足精度要求，则用老的校正值充当新的预报值重复上述步骤。如此继续下去，直到获得的校正值满足精度要求为止。由此可见，\textbf{迭代过程是个``逐步求精''的递归过程。}
+
+\end{document}

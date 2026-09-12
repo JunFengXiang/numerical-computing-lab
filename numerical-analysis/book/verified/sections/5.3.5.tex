@@ -1,0 +1,137 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={四阶 Runge-Kutta 方法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{四阶 Runge-Kutta 方法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.3.5 四阶 Runge-Kutta 方法}\label{ux56dbux9636-runge-kutta-ux65b9ux6cd5}
+
+继续上述过程，经过较复杂的数学演算，可以导出各种四阶 Runge-Kutta 格式，下列\textbf{经典格式}是其中常用的一个：
+
+\[
+\begin{cases}
+y_{n+1}=y_n+\dfrac{h}{6}(K_1+2K_2+2K_3+K_4),\\
+K_1=f(x_n,y_n),\\
+K_2=f\left(x_n+\dfrac{h}{2},y_n+\dfrac{h}{2}K_1\right),\\
+K_3=f\left(x_n+\dfrac{h}{2},y_n+\dfrac{h}{2}K_2\right),\\
+K_4=f(x_n+h,y_n+hK_3).
+\end{cases}\tag{5.3.13}
+\]
+
+四阶 Runge-Kutta 方法的每一步需要四次计算函数值 \(f\)，可以证明其截断误差为 \(O(h^5)\)。其证明极其烦琐，这里从略。
+
+\textbf{例 5.4} 设取步长 \(h=0.2\)，从 \(x=0\) 直到 \(x=1\) 用四阶 Runge-Kutta 方法求解初值问题 (5.2.2)。
+
+\textbf{解} 这里，经典的四阶 Runge-Kutta 格式 (5.3.13) 具有如下形式：
+
+\[
+\begin{cases}
+y_{n+1}=y_n+\dfrac{h}{6}(K_1+2K_2+2K_3+K_4),\\
+K_1=y_n-\dfrac{2x_n}{y_n},\\
+K_2=y_n+\dfrac{h}{2}K_1-\dfrac{2x_n+h}{y_n+\dfrac{h}{2}K_1},\\
+K_3=y_n+\dfrac{h}{2}K_2-\dfrac{2x_n+h}{y_n+\dfrac{h}{2}K_2},\\
+K_4=y_n+hK_3-\dfrac{2(x_n+h)}{y_n+hK_3}.
+\end{cases}
+\]
+
+表 5.4 列出计算结果 \(y_n\)，其中 \(y(x_n)\) 仍表示准确解。
+
+\href{../../source-images/pdf-132.jpeg}{原页}
+
+比较例 5.4 和例 5.2 的计算结果，显然以四阶 Runge-Kutta 方法的精度为高。注意，虽然四阶 Runge-Kutta 方法的计算量（每一步要四次计算函数 \(f\)）比改进的 Euler 方法（它是一种二阶 Runge-Kutta 方法，每一步只要两次计算函数 \(f\)）大一倍，但由于这里放大了步长 \((h=0.2)\)，造出表 5.4 和表 5.2 所耗费的计算量几乎相同。这个例子又一次显示了选择算法的重要意义。
+
+\textbf{表 5.4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(x_n\) & \(y_n\) & \(y(x_n)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0.2 & 1.1832 & 1.1832 \\
+0.4 & 1.3417 & 1.3416 \\
+0.6 & 1.4833 & 1.4832 \\
+0.8 & 1.6125 & 1.6125 \\
+1.0 & 1.7321 & 1.7321 \\
+\end{longtable}
+}
+
+然而值得指出的是，Runge-Kutta 方法的推导基于 Taylor 展开方法，因而它要求所求的解具有较好的光滑性质。反之，如果解的光滑性差，那么，使用四阶 Runge-Kutta 方法可能反而不如使用改进的 Euler 方法求得的数值解的精度高。实际计算时，应当针对问题的具体特点选择合适的算法。
+
+\end{document}

@@ -1,0 +1,264 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Cotes 系数},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Cotes 系数}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.2.1 Cotes 系数}\label{cotes-ux7cfbux6570}
+
+设将积分区间 \([a,b]\) 划分为 \(n\) 等份，步长 \(h=\dfrac{b-a}{n}\)，选取等距节点 \(x_k=a+kh\) 构
+
+\href{../../source-images/pdf-096.jpeg}{原页图像}
+
+造出的插值型求积公式
+
+\[
+I_n=(b-a)\sum_{k=0}^n C_k^{(n)}f(x_k)
+\tag{4.2.1}
+\]
+
+称为 Newton-Cotes 公式，其中 \(C_k^{(n)}\) 称为 Cotes 系数。按式（4.1.6），引进变换
+
+\[
+x=a+th,
+\]
+
+则有
+
+\[
+C_k^{(n)}=\frac{h}{b-a}\int_0^n\prod_{\substack{j=0\\j\ne k}}^n\frac{t-j}{k-j}\,\mathrm{d}t
+=\frac{(-1)^{n-k}}{nk!(n-k)!}\int_0^n\prod_{\substack{j=0\\j\ne k}}^n(t-j)\,\mathrm{d}t.
+\tag{4.2.2}
+\]
+
+由于是多项式的积分，Cotes 系数的计算不会遇到实质性的困难。当 \(n=1\) 时，
+
+\[
+C_0^{(1)}=C_1^{(1)}=\frac12,
+\]
+
+这时求积公式是我们所熟悉的梯形公式（4.1.1）。
+
+当 \(n=2\) 时，按式（4.2.2），Cotes 系数为
+
+\[
+C_0^{(2)}=\frac14\int_0^2(t-1)(t-2)\,\mathrm{d}t=\frac16,
+\]
+
+\[
+C_1^{(2)}=-\frac12\int_0^2t(t-2)\,\mathrm{d}t=\frac46,\qquad
+C_2^{(2)}=\frac14\int_0^2t(t-1)\,\mathrm{d}t=\frac16.
+\]
+
+相应的求积公式是下列 Simpson 公式：
+
+\[
+S=\frac{b-a}{6}\left[f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right].
+\tag{4.2.3}
+\]
+
+而 \(n=4\) 的 Newton-Cotes 公式则特别称为 Cotes 公式，其形式为
+
+\[
+C=\frac{b-a}{90}[7f(x_0)+32f(x_1)+12f(x_2)+32f(x_3)+7f(x_4)].
+\tag{4.2.4}
+\]
+
+这里 \(x_k=a+kh\)，\(h=\dfrac{b-a}{4}\)。
+
+表 4.1 列出 Cotes 系数表开头的一部分。
+
+表 4.1
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_0^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_1^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_2^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_3^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_4^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_5^{(n)}\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & \(\frac12\) & \(\frac12\) & & & & \\
+2 & \(\frac16\) & \(\frac23\) & \(\frac16\) & & & \\
+3 & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & & \\
+4 & \(\frac7{90}\) & \(\frac{16}{45}\) & \(\frac2{15}\) & \(\frac{16}{45}\) & \(\frac7{90}\) & \\
+5 & \(\frac{19}{288}\) & \(\frac{25}{96}\) & \(\frac{25}{144}\) & \(\frac{25}{144}\) & \(\frac{25}{96}\) & \(\frac{19}{288}\) \\
+\end{longtable}
+}
+
+\href{../../source-images/pdf-097.jpeg}{原页图像}
+
+表 4.1（续表）
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_0^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_1^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_2^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_3^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_4^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_5^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_6^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_7^{(n)}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(C_8^{(n)}\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+6 & \(\frac{41}{840}\) & \(\frac9{35}\) & \(\frac9{280}\) & \(\frac{34}{105}\) & \(\frac9{280}\) & \(\frac9{35}\) & \(\frac{41}{840}\) & & \\
+7 & \(\frac{751}{17280}\) & \(\frac{3577}{17280}\) & \(\frac{1323}{17280}\) & \(\frac{2989}{17280}\) & \(\frac{2989}{17280}\) & \(\frac{1323}{17280}\) & \(\frac{3577}{17280}\) & \(\frac{751}{17280}\) & \\
+8 & \(\frac{989}{28350}\) & \(\frac{5888}{28350}\) & \(\frac{-928}{28350}\) & \(\frac{10496}{28350}\) & \(\frac{-4540}{28350}\) & \(\frac{10496}{28350}\) & \(\frac{-928}{28350}\) & \(\frac{5888}{28350}\) & \(\frac{989}{28350}\) \\
+\end{longtable}
+}
+
+可以看到，当 \(n\geq8\) 时，Cotes 系数有正有负，这时稳定性得不到保证。因此，实际计算中不用高阶的 Newton-Cotes 公式。
+
+\begin{quote}
+校注（agent 补充，CH04A-E01）：上述``当 \(n\geq8\) 时''若理解为对所有这类整数 \(n\) 成立，则存在原书表述错误。保留原文。由式（4.2.2）直接积分，\(n=9\) 时系数为 \[
+\left(\frac{2857}{89600},\frac{15741}{89600},\frac{27}{2240},\frac{1209}{5600},\frac{2889}{44800},\frac{2889}{44800},\frac{1209}{5600},\frac{27}{2240},\frac{15741}{89600},\frac{2857}{89600}\right),
+\] 全部为正；\(n=8\) 出现负系数这一事实仍成立。上述反例为 agent 按原公式进行的符号积分核验，不属于原书正文。
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 95 的校注}\label{ux539fux4e66-pdf-ux9875-95-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-095.md}{完整原页转录} · \href{../../source-images/pdf-095.jpeg}{原页图像}
+
+\begin{quote}
+校注（agent 补充）：式（4.1.7）原扫描将导数阶数印作 \(f^{n+1}(\xi)\)，未带括号；此处按原式保留。由其引用的插值余项定理及上下文，这里表示 \(n+1\) 阶导数。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04A-E01}：原书 PDF 页 97
+\end{itemize}
+
+\end{document}

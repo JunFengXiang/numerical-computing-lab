@@ -1,0 +1,120 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={变步长的 Runge-Kutta 方法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{变步长的 Runge-Kutta 方法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.3.6 变步长的 Runge-Kutta 方法}\label{ux53d8ux6b65ux957fux7684-runge-kutta-ux65b9ux6cd5}
+
+单从每一步看，步长越小，截断误差就越小；但随着步长的缩小，在一定求解范围内所要完成的步数就增加了。步数的增加不但引起计算量的增大，而且可能导致舍入误差的严重积累。因此同积分的数值计算一样，微分方程的数值解法也有个选择步长的问题。
+
+在选择步长时，需要考虑两个问题：
+
+（1）怎样衡量和检验计算结果的精度？
+
+（2）如何依据所获得的精度处理步长？
+
+考察经典的四阶 Runge-Kutta 格式 (5.3.13)。从节点 \(x_n\) 出发，先以 \(h\) 为步长求出一个近似值，作为 \(y_{n+1}^{(h)}\)，由于格式的局部截断误差为 \(O(h^5)\)，故有
+
+\[
+y(x_{n+1})-y_{n+1}^{(h)}\approx Ch^5;\tag{5.3.14}
+\]
+
+然后将步长折半，即取 \(\dfrac{h}{2}\) 为步长从 \(x_n\) 跨两步到 \(x_{n+1}\)，再求得一个近似值 \(y_{n+1}^{(h/2)}\)，每跨一步的截断误差是 \(C\left(\dfrac{h}{2}\right)^5\)，因此有
+
+\[
+y(x_{n+1})-y_{n+1}^{(h/2)}=2C\left(\frac{h}{2}\right)^5;\tag{5.3.15}
+\]
+
+比较式 (5.3.14) 和式 (5.3.15) 可以看到，步长折半后，误差大约减小到 \(\dfrac{1}{16}\)，即有
+
+\[
+\frac{y(x_{n+1})-y_{n+1}^{(h/2)}}{y(x_{n+1})-y_{n+1}^{(h)}}\approx\frac{1}{16}.
+\]
+
+由此易得下列事后估计式
+
+\[
+y(x_{n+1})-y_{n+1}^{(h/2)}\approx\frac{1}{15}(y_{n+1}^{(h/2)}-y_{n+1}^{(h)}).
+\]
+
+\href{../../source-images/pdf-133.jpeg}{原页}
+
+这样，可以通过检查步长折半前后两次计算结果的偏差
+
+\[
+\Delta=|y_{n+1}^{(h/2)}-y_{n+1}^{(h)}|
+\]
+
+来判定所选的步长是否合适。具体地说，将分以下两种情况处理：
+
+（1）对于给定的精度 \(\varepsilon\)，如果 \(\Delta>\varepsilon\)，应反复将步长折半进行计算，直至 \(\Delta<\varepsilon\) 为止，这时取最终得到的 \(y_{n+1}^{(h/2)}\) 作为结果；
+
+（2）如果 \(\Delta<\varepsilon\)，则反复将步长加倍，直至 \(\Delta>\varepsilon\) 为止，这时再将步长折半一次，就得到所要的结果。
+
+这种通过加倍或折半处理步长的方法称为\textbf{变步长方法}。表面上看，为了选择步长，每一步的计算量增加了，但从总体考虑往往是合算的。
+
+\end{document}

@@ -1,0 +1,7 @@
+{
+  "model": "mlx-community/GLM-OCR-bf16",
+  "revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "local_dir": ".work/models/GLM-OCR-bf16",
+  "precision": "bf16",
+  "documents_uploaded": false
+}

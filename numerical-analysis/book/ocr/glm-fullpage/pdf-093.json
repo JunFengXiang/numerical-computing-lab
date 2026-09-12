@@ -1,0 +1,20 @@
+{
+  "pdf_page": 93,
+  "source_image": "source-images/pdf-093.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "35cc678a2cfa3925a420e555159bf282b85fa8242285343f035b9af6fae41f3e",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 486,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.03,
+  "created_utc": "2026-09-12T10:15:04.033104+00:00",
+  "raw_text_sha256": "cf0f52400d3209973e5278890804842caedbd0660d639a6a9535f836b4b417e9",
+  "raw_text": "第 4 章 数值积分与数值微分\n\n4.1 引言\n\n4.1.1 数值求积的基本思想\n\n有很多实际问题常常需要计算积分才能求解.有些数值方法,如微分方程和积分方程的求解,也都和积分计算有联系.\n\n依据人们所熟知的微积分基本定理,对于积分 $I = \\int_{a}^{b} f(x) \\mathrm{d}x$,只要找到被积函数 $f(x)$ 的原函数 $F(x)$,便有下列 Newton-Leibniz 公式:\n\n$$\\int_{a}^{b} f(x) \\mathrm{d}x = F(b) - F(a).$$\n\n但实际使用这种求积方法往往有困难,因为大量的被积函数,诸如 $\\frac{\\sin x}{x}, \\sin x^2$ 等等,找不到用初等函数表示的原函数;另外,当 $f(x)$ 是由测量或数值计算给出的一张数据表时,Newton-Leibniz 公式也不能直接运用.因此有必要研究积分的数值计算问题.\n\n积分中值定理告诉我们,在积分区间 $(a,b)$ 内存在一点 $\\xi$,有下式成立:\n\n$$\\int_{a}^{b} f(x) \\mathrm{d}x = (b-a) f(\\xi).$$\n\n就是说,底为 $b-a$ 而高为 $f(\\xi)$ 的矩形面积恰等于所求曲边梯形的面积 $I$ (见图 4.1).问题在于点 $\\xi$ 的具体位置一般是不知道的,因而难以准确算出 $f(\\xi)$ 的值.我们将 $f(\\xi)$ 称为区间 $[a,b]$ 上的平均高度.这样,只要对平均高度 $f(\\xi)$ 提供一种算法,相应地便获得一种数值求积方法.\n\n如果用两端点的“高度”$f(a)$ 与 $f(b)$ 取算术平均作为平均高度 $f(\\xi)$ 的近似值,这样导出的求积公式\n\n$$T = \\frac{b-a}{2} [f(a) + f(b)]$$\n\n(4.1.1)\n\n便是我们所熟悉的梯形公式(几何意义参见图 4.2).如果改用区间中点 $c = \\frac{a+b}{2}$ 的"
+}

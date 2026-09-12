@@ -1,0 +1,60 @@
+{
+  "page_notes": {
+    "261": ["保留原章名前的星号；本页含下篇篇名。"],
+    "266": ["镜像偶复制为双点记号，奇复制为单点记号，已放大核对；表 10.1 全表转录。"],
+    "270": ["CH10-E002：未归一化 Hadamard 阵的正交阵术语疑误，保留原文另注。"],
+    "271": ["CH10-E001：两处 H_{N/2}(N/2+i,j) 均为原图印式，保留并单列校注；原文定理 1 照录，对应前页定理 10.1。"],
+    "272": ["原图 10.5 顶部圆形未印文字标签；正文重复的字按原页照录。"],
+    "274": ["CH10-E004：式 (10.4.4) 的 l 上限原印 2^k，保留原式并说明应为 2^{k-1}。"],
+    "275": ["算法 10.1 与本章小结完整转录；本章无单列章末习题；原文 Hartly 拼写照录。"]
+  },
+  "source_errata": [
+    {
+      "id": "CH10-E001",
+      "pdf_page": 271,
+      "printed_page": 258,
+      "kind": "matrix_index",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "两组未编号公式的第二式均含 H_{N/2}(N/2+i,j)",
+      "analysis": "N/2 阶矩阵的行指标 N/2+i 超出本章 0 至 N/2-1 的范围。由定理 10.1，两处应为 H_{N/2}(i,j)。原文及式 (10.4.2) 均保留。",
+      "evidence": "staging/ch10/assets/erratum-p271-indices.png"
+    },
+    {
+      "id": "CH10-E002",
+      "pdf_page": 270,
+      "printed_page": 257,
+      "kind": "terminology",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "Hadamard 阵是对称正交阵",
+      "analysis": "按本章未归一化的定义，H_N^T H_N=N I，严格说 H_N/sqrt(N) 才是通常定义的正交矩阵。原文术语照录；其逆变换 1/N 因子正确。"
+    },
+    {
+      "id": "CH10-E003",
+      "pdf_page": 272,
+      "printed_page": 259,
+      "kind": "duplicated_character",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "使问题的的规模减半",
+      "analysis": "原图重复的字已照录。"
+    },
+    {
+      "id": "CH10-E004",
+      "pdf_page": 274,
+      "printed_page": 261,
+      "kind": "algorithm_index_range",
+      "status": "source_preserved_with_agent_note",
+      "formula_id": "10.4.4",
+      "source_text": "l=1,2,...,2^k",
+      "analysis": "算式按 (l-1)N_{k-1} 定位上一阶段的数据段，应有 l=1,...,2^{k-1}。原上限会令数据索引超出 0 至 N-1。前文描述第 k 阶段结果段数的 2^k 不需更改。算法 10.1 对此式的引用受同一范围疑误影响。",
+      "evidence": "staging/ch10/assets/erratum-p274-range.png"
+    }
+  ],
+  "validation_notes": [
+    "所有已列入 pages 的页均通过 tools.view_image 实际打开原页；未使用 OCR 候选替代原页核对。",
+    "图为 source-images 原图裁切，保留图号、全部文字标签，另有可检索图意；公式及数值矩阵已全文转录。",
+    "排版规范化仅调整中文标点、数学空白和矩阵分组线，不静默修改原书数学内容。",
+    "PDF 261 至 275 的第二遍原页目视复核已完成，重点复看跨页衔接、矩阵符号、公式编号、标题与算法上下标。",
+    "validate_lane.py 已通过：15 页正文及源图 SHA256、链接、数学环境与公式编号检查；12 个正负号矩阵实例的尺寸检查；Walsh 与 Hadamard 矩阵元素对照递推关系、Walsh 解析式中点取值检查。",
+    "算法范围校注另以 N=2,4,8 的全部基向量作验证，采用校注中的 l 上限 2^(k-1) 与 Hadamard 直接变换一致；正文保留原印 2^k。验证记录在 staging/ch10/validation.json。"
+  ]
+}

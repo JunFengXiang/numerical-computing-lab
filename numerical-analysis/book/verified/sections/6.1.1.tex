@@ -1,0 +1,105 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={逐步搜索法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{逐步搜索法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{6.1.1 逐步搜索法}\label{ux9010ux6b65ux641cux7d22ux6cd5}
+
+为明确起见，不妨假定 \(f(a)<0,f(b)>0\)。从有根区间 \([a,b]\) 的左端点 \(x_0=a\) 出发，按某个预定的步长 \(h\)（譬如取 \(h=\dfrac{b-a}{N}\)，\(N\) 为正整数）一步一步地向右跨，每跨一步进行一次根的``搜索''，即检查节点 \(x_k=a+kh\) 上的函数值 \(f(x_k)\) 的符号，一旦发现节点 \(x_k\) 与端点 \(a\) 的函数值异号，即 \(f(x_k)>0\)①，则可以确定一个缩小了的有根区间 \([x_{k-1},x_k]\)，其宽度等于预定的步长 \(h\)。
+
+\textbf{例 6.1} 考察方程 \(f(x)=x^3-x-1=0\)。注意到 \(f(0)<0,f(2)>0\)，知 \(f(x)\) 在区间 \((0,2)\) 内至少有一个实根。
+
+\textbf{解} 设从 \(x=0\) 出发，取 \(h=0.5\) 为步长向右进行根的搜索，列表记录各个节点上函数值的符号（见表 6.1），我们发现区间 \((1.0,1.5)\) 内必有一根。
+
+表 6.1
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+\(x\) & \(0\) & \(0.5\) & \(1.0\) & \(1.5\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(f(x)\) 的符号 & \(-\) & \(-\) & \(-\) & \(+\) \\
+\end{longtable}
+}
+
+在具体运用上述方法时，步长 \(h\) 的选择是个关键。很明显，只要步长 \(h\) 取得足够小，利用这种方法可以得到具有任意精度的近似根。不过当 \(h\) 缩小时，所要搜索的步数相应增多，从而使计算量增大。因此，如果精度要求比较高，单用这种逐步搜索方法是不合算的。下述二分法可以看作逐步搜索方法的一种改进。
+
+\end{document}

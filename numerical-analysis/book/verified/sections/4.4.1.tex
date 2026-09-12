@@ -1,0 +1,159 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss 点},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss 点}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.4.1 Gauss 点}\label{gauss-ux70b9}
+
+Gauss 公式的求积节点称为 Gauss 点。
+
+\textbf{定义 4.3}　如果求积公式（4.4.1）具有 \(2n+1\) 次代数精度，则称其节点 \(x_k\)（\(k=0,1,\cdots,n\)）是 Gauss 点。
+
+下面从分析 Gauss 点的特性着手研究 Gauss 公式的构造问题。
+
+\textbf{定理 4.4}　对于插值型求积公式（4.4.1），其节点 \(x_k\)（\(k=0,1,\cdots,n\)）是 Gauss 点的充分必要条件，是以这些点为零点的多项式 \(\displaystyle\omega(x)=\prod_{k=0}^{n}(x-x_k)\) 与任意次数不超过 \(n\) 的多项式 \(P(x)\) 均正交，即
+
+\[
+\int_a^b P(x)\omega(x)\,\mathrm{d}x=0.
+\tag{4.4.2}
+\]
+
+\textbf{证明}　先证必要性。设 \(P(x)\) 是任意次数不超过 \(n\) 的多项式，则 \(P(x)\omega(x)\) 的次数不超过 \(2n+1\)。因此，如果 \(x_0,x_1,\cdots,x_n\) 是 Gauss 点，则求积公式（4.4.1）对于 \(P(x)\omega(x)\) 能准确成立，即有
+
+\[
+\int_a^b P(x)\omega(x)\,\mathrm{d}x
+=\sum_{k=0}^{n}A_kP(x_k)\omega(x_k).
+\]
+
+但 \(\omega(x_k)=0\)（\(k=0,1,\cdots,n\)），故式（4.4.2）成立。
+
+再证充分性。对于任意给定的次数不超过 \(2n+1\) 的多项式 \(f(x)\)，用 \(\omega(x)\) 除 \(f(x)\)，记商为 \(P(x)\)，余式为 \(Q(x)\)，\(P(x)\) 与 \(Q(x)\) 都是次数不超过 \(n\) 的多项式：
+
+\[
+f(x)=P(x)\omega(x)+Q(x).
+\]
+
+而利用式（4.4.2），得
+
+\[
+\int_a^b f(x)\,\mathrm{d}x=\int_a^b Q(x)\,\mathrm{d}x.
+\tag{4.4.3}
+\]
+
+由于所给求积公式（4.4.1）是插值型的，它对于 \(Q(x)\) 能准确成立，即
+
+\[
+\int_a^b Q(x)\,\mathrm{d}x=\sum_{k=0}^{n}A_kQ(x_k).
+\]
+
+再注意到 \(\omega(x_k)=0\)，知 \(Q(x_k)=f(x_k)\)，从而有
+
+\[
+\int_a^b Q(x)\,\mathrm{d}x=\sum_{k=0}^{n}A_kf(x_k),
+\]
+
+于是由式（4.4.3）知
+
+\[
+\int_a^b f(x)\,\mathrm{d}x=\sum_{k=0}^{n}A_kf(x_k).
+\]
+
+（证明续下页。）
+
+\href{../../source-images/pdf-108.jpeg}{原页图像}
+
+\subsubsection{4.4.1 Gauss 点（续）}\label{gauss-ux70b9ux7eed}
+
+可见求积公式（4.4.1）对于一切次数不超过 \(2n+1\) 的多项式均能准确成立，因此 \(x_k\)（\(k=0,1,\cdots,n\)）是 Gauss 点。证毕。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 108 的校注}\label{ux539fux4e66-pdf-ux9875-108-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-108.md}{完整原页转录} · \href{../../source-images/pdf-108.jpeg}{原页图像}
+
+校注记录：CH04B-E002。
+
+\begin{quote}
+校注（agent 补充，CH04B-E002）：表 4.5 的 \(n=3\) 第二对节点在原扫描中印为 \(\pm0.339\,881\,0\)，本表原样保留；这是疑似原书数值排印错误。\(P_4(x)=(35x^4-30x^2+3)/8\) 的较小正零点为 \(\sqrt{(15-2\sqrt{30})/35}\approx0.339\,981\,0436\)，保留七位小数应为 \(0.339\,981\,0\)。原表权重 \(0.652\,145\,2\) 未改动。\href{../assets/ch04b/review-table-4-5.png}{表 4.5 原扫描局部}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04B-E002}：原书 PDF 页 108
+\end{itemize}
+
+\end{document}

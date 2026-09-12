@@ -1,0 +1,40 @@
+{
+  "pdf_pages": 39,
+  "source_start_mapping": {},
+  "out_of_page_text_spans": [],
+  "compile_errors": 0,
+  "overfull_warnings": 0,
+  "missing_characters": 0,
+  "visual_review": "Initial 39-page contact sheets and full-size pages 2,4,26,34,37,39 reviewed; after E014 refresh, only exported page 27 changed and was reopened at full size; all other rendered pages pixel-identical.",
+  "render_review_scope": "layout and mathematical typography; source transcription review recorded separately per page",
+  "pdf_sha256": "4c0cf1018943c7907c5dfb174d7ce012bde0e9a28bd5b3c272178ef276195011",
+  "tex_sha256": "02f2156699ae50f3ff01fc285fd176aeb17ff4a7860914f1806ff4c42a8640b7",
+  "source_md_sha256": {
+    "196": "96304bcd8e29eba38bacf12cf938488f468e362894018718c8216f69b60e7cc4",
+    "197": "be6eaabc86a68c1b8c03b4f754bfb4ad1fc599dcddf156affc0b40f8d1e2878c",
+    "198": "3e5eeebdf588f883c84978759ea1cf895acec9a0310c6b5c5ce1118e2c7bdaea",
+    "199": "4c98fb77ee3ba070796305e63cea57cfa84a5924f259f586e5be1e87ccca535a",
+    "200": "eca6421f2aae2b8760a59085802c1c7f2a4124a67f7e8e674f10705e97408afb",
+    "201": "f08d186ef54eafcf311acf569e663ae2d380fa5f087b8605bd254468ec3d6e54",
+    "202": "7070e9baf9fb70c91be4b8db31ace0b98246d34f96e4b46c8f0d7df786d3f478",
+    "203": "c8d70f661ad316eac27796c0bee3bfdb014760490390ca280046f31b395e3382",
+    "204": "72c06f07d8a9ddf256759b0cbc194b045c475b0ff1a3228a7da1e0f18a9039dc",
+    "205": "dcbe02ec20b7f5d71ec01dac20c3fdd0dd47d581e79048a39652d25f79dc6ff3",
+    "206": "3e4553d8f5b4336740ff8621b9b1e1b1585c73f59012b2f03127861d39738e7f",
+    "207": "a9e75427c8cb94c3d442a161e59dbda9125e6fb57d6e97d86da23b59c8ec4e61",
+    "208": "3a8bf05d43606a6e1d27d38ad1485431500044df1e878158245e21c32af2656e",
+    "209": "5b692206274166bfb645aa8906a0d70c9aeb64320ba38bcf52e17c1cb97e070b",
+    "210": "ba3fe67af180731d5cc583c7e16c4778be0196c8278e9fe6dbc340ad6b09dc95",
+    "211": "cb2c688b3fa1ad72efd14fc3527450e7ee9adb431effcbdd476502a1fef3ccba",
+    "212": "8b3a863a56187d85ff26403acfb889d51665c6d9e596c06e7010994d19f0a727",
+    "213": "397b0f0281e7bb4c91e1935e89943c65396b36d1bb9a79a1ec3c67786de6d9c6",
+    "214": "7827a467329bcdc223a0540f8ba00e3271b667804640d53e1183d123bed7ef08"
+  },
+  "e014_refresh": {
+    "changed_render_pages": [
+      27
+    ],
+    "same_page_count": true,
+    "visual_review": "completed: final exported page 27 reopened at full image size; note, formulas and line wrapping readable; remaining 38 page pixel hashes unchanged from previously reviewed export"
+  }
+}

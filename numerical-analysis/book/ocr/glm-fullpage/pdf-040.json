@@ -1,0 +1,20 @@
+{
+  "pdf_page": 40,
+  "source_image": "source-images/pdf-040.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "6363f71af229dd62f31baf555a9d854034d1f39fd63f94b8fdd14f017c234a2d",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 899,
+  "possibly_truncated": false,
+  "elapsed_seconds": 25.24,
+  "created_utc": "2026-09-12T09:35:36.812516+00:00",
+  "raw_text_sha256": "ee27894525f5b89dc285308509df29715bcf09aa216b11ba1dc72dd5777b5045",
+  "raw_text": "$$\\Delta^n f_k = (\\mathrm{E} - \\mathrm{I})^n f_k = \\sum_{j=0}^{n} (-1)^j \\binom{n}{j} \\mathrm{E}^{n-j} f_k = \\sum_{j=0}^{n} (-1)^j \\binom{n}{j} f_{n+k-j},$$\n(2.5.4)\n\n$$\\nabla^n f_k = (\\mathrm{I} - \\mathrm{E}^{-1})^n f_k = \\sum_{j=0}^{n} (-1)^j \\binom{n}{j} \\mathrm{E}^{j-n} f_k = \\sum_{j=0}^{n} (-1)^j \\binom{n}{j} f_{k+j-n},$$\n(2.5.5)\n\n其中 $\\binom{n}{j} = \\frac{n(n-1)\\cdots(n-j+1)}{j!}$ 为二项式展开系数.\n\n性质 2 可用各阶差分表示函数值，例如，可用向前差分表示 $f_{n+k}$，即\n$$f_{n+k} = \\mathrm{E}^n f_k = (\\mathrm{I} + \\Delta)^n f_k = \\sum_{j=0}^{n} \\binom{n}{j} \\Delta^j f_k.$$ (2.5.6)\n\n性质 3 差商与差分有以下关系，例如，对于向前差分，由定义\n$$f[x_k, x_{k+1}] = \\frac{f_{k+1} - f_k}{x_{k+1} - x_k} = \\frac{\\Delta f_k}{h},$$\n$$f[x_k, x_{k+1}, x_{k+2}] = \\frac{f[x_{k+1}, x_{k+2}] - f[x_k, x_{k+1}]}{x_{k+2} - x_k} = \\frac{1}{2h^2} \\Delta^2 f_k,$$\n\n一般地有\n$$f[x_k, x_{k+1}, \\cdots, x_{k+m}] = \\frac{1}{m!} \\frac{1}{h^m} \\Delta^m f_k \\quad (m = 1, 2, \\cdots, n).$$ (2.5.7)\n\n同理，对于向后差分，有\n$$f[x_k, x_{k-1}, \\cdots, x_{k-m}] = \\frac{1}{m!} \\frac{1}{h^m} \\nabla^m f_k.$$ (2.5.8)\n\n利用式(2.5.7)及式(2.4.5)又可得到\n$$\\Delta^n f_k = h^n f^{(n)}(\\xi),$$ (2.5.9)\n\n其中 $\\xi \\in (x_k, x_{k+n})$，这是差分与导数的关系. 差分的其他性质可参看习题 10~12.\n\n计算差分可列差分表，表 2.6 是向前差分表.\n\n表 2.6\n| $x_k$ | $\\Delta$ | $\\Delta^2$ | $\\Delta^3$ | $\\Delta^4$ |\n| :--- | :--- | :--- | :--- | :--- |\n| $f_0$ | $\\Delta f_0$ | $\\Delta^2 f_0$ | $\\Delta^3 f_0$ | $\\Delta^4 f_0$ |\n| $f_1$ | $\\Delta f_1$ | $\\Delta^2 f_1$ | $\\Delta^3 f_1$ | $\\vdots$ |\n| $f_2$ | $\\Delta f_2$ | $\\Delta^2 f_2$ | $\\vdots$ | |\n| $f_3$ | $\\Delta f_3$ | $\\vdots$ | | |\n| $f_4$ | $\\vdots$ | | | |"
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "figure": "2.1",
+    "pdf_page": 28,
+    "image": "figures/source/figure-2.1.png",
+    "source_image": "source-images/pdf-028.jpeg",
+    "crop_xyxy_pixels": [
+      1048,
+      248,
+      1634,
+      845
+    ],
+    "original_dimensions": [
+      1776,
+      2752
+    ],
+    "crop_sha256": "c997191e2e833f20ad224b69c9fa5d0d1543cff868e8add44448550a0e137fb0"
+  },
+  {
+    "figure": "2.2",
+    "pdf_page": 29,
+    "image": "figures/source/figure-2.2.png",
+    "source_image": "source-images/pdf-029.jpeg",
+    "crop_xyxy_pixels": [
+      1048,
+      771,
+      1652,
+      1337
+    ],
+    "original_dimensions": [
+      1776,
+      2752
+    ],
+    "crop_sha256": "6f6092e0fa8b457fc14a8c2486db0cf6e391030295d9f79edd60835d7ca8b3d5"
+  },
+  {
+    "figure": "2.3",
+    "pdf_page": 29,
+    "image": "figures/source/figure-2.3.png",
+    "source_image": "source-images/pdf-029.jpeg",
+    "crop_xyxy_pixels": [
+      417,
+      1921,
+      1337,
+      2425
+    ],
+    "original_dimensions": [
+      1776,
+      2752
+    ],
+    "crop_sha256": "ec3f6d206b905e3d6e7e5235a338e0abdc930b62d5d317088d268510599c4e70"
+  },
+  {
+    "figure": "2.4",
+    "pdf_page": 30,
+    "image": "figures/source/figure-2.4.png",
+    "source_image": "source-images/pdf-030.jpeg",
+    "crop_xyxy_pixels": [
+      201,
+      1582,
+      1616,
+      2141
+    ],
+    "original_dimensions": [
+      1776,
+      2752
+    ],
+    "crop_sha256": "5bc070513c3a568b0fcfe0ffda8d6a840cf389d738c495e5d66f2be7aa9e901e"
+  }
+]

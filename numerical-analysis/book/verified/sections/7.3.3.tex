@@ -1,0 +1,247 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss-Jordan 消去法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss-Jordan 消去法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.3.3 Gauss-Jordan 消去法}\label{gauss-jordan-ux6d88ux53bbux6cd5}
+
+Gauss 消去法始终是消去对角线下方的元素，现考虑 Gauss 消去法的一种修正，即消去对角线下方和上方的元素，这种方法称为 Gauss-Jordan 消去法。
+
+设用 Gauss-Jordan 消去法已完成 \((k-1)\) 步，于是 \(Ax=b\) 化为等价方程组 \(A^{(k)}x=b^{(k)}\)，其中
+
+\[
+(A^{(k)},b^{(k)})=\left(\begin{array}{ccccccc|c}
+1&&&&a_{1k}&\cdots&a_{1n}&b_1\\
+&1&&&\vdots&&\vdots&\vdots\\
+&&\ddots&&\vdots&&\vdots&\vdots\\
+&&&1&a_{k-1,k}&\cdots&a_{k-1,n}&\vdots\\
+&&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&&\vdots&&\vdots&\vdots\\
+&&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right),\quad k=1,2,\cdots,n.
+\]
+
+\begin{quote}
+校注（agent 补充）：式（7.3.2）第二行第二个括号内原书印作 \(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3}\)，其中 \(L_{2i_2}\) 在本段未定义。本页紧接着定义 \(\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3}\)，因而该处 \(L_{2i_2}\) 疑为 \(I_{2i_2}\) 的排印错误；此处保留原式。参见\href{../assets/ch07a/pdf-188-permutation-detail.png}{原式放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-189.jpeg}{原页扫描}
+
+在第 \(k\) 步计算时，考虑对上述矩阵的第 \(k\) 行上、下都进行消元计算。
+
+\textbf{步 1} 按列选主元素，即确定 \(i_k\) 使 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)。
+
+\textbf{步 2} 换行（当 \(i_k\ne k\)）交换 \((A,b)\) 第 \(k\) 行与第 \(i_k\) 行元素。
+
+\textbf{步 3} 计算乘数
+
+\[m_{ik}=-a_{ik}/a_{kk}\quad(i=1,2,\cdots,n;\;i\ne k),\quad m_{kk}=1/a_{kk}.\]
+
+（\(m_{ik}\) 可保存在存放 \(a_{ik}\) 的单元中。）
+
+\textbf{步 4} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k;\\j=k+1,\cdots,n\end{array}\right),\]
+
+\[b_i\leftarrow b_i+m_{ik}b_k\quad(i=1,2,\cdots,n;\;i\ne k).\]
+
+\textbf{步 5} 计算主行 \(a_{kj}\leftarrow a_{kj}\cdot m_{kk}\)（\(j=k,k+1,\cdots,n\)），\(b_k\leftarrow b_k\cdot m_{kk}\)。
+
+上述过程结束后，有
+
+\[
+(A,b)\to(A^{(k+1)},b^{(k+1)})=
+\left(\begin{array}{cccc|c}
+1&&&&\widehat{b}_1\\
+&1&&&\widehat{b}_2\\
+&&\ddots&&\vdots\\
+&&&1&\widehat{b}_n
+\end{array}\right)
+\]
+
+这说明用 Gauss-Jordan 消去法将 \(A\) 约化为单位矩阵，计算解就在常数项位置得到，因此用不着回代求解。用 Gauss-Jordan 消去法解方程组的计算量大约需要 \(n^3/2\) 次乘除法运算，比 Gauss 消去法计算量大，但用 Gauss-Jordan 消去法求一个矩阵的逆矩阵还是比较合适的。
+
+\textbf{定理 7.6（Gauss-Jordan 消去法求逆矩阵）} 设 \(A\) 为非奇异矩阵，方程组 \(AX=I_n\) 的增广矩阵为 \(C=(A\mathbin{\vdots}I_n)\)。如果对 \(C\) 应用 Gauss-Jordan 消去法化为 \((I_n\mathbin{\vdots}T)\)，则 \(A^{-1}=T\)。
+
+事实上，求 \(A\) 的逆矩阵 \(A^{-1}\)，即求 \(n\) 阶矩阵 \(X\)，使 \(AX=I_n\)，其中 \(I_n\) 为单位矩阵。将 \(X\) 按列分块 \(X=(x_1,x_2,\cdots,x_n)\)，\(I=(e_1,e_2,\cdots,e_n)\)，于是求解 \(AX=I_n\) 等价于求解 \(n\) 个方程组 \(Ax_j=e_j\)（\(j=1,2,\cdots,n\)）。我们可用 Gauss-Jordan 消去法求解 \(AX=I_n\)。
+
+\textbf{例 7.4} 用 Gauss-Jordan 消去法求 \(A=\begin{pmatrix}1&2&3\\2&4&5\\3&5&6\end{pmatrix}\) 的逆矩阵 \(A^{-1}\)。
+
+\textbf{解}
+
+\[
+C=\left(\begin{array}{rrr|rrr}
+1&2&3&1&0&0\\
+2&4&5&0&1&0\\
+3&5&6&0&0&1
+\end{array}\right)
+\xrightarrow{r_1\leftrightarrow r_3}
+\left(\begin{array}{rrr|rrr}
+\boxed{3}&5&6&0&0&1\\
+2&4&5&0&1&0\\
+1&2&3&1&0&0
+\end{array}\right)
+\]
+
+\[
+\xrightarrow{\text{第一次消元}}
+\left(\begin{array}{rrr|rrr}
+1&5/3&2&0&0&1/3\\
+0&2/3&1&0&1&-2/3\\
+0&1/3&1&1&0&-1/3
+\end{array}\right)
+\]
+
+原图标注：上述最后一列 \(\begin{pmatrix}1/3\\-2/3\\-1/3\end{pmatrix}\) 以方框标出，标为 \(c_3\)。
+
+\href{../../source-images/pdf-190.jpeg}{原页扫描}
+
+\[
+\xrightarrow{\text{第二次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&-1/2&0&-5/2&2\\
+0&1&3/2&0&3/2&-1\\
+0&0&\boxed{1/2}&1&-1/2&0
+\end{array}\right)
+\]
+
+原图标注：上述右侧第二列 \(\begin{pmatrix}-5/2\\3/2\\-1/2\end{pmatrix}\) 以方框标出，标为 \(c_2\)。
+
+\[
+\xrightarrow{\text{第三次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&0&1&-3&2\\
+0&1&0&-3&3&-1\\
+0&0&1&2&-1&0
+\end{array}\right)=(I_n\mid A^{-1}).
+\]
+
+原图标注：上述右侧第一列 \(\begin{pmatrix}1\\-3\\2\end{pmatrix}\) 以方框标出，标为 \(c_1\)。
+
+小方框内为每次按列所选的主元素，且
+
+\[m_1=(m_{11},m_{21},m_{31})^{\mathrm T}=c_3,\quad
+m_2=(m_{12},m_{22},m_{32})^{\mathrm T}=c_2,\quad
+m_3=(m_{13},m_{23},m_{33})^{\mathrm T}=c_1.\]
+
+为了节省内存单元，不必将单位矩阵存放起来，\(c_3\) 存放在 \(A\) 的第 1 列位置，\(c_2\) 存放在 \(A\) 的第 2 列位置，\(c_1\) 存放在 \(A\) 的第 3 列位置，经消元计算，最后再调整一下列就可在 \(A\) 的位置得到 \(A^{-1}\)。注意第 \(k\) 步消元时，由 \(A\) 的第 \(k\) 列
+
+\[a_k=(a_{1k},\cdots,a_{kk},\cdots,a_{nk})^{\mathrm T}\]
+
+计算 \(m_k=\left(-\dfrac{a_{1k}}{a_{kk}},\allowbreak \cdots,\allowbreak -1,\allowbreak \cdots,\allowbreak -\dfrac{a_{nk}}{a_{kk}}\right)^{\mathrm T}\) 且冲掉 \(a_k\)。
+
+最后，在 \(A\) 位置如何调整列呢？事实上，在 \(A\) 位置最后得到矩阵 \(PA\equiv A_1\)（其中 \(P\) 为排列矩阵）的逆矩阵 \(A_1^{-1}\)，于是 \(A^{-1}=A_1^{-1}P\)。
+
+\textbf{算法 3} Gauss-Jordan 列主元素方法求逆，其步骤如下。
+
+本算法是用列主元素的 Gauss-Jordan 方法求 \(A^{-1}\)，计算结果存放在原矩阵 \(A\) 的数组中。用整型数组 \(\mathrm{Ip}(n)\) 记录主行，\(A\) 的行列式值存放在 \(\det A\)。
+
+\textbf{步 1} \(\det A\leftarrow1\)；对于 \(k=1,2,\cdots,n\) 做到步 8。
+
+\textbf{步 2} 按列选主元素 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)；\(c_0\leftarrow a_{i_kk}\)，\(\mathrm{Ip}(k)\leftarrow i_k\)。
+
+\textbf{步 3} 如果 \(c_0=0\)，则计算停止（此时 \(A\) 为奇异矩阵）。
+
+\textbf{步 4} 如果 \(i_k=k\)，则转步 5，否则换行：\(a_{kj}\leftrightarrow a_{i_kj}\)（\(j=1,2,\cdots,n\)），\(\det A\leftarrow-\det A\)。
+
+\textbf{步 5} \(\det A\leftarrow\det A\cdot c_0\)。
+
+\textbf{步 6} 计算 \(h\leftarrow a_{kk}\leftarrow1/c_0\)；\(a_{ik}\leftarrow m_{ik}=-a_{ik}\cdot h\)（\(i=1,2,\cdots,n;\;i\ne k\)）。
+
+\textbf{步 7} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k\\j=1,2,\cdots,n;\;j\ne k\end{array}\right).\]
+
+\textbf{步 8} 计算主行 \(a_{kj}\leftarrow a_{kj}\cdot h\)（\(j=1,2,\cdots,n;\;j\ne k\)）。
+
+\textbf{步 9} 交换列对于 \(k=n-1,n-2,\cdots,2,1\)，
+
+（1）\(t=\mathrm{Ip}(k)\)；
+
+（2）如果 \(t\le k\)，则转（3），否则换列：\(a_{ik}\leftrightarrow a_{it}\)（\(i=1,2,\cdots,n\)）；
+
+（3）继续循环。
+
+\begin{quote}
+校注（agent 补充）：解释段中 \(m_k\) 的第 \(k\) 个分量原书印作 \(-1\)，此处保留。按上一页所给 \(m_{kk}=1/a_{kk}\)、本页算法 3 步 6 的 \(a_{kk}\leftarrow1/c_0\)，以及例 7.4 第一次消元的 \(m_1=c_3=(1/3,-2/3,-1/3)^{\mathrm T}\)，用于原地求逆时该位置应为 \(1/a_{kk}\)；疑似原书公式错误。参见\href{../assets/ch07a/pdf-190-multiplier-detail.png}{原文放大裁图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E004}：原书 PDF 页 188
+\item
+  \texttt{ch07a-E005}：原书 PDF 页 190
+\end{itemize}
+
+\end{document}

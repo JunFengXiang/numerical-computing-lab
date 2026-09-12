@@ -1,0 +1,218 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={三阶 Runge-Kutta 方法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{三阶 Runge-Kutta 方法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.3.4 三阶 Runge-Kutta 方法}\label{ux4e09ux9636-runge-kutta-ux65b9ux6cd5}
+
+为了进一步提高精度，设除 \(x_n,x_{n+p}\) 外再考察一点 \(x_{n+p}=x_n+qh\)，\(p\leqslant q\leqslant1\)，并用三个点 \(x_n,x_{n+p},x_{n+q}\) 的斜率值 \(K_1,K_2,K_3\) 线性组合得到平均斜率 \(K^*\)，这时计算格式为
+
+\[
+y_{n+1}=y_n+h(\lambda_1K_1+\lambda_2K_2+\lambda_3K_3).
+\]
+
+其中 \(K_1,K_2\) 仍用格式 (5.3.5) 所取的形式。
+
+为了预测点 \(x_{n+p}\) 处的斜率值 \(K_3\)，在区间 \((x_n,x_{n+q})\) 内有两个斜率值 \(K_1\) 和 \(K_2\) 可以利用。用 \(K_1\) 和 \(K_2\) 线性组合给出区间 \([x_n,x_{n+q}]\) 上的平均斜率，从而得到 \(y(x_{n+q})\) 的预测值 \(y_{n+q}=y_n+qh(rK_1+sK_2)\)，于是，再通过计算函数值 \(f\) 得到
+
+\[
+K_3=f(x_{n+q},y_{n+q})=f(x_n+qh,y_n+qh(rK_1+sK_2)).
+\]
+
+这样设计出的计算格式具有如下形式：
+
+\[
+\begin{cases}
+y_{n+1}=y_n+h(\lambda_1K_1+\lambda_2K_2+\lambda_3K_3),\\
+K_1=f(x_n,y_n),\\
+K_2=f(x_n+ph,y_n+phK_1),\\
+K_3=f(x_n+qh,y_n+qh(rK_1+sK_2)).
+\end{cases}\tag{5.3.7}
+\]
+
+\begin{quote}
+\textbf{校注（agent 补充，原书下标错误）}：5.3.4 首段``再考察一点 \(x_{n+p}=x_n+qh\)''及后段``为了预测点 \(x_{n+p}\) 处的斜率值 \(K_3\)''，原图两处均印为 \(n+p\)，已保留。按同页对 \(K_3=f(x_{n+q},y_{n+q})\) 的定义及式 (5.3.7)，这两处所指节点均应为 \(x_{n+q}\)。已放大原印字确认，非 OCR 误识。
+\end{quote}
+
+\href{../../source-images/pdf-130.jpeg}{原页}
+
+希望适当选择系数 \(\lambda_1,\lambda_2,\lambda_3\) 和 \(p,q,r,s\)，能使上述格式具有三阶精度。
+
+为便于进行数学演算，引进算子
+
+\[
+\mathrm D=\frac{\partial}{\partial x}+f\frac{\partial}{\partial y},\qquad
+\mathrm D^2=\frac{\partial^2}{\partial x^2}+2f\frac{\partial^2}{\partial x\partial y}+f^2\frac{\partial^2}{\partial y^2},
+\]
+
+则根据式 (5.3.2)，有
+
+\[
+y'=f,\qquad y''=\mathrm Df,\qquad y'''=\mathrm D^2f+\frac{\partial f}{\partial y}\mathrm Df,
+\]
+
+于是三阶 Taylor 格式
+
+\[
+y_{n+1}=y_n+hy'_n+\frac{h^2}{2}y''_n+\frac{h^3}{6}y'''_n
+\]
+
+可表示为
+
+\[
+y_{n+1}=y_n+hf_n+\frac{h^2}{2}\mathrm Df_n+\frac{h^3}{6}(\mathrm D^2f+f_y\mathrm Df)_n,\tag{5.3.8}
+\]
+
+其中 \(f_n,\mathrm Df_n\) 等的下标 \(n\) 均表示在 \((x_n,y_n)\) 取值。
+
+另一方面，再将式 (5.3.7) Taylor 展开，其中
+
+\[
+K_1=f_n,
+\]
+
+\[
+K_2=f(x_n+ph,y_n+phK_1)=f_n+ph\mathrm Df_n+\frac{(ph)^2}{2}\mathrm D^2f_n+\cdots,
+\]
+
+\[
+K_3=f(x_n+qh,y_n+qh(rK_1+sK_2))=f_n+qh\overline{\mathrm D}f_n+\frac{(qh)^2}{2}\overline{\mathrm D}^{2}f_n+\cdots.
+\]
+
+这里，算子 \(\overline{\mathrm D}=\dfrac{\partial}{\partial x}+(rK_1+sK_2)\dfrac{\partial}{\partial y}\)。
+
+若取
+
+\[
+r+s=1,\tag{5.3.9}
+\]
+
+则易知
+
+\[
+\overline{\mathrm D}=\mathrm D+hps\mathrm Df_n\frac{\partial}{\partial y}+\cdots,\tag{5.3.10}
+\]
+
+\[
+\overline{\mathrm D}^{2}=\mathrm D^2+\cdots,
+\]
+
+因此
+
+\[
+K_3=f_n+qh\mathrm Df_n+\frac{h^2}{2}(q^2\mathrm D^2f+2pqs\mathrm Df\cdot f_y)_n+\cdots.
+\]
+
+将以上 \(K_1,K_2,K_3\) 的展开式一起代入式 (5.3.7)，再令
+
+\[
+\lambda_1+\lambda_2+\lambda_3=1,\tag{5.3.11}
+\]
+
+则有
+
+\[
+\begin{aligned}
+y_{n+1}={}&y_n+hf_n+h^2(\lambda_2p+\lambda_3q)\mathrm Df_n\\
+&+h^3\left(\frac12\lambda_2p^2\mathrm D^2f+\frac12\lambda_3q^2\mathrm D^2f+\lambda_3pqsf_y\mathrm Df\right)_n+\cdots,
+\end{aligned}
+\]
+
+于是为了保证它能与三阶 Taylor 格式 (5.3.8) 具有同等精度，只要满足下列方程组：
+
+\[
+\begin{cases}
+\lambda_2p+\lambda_3q=\dfrac12,\\
+\lambda_2p^2+\lambda_3q^2=\dfrac13,\\
+\lambda_3pqs=\dfrac16.
+\end{cases}\tag{5.3.12}
+\]
+
+\href{../../source-images/pdf-131.jpeg}{原页}
+
+满足条件 (5.3.9)、(5.3.11)、(5.3.12) 的一族格式 (5.3.7) 统称\textbf{三阶 Runge-Kutta 格式}。下列 Kutta 格式是其中的一个特例：
+
+\[
+\begin{cases}
+y_{n+1}=y_n+\dfrac{h}{6}(K_1+4K_2+K_3),\\
+K_1=f(x_n,y_n),\\
+K_2=f\left(x_n+\dfrac{h}{2},y_n+\dfrac{h}{2}K_1\right),\\
+K_3=f(x_n+h,y_n-hK_1+2hK_2).
+\end{cases}
+\]
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch05a-E003}：原书 PDF 页 129
+\end{itemize}
+
+\end{document}

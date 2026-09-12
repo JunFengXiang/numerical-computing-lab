@@ -1,0 +1,1819 @@
+\documentclass[UTF8,fontset=fandol,a4paper]{ctexart}
+
+\usepackage{amsmath,amssymb}
+
+\usepackage[margin=18mm]{geometry}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\section*{PDF 076}
+
+\noindent $\{U_n(x)\}$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $\rho(x)=\sqrt{1-x^2}$\par
+
+\[
+U_0(x)=1,\quad U_1(x)=2x,
+\]
+
+\[
+U_{n+1}(x)=2xU_n(x)-U_{n-1}(x)\quad(n=1,2,\cdots).
+\]
+
+\noindent $[0,\infty)$\par
+
+\noindent $\rho(x)=\mathrm e^{-x}$\par
+
+\[
+L_n(x)=\mathrm e^n\frac{\mathrm d^n}{\mathrm dx^n}(x^n\mathrm e^{-x}).\tag{3.4.11}
+\]
+
+\[
+\int_0^\infty \mathrm e^{-x}L_n(x)L_m(x)\,\mathrm dx=
+\begin{cases}
+0,&m\ne n,\\
+(n!)^2,&m=n
+\end{cases}
+\]
+
+\[
+L_0(x)=1,\quad L_1(x)=1-x,
+\]
+
+\[
+L_{n+1}(x)=(1+2n-x)L_n(x)-n^2L_{n-1}(x)\quad(n=1,2,\cdots).
+\]
+
+\noindent $(-\infty,\infty)$\par
+
+\noindent $\rho(x)=\mathrm e^{-x^2}$\par
+
+\[
+H_n(x)=(-1)^n\mathrm e^{x^2}\frac{\mathrm d^n}{\mathrm dx^n}(\mathrm e^{-x^2}).\tag{3.4.12}
+\]
+
+\[
+\int_{-\infty}^{+\infty}\mathrm e^{-x^2}H_m(x)H_n(x)\,\mathrm dx=
+\begin{cases}
+0,&m\ne n,\\
+2^nn!\sqrt\pi,&m=n,
+\end{cases}
+\]
+
+\[
+H_0(x)=1,\quad H_1(x)=2x,
+\]
+
+\[
+H_{n+1}(x)=2xH_n(x)-2nH_{n-1}(x)\quad(n=1,2,\cdots).
+\]
+
+\noindent $f(x)\in C[a,b]$\par
+
+\noindent $\{g_0(x),g_1(x),\cdots,g_n(x)\}$\par
+
+\[
+S_n(x)=a_0g_0(x)+a_1g_1(x)+\cdots+a_ng_n(x).\tag{3.5.1}
+\]
+
+\noindent $\{g_k(x)\}$\par
+
+\[
+a_k=\frac{(f,g_k)}{(g_k,g_k)}\quad(k=0,1,\cdots,n),\tag{3.5.2}
+\]
+
+\noindent $f(x)$\par
+
+\noindent $\mathrm e^n$\par
+
+\noindent $n=0$\par
+
+\noindent $L_0(x)=\mathrm e^{-x}$\par
+
+\noindent $L_0(x)=1$\par
+
+\noindent $\mathrm e^x$\par
+
+\section*{PDF 077}
+
+\[
+S_n(x)=\sum_{k=0}^n\frac{(f,g_k)}{(g_k,g_k)}g_k(x).\tag{3.5.3}
+\]
+
+\[
+\|\delta_n\|_2=\|f-S_n\|_2=\sqrt{\|f\|_2^2-\sum_{k=0}^n\frac{(f,g_k)}{(g_k,g_k)}(f,g_k)}.\tag{3.5.4}
+\]
+
+\noindent $f(x)$\par
+
+\noindent $[a,b]$\par
+
+\noindent $\{g_k(x)\}$\par
+
+\noindent $a_k$\par
+
+\noindent $k=0,1,\cdots$\par
+
+\noindent $f(x)$\par
+
+\[
+f(x)\sim\sum_{k=0}^\infty a_kg_k(x).\tag{3.5.5}
+\]
+
+\noindent $a_k$\par
+
+\noindent $f(x)\in C[a,b]$\par
+
+\noindent $S_n(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $a_k$\par
+
+\noindent $n$\par
+
+\noindent $n$\par
+
+\noindent $a_k$\par
+
+\noindent $f(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $f(x)\in C[-1,1]$\par
+
+\noindent $\{P_0(x),P_1(x),\cdots\}$\par
+
+\noindent $S_n^*(x)$\par
+
+\[
+S_n^*(x)=a_0^*P_0(x)+a_1^*P_1(x)+\cdots+a_n^*P_n(x),\tag{3.5.6}
+\]
+
+\[
+a_k^*=\frac{(f,P_k)}{(P_k,P_k)}=\frac{2k+1}{2}\int_{-1}^1f(x)P_k(x)\,\mathrm dx.\tag{3.5.7}
+\]
+
+\[
+\|\delta_k\|_2^2=\int_{-1}^1 f^2(x)\,\mathrm dx-\sum_{k=0}^n\frac{2}{2k+1}(a_k^*)^2.\tag{3.5.8}
+\]
+
+\noindent $f(x)=\mathrm e^x$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $(f,P_k)$\par
+
+\noindent $k=0,1,2,3$\par
+
+\[
+(f,P_0)=\int_{-1}^1\mathrm e^x\,\mathrm dx=\mathrm e-\frac1{\mathrm e}\approx2.3504,
+\]
+
+\[
+(f,P_1)=\int_{-1}^1x\mathrm e^x\,\mathrm dx=2\mathrm e^{-1}\approx0.7358,
+\]
+
+\[
+(f,P_2)=\int_{-1}^1\left(\frac32x^2-\frac12\right)\mathrm e^x\,\mathrm dx=\mathrm e-\frac7{\mathrm e}\approx0.1431,
+\]
+
+\[
+(f,P_3)=\int_{-1}^1\left(\frac52x^3-\frac32x\right)\mathrm e^x\,\mathrm dx=37\frac1{\mathrm e}-5\mathrm e\approx0.02013.
+\]
+
+\[
+a_0^*=(f,P_0)/2=1.1752,\quad a_1^*=3(f,P_1)/2=1.1036,
+\]
+
+\[
+a_2^*=5(f,P_2)/2=0.3578,\quad a_3^*=7(f,P_3)/2=0.07046,
+\]
+
+\noindent $\|\delta_k\|_2^2$\par
+
+\noindent $n$\par
+
+\noindent $\|\delta_n\|_2^2$\par
+
+\section*{PDF 078}
+
+\[
+S_3^*(x)=0.9963+0.9979x+0.5367x^2+0.1761x^3.
+\]
+
+\[
+\|\delta_n\|_2=\|\mathrm e^x-S_3^*(x)\|_2=\sqrt{\int_{-1}^1\mathrm e^{2x}\,\mathrm dx-\sum_{k=0}^3\frac{2}{2k+1}(a_k^*)^2}\leqslant0.0084,
+\]
+
+\[
+\|\delta_n\|_\infty=\|\mathrm e^x-S_3(x)\|_\infty\leqslant0.0112.
+\]
+
+\noindent $f(x)\in C[a,b]$\par
+
+\noindent $f(x)$\par
+
+\noindent $[a,b]$\par
+
+\[
+x=\frac{b-a}{2}t+\frac{b+a}{2}\quad(-1\leqslant t\leqslant1),
+\]
+
+\[
+F(t)=f\left(\frac{b-a}{2}t+\frac{b+a}{2}\right).
+\]
+
+\noindent $[-1,1]$\par
+
+\noindent $S_n^*(t)$\par
+
+\noindent $f(x)$\par
+
+\noindent $[a,b]$\par
+
+\noindent $S_n^*\left(\dfrac1{b-a}(2x-a-b)\right)$\par
+
+\noindent $\{P_k(x)\}$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $\{1,x,x^2,\cdots,x^k,\cdots\}$\par
+
+\[
+S^*(x)=a_0+a_1x+\cdots+a_nx^n
+\]
+
+\noindent $H_n$\par
+
+\noindent $n$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $i=0,1,\cdots,m$\par
+
+\noindent $x$\par
+
+\noindent $y$\par
+
+\noindent $y=F(x)$\par
+
+\noindent $y=F(x)$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $x_i$\par
+
+\noindent $\delta_i=F(x_i)-y_i$\par
+
+\noindent $i=0,1,\cdots,m$\par
+
+\noindent $\boldsymbol\delta=(\delta_0,\delta_1,\cdots,\delta_m)^{\mathrm T}$\par
+
+\noindent $\boldsymbol\delta$\par
+
+\noindent $\|\boldsymbol\delta\|$\par
+
+\noindent $\|\boldsymbol\delta\|_2$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $i=0,1,\cdots,m$\par
+
+\noindent $\Phi=\operatorname{span}\{\varphi_0,\varphi_1,\cdots,\varphi_n\}$\par
+
+\noindent $y=S^*(x)$\par
+
+\noindent $S_3(x)$\par
+
+\noindent $S_3^*(x)$\par
+
+\section*{PDF 079}
+
+\[
+\|\boldsymbol\delta\|_2^2=\sum_{i=0}^m\delta_i^2=\sum_{i=0}^m[S^*(x_i)-y_i]^2=\min_{S(x)\in\varphi}\sum_{i=1}^m[S(x_i)-y_i]^2,\tag{3.6.1}
+\]
+
+\[
+S(x)=a_0\varphi_0(x)+a_1\varphi_1(x)+\cdots+a_n\varphi_n(x)\quad(n<m).\tag{3.6.2}
+\]
+
+\noindent $S(x)$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $S(x_i)$\par
+
+\noindent $S(x)$\par
+
+\noindent $\varphi_k(x)$\par
+
+\noindent $k$\par
+
+\noindent $S(x)$\par
+
+\noindent $n$\par
+
+\noindent $\|\boldsymbol\delta\|_2^2$\par
+
+\[
+\|\boldsymbol\delta\|_2^2=\sum_{i=0}^m\omega(x_i)[S(x_i)-f(x_i)]^2.\tag{3.6.3}
+\]
+
+\noindent $\omega(x)\geqslant0$\par
+
+\noindent $[a,b]$\par
+
+\noindent $(x_i,f(x_i))$\par
+
+\noindent $\omega(x_i)$\par
+
+\noindent $(x_i,f(x_i))$\par
+
+\noindent $S(x)$\par
+
+\noindent $y=S^*(x)$\par
+
+\[
+I(a_0,a_1,\cdots,a_n)=\sum_{i=0}^m\omega(x_i)\left[\sum_{j=0}^na_j\varphi_j(x_i)-f(x_i)\right]^2\tag{3.6.4}
+\]
+
+\noindent $(a_0^*,a_1^*,\cdots,a_n^*)$\par
+
+\[
+\frac{\partial I}{\partial a_k}=2\sum_{i=0}^m\omega(x_i)\left[\sum_{j=0}^na_j\varphi_j(x_i)-f(x_i)\right]\varphi_k(x_i)=0\quad(k=0,1,\cdots,n).
+\]
+
+\[
+(\varphi_j,\varphi_k)=\sum_{i=0}^m\omega(x_i)\varphi_j(x_i)\varphi_k(x_i),\tag{3.6.5}
+\]
+
+\[
+(f,\varphi_k)=\sum_{i=0}^m\omega(x_i)f(x_i)\varphi_k(x_i)\equiv d_k\quad(k=0,1,\cdots,n),
+\]
+
+\[
+\sum_{j=0}^n(\varphi_k,\varphi_j)a_j=d_k\quad(k=0,1,\cdots,n).\tag{3.6.6}
+\]
+
+\[
+G\boldsymbol a=\boldsymbol d,
+\]
+
+\[
+\boldsymbol a=(a_0,a_1,\cdots,a_n)^{\mathrm T},\quad\boldsymbol d=(d_0,d_1,\cdots,d_n)^{\mathrm T},
+\]
+
+\[
+G=\begin{pmatrix}
+(\varphi_0,\varphi_0)&(\varphi_0,\varphi_1)&\cdots&(\varphi_0,\varphi_n)\\
+(\varphi_1,\varphi_0)&(\varphi_1,\varphi_1)&\cdots&(\varphi_1,\varphi_n)\\
+\vdots&\vdots&&\vdots\\
+(\varphi_n,\varphi_0)&(\varphi_n,\varphi_1)&\cdots&(\varphi_n,\varphi_n)
+\end{pmatrix},\tag{3.6.7}
+\]
+
+\noindent $i=1$\par
+
+\noindent $i=0$\par
+
+\noindent $i=0$\par
+
+\noindent $S(x)\in\varphi$\par
+
+\noindent $\Phi$\par
+
+\section*{PDF 080}
+
+\noindent $\varphi_0,\varphi_1,\cdots,\varphi_n$\par
+
+\noindent $|G|\ne0$\par
+
+\[
+a_k=a_k^*\quad(k=0,1,\cdots,n),
+\]
+
+\noindent $f(x)$\par
+
+\[
+S^*(x)=a_0^*\varphi_0(x)+a_1^*\varphi_1(x)+\cdots+a_n^*\varphi_n(x).
+\]
+
+\noindent $S^*(x)$\par
+
+\noindent $S(x)$\par
+
+\[
+\sum_{i=0}^m\omega(x_i)[S^*(x_i)-f(x_i)]^2\leqslant\sum_{i=0}^m\omega(x_i)^*[S(x_i)-f(x_i)]^2,
+\]
+
+\noindent $S^*(x)$\par
+
+\noindent $x_i$\par
+
+\noindent $f_i$\par
+
+\noindent $\omega_i$\par
+
+\noindent $S_1(x)=a_0+a_1x$\par
+
+\noindent $m=4,n=1,\varphi_0(x)=1,\varphi_1(x)=x$\par
+
+\[
+(\varphi_0,\varphi_0)=\sum_{i=0}^4\omega_i=8,\quad(\varphi_0,\varphi_1)=(\varphi_1,\varphi_0)=\sum_{i=0}^4\omega_ix_i=22,
+\]
+
+\[
+(\varphi_1,\varphi_1)=\sum_{i=0}^4\omega_ix_i^2=74,\quad(\varphi_0,f)=\sum_{i=0}^4\omega_if_i=47,
+\]
+
+\[
+(\varphi_1,f)=\sum_{i=0}^4\omega_ix_if_i=145.5.
+\]
+
+\[
+\begin{cases}
+8a_0+22a_1=47,\\
+22a_0+74a_1=145.5,
+\end{cases}
+\]
+
+\[
+a_0=2.77,\quad a_1=1.13.
+\]
+
+\[
+S_1^*(x)=2.77+1.13x.
+\]
+
+\noindent $y=S_1^*(x)$\par
+
+\noindent $x,y,0$\par
+
+\noindent $2,4,6$\par
+
+\noindent $2,4,6,8,10$\par
+
+\noindent $y=S_1^*(x)$\par
+
+\noindent $y$\par
+
+\noindent $t$\par
+
+\noindent $y=F(t)$\par
+
+\noindent $t/\mathrm{min}$\par
+
+\noindent $y/\times10^{-3}$\par
+
+\noindent $t\to\infty$\par
+
+\noindent $y$\par
+
+\noindent $\omega(x_i)$\par
+
+\noindent $\omega(x_i)[S(x_i)-f(x_i)]^2$\par
+
+\section*{PDF 081}
+
+\noindent $y=F(t)$\par
+
+\noindent $t=0$\par
+
+\noindent $y=F(t)$\par
+
+\noindent $1/y=a+b/t$\par
+
+\noindent $y=t/(at+b)$\par
+
+\noindent $a,b$\par
+
+\noindent $\bar y=1/y,x=1/t$\par
+
+\noindent $x$\par
+
+\noindent $S_1(x)=a+bx$\par
+
+\noindent $(x_i,\bar y_i)$\par
+
+\noindent $i=1,2,\cdots,16$\par
+
+\noindent $x_i,\bar y_i$\par
+
+\noindent $(t_i,y_i)$\par
+
+\[
+\begin{cases}
+16a+3.38073b=1.8372\times10^3,\\
+3.38073a+1.58435b=0.52886\times10^3,
+\end{cases}
+\]
+
+\[
+a=80.6621,\quad b=161.6822.
+\]
+
+\[
+y=t/(80.6621t+161.6822)=F^{(1)}(t),
+\]
+
+\[
+\delta_i^{(1)}=y_i-F^{(1)}(t_i)\quad(i=1,2,\cdots,16).
+\]
+
+\noindent $y$\par
+
+\noindent $t$\par
+
+\noindent $0$\par
+
+\noindent $2,4,6,8,10,12,14,16,18$\par
+
+\noindent $2,4,6,8,10,12$\par
+
+\[
+y=a\mathrm e^{b/t}.
+\]
+
+\noindent $t\to\infty$\par
+
+\noindent $y\to a$\par
+
+\noindent $t\to0$\par
+
+\noindent $b<0$\par
+
+\noindent $y\to0$\par
+
+\noindent $t$\par
+
+\noindent $y$\par
+
+\noindent $a$\par
+
+\noindent $b$\par
+
+\noindent $\ln y=\ln a+b/t$\par
+
+\[
+\hat y=\ln y,\quad A=\ln a,\quad x=1/t,
+\]
+
+\noindent $(t_i,y_i)$\par
+
+\noindent $(x_i,\hat y_i)$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $S_1(x)=A+bx$\par
+
+\noindent $A=-4.48072,b=-1.0567$\par
+
+\[
+a=\mathrm e^A=11.3253\times10^{-3},
+\]
+
+\[
+y=11.3253\times10^{-3}\mathrm e^{-1.0567t}=F^{(2)}(t),
+\]
+
+\[
+\delta_i^{(2)}=y_i-F^{(2)}(t_i)\quad(i=1,2,\cdots,16).
+\]
+
+\[
+\|\boldsymbol\delta^{(1)}\|_\infty=\max_i|\delta_i^{(1)}|=0.568\times10^{-3},
+\]
+
+\[
+\|\boldsymbol\delta^{(2)}\|_\infty=\max_i|\delta_i^{(2)}|=0.277\times10^{-3},
+\]
+
+\[
+\|\boldsymbol\delta^{(1)}\|_2=\sqrt{\sum_{i=1}^m(\delta_i^{(1)})^2}=1.19\times10^{-3},
+\]
+
+\[
+\|\boldsymbol\delta^{(2)}\|_2=\sqrt{\sum_{i=1}^m(\delta_i^{(2)})^2}=0.34\times10^{-3},
+\]
+
+\noindent $F^{(2)}(t)$\par
+
+\noindent $-1.0567t$\par
+
+\noindent $y=a\mathrm e^{b/t}$\par
+
+\noindent $b=-1.0567$\par
+
+\noindent $\mathrm e^{-1.0567/t}$\par
+
+\noindent $t\to\infty$\par
+
+\noindent $(x_i,y_i)$\par
+
+\noindent $(x_i,\hat y_i)$\par
+
+\section*{PDF 082}
+
+\noindent $\|\boldsymbol\delta^{(2)}\|_2$\par
+
+\noindent $\|\boldsymbol\delta^{(2)}\|_\infty$\par
+
+\noindent $y=F^{(2)}(t)$\par
+
+\noindent $G$\par
+
+\noindent $\varphi_0(x),\varphi_1(x),\cdots,\varphi_n(x)$\par
+
+\noindent $\{x_i\}$\par
+
+\noindent $i=0,1,\cdots,m$\par
+
+\noindent $\omega(x_i)$\par
+
+\noindent $i=0,1,\cdots,m$\par
+
+\[
+(\varphi_j,\varphi_k)=\sum_{i=0}^m\omega(x_i)\varphi_j(x_i)\varphi_k(x_i)=\begin{cases}0,&j\ne k,\\ A_k>0,&j=k,\end{cases}\tag{3.6.8}
+\]
+
+\[
+a_k^*=\frac{(f,\varphi_k)}{(\varphi_k,\varphi_k)}=\frac{\displaystyle\sum_{i=0}^m\omega(x_i)f(x_i)\varphi_k(x_i)}{\displaystyle\sum_{i=0}^m\omega(x_i)\varphi_k^2(x_i)}\quad(k=0,1,\cdots,n),\tag{3.6.9}
+\]
+
+\[
+\|\delta\|_2^2=\|f\|_2^2-\sum_{k=0}^n A_k(a_k^*)^2.
+\]
+
+\noindent $x_0,x_1,\cdots,x_m$\par
+
+\noindent $\omega(x)>0$\par
+
+\noindent $\omega(x)$\par
+
+\noindent $\{P_n(x)\}$\par
+
+\noindent $n\leqslant m$\par
+
+\noindent $P_k(x)$\par
+
+\[
+\begin{cases}
+P_0(x)=1,\\
+P_1(x)=(x-\alpha_1)P_0(x),\\
+P_{k+1}(x)=(x-\alpha_{k+1})P_k(x)-\beta_kP_{k-1}(x)\quad(k=1,2,\cdots,n-1).
+\end{cases}\tag{3.6.10}
+\]
+
+\noindent $P_k(x)$\par
+
+\noindent $1$\par
+
+\noindent $k$\par
+
+\noindent $P_k(x)$\par
+
+\[
+\left\{\begin{aligned}
+a_{k+1}&=\frac{\displaystyle\sum_{i=0}^m\omega(x_i)x_iP_k^2(x_i)}{\displaystyle\sum_{i=0}^m\omega(x_i)P_k^2(x_i)}=\frac{(xP_k(x),P_k(x))}{(P_k(x),P_k(x))}=\frac{(xP_k,P_k)}{(P_k,P_k)},\\
+\beta_k&=\frac{\displaystyle\sum_{i=0}^m\omega(x_i)P_k^2(x_i)}{\displaystyle\sum_{i=0}^m\omega(x_i)P_{k-1}^2(x_i)}=\frac{(P_k,P_k)}{(P_{k-1},P_{k-1})}
+\end{aligned}\right.\quad(k=0,1,\cdots,n-1).\tag{3.6.11}
+\]
+
+\noindent $a_{k+1}$\par
+
+\noindent $\alpha_{k+1}$\par
+
+\noindent $k=0,1,\cdots,n-1$\par
+
+\noindent $\beta_k$\par
+
+\noindent $k=0$\par
+
+\noindent $P_{-1}$\par
+
+\noindent $\beta_1,\ldots,\beta_{n-1}$\par
+
+\section*{PDF 083}
+
+\noindent $\{P_k(x)\}$\par
+
+\noindent $a_1$\par
+
+\[
+\begin{aligned}
+(P_l,P_1)&=(P_0,xP_0)-\alpha_1(P_0,P_0)\\
+&=(P_0,xP_0)-\frac{(xP_0,P_0)}{(P_0,P_0)}(P_0,P_0)=0.
+\end{aligned}
+\]
+
+\noindent $(P_1,P_s)=0$\par
+
+\noindent $l\ne s$\par
+
+\noindent $s=0,1,\cdots,l-1$\par
+
+\noindent $l=0,1,\cdots,k$\par
+
+\noindent $k<n$\par
+
+\noindent $(P_{k+1},P_s)=0$\par
+
+\noindent $s=0,1,\cdots,k$\par
+
+\[
+\begin{aligned}
+(P_{k+1},P_s)&=((x-\alpha_{k+1})P_k,P_s)-\beta_k(P_{k-1},P_s)\\
+&=(xP_k,P_s)-\alpha_{k+1}(P_k,P_s)-\beta_k(P_{k-1},P_s),
+\end{aligned}\tag{3.6.12}
+\]
+
+\noindent $0\leqslant s\leqslant k-2$\par
+
+\[
+(P_k,P_s)=0,\quad(P_{k-1},P_s)=0.
+\]
+
+\noindent $xP_s(x)$\par
+
+\noindent $1$\par
+
+\noindent $s+1$\par
+
+\noindent $P_0,P_1,\cdots,P_{s+1}$\par
+
+\noindent $s+1\leqslant k-1$\par
+
+\[
+(xP_k,P_s)\equiv(P_k,xP_s)=0,
+\]
+
+\noindent $s\leqslant k-2$\par
+
+\noindent $(P_{k+1},P_s)=0$\par
+
+\[
+(P_{k+1},P_{k-1})=(xP_k,P_{k-1})-\alpha_{k+1}(P_k,P_{k-1})-\beta_k(P_{k-1},P_{k-1}),\tag{3.6.13}
+\]
+
+\[
+(P_k,P_{k-1})=0,
+\]
+
+\[
+(xP_k,P_{k-1})=(P_k,xP_{k-1})=\left(P_k,P_k+\sum_{j=0}^{k-1}C_jP_j\right)=(P_k,P_k).
+\]
+
+\noindent $\beta_k$\par
+
+\[
+(P_{k+1},P_{k-1})=(xP_k,P_{k-1})-\beta_k(P_{k-1},P_{k-1})=(P_k,P_k)-(P_k,P_k)=0.
+\]
+
+\[
+\begin{aligned}
+(P_{k+1},P_k)&=(xP_k,P_k)-\alpha_{k+1}(P_k,P_k)-\beta_k(P_k,P_{k-1})\\
+&=(xP_k,P_k)-\frac{(xP_k,P_k)}{(P_k,P_k)}(P_k,P_k)=0.
+\end{aligned}
+\]
+
+\noindent $\{P_k(x)\}$\par
+
+\noindent $k=0,1,\cdots,n;n\leqslant m$\par
+
+\noindent $\{x_i\}$\par
+
+\noindent $\{P_k(x)\}$\par
+
+\noindent $P_k(x)$\par
+
+\[
+a_k=\frac{(f,P_k)}{(P_k,P_k)}=\frac{\displaystyle\sum_{i=0}^m\omega(x_i)f(x_i)P_k(x_i)}{\displaystyle\sum_{i=0}^m\omega(x_i)P_k^2(x_i)}\quad(k=0,1,\cdots,n),
+\]
+
+\noindent $\alpha_k^*P_k(x)$\par
+
+\noindent $F(x)$\par
+
+\[
+y=F(x)=\alpha_0^*P_0(x)+\alpha_1^*P_1(x)+\cdots+\alpha_n^*P_n(x),
+\]
+
+\noindent $(P_l,P_1)$\par
+
+\noindent $l$\par
+
+\noindent $(P_0,P_1)$\par
+
+\noindent $(P_1,P_s)=0$\par
+
+\noindent $l\ne s$\par
+
+\noindent $(P_l,P_s)=0$\par
+
+\noindent $a_k$\par
+
+\noindent $\alpha_k^*$\par
+
+\noindent $\alpha_k$\par
+
+\section*{PDF 084}
+
+\noindent $n$\par
+
+\noindent $1$\par
+
+\[
+y=f(x_1,x_2,\cdots,x_l)
+\]
+
+\noindent $(x_{1i},x_{2i},\cdots,x_{li},y_i)$\par
+
+\noindent $i=1,2,\cdots,m$\par
+
+\noindent $\omega_i>0$\par
+
+\noindent $i=1,2,\cdots,m$\par
+
+\[
+S_n(x_1,x_2,\cdots,x_l)=\sum_{k=1}^na_k\varphi_k(x_1,x_2,\cdots,x_l),\quad n\leqslant m,
+\]
+
+\[
+F(a_0,a_1,\cdots,a_n)=\sum_{i=1}^m\omega_i[y_i-S_n(x_{1i},x_{2i},\cdots,x_{li})]^2
+\]
+
+\noindent $a_0,a_2,\cdots,a_n$\par
+
+\[
+(\varphi_k,\varphi_j)=\sum_{i=1}^m\omega_i\varphi_k(x_{1i},x_{2i},\cdots,x_{li})\varphi_i(x_{1i},x_{2i},\cdots,x_{li}).
+\]
+
+\noindent $a_k$\par
+
+\noindent $k=0,1,\cdots,n$\par
+
+\noindent $S_n(x_1,x_2,\cdots,x_l)$\par
+
+\noindent $S_n(x_1,x_2,\cdots,x_l)$\par
+
+\noindent $f(x_1,x_2,\cdots,x_l)$\par
+
+\noindent $f(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $2\pi$\par
+
+\[
+S_n(x)=\frac12a_0+a_1\cos x+b_1\sin x+\cdots+a_n\cos nx+b_n\sin nx\tag{3.7.1}
+\]
+
+\noindent $1,\cos x,\sin x,\cdots,\cos kx,\sin kx,\cdots$\par
+
+\noindent $[0,2\pi]$\par
+
+\noindent $f(x)$\par
+
+\noindent $[0,2\pi]$\par
+
+\noindent $S_n(x)$\par
+
+\noindent $S_n$\par
+
+\noindent $k=1$\par
+
+\noindent $F(a_0,a_1,\ldots,a_n)$\par
+
+\noindent $a_k\;(k=0,\ldots,n)$\par
+
+\noindent $a_0,a_2,\ldots,a_n$\par
+
+\noindent $i$\par
+
+\noindent $j$\par
+
+\noindent $\varphi_j$\par
+
+\section*{PDF 085}
+
+\[
+\begin{cases}
+a_k=\dfrac1\pi\displaystyle\int_0^{2\pi}f(x)\cos kx\,\mathrm dx\quad(k=0,1,\cdots,n),\\[4pt]
+b_k=\dfrac1\pi\displaystyle\int_0^{2\pi}f(x)\sin kx\,\mathrm dx\quad(k=1,2,\cdots,n),
+\end{cases}\tag{3.7.2}
+\]
+
+\noindent $a_k,b_k$\par
+
+\noindent $f(x)$\par
+
+\[
+\frac12a_0+\sum_{k=1}^{\infty}(a_k\cos kx+b_k\sin kx)\tag{3.7.3}
+\]
+
+\noindent $f'(x)$\par
+
+\noindent $[0,2\pi]$\par
+
+\noindent $f(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $\left\{x_j=\dfrac{2\pi}{N}j,\ j=0,1,\cdots,N-1\right\}$\par
+
+\[
+x_j=\frac{2\pi j}{2m+1}\quad(j=0,1,\cdots,2m),
+\]
+
+\noindent $0\leqslant k,l\leqslant m$\par
+
+\[
+\left\{\begin{aligned}
+\sum_{j=0}^{2m}\sin lx_j\sin kx_j&=\begin{cases}
+0,&l\ne k,\ l=k=0,\\
+\dfrac{2m+1}{2},&l=k\ne0,
+\end{cases}\\[4pt]
+\sum_{j=0}^{2m}\cos lx_j\cos kx_j&=\begin{cases}
+0,&l\ne k,\\
+\dfrac{2m+1}{2},&l=k\ne0,\\
+2m+1,&l=k=0,
+\end{cases}\\[4pt]
+\sum_{j=0}^{2m}\cos lx_j\sin kx_j&=0,\quad0\leqslant k,j\leqslant m.
+\end{aligned}\right.
+\]
+
+\noindent $\{1,\cos x,\sin x,\cdots,\cos mx,\sin mx\}$\par
+
+\noindent $\left\{x_j=\dfrac{2\pi j}{2m+1}\right\}$\par
+
+\noindent $f_j=f(x_j)$\par
+
+\noindent $j=0,1,\cdots,2m$\par
+
+\noindent $f(x)$\par
+
+\[
+S_n(x)=\frac12a_0+\sum_{k=1}^n(a_k\cos kx+b_k\sin kx),\quad n<m,
+\]
+
+\[
+\begin{cases}
+a_k=\dfrac2{2m+1}\displaystyle\sum_{j=0}^{2m}f_j\cos\dfrac{2\pi jk}{2m+1}\quad(k=0,1,\cdots,n),\\[4pt]
+b_k=\dfrac2{2m+1}\displaystyle\sum_{j=0}^{2m}f_j\sin\dfrac{2\pi jk}{2m+1}\quad(k=1,\cdots,n).
+\end{cases}\tag{3.7.4}
+\]
+
+\noindent $n=m$\par
+
+\noindent $S_m(x_j)=f_j$\par
+
+\noindent $j=0,1,\cdots,2m$\par
+
+\[
+S_m(x)=\frac12a_0+\sum_{k=1}^m(a_k\cos kx+b_k\sin kx)
+\]
+
+\noindent $0\leqslant k,j\leqslant m$\par
+
+\noindent $j$\par
+
+\noindent $k,l$\par
+
+\noindent $0\leqslant k,l\leqslant m$\par
+
+\section*{PDF 086}
+
+\noindent $f(x)$\par
+
+\noindent $2\pi$\par
+
+\noindent $N$\par
+
+\noindent $x_j=\dfrac{2\pi}{N}j$\par
+
+\noindent $j=0,1,\cdots,N-1$\par
+
+\noindent $f_j=f\left(\dfrac{2\pi}{N}j\right)$\par
+
+\[
+\mathrm e^{\mathrm ijx}=\cos(jx)+\mathrm i\sin(jx)\quad(j=0,1,\cdots,N-1;\ \mathrm i=\sqrt{-1}),
+\]
+
+\noindent $\{1,\mathrm e^{\mathrm ix},\cdots,\mathrm e^{\mathrm i(N-1)x}\}$\par
+
+\noindent $[0,2\pi]$\par
+
+\noindent $\mathrm e^{\mathrm ijx}$\par
+
+\noindent $x_k=\dfrac{2\pi}{N}k$\par
+
+\noindent $k=0,1,\cdots,N-1$\par
+
+\noindent $\mathrm e^{\mathrm ijx_k}$\par
+
+\[
+\boldsymbol\varphi_j=\left(1,\mathrm e^{\mathrm ij\frac{2\pi}{N}},\cdots,\mathrm e^{\mathrm ij\frac{2\pi}{N}(N-1)}\right)^{\mathrm T}.
+\]
+
+\noindent $j=0,1,\cdots,N-1$\par
+
+\noindent $N$\par
+
+\noindent $\boldsymbol\varphi_0,\boldsymbol\varphi_1,\cdots,\boldsymbol\varphi_{N-1}$\par
+
+\[
+(\boldsymbol\varphi_l,\boldsymbol\varphi_s)=\sum_{k=0}^{N-1}\mathrm e^{\mathrm il\frac{2\pi}{N}k}\mathrm e^{-\mathrm is\frac{2\pi}{N}k}=\sum_{k=0}^{N-1}\mathrm e^{\mathrm i(l-s)\frac{2\pi}{N}k}=\begin{cases}0,&l\ne s,\\N,&l=s.\end{cases}\tag{3.7.5}
+\]
+
+\noindent $r=\mathrm e^{\mathrm i(l-s)\frac{2\pi}{N}}$\par
+
+\noindent $0\leqslant l,s\leqslant N-1$\par
+
+\[
+0\leqslant l\leqslant N-1,\quad-(N-1)\leqslant-s\leqslant0,
+\]
+
+\[
+-(N-1)\leqslant l-s\leqslant N-1,\quad-1<-\frac{N-1}{N}\leqslant\frac{l-s}{N}\leqslant\frac{N-1}{N}<1.
+\]
+
+\noindent $l-s\ne0$\par
+
+\noindent $r\ne1$\par
+
+\noindent $r^N=\mathrm e^{\mathrm i(l-s)2\pi}=1$\par
+
+\[
+(\boldsymbol\varphi_l,\boldsymbol\varphi_s)=\sum_{k=0}^{N-1}r^k=\frac{1-r^N}{1-r}=0.
+\]
+
+\noindent $l=s$\par
+
+\noindent $r=1$\par
+
+\noindent $(\boldsymbol\varphi_s,\boldsymbol\varphi_s)=\sum_{k=0}^{N-1}r^k=N$\par
+
+\noindent $\boldsymbol\varphi_0,\boldsymbol\varphi_1,\cdots,\boldsymbol\varphi_{N-1}$\par
+
+\noindent $f(x)$\par
+
+\noindent $N$\par
+
+\noindent $\left\{x_j=\dfrac{2\pi}{N}j,\ j=0,1,\cdots,N-1\right\}$\par
+
+\[
+S(x)=\sum_{k=0}^{n-1}C_k\mathrm e^{\mathrm ikx},\quad n\leqslant N,\tag{3.7.6}
+\]
+
+\[
+C_k=\frac1N\sum_{j=0}^{N-1}f_j\mathrm e^{-\mathrm ikj\frac{2\pi}{N}}\quad(k=0,1,\cdots,N-1).\tag{3.7.7}
+\]
+
+\noindent $n=N$\par
+
+\noindent $S(x)$\par
+
+\noindent $f(x)$\par
+
+\noindent $x_j$\par
+
+\noindent $j=0,1,\cdots,N-1$\par
+
+\noindent $S(x_j)=f(x_j)$\par
+
+\[
+f_j=\sum_{k=0}^{N-1}C_k\mathrm e^{\mathrm ik\frac{2\pi}{N}j}\quad(j=0,1,\cdots,N-1).\tag{3.7.8}
+\]
+
+\noindent $\{f_j\}$\par
+
+\noindent $\{C_k\}$\par
+
+\noindent $f(x)$\par
+
+\section*{PDF 087}
+
+\noindent $\{C_k\}$\par
+
+\noindent $\{f_j\}$\par
+
+\noindent $\{f_k\}$\par
+
+\noindent $\{C_j\}$\par
+
+\noindent $\{C_j\}$\par
+
+\noindent $\{f_k\}$\par
+
+\noindent $a_k,b_k$\par
+
+\[
+C_j=\sum_{k=0}^{N-1}x_kw^{kj}\quad(j=0,1,\cdots,N-1),\tag{3.7.9}
+\]
+
+\noindent $w=\exp(-\mathrm i2\pi/N)$\par
+
+\noindent $w=\exp(\mathrm i2\pi/N)$\par
+
+\noindent $\{x_k\}$\par
+
+\noindent $k=0,1,\cdots,N-1$\par
+
+\noindent $C_j$\par
+
+\noindent $N$\par
+
+\noindent $N$\par
+
+\noindent $N$\par
+
+\noindent $C_j$\par
+
+\noindent $N^2$\par
+
+\noindent $N$\par
+
+\noindent $ab+ac=a(b+c)$\par
+
+\noindent $C_j$\par
+
+\noindent $N^2$\par
+
+\noindent $\exp(\mathrm i2\pi kj/N),\ j,k=0,1,\cdots,N-1$\par
+
+\noindent $N$\par
+
+\noindent $w^0,w^1,\cdots,w^{N-1}$\par
+
+\noindent $N=2^p$\par
+
+\noindent $N/2$\par
+
+\noindent $w^r$\par
+
+\noindent $x_k$\par
+
+\noindent $w^r$\par
+
+\noindent $m$\par
+
+\noindent $N$\par
+
+\noindent $q$\par
+
+\noindent $r$\par
+
+\noindent $m=qN+r$\par
+
+\noindent $r$\par
+
+\noindent $m$\par
+
+\noindent $N$\par
+
+\noindent $w=\exp(\mathrm i2\pi/N),w^N=\mathrm e^{\mathrm i2\pi}=1$\par
+
+\noindent $w^m=(w^N)^qw^r=w^r$\par
+
+\noindent $w^m$\par
+
+\noindent $w$\par
+
+\noindent $N$\par
+
+\noindent $r$\par
+
+\noindent $m$\par
+
+\noindent $N=2^3$\par
+
+\noindent $0\leqslant k,j\leqslant N-1=2^3-1=7$\par
+
+\[
+C_j=\sum_{k=0}^7x_kw^{jk}\quad(j=0,1,\cdots,7).\tag{3.7.10}
+\]
+
+\noindent $k,j$\par
+
+\[
+k=k_2 2^2+k_1 2+k_0 2^0=(k_2k_1k_0),
+\]
+
+\[
+j=j_2 2^2+j_1 2^1+j_0 2^0=(j_2j_1j_0),
+\]
+
+\noindent $k_r,j_r$\par
+
+\noindent $r=0,1,2$\par
+
+\noindent $0$\par
+
+\noindent $1$\par
+
+\noindent $6=2^2+2^1+0\times2^0=(110)$\par
+
+\noindent $k,j$\par
+
+\noindent $C_j=C(j_2j_1j_0),x_k=x(k_2k_1k_0)$\par
+
+\[
+\begin{aligned}
+C(j_2j_1j_0)&=\sum_{k_0=0}^1\sum_{k_1=0}^1\sum_{k_2=0}^1x(k_2k_1k_0)w^{(k_2k_1k_0)(j_2 2^2+j_1 2^1+j_0 2^0)}\\
+&=\sum_{k_0=0}^1\left\{\sum_{k_1=0}^1\left[\sum_{k_2=0}^1x(k_2k_1k_0)w^{j_0(k_2k_1k_0)}\right]w^{j_1(k_1k_0 0)}\right\}\left(w^{j_2(k_0 00)}\right).
+\end{aligned}\tag{3.7.11}
+\]
+
+\noindent $N=2^p$\par
+
+\noindent $N/2$\par
+
+\noindent $\exp(\mathrm i2\pi kj/N)$\par
+
+\noindent $j=1$\par
+
+\noindent $N$\par
+
+\noindent $w^{r+N/2}=-w^r$\par
+
+\noindent $N/2$\par
+
+\noindent $w$\par
+
+\noindent $N$\par
+
+\noindent $r$\par
+
+\noindent $m$\par
+
+\noindent $m$\par
+
+\section*{PDF 088}
+
+\[
+\begin{cases}
+A_0(k_2k_1k_0)=x(k_2k_1k_0),\\[4pt]
+A_1(k_1k_0j_0)=\displaystyle\sum_{k_2=0}^1A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)},\\[4pt]
+A_2(k_0j_1j_0)=\displaystyle\sum_{k_1=0}^1A_1(k_1k_0j_0)w^{j_1(k_1k_0 0)},\\[4pt]
+A_3(j_2j_1j_0)=\displaystyle\sum_{k_0=0}^1A_2(k_0j_1j_0)w^{j_2(k_0 00)},
+\end{cases}\tag{3.7.12}
+\]
+
+\[
+C(j_2j_1j_0)=A_3(j_2j_1j_0).
+\]
+
+\noindent $N$\par
+
+\noindent $C_j$\par
+
+\noindent $p$\par
+
+\noindent $A_q$\par
+
+\noindent $2$\par
+
+\noindent $C_j$\par
+
+\noindent $2p$\par
+
+\noindent $C_j$\par
+
+\noindent $2pN$\par
+
+\noindent $w^{j_0 2^{p-1}}=w^{j_0N/2}=(-1)^j$\par
+
+\[
+\begin{aligned}
+A_1(k_1k_0j_0)&=\sum_{k_2=0}^1A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)}\\
+&=A_0(0k_1k_0)w^{j_0(0k_1k_0)}+A_0(1k_1k_0)w^{j_0 2^2}w^{j_0(0k_1k_0)}\\
+&=[A_0(0k_1k_0)+(-1)^{j_0}A_0(1k_1k_0)]w^{j_0(0k_1k_0)},
+\end{aligned}
+\]
+
+\[
+A_1(k_1k_0 0)=A_0(0k_1k_0)+A_0(1k_1k_0),
+\]
+
+\[
+A_1(k_1k_0 1)=[A_0(0k_1k_0)-A_0(1k_1k_0)]w^{(0k_1k_0)}.
+\]
+
+\noindent $k=(0k_1k_0)=k_1 2^1+k_0 2^0$\par
+
+\noindent $k=0,1,2,3$\par
+
+\[
+\begin{cases}
+A_1(2k)=A_0(k)+A_0(k+2^2),\\
+A_1(2k+1)=[A_0(k)-A_0(k+2^2)]w^k
+\end{cases}\quad(k=0,1,2,3).\tag{3.7.13}
+\]
+
+\noindent $A_2$\par
+
+\[
+A_2(k_0j_1j_0)=[A_1(0k_0j_0)+(-1)^{j_1}A_1(1k_0j_0)]w^{j_1(0k_0 0)},
+\]
+
+\[
+A_2(k_0 0j_0)=A_1(0k_0j_0)+A_1(1k_0j_0),
+\]
+
+\[
+A_2(k_0 1j_0)=[A_1(0k_0j_0)-A_1(1k_0j_0)]w^{(0k_0 0)}.
+\]
+
+\[
+\begin{cases}
+A_2(k2^2+j)=A_1(2k+j)+A_1(2k+j+2^2),\quad k=0,1,\\
+A_2(k2^2+j+2)=[A_1(2k+j)-A_1(2k+j+2^2)]w^{2k},\quad j=0,1.
+\end{cases}\tag{3.7.14}
+\]
+
+\noindent $A_3$\par
+
+\[
+A_3(j_2j_1j_0)=A_2(0j_1j_0)+(-1)^{j_2}A_2(1j_1j_0),
+\]
+
+\[
+A_3(0j_1j_0)=A_2(0j_1j_0)+A_2(1j_1j_0),
+\]
+
+\[
+A_3(1j_1j_0)=A_2(0j_1j_0)-A_2(1j_1j_0).
+\]
+
+\section*{PDF 089}
+
+\[
+\begin{cases}
+A_3(j)=A_2(j)+A_2(j+2^2),\\
+A_3(j+2^2)=A_2(j)-A_2(j+2^2)
+\end{cases}\quad(j=0,1,2,3).\tag{3.7.15}
+\]
+
+\noindent $A_0(k)=x(k)=x_k$\par
+
+\noindent $k=0,1,\cdots,7$\par
+
+\noindent $A_3(j)=C_j$\par
+
+\noindent $j=0,1,\cdots,7$\par
+
+\noindent $w^0=1$\par
+
+\noindent $w^1$\par
+
+\noindent $w^2$\par
+
+\noindent $w^3$\par
+
+\noindent $x_k=A_0(k)$\par
+
+\noindent $A_0(0)$\par
+
+\noindent $A_0(1)$\par
+
+\noindent $A_0(2)$\par
+
+\noindent $A_0(3)$\par
+
+\noindent $A_0(4)$\par
+
+\noindent $A_0(5)$\par
+
+\noindent $A_0(6)$\par
+
+\noindent $A_0(7)$\par
+
+\noindent $A_1$\par
+
+\noindent $A_0(0)+A_0(4)$\par
+
+\noindent $[A_0(0)-A_0(4)]w^0$\par
+
+\noindent $A_0(1)+A_0(5)$\par
+
+\noindent $[A_0(1)-A_0(5)]w^1$\par
+
+\noindent $A_0(2)+A_0(6)$\par
+
+\noindent $[A_0(2)-A_0(6)]w^2$\par
+
+\noindent $A_0(3)+A_0(7)$\par
+
+\noindent $[A_0(3)-A_0(7)]w^3$\par
+
+\noindent $A_2$\par
+
+\noindent $A_1(0)+A_1(4)$\par
+
+\noindent $A_1(0)+A_1(5)$\par
+
+\noindent $[A_1(0)-A_1(4)]w^0$\par
+
+\noindent $[A_1(1)-A_1(5)]w^0$\par
+
+\noindent $A_1(2)+A_1(6)$\par
+
+\noindent $A_1(3)+A_1(7)$\par
+
+\noindent $[A_1(2)-A_1(6)]w^2$\par
+
+\noindent $[A_1(3)-A_1(7)]w^2$\par
+
+\noindent $C_i=A_3(j)$\par
+
+\noindent $(0)+(4)$\par
+
+\noindent $(1)+(5)$\par
+
+\noindent $(2)+(6)$\par
+
+\noindent $(3)+(7)$\par
+
+\noindent $(0)-(4)$\par
+
+\noindent $(1)-(5)$\par
+
+\noindent $(2)-(6)$\par
+
+\noindent $(3)-(7)$\par
+
+\noindent $N=2^3$\par
+
+\noindent $N=2^p$\par
+
+\[
+\left\{\begin{aligned}
+A_q(k2^q+j)&=A_{q-1}(k2^{q-1}+j)+A_{q-1}(k2^{q-1}+j+2^{p-1}),\\
+A_q(k2^q+j+2^{q-1})&=[A_{q-1}(k2^{q-1}+j)-A_{q-1}(k2^{q-1}+j+2^{p-1})]w^{k2^{q-1}},
+\end{aligned}\right.\tag{3.7.16}
+\]
+
+\noindent $q=1,2,\cdots,p;\ k=0,1,\cdots,2^{p-q}-1;\ j=0,1,\cdots,2^{q-1}-1$\par
+
+\noindent $A_q$\par
+
+\noindent $A_q$\par
+
+\noindent $N$\par
+
+\noindent $A_0(m)$\par
+
+\noindent $m=0,1,\cdots,N-1$\par
+
+\noindent $q$\par
+
+\noindent $1$\par
+
+\noindent $p$\par
+
+\noindent $A_p(j)=C_j$\par
+
+\noindent $j=0,1,\cdots,N-1$\par
+
+\noindent $A_q$\par
+
+\noindent $A_p(j)$\par
+
+\noindent $q$\par
+
+\noindent $1$\par
+
+\noindent $p$\par
+
+\noindent $k$\par
+
+\noindent $0$\par
+
+\noindent $2^{p-q}-1$\par
+
+\noindent $j$\par
+
+\noindent $0$\par
+
+\noindent $2^{q-1}-1$\par
+
+\noindent $A_q$\par
+
+\noindent $2^{p-q}2^{q/1}=N/2$\par
+
+\noindent $A_p$\par
+
+\noindent $w^{k2^{p-1}}=(w^{N/2})^k=(-1)^k=(-1)^0=1$\par
+
+\noindent $q=p$\par
+
+\noindent $2^{p-q}-1=0$\par
+
+\noindent $k=0$\par
+
+\noindent $(p-1)N/2$\par
+
+\noindent $N^2$\par
+
+\noindent $N:(p-1)/2$\par
+
+\noindent $N=2^{10}$\par
+
+\noindent $1024:4.5\approx230:1$\par
+
+\noindent $pN$\par
+
+\noindent $A_2$\par
+
+\noindent $A_1(0)+A_1(5)$\par
+
+\noindent $k=0,j=1$\par
+
+\noindent $A_1(1)+A_1(5)$\par
+
+\noindent $C_i=A_3(j)$\par
+
+\noindent $C_j$\par
+
+\noindent $2^{p-q}2^{q/1}=N/2$\par
+
+\noindent $2^{p-q}2^{q-1}=N/2$\par
+
+\section*{PDF 090}
+
+\noindent $A_1(N),A_2(N)$\par
+
+\noindent $w(N/2)$\par
+
+\noindent $\{x_k\}$\par
+
+\noindent $A_1(k)$\par
+
+\noindent $k$\par
+
+\noindent $0$\par
+
+\noindent $N-1$\par
+
+\noindent $w^m=\exp\left(-\mathrm i\dfrac{2\pi}{N}m\right)$\par
+
+\noindent $w^m=\exp\left(\mathrm i\dfrac{2\pi}{N}m\right)$\par
+
+\noindent $w(m)$\par
+
+\noindent $m$\par
+
+\noindent $0$\par
+
+\noindent $(N/2)-1$\par
+
+\noindent $q$\par
+
+\noindent $1$\par
+
+\noindent $p$\par
+
+\noindent $q$\par
+
+\noindent $k$\par
+
+\noindent $0$\par
+
+\noindent $2^{p-q}-1$\par
+
+\noindent $j$\par
+
+\noindent $0$\par
+
+\noindent $2^{q-1}-1$\par
+
+\[
+A_2(k2^q+j)=A_1(k2^{q-1}+j)+A_1(k2^{q-1}+j+2^{p-1}),
+\]
+
+\[
+A_2(k2^q+j+2^{q-1})=[A_1(k2^{q-1}+j)-A_1(k2^{q-1}+j+2^{q-1})]w(k2^{q-1}),
+\]
+
+\noindent $k$\par
+
+\noindent $0$\par
+
+\noindent $2^{p-q}-1$\par
+
+\noindent $j$\par
+
+\noindent $0$\par
+
+\noindent $2^{q-1}$\par
+
+\[
+A_1(k2^q+j)=A_2(k2^{q-1}+j)+A_2(k2^{q-1}+j+2^{p-1}),
+\]
+
+\[
+A_1(k2^q+j+2^{q-1})=[A_2(k2^{q-1}+j)-A_2(k2^{q-1}+j+2^{q-1})]w(k2^{q-1}),
+\]
+
+\noindent $k,j$\par
+
+\noindent $q=p$\par
+
+\noindent $q+1\to q$\par
+
+\noindent $q$\par
+
+\noindent $p=\text{偶数}$\par
+
+\noindent $A_1(j)\to A_2(j)$\par
+
+\noindent $C_j=A_2(j)$\par
+
+\noindent $j=0,1,\cdots,N-1$\par
+
+\noindent $[a,b]$\par
+
+\noindent $2^{q-1}$\par
+
+\noindent $2^{p-1}$\par
+
+\noindent $j$\par
+
+\noindent $2^{q-1}$\par
+
+\noindent $-1$\par
+
+\noindent $j$\par
+
+\noindent $q=p$\par
+
+\noindent $N$\par
+
+\section*{PDF 091}
+
+\noindent $f(x)=\sin x$\par
+
+\noindent $[0,\pi/2]$\par
+
+\noindent $m\leqslant f(x)\leqslant M$\par
+
+\noindent $m\leqslant B_n(f,x)\leqslant M$\par
+
+\noindent $f(x)=x$\par
+
+\noindent $B_n(f,x)=x$\par
+
+\noindent $6$\par
+
+\noindent $f(x)=\sin4x$\par
+
+\noindent $[0,2\pi]$\par
+
+\noindent $f(x)$\par
+
+\noindent $[a,b]$\par
+
+\noindent $f(x)$\par
+
+\noindent $a$\par
+
+\noindent $\max\limits_{0\leqslant x\leqslant1}|x^3-ax|$\par
+
+\noindent $f(x)=\sin x$\par
+
+\noindent $[0,\pi/2]$\par
+
+\noindent $f(x)=\mathrm e^x$\par
+
+\noindent $[0,1]$\par
+
+\noindent $r$\par
+
+\noindent $p(x)=x^2+r$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $r$\par
+
+\noindent $f(x)=x^4+3x^3-1$\par
+
+\noindent $[0,1]$\par
+
+\noindent $T_n(x)=T_n(2x-1),x\in[0,1]$\par
+
+\noindent $T_0^*(x),T_1^*(x),T_2^*(x),T_3^*(x)$\par
+
+\noindent $\{T_n^*(x)\}$\par
+
+\noindent $[0,1]$\par
+
+\noindent $\rho=\dfrac1{\sqrt{x-x^2}}$\par
+
+\noindent $f(x)$\par
+
+\noindent $[-a,a]$\par
+
+\noindent $n$\par
+
+\noindent $f(x)$\par
+
+\noindent $F_n^*(x)\in H_n$\par
+
+\noindent $a,b$\par
+
+\noindent $\displaystyle\int_0^{\frac\pi2}[ax+b-\sin x]^2\,\mathrm dx$\par
+
+\noindent $f(x),g(x)\in C^1[a,b]$\par
+
+\noindent $(f,g)=\displaystyle\int_a^b f'(x)g'(x)\,\mathrm dx$\par
+
+\noindent $(f,g)=\displaystyle\int_a^b f'(x)g'(x)\,\mathrm dx+f(a)g(a)$\par
+
+\noindent $\displaystyle\int_0^1\frac{x^6}{1+x}\,\mathrm dx$\par
+
+\noindent $a$\par
+
+\noindent $\displaystyle\int_{-1}^1(x-ax^2)^2\,\mathrm dx$\par
+
+\noindent $\displaystyle\int_{-1}^1|x-ax^2|\,\mathrm dx$\par
+
+\noindent $\varphi_1=\operatorname{span}\{1,x\},\varphi_2=\operatorname{span}\{x^{100},x^{101}\}$\par
+
+\noindent $\varphi_1,\varphi_2$\par
+
+\noindent $x^2\in C[0,1]$\par
+
+\noindent $f(x)=|x|$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $\varphi_1=\operatorname{span}\{1,x^2,x^4\}$\par
+
+\noindent $u_n(x)=\dfrac{\sin[(n+1)\arccos x]}{\sqrt{1-x^2}}$\par
+
+\[
+u_{n+1}(x)=2xu_n(x)-u_{n-1}(x).
+\]
+
+\noindent $f(x)=\sin\dfrac12x$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $f(x)=\arccos x$\par
+
+\noindent $[-1,1]$\par
+
+\noindent $y=a+bx^2$\par
+
+\noindent $T_n(x)$\par
+
+\noindent $T_0^*,T_1^*,T_2^*,T_3^*$\par
+
+\noindent $T_n^*$\par
+
+\noindent $T_n^*(x)=T_n(2x-1)$\par
+
+\section*{PDF 092}
+
+\noindent $x_i$\par
+
+\noindent $y_i$\par
+
+\noindent $t$\par
+
+\noindent $s$\par
+
+\noindent $t/\mathrm s$\par
+
+\noindent $s/\mathrm m$\par
+
+\noindent $y$\par
+
+\noindent $t$\par
+
+\noindent $y=F(t)$\par
+
+\noindent $t/\mathrm{min}$\par
+
+\noindent $y/\times10^{-4}$\par
+
+\noindent $t/\mathrm{min}$\par
+
+\noindent $y/\times10^{-4}$\par
+
+\noindent $\{x_k\}=(4,3,2,1,0,1,2,3)$\par
+
+\noindent $\{x_k\}$\par
+
+\noindent $\{C_k\}$\par
+
+\noindent $k=0,1,\cdots,7$\par
+
+\end{document}

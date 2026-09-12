@@ -1,0 +1,212 @@
+[
+  {
+    "lane": "front",
+    "start": 1,
+    "end": 13,
+    "title": "前言与目录",
+    "state": "complete",
+    "agent": "/root/front",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch01",
+    "start": 14,
+    "end": 26,
+    "title": "第1章",
+    "state": "complete",
+    "agent": "/root/ch01",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch02a",
+    "start": 27,
+    "end": 42,
+    "title": "第2章前半",
+    "state": "complete",
+    "agent": "/root/ch02a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch02b",
+    "start": 43,
+    "end": 57,
+    "title": "第2章后半",
+    "state": "complete",
+    "agent": "/root/ch02b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch03a",
+    "start": 58,
+    "end": 75,
+    "title": "第3章前半",
+    "state": "complete",
+    "agent": "/root/ch03a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch03b",
+    "start": 76,
+    "end": 92,
+    "title": "第3章后半",
+    "state": "complete",
+    "agent": "/root/ch03b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch04a",
+    "start": 93,
+    "end": 105,
+    "title": "第4章前半",
+    "state": "complete",
+    "agent": "/root/ch04a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch04b",
+    "start": 106,
+    "end": 118,
+    "title": "第4章后半",
+    "state": "complete",
+    "agent": "/root/ch04b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch05a",
+    "start": 119,
+    "end": 136,
+    "title": "第5章前半",
+    "state": "complete",
+    "agent": "/root/ch05a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch05b",
+    "start": 137,
+    "end": 154,
+    "title": "第5章后半",
+    "state": "complete",
+    "agent": "/root/ch05b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch06",
+    "start": 155,
+    "end": 176,
+    "title": "第6章",
+    "state": "complete",
+    "agent": "/root/ch06",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch07a",
+    "start": 177,
+    "end": 195,
+    "title": "第7章前半",
+    "state": "complete",
+    "agent": "/root/ch07a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch07b",
+    "start": 196,
+    "end": 214,
+    "title": "第7章后半",
+    "state": "complete",
+    "agent": "/root/ch07b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch08",
+    "start": 215,
+    "end": 232,
+    "title": "第8章",
+    "state": "complete",
+    "agent": "/root/ch08",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch09a",
+    "start": 233,
+    "end": 246,
+    "title": "第9章前半",
+    "state": "complete",
+    "agent": "/root/ch09a",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch09b",
+    "start": 247,
+    "end": 260,
+    "title": "第9章后半",
+    "state": "complete",
+    "agent": "/root/ch09b",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch10",
+    "start": 261,
+    "end": 275,
+    "title": "第10章",
+    "state": "complete",
+    "agent": "/root/ch10",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch11",
+    "start": 276,
+    "end": 293,
+    "title": "第11章",
+    "state": "complete",
+    "agent": "/root/ch11",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch12",
+    "start": 294,
+    "end": 306,
+    "title": "第12章",
+    "state": "complete",
+    "agent": "/root/ch12",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "ch13",
+    "start": 307,
+    "end": 317,
+    "title": "第13章",
+    "state": "complete",
+    "agent": "/root/ch13",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  },
+  {
+    "lane": "back",
+    "start": 318,
+    "end": 322,
+    "title": "答案与参考文献等",
+    "state": "complete",
+    "agent": "/root/back",
+    "review_status": "primary_and_independent_cross_pass",
+    "render_status": "pass"
+  }
+]

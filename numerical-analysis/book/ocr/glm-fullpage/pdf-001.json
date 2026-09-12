@@ -1,0 +1,20 @@
+{
+  "pdf_page": 1,
+  "source_image": "source-images/pdf-001.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "c0ed0c1e28433aa0b953e993c32f07bc1aa8b79543e3c16fba05f087211e217f",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 110,
+  "possibly_truncated": false,
+  "elapsed_seconds": 17.075,
+  "created_utc": "2026-09-12T09:45:20.670678+00:00",
+  "raw_text_sha256": "1939c44f806268101b72bde04bb593b0b1b7eb1a1b5448913ec7cf9daaec66bc",
+  "raw_text": "普通高等教育“十三五”规划教材\n普通高等院校数学精品教材\n\n获奖\n获教育部高等学校优秀教材二等奖\n获全国优秀畅销书奖\n\n数值分析 第5版\n\n李庆扬 王能超 易大义 编\n\n·强调基本原理、基本理论，夯实基本素质\n·注重基本方法和技巧，提高应用能力\n·阐述严谨，脉络分明，深入浅出\n·反复锤炼，不断更新，长销30余年\n\n华中科技大学出版社\nhttp://www.hustp.com"
+}

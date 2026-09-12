@@ -1,0 +1,112 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={参考文献},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{参考文献}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{参考文献}\label{ux53c2ux8003ux6587ux732e}
+
+\textbf{{[}1{]}} WILKINSON J H. Rounding Errors in Algebraic Process{[}M{]}. London: H M Stationery Office, 1963.
+
+\textbf{{[}2{]}} MOORE R E. Interval Analysis{[}M{]}. New Jersey: Prentice-Hall, 1966.
+
+\textbf{{[}3{]}} 李岳生，齐东旭. 样条函数方法{[}M{]}. 北京：科学出版社，1979.
+
+\textbf{{[}4{]}} 纳唐松 И П. 函数构造论：上册{[}M{]}. 徐家福，郑维行，译. 北京：科学出版社，1958.
+
+\textbf{{[}5{]}} 纳唐松 И П. 函数构造论：下册{[}M{]}. 何旭初，唐述钊，译. 北京：科学出版社，1959.
+
+\textbf{{[}6{]}} 王仁宏. 数值有理逼近{[}M{]}. 上海：上海科技出版社，1980.
+
+\textbf{{[}7{]}} 赵访熊，李庆扬. 傅里叶变换滤波在地震勘探数字处理中的应用{[}J{]}. 清华大学学报，1978（4）：1-14.
+
+\textbf{{[}8{]}} 黄友谦，李岳生. 数值逼近{[}M{]}. 2 版. 北京：高等教育出版社，1987.
+
+\textbf{{[}9{]}} 徐利治，周蕴时. 高维数值积分{[}M{]}. 北京：科学出版社，1980.
+
+\textbf{{[}10{]}} 清华大学、北京大学计算方法编写组. 计算方法{[}M{]}. 北京：科学出版社，1980.
+
+\textbf{{[}11{]}} 斯图尔特 G W. 矩阵计算引论{[}M{]}. 王国荣，黄丽萍，译. 上海：上海科学技术出版社，1980.
+
+\textbf{{[}12{]}} 冯康，等. 数值计算方法{[}M{]}. 北京：国防工业出版社，1978.
+
+\textbf{{[}13{]}} STOER J, BULIRSCH R. Introduction to Numerical Analysis{[}M{]}. New York: Springer-verlag, 1980.
+
+\textbf{{[}14{]}} 拉尔斯登 A，维尔夫 H S. 数字计算机上用的数学方法：第二卷{[}M{]}. 本书翻译组，译. 上海：上海人民出版社，1976.
+
+\textbf{{[}15{]}} 高尔腊依 A R，瓦特桑 G A. 矩阵特征问题的计算方法{[}M{]}. 唐焕文，等，译. 上海：上海科学技术出版社，1980.
+
+\textbf{{[}16{]}} 奥特加 J M. 数值分析{[}M{]}. 张丽君，张乃玲，译. 北京：高等教育出版社，1983.
+
+\textbf{{[}17{]}} 瓦格 R S. 矩阵迭代分析{[}M{]}. 蒋尔雄，游兆永，张玉德，译. 上海：上海科学技术出版社，1966.
+
+\textbf{{[}18{]}} 王能超. 千古绝技``割圆术''------刘徽的大智慧{[}M{]}. 2 版. 武汉：华中科技大学出版社，2003.
+
+\textbf{{[}19{]}} 王能超. 算法演化论{[}M{]}. 北京：高等教育出版社，2008.
+
+\textbf{{[}20{]}} 王能超，王学东. 简易数值分析{[}M{]}. 武汉：华中科技大学出版社，2017.
+
+\end{document}

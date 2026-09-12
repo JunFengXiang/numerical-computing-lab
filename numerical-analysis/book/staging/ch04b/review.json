@@ -1,0 +1,443 @@
+{
+  "lane": "ch04b",
+  "reviewer": "Codex agent ch04b",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 106,
+      "printed_page": 93,
+      "path": "staging/ch04b/pages/pdf-106.md",
+      "sha256": "b6995e13ae1475db526e5424e903e800ecfbe12bf22a91b3451502c489413a60",
+      "source_image_sha256": "cff9874a339f1e3e05baaa8899b3784f7ecafbdafd608f895a8c7be76b27434a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.3.4",
+          "title": "梯形法的余项展开式"
+        },
+        {
+          "id": "4.4",
+          "title": "Gauss 公式"
+        }
+      ],
+      "formula_ids": [
+        "4.3.16",
+        "4.3.17",
+        "4.3.18"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "跨页接续 4.3.4；原式 (4.3.17) 幂次疑误 CH04B-E001，已放大原页核对。"
+      ]
+    },
+    {
+      "pdf_page": 107,
+      "printed_page": 94,
+      "path": "staging/ch04b/pages/pdf-107.md",
+      "sha256": "20ab62806c3f70714cf3bf9f1f7348970cebe58429c24682db173fc86573d9e4",
+      "source_image_sha256": "89f2e703d5deaabc0d47c444fe9cfe81af871d77525eae6715d26954fdd160f7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.4",
+          "title": "Gauss 公式"
+        },
+        {
+          "id": "4.4.1",
+          "title": "Gauss 点"
+        }
+      ],
+      "formula_ids": [
+        "4.4.1",
+        "4.4.2",
+        "4.4.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页正文和所有公式逐项目视核对；跨页接续已标注。"
+      ]
+    },
+    {
+      "pdf_page": 108,
+      "printed_page": 95,
+      "path": "staging/ch04b/pages/pdf-108.md",
+      "sha256": "6058a33de679881aed03bf4fca5a5ccb322524f56e084dcfd27450cd832f985e",
+      "source_image_sha256": "a1babdcdbf7f9cd0d555cf153cf28ae6667f53a0263f8d08618c337f2461abe2",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.4.1",
+          "title": "Gauss 点"
+        },
+        {
+          "id": "4.4.2",
+          "title": "Gauss-Legendre 公式"
+        }
+      ],
+      "formula_ids": [
+        "4.4.4"
+      ],
+      "figures": [],
+      "tables": [
+        "4.5"
+      ],
+      "notes": [
+        "表4.5全部节点与权重已逐位放大核对；原表节点疑误 CH04B-E002。"
+      ]
+    },
+    {
+      "pdf_page": 109,
+      "printed_page": 96,
+      "path": "staging/ch04b/pages/pdf-109.md",
+      "sha256": "350190778445ddd15a4f1dce5545f155599c124191f4c26299e5a314744aa2e6",
+      "source_image_sha256": "a3d1df15af2848f5a7146e4f60e75b07c698d87503451ea31c43cb2f44e7dcda",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.4.2",
+          "title": "Gauss-Legendre 公式"
+        },
+        {
+          "id": "4.4.3",
+          "title": "Gauss 公式的余项"
+        },
+        {
+          "id": "4.4.4",
+          "title": "Gauss 公式的稳定性"
+        }
+      ],
+      "formula_ids": [
+        "4.4.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页正文和所有公式逐项目视核对；跨页接续已标注。"
+      ]
+    },
+    {
+      "pdf_page": 110,
+      "printed_page": 97,
+      "path": "staging/ch04b/pages/pdf-110.md",
+      "sha256": "81f809d59cbe990702ee617d24aad8e3d25c10525d3768b78024caa6c423edfa",
+      "source_image_sha256": "6018bd10081eb9f6d508805cb9d0bdfa7ed2d0f90fcaf36a8dec9e35d1859c2a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.4.4",
+          "title": "Gauss 公式的稳定性"
+        },
+        {
+          "id": "4.4.5",
+          "title": "带权的 Gauss 公式"
+        }
+      ],
+      "formula_ids": [
+        "4.4.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页正文和所有公式逐项目视核对；跨页接续已标注。"
+      ]
+    },
+    {
+      "pdf_page": 111,
+      "printed_page": 98,
+      "path": "staging/ch04b/pages/pdf-111.md",
+      "sha256": "41ea5a3c77b2d301eefcbe434aaa8b20e20933f24a4f1649c5984af0861a5be9",
+      "source_image_sha256": "b9f7c6f8fca94324f41e4dea9aa6a9cbd41cd4b228bb98a7d3674f39d9fddadb",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.4.5",
+          "title": "带权的 Gauss 公式"
+        }
+      ],
+      "formula_ids": [
+        "4.4.7",
+        "4.4.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原书消元式 x_1^2 疑误 CH04B-E003，已放大核对并原样转录。"
+      ]
+    },
+    {
+      "pdf_page": 112,
+      "printed_page": 99,
+      "path": "staging/ch04b/pages/pdf-112.md",
+      "sha256": "5ccfff59a6444d5ac3c9f03e0d76ca5134aa4e0ee4a73002bb13e155a46779a2",
+      "source_image_sha256": "f0ede3aa197e1360ee888be936ffbcece008b3f7d9cb3834637b11aa612ba253",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5",
+          "title": "数值微分"
+        },
+        {
+          "id": "4.5.1",
+          "title": "中点方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "4.3"
+      ],
+      "tables": [],
+      "notes": [
+        "图4.3已裁切原图、目视核对完整边界和全部标签；正文与公式完整转录。"
+      ]
+    },
+    {
+      "pdf_page": 113,
+      "printed_page": 100,
+      "path": "staging/ch04b/pages/pdf-113.md",
+      "sha256": "cefb92fd3cdcc387bbec2baa959c86825ffc9bb969048338356ad2b45dc7710b",
+      "source_image_sha256": "3be5205780a486bb230384797f90950a772bb2f56aabd4e8a4bbf4919554abde",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5.1",
+          "title": "中点方法"
+        },
+        {
+          "id": "4.5.2",
+          "title": "插值型的求导公式"
+        }
+      ],
+      "formula_ids": [
+        "4.5.1"
+      ],
+      "figures": [],
+      "tables": [
+        "4.6",
+        "4.7"
+      ],
+      "notes": [
+        "表4.6、4.7逐项放大核对；节点多项式指标疑误 CH04B-E004。"
+      ]
+    },
+    {
+      "pdf_page": 114,
+      "printed_page": 101,
+      "path": "staging/ch04b/pages/pdf-114.md",
+      "sha256": "9dbe9aaadce5d5fba028bfff1abd20d0dd888998456aed4ad85a14992e110d94",
+      "source_image_sha256": "3597ede42bfda5408d1352d4d2a26277a7a0057374a855dcc76f190bb1330f89",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5.2",
+          "title": "插值型的求导公式"
+        }
+      ],
+      "formula_ids": [
+        "4.5.2",
+        "4.5.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "两点、三点求导公式及余项正负号逐项核对；第三个三点公式跨页。"
+      ]
+    },
+    {
+      "pdf_page": 115,
+      "printed_page": 102,
+      "path": "staging/ch04b/pages/pdf-115.md",
+      "sha256": "d88c24ee3efdfb058b6f2d1a12f05d69feaa130599ed9b8667db4f555eacf724",
+      "source_image_sha256": "d647b7bdee6c5d1d71408f491748e80e2624e1abbab9430e9cc1db8fac244dcf",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5.2",
+          "title": "插值型的求导公式"
+        },
+        {
+          "id": "4.5.3",
+          "title": "实用的五点公式"
+        }
+      ],
+      "formula_ids": [
+        "4.5.4",
+        "4.5.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式(4.5.4)仅标于中点公式；一阶五点公式全部系数另以局部原图核对。"
+      ]
+    },
+    {
+      "pdf_page": 116,
+      "printed_page": 103,
+      "path": "staging/ch04b/pages/pdf-116.md",
+      "sha256": "b3af26eb3c6655fc01c3e989d03b5ef8581d71a7d061e977a049134d85d0acbc",
+      "source_image_sha256": "11ea4dab405e8362927fd10a0f535b0b9cfe0bfa09fb48fa45c1dd41d4237c9f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5.3",
+          "title": "实用的五点公式"
+        },
+        {
+          "id": "4.5.4",
+          "title": "样条求导"
+        }
+      ],
+      "formula_ids": [
+        "4.5.6"
+      ],
+      "figures": [],
+      "tables": [
+        "4.8"
+      ],
+      "notes": [
+        "二阶五点公式全部系数另以局部原图核对；表4.8全部数值及缩放表头保留原样；样条求导阶次变量按原扫描保留 a。"
+      ]
+    },
+    {
+      "pdf_page": 117,
+      "printed_page": 104,
+      "path": "staging/ch04b/pages/pdf-117.md",
+      "sha256": "a5714996d85c06da565def854a420271c2440ad996ce47bdb8d780d43b029564",
+      "source_image_sha256": "34bbe1fd2baaff483f4ef4fc557ab5dae4745e2c7964d2659bec8b3e3b5f7d33",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.5.4",
+          "title": "样条求导"
+        },
+        {
+          "id": "4.summary",
+          "title": "小结"
+        },
+        {
+          "id": "4.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [
+        "4.5.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "小结全文、习题1全部4小题、习题2前2小题已核对；习题1(4)分母原印1，疑误CH04B-E005。"
+      ]
+    },
+    {
+      "pdf_page": 118,
+      "printed_page": 105,
+      "path": "staging/ch04b/pages/pdf-118.md",
+      "sha256": "3d6d935ccf5f78b09aebe3910de86d6ba760cb171907135c76dab036912b5d64",
+      "source_image_sha256": "b2af8212d7c7306fc172e7debcfeea53a12f40863b8c9b8b106cbb5fcce03839",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "4.9"
+      ],
+      "notes": [
+        "习题2后2小题及习题3–12完整核对，题目只转录；表4.9已放大核对全部数值。",
+        "第8题原印 e^{-x}，原样保留；第9题周长公式原印 a 而非4a，疑误CH04B-E006。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH04B-E001",
+      "pdf_page": 106,
+      "printed_page": 93,
+      "location": "式 (4.3.17) 首项",
+      "original": "h^2/(2!×6) Σ fʺ_{k+1/2}",
+      "comment": "原扫描明确印 h^2；按本页前后推导应为 h^3。原样保留，校注给出依据。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p106-middle.png"
+    },
+    {
+      "id": "CH04B-E002",
+      "pdf_page": 108,
+      "printed_page": 95,
+      "location": "表4.5 n=3 第二对节点",
+      "original": "±0.3398810",
+      "comment": "原扫描明确印 0.3398810；P4 较小零点为 0.3399810436…。原样保留，校注给出解析表达式。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-table-4-5.png"
+    },
+    {
+      "id": "CH04B-E003",
+      "pdf_page": 111,
+      "printed_page": 98,
+      "location": "消去 (x1-x0)A1 后的第二行未编号公式",
+      "original": "(2/7)x0 + (2/7 - (2/5)x0)x1^2 = 2/9",
+      "comment": "原扫描明确印 x1^2；根据前后消元关系应为 x1。原样保留并单列推导校注。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p111-elimination.png"
+    },
+    {
+      "id": "CH04B-E004",
+      "pdf_page": 113,
+      "printed_page": 100,
+      "location": "节点多项式 omega_{n+1} 的定义",
+      "original": "Π_{k=0}^n (x-x_i)",
+      "comment": "原扫描乘积指标 k 与节点下标 i 不一致；原样保留并单列下标疑误校注。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p113-product.png"
+    },
+    {
+      "id": "CH04B-E005",
+      "pdf_page": 117,
+      "printed_page": 104,
+      "location": "习题1(4)首项分母",
+      "original": "h[f(0)+f(h)]/1",
+      "comment": "原扫描明确印 /1；常数函数一致性检查不能满足，疑为 /2 的排印错误。原样保留并单列校注，不求参数或题目答案。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p117-exercises.png"
+    },
+    {
+      "id": "CH04B-E006",
+      "pdf_page": 118,
+      "printed_page": 105,
+      "location": "习题9椭圆周长公式",
+      "original": "s=a∫_0^{π/2}sqrt(1-(c/a)^2 sin^2θ)dθ",
+      "comment": "原扫描明确仅印 a；若表示周长则疑漏系数4。原样保留，以圆的特例作排印一致性说明，不进行本题数值求解。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p118-orbit.png"
+    }
+  ],
+  "validation_notes": [
+    "PDF106–118全部13页均已实际逐页打开 source-images 原图；疑误、表格、图4.3和五点公式等另作局部放大核验。",
+    "仅为 agent 目视核验；未称人工核验；未使用 OCR 或以算法正确性代替原页核对。",
+    "扫描书页码逐页核对为93–105；本lane起于4.3.4续文，包含4.4、4.5、小结和第4章完整习题。",
+    "最终完整性校验通过：13份Markdown的YAML、书页码、原图路径、图片SHA-256、文件SHA-256、链接、数学分隔符与18个唯一公式编号均一致。原PDF SHA-256已重新计算并与协议哈希相符。",
+    "454个行内和独立数学表达式已提取并使用XeLaTeX作语法编译，编译通过，无Overfull hbox和缺字警告；此为数学语法验收，非全章成品排版验收。详见staging/ch04b/validation/validation-report.json。",
+    "一阶与二阶五点求导共10组系数对0至4次多项式的独立导数一致性检查全部通过，仅作补充证据，不替代原页目视核验。",
+    "PDF116微分阶次变量与同页端点字形另作放大比较，按原扫描保留拉丁字母a；表4.8缩放表头按原扫描保留并附记法说明。",
+    "原图裁切图4.3已目视确认横纵坐标、各点、切线与全部标签完整。全部习题仅转录；疑误校注仅作必要的一致性检查，未给数值题答案。"
+  ]
+}

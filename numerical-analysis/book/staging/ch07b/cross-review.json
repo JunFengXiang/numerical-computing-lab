@@ -1,0 +1,258 @@
+{
+  "lane": "ch07b",
+  "reviewer": "Codex agent ch07a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 196,
+      "sha256": "96304bcd8e29eba38bacf12cf938488f468e362894018718c8216f69b60e7cc4",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页，逐字逐式核对7.4.8、7.4.9、存储映射和LDL^T展开；E001的b_i与E002的l_{n-1,n-1}均为原书排印，校注有据。"
+      ]
+    },
+    {
+      "pdf_page": 197,
+      "sha256": "be6eaabc86a68c1b8c03b4f754bfb4ad1fc599dcddf156affc0b40f8d1e2878c",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页，逐式核对7.4.10、7.4.11、三阶段存储矩阵及7.4.3三对角系统；E003的y_h原图明确，校注有据。"
+      ]
+    },
+    {
+      "pdf_page": 198,
+      "sha256": "3e5eeebdf588f883c84978759ea1cf895acec9a0310c6b5c5ce1118e2c7bdaea",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对三项对角占优条件、7.4.12–7.4.15、归纳推理及追赶法3步；上下界、绝对值和端点条件一致。"
+      ]
+    },
+    {
+      "pdf_page": 199,
+      "sha256": "4c98fb77ee3ba070796305e63cea57cfa84a5924f259f586e5be1e87ccca535a",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对定理7.9不等式和计算量、7.5引言、定义7.1实/复数量积、共轭转置及二范数；未发现转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 200,
+      "sha256": "eca6421f2aae2b8760a59085802c1c7f2a4124a67f7e8e674f10705e97408afb",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对定理7.10六性质、7.5.1三公理、7.5.2以及四种向量范数；复共轭、绝对值和p范围均一致。"
+      ]
+    },
+    {
+      "pdf_page": 201,
+      "sha256": "f08d186ef54eafcf311acf569e663ae2d380fa5f087b8605bd254468ec3d6e54",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对例7.6数值、向量收敛定义、连续性与等价性证明以及7.5.3；紧集S、c1/c2、归一化范数的上下标与原页一致。"
+      ]
+    },
+    {
+      "pdf_page": 202,
+      "sha256": "7070e9baf9fb70c91be4b8db31ace0b98246d34f96e4b46c8f0d7df786d3f478",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对7.5.4–7.5.7、矩阵范数与算子范数定义；E004定理号7.11原图明确，上一页7.12确为所用等价性。"
+      ]
+    },
+    {
+      "pdf_page": 203,
+      "sha256": "c8d70f661ad316eac27796c0bee3bfdb014760490390ca280046f31b395e3382",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对行/列/2范数定义与行范数达到最大值的构造；7.5.8、7.5.9正确照录，E005求和下限i=1原图明确。"
+      ]
+    },
+    {
+      "pdf_page": 204,
+      "sha256": "72c06f07d8a9ddf256759b0cbc194b045c475b0ff1a3228a7da1e0f18a9039dc",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对谱范数推导、例7.7、谱半径和定理7.16–7.18；复数Rayleigh商原式确未开平方，E006校注正确。"
+      ]
+    },
+    {
+      "pdf_page": 205,
+      "sha256": "dcbe02ec20b7f5d71ec01dac20c3fdd0dd47d581e79048a39652d25f79dc6ff3",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对7.18证明正负号、7.6及7.6.1、例7.8两系统与定义7.7；E007两个原书符号问题保留无误。"
+      ]
+    },
+    {
+      "pdf_page": 206,
+      "sha256": "3e4553d8f5b4336740ff8621b9b1e1b1585c73f59012b2f03127861d39738e7f",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页逐式核对7.6.3–7.6.7、定理7.19/7.20；b≠0和||A^-1||||δA||<1条件及误差界分母完整一致。"
+      ]
+    },
+    {
+      "pdf_page": 207,
+      "sha256": "a9e75427c8cb94c3d442a161e59dbda9125e6fb57d6e97d86da23b59c8ec4e61",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对条件数定义、谱条件数、三条性质、Hilbert矩阵与H3逆矩阵；符号和数值逐项一致。"
+      ]
+    },
+    {
+      "pdf_page": 208,
+      "sha256": "3a8bf05d43606a6e1d27d38ad1485431500044df1e878158245e21c32af2656e",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对7.6.8矩阵、9位解值、误差百分数、三位LU及病态判别；E008指数6原图明确，待本复核独立数值重算。",
+        "独立有理数运算确认cond∞(H3)=748、cond∞(H6)=29070279及三个相对扰动值；另发现原书所列精确解末位不符，记录于cross-F001。",
+        "已重读E014新校注，精确有理向量、约数及不影响51.2%的说明均与独立计算一致；原书数字保持原样，primary当前sha同步。"
+      ]
+    },
+    {
+      "pdf_page": 209,
+      "sha256": "5b692206274166bfb645aa8906a0d70c9aeb64320ba38bcf52e17c1cb97e070b",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开整页核对预处理等价方程、例7.10逆矩阵、7.6.9和7.6.10及3位消元；E009条件数分子1原图明确，待独立数值重算。",
+        "独立精确计算cond∞(A)=100020001/9999、cond∞(A′)=40000/9999，确认E009。"
+      ]
+    },
+    {
+      "pdf_page": 210,
+      "sha256": "ba3fe67af180731d5cc583c7e16c4778be0196c8278e9fe6dbc340ad6b09dc95",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字逐式核例7.10续的增广矩阵、解、后验误差界定理7.21及公式7.6.11–7.6.13、舍入误差历史与定理7.22前两项条件。",
+        "原书E010的后向误差方程确实写x，正文称计算解x̄；primary保留原式并另注，处理一致。"
+      ]
+    },
+    {
+      "pdf_page": 211,
+      "sha256": "cb2c688b3fa1ad72efd14fc3527450e7ee9adb431effcbdd476502a1fef3ccba",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字逐式核定理7.22的增长因子、n2^{-t}≤0.01、LU扰动界2(n−1)ra2^{-t}、1.01(n³+3n²)系数、公式7.6.14与全页小结。",
+        "原书E010的方程仍写x；E011公式7.6.14左右之间确实未印关系符，且正文未列分母正的扰动条件；primary保留并另注。"
+      ]
+    },
+    {
+      "pdf_page": 212,
+      "sha256": "8b3a863a56187d85ff26403acfb889d51665c6d9e596c06e7010994d19f0a727",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图逐项核习题1–7：两个方程组所有小数、Gauss/LU递推的求和范围、非奇异与顺序主子式条件、严格对角占优和正定阵条件。"
+      ]
+    },
+    {
+      "pdf_page": 213,
+      "sha256": "397b0f0281e7bb4c91e1935e89943c65396b36d1bb9a79a1ec3c67786de6d9c6",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图逐项核习题7续及8–15：最大值下标2≤i,j≤n、L_k第k列标注、排列阵共轭、Crout/三角阵题、A=LᵀL的原书顺序，以及习题12–15全部矩阵和右端项。"
+      ]
+    },
+    {
+      "pdf_page": 214,
+      "sha256": "7827a467329bcdc223a0540f8ba00e3271b667804640d53e1183d123bed7ef08",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图逐项核习题16–33：全部矩阵、带状矩阵求和起止、各种范数/非奇异/正定条件、扰动分式、条件数下标及范数比较。",
+        "独立重开E012/E013局部原图：第27题y确在范数闭合符外下标位置，第30题(2)左端2确在括号内，primary忠实保留并另注。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch07b-cross-F001",
+      "pdf_page": 208,
+      "type": "source_numerical_inconsistency",
+      "status": "resolved",
+      "description": "例7.9将(1.089512538,0.487967062,1.491002798)称为7.6.8精确解，与该页有理数系数算得的末位不同；primary转录忠实，但建议另加精度校注。",
+      "source_value": [
+        "1.089512538",
+        "0.487967062",
+        "1.491002798"
+      ],
+      "independent_exact_value": [
+        "153971/141321",
+        "68960/141321",
+        "210710/141321"
+      ],
+      "requested_action": "保留原数，另加source errata；由primary作者处理后复核新sha。",
+      "resolution": "Primary作者保留原书数字，追加PDF208校注ch07b-E014并登记review；独立重读校注及核对新sha完成。"
+    }
+  ],
+  "unresolved": [],
+  "numeric_evidence": {
+    "method": "Independent SymPy exact rational arithmetic; textbook inputs entered from visually checked pages; no primary code reused",
+    "H3_inverse_identity": true,
+    "H3_norm_inf": "11/6",
+    "H3_inverse_norm_inf": "408",
+    "H3_condition_inf": "748",
+    "H6_norm_inf": "49/20",
+    "H6_inverse_norm_inf": "11865420",
+    "H6_condition_inf": "29070279",
+    "perturbed_H3_exact_solution": [
+      "153971/141321",
+      "68960/141321",
+      "210710/141321"
+    ],
+    "perturbed_H3_decimal_solution": [
+      "1.089512528215906",
+      "0.4879671103374587",
+      "1.491002752598694"
+    ],
+    "relative_H3_matrix_perturbation": "0.0001818181818181818",
+    "relative_H3_rhs_perturbation": "0.001818181818181818",
+    "relative_H3_solution_perturbation": "0.5120328896625413",
+    "A_condition_inf": "100020001/9999",
+    "scaled_A_condition_inf": "40000/9999",
+    "example_7_7_column_norm": "6",
+    "example_7_7_row_norm": "7",
+    "example_7_7_F_norm": "5.477225575051661",
+    "example_7_7_spectral_norm": "5.464985704219043",
+    "confirmed_source_errata": [
+      "ch07b-E008",
+      "ch07b-E009"
+    ],
+    "example_7_8_original_solution": [
+      "2",
+      "0"
+    ],
+    "example_7_8_perturbed_solution": [
+      "1",
+      "1"
+    ]
+  },
+  "confirmed_primary_source_errata": [
+    "ch07b-E001",
+    "ch07b-E002",
+    "ch07b-E003",
+    "ch07b-E004",
+    "ch07b-E005",
+    "ch07b-E006",
+    "ch07b-E007",
+    "ch07b-E008",
+    "ch07b-E009",
+    "ch07b-E010",
+    "ch07b-E011",
+    "ch07b-E012",
+    "ch07b-E013",
+    "ch07b-E014"
+  ],
+  "completion_notes": [
+    "PDF196–214全部19页均由本独立agent重新打开原图并逐字逐式核对，包含习题1–33及跨页内容。",
+    "未发现primary抄录差异；发现并闭环一处额外原书数值末位不一致E014，原书原式原数保留。",
+    "全部19页当前MD哈希与primary receipt及本独立复核一致；human_review=false。"
+  ],
+  "structural_validation": {
+    "structural_pass": true,
+    "primary_review_complete": true,
+    "cross_review_complete": true,
+    "errors": [],
+    "warnings": [],
+    "source_errata_count": 14
+  }
+}

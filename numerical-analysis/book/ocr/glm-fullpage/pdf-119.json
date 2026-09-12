@@ -1,0 +1,20 @@
+{
+  "pdf_page": 119,
+  "source_image": "source-images/pdf-119.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "5e2aee24ca1a25d6caaa11e3e15916549bda9a17edca27ba5001ce411c1abe91",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 625,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.17,
+  "created_utc": "2026-09-12T10:29:46.416786+00:00",
+  "raw_text_sha256": "e51346079c2c557aa8f9c84b935aa843dcda489c5f6016c3043e93238fcf1ef8",
+  "raw_text": "第5章 常微分方程数值解法\n\n5.1 引言\n\n科学技术中常常需要求解常微分方程的定解问题. 这类问题最简单的形式, 是本章将要着重考察的一阶方程的初值问题\n\n$$\\begin{cases} y' = f(x, y), \\\\ y(x_0) = y_0. \\end{cases}$$\n\n(5.1.1)\n(5.1.2)\n\n我们知道, 只要函数 $f(x, y)$ 适当光滑——譬如关于 $y$ 满足 Lipschitz 条件\n$$|f(x, y) - f(x, \\bar{y})| \\leqslant L |y - \\bar{y}|,$$\n理论上就可以保证初值问题(5.1.1)、(5.1.2)的解 $y = y(x)$ 存在并且唯一.\n\n虽然求解常微分方程有各种各样的解析方法, 但解析方法只能用来求解一些特殊类型的方程, 实际问题中归结出来的微分方程主要靠数值解法求解.\n\n所谓数值解法, 就是寻求解 $y(x)$ 在一系列离散节点\n$$x_1 < x_2 < \\cdots < x_n < x_{n+1} < \\cdots$$\n上的近似值 $y_1, y_2, \\cdots, y_n, y_{n+1}, \\cdots$. 相邻两个节点的间距 $h = x_{n+1} - x_n$ 称为步长. 今后如不特别说明, 总是假定 $h$ 为定数, 这时节点为 $x_n = x_0 + nh, n = 0, 1, 2, \\cdots$.\n\n初值问题(5.1.1)、(5.1.2)的数值解法有个基本特点, 它们都采取“步进式”, 即求解过程顺着节点排列的次序一步一步地向前推进. 描述这类算法, 只要给出用已知信息 $y_n, y_{n-1}, y_{n-2}, \\cdots$ 计算 $y_{n+1}$ 的递推公式即可. 这种计算公式称为差分格式.\n\n5.2 Euler 方法\n\n5.2.1 Euler 格式\n\n我们知道, 在 $Oxy$ 平面上, 微分方程(5.1.1)的解 $y = y(x)$ 称为它的积分曲线. 积分曲线上一点 $(x, y)$ 的切线斜率等于函数 $f(x, y)$ 的值. 如果按函数 $f(x, y)$ 在 $Oxy$ 平面上建立一个方向场, 那么, 积分曲线上每一点的切线方向均与方向场在该点的方向一致.\n\n基于上述几何解释, 我们从初始点 $P_0(x_0, y_0)$ 出发, 先依方向场在该点的方向推"
+}

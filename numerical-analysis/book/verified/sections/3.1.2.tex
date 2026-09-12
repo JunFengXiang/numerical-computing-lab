@@ -1,0 +1,116 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Weierstrass 定理},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Weierstrass 定理}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{3.1.2 Weierstrass 定理}\label{weierstrass-ux5b9aux7406}
+
+用插值法或 Taylor 展开求 \(f(x) \in C[a,b]\) 的逼近多项式, 在某些点上可能没有误差, 但在整个区间 \([a,b]\) 上误差可能很大, 2.7 节给出的 Runge 现象就说明了这一点. 因此, 用 \(P_{n}(x)\) 一致逼近 \(f(x)\), 首先要解决存在性问题, 即对于 \([a,b]\) 上的连续函数 \(f(x)\), 是否存在多项式 \(P_{n}(x)\) 一致收敛于 \(f(x)\)? Weierstrass 给出了下面定理.
+
+定理 3.1 设 \(f(x) \in C[a,b]\), 则对于任何 \(\varepsilon > 0\), 总存在一个代数多项式 \(P(x)\), 使 \[
+\| f(x) - P(x) \|_{\infty} < \varepsilon
+\] 在 \([a,b]\) 上一致成立.
+
+这定理已在``数学分析''中证明过. 这里需要说明的是在许多证明方法中, Bernstein 在 1912 年给出的证明是一种构造性证明. 他根据函数整体逼近的特性造出 Bernstein 多项式 \[
+\begin{cases} B_{n}(f,x) = \sum_{k=0}^{n} f\left(\frac{k}{n}\right) P_{k}(x), \\ P_{k}(x) = \binom{n}{k} x^{k}(1-x)^{n-k}, \end{cases} \tag{3.1.4}
+\]
+
+并证明了 \(\lim_{n \to \infty} B_{n}(f,x) = f(x)\) 在 \([0,1]\) 上一致成立; 若 \(f(x)\) 在 \([0,1]\) 上 \(m\) 阶导数连续, 则 \[
+\lim_{n \to \infty} B_{n}^{(m)}(f,x) = f^{(m)}(x).
+\] 这不但证明了定理 3.1, 而且由式 (3.1.4)给出了 \(f(x)\) 的一个逼近多项式. 它与 Lagrange 插值多项式 \[
+L_{n}(x) = \sum_{k=0}^{n} f\left(x_{k}\right) l_{k}(x), \quad \sum_{k=0}^{n} l_{k}(x_{k}) = 1
+\] 很相似, 对于 \(B_{n}(f,x)\), 当 \(f(x)=1\) 时也有关系式 \[
+\sum_{k=0}^{n} P_{k}(x) = \sum_{k=0}^{n} \binom{n}{k} x^{k}(1-x)^{n-k} = 1. \tag{3.1.5}
+\]
+
+这只要从恒等式
+
+\begin{quote}
+校注（agent 补充，原书疑误）：原页 Lagrange 插值式后的求和明确印为 \(\sum_{k=0}^{n}l_k(x_k)=1\)，此处按原文保留。由基函数性质 \(l_k(x_k)=1\)，左端应为 \(n+1\)；通常的恒等式应为 \(\sum_{k=0}^{n}l_k(x)=1\)。这不是 OCR 误识。
+\end{quote}
+
+\href{../../source-images/pdf-060.jpeg}{查看原页}
+
+\[
+(x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k} \tag{3.1.6}
+\] 中令 \(y=1-x\) 就可得到. 但这里当 \(x \in [0,1]\) 时还有 \(P_k(x) \geqslant 0\), 于是 \[
+\sum_{k=0}^{n} |P_k(x)| = \sum_{k=0}^{n} P_k(x) = 1
+\] 是有界的, 因而只要 \(|f(x)| \leqslant \delta\) 对于任意 \(x \in [0,1]\) 成立, 则 \[
+|B_n(f,x)| \leqslant \max_{0 \leqslant x \leqslant 1} |f(x)| \sum_{k=0}^{n} |P_k(x)| \leqslant \delta
+\] 有界, 故 \(B_n(f,x)\) 是稳定的. 至于 Lagrange 插值多项式 \(L_n(x)\), 由于 \(\sum_{k=0}^{n} |l_k(x)|\) 无界, 因而不能保证高阶插值的稳定性与收敛性. 相比之下, 多项式 \(B_n(f,x)\) 有良好的逼近性质, 但它收敛太慢, 比三次样条逼近效果差得多, 实际中很少使用.
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03a-E01}：原书 PDF 页 59
+\end{itemize}
+
+\end{document}

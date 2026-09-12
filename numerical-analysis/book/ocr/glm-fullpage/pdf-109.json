@@ -1,0 +1,20 @@
+{
+  "pdf_page": 109,
+  "source_image": "source-images/pdf-109.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "a3d1df15af2848f5a7146e4f60e75b07c698d87503451ea31c43cb2f44e7dcda",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 900,
+  "possibly_truncated": false,
+  "elapsed_seconds": 33.868,
+  "created_utc": "2026-09-12T10:24:23.333311+00:00",
+  "raw_text_sha256": "43ab87ba8e05efd5970bad2fafd00be46da0ae5458a9c54a705b09de35c7f01c",
+  "raw_text": "4.4.3 Gauss 公式的余项\n\n定理 4.5 对于 Gauss 公式(4.4.1), 其余项\n\n$$R(x) = \\int_{a}^{b} f(x) \\mathrm{d}x - \\sum_{k=0}^{n} A_{k} f(x_{k}) = \\frac{f^{(2n+2)}(\\xi)}{(2n+2)!} \\int_{a}^{b} \\omega^{2}(x) \\mathrm{d}x, \\tag{4.4.5}$$\n\n这里 $\\omega(x) = (x-x_{0})(x-x_{1})\\cdots(x-x_{n})$.\n\n证明 以 $x_{0}, x_{1}, \\cdots, x_{n}$ 为节点构造次数不大于 $2n+1$ 的多项式 $H(x)$, 使其满足条件\n\n$$H(x_{i}) = f(x_{i}), \\quad H'(x_{i}) = f'(x_{i}) \\quad (i=0,1,\\cdots,n).$$\n\n我们知道, 这样的 $H(x)$ 称为 Hermite 插值多项式 (见式(2.6.3)、(2.6.6)). 由于 Gauss 公式具有 $2n+1$ 次代数精度, 它对于 $H(x)$ 能准确成立, 即\n\n$$\\int_{a}^{b} H(x) \\mathrm{d}x = \\sum_{k=0}^{n} A_{k} H(x_{k}) = \\sum_{k=0}^{n} A_{k} f(x_{k}),$$\n\n故有\n\n$$R(x) = \\int_{a}^{b} f(x) \\mathrm{d}x - \\sum_{k=0}^{n} A_{k} f(x_{k}) = \\int_{a}^{b} f(x) \\mathrm{d}x - \\int_{a}^{b} H(x) \\mathrm{d}x$$\n\n$$= \\int_{a}^{b} \\frac{f^{(2n+2)}(\\eta)}{(2n+2)!} \\omega^{2}(x) \\mathrm{d}x.$$\n\n再考虑到该函数 $\\omega^{2}(x)$ 在 $[a,b]$ 上保号, 应用积分中值定理得式(4.4.5). 证毕.\n\n4.4.4 Gauss 公式的稳定性\n\n对比 Newton-Cotes 公式, Gauss 公式不但是高精度的, 而且是数值稳定的. Gauss 公式的稳定性之所以能够得到保证, 是由于它的求积系数具有非负性.\n\n定理 4.6 Gauss 公式(4.4.1)的求积系数 $A_{k}$ ($k=0,1,\\cdots,n$)全是正的.\n\n证明 考察\n\n$$l_{k}(x) = \\prod_{j=0}^{n} \\frac{x-x_{j}}{x_{k}-x_{j}},$$\n\n它们是 $n$ 次多项式, 因而 $l_{k}^{2}(x)$ 是 $2n$ 次多项式, 故 Gauss 公式(4.4.1)对于它能准确成立, 即有\n\n$$\\int_{a}^{b} l_{k}^{2}(x) \\mathrm{d}x = \\sum_{i=0}^{n} A_{i} l_{k}^{2}(x_{i}).$$\n\n注意到 $l_{k}(x_{i}) = \\delta_{ki}$, 上式右端实际上即等于 $A_{k}$, 从而有 $A_{k} = \\int_{a}^{b} l_{k}^{2}(x) \\mathrm{d}x > 0$. 证毕.\n\n现在讨论求积过程的稳定性问题. 在用求积公式 $I_{n} = \\sum_{k=0}^{n} A_{k} f(x_{k})$ 进行实际计算时, 通常不一定能提供准确的数据 $f_{k} = f(x_{k})$, 而只是给出含有误差 (譬如由于计\n\n• 96 •"
+}

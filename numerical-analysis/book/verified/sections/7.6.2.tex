@@ -1,0 +1,155 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={舍入误差},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{舍入误差}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.6.2 舍入误差}\label{ux820dux5165ux8befux5dee}
+
+在复杂的计算中，由浮点运算而引进的舍入误差可能积累而影响答案，因此对任何算法都需要进行舍入误差分析，看其是否过度影响所得的结果。
+
+下面叙述采用选主元素 Gauss 消去法解式（7.6.3）的计算过程中舍入误差对解的影响。在 Gauss 消去法的舍入误差的分析和研究方面，von Neumann（在 1947 年）、Givens（在 1954 年）和 Wilkinson（在 1961 年、1963 年）等人都作出了自己的贡献。
+
+设 \(\overline x\) 为用选主元素 Gauss 消去法解式（7.6.3）的计算解，\(x\) 为式（7.6.3）的精确解。若要直接计算每一步舍入误差对解的影响来获得界的估计 \(\|x-\overline x\|\)，那将是非常困难的。Wilkinson 等人提出了``向后误差分析方法''，其基本思想是把计算过程中舍入误差对解的影响归结为原始数据变化对解的影响，即计算解 \(\overline x\) 是下述扰动方程组的精确解 \((A+\delta A)x=b\)，其中 \(\delta A\) 为某个``小''矩阵。
+
+下面给出一个定理来说明这个结果。
+
+\textbf{定理 7.22（选主元素 Gauss 消去法误差分析）} 如果
+
+\(1^\circ\) 设 \(A\) 为 \(n\) 阶非奇异矩阵；
+
+\(2^\circ\) 用列主元素消去法（或完全主元素消去法）解式（7.6.3）；
+
+（定理条件与结论续下页。）
+
+\begin{quote}
+校注（agent 补充，原书疑误）：向后误差分析段中印刷方程为 \((A+\delta A)x=b\)，而紧邻文字明确指计算解 \(\overline x\) 是其精确解。此处保留原式；按本段符号约定，应写 \((A+\delta A)\overline x=b\)。\href{../assets/ch07b/210-backward-error.png}{原文局部图}。
+\end{quote}
+
+\href{../../source-images/pdf-211.jpeg}{原页图像}
+
+（续 7.6.2 定理 7.22。）
+
+\(3^\circ\) 记 \(a_k=\max_{1\leqslant i,j\leqslant n}|a_{ij}^{(k)}|\)，\(a=\max_{1\leqslant i,j\leqslant n}|a_{ij}|\)，\(r=\max_{1\leqslant k\leqslant n}a_k/a\)------元素的增长因子，\(A^{(k)}\equiv(a_{ij}^{(k)})_n\)；
+
+\(4^\circ\) \(t\) 为计算机字长（指尾数部分），矩阵的阶数 \(n\) 满足 \(n\cdot2^{-t}\leqslant0.01\)，
+
+则（1）用选主元素 Gauss 消去法计算的三角阵 \(L,U\) 满足 \(LU=A+E\)，其中
+
+\[
+|(E)_{ij}|\leqslant2(n-1)ra2^{-t};
+\]
+
+（2）用选主元素 Gauss 消去法得到的计算解 \(\overline x\) 精确满足 \((A+\delta A)x=b\)，其中
+
+\[
+\|\delta A\|_\infty\leqslant1.01(n^3+3n^2)ar2^{-t}\leqslant1.01(n^3+3n^2)r\|A\|_\infty2^{-t};
+\]
+
+（3）计算解精度估计（\(x\) 为 \(Ax=b\) 精确解）
+
+\[
+\frac{\|x-\overline x\|_\infty}{\|x\|_\infty}
+\quad
+\frac{\operatorname{cond}(A)_\infty}
+{1-\operatorname{cond}(A)_\infty\dfrac{\|\delta A\|_\infty}{\|A\|_\infty}}
+\times1.01(n^3+3n^2)r2^{-t}.
+\tag{7.6.14}
+\]
+
+上述计算解 \(\overline x\) 精度估计式说明，\(\overline x\) 的相对误差限依赖于 \(\operatorname{cond}(A)_\infty\)、元素的增长因子、方程组阶数、计算机字长等。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 211 的校注}\label{ux539fux4e66-pdf-ux9875-211-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-211.md}{完整原页转录} · \href{../../source-images/pdf-211.jpeg}{原页图像}
+
+校注记录：ch07b-E011。
+
+\begin{quote}
+校注（agent 补充，原书疑误）：定理 7.22（2）印作``计算解 \(\overline x\) 精确满足 \((A+\delta A)x=b\)''，此处按原文保留；与上一页同样，方程中的 \(x\) 应按符号约定写为 \(\overline x\)。\href{../assets/ch07b/211-computed-solution.png}{原式局部图}。
+
+校注（agent 补充，原书疑误）：式（7.6.14）原图在左侧误差比与右侧分式之间未印关系符号，此处保持两式并列；按精度估计用途应为 \(\leqslant\)。另外，由式（7.6.7）得到此界还须 \(\operatorname{cond}(A)_\infty\|\delta A\|_\infty/\|A\|_\infty<1\)，保证分母为正；这一适用条件未在本定理列出。\href{../assets/ch07b/211-error-estimate.png}{原式局部图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07b-E010}：原书 PDF 页 210
+\item
+  \texttt{ch07b-E011}：原书 PDF 页 211
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,108 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={插值多项式的存在唯一性},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{插值多项式的存在唯一性}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{2.2.1 插值多项式的存在唯一性}\label{ux63d2ux503cux591aux9879ux5f0fux7684ux5b58ux5728ux552fux4e00ux6027}
+
+设 \(P(x)\) 是形如式（2.1.2）的插值多项式，用 \(H_n\) 代表所有次数不超过 \(n\) 的多项式集合，于是 \(P(x)\in H_n\)（符号 \(\in\) 表示属于）。所谓插值多项式 \(P(x)\) 存在唯一，就是指在集合 \(H_n\) 中有且只有一个 \(P(x)\) 满足式（2.1.1）。由式（2.1.1）可得
+
+\[
+\begin{cases}
+a_0+a_1x_0+\cdots+a_nx_0^n=y_0,\\
+a_0+a_1x_1+\cdots+a_nx_1^n=y_1,\\
+\qquad\qquad\vdots\\
+a_0+a_1x_n+\cdots+a_nx_n^n=y_n.
+\end{cases}
+\tag{2.2.1}
+\]
+
+这是一个关于 \(a_0,a_1,\cdots,a_n\) 的 \(n+1\) 元线性方程组。要证明插值多项式的存在唯一，只要证明方程组（2.2.1）的解存在唯一，也就是证明方程组（2.2.1）的系数行列式
+
+\[
+V_n(x_0,x_1,\cdots,x_n)=
+\begin{vmatrix}
+1 & x_0 & x_0^2 & \cdots & x_0^n\\
+1 & x_1 & x_1^2 & \cdots & x_1^n\\
+\vdots & \vdots & \vdots & & \vdots\\
+1 & x_n & x_n^2 & \cdots & x_n^n
+\end{vmatrix}
+\tag{2.2.2}
+\]
+
+不为零，其中 \(V_n(x_0,x_1,\cdots,x_n)\) 称为 Vandermonde 行列式。利用行列式性质可得
+
+\[
+V_n(x_0,x_1,\cdots,x_n)
+=\prod_{i=1}^{n}\prod_{j=0}^{i-1}(x_i-x_j),
+\]
+
+由于 \(i\ne j\) 时 \(x_i\ne x_j\)，上式所有因子 \(x_i-x_j\ne0\)，于是 \(V_n(x_0,x_1,\cdots,x_n)\ne0\)，故方程组（2.2.1）存在唯一的一组解 \(a_0,a_1,\cdots,a_n\)。以上论述可写成如下定理。
+
+\textbf{定理 2.1} 满足条件式（2.1.1）的插值多项式（2.1.2）存在唯一。
+
+\end{document}

@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-09-12T11:28:37.008801+00:00",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "original_pdf_unchanged": true,
+  "human_review": false,
+  "source_pages": 322,
+  "independent_page_review_rounds": 2,
+  "chapter_index_entries": 275,
+  "numbered_formulas": 542,
+  "source_errata_and_qualification_records": 178,
+  "full_book_math_fragments_preserved": 10636,
+  "section_math_fragments_preserved_with_overlap": 29838,
+  "standalone_tex_compiled": 275,
+  "rendered_book_pages": 582,
+  "unresolved_transcription_or_export_blockers": 0,
+  "artifacts": {
+    "textbook.md": "33f40d624e0427247ffa6b1345c06142b064a8156d17745ad46103f1146e682c",
+    "textbook.tex": "2d48a0dd107304cdf88ee49194096a6e516da00048822b42887408d131edb901",
+    "textbook.pdf": "78e9bc52a78e11fda17e6ca4f6f6b8a4e859dc307f855eea6fa4a62a0bedae11",
+    "index/sections.json": "dc578a255fd00141b87532197d17fbe3657dd15dde1b5f7eb3e2e52860201880",
+    "index/formulas.json": "79d8477d6b3955e3258c845755f0d9011106470b40754475339a0bd0ac6f1e41"
+  },
+  "evidence": {
+    "quality/delivery-checks.json": "8c21e15b9a201e12c187ee43bc56bea7b7c8a606d1aa9aea4500ae089bbeb463",
+    "quality/sections-latex.json": "67b2e64cbb9dc251323bf1a9abfa040a1d527d84e78306c723a19135438e7a29",
+    "quality/sections-compile.json": "830f6943ec0002f3a416f858c8c40339b80f9339e9d7ca27f05fe84b17b09d8e",
+    "quality/book-math-sequence.json": "250c16e1455946dd9ccead5a6721e525e103789cfb40d421baae5e1a134af9eb",
+    "quality/book-visual.json": "6db1b24285a955bdc440bdd041f675a711aa4071463a7dc42c226837ec6beb1c",
+    "quality/interpolation-symbolic-checks.json": "7d91c6175a5da816565c4ac6423b6cf5e24fa9f417cdabf5a8f6c424a98765ec",
+    "quality/remainder-example-checks.json": "697e56289419de9326ce8cb78fea492a891f1e5ed2bc796519978ee8fb565818",
+    "quality/lookup-acceptance.json": "7a5084c0dae38e6f2b37db3b65c3b647e9b961344d19333fe26916fa64cf462f",
+    "quality/section-context-checks.json": "8a6956c8803f89b2dc5ab423a85200b75f0fec8360fc70facc74af2eaca9a64d",
+    "quality/local-links.json": "257d8411a5ce1d0f30e4dedf8c4b321f4ea9881ec542faa313bda2c4d041e245",
+    "quality/book-latex.json": "c6462af7f117d373e17ef365827ee627f6a6a9d82957c6a33a6c788e63637d3b",
+    "quality/plot-acceptance.json": "8c47ad96bdb3db9da7fa806d018a96b3b3c81d7adfa7a1f06734114e474879ab"
+  },
+  "acceptance_request": "根据2.2.1的线性插值画出图",
+  "request_result": "Number/topic conflict is explicitly reported; verified section 2.2.2 is used, LaTeX formulas are parsed and node residual is zero.",
+  "limits": [
+    "Agent visual review is not human review or a guarantee of mathematical infallibility.",
+    "Source errors are retained and separately annotated; annotations must be read before mathematical use.",
+    "The plotting CLI demonstrates linear interpolation in 2.2.2; other plotting tasks require the agent to read and implement the corresponding section."
+  ]
+}

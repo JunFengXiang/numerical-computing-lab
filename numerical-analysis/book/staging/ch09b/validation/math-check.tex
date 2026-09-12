@@ -1,0 +1,996 @@
+\documentclass[UTF8,fontset=fandol]{ctexart}
+\usepackage{amsmath,amssymb}
+\usepackage[paperwidth=330mm,paperheight=450mm,margin=15mm]{geometry}
+\setcounter{MaxMatrixCols}{20}
+\begin{document}
+\section*{pdf-247}
+$U_k=\begin{pmatrix}I&O\\O&R_k\end{pmatrix}$\par
+\[
+A_{k+1}=U_kA_kU_k=
+\begin{pmatrix}
+A_{11}^{(k)}&a_{12}^{(k)}&A_{13}^{(k)}R_k\\
+O&R_ka_{22}^{(k)}&R_kA_{23}^{(k)}R_k
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}^{(k)}&a_{12}^{(k)}&A_{13}^{(k)}R_k\\
+O&-\sigma_ke_1&R_kA_{23}^{(k)}R_k
+\end{pmatrix}.
+\tag{9.3.3}
+\]
+$A_{k+1}$\par
+$k+1$\par
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}
+=\begin{pmatrix}
+a_{11}&\times&\times&\cdots&\times\\
+-\sigma_1&a_{22}^{(2)}&\times&\cdots&\times\\
+&-\sigma_2&a_{33}^{(3)}&\ddots&\vdots\\
+&&\ddots&\ddots&\times\\
+&&&-\sigma_{n-1}&a_{nn}^{(n-1)}
+\end{pmatrix}=A_{n-1}.
+\]
+$A\in\mathbb R^{n\times n}$\par
+$U_1,U_2,\cdots,U_{n-2}$\par
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}=C\quad\text{（上 Hessenberg 阵）}.
+\]
+$A_k\to A_{k+1}=U_kA_kU_k$\par
+$R_k$\par
+$A_{13}^{(k)}R_k$\par
+$R_kA_{23}^{(k)}R_k$\par
+$A$\par
+$\dfrac53n^3$\par
+$U_k$\par
+$A_1\sim A_2\sim\cdots\sim A_{n-1}$\par
+$A$\par
+$C$\par
+$P=U_{n-2}\cdots U_2U_1$\par
+\[
+PAP^{\mathrm T}=C.
+\]
+$y$\par
+$C$\par
+$\lambda$\par
+$P^{\mathrm T}y$\par
+$A$\par
+$\lambda$\par
+\[
+P^{\mathrm T}y=U_1U_2\cdots U_{n-2}y
+=(I-\lambda_1^{-1}u_1u_1^{\mathrm T})\cdots(I-\lambda_{n-2}^{-1}u_{n-2}u_{n-2}^{\mathrm T})y.
+\]
+$A\in\mathbb R^{n\times n}$\par
+$U_1,U_2,\cdots,U_{n-2}$\par
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}=A_{n-1}
+=\begin{pmatrix}
+c_1&b_1&&&\\
+b_1&c_2&b_2&&\\
+&\ddots&\ddots&\ddots&\\
+&&b_{n-2}&c_{n-1}&b_{n-1}\\
+&&&b_{n-1}&c_n
+\end{pmatrix}\equiv C.
+\]
+$U_1,U_2,\cdots,U_{n-2}$\par
+$A_{n-1}$\par
+$A_{n-1}$\par
+$A_{n-1}$\par
+$A_k\to A_{k+1}=U_kA_kU_k$\par
+$R_k$\par
+$R_kA_{23}^{(k)}R_k$\par
+$A$\par
+$R_kA_{23}^{(k)}R_k$\par
+\[
+R_kA_{23}^{(k)}R_k=(I-\rho_k^{-1}u_ku_k^{\mathrm T})(A_{23}^{(k)}-\rho_k^{-1}A_{23}^{(k)}u_ku_k^{\mathrm T}),
+\]
+$P^{\mathrm T}y$\par
+$\lambda_1^{-1}$\par
+$\lambda_{n-2}^{-1}$\par
+$\rho_k^{-1}$\par
+$\lambda$\par
+\clearpage
+\section*{pdf-248}
+\[
+r_k=\rho_k^{-1}A_{23}^{(k)}u_k,\qquad
+ t_k=r_k-\frac{\rho_k^{-1}}2(u_k^{\mathrm T}r_k)u_k,
+\]
+\[
+R_kA_{23}^{(k)}R_k=A_{23}^{(k)}-u_kt_k^{\mathrm T}-t_ku_k^{\mathrm T}
+\quad(i=k+1,\cdots,n;\ j=k+1,\cdots,i).
+\]
+$A\in\mathbb R^{n\times n}$\par
+$U_1,U_2,\cdots,U_{n-2}$\par
+$U_{n-2}\cdots U_1AU_1\cdots U_{n-2}=C$\par
+$C$\par
+$c_i$\par
+$c_1,c_2,\cdots,c_n$\par
+$C$\par
+$b_i$\par
+$b_1,b_2,\cdots,b_{n-1}$\par
+$b_1,b_2,\cdots,b_n$\par
+$r_k$\par
+$t_k$\par
+$U_k$\par
+$u_k$\par
+$u_{k+1,k},\cdots,u_{nk}$\par
+$A$\par
+$\rho_k$\par
+$a_{kk}$\par
+$A$\par
+$A$\par
+$A$\par
+$k$\par
+$\rho_k$\par
+$k=1,2,\cdots,n-2$\par
+$L$\par
+$c_k=a_{kk}$\par
+$\eta=\max\limits_{k+1\leq i\leq n}|a_{ik}|$\par
+$\eta=0$\par
+\[
+\begin{cases}
+a_{kk}\to\rho_k=0,\\
+b_k\to0,\\
+\text{转 }L,\text{否则继续};
+\end{cases}
+\]
+$a_{ik}\leftarrow u_{ik}=a_{ik}/\eta\quad(i=k+1,\cdots,n)$\par
+$\sigma=\operatorname{sgn}(u_{k+1,k})\sqrt{u_{k+1,k}^2+\cdots+u_{nk}^2}$\par
+$u_{k+1,k}\leftarrow u_{k+1,k}+\sigma$\par
+$a_{kk}\leftarrow\rho_k=\sigma u_{k+1,k}$\par
+$b_k\leftarrow-\sigma\eta$\par
+$\sigma=0$\par
+$A_{23}^{(k)}u_k$\par
+$u_k^{\mathrm T}r_k$\par
+$i=k+1,\cdots,n$\par
+\[
+\begin{cases}
+b_i\leftarrow s=\displaystyle\sum_{j=k+1}^{n}a_{ij}u_{jk}+\displaystyle\sum_{j=i+1}^{n}a_{ji}u_{jk},\\
+\sigma\leftarrow\sigma+su_{ik};
+\end{cases}
+\]
+$t_k$\par
+\[
+b_i\leftarrow\rho_k^{-1}\left(b_i-\rho_k^{-1}\frac\sigma2u_{ik}\right)
+\quad(i=k+1,\cdots,n);
+\]
+$R_kA_{23}^{(k)}R_k$\par
+$i=k+1,k+2,\cdots,n;\ j=k+1,\cdots,i$\par
+$a_{ij}\leftarrow a_{ij}-u_{ik}b_j-b_iu_{jk}$\par
+$L$\par
+$k=n-1$\par
+\[
+c_{n-1}\leftarrow a_{n-1,n-1},\qquad c_n\leftarrow a_{nn},\qquad b_{n-1}\leftarrow a_{n,n-1}.
+\]
+$n$\par
+$i$\par
+$j>i$\par
+\clearpage
+\section*{pdf-249}
+$A$\par
+$\dfrac23n^3$\par
+$U_k$\par
+$U_k$\par
+\[
+A_1=A=\begin{pmatrix}-4&-3&-7\\2&3&2\\4&2&7\end{pmatrix}.
+\]
+$k=1$\par
+$U_1=\begin{pmatrix}1&\begin{matrix}0&0\end{matrix}\\\begin{matrix}0\\0\end{matrix}&R_1\end{pmatrix}$\par
+$a_{21}^{(1)}=\begin{pmatrix}2\\4\end{pmatrix}$\par
+$R_1$\par
+\[
+R_1a_{21}^{(1)}=-\sigma_1\begin{pmatrix}1\\0\end{pmatrix},\qquad
+\sigma_1=\|a_{21}^{(1)}\|_2=\sqrt{20}\approx4.472\,136,
+\]
+\[
+u_1=a_{21}^{(1)}+\sigma_1\rho_1=\begin{pmatrix}2+\sqrt{20}\\4\end{pmatrix}
+\approx\begin{pmatrix}6.472\,136\\4\end{pmatrix},
+\]
+\[
+\rho_1=\sigma_1(\sigma_1+a_{21})=\sqrt{20}(\sqrt{20}+2)\approx28.944\,27,\qquad
+R_1=I-\rho_1^{-1}u_1u_1^{\mathrm T}.
+\]
+$R_1A_{22}^{(1)}$\par
+\[
+A_{22}^{(1)}=\begin{pmatrix}3&2\\2&7\end{pmatrix}\equiv(a_1,a_2),
+\]
+\[
+R_1A_{22}^{(1)}=(R_1a_1,R_1a_2)
+=\begin{pmatrix}-3.130\,496&-7.155\,419\\-1.788\,855&1.341\,640\end{pmatrix},
+\]
+\[
+R_1a_i=(I-\rho_1^{-1}u_1u_1^{\mathrm T})a_i
+=a_i-(\rho_1^{-1}u_1^{\mathrm T}a_i)u_1\quad(i=1,2).
+\]
+$A_{12}^{(1)}R_1$\par
+$(R_1A_{22}^{(1)})R_1$\par
+\[
+\begin{pmatrix}A_{12}^{(1)}\\(R_1A_{22}^{(1)})\end{pmatrix}R_1
+\equiv\begin{pmatrix}b_1^{\mathrm T}\\b_2^{\mathrm T}\\b_3^{\mathrm T}\end{pmatrix}R_1
+=\begin{pmatrix}b_1^{\mathrm T}R_1\\b_2^{\mathrm T}R_1\\b_3^{\mathrm T}R_1\end{pmatrix}
+=\begin{pmatrix}
+7.602\,634&-0.447\,212\\
+7.800\,003&-0.399\,999\\
+-0.399\,999&2.200\,000
+\end{pmatrix},
+\]
+\[
+b_i^{\mathrm T}R_1=b_i^{\mathrm T}-(\rho_1^{-1}b_i^{\mathrm T}u_1)u_1^{\mathrm T}
+\quad(i=1,2,3).
+\]
+$A_2=U_1A_1U_1$\par
+\[
+A_2=\begin{pmatrix}-4&A_{12}^{(1)}R_1\\
+\begin{matrix}-\sigma_1\\0\end{matrix}&R_1A_{22}^{(1)}R_1
+\end{pmatrix}
+=\begin{pmatrix}
+-4&7.602\,634&-0.447\,212\\
+-4.472\,136&7.800\,003&-0.399\,999\\
+0&-0.399\,999&2.200\,000
+\end{pmatrix}
+\]
+$u_1=a_{21}^{(1)}+\sigma_1\rho_1$\par
+$\rho_1$\par
+$\rho_1$\par
+$e_1$\par
+\clearpage
+\section*{pdf-250}
+$A\in\mathbb R^{n\times n}$\par
+$A$\par
+$B$\par
+$B$\par
+\[
+P_{ij}=\left(\begin{array}{*{11}{c}}
+1&&&&&&&&&&\\
+&\ddots&&&&&&&&&\\
+&&1&&&&&&&&\\
+&&&c&&&&s&&&\\
+&&&&1&&&&&&\\
+&&&&&\ddots&&&&&\\
+&&&&&&1&&&&\\
+&&&-s&&&&c&&&\\
+&&&&&&&&1&&\\
+&&&&&&&&&\ddots&\\
+&&&&&&&&&&1
+\end{array}\right),
+\tag{9.4.1}
+\]
+$c,-s$\par
+$i$\par
+$s,c$\par
+$j$\par
+$c,s$\par
+$i$\par
+$-s,c$\par
+$j$\par
+$c=\cos\theta$\par
+$s=\sin\theta$\par
+$x=(\alpha_1,\alpha_2,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)^{\mathrm T}$\par
+$\alpha_i,\alpha_j$\par
+$P_{ij}$\par
+$P_{ij}x=y\equiv(\alpha_1,\alpha_2,\cdots,\alpha_i^{(1)},\cdots,\alpha_j^{(1)},\cdots,\alpha_n)^{\mathrm T}$\par
+\[
+\alpha_i^{(1)}=\sqrt{\alpha_i^2+\alpha_j^2},
+\tag{9.4.2}
+\]
+\[
+\alpha_j^{(1)}=0,
+\tag{9.4.3}
+\]
+\[
+\begin{cases}
+c=\alpha_i/\sqrt{\alpha_i^2+\alpha_j^2},\\
+s=\alpha_j/\sqrt{\alpha_i^2+\alpha_j^2}.
+\end{cases}
+\tag{9.4.4}
+\]
+\clearpage
+\section*{pdf-251}
+$P_{ij}x$\par
+$x$\par
+$i$\par
+$j$\par
+\[
+\alpha_i^{(1)}=c\alpha_i+s\alpha_j,\qquad
+\alpha_j^{(1)}=-s\alpha_i+c\alpha_i,
+\]
+$P_{ij}$\par
+$\alpha_j^{(1)}=-s\alpha_i+c\alpha_j=0$\par
+$c,s$\par
+$x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}$\par
+$c=\cos\theta$\par
+$s=\sin\theta$\par
+$v=\sqrt{\alpha^2+\beta^2}$\par
+$P_{ij}x=\begin{pmatrix}c&s\\-s&c\end{pmatrix}\begin{pmatrix}\alpha\\\beta\end{pmatrix}=\begin{pmatrix}v\\0\end{pmatrix}$\par
+$x$\par
+\[
+\eta\equiv\|x\|_\infty=\max\{|\alpha|,|\beta|\}\ne0,\qquad
+x'=x/\eta=\begin{pmatrix}\alpha/\eta\\\beta/\eta\end{pmatrix},
+\]
+\[
+\begin{cases}c'=c,\ s'=s,\\v'=v/\eta.\end{cases}
+\]
+$x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}$\par
+$c,s$\par
+$v$\par
+$\eta=\max\{|\alpha|,|\beta|\}$\par
+$\eta=0$\par
+$c\leftarrow1$\par
+$s\leftarrow0$\par
+$\alpha'=\alpha/\eta$\par
+$\beta'=\beta/\eta$\par
+$v'=\sqrt{\alpha'^2+\beta'^2}$\par
+$c=\alpha'/v'$\par
+$s=\beta'/v'$\par
+$v=\eta v'$\par
+$A$\par
+$P_1,P_2,\cdots,P_{n-1}$\par
+\[
+P_{n-1},\cdots,P_2P_1A=\begin{pmatrix}
+r_{11}&r_{12}&\cdots&r_{1n}\\
+&r_{22}&\cdots&r_{2n}\\
+&&\ddots&\vdots\\
+&&&r_{nn}
+\end{pmatrix}\equiv R,
+\tag{9.4.5}
+\]
+$r_{ii}>0\quad(i=1,2,\cdots,n-1)$\par
+$A$\par
+$a_{j1}\ne0$\par
+$a_{j1}\ne0\ (j=2,3,\cdots,n)$\par
+$P_{12},P_{13},\cdots,P_{1n}$\par
+\[
+P_{1n}\cdots P_{13}P_{12}A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&\cdots&a_{1n}^{(2)}\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+\vdots&\vdots&&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}
+\end{pmatrix}\equiv A^{(2)},
+\]
+$P_{1n}\cdots P_{12}=P_1$\par
+$a_{2j}^{(2)}\ne0\ (j=3,\cdots,n)$\par
+$\alpha_j^{(1)}=-s\alpha_i+c\alpha_i$\par
+$-s\alpha_i+c\alpha_j$\par
+$c\alpha_j$\par
+$a_{2j}^{(2)}\ne0$\par
+$a_{j2}^{(2)}\ne0$\par
+$c,s$\par
+$v$\par
+$v=\sqrt{\alpha^2+\beta^2}$\par
+$v=0$\par
+\clearpage
+\section*{pdf-252}
+$P_{23},\cdots,P_{2n}$\par
+$P_2=P_{2n}\cdots P_{23}$\par
+\[
+P_2P_1A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\\
+&r_{22}&a_{23}^{(3)}&\cdots&a_{2n}^{(3)}\\
+&&a_{33}^{(3)}&\cdots&a_{3n}^{(3)}\\
+&&\vdots&&\vdots\\
+&&a_{n3}^{(3)}&\cdots&a_{nn}^{(3)}
+\end{pmatrix}.
+\]
+$P_1,P_2,\cdots,P_{n-1}$\par
+$A\in\mathbb R^{n\times n}$\par
+$A$\par
+$Q$\par
+$R$\par
+$A=QR$\par
+$R$\par
+$P_1,P_2,\cdots,P_{n-1}$\par
+\[
+P_{n-1}\cdots P_2P_1A=R
+\tag{9.4.6}
+\]
+\[
+Q^{\mathrm T}=P_{n-1}\cdots P_2P_1,
+\]
+$Q^{\mathrm T}A=R$\par
+$A=QR$\par
+$Q=P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}$\par
+$A=Q_1R_1=Q_2R_2$\par
+$R_1,R_2$\par
+$Q_1,Q_2$\par
+\[
+Q_2^{\mathrm T}Q_1=R_2R_1^{-1},
+\tag{9.4.7}
+\]
+$R_2R_1^{-1}$\par
+$R_2R_1^{-1}$\par
+\[
+R_2R_1^{-1}=D=\operatorname{diag}(d_1,d_2,\cdots,d_n).
+\]
+$R_2R_1^{-1}$\par
+$D^2=I$\par
+$R_1,R_2$\par
+$d_i>0\ (i=1,2,\cdots,n)$\par
+$D=I$\par
+$R_2=R_1$\par
+$Q_2=Q_1$\par
+$A=A_1=(a_{ij})\in\mathbb R^{n\times n}$\par
+$A$\par
+$A=QR$\par
+$R$\par
+$Q$\par
+\[
+B=RQ=Q^{\mathrm T}AQ.
+\]
+$B$\par
+$A$\par
+$B$\par
+$A$\par
+$B$\par
+$A=A_1$\par
+$A_1=Q_1R_1$\par
+$A_2=R_1Q_1=Q_1^{\mathrm T}A_1Q_1$\par
+$\cdots$\par
+$A_k$\par
+$A_k$\par
+$A_k=Q_kR_k$\par
+$A_{k+1}=R_kQ_k=Q_k^{\mathrm T}A_kQ_k\cdots$\par
+$\{A_k\}$\par
+$A$\par
+$\{A_k\}$\par
+$A=A_1\in\mathbb R^{n\times n}$\par
+\[
+\begin{cases}
+A_k=Q_kR_k\quad(Q_k^{\mathrm T}Q_k=I,\ R_k\text{ 为上三角阵}),\\
+A_{k+1}=R_kQ_k\quad(k=1,2,\cdots),
+\end{cases}
+\tag{9.4.8}
+\]
+\clearpage
+\section*{pdf-253}
+$\widetilde Q_k\equiv Q_1Q_2\cdots Q_k$\par
+$\widetilde R_k\equiv R_k\cdots R_2R_1$\par
+$1^\circ$\par
+$A_{k+1}$\par
+$A_k$\par
+$A_{k+1}=Q_k^{\mathrm T}A_kQ_k$\par
+$2^\circ$\par
+$A_{k+1}=(Q_1Q_2\cdots Q_k)^{\mathrm T}A_1(Q_1Q_2\cdots Q_k)=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k$\par
+$3^\circ$\par
+$A^k$\par
+$A^k=\widetilde Q_k\widetilde R_k$\par
+$1^\circ$\par
+$2^\circ$\par
+$3^\circ$\par
+$k=1$\par
+$A_1=\widetilde Q_1\widetilde R_1=Q_1R_1$\par
+$A^{k-1}$\par
+$A^{k-1}=\widetilde Q_{k-1}\widetilde R_{k-1}$\par
+\[
+\begin{aligned}
+\widetilde Q_k\widetilde R_k
+&=Q_1Q_2\cdots(Q_kR_k)\cdots R_1
+=Q_1Q_2\cdots Q_{k-1}A_kR_{k-1}\cdots R_1\\
+&=\widetilde Q_{k-1}A_k\widetilde R_{k-1}
+=A\widetilde Q_{k-1}\widetilde R_{k-1}=A^k
+\quad\text{（因为 }A_k=\widetilde Q_{k-1}^{\mathrm T}A\widetilde Q_{k-1}\text{）}.
+\end{aligned}
+\]
+$A_k$\par
+$A_k$\par
+\[
+Q_k^{\mathrm T}A_k=R_k,\qquad
+A_{k+1}=Q_k^{\mathrm T}A_kQ_k=P_{n-1}\cdots P_2P_1A_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T},
+\]
+\[
+Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1.
+\]
+$A_{k+1}$\par
+$A_k$\par
+$P_{n-1}\cdots P_2P_1A_k=R_k$\par
+$R_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}=A_{k+1}$\par
+$M_k=Q_kR_k$\par
+$Q_k$\par
+$R_k$\par
+$M_k\to I\ (k\to\infty)$\par
+$Q_k\to I$\par
+$R_k\to I\ (k\to\infty)$\par
+$R_k^{\mathrm T}R_k=M_k^{\mathrm T}M_k\to I\ (k\to\infty)$\par
+$R_k=(r_{ij}^{(k)})$\par
+$R_k^{\mathrm T}R_k$\par
+\[
+r_{11}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)}),
+\]
+\[
+r_{11}^{(k)}\to1,\ r_{12}^{(k)}\to0,\ \cdots,\ r_{1n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.9}
+\]
+$R_k^{\mathrm T}R_k$\par
+\[
+r_{12}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)})
++r_{22}^{(k)}\cdot(0,r_{22}^{(k)},r_{23}^{(k)},\cdots,r_{2n}^{(k)}),
+\]
+\[
+r_{22}^{(k)}\to1,\ r_{23}^{(k)}\to0,\ \cdots,\ r_{2n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.10}
+\]
+$R_k^{\mathrm T}R_k$\par
+$R_k\to I\ (k\to\infty)$\par
+$R_k^{-1}\to I\ (k\to\infty)$\par
+$Q_k=M_kR_k^{-1}\to I\ (k\to\infty)$\par
+$A=(a_{ij})\in\mathbb R^{n\times n}$\par
+$1^\circ$\par
+$A$\par
+$|\lambda_1|>|\lambda_2|>\cdots>|\lambda_n|>0$\par
+$2^\circ$\par
+$A$\par
+$A=XDX^{-1}$\par
+$D=\operatorname{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)$\par
+$X^{-1}$\par
+$X^{-1}=LU$\par
+$L$\par
+$U$\par
+$\{A_k\}$\par
+\[
+A_k\xrightarrow{\text{本质上}}R=
+\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix}\quad(k\to\infty)
+\]
+\clearpage
+\section*{pdf-254}
+\[
+a_{ii}^{(k)}\to\lambda_i\quad(k\to\infty),
+\tag{9.4.11}
+\]
+$i>j$\par
+\[
+a_{ij}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.12}
+\]
+$i<j$\par
+$a_{ij}^{(k)}$\par
+$A_{k+1}=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k$\par
+$\widetilde Q_k$\par
+$A^k$\par
+$\widetilde Q_k$\par
+$A_{k+1}$\par
+$A$\par
+$X$\par
+$X^{-1}AX=D$\par
+\[
+A^k=XD^kX^{-1},
+\tag{9.4.13}
+\]
+$X^{-1}=LU$\par
+\[
+A^k=XD^kLU=X(D^kLD^{-k})D^kU.
+\]
+\[
+D^kLD^{-k}=I+E_k,
+\]
+\[
+E_k=\begin{pmatrix}
+0&&&&\\
+\left(\dfrac{\lambda_2}{\lambda_1}\right)^k l_{21}&0&&&\\
+\left(\dfrac{\lambda_3}{\lambda_1}\right)^k l_{31}&\left(\dfrac{\lambda_3}{\lambda_2}\right)^k l_{32}&0&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+\left(\dfrac{\lambda_n}{\lambda_1}\right)^k l_{n1}&\left(\dfrac{\lambda_n}{\lambda_2}\right)^k l_{n2}&\cdots&\left(\dfrac{\lambda_n}{\lambda_{n-1}}\right)^k l_{n,n-1}&0
+\end{pmatrix}.
+\]
+$|\lambda_i/\lambda_j|<1$\par
+$i>j$\par
+$E_k\to O\ (k\to\infty)$\par
+\[
+\|E_k\|_\infty\leq c\max_{1\leq j\leq n-1}|\lambda_{j+1}/\lambda_j|^k
+\quad(c\text{ 为正的常数},\ k\geq1).
+\tag{9.4.14}
+\]
+$X$\par
+$X=QR$\par
+$Q$\par
+$R$\par
+\[
+A^k=QR(I+E_k)D^kU=Q(I+RE_kR^{-1})RD^kU.
+\tag{9.4.15}
+\]
+$R(I+E_k)$\par
+$k$\par
+$I+RE_kR^{-1}$\par
+$(I+RE_kR^{-1})$\par
+$R_k$\par
+\[
+I+RE_kR^{-1}=Q_kR_k\quad\text{且}\quad Q_kR_k\to I\quad\text{（当 }k\to\infty\text{ 时）},
+\]
+$Q_k\to I,R_k\to I$\par
+$k\to\infty$\par
+\[
+A^k=(QQ_k)(R_kRD^kU),
+\tag{9.4.16}
+\]
+$A^k$\par
+$R_kRD^kU$\par
+\[
+D_k=\operatorname{diag}(\pm1,\pm1,\cdots,\pm1),
+\]
+$D_k(R_kRD^kU)$\par
+$A^k$\par
+\[
+A^k=(QQ_kD_k)(D_kR_kRD^kU),
+\]
+$A^k$\par
+\[
+\begin{cases}
+\widetilde Q_k=QQ_kD_k,\\
+\widetilde R_k=D_kR_kRD^kU,
+\end{cases}
+\tag{9.4.17}
+\]
+\clearpage
+\section*{pdf-255}
+\[
+A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k
+=D_kQ_k^{\mathrm T}(RDR^{-1})Q_kD_k
+\quad\text{（注意 }Q^{\mathrm T}AQ=RDR^{-1}\text{）},
+\]
+\[
+R_0\equiv RDR^{-1}=\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix},
+\]
+\[
+A_{k+1}=g_k^{\mathrm T}R_0g_k,
+\]
+\[
+\begin{cases}
+g_k=Q_kD_k,\\
+R_0=RDR^{-1}\quad\text{（上三角阵）},\\
+Q_k\to I\quad(k\to\infty),\\
+D_k\text{ 为对角阵，其元素为 }+1\text{ 或 }-1.
+\end{cases}
+\]
+$Q_k\to I$\par
+$A$\par
+$\{A_k\}$\par
+$A\in\mathbb R^{n\times n}$\par
+$A$\par
+$\{A_k\}$\par
+$2\times2$\par
+$A$\par
+$A$\par
+\[
+A_k\to\begin{pmatrix}
+\lambda_1&\times&\cdots&\times&\times\times&\cdots&\times\times\\
+&\lambda_2&\ddots&\vdots&\vdots&&\vdots\\
+&&\ddots&\times&\vdots&&\vdots\\
+&&&\lambda_m&\times\times&\cdots&\times\times\\
+&&&&B_l&\ddots&\vdots\\
+&&&&&\ddots&\times\times\\
+&&&&&&B_l
+\end{pmatrix}.
+\]
+$m+2l=n$\par
+$B_i$\par
+$2\times2$\par
+$A$\par
+$a_{nn}^{(k)}\to\lambda_n\ (k\to\infty)$\par
+$r_n=|\lambda_n/\lambda_{n-1}|$\par
+$r_n$\par
+$s$\par
+$\lambda_n$\par
+$A-sI$\par
+$(n,n-1)$\par
+$\left|\dfrac{\lambda_n-s}{\lambda_{n-1}-s}\right|$\par
+$(n,n)$\par
+$B_l$\par
+$m+2l=n$\par
+$B_1$\par
+\clearpage
+\section*{pdf-256}
+$\{s_k\}$\par
+$\{A_k\}$\par
+$A=A_1\in\mathbb R^{n\times n}$\par
+$A_k-s_kI$\par
+$A_k-s_kI=Q_kR_k$\par
+$k=1,2,\cdots$\par
+$A_{k+1}=R_kQ_k+s_kI=Q_k^{\mathrm T}A_kQ_k$\par
+$A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k$\par
+$\widetilde Q_k=Q_1Q_2\cdots Q_k$\par
+$\widetilde R_k=R_k\cdots R_2R_1$\par
+$(A-s_1I)(A-s_2I)\cdots(A-s_kI)\equiv\varphi(A)$\par
+$\varphi(A)=\widetilde Q_k\widetilde R_k$\par
+$A_k-s_kI$\par
+\[
+P_{n-1}\cdots P_2P_1(A_k-s_kI)=R_k,
+\]
+$Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1$\par
+\[
+A_{k+1}=P_{n-1}\cdots P_2P_1(A_k-s_kI)P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}+s_kI.
+\]
+\[
+A=A_1=\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{pmatrix},\quad A\in\mathbb R^{n\times n}.
+\]
+$P_{12},P_{23},\cdots,P_{n-1,n}$\par
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R.
+\]
+\[
+a_{ii}\leftarrow a_{ii}-s_1\quad(i=1,2,\cdots,n).
+\]
+$P_{12}$\par
+\[
+P_{12}(A_1-s_1I)=\begin{pmatrix}
+v_1&\begin{matrix}a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&\boxed{\begin{matrix}
+a_{22}^{(2)}&a_{23}^{(2)}&\cdots&a_{2n}^{(2)}\\
+a_{32}&a_{33}&\cdots&a_{3n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+$i-1$\par
+\[
+P_{i-1,i}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&a_{12}^{(2)}&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&v_2&a_{23}^{(2)}&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{2n}^{(2)}\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&&\vdots\end{matrix}\\
+&&&v_{i-1}&\begin{matrix}a_{i-1,i}^{(i-1)}&\cdots&\cdots&a_{i-1,n}^{(i-1)}\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+a_{ii}^{(i)}&\cdots&\cdots&a_{in}^{(i)}\\
+a_{i+1,i}&\ddots&&a_{i+1,n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+\clearpage
+\section*{pdf-257}
+$i$\par
+$P_{i,i+1}$\par
+$c_i,s_i$\par
+$v_k$\par
+$(i+1,i)$\par
+\[
+P_{i,i+1}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&\times&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&v_2&\times&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&\vdots\end{matrix}\\
+&&&v_i&\begin{matrix}\times&\cdots&\times\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+\times&\times&\cdots&\times\\
+\times&\ddots&\ddots&\vdots\\
+&\ddots&\ddots&\times\\
+&&\times&\times
+\end{matrix}}
+\end{pmatrix},
+\]
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R\quad\text{（上三角阵）},
+\]
+$P_{i,i+1}\ (i=1,2,\cdots,n+1)$\par
+$RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}$\par
+$R$\par
+$a_{ij}\ (i\leq j)$\par
+\[
+RP_{12}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(2)}&a_{13}&\cdots&a_{1n}\\
+a_{21}^{(2)}&a_{22}^{(2)}&a_{23}&\cdots&a_{2n}\\
+&&a_{33}&\cdots&a_{3n}\\
+&&&\ddots&\vdots\\
+&&&&a_{nn}
+\end{pmatrix},
+\]
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(3)}&a_{13}^{(3)}&a_{14}&\cdots\\
+a_{21}^{(2)}&a_{22}^{(3)}&a_{23}^{(3)}&a_{24}&\cdots\\
+&a_{32}^{(3)}&a_{33}^{(3)}&a_{34}&\cdots\\
+&&a_{43}^{(3)}&a_{44}&\cdots\\
+&&&\ddots&\ddots
+\end{pmatrix}.
+\]
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}
+=\begin{bmatrix}
+\times&\times&\cdots&\cdots&\times\\
+\times&\times&\cdots&\cdots&\times\\
+&\times&\ddots&&\vdots\\
+&&\ddots&\ddots&\vdots\\
+&&&\times&\times
+\end{bmatrix}\quad\text{（为上 Hessenberg 阵）},
+\]
+$A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}+s_1I$\par
+$A$\par
+$A_2,A_3,\cdots,A_k,\cdots$\par
+\[
+\begin{aligned}
+P_{23}P_{12}(A-s_1I)&\to P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}
+\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}\\
+&\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}P_{23}^{\mathrm T}\to\cdots
+\end{aligned}
+\]
+$s_1,s_2,\cdots,s_k,\cdots$\par
+$A$\par
+$\{A_k\}$\par
+$s_k=a_{nn}^{(k)}$\par
+$a_{n,n-1}^{(k)}$\par
+$A_k$\par
+$i$\par
+$v_k$\par
+$v_i$\par
+$i=1,2,\cdots,n+1$\par
+$P_{i,i+1}$\par
+$n$\par
+$P_{n-1,n}$\par
+$n-1$\par
+\clearpage
+\section*{pdf-258}
+\[
+\left(\begin{array}{ccccc|c}
+\times&\times&\times&\cdots&\times&\times\\
+&\times&\times&\cdots&\times&\times\\
+&&\ddots&\ddots&\vdots&\vdots\\
+&&&\times&\times&\times\\\hline
+&&&&&\lambda_n
+\end{array}\right)_{n\times n}
+\equiv\left(\begin{array}{c|c}
+B&\begin{matrix}\times\\\times\\\vdots\\\times\end{matrix}\\\hline
+O&\lambda_n
+\end{array}\right),
+\]
+$\lambda_n=a_{nn}^{(k)}$\par
+$A$\par
+$B\in\mathbb R^{(n-1)\times(n-1)}$\par
+$A$\par
+$a_{n,n-1}^{(k)}$\par
+$|a_{n,n-1}^{(k)}|\leq\varepsilon\|A\|_\infty$\par
+$a_{n,n-1}^{(k)}$\par
+$|a_{n,n-1}^{(k)}|\leq\varepsilon\min(|a_{nn}^{(k)}|,|a_{n-1,n-1}^{(k)}|)$\par
+$\varepsilon=10^{-t}$\par
+$t$\par
+$A$\par
+$A$\par
+$s_k=a_{nn}$\par
+$s_k$\par
+$s_k=a_{nn}^{(k)}$\par
+$s_k$\par
+$2\times2$\par
+$\begin{pmatrix}a_{n-1,n-1}^{(k)}&a_{n-1,n}^{(k)}\\a_{n,n-1}^{(k)}&a_{nn}^{(k)}\end{pmatrix}$\par
+$\lambda$\par
+$|a_{nn}^{(k)}-\lambda|$\par
+$A_k=(a_{ij}^{(k)})$\par
+\[
+A=A_1=\begin{pmatrix}2&1&0\\1&3&1\\0&1&4\end{pmatrix}.
+\]
+$s_k=a_{nn}^{(k)}$\par
+$s_1=4$\par
+\[
+P_{23}P_{12}(A_1-s_1I)=R=\begin{pmatrix}
+2.236\,1&-1.342&0.447\,2\\
+&1.095\,4&-0.365\,1\\
+&&0.816\,50
+\end{pmatrix},
+\]
+\[
+A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}+s_1I
+=\begin{pmatrix}
+1.400\,0&0.489\,9&0\\
+0.489\,9&3.266\,7&0.745\,4\\
+0&0.745\,4&4.333\,3
+\end{pmatrix},
+\]
+\[
+A_3=\begin{pmatrix}
+1.291\,5&0.201\,7&0\\
+0.201\,7&3.020\,2&0.272\,4\\
+0&0.272\,4&4.688\,4
+\end{pmatrix},\qquad
+A_4=\begin{pmatrix}
+1.273\,7&0.099\,3&0\\
+0.099\,3&2.994\,3&0.007\,2\\
+0&0.007\,2&4.732\,0
+\end{pmatrix},
+\]
+\clearpage
+\section*{pdf-259}
+\[
+A_5=\begin{pmatrix}
+1.269\,4&0.049\,8&0\\
+0.049\,8&2.998\,6&0\\
+0&0&\boxed{4.732\,1}
+\end{pmatrix},\qquad
+\widetilde A_5=\begin{pmatrix}1.269\,4&0.049\,8\\0.049\,8&2.998\,6\end{pmatrix}.
+\]
+$A_5$\par
+$\widetilde A_5\in\mathbb R^{2\times2}$\par
+\[
+\widetilde A_6=P_{12}(\widetilde A_5-s_5I)P_{12}^{\mathrm T}+s_5I
+=\begin{pmatrix}\boxed{1.268\,0}&-4\times10^{-5}\\-4\times10^{-5}&\boxed{3.000\,0}\end{pmatrix},
+\]
+$A$\par
+\[
+\lambda_1\approx4.732\,1,\qquad\lambda_2\approx3.000\,0,\qquad\lambda_3\approx1.268\,0,
+\]
+$A$\par
+\[
+\lambda_1=3+\sqrt3\approx4.732\,1,\qquad\lambda_2=3.0,\qquad\lambda_3=3-\sqrt3\approx1.267\,9.
+\]
+$A$\par
+$A$\par
+$A$\par
+$A$\par
+$A$\par
+\[
+\text{（1）}\ A_1=\begin{pmatrix}7&3&-2\\3&4&-1\\-2&-1&3\end{pmatrix};\qquad
+\text{（2）}\ A_2=\begin{pmatrix}3&-4&3\\-4&6&3\\3&3&1\end{pmatrix},
+\]
+$T$\par
+\[
+T=\begin{pmatrix}
+T_{11}&T_{12}&\cdots&T_{1n}\\
+&T_{22}&\cdots&T_{2n}\\
+&&\ddots&\vdots\\
+&&&T_{nn}
+\end{pmatrix},
+\]
+$T_{ii}\ (i=1,2,\cdots,n)$\par
+$T$\par
+\clearpage
+\section*{pdf-260}
+$T$\par
+$\sigma(T)$\par
+$T$\par
+$\sigma(T)=\displaystyle\bigcup_{i=1}^{n}\sigma(T_{ii})$\par
+$\begin{pmatrix}6&2&1\\2&3&1\\1&1&1\end{pmatrix}$\par
+$\begin{pmatrix}4&0&0\\0&3&1\\0&1&3\end{pmatrix}$\par
+$A$\par
+$\lambda$\par
+$x\ (\|x\|_2=1)$\par
+$A$\par
+$P$\par
+$Px=e_1=(1,0,\cdots,0)^{\mathrm T}$\par
+$B=PAP^{\mathrm T}$\par
+$\lambda$\par
+$A=\begin{pmatrix}2&10&2\\10&5&-8\\2&-8&11\end{pmatrix}$\par
+$\lambda=9$\par
+$x=\left(\dfrac23,\dfrac13,\dfrac23\right)^{\mathrm T}$\par
+$P$\par
+$Px=e_1$\par
+$B=PAP^{\mathrm T}$\par
+$A=\begin{pmatrix}1&3&4\\3&1&2\\4&2&1\end{pmatrix}$\par
+$A\in\mathbb R^{n\times n}$\par
+$a_{i1},a_{j1}$\par
+$P_{ij}$\par
+$a_{j1}^{(2)}=0$\par
+$P_{ij}A$\par
+$i$\par
+$j$\par
+$AP_{ij}^{\mathrm T}$\par
+$i$\par
+$j$\par
+$A_{n-1}$\par
+$y$\par
+$A_{n-1}$\par
+$A$\par
+$x=P_1P_2\cdots P_{n-2}y$\par
+$y$\par
+$x$\par
+\[
+\text{（1）}\ A=\begin{pmatrix}1&2&0\\2&-1&1\\0&1&3\end{pmatrix};\qquad
+\text{（2）}\ B=\begin{pmatrix}3&1&0\\1&2&1\\0&1&1\end{pmatrix}.
+\]
+\[
+A=\begin{pmatrix}1&1&1\\2&-1&-1\\2&-4&5\end{pmatrix}
+\]
+$QR$\par
+$Q$\par
+$R$\par
+\clearpage
+\end{document}

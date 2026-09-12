@@ -1,0 +1,114 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={数学史上一篇千古奇文},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{数学史上一篇千古奇文}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.2.1　数学史上一篇千古奇文}\label{ux6570ux5b66ux53f2ux4e0aux4e00ux7bc7ux5343ux53e4ux5947ux6587}
+
+成书于汉代的《九章算术》是我国古代最重要的数学经典。该书``圆田术''给出了
+
+\begin{quote}
+校注（agent 补充）：《隋书·律历志》引文中``肭数''\,``盈肭''的``肭''按原页字形保留。
+\end{quote}
+
+\href{../../source-images/pdf-296.jpeg}{原页图像}
+
+圆面积的计算公式：
+
+``半周半径相乘得积步。''
+
+即圆面积等于半圆周长与半径的乘积。
+
+这一事实是人们所熟知的，然而由于圆是曲边图形，对古人来说，计算圆面积是个数学难题。
+
+刘徽在注《九章算术》时撰写了《圆田术注》，约 1 800 字，后人称之为《割圆术》。割圆术证明了圆面积公式，并且提供了一个计算圆周率的优秀算法。
+
+\textbf{刘徽的《割圆术》是一篇千古奇文。书中有许多亮点，譬如，早在 1800 年前，刘徽就在人类数学史上首次提出了极限观念。}
+
+刘徽从圆的内接正六边形做起，令边数逐步倍增，计算圆内接正 \(n\) 边形面积 \(S_n\)（\(n=6,12,24,\cdots\)），并建立了圆面积 \(S^*\) 的一个逼近序列
+
+\[
+S_6\to S_{12}\to S_{24}\to S_{48}\to\cdots\to S^*.
+\]
+
+\textbf{这种加工手续开创了极限计算的先河。}
+
+相比之下，古希腊人畏惧无穷，阿基米德的穷竭法同极限思想毫不相干，因而与刘徽的``割圆术''不可同日而语。
+
+其次，刘徽的割圆术中提出了一种高明的逼近策略，建立了下列\textbf{双侧逼近公式}
+
+\[
+S_{2n}<S^*<S_{2n}+(S_{2n}-S_n).
+\]
+
+\textbf{在逼近过程中，刘徽直接用数据的偏差 \(S_{2n}-S_n\) 作为校正量，生成圆面积 \(S^*\) 的强近似值，从而舍弃了圆的外切多边形的计算，相比阿基米德的穷竭法显著地节省了计算量。}
+
+最后，特别值得指出的是，\textbf{刘徽的割圆术提出了一种逼近加速技术，在《割圆术》末尾，刘徽突然发力给出了一个神奇的精加工算式------我们称之为``刘徽神算''。}
+
+\textbf{本章推荐的逼近加速技术正是从刘徽神算中感悟并提炼出来的。}
+
+\end{document}

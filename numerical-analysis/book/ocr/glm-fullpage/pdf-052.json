@@ -1,0 +1,20 @@
+{
+  "pdf_page": 52,
+  "source_image": "source-images/pdf-052.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "727f553732830a63a634299061189bf60975fd6221aed295c858a066a058853b",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1154,
+  "possibly_truncated": false,
+  "elapsed_seconds": 39.449,
+  "created_utc": "2026-09-12T09:41:56.242068+00:00",
+  "raw_text_sha256": "881674a09b4cf5b61cdaf5994775abdbee2fb560c64659b47ed96dc130698323",
+  "raw_text": "如果边界条件为周期性条件式(2.8.5), 则\n\n$$m_0 = m_n,$$\n\n$$\\frac{1}{h_0} m_1 + \\frac{1}{h_{n-1}} m_{n-1} + 2 \\left( \\frac{1}{h_0} + \\frac{1}{h_{n-1}} \\right) m_n = \\frac{3}{h_0} f[x_0, x_1] + \\frac{3}{h_{n-1}} f[x_{n-1}, x_n],$$\n\n化简为\n\n$$\\mu_n m_1 + \\lambda_n m_{n-1} + 2m_n = g_n,$$\n\n$$\\mu_n = \\frac{h_{n-1}}{h_0 + h_{n-1}}, \\quad \\lambda_n = \\frac{h_{n-1}}{h_0 + h_{n-1}},$$\n\n$$g_n = 3(\\mu_n f[x_0, x_1] + \\lambda_n f[x_{n-1}, x_n]).$$\n\n与式(2.8.9)合并, 用矩阵形式表示为\n\n$$\\begin{bmatrix} 2 & \\mu_1 & 0 & \\cdots & 0 \\\\ \\lambda_2 & 2 & \\mu_2 & \\ddots & \\vdots \\\\ 0 & \\lambda_3 & \\ddots & \\ddots & 0 \\\\ \\vdots & \\ddots & \\ddots & 2 & \\mu_{n-1} \\\\ 0 & \\cdots & 0 & \\lambda_n & 2 \\end{bmatrix} \\begin{bmatrix} m_1 \\\\ m_2 \\\\ \\vdots \\\\ m_{n-1} \\\\ m_n \\end{bmatrix} = \\begin{bmatrix} g_1 \\\\ g_2 \\\\ \\vdots \\\\ g_{n-1} \\\\ g_n \\end{bmatrix}.$$\n\n(2.8.15)\n\n这里得到的方程组(2.8.12)、(2.8.14)及式(2.8.15)中, 每个方程都联系三个 $m_j, m_j$ 在力学上解释为细梁在 $x_j$ 截面处的转角, 故称之为三转角方程. 这些方程系数矩阵对角元素均为 2, 非对角元素 $\\mu_j + \\lambda_j = 1$, 故系数矩阵具有强对角优势, 方程组(2.8.12)、(2.8.14)及(2.8.15)都有唯一解, 可用追赶法求得解 $m_j$ ($j=0, 1, \\cdots, n$), 从而得到 $S(x)$. 关于线性方程组的解法见本书第 7 章.\n\n2.8.3 三弯矩方程\n\n三次样条插值函数 $S(x)$ 可以有多种表达方法, 有时用二阶导数值 $S''(x_j) = M_j$ ($j=0, 1, \\cdots, n$) 表示使用起来更方便. $M_j$ 在力学上解释为细梁在 $x_j$ 截面处的弯矩, 并且得到的弯矩与相邻两个弯矩有关, 故称之为三弯矩方程.\n\n由于 $S(x)$ 在区间 $[x_j, x_{j+1}]$ 上是三次多项式, 故 $S''(x)$ 在 $[x_j, x_{j+1}]$ 上是线性函数, 可表示为\n\n$$S''(x) = M_j \\frac{x_{j+1} - x}{h_j} + M_{j+1} \\frac{x - x_j}{h_j}.$$\n\n(2.8.16)\n\n对 $S''(x)$ 积分两次并利用 $S(x_j) = y_j$ 及 $S(x_{j+1}) = y_{j+1}$, 可定出积分常数, 于是\n\n$$S(x) = M_j \\frac{(x_{j+1} - x)^3}{6h_j} + M_{j+1} \\frac{(x - x_j)^3}{6h_j} + \\left(y_j - \\frac{M_j h_j^2}{6}\\right) \\frac{x_{j+1} - x}{h_j}$$\n\n$$+ \\left(y_{j+1} - \\frac{M_{j+1} h_j^2}{6}\\right) \\frac{x - x_j}{h_j} \\quad (j=0, 1, \\cdots, n-1).$$\n\n(2.8.17)\n\n对 $S(x)$ 求导, 得\n\n$$S'(x) = -M_j \\frac{(x_{j+1} - x)^2}{2h_j} + M_{j+1} \\frac{(x - x_j)^2}{2h_j} + \\frac{y_{j+1} - y_j}{h_j} - \\frac{M_{j+1} - M_j}{6} h_j.$$\n\n(2.8.18)"
+}

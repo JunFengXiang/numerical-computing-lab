@@ -1,0 +1,20 @@
+{
+  "pdf_page": 45,
+  "source_image": "source-images/pdf-045.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "a4e8ba1ce215ff910190bcc875c04281c8542973afebebfe46d3d8f27c7631f1",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 896,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.586,
+  "created_utc": "2026-09-12T09:37:56.783042+00:00",
+  "raw_text_sha256": "e8fc55e7f11eef328ac9a7907a41494aed953fc49ebb7515e1c37032631f30f9",
+  "raw_text": "$R_3(x) = \\frac{1}{4!} f^{(4)}(\\xi)(x - x_k)^2(x - x_{k+1})^2.$\n\n例2.5 求满足 $P(x_j) = f(x_j)$ ($j=0,1,2$) 及 $P'(x_1) = f'(x_1)$ 的插值多项式及其余项表达式.\n\n解 由给定条件，可确定次数不超过3的插值多项式. 由于此多项式通过点 $(x_0, f(x_0))$, $(x_1, f(x_1))$ 及 $(x_2, f(x_2))$, 故其形式为\n$$P(x) = f(x_0) + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1)\n+ A(x - x_0)(x - x_1)(x - x_2),$$\n其中 $A$ 为待定常数，可由条件 $P'(x_1) = f'(x_1)$ 确定，通过计算可得\n$$A = \\frac{f'(x_1) - f[x_0, x_1] - (x_1 - x_0)f[x_0, x_1, x_2]}{(x_1 - x_0)(x_1 - x_2)}.$$\n为了求出余项 $R(x) = f(x) - P(x)$ 的表达式，可设\n$$R(x) = f(x) - P(x) = K(x)(x - x_0)(x - x_1)^2(x - x_2),$$\n其中 $K(x)$ 为待定函数. 构造\n$$\\varphi(t) = f(t) - P(t) - K(x)(t - x_0)(t - x_1)^2(t - x_2).$$\n显然 $\\varphi(x_j) = 0$ ($j=0,1,2$), 且 $\\varphi'(x_1) = 0, \\varphi(x) = 0$, 故 $\\varphi(t)$ 在 $(a,b)$ 内有五个零点 (重根算两个). 反复应用 Rolle 定理得, $\\varphi^{(4)}(t)$ 在 $(a,b)$ 内至少有一个零点 $\\xi$, 故\n$$\\varphi^{(4)}(\\xi) = f^{(4)}(\\xi) - 4!K(x) = 0,$$\n于是 $K(x) = f^{(4)}(\\xi)/4!$, 余项表达式为\n$$R(x) = f^{(4)}(\\xi)(x - x_0)(x - x_1)^2(x - x_2)/4!,$$\n(2.6.11)\n\n其中 $\\xi$ 位于 $x_0, x_1, x_2$ 和 $x$ 所界定的范围内.\n\n2.7 分段低次插值\n\n2.7.1 多项式插值的问题\n\n根据区间 $[a,b]$ 上给出的节点构造插值多项式 $L_n(x)$ 近似 $f(x)$ 时，人们往往认为 $L_n(x)$ 的次数 $n$ 越高逼近 $f(x)$ 的精度越好，但实际上并非如此. 这是因为，对于任意的插值节点，当 $n \\to \\infty$ 时，$L_n(x)$ 不一定收敛到 $f(x)$. 20世纪初 Runge 就给出了一个等距节点插值多项式 $L_n(x)$ 不收敛到 $f(x)$ 的例子：考察函数 $f(x) = 1/(1+x^2)$，它在 $[-5,5]$ 上各阶导数均存在，但在 $[-5,5]$ 上取 $n+1$ 个等距节点\n$$x_k = -5 + 10\\frac{k}{n} \\quad (k=0,1,\\dots,n)$$\n所构造的 Lagrange 插值多项式\n\n• 32 •"
+}

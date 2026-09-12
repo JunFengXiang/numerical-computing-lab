@@ -1,0 +1,20 @@
+{
+  "pdf_page": 130,
+  "source_image": "source-images/pdf-130.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "907a8d101ca079254752fac4c9d2566cdf17658f1e0526fd1d60d5e7577536e4",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1012,
+  "possibly_truncated": false,
+  "elapsed_seconds": 30.486,
+  "created_utc": "2026-09-12T10:35:16.066989+00:00",
+  "raw_text_sha256": "25447c4257666657858b73dca39758f7765518b18c7dfcb5e4ae30c016787365",
+  "raw_text": "希望适当选择系数 $\\lambda_1, \\lambda_2, \\lambda_3$ 和 $p, q, r, s$, 能使上述格式具有三阶精度.\n为便于进行数学演算, 引进算子\n$$\\mathrm{D} = \\frac{\\partial}{\\partial x} + f \\frac{\\partial}{\\partial y}, \\quad \\mathrm{D}^2 = \\frac{\\partial^2}{\\partial x^2} + 2f \\frac{\\partial^2}{\\partial x \\partial y} + f^2 \\frac{\\partial^2}{\\partial y^2},$$\n则根据式(5.3.2), 有\n$$y' = f, \\quad y'' = \\mathrm{D}f, \\quad y''' = \\mathrm{D}^2 f + \\frac{\\partial f}{\\partial y} \\mathrm{D}f,$$\n于是三阶 Taylor 格式\n$$y_{n+1} = y_n + h y'_n + \\frac{h^2}{2} y''_n + \\frac{h^3}{6} y'''_n$$\n可表示为\n$$y_{n+1} = y_n + h f_n + \\frac{h^2}{2} \\mathrm{D}f_n + \\frac{h^3}{6} (\\mathrm{D}^2 f + f_y \\mathrm{D}f)_n, \\quad (5.3.8)$$\n其中 $f_n, \\mathrm{D}f_n$ 等的下标 $n$ 均表示在 $(x_n, y_n)$ 取值.\n另一方面, 再将式(5.3.7) Taylor 展开, 其中\n$$K_1 = f_n,$$\n$$K_2 = f(x_n + ph, y_n + ph K_1) = f_n + ph \\mathrm{D}f_n + \\frac{(ph)^2}{2} \\mathrm{D}^2 f_n + \\cdots,$$\n$$K_3 = f(x_n + qh, y_n + qh (rK_1 + sK_2)) = f_n + qh \\bar{\\mathrm{D}}f_n + \\frac{(qh)^2}{2} \\bar{\\mathrm{D}}^2 f_n + \\cdots.$$\n这里, 算子 $\\bar{\\mathrm{D}} = \\frac{\\partial}{\\partial x} + (rK_1 + sK_2) \\frac{\\partial}{\\partial y}$.\n若取\n$$r + s = 1, \\quad (5.3.9)$$\n则易知\n$$\\bar{\\mathrm{D}} = \\mathrm{D} + h p s \\mathrm{D}f_n \\frac{\\partial}{\\partial y} + \\cdots, \\quad (5.3.10)$$\n$$\\bar{\\mathrm{D}}^2 = \\mathrm{D}^2 + \\cdots,$$\n因此\n$$K_3 = f_n + qh \\mathrm{D}f_n + \\frac{h^2}{2} (q^2 \\mathrm{D}^2 f + 2 p q s \\mathrm{D}f \\cdot f_y)_n + \\cdots.$$\n将以上 $K_1, K_2, K_3$ 的展开式一起代入式(5.3.7), 再令\n$$\\lambda_1 + \\lambda_2 + \\lambda_3 = 1, \\quad (5.3.11)$$\n则有\n$$y_{n+1} = y_n + h f_n + h^2 (\\lambda_2 p + \\lambda_3 q) \\mathrm{D}f_n$$\n$$+ h^3 \\left(\\frac{1}{2} \\lambda_2 p^2 \\mathrm{D}^2 f + \\frac{1}{2} \\lambda_3 q^2 \\mathrm{D}^2 f + \\lambda_3 p q s f_y \\mathrm{D}f\\right)_n + \\cdots,$$\n于是为了保证它能与三阶 Taylor 格式(5.3.8)具有同等精度, 只要满足下列方程组:\n$$\\begin{cases}\n\\lambda_2 p + \\lambda_3 q = \\frac{1}{2}, \\\\\n\\lambda_2 p^2 + \\lambda_3 q^2 = \\frac{1}{3}, \\\\\n\\lambda_3 p q s = \\frac{1}{6}.\n\\end{cases} \\quad (5.3.12)$$"
+}

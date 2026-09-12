@@ -1,0 +1,20 @@
+{
+  "pdf_page": 115,
+  "source_image": "source-images/pdf-115.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "d647b7bdee6c5d1d71408f491748e80e2624e1abbab9430e9cc1db8fac244dcf",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 899,
+  "possibly_truncated": false,
+  "elapsed_seconds": 33.596,
+  "created_utc": "2026-09-12T10:27:33.244112+00:00",
+  "raw_text_sha256": "f111cc82c2a1db86751d30de8c668e364c476645ef0699c4ed6c65a696ca9b5d",
+  "raw_text": "$P_2'(x_2) = \\frac{1}{2h}[f(x_0) - 4f(x_1) + 3f(x_2)]$,\n\n而带余项的三点求导公式为\n$f'(x_0) = \\frac{1}{2h}[-3f(x_0) + 4f(x_1) - f(x_2)] + \\frac{h^2}{3}f''(\\xi)$,\n$f'(x_1) = \\frac{1}{2h}[-f(x_0) + f(x_2)] - \\frac{h^2}{6}f''(\\xi)$, (4.5.4)\n$f'(x_2) = \\frac{1}{2h}[f(x_0) - 4f(x_1) + 3f(x_2)] + \\frac{h^2}{3}f''(\\xi)$,\n\n其中式(4.5.4)是我们所熟悉的中点公式.在三点公式中,它由于少用了一个函数值 $f(x_1)$而引人注目.\n\n用插值多项式 $P_n(x)$ 作为 $f(x)$ 的近似函数,还可以建立高阶数值微分公式\n$f^{(k)}(x) \\approx P_n^{(k)}(x), \\quad k = 1, 2, \\dots$.\n\n例如,将式(4.5.3)再对 $t$ 求导一次,有\n$P_2''(x_0 + th) = \\frac{1}{h^2}[f(x_0) - 2f(x_1) + f(x_2)]$,\n\n于是有\n$P_2''(x_1) = \\frac{1}{h^2}[f(x_1 - h) - 2f(x_1) + f(x_1 + h)]$,\n\n而带余项的二阶三点公式为\n$f''(x_1) = \\frac{1}{h^2}[f(x_1 - h) - 2f(x_1) + f(x_1 + h)] - \\frac{h^2}{12}f^{(4)}(\\xi).$ (4.5.5)\n\n4.5.3 实用的五点公式\n\n设已给出五个节点 $x_i = x_0 + ih$, $i = 0, 1, 2, 3, 4$ 上的函数值,重复同样的手续,不难导出下列五点公式:\n\n$m_0 = \\frac{1}{12h}[-25f(x_0) + 48f(x_1) - 36f(x_2) + 16f(x_3) - 3f(x_4)]$,\n\n$m_1 = \\frac{1}{12h}[-3f(x_0) - 10f(x_1) + 18f(x_2) - 6f(x_3) + f(x_4)]$,\n\n$m_2 = \\frac{1}{12h}[f(x_0) - 8f(x_1) + 8f(x_3) - f(x_4)]$,\n\n$m_3 = \\frac{1}{12h}[-f(x_0) + 6f(x_1) - 18f(x_2) + 10f(x_3) + 3f(x_4)]$,\n\n$m_4 = \\frac{1}{12h}[3f(x_0) - 16f(x_1) + 36f(x_2) - 48f(x_3) + 25f(x_4)]$.\n\n其中 $m_i$ 代表一阶导数 $f'(x_i)$ 的近似值,读者不难导出这些求导公式的余项.\n\n再记 $M_i$ 表示二阶导数 $f''(x_i)$ 的近似值,二阶五点公式如下:\n\n• 102 •"
+}

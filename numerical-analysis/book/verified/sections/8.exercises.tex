@@ -1,0 +1,271 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={习题},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{习题}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{习题}\label{ux4e60ux9898}
+
+\textbf{1.} 设方程组
+
+\[
+\begin{cases}
+5x_1+2x_2+x_3=-12,\\
+-x_1+4x_2+2x_3=20,\\
+2x_1-3x_2+10x_3=3.
+\end{cases}
+\]
+
+（1）考察用 Jacobi 迭代法、Gauss-Seidel 迭代法解此方程组的收敛性；
+
+（2）用 Jacobi 迭代法、Gauss-Seidel 迭代法解此方程组，要求当 \(\|x^{(k+1)}-x^{(k)}\|_\infty<10^{-4}\) 时迭代终止。
+
+\textbf{2.} 设 \(A=\begin{pmatrix}0&0\\2&0\end{pmatrix}\)，证明即使 \(\|A\|_1=\|A\|_\infty>1\)，级数 \(I+A+A^2+\cdots+A^k+\cdots\) 也收敛。
+
+\textbf{3.} 证明对于任意选择的 \(A\)，序列 \(I,\allowbreak A,\allowbreak \dfrac12A^2,\allowbreak \dfrac1{3!}A^3,\allowbreak \dfrac1{4!}A^4,\allowbreak \cdots\) 收敛于零。
+
+\textbf{4.} 设方程组
+
+\[
+\begin{cases}
+a_{11}x_1+a_{12}x_2=b_1,\\
+a_{21}x_1+a_{22}x_2=b_2
+\end{cases}
+\quad(a_{11}\cdot a_{22}\neq0).
+\]
+
+迭代公式为
+
+\[
+\begin{cases}
+x_1^{(k)}=\dfrac1{a_{11}}(b_1-a_{12}x_2^{(k-1)}),\\[5pt]
+x_2^{(k)}=\dfrac1{a_{22}}(b_2-a_{21}x_1^{(k-1)})
+\end{cases}
+\quad(k=1,2,\cdots).
+\]
+
+求证：由上述迭代公式产生的向量序列 \(\{x^{(k)}\}\) 收敛的充要条件是 \(r=\left|\dfrac{a_{12}a_{21}}{a_{11}a_{22}}\right|<1\)。
+
+\textbf{5.} 设方程组
+
+\href{../../source-images/pdf-231.jpeg}{原页图像}
+
+（1）
+
+\[
+\begin{cases}
+x_1+0.4x_2+0.4x_3=1,\\
+0.4x_1+x_2+0.8x_2=2,\\
+0.4x_1+0.8x_2+x_3=3;
+\end{cases}
+\]
+
+（2）
+
+\[
+\begin{cases}
+x_1+2x_2-2x_3=1,\\
+x_1+x_2+x_3=1,\\
+2x_1+2x_2+x_3=1.
+\end{cases}
+\]
+
+试考察解此方程组的 Jacobi 迭代法及 Gauss-Seidel 迭代法的收敛性。
+
+\textbf{6.} 求证 \(\lim\limits_{k\to\infty}A_k=A\) 的充要条件是，对于任何向量 \(x\) 都有 \(\lim\limits_{k\to\infty}A_kx=Ax\)。
+
+\textbf{7.} 设 \(Ax=b\)，其中 \(A\) 为对称正定矩阵，问解此方程组的 Jacobi 迭代法是否一定收敛。试考察习题 5 中方程组（1）。
+
+\textbf{8.} 设方程组
+
+\[
+\begin{cases}
+x_1-\dfrac14x_3-\dfrac14x_4=\dfrac12,\\[5pt]
+x_2-\dfrac14x_3-\dfrac14x_4=\dfrac12,\\[5pt]
+-\dfrac14x_1-\dfrac14x_2+x_3=\dfrac12,\\[5pt]
+-\dfrac14x_1-\dfrac14x_2+x_4=\dfrac12.
+\end{cases}
+\]
+
+（1）求解此方程组的 Jacobi 迭代法的迭代矩阵 \(B_0\) 的谱半径；
+
+（2）求解此方程组的 Gauss-Seidel 迭代法的迭代矩阵 \(B_0\) 的谱半径；
+
+（3）考察解此方程组的 Jacobi 迭代法及 Gauss-Seidel 迭代法的收敛性。
+
+\textbf{9.} 用 SOR 方法解方程组（分别取松弛因子 \(\omega=1.03,\omega=1,\omega=1.1\)）
+
+\[
+\begin{cases}
+4x_1-x_2=1,\\
+-x_1+4x_2-x_3=4,\\
+-x_2+4x_3=-3.
+\end{cases}
+\]
+
+精确解 \(x^*=\left(\dfrac12,1,-\dfrac12\right)^{\mathrm T}\)，要求当 \(\|x^*-x^{(k)}\|_\infty<5\times10^{-6}\) 时迭代终止，并且对每一个 \(\omega\) 值确定迭代次数。
+
+\textbf{10.} 用 SOR 方法解方程组（取 \(\omega=0.9\)）
+
+\[
+\begin{cases}
+5x_1+2x_2+x_3=-12,\\
+-x_1+4x_2+2x_3=20,\\
+2x_1-3x_2+10x_3=3,
+\end{cases}
+\]
+
+要求当 \(\|x^{(k+1)}-x^{(k)}\|_\infty<10^{-4}\) 时迭代终止。
+
+\textbf{11.} 设有方程组 \(Ax=b\)，其中 \(A\) 为对称正定矩阵，迭代公式 \(x^{(k+1)}=x^{(k)}+\omega(b-Ax^{(k)})\)（\(k=0,1,2,\cdots\)），试证明当 \(0<\omega<\dfrac2\beta\) 时上述迭代法收敛（其中 \(0<\alpha\leqslant\lambda(A)\leqslant\beta\)）。
+
+\textbf{12.} 用 Gauss-Seidel 方法解 \(Ax=b\)，用 \(x_i^{(k+1)}\) 记 \(x^{(k+1)}\) 的第 \(i\) 个分量，且
+
+\[
+r_i^{(k+1)}=b_i-\sum_{j=1}^{i-1}a_{ij}x_j^{(k+1)}-\sum_{j=i}^n a_{ij}x_i^{(k)}.
+\]
+
+（1）证明 \(x_i^{(k+1)}=x_i^{(k)}+\dfrac{r_i^{(k+1)}}{a_{ii}}\)；
+
+（2）如果 \(\varepsilon^{(k)}=x^{(k)}-\lambda^*\)，其中 \(x^*\) 是方程组的精确解，求证：\(\varepsilon_i^{(k+1)}=\varepsilon_i^{(k)}-\dfrac{r_i^{(k+1)}}{a_{ii}}\)，其中
+
+\begin{quote}
+校注（agent 补充）：习题 5（1）第二行原页确印 \(0.4x_1+x_2+0.8x_2=2\)，已保留。第 7 题将该方程组作为对称正定系数矩阵的考察对象；若将最后一项改为 \(0.8x_3\) 才与该对称结构一致，故此处疑为原书下标错误。
+
+校注（agent 补充）：习题 8（2）的 Gauss-Seidel 迭代矩阵原页也记为 \(B_0\)，与（1）的 Jacobi 迭代矩阵符号相同，转录保留。
+
+校注（agent 补充）：习题 12 有三处原书疑误，均经放大目视后原样保留。残差定义第二个求和内确印 \(x_i^{(k)}\)，对照 Gauss-Seidel 校正量应为 \(x_j^{(k)}\)；（2）的误差定义确印 \(x^{(k)}-\lambda^*\)，而紧随其后说明的是精确解 \(x^*\)；若误差定义按 \(\varepsilon^{(k)}=x^{(k)}-x^*\) 理解，则由（1）可知递推中的校正项应为加号，原题所印减号与此前定义不一致。这里仅定位符号矛盾，不代做习题证明。
+\end{quote}
+
+\href{../../source-images/pdf-232.jpeg}{原页图像}
+
+\[
+r_i^{(k+1)}=\sum_{j=1}^{i-1}a_{ij}\varepsilon_j^{(k+1)}+\sum_{j=i}^n a_{ij}\varepsilon_j^{(k)};
+\]
+
+（3）设 \(A\) 是对称的，二次型 \(Q(\varepsilon^{(k)})=(A\varepsilon^{(k)},\varepsilon^{(k)})\)，证明
+
+\[
+Q(\varepsilon^{(k+1)})-Q(\varepsilon^{(k)})=-\sum_{j=1}^n\frac{(r_j^{(k+1)})^2}{a_{jj}}.
+\]
+
+（4）由此推出，如果 \(A\) 是具有正对角元素的非奇异矩阵，且 Gauss-Seidel 方法对于任意初始向量 \(x^{(0)}\) 是收敛的，则 \(A\) 是正定矩阵。
+
+\textbf{13.} 设 \(A\) 与 \(B\) 为 \(n\) 阶矩阵，\(A\) 为非奇异矩阵，考虑解方程组 \(Az_1+Bz_2=b_1\)，\(Bz_1+Az_2=b_2\)，其中 \(z_1,z_2,b_1,b_2\in\mathbb R^n\)。
+
+（1）找出下述迭代方法收敛的充要条件
+
+\[
+Az_1^{(m+1)}=b_1-Bz_2^{(m)},\qquad Az_2^{(m+1)}=b_2-Bz_1^{(m)}\quad(m\geqslant0);
+\]
+
+（2）找出下述迭代方法收敛的充要条件
+
+\[
+Az_1^{(m+1)}=b_1-Bz_2^{(m)},\qquad Az_2^{(m+1)}=b_2-Bz_1^{(m+1)}\quad(m\geqslant0).
+\]
+
+比较两个方法的收敛速度。
+
+\textbf{14.} 证明矩阵 \(A=\begin{bmatrix}1&a&a\\a&1&a\\a&a&1\end{bmatrix}\) 对于 \(-\dfrac12<a<1\) 是正定的，而 Jacobi 迭代只对 \(-\dfrac12<a<\dfrac12\) 是收敛的。
+
+\textbf{15.} 设 \(A=\begin{bmatrix}5&1&2&3\\0&2&0&4\\3&-1&2&-1\\0&3&0&7\end{bmatrix}\)，试说明 \(A\) 为可约矩阵。
+
+\textbf{16.} 给定迭代过程 \(x^{(k+1)}=Cx^{(k)}+g\)，其中 \(C\in\mathbb R^{n\times n}\)（\(k=0,1,2,\cdots\)），试证明：如果 \(C\) 的特征值 \(\lambda_i(C)=0\)（\(i=1,2,\cdots,n\)），则此迭代过程最多迭代 \(n\) 次收敛于方程组的解。
+
+\textbf{17.} 画出 SOR 方法的框图。
+
+\textbf{18.} 设 \(A\) 为不可约弱对角占优阵且 \(0<\omega\leqslant1\)，求证，解 \(Ax=b\) 的 SOR 方法收敛。
+
+\textbf{19.} 设 \(Ax=b\)，其中 \(A\) 为非奇异矩阵。
+
+（1）求证 \(A^{\mathrm T}A\) 为对称正定矩阵；
+
+（2）求证 \(\operatorname{cond}(A^{\mathrm T}A)_2=(\operatorname{cond}(A)_2)^2\)。
+
+\textbf{20.} 设 \(A\) 为严格对角占优阵，证明式（2.8.23）。
+
+\begin{quote}
+校注（agent 补充）：页首为习题 12（2）的续式。该残差表达式中的正号与上页所印误差定义 \(\varepsilon^{(k)}=x^{(k)}-\lambda^*\) 不一致；若误差定义取 \(x^*-x^{(k)}\)，则可与此续式及上页的减号递推一致。两页原文均保留，详见上页习题 12 校注。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch08-E009}：原书 PDF 页 231
+\item
+  \texttt{ch08-E010}：原书 PDF 页 231
+\item
+  \texttt{ch08-E011}：原书 PDF 页 231
+\item
+  \texttt{ch08-E012}：原书 PDF 页 231
+\end{itemize}
+
+\end{document}

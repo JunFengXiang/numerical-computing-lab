@@ -1,0 +1,251 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={习题},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{习题}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{习题}\label{ux4e60ux9898}
+
+\textbf{1.} 根据式（2.2.2）定义的 Vandermonde 行列式，令
+
+\[V_n(x)=V_n(x_0,x_1,\cdots,x_{n-1},x)=\begin{vmatrix}
+1&x_0&x_0^2&\cdots&x_0^n\\
+\vdots&\vdots&\vdots&&\vdots\\
+1&x_{n-1}&x_{n-1}^2&\cdots&x_{n-1}^n\\
+1&x&x^2&\cdots&x^n
+\end{vmatrix},\]
+
+证明 \(V_n(x)\) 是 \(n\) 次多项式，它的根是 \(x_0,x_1,\cdots,x_{n-1}\)，且
+
+\[V_n(x)=V_{n-1}(x_0,x_1,\cdots,x_{n-1})(x-x_0)\cdots(x-x_{n-1}).\]
+
+\textbf{2.} 当 \(x=1,-1,2\) 时，\(f(x)=0,-3,4\)，求 \(f(x)\) 的二次插值多项式。
+
+\textbf{3.} 给出 \(f(x)=\ln x\) 的数值表（见表 2.9），用线性插值及二次插值计算 \(\ln0.54\) 的近似值。
+
+\textbf{表 2.9}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(x\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0.4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0.5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0.6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0.7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0.8
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\ln x\) & −0.916 291 & −0.693 147 & −0.510 826 & −0.357 765 & −0.223 144 \\
+\end{longtable}
+}
+
+\textbf{4.} 给出 \(\cos x,0^\circ\leqslant x\leqslant90^\circ\) 的函数表，步长 \(h=1'=(1/60)^\circ\)，若函数表具有五位有效数字，研究用线性插值求 \(\cos x\) 近似值时的总误差限。
+
+\textbf{5.} 设 \(x_k=x_0+kh,k=0,1,2,3\)，求 \(\max_{x_0\leqslant x\leqslant x_3}|l_2(x)|\)。
+
+\textbf{6.} 设 \(x_j\)（\(j=0,1,\cdots,n\)）为互异节点，求证：
+
+（1）\(\displaystyle\sum_{j=0}^n x_j^kl_j(x)\equiv x^k\)（\(k=0,1,\cdots,n\)）；
+
+（2）\(\displaystyle\sum_{j=0}^n(x_j-x)^kl_j(x)\equiv0\)（\(k=1,2,\cdots,n\)）。
+
+\textbf{7.} 设 \(f(x)\in C^2[a,b]\) 且 \(f(a)=f(b)=0\)，求证 \(\displaystyle\max_{a\leqslant x\leqslant b}|f(x)|\leqslant\frac18(b-a)^2\max_{a\leqslant x\leqslant b}|f''(x)|\)。
+
+\textbf{8.} 在 \(-4\leqslant x\leqslant4\) 上给出 \(f(x)=e^x\) 的等距节点函数表，若用二次插值求 \(e^x\) 的近似值，要使截断误差不超过 \(10^{-6}\)，使用函数表的步长 \(h\) 应取多少？
+
+\textbf{9.} 若 \(y_n=2^n\)，求 \(\Delta^4y_n\) 及 \(\delta^4y_n\)。
+
+\textbf{10.} 如果 \(f(x)\) 是 \(m\) 次多项式，记 \(\Delta f(x)=f(x+h)-f(x)\)，证明 \(f(x)\) 的 \(k\) 阶差分 \(\Delta^kf(x)\)（\(0\leqslant k\leqslant m\)）是 \(m-k\) 次多项式，并且 \(\Delta^{m+l}f(x)=0\)（\(l\) 为正整数）。
+
+\textbf{11.} 证明 \(\Delta(f_kg_k)=f_k\Delta g_k+g_{k+1}\Delta f_k\)。
+
+\textbf{12.} \(\displaystyle\sum_{k=0}^{n-1}f_k\Delta g_k=f_ng_n-f_0g_0-\sum_{k=0}^{n-1}g_{k+1}\Delta f_k\)。
+
+\textbf{13.} 证明 \(\displaystyle\sum_{j=0}^{n-1}\Delta^2y_j=\Delta y_n-\Delta y_0\)。
+
+\textbf{14.} 若 \(f(x)=a_0+a_1x+\cdots+a_{n-1}x^{n-1}+a_nx^n\) 有 \(n\) 个不同实根 \(x_1,x_2,\cdots,x_n\)，证明：
+
+\begin{quote}
+续页：第 14 题结论在下一页。
+\end{quote}
+
+\begin{quote}
+\textbf{校注（agent 补充；原书表值疑误）}：表 2.9 在 \(x=0.7\) 列原扫描为 \(-0.357765\)，已保留，参见\href{../assets/ch02b/table-2-9.png}{表 2.9 原图裁切}。实际 \(\ln0.7\approx-0.356674944\)，六位小数为 \(-0.356675\)，故原表这一项疑有数字误排。
+\end{quote}
+
+\href{../../source-images/pdf-057.jpeg}{查看原页}
+
+\begin{quote}
+本页接上页习题 14 的结论。
+\end{quote}
+
+\[\sum_{j=1}^n\frac{x_j^k}{f'(x_j)}=\begin{cases}0,&0\leqslant k\leqslant n-2,\\a_n^{-1},&k=n-1.\end{cases}\]
+
+\textbf{15.} 证明 \(n\) 阶差商有下列性质：
+
+（1）若 \(F(x)=cf(x)\)，则 \(F[x_0,\allowbreak x_1,\allowbreak \cdots,\allowbreak x_n]=cf[x_0,\allowbreak x_1,\allowbreak \cdots,\allowbreak x_n]\)；
+
+（2）若 \(F(x)=f(x)+g(x)\)，则 \(F[x_0,\allowbreak x_1,\allowbreak \cdots,\allowbreak x_n]=f[x_0,\allowbreak x_1,\allowbreak \cdots,\allowbreak x_n]+g[x_0,\allowbreak x_1,\allowbreak \cdots,\allowbreak x_n]\)。
+
+\textbf{16.} \(f(x)=x^7+x^4+3x+1\)，求 \(f[2^0,2^1,\cdots,2^7]\) 及 \(f[2^0,2^1,\cdots,2^8]\)。
+
+\textbf{17.} 证明两点三次 Hermite 插值余项是
+
+\[R_3(x)=f^{(4)}(\xi)(x-x_k)^2(x-x_{k+1})^2/4!,\quad\xi\in(x_k,x_{k+1}),\]
+
+并由此求出分段三次 Hermite 插值的误差限。
+
+\textbf{18.} 求一个次数不高于四次的多项式 \(P(x)\)，使它满足 \(P(0)=P(-k+1)\)，并由此求出分段三次 Hermite 插值的误差限。
+
+\textbf{19.} 求一个次数不高于四次的多项式 \(P(x)\)，使它满足 \(P(0)=P'(0)=0,P(1)=P'(1)=1,P(2)=1\)。
+
+\textbf{20.} 设 \(f(x)\in C[a,b]\)，把 \([a,b]\) 分为 \(n\) 等份，试构造一个台阶形的零次分段插值函数 \(\varphi_n(x)\)，并证明当 \(n\to\infty\) 时 \(\varphi_n(x)\) 在 \([a,b]\) 上一致收敛到 \(f(x)\)。
+
+\textbf{21.} 设 \(f(x)=1/(1+x^2)\)，在 \(-5\leqslant x\leqslant5\) 上取 \(n=10\)，按等距节点求分段线性插值函数 \(I_h(x)\)，计算各节点间中点处的 \(I_h(x)\) 与 \(f(x)\) 的值，并估计误差。
+
+\textbf{22.} 求 \(f(x)=x^2\) 在 \([a,b]\) 上的分段线性插值函数 \(I_h(x)\)，并估计误差。
+
+\textbf{23.} 求 \(f(x)=x^4\) 在 \([a,b]\) 上的分段 Hermite 插值，并估计误差。
+
+\textbf{24.} 给定数据如表 2.10 所示，试求三次样条插值 \(S(x)\)，并满足条件
+
+（1）\(S'(0.25)=1.000\,0,S'(0.53)=0.686\,8\)；
+
+（2）\(S''(0.25)=S''(0.53)=0\)。
+
+\textbf{表 2.10}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+\(x_j\) & 0.25 & 0.30 & 0.39 & 0.45 & 0.53 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(y_j\) & 0.500 0 & 0.547 7 & 0.624 5 & 0.670 8 & 0.728 0 \\
+\end{longtable}
+}
+
+\textbf{25.} 若 \(f(x)\in C^2[a,b]\)，\(S(x)\) 是三次样条函数，证明
+
+（1）
+
+\[\begin{aligned}
+&\int_a^b[f''(x)]^2\,\mathrm dx-\int_a^b[S''(x)]^2\,\mathrm dx\\
+&\quad=\int_a^b[f''(x)-S''(x)]^2\,\mathrm dx+2\int_a^b S''(x)[f''(x)-S''(x)]\,\mathrm dx;
+\end{aligned}\]
+
+（2）若 \(f(x_i)=S(x_i)\)（\(i=0,1,\cdots,n\)），式中 \(x_i\) 为插值节点，且 \(a=x_0<x_1<\cdots<x_n=b\)，则
+
+\[\int_a^b S''(x)[f''(x)-S''(x)]\,\mathrm dx=S''(b)[f'(b)-S'(b)]-S''(a)[f'(a)-S'(a)].\]
+
+\textbf{26.} 编出计算三次样条函数 \(S(x)\) 系数及其在插值节点中点的值的程序框图（\(S(x)\) 可用式（2.8.7）的表达式）。
+
+\begin{quote}
+\textbf{校注（agent 补充；原书题目疑误）}：第 18 题原扫描确为上述文字，参见\href{../assets/ch02b/pdf-057-exercise-18-detail.png}{第 18 题原图裁切}。题中 \(k\) 未定义，所给多项式条件不完整，末句又重复第 17 题的误差限要求，无法从本页可靠恢复原意；此处保留原文，不补造条件。第 24 题的两组边界条件也按原书排列保留，未将其合并解题。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch02b-E012}：原书 PDF 页 56
+\item
+  \texttt{ch02b-E013}：原书 PDF 页 57
+\end{itemize}
+
+\end{document}

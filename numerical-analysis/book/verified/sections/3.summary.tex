@@ -1,0 +1,104 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={小结},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{小结}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+函数逼近是数学中一个很重要的课题，本章只介绍了函数逼近最基本的概念及常用的正交多项式，并从函数计算观点介绍了用多项式逼近连续函数的主要方法。这些都是计算数学的基础，需要详细了解的读者可参看文献 {[}4{]}。本章对函数逼近与计算的另一重要课题------有理逼近没有涉及，这方面内容可参看文献 {[}5{]}。
+
+本章介绍的曲线拟合的最小二乘法和离散 Fourier 变换都可从最佳平方逼近得到，它们在实际中都有广泛的应用，本章着重介绍了在计算机上有效和节省时间的算法，而不要求理论上的详细讨论。特别是 FFT 算法，不但应用中意义重大，而且也是计算数学中节省运算次数的一个典范。本章介绍的改进 FFT 算法比目前使用的 FFT 算法计算次数又减少了，程序也较简单，这一算法的推导与应用可参看文献 {[}6{]}。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 90 的校注}\label{ux539fux4e66-pdf-ux9875-90-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-090.md}{完整原页转录} · \href{../../source-images/pdf-090.jpeg}{原页图像}
+
+校注记录：ch03b-E020, ch03b-E021。
+
+\begin{quote}
+校注（agent 补充）：步 5、步 6 的差式中，第二个读取地址的偏移量原书均印为 \(2^{q-1}\)，与式 (3.7.16) 的 \(2^{p-1}\) 不一致；正文保留原式。步 6 的 \(j\) 循环上界原印为 \(2^{q-1}\)，相较式 (3.7.16) 与步 5 少了``\(-1\)''。按该上界执行会多计算一个 \(j\)，在 \(q=p\) 时也会越出 \(N\) 个数组单元范围。见 \href{../assets/ch03b/p090-fft-steps.png}{原程序步骤裁切}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03b-E020}：原书 PDF 页 90
+\item
+  \texttt{ch03b-E021}：原书 PDF 页 90
+\end{itemize}
+
+\end{document}

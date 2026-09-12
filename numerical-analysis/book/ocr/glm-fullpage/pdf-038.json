@@ -1,0 +1,20 @@
+{
+  "pdf_page": 38,
+  "source_image": "source-images/pdf-038.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "bd7a99692593ae531064ce352165bcf0d9ef4c7c766fb99890d523d8b6e6ac86",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1330,
+  "possibly_truncated": false,
+  "elapsed_seconds": 30.899,
+  "created_utc": "2026-09-12T09:34:47.123611+00:00",
+  "raw_text_sha256": "1655e0507d6cfb11fcbb747676ccd54bda8308ef2882cf52b070a1778872a951",
+  "raw_text": "$f[x, x_0] = f[x_0, x_1] + f[x, x_0, x_1](x - x_1)$,\n$\\vdots$\n$f[x, x_0, \\dots, x_{n-1}] = f[x_0, x_1, \\dots, x_n] + f(x, x_0, \\dots, x_n](x - x_n)$.\n\n只要把后一式代入前一式，就可得到\n$f(x) = f(x_0) + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) + \\dots$\n$+ f[x_0, x_1, \\dots, x_n](x - x_0) \\dots (x - x_{n-1}) + f[x, x_0, \\dots, x_n]\\omega_{n+1}(x)$\n$= N_n(x) + R_n(x)$,\n\n其中\n$N_n(x) = f(x_0) + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x - x_0)(x - x_1) + \\dots$\n$+ f[x_0, x_1, \\dots, x_n](x - x_0)(x - x_1) \\dots (x - x_{n-1})$,\n(2.4.6)\n$R_n(x) = f(x) - N_n(x) = f[x, x_0, \\dots, x_n]\\omega_{n+1}(x)$.\n(2.4.7)\n\n$\\omega_{n+1}(x)$是由式(2.2.12)定义的. 由式(2.4.6)确定的多项式 $N_n(x)$显然满足插值条件, 且次数不超过 $n$, 它就是形如式(2.4.1)的多项式, 其系数为\n$a_k = f[x_0, x_1, \\dots, x_k] \\quad (k = 0, 1, \\dots, n)$.\n\n称 $N_n(x)$为 Newton 差商插值多项式. 系数 $a_k$ 就是差商表 2.4 中加横线的各阶差商, 它比 Lagrange 插值节省计算量, 且便于程序设计.\n\n式(2.4.7)为插值余项, 由插值多项式的唯一性知, 它与式(2.2.14)是等价的, 事实上, 利用差商与导数关系式(2.4.5), 可由式(2.4.7)推出式(2.2.14). 但式(2.4.7)更有一般性, 它对于 $f$ 是由离散点给出的情形或 $f$ 导数不存在时均适用.\n\n例 2.3 给出 $f(x)$ 的函数表(见表 2.5 左边两列), 求 4 次 Newton 插值多项式, 并由此计算 $f(0.596)$ 的近似值.\n\n表 2.5\n\n| $x_k$ | $f(x_k)$ | 一阶差商 | 二阶差商 | 三阶差商 | 四阶差商 | 五阶差商 |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 0.40 | $\\underline{0.410\\ 75}$ | | | | | |\n| 0.55 | $\\underline{0.578\\ 15}$ | $\\underline{1.116\\ 00}$ | | | | |\n| 0.65 | $\\underline{0.696\\ 75}$ | $\\underline{1.186\\ 00}$ | $\\underline{0.280\\ 00}$ | | | |\n| 0.80 | $\\underline{0.888\\ 11}$ | $\\underline{1.275\\ 73}$ | $\\underline{0.358\\ 93}$ | $\\underline{0.197\\ 33}$ | | |\n| 0.90 | $\\underline{1.026\\ 52}$ | $\\underline{1.384\\ 10}$ | $\\underline{0.433\\ 48}$ | $\\underline{0.213\\ 00}$ | | |\n| 1.05 | $\\underline{1.253\\ 82}$ | $\\underline{1.515\\ 33}$ | $\\underline{0.524\\ 93}$ | $\\underline{0.228\\ 63}$ | $\\underline{0.031\\ 34}$ | $-0.000\\ 12$ |\n\n解 首先根据给定函数表造出差商表(见表 2.5 右边五列).\n\n从差商表看到, 四阶差商近似常数. 故取 4 次插值多项式 $N_4(x)$ 作近似即可.\n\n$N_4(x) = 0.410\\ 75 + 1.116(x - 0.4) + 0.28(x - 0.4)(x - 0.55)$\n$+ 0.197\\ 33(x - 0.4)(x - 0.55)(x - 0.65)$\n$+ 0.031\\ 34(x - 0.4)(x - 0.55)(x - 0.65)(x - 0.8)$,"
+}

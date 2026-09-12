@@ -1,0 +1,20 @@
+{
+  "pdf_page": 81,
+  "source_image": "source-images/pdf-081.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "28a5761613cfeab5533c730d40e951a8277c461eb4a0eba12307b145bbae8297",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 979,
+  "possibly_truncated": false,
+  "elapsed_seconds": 40.284,
+  "created_utc": "2026-09-12T10:07:06.994681+00:00",
+  "raw_text_sha256": "a918b281aa59d92886870adf04e8fab1b4be47d0aa1ecc6c7f6bac3688480553",
+  "raw_text": "个数, 故 $y = F(t)$ 有一水平渐近线. 另外, $t = 0$ 时, 反应未开始, 质量分数为零. 根据这些特点, 可设想 $y = F(t)$ 是双曲线型 $1/y = a + b/t$, 即 $y = t/(at + b)$. 它与给定数据的规律大致符合.\n\n为了确定 $a, b$, 令 $\\bar{y} = 1/y, x = 1/t$, 于是可用 $x$ 的线性函数 $S_1(x) = a + bx$ 拟合数据 $(x_i, \\bar{y}_i)$ ($i = 1, 2, \\cdots, 16$), $x_i, \\bar{y}_i$ 由原始数据 $(t_i, y_i)$ 根据变换计算出来. 与例 3.5 方法相同, 解方程组\n\n$$\\begin{cases} 16a + 3.380 \\times 73b = 1.837 \\times 10^3, \\\\ 3.380 \\times 73a + 1.584 \\times 35b = 0.528 \\times 86 \\times 10^3, \\end{cases}$$\n\n得 $a = 80.6621, b = 161.6822$.\n\n从而得到\n\n$$y = t/(80.6621t + 161.6822) = F^{(1)}(t),$$\n\n其误差为\n\n$$\\delta_i^{(1)} = y_i - F^{(1)}(t_i) \\quad (i = 1, 2, \\cdots, 16).$$\n\n由图 3.7, 符合给定数据的函数还可选为指数形式. 此时可令拟合曲线形如\n\n$$y = a \\mathrm{e}^{b/t}.$$\n\n显然, 当 $t \\to \\infty$ 时, $y \\to a$; 当 $t \\to 0$ 时, 若 $b < 0$, 则 $y \\to 0$, 且 $t$ 增加时 $y$ 增加. 这些与给出数据规律相同. 为了确定 $a$ 与 $b$, 对上式两端取对数, 得 $\\ln y = \\ln a + b/t$. 令\n\n$$\\hat{y} = \\ln y, \\quad A = \\ln a, \\quad x = 1/t,$$\n\n于是由 $(t_i, y_i)$ 计算出 $(x_i, \\hat{y}_i)$, 拟合数据 $(x_i, y_i)$ 的曲线仍为 $S_1(x) = A + bx$.\n\n用例 3.5 的方法计算出 $A = -4.48072, b = -1.0567$, 从而\n\n$$a = \\mathrm{e}^{A} = 11.325 \\times 10^{-3},$$\n\n最后求得\n\n$$y = 11.325 \\times 10^{-3} \\mathrm{e}^{-1.0567t} = F^{(2)}(t),$$\n\n误差为\n\n$$\\delta_i^{(2)} = y_i - F^{(2)}(t_i) \\quad (i = 1, 2, \\cdots, 16).$$\n\n怎样比较这两个数学模型的好坏呢? 只要分别计算各点误差, 从中挑选误差较小的模型即可. 本例经过计算可得\n\n$$\\|\\delta^{(1)}\\|_{\\infty} = \\max_i |\\delta_i^{(1)}| = 0.568 \\times 10^{-3},$$\n\n$$\\|\\delta^{(2)}\\|_{\\infty} = \\max_i |\\delta_i^{(2)}| = 0.277 \\times 10^{-3},$$\n\n而均方误差为\n\n$$\\|\\delta^{(1)}\\|_2 = \\sqrt{\\sum_i^m (\\delta_i^{(1)})^2} = 1.19 \\times 10^{-3},$$\n\n$$\\|\\delta^{(2)}\\|_2 = \\sqrt{\\sum_i^m (\\delta_i^{(2)})^2} = 0.34 \\times 10^{-3}.$$"
+}

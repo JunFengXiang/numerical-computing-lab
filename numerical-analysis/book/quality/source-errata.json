@@ -1,0 +1,1933 @@
+{
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_errata": [
+    {
+      "lane": "front",
+      "id": "front-toc-ch7-exercises-page-damage",
+      "pdf_page": 11,
+      "type": "source_damage_and_possible_page_mismatch",
+      "description": "第 7 章习题的目录页码前部扫描残损，末位可辨为 8。原印完整数字不能确认；正文实际开始于书页 199（PDF 212）。",
+      "resolution": "保留原目录残损标记及局部图；以单列正文定位支持检索，不静默补写目录数字。",
+      "status": "documented; no silent correction"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E001",
+      "pdf_page": 17,
+      "printed_page": 4,
+      "type": "suspected_source_wording_error",
+      "source_text": "则tilde I_n就是E_0的n!倍误差",
+      "note": "原文照录；由E_n=(-1)^n n!E_0，应指近似值tilde I_n的误差绝对值为初值误差绝对值的n!倍。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p017-top.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E002",
+      "pdf_page": 21,
+      "printed_page": 8,
+      "formula_id": "1.3.4",
+      "type": "suspected_source_formula_typo",
+      "source_text": "sum_{k=1}^{k}",
+      "note": "放大原图确认上限是k；由n元函数及式1.3.3，应为n。转录保留k并单列校注。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p021-eq-1-3-4.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E003",
+      "pdf_page": 21,
+      "printed_page": 8,
+      "type": "suspected_source_condition_error",
+      "source_text": "假定f′(x*)与f″(x*)的比值不太大",
+      "note": "原句照录；忽略二阶项相对一阶项应控制|f″(xi)|epsilon(x*)/(2|f′(x*)|)，疑有比值顺序或条件表述问题。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p021-condition.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E004",
+      "pdf_page": 22,
+      "printed_page": 9,
+      "example_id": "1.6",
+      "type": "source_numerical_error",
+      "source_text": "x1=200000/399999=0.50000125",
+      "note": "由两原方程相减得(2-0.00001)x1=1，故x1=100000/199999约0.5000025000125；原列x2与此解一致。原文未改。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p022-example-1-6.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E005",
+      "pdf_page": 23,
+      "printed_page": 10,
+      "example_id": "1.6",
+      "type": "suspected_source_wording_and_exponent_error",
+      "source_text": "用小数除以大数；第二种消去首行10^6乘0.1000x2=10^6乘0.1000",
+      "note": "原文保留。第一操作实际为第一方程除以小量；第二种直接消去后四位浮点首行应为10^1乘0.1000x2=10^1乘0.1000。原式可以额外同乘10^5得到但文本未给该步。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p023-elimination.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E006",
+      "pdf_page": 23,
+      "printed_page": 10,
+      "example_id": "1.7",
+      "type": "source_significant_digits_error",
+      "source_text": "6.13乘10^3，具有三位有效数字",
+      "note": "实际A约6091.729809，6130误差约38.270191>5，不满足本章三位有效数字定义；原文照录并附校注。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p023-example-1-7.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E007",
+      "pdf_page": 26,
+      "printed_page": 13,
+      "exercise_id": "13",
+      "type": "source_formula_sign_error",
+      "source_text": "ln(x-sqrt(x^2-1))=-ln(x+sqrt(x^2+1))",
+      "note": "原图确认右侧为+1，原样保留。由(x-sqrt(x^2-1))(x+sqrt(x^2-1))=1，相应等价式右侧根号内应为x^2-1。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p026-exercise-13.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch01",
+      "id": "CH01-E008",
+      "pdf_page": 26,
+      "printed_page": 13,
+      "exercise_id": "15",
+      "type": "source_missing_first_order_qualification",
+      "source_text": "面积误差满足|Delta S/S|≤|Delta a/a|+|Delta b/b|+|Delta c/c|",
+      "note": "原文保留。有限误差取Delta a/a=Delta b/b=0.01且Delta c=0，精确面积相对变化0.0201>0.02；应注明一阶近似/微分解释。由独立校对agent front提出，ch01复核。",
+      "unresolved": false,
+      "evidence_image": "source-images/pdf-026.jpeg",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "lane": "ch02a",
+      "id": "NA5E-E001",
+      "pdf_page": 27,
+      "description": "定义 2.1 印为 x_0 ≤ x_1，与后文互异节点前提不一致；原文与校注分列。"
+    },
+    {
+      "lane": "ch02a",
+      "id": "NA5E-E002",
+      "pdf_page": 34,
+      "description": "原书 cos(0.32)<0.828、余项数值界0.178×10^-7以及中间乘积3.89×10^-4有误；保留印字与独立校注。"
+    },
+    {
+      "lane": "ch02a",
+      "id": "CH02A-S01",
+      "pdf_page": 38,
+      "type": "source_typographical_error",
+      "description": "递推式末项原印f(x,x_0,...,x_n]，左右括号不配，应理解为差商f[...]；原文及校注分列。"
+    },
+    {
+      "lane": "ch02a",
+      "id": "CH02A-S02",
+      "pdf_page": 40,
+      "type": "source_table_header_inconsistency",
+      "description": "表2.6首列表头原印x_k，列中为f_0,f_1,...；保留并说明表头应理解为f_k。"
+    },
+    {
+      "lane": "ch02a",
+      "id": "CH02A-S03",
+      "pdf_page": 38,
+      "related_pdf_pages": [
+        39
+      ],
+      "type": "source_numerical_rounding_inconsistency",
+      "description": "表2.5混用中间舍入；精确输入重算五阶差商为2/6825≈+0.00029304，原表−0.00012。原表保留，独立说明原书估计与精度边界。"
+    },
+    {
+      "lane": "ch02a",
+      "id": "CH02A-S04",
+      "pdf_page": 39,
+      "related_pdf_pages": [
+        38
+      ],
+      "type": "source_arithmetic_error",
+      "description": "例2.3原印N4(0.596)=0.63195；按原印多项式计算为0.63191751982370304，五位小数应0.63192。原文与校注分列。"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E001",
+      "pdf_page": 46,
+      "printed_page": 33,
+      "formula_id": "2.7.3",
+      "status": "suspected_source_error",
+      "original": "\\frac{x_j-x_{j+1}}{x-x_{j+1}}",
+      "suggested": "\\frac{x-x_{j+1}}{x_j-x_{j+1}}",
+      "reason": "原式在右端点分母为零，违反分段线性、连续及节点基函数条件；原图确认原式分子分母倒置。",
+      "evidence": "staging/ch02b/assets/pdf-046-eq-2-7-3-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E002",
+      "pdf_page": 49,
+      "printed_page": 36,
+      "related_pdf_page": 48,
+      "formula_id": "2.7.13",
+      "status": "suspected_source_omission",
+      "original": "当 f(x)∈C[a,b] 时分段三次 Hermite 插值一致收敛。",
+      "reason": "由 (2.7.13) 推出收敛还需 h max_k |f′_k|→0；仅连续不足以保证节点导数存在及随网格加密的一致控制。",
+      "suggested": "补充适当导数控制条件，例如 f∈C¹[a,b]；正文保留原文。"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E003",
+      "pdf_page": 50,
+      "printed_page": 37,
+      "formula_id": "unnumbered S″ on [x_{j-1},x_j]",
+      "status": "suspected_source_error",
+      "original": "第三项分母 h_{j-1}²",
+      "suggested": "第三项分母 h_{j-1}³",
+      "reason": "由同页前一个区间公式换下标及下页端点导数式交叉核对，分母应为三次幂。",
+      "evidence": "staging/ch02b/assets/pdf-050-second-derivative-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E004",
+      "pdf_page": 52,
+      "printed_page": 39,
+      "formula_id": "unnumbered lambda_n",
+      "status": "suspected_source_error",
+      "original": "λ_n=h_{n-1}/(h_0+h_{n-1})",
+      "suggested": "λ_n=h_0/(h_0+h_{n-1})",
+      "reason": "由前一行未归一化周期方程直接除以 1/h0+1/h_{n-1}。",
+      "evidence": "staging/ch02b/assets/pdf-052-periodic-system-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E005",
+      "pdf_page": 52,
+      "printed_page": 39,
+      "formula_id": "2.8.15",
+      "status": "suspected_source_error",
+      "original": "周期方程系数矩阵右上、左下角均为 0。",
+      "suggested": "右上角 λ_1；左下角 μ_n。",
+      "reason": "分别由 m0=mn 代入首行及本页周期端点方程得；普通三对角追赶法需要相应循环系统处理。",
+      "evidence": "staging/ch02b/assets/pdf-052-periodic-system-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E006",
+      "pdf_page": 54,
+      "printed_page": 41,
+      "formula_id": "2.8.21",
+      "status": "suspected_source_error",
+      "original": "max_{1≤i≤n}|x_j|",
+      "suggested": "max_{1≤i≤n}|x_i|",
+      "reason": "最大值指标 i 与被取最大值分量 j 不一致。",
+      "evidence": "staging/ch02b/assets/pdf-054-norm-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E007",
+      "pdf_page": 54,
+      "printed_page": 41,
+      "formula_id": "2.8.23",
+      "status": "suspected_source_error",
+      "original": "min(|a_ij|−sum_{j≠i}|a_ij|)",
+      "suggested": "min_i(|a_ii|−sum_{j≠i}|a_ij|)",
+      "reason": "逆范数上界的对角占优余量首项应为对角元素。",
+      "evidence": "staging/ch02b/assets/pdf-054-norm-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E008",
+      "pdf_page": 54,
+      "printed_page": 41,
+      "table": "2.8",
+      "status": "source_table_condition_mismatch",
+      "original": "S10(−4.8)=0.03758, S10(−4.5)=0.04248",
+      "reason": "按PDF53明定的两端一阶导数条件精确解得0.04162183和0.04716801，原表数字已保持不变。",
+      "evidence": "staging/ch02b/table-2-8-check.txt"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E009",
+      "pdf_page": 55,
+      "printed_page": 42,
+      "formula_id": "2.8.24 following matrix/vector",
+      "status": "suspected_source_error",
+      "original": "自然边界矩阵末行次对角元 λ_n；m 向量第二项 m2。",
+      "suggested": "次对角元 1；向量第二项 m1。",
+      "reason": "与本页引用的自然边界方程 (2.8.14) 不一致；此处未定义自然边界 λ_n。",
+      "evidence": "staging/ch02b/assets/pdf-055-matrix-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E010",
+      "pdf_page": 55,
+      "printed_page": 42,
+      "formula_id": "2.8.27",
+      "status": "suspected_source_error",
+      "original": "末项 ||g||_∞^m",
+      "suggested": "||g||_∞",
+      "reason": "由 ||A^{-1}||∞≤1 得 ||m||∞≤||g||∞；原图多余 m 清楚。",
+      "evidence": "staging/ch02b/assets/pdf-055-eq-2-8-27-detail.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E011",
+      "pdf_page": 55,
+      "printed_page": 42,
+      "formula_id": "reference after 2.8.28",
+      "status": "suspected_source_error",
+      "original": "将式 (2.8.9) 及式 (2.8.28) 代入式 (2.8.26)",
+      "suggested": "式 (2.8.9) 应指 (2.8.27)",
+      "reason": "当前推导需将 m 的范数界与 g 的界结合。"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E012",
+      "pdf_page": 56,
+      "printed_page": 43,
+      "table": "2.9",
+      "status": "suspected_source_error",
+      "original": "ln(0.7)=−0.357765",
+      "suggested": "−0.356675 (六位小数)",
+      "reason": "ln(0.7)≈−0.356674944；原表数字原样保留。",
+      "evidence": "staging/ch02b/assets/table-2-9.png"
+    },
+    {
+      "lane": "ch02b",
+      "id": "ch02b-E013",
+      "pdf_page": 57,
+      "printed_page": 44,
+      "exercise": 18,
+      "status": "source_exercise_incomplete",
+      "original": "P(0)=P(−k+1)，并由此求出分段三次 Hermite 插值的误差限。",
+      "reason": "k 未定义，多项式条件不完整，末句重复前题要求；原意无法从扫描可靠恢复。",
+      "suggested": "保留原文并提示题目疑误，不猜补。",
+      "evidence": "staging/ch02b/assets/pdf-057-exercise-18-detail.png"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E01",
+      "pdf_page": 59,
+      "printed_page": 46,
+      "kind": "source_typographical_error",
+      "location": "Lagrange 插值多项式后无编号求和式",
+      "source": "\\sum_{k=0}^{n} l_k(x_k)=1",
+      "note": "原图确印 x_k；由 l_k(x_k)=1 左端为 n+1，通常恒等式应为 sum l_k(x)=1。转录保留原文。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E02",
+      "pdf_page": 62,
+      "printed_page": 49,
+      "kind": "source_cross_reference_error",
+      "location": "图 3.2 旁正文",
+      "source": "定理 3.1 表明",
+      "note": "上下文在解释定理 3.3 的正、负偏差点性质，应为定理 3.3；定理 3.1 为 Weierstrass 定理。原文保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E03",
+      "pdf_page": 64,
+      "printed_page": 51,
+      "kind": "source_index_inconsistency",
+      "location": "“另外两个偏差点必在区间端点”后",
+      "source": "x_0=a, x_1=b",
+      "note": "本页前文三个点编号为 x_1<x_2<x_3，按该编号端点应为 x_1=a, x_3=b。转录保留原书。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E04",
+      "pdf_page": 64,
+      "printed_page": 51,
+      "kind": "rounded_coefficient_error_bound",
+      "location": "例 3.1 页末误差限",
+      "source": "max |sqrt(1+x^2)-P_1(x)| <= 0.045, P_1=0.955+0.414x",
+      "note": "把印出的舍入系数作为精确数，x=1 时误差 sqrt(2)-1.369=0.04521356237... 大于 0.045。原书数值及不等式均保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E05",
+      "pdf_page": 67,
+      "printed_page": 54,
+      "kind": "source_terminology_error",
+      "location": "定理 3.6",
+      "source": "Cramer 行列式",
+      "note": "式 (3.3.10) 为内积 Gram 矩阵的行列式，通常应称 Gram 行列式。原文保留并加校注。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E06",
+      "pdf_page": 68,
+      "printed_page": 55,
+      "kind": "source_symbol_case_inconsistency",
+      "location": "式 (3.3.11) 两处 inf 下标",
+      "source": "S\\in\\varphi",
+      "note": "原图为小写 varphi，而前文子集记为大写 Phi；应指 Phi。原符号保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E07",
+      "pdf_page": 69,
+      "printed_page": 56,
+      "kind": "rounded_inner_product_squared_error",
+      "location": "例 3.2 平方误差",
+      "source": "||delta||_2^2 = 0.0026",
+      "note": "该数来自舍入内积；对印出的 S=0.934+0.426x 直接积分，实际平方误差约为 0.0007136323726914。原书数值保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E08",
+      "pdf_page": 70,
+      "printed_page": 57,
+      "kind": "source_index_error",
+      "location": "正交化构造式末尾",
+      "source": "k=1,2,...",
+      "note": "k 是求和哑指标，外部应为 n=1,2,...；原文保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E09",
+      "pdf_page": 70,
+      "printed_page": 57,
+      "kind": "source_initial_value_error",
+      "location": "三项递推的初值",
+      "source": "g_{n-1}(x)=0",
+      "note": "一般 n 时与 g_0=1 冲突；通常初值应为 g_{-1}(x)=0。原文保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E10",
+      "pdf_page": 71,
+      "printed_page": 58,
+      "kind": "source_coefficient_error",
+      "location": "式 (3.4.1) 后展开 P_n 的无编号公式",
+      "source": "1/(2^2 n!)",
+      "note": "原图确印 2^2；根据 (3.4.1) 及随后 a_n，应为 1/(2^n n!)。原式保留。"
+    },
+    {
+      "lane": "ch03a",
+      "id": "ch03a-E11",
+      "pdf_page": 74,
+      "printed_page": 61,
+      "kind": "source_cross_reference_error",
+      "location": "例 3.3",
+      "source": "由定理 3.6 可知",
+      "note": "应指本页定理 3.7 的最小偏差性质，3.6 为内积行列式判别条件。原文保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E001",
+      "pdf_page": 76,
+      "printed_page": 63,
+      "formula_id": "3.4.11",
+      "type": "suspected_source_error",
+      "original": "e^n",
+      "suggested": "e^x",
+      "note": "原图明确为e^n；取n=0与同页L_0(x)=1矛盾，保留原式另注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E002",
+      "pdf_page": 77,
+      "printed_page": 64,
+      "formula_id": "3.5.8",
+      "type": "suspected_source_error",
+      "original": "\\|\\delta_k\\|_2^2",
+      "suggested": "\\|\\delta_n\\|_2^2",
+      "note": "左端原书下标k，右端求和上限n；保留原式另注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E003",
+      "pdf_page": 78,
+      "printed_page": 65,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "S_3(x)",
+      "suggested": "S_3^*(x)",
+      "note": "例3.4最大误差式未加星号，保留原书记法。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E004",
+      "pdf_page": 79,
+      "printed_page": 66,
+      "formula_id": "3.6.1",
+      "type": "suspected_source_error",
+      "original": "右端求和i=1，且最小值下标S(x) in varphi",
+      "suggested": "右端求和i=0，函数空间Phi",
+      "note": "原图已放大确认；与同式左侧下限及上页定义不一致，保留并校注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E005",
+      "pdf_page": 80,
+      "printed_page": 67,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "右端omega(x_i)后有上标星号",
+      "suggested": "移除未定义的星号",
+      "note": "不等式原印星号保留并校注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E006",
+      "pdf_page": 81,
+      "printed_page": 68,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "exp(-1.0567t)",
+      "suggested": "exp(-1.0567/t)",
+      "note": "最终指数模型原印为乘t；与本页y=a exp(b/t)及趋向a的描述矛盾。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E007",
+      "pdf_page": 81,
+      "printed_page": 68,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "拟合数据(x_i,y_i)",
+      "suggested": "拟合数据(x_i,hat y_i)",
+      "note": "变换后拟合数据原文漏帽号，保留并校注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E008",
+      "pdf_page": 82,
+      "printed_page": 69,
+      "formula_id": "3.6.11",
+      "type": "source_notation_inconsistency",
+      "original": "a_{k+1}",
+      "suggested": "alpha_{k+1}",
+      "note": "式3.6.11原印为拉丁a，递推式为希腊alpha；保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E009",
+      "pdf_page": 82,
+      "printed_page": 69,
+      "formula_id": "3.6.11",
+      "type": "suspected_source_error",
+      "original": "两行共同范围k=0,...,n-1",
+      "suggested": "beta_k范围k=1,...,n-1",
+      "note": "beta_0涉及未定义的P_-1；递推只使用beta_1起。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E010",
+      "pdf_page": 83,
+      "printed_page": 70,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "首式(P_l,P_1)，归纳假设(P_1,P_s)",
+      "suggested": "首式(P_0,P_1)，归纳假设(P_l,P_s)",
+      "note": "l与1已在放大原图核对，原印保留另注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E011",
+      "pdf_page": 83,
+      "printed_page": 70,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "系数a_k，随后累加alpha_k^*并表示拟合曲线",
+      "suggested": "统一为同一拟合系数记号",
+      "note": "保留原文；不得与递推alpha_k混同。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E012",
+      "pdf_page": 84,
+      "printed_page": 71,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "S_n求和k=1，后文a_0起；列表a_0,a_2,...,a_n",
+      "suggested": "统一系数范围且完整列出a_1",
+      "note": "原书多元拟合的系数范围不一致，保留另注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E013",
+      "pdf_page": 84,
+      "printed_page": 71,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "内积右端第二因子varphi_i",
+      "suggested": "varphi_j",
+      "note": "左端为(varphi_k,varphi_j)，右端原图下标明确为i；保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E014",
+      "pdf_page": 85,
+      "printed_page": 72,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "离散正交性第三行0<=k,j<=m",
+      "suggested": "0<=k,l<=m",
+      "note": "j为求和指标，频率为k,l；原印保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E015",
+      "pdf_page": 87,
+      "printed_page": 74,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "N=2^p时只有N/2个不同的值",
+      "suggested": "利用正负号对称可由N/2个值表示N个值",
+      "note": "j=1时有N个不同的N次单位根，原文缺少限定；保留并解释。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E016",
+      "pdf_page": 87,
+      "printed_page": 74,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "用w的N同余数r代替m",
+      "suggested": "用m的N同余数r代替m",
+      "note": "本段原文保留；前段余数定义作用于整数指数m。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E017",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "表3.5 A_2行单元1为A_1(0)+A_1(5)",
+      "suggested": "A_1(1)+A_1(5)",
+      "note": "与3.7.14代入k=0,j=1矛盾；原表保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E018",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "source_notation_inconsistency",
+      "original": "表3.5末行C_i=A_3(j)",
+      "suggested": "C_j=A_3(j)",
+      "note": "与正文记法不一致；原表保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E019",
+      "pdf_page": 89,
+      "printed_page": 76,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "2^{p-q}2^{q/1}=N/2",
+      "suggested": "2^{p-q}2^{q-1}=N/2",
+      "note": "原图指数斜杠已放大确认；与循环次数不一致。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E020",
+      "pdf_page": 90,
+      "printed_page": 77,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "步5、6差式第二个读地址加2^{q-1}",
+      "suggested": "加2^{p-1}",
+      "note": "与3.7.16和对应和式偏移不一致；原文保留。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E021",
+      "pdf_page": 90,
+      "printed_page": 77,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "步6 j从0到2^{q-1}",
+      "suggested": "j从0到2^{q-1}-1",
+      "note": "原文少-1，循环范围与3.7.16、步5不一致，并可能越界。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E022",
+      "pdf_page": 91,
+      "printed_page": 78,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "题10 T_n(x)=T_n(2x-1)",
+      "suggested": "T_n^*(x)=T_n(2x-1)",
+      "note": "定义左端原图无星号，后文与题11均为T_n星号；保留另注。"
+    },
+    {
+      "lane": "ch03b",
+      "id": "ch03b-E023",
+      "pdf_page": 91,
+      "printed_page": 78,
+      "formula_id": null,
+      "type": "suspected_source_error",
+      "original": "题15 Schwarz不等式(3.4.5)",
+      "suggested": "(3.3.5)",
+      "note": "原图引用为3.4.5，本章Schwarz实际编号为3.3.5；保留另注。"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E01",
+      "pdf_page": 97,
+      "printed_page": 84,
+      "location": "表 4.1 后首段",
+      "source_statement": "当 n≥8 时，Cotes 系数有正有负",
+      "finding": "n=9 是全部系数为正的反例；原文已保留并单列校注。",
+      "verification": "按式（4.2.2）用 SymPy 有理数符号积分计算全部十个系数。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E02",
+      "pdf_page": 100,
+      "printed_page": 87,
+      "location": "例 4.1 解答第二段",
+      "source_statement": "T8=0.9456909 只有两位有效数字",
+      "finding": "按本书式（1.3.2），0.0003922 < 0.0005 且大于 0.00005，应具有三位有效数字。",
+      "verification": "与本页 I=0.9460831 作有理数差值，并经 ch01 核验的 1.3.3 定义交叉确认。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E03",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3，k=3 的 T_n",
+      "source_statement": "9.9456909",
+      "finding": "首位原印为 9，应为 0；本页下段和例 4.1 都列 T8=0.9456909。原表值已照录。",
+      "verification": "原图局部放大；本章相同 T8 数值交叉核对。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E04",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3 后首句",
+      "source_statement": "用变步长方法二分 9 次得到了这个结果",
+      "finding": "按本页 k 定义和表格，k=9 为 0.9460830，k=10 才列 0.9460831。原句已保留。",
+      "verification": "与同页表 4.3 及 k 为二分次数的定义比较。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E05",
+      "pdf_page": 104,
+      "printed_page": 91,
+      "location": "式（4.3.13）的指标范围",
+      "source_statement": "k=1,2,…",
+      "finding": "下一页三角表和算法需要 T_m^(0)，相同递推式必须允许 k=0。原范围已保留。",
+      "verification": "对照 PDF 105 三角表及算法步 3 的右侧对角元素。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E06",
+      "pdf_page": 104,
+      "printed_page": 91,
+      "related_pdf_pages": [
+        105
+      ],
+      "location": "定理 4.3 / 式（4.3.7），并涉及式（4.3.14）",
+      "source_statement": "仅设 f∈C∞[a,b]，即以等式写出无穷余项级数",
+      "finding": "C∞ 不能单独保证该无穷级数收敛并等于函数；外推分析应采用有限阶截断带余项的渐近展开解释。原条件、等式均保留。",
+      "verification": "区分任意有限阶 Taylor / Euler-Maclaurin 余项展开与无穷级数收敛；属于原书表述的数学限定问题。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04a",
+      "id": "CH04A-E07",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3，k=5 的 T_n",
+      "source_statement": "0.9460596",
+      "finding": "复化梯形 n=32 得 0.946058560962768067178414064814380405…，七位小数应为 0.9460586。原表值已保留并单列校注。",
+      "verification": "ch03b 提出后重新打开原图确认；按 f(x)=sin(x)/x、f(0)=1、区间 [0,1] 独立使用 80 位精度计算，见 validation.json。",
+      "status": "documented"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E001",
+      "pdf_page": 106,
+      "printed_page": 93,
+      "location": "式 (4.3.17) 首项",
+      "original": "h^2/(2!×6) Σ fʺ_{k+1/2}",
+      "comment": "原扫描明确印 h^2；按本页前后推导应为 h^3。原样保留，校注给出依据。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p106-middle.png"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E002",
+      "pdf_page": 108,
+      "printed_page": 95,
+      "location": "表4.5 n=3 第二对节点",
+      "original": "±0.3398810",
+      "comment": "原扫描明确印 0.3398810；P4 较小零点为 0.3399810436…。原样保留，校注给出解析表达式。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-table-4-5.png"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E003",
+      "pdf_page": 111,
+      "printed_page": 98,
+      "location": "消去 (x1-x0)A1 后的第二行未编号公式",
+      "original": "(2/7)x0 + (2/7 - (2/5)x0)x1^2 = 2/9",
+      "comment": "原扫描明确印 x1^2；根据前后消元关系应为 x1。原样保留并单列推导校注。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p111-elimination.png"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E004",
+      "pdf_page": 113,
+      "printed_page": 100,
+      "location": "节点多项式 omega_{n+1} 的定义",
+      "original": "Π_{k=0}^n (x-x_i)",
+      "comment": "原扫描乘积指标 k 与节点下标 i 不一致；原样保留并单列下标疑误校注。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p113-product.png"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E005",
+      "pdf_page": 117,
+      "printed_page": 104,
+      "location": "习题1(4)首项分母",
+      "original": "h[f(0)+f(h)]/1",
+      "comment": "原扫描明确印 /1；常数函数一致性检查不能满足，疑为 /2 的排印错误。原样保留并单列校注，不求参数或题目答案。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p117-exercises.png"
+    },
+    {
+      "lane": "ch04b",
+      "id": "CH04B-E006",
+      "pdf_page": 118,
+      "printed_page": 105,
+      "location": "习题9椭圆周长公式",
+      "original": "s=a∫_0^{π/2}sqrt(1-(c/a)^2 sin^2θ)dθ",
+      "comment": "原扫描明确仅印 a；若表示周长则疑漏系数4。原样保留，以圆的特例作排印一致性说明，不进行本题数值求解。",
+      "status": "suspected_source_typo",
+      "evidence": "staging/ch04b/assets/review-p118-orbit.png"
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E001",
+      "pdf_page": 124,
+      "printed_page": 111,
+      "location": "表 5.2，x_n=0.8 的 y_n",
+      "kind": "suspected_source_numeric_error",
+      "original": "1.6153",
+      "suggested": "1.6165",
+      "evidence": "原页放大确认为 1.6153；按例 5.2 的递推式从 y_0=1、h=0.1 复算得 y_8=1.6164747827…；其余九行与四位小数输出相符。正文保留原值。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p124-table.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E002",
+      "pdf_page": 124,
+      "printed_page": 111,
+      "location": "5.2.5 单步法与两步法比较段",
+      "kind": "source_index_error",
+      "original": "更前面一步的信息 y_{n+1}",
+      "suggested": "y_{n-1}",
+      "evidence": "原页放大确认为 n+1；本页式 (5.2.13) 为 y_{n+1}=y_{n-1}+2hf(x_n,y_n)，所指前一步应为 n-1。正文保留原印。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p124-index.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E003",
+      "pdf_page": 129,
+      "printed_page": 116,
+      "location": "5.3.4 引入第三阶段节点与预测 K_3 的两处正文",
+      "kind": "source_index_error",
+      "original": "x_{n+p}=x_n+qh；为了预测点 x_{n+p} 处的斜率值 K_3",
+      "suggested": "两处 x_{n+p} 应为 x_{n+q}",
+      "evidence": "两处均已放大确认原印 n+p；同页 K_3=f(x_{n+q},y_{n+q}) 及式 (5.3.7) 明确其节点是 x_n+qh。正文保留原印。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p129-third-node.png",
+        "staging/ch05a/assets/check-p129-predict-node.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E004",
+      "pdf_page": 134,
+      "printed_page": 121,
+      "location": "式 (5.4.5)",
+      "kind": "source_missing_absolute_value",
+      "original": "L_φ(y−ȳ)",
+      "suggested": "L_φ|y−ȳ|",
+      "evidence": "右端只有圆括号，经原图放大确认；对 y<ȳ 且 L_φ>0 时，原印右端为负，不能作为绝对差上界。正文保留原式并说明。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p134-lipschitz.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E005",
+      "pdf_page": 134,
+      "printed_page": 121,
+      "location": "式 (5.4.9)",
+      "kind": "source_exponent_error",
+      "original": "Ch^q/L_φ",
+      "suggested": "Ch^p/L_φ",
+      "evidence": "原印 q 已放大确认；从式 (5.4.8) 等比求和得 Ch^(p+1)/(hL_φ)=Ch^p/L_φ，且次页 (5.4.10) 用 p。正文保留原式。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p134-bound.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E006",
+      "pdf_page": 135,
+      "printed_page": 122,
+      "location": "页首无编号不等式",
+      "kind": "source_exponent_errors",
+      "original": "(1+hL_φ)^n≤(e^(nL_φ))^n≤e^(hL_φ)",
+      "suggested": "(1+hL_φ)^n≤(e^(hL_φ))^n=e^(nhL_φ)≤e^(TL_φ)",
+      "evidence": "原页中间 n 和末项 h 均经放大确认；利用前页 nh≤T 及 1+u≤e^u 得校注所列估计，与式 (5.4.10) 相符。正文保留原式。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p135-exponents.png"
+      ]
+    },
+    {
+      "lane": "ch05a",
+      "id": "ch05a-E007",
+      "pdf_page": 136,
+      "printed_page": 123,
+      "location": "例 5.5 稳定性步长说明",
+      "kind": "source_wording_symbol_error",
+      "original": "步长 h 应使 τ 不超过 2τ=0.02",
+      "suggested": "步长 h 应不超过 2τ=0.02",
+      "evidence": "原句“使 τ”经放大确认；本页式 (5.4.13) 的被约束量是 h，正文保留原印并校注。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p136-step.png"
+      ]
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E001",
+      "pdf_page": 138,
+      "printed_page": 125,
+      "location": "5.5.2，式（5.5.4）上方未编号差分展开式",
+      "original": "Delta^j f_(n-j) = sum_(i=0)^r (-1)^i binom(j,i) f_(n-j)",
+      "assessment": "疑似原书排印错误，求和项末尾应为 f_(n-i)；原文已保留。上限 r 在约定超范围二项系数为零时可成立。",
+      "evidence": "j=r=1 时原印刷式右边为零，通常左边为 f_n-f_(n-1)。已放大查看原图下部。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E002",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "两条事后估计式及计算方案两条改进式",
+      "original": "251/720 和 19/720",
+      "assessment": "疑似原书错误。由前两条局部误差式消元，相关分母应为270；原式保留。",
+      "evidence": "原图已局部放大；251+19=270。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E003",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "计算方案第一条计算式",
+      "original": "m_(n+1)=f(x_(n+1),m_(n+1))",
+      "assessment": "疑似原书漏印prime。应为导数m prime，正文保留原式。",
+      "evidence": "原图局部放大无prime，下一校正式使用m prime。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E004",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "表5.10最后一行准确值",
+      "original": "1.7231",
+      "assessment": "疑似原书数字对调，应为1.7321；表格保留原值。",
+      "evidence": "另目视PDF120书107页的解析解y=sqrt(1+2x)及表5.1，sqrt(3)约1.7321。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E005",
+      "pdf_page": 143,
+      "printed_page": 130,
+      "location": "式（5.5.21）右端开头",
+      "original": "alpha_0 y_(n+1) alpha_1 y_(n-1)",
+      "assessment": "疑似原书排印错位，预期为alpha_0 y_n + alpha_1 y_(n-1)；正文按可见字形保留并附局部原图。",
+      "evidence": "已放大目视；依据同页文字及式（5.5.19）、（5.5.22）。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E006",
+      "pdf_page": 152,
+      "printed_page": 139,
+      "location": "式（5.7.15）后括注",
+      "original": "l(tilde y_n)就是l(y_n)",
+      "assessment": "疑似原书波浪号位置错，应是tilde l(y_n)；保留原文并独立校注。",
+      "evidence": "原页局部放大显示波浪号在y上；式（5.7.15）定义了tilde l而未定义tilde y。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E007",
+      "pdf_page": 153,
+      "printed_page": 140,
+      "location": "小结五处节号",
+      "original": [
+        "7.3.1",
+        "7.3.4",
+        "7.2.1",
+        "7.2.4",
+        "7.5.7"
+      ],
+      "assessment": "原书交叉引用与本版章节号不符，原文保留；对应主题为5.3.1、5.3.5、5.2.1、5.2.4、5.5.7。",
+      "evidence": "已目视原页引用，与本书章节索引比对；PDF140正文指向5.3.5，PDF144实际标题5.5.7。"
+    },
+    {
+      "lane": "ch05b",
+      "id": "ch05b-E008",
+      "pdf_page": 154,
+      "printed_page": 141,
+      "location": "习题14",
+      "original": "初值问题，y(0)=y(1)=0",
+      "assessment": "称谓疑误，给定两端条件按本章定义属于边值问题；正文保留。",
+      "evidence": "已放大目视习题14，未代做习题。"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E001",
+      "pdf_page": 156,
+      "printed_page": 143,
+      "kind": "source_cross_reference_anomaly",
+      "original": "误差估计式（6.1.1）",
+      "observation": "对应误差界原页未印编号；转录保留引用且不补造tag。",
+      "evidence": "staging/ch06/assets/detail-p156-audit.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E002",
+      "pdf_page": 165,
+      "printed_page": 152,
+      "kind": "suspected_source_missing_subscript",
+      "original": "Newton步4以(x_1,f_1,f')代替(x_0,f_0,f'_0)",
+      "observation": "原扫描第三项f'无下标；按步2定义和替换对象疑应为f'_1。原文已保留。",
+      "evidence": "staging/ch06/assets/detail-p165-step4.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E003",
+      "pdf_page": 170,
+      "printed_page": 157,
+      "kind": "suspected_source_sign_error",
+      "original": "f(x_1)=-0.093271, x_1=0.6, f(x)=x exp(x)-1",
+      "observation": "f(0.6)=0.0932712802343052为正；用正值所得一阶差商2.689106448842411与书中2.68910一致。原负号已保留。",
+      "evidence": "staging/ch06/assets/detail-p170-example.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E004",
+      "pdf_page": 170,
+      "printed_page": 157,
+      "kind": "suspected_source_cross_reference_error",
+      "original": "代入式（6.4.8）求得",
+      "observation": "该段实际使用的零点式在本页编号6.4.3；原引用已保留。",
+      "evidence": "staging/ch06/assets/detail-p170-example.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E005",
+      "pdf_page": 174,
+      "printed_page": 161,
+      "kind": "suspected_source_missing_sign",
+      "original": "用x^2+ux+v除P(x)的商及展开式记作partial P/partial v",
+      "observation": "按同页6.5.11：P=-(x^2+ux+v)(partial P/partial v)+s_0 x+s_1，商应为负的该偏导。正文、展开式及原递推均保留。",
+      "evidence": "staging/ch06/assets/detail-p174-audit.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E006",
+      "pdf_page": 175,
+      "printed_page": 162,
+      "kind": "suspected_source_exercise_condition_error",
+      "original": "习题2求1-x sin(x)=0在(0,1)内的根",
+      "observation": "0<x<1时0<x sin(x)<1，因此该区间无根；保留原题，不指定修正区间，不代做。",
+      "evidence": "staging/ch06/assets/detail-p175-audit.png"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E007",
+      "pdf_page": 161,
+      "printed_page": 148,
+      "kind": "suspected_source_exactness_error",
+      "original": "6.2.9: x^* = x_1/(1-L) - Lx_0/(1-L)",
+      "observation": "上一行仅有x_1-x^*约等于L(x_0-x^*)，一般只能推出近似关系；原等号保留并单列校注。",
+      "evidence": "source-images/pdf-161.jpeg"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E008",
+      "pdf_page": 165,
+      "printed_page": 152,
+      "kind": "source_convergence_order_condition",
+      "original": "单根f(x*)=0、f-prime(x*)不为零，推出Newton法平方收敛",
+      "observation": "按定义6.2非零极限常数的严格阶定义，恰为二阶尚需f-double-prime(x*)不为零；通常光滑性条件下单根保证至少二阶。原文保留并加条件校注及f=x+x^3的三阶反例。",
+      "evidence": "source-images/pdf-165.jpeg"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E009",
+      "pdf_page": 168,
+      "printed_page": 155,
+      "kind": "source_geometric_equation_scope",
+      "original": "称弦线方程为P_1(x)=0",
+      "observation": "弦线自身为y=P_1(x)；原式是与x轴交点的条件，保留原文并说明其用途。",
+      "evidence": "source-images/pdf-168.jpeg"
+    },
+    {
+      "lane": "ch06",
+      "id": "ch06-E010",
+      "pdf_page": 169,
+      "printed_page": 156,
+      "kind": "source_convergence_order_condition",
+      "original": "二阶连续导数且一阶导数非零时，弦截法按精确阶(1+sqrt(5))/2收敛",
+      "observation": "按定义6.2非零极限常数的精确阶，需二阶导数在根处非零等非退化条件并排除有限步终止；一次函数可一步得根。原文保留并单列校注。",
+      "evidence": "source-images/pdf-169.jpeg"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E001",
+      "pdf_page": 180,
+      "printed_page": 167,
+      "formula_id": "7.2.12",
+      "type": "suspected_source_typo",
+      "original": "D_i 的矩阵右上角为 a_{1k}",
+      "agent_note": "按第i阶顺序主子式应为a_{1i}；原式保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-180-principal-minor-detail.png"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E002",
+      "pdf_page": 186,
+      "printed_page": 173,
+      "location": "算法1步8(1)",
+      "type": "suspected_source_typo",
+      "original": "a_i, Iz(i) ← b_i（Iz在基线）",
+      "agent_note": "调整次序应把b_i暂存a_{1,Iz(i)}，再按(2)复制a_{1i}；原排印保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-186-step8-detail.png"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E003",
+      "pdf_page": 187,
+      "printed_page": 174,
+      "location": "页首增广矩阵右下角",
+      "type": "suspected_source_typo",
+      "original": "b_n^{(n)}",
+      "agent_note": "此处为第k步前的b^(k)，右下角应为b_n^(k)；原上标保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-187-rhs-detail.png"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E004",
+      "pdf_page": 188,
+      "printed_page": 175,
+      "formula_id": "7.3.2",
+      "type": "suspected_source_typo",
+      "original": "第二行第二个括号含L_{2i_2}",
+      "agent_note": "本页tilde L1定义对应I_{2i_2}；原L保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-188-permutation-detail.png"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E005",
+      "pdf_page": 190,
+      "printed_page": 177,
+      "location": "解释段m_k列向量",
+      "type": "suspected_source_formula_error",
+      "original": "m_k第k个分量为-1",
+      "agent_note": "与m_kk=1/a_kk、例7.4的c3以及算法3步6不符；原式保留并另注。",
+      "evidence": "staging/ch07a/assets/pdf-190-multiplier-detail.png"
+    },
+    {
+      "lane": "ch07a",
+      "id": "ch07a-E006",
+      "pdf_page": 193,
+      "printed_page": 180,
+      "location": "分解存储矩阵第r-1行末项",
+      "type": "suspected_source_typo",
+      "original": "u_{n-1,n}",
+      "agent_note": "所在行为r-1，应对应u_{r-1,n}；原下标保留另注。",
+      "evidence": "staging/ch07a/assets/pdf-193-storage-detail.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E001",
+      "pdf_page": 196,
+      "location": "式(7.4.8)步4",
+      "original": "b_i",
+      "suggested": "y_i",
+      "reason": "L^T x=y 的回代右端应为 y。",
+      "evidence": "staging/ch07b/assets/196-step4.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E002",
+      "pdf_page": 196,
+      "location": "LDL^T展开最右矩阵次末行末项",
+      "original": "l_{n-1,n-1}",
+      "suggested": "l_{n,n-1}",
+      "reason": "该元素应为左侧 L 最后一行次末列的转置对应。",
+      "evidence": "staging/ch07b/assets/196-ldlt.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E003",
+      "pdf_page": 197,
+      "location": "式(7.4.11)步4",
+      "original": "y_h",
+      "suggested": "y_k",
+      "reason": "求和指标为 k，原方程为 Ly=b。",
+      "evidence": "staging/ch07b/assets/197-solves.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E004",
+      "pdf_page": 202,
+      "location": "定理7.13证明中所引用定理号",
+      "original": "定理7.11",
+      "suggested": "定理7.12",
+      "reason": "两侧范数比较是向量范数等价性定理7.12。",
+      "evidence": "staging/ch07b/assets/202-reference.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E005",
+      "pdf_page": 203,
+      "location": "Ax_0第i_0个分量表达式首个求和下限",
+      "original": "i=1",
+      "suggested": "j=1",
+      "reason": "求和项 a_{i_0j}x_j 的自由变化指标为 j。",
+      "evidence": "staging/ch07b/assets/203-sum-index.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E006",
+      "pdf_page": 204,
+      "location": "复矩阵2-范数公式中间项",
+      "original": "max Rayleigh商，未开平方",
+      "suggested": "max Rayleigh商的平方根",
+      "reason": "商的最大值为lambda_max(A^HA)=||A||_2^2。",
+      "evidence": "staging/ch07b/assets/204-complex-norm.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E007",
+      "pdf_page": 205,
+      "location": "定理7.18证明起始及逆矩阵恒等式",
+      "original": "Bx_0=x_0；(I±B)^-1=I∓B(I-B)^-1",
+      "suggested": "Bx_0=∓x_0；(I±B)^-1=I∓B(I±B)^-1",
+      "reason": "原式仅减号分支一致，未同时涵盖加号分支。",
+      "evidence": "staging/ch07b/assets/205-inverse-signs.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E008",
+      "pdf_page": 208,
+      "location": "例7.9 H6条件数",
+      "original": "2.9×10^6",
+      "suggested": "2.9×10^7（无穷范数）",
+      "reason": "精确有理数计算 cond_inf(H6)=29070279。",
+      "evidence": "staging/ch07b/assets/208-h6-cond.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E009",
+      "pdf_page": 209,
+      "location": "例7.10缩放后条件数分式",
+      "original": "1/(1-10^-4)≈4",
+      "suggested": "4/(1-10^-4)≈4",
+      "reason": "矩阵行范数2乘逆矩阵行范数2/(1-10^-4)。",
+      "evidence": "staging/ch07b/assets/209-scaled-cond.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E010",
+      "pdf_page": 210,
+      "related_pdf_pages": [
+        211
+      ],
+      "location": "向后误差段及定理7.22(2)扰动方程",
+      "original": "计算解x_bar精确满足(A+deltaA)x=b",
+      "suggested": "(A+deltaA)x_bar=b",
+      "reason": "本段定义x为精确解、x_bar为计算解。",
+      "evidence": [
+        "staging/ch07b/assets/210-backward-error.png",
+        "staging/ch07b/assets/211-computed-solution.png"
+      ]
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E011",
+      "pdf_page": 211,
+      "location": "式(7.6.14)关系符和适用条件",
+      "original": "左右两式间无关系符号；定理未列分母为正条件",
+      "suggested": "补≤，并要求cond(A)_inf*||deltaA||_inf/||A||_inf<1",
+      "reason": "由7.6.7所得前向误差界要求扰动小条件，分母须正。",
+      "evidence": "staging/ch07b/assets/211-error-estimate.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E012",
+      "pdf_page": 214,
+      "location": "习题27分子",
+      "original": "||A||_{y∞}（y排在范数闭合符外的下标位置）",
+      "suggested": "||Ay||_∞",
+      "reason": "原书y的位置不在范数内部，按题意应为矩阵作用后的向量范数。",
+      "evidence": "staging/ch07b/assets/214-ex27.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E013",
+      "pdf_page": 214,
+      "location": "习题30(2)左端",
+      "original": "cond(A_2)",
+      "suggested": "cond(A)_2",
+      "reason": "本题定义的是矩阵A，所用下标2表示范数。",
+      "evidence": "staging/ch07b/assets/214-ex30.png"
+    },
+    {
+      "lane": "ch07b",
+      "id": "ch07b-E014",
+      "pdf_page": 208,
+      "location": "例7.9所称精确解的小数向量",
+      "original": "(1.089512538,0.487967062,1.491002798)^T",
+      "suggested": "(153971,68960,210710)^T/141321",
+      "reason": "对式7.6.8原印矩阵和右端进行精确有理数求解，所印向量末几位不符；不影响51.2%的结论。",
+      "evidence": "source-images/pdf-208.jpeg"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E013",
+      "pdf_page": 217,
+      "printed_page": 204,
+      "location": "式8.2.1下方非零条件",
+      "source_text": "a_ij!=0 (i=1,2,...,n)",
+      "assessment": "疑似原书下标错误",
+      "evidence": "独立交叉复核ch07b指出后，以原图内存裁切独立确认j有下伸；原文没有j的范围，而后续除数为对角元a_ii。已保留原印a_ij并另注。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E009",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题5(1)第二个方程",
+      "source_text": "0.4x1+x2+0.8x2=2",
+      "assessment": "疑似原书下标错误",
+      "evidence": "原图已放大目视重复x2。习题7将该组作为对称正定矩阵的考察对象，最后项为0.8x3时才与所示对称结构一致。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E010",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12残差定义",
+      "source_text": "第二个求和内a_ij x_i^(k)",
+      "assessment": "疑似原书下标错误",
+      "evidence": "原图已放大目视xi。对照G-S公式及本题(1)，被加项应含x_j^(k)。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E011",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12(2)误差定义",
+      "source_text": "epsilon^(k)=x^(k)-lambda*",
+      "assessment": "疑似原书符号错误",
+      "evidence": "原图已放大目视lambda*；紧随原文解释的是精确解x*。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E012",
+      "pdf_page": 231,
+      "printed_page": 218,
+      "location": "习题12(2)误差递推",
+      "source_text": "epsilon_i^(k+1)=epsilon_i^(k)-r_i^(k+1)/a_ii",
+      "assessment": "原书误差符号与递推不一致",
+      "evidence": "若按本题定义epsilon=x-x*，由(1)的加号更新可知误差递推也应为加号。原印负号保留，并标注矛盾；PDF232的正号残差式也与该定义不一致，若误差定义改用x*-x则两式一致。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E006",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "定理8.10证明平方差因式",
+      "source_text": "omega sigma (sigma+2sigma)(omega-2)",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视。展开左侧平方差得omega sigma (sigma+2alpha)(omega-2)，与8.4.10一致。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E007",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "定理8.10证明分母非零说明",
+      "source_text": "(sigma+2omega)^2+omega^2 beta^2!=0",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视。上文lambda的分母模方为(sigma+alpha omega)^2+omega^2 beta^2。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E008",
+      "pdf_page": 229,
+      "printed_page": 216,
+      "location": "SOR算法步5(1)",
+      "source_text": "第二个求和下限j=i+1",
+      "assessment": "疑似原书算法漏项",
+      "evidence": "原图已放大目视。步5(3)执行xi<-xi+p，因此p为校正量；对照8.4.6，第二求和应从j=i开始，当前原式漏aii xi。原式保留。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E005",
+      "pdf_page": 227,
+      "printed_page": 214,
+      "location": "例8.11第11次迭代向量与误差界",
+      "source_text": "x^(11)=(-0.99999646,-1.00000310,-0.99999953,-0.99999912)^T; ||epsilon^(11)||_2<=0.46e-5",
+      "assessment": "原书所印数值相互不一致",
+      "evidence": "原图已放大目视，原值保留。所印向量实际2范数误差4.8100831594e-6，大于4.6e-6；有理数从零迭代11次的误差为4.4938645773e-6。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E004",
+      "pdf_page": 224,
+      "printed_page": 211,
+      "location": "定义8.5分块阶数范围",
+      "source_text": "1<=r<=n",
+      "assessment": "疑似原书边界排印错误",
+      "evidence": "原图已放大目视。为保证A11与A22均为非空低阶方阵，应要求1<=r<=n-1；r=n导致A22为零阶。原文保留并另注。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E003",
+      "pdf_page": 219,
+      "printed_page": 206,
+      "location": "例8.2误差无穷范数",
+      "source_text": "||epsilon^(5)||_inf=0.00157",
+      "assessment": "疑似原书小数位错误",
+      "evidence": "原图已放大目视，原值保留。由所印向量与精确解计算为0.000157；有理数G-S迭代5次得误差无穷范数0.00015761335888942013。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E001",
+      "pdf_page": 216,
+      "printed_page": 203,
+      "location": "例8.1第10次迭代数值",
+      "source_text": "x^(10)=(3.000032,1.999838,0.9998813)^T; ||epsilon^(10)||_inf=0.000187",
+      "assessment": "疑似原书数值错误",
+      "evidence": "原图已放大目视。按式8.1.4从零向量用有理数作10次迭代得(3.00003181406973,1.9998740186108068,0.9998812605453542)，误差无穷范数0.0001259813891930972；按原印向量计算的无穷范数则为0.000162。原文保留，另注。"
+    },
+    {
+      "lane": "ch08",
+      "id": "ch08-E002",
+      "pdf_page": 218,
+      "printed_page": 205,
+      "location": "式8.2.3求和下限",
+      "source_text": "i=1, j!=i",
+      "assessment": "疑似原书排印错误",
+      "evidence": "原图已放大目视下限为i=1；对照式8.2.2及被加项a_ij x_j^(k)，求和下限应为j=1。原式保留，另注。"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E001",
+      "pdf_page": 234,
+      "printed_page": 221,
+      "kind": "suspected_source_erratum",
+      "location": "定理 9.3 证明不等式",
+      "source_form": "|lambda-a_ii| <= sum |a_ij|, |x_j/x_i| <= sum |a_ij|",
+      "explanation": "原图逗号将所需连乘拆开；由上一行应为 sum |a_ij||x_j/x_i| 的链式不等式。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p234-gershgorin.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E002",
+      "pdf_page": 234,
+      "printed_page": 221,
+      "kind": "source_erratum",
+      "location": "定理 9.4 证明范数展开式",
+      "source_form": "norm(x,2)=(sum a_i^2)^2",
+      "explanation": "括号外指数原印 2；规范化正交性给出指数 1/2。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p234-norm.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E003",
+      "pdf_page": 235,
+      "printed_page": 222,
+      "kind": "source_erratum",
+      "location": "9.2.3 后 v_k 展开与 epsilon_k 定义",
+      "source_form": "sum_{i=2}^n a_1(lambda_i/lambda_1)^k x_i",
+      "explanation": "两处系数原印 a_1，前一行展开要求 a_i。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p235-power-expansion.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E004",
+      "pdf_page": 236,
+      "printed_page": 223,
+      "kind": "source_erratum",
+      "location": "式 9.2.8",
+      "source_form": "Av_0 = sum a_i lambda_i^k x_i = lambda_i^k[...]",
+      "explanation": "中间式应为 A^k v_0，提取公共因子应为 lambda_1^k；原图漏幂及下标 i 均保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p236-9-2-8.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E005",
+      "pdf_page": 237,
+      "printed_page": 224,
+      "kind": "source_erratum",
+      "location": "页首 u_k 展开第一行分子",
+      "source_form": "lambda_i^k [a_1 x_1 + sum ...]",
+      "explanation": "原印 lambda_i^k；根据同式分母及下一行相消应为 lambda_1^k。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p237-u-k-numerator.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E006",
+      "pdf_page": 237,
+      "printed_page": 224,
+      "kind": "source_erratum",
+      "location": "v_k 展开式分母",
+      "source_form": "max[lambda_1^(k-1) a_1 x_1 + sum ...]",
+      "explanation": "根据 max(A^(k-1)v_0)，lambda_1^(k-1) 应乘整个括号，疑漏括号。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p237-v-k-denominator.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E007",
+      "pdf_page": 238,
+      "printed_page": 225,
+      "kind": "source_erratum",
+      "location": "9.2.2 第一段",
+      "source_form": "r=lambda_1/lambda_2",
+      "explanation": "与前页及本页例 9.2 的 lambda_2/lambda_1 颠倒；原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p238-ratio.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E008",
+      "pdf_page": 244,
+      "printed_page": 231,
+      "kind": "suspected_source_erratum",
+      "location": "图 9.1 旁的 Householder 方法说明",
+      "source_form": "H_a = sigma e_1",
+      "explanation": "原图 a 印为 H 的下标；由语义及后续定理应是矩阵向量乘积 Ha。原排式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p244-Ha.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E009",
+      "pdf_page": 246,
+      "printed_page": 233,
+      "kind": "source_erratum",
+      "location": "A_2 的二阶分块式右上块",
+      "source_form": "A_21^(1) R_1",
+      "explanation": "与页首 A 的分块及分块乘法不符，应为 A_12^(1) R_1；原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p246-A-2.png"
+    },
+    {
+      "lane": "ch09a",
+      "id": "ch09a-E010",
+      "pdf_page": 246,
+      "printed_page": 233,
+      "kind": "source_erratum",
+      "location": "式 9.3.2 的 sigma_k 与 rho_k",
+      "source_form": "sum a_ik^2; rho_k=sigma_k(sigma_k+a_(k+1,n)^(k))",
+      "explanation": "求和疑漏迭代上标 (k)；由 u_k 的首分量和范数平方恒等式，rho_k 中列下标应为 k 而非原印 n。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p246-9-3-2.png"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E12",
+      "pdf_page": 255,
+      "description": "分块上三角阵第一个二阶对角块原印 B_l，与末块同名；按顺序编号疑应为 B_1。已据交叉复核回看原图，保留原印并校注。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E11",
+      "pdf_page": 252,
+      "description": "定理 9.16 证明首句原印由定理 9.12；所用平面旋转矩阵三角化结论对应定理 9.15，原引用保留。",
+      "type": "suspected_source_reference_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E09",
+      "pdf_page": 257,
+      "description": "第 i 次左变换原印及 v_k，对应矩阵为 v_i；保留原印下标。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E10",
+      "pdf_page": 257,
+      "description": "P_{i,i+1} 的范围原印 i=1,2,...,n+1，按 n 阶矩阵应至 n-1；保留原文。",
+      "type": "source_index_bound_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E07",
+      "pdf_page": 253,
+      "description": "QR 分解左变换引用原印为定理 9.13，所指上三角阵结论对应定理 9.15；保留原文。",
+      "type": "suspected_source_reference_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E08",
+      "pdf_page": 254,
+      "description": "式（9.4.16）前原印引用式（4.15），本页对应为（9.4.15）；保留原文。",
+      "type": "source_reference_typo"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E04",
+      "pdf_page": 251,
+      "description": "引理 1 证明首式末项原印 c alpha_i，按矩阵乘法及下一行疑应为 c alpha_j；保留原文。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E05",
+      "pdf_page": 251,
+      "description": "定理 9.15 证明末行原印 a_{2j}^{(2)}，按第 2 列消元疑应为 a_{j2}^{(2)}；保留原文。",
+      "type": "suspected_source_subscript_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E06",
+      "pdf_page": 251,
+      "description": "算法 1 零向量分支未赋值输出 v，按定义应为 0；原步骤保留。",
+      "type": "suspected_source_algorithm_omission"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E01",
+      "pdf_page": 247,
+      "description": "P^T y 展开式原印 lambda_k^{-1}，与初等反射阵使用 rho_k^{-1} 不一致；保留原文。",
+      "type": "suspected_source_symbol_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E02",
+      "pdf_page": 248,
+      "description": "算法 3 步 3（2）第一个求和上限原印 n，按下三角存储算法疑应为 i；保留原文。",
+      "type": "suspected_source_formula_error"
+    },
+    {
+      "lane": "ch09b",
+      "id": "ch09b-E03",
+      "pdf_page": 249,
+      "description": "例 9.5（1）u_1 式原印 sigma_1 rho_1，结合列向量疑应为 sigma_1 e_1；保留原文。",
+      "type": "suspected_source_symbol_error"
+    },
+    {
+      "lane": "ch10",
+      "id": "CH10-E001",
+      "pdf_page": 271,
+      "printed_page": 258,
+      "kind": "matrix_index",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "两组未编号公式的第二式均含 H_{N/2}(N/2+i,j)",
+      "analysis": "N/2 阶矩阵的行指标 N/2+i 超出本章 0 至 N/2-1 的范围。由定理 10.1，两处应为 H_{N/2}(i,j)。原文及式 (10.4.2) 均保留。",
+      "evidence": "staging/ch10/assets/erratum-p271-indices.png"
+    },
+    {
+      "lane": "ch10",
+      "id": "CH10-E002",
+      "pdf_page": 270,
+      "printed_page": 257,
+      "kind": "terminology",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "Hadamard 阵是对称正交阵",
+      "analysis": "按本章未归一化的定义，H_N^T H_N=N I，严格说 H_N/sqrt(N) 才是通常定义的正交矩阵。原文术语照录；其逆变换 1/N 因子正确。"
+    },
+    {
+      "lane": "ch10",
+      "id": "CH10-E003",
+      "pdf_page": 272,
+      "printed_page": 259,
+      "kind": "duplicated_character",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "使问题的的规模减半",
+      "analysis": "原图重复的字已照录。"
+    },
+    {
+      "lane": "ch10",
+      "id": "CH10-E004",
+      "pdf_page": 274,
+      "printed_page": 261,
+      "kind": "algorithm_index_range",
+      "status": "source_preserved_with_agent_note",
+      "formula_id": "10.4.4",
+      "source_text": "l=1,2,...,2^k",
+      "analysis": "算式按 (l-1)N_{k-1} 定位上一阶段的数据段，应有 l=1,...,2^{k-1}。原上限会令数据索引超出 0 至 N-1。前文描述第 k 阶段结果段数的 2^k 不需更改。算法 10.1 对此式的引用受同一范围疑误影响。",
+      "evidence": "staging/ch10/assets/erratum-p274-range.png"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E001",
+      "pdf_page": 281,
+      "printed_page": 268,
+      "kind": "suspected_source_cross_reference_error",
+      "original": "两处回引均为（10.2.1）",
+      "note": "原样保留；本节上下文应回引数列求和式（11.2.1）。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E002",
+      "pdf_page": 284,
+      "printed_page": 271,
+      "kind": "suspected_source_processor_count",
+      "original": "多项式算法每步处理机数为N/2^k，P*=N/2",
+      "note": "并行向量含Nk个系数及xk共Nk+1个分量；在所述完全同步更新安排下疑漏计计算xk的一台。可能忽略常数项或依赖未说明调度；已保留原文并加限定校注。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E003",
+      "pdf_page": 287,
+      "printed_page": 274,
+      "formula_id": "11.3.10",
+      "kind": "suspected_source_index_typo",
+      "original": "i=2^k,2^{k+1},...,N-1",
+      "note": "放大原图确认指数k+1；与同页推导一致的范围应为i=2^k,2^k+1,...,N-1。已保留原式并加校注。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E004",
+      "pdf_page": 289,
+      "printed_page": 276,
+      "formula_id": "11.4.2",
+      "kind": "suspected_source_index_typo",
+      "original": "第二行首项x_0",
+      "note": "放大原图确认x_0；按奇偶拆分及该行后续下标疑应为x_1。已保留原文并加校注。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E005",
+      "pdf_page": 290,
+      "printed_page": 277,
+      "kind": "suspected_source_subsystem_indices",
+      "original": "奇数子系统五个邻元印为x_0,x_4,x_2,x_6,x_4",
+      "note": "分别疑应x_1,x_5,x_3,x_7,x_5；与明确标注的奇数相关链不一致。保留原式并加校注。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E006",
+      "pdf_pages": [
+        290,
+        291,
+        292
+      ],
+      "printed_pages": [
+        277,
+        278,
+        279
+      ],
+      "kind": "suspected_source_cross_references",
+      "original": "一般N阶方程组回引11.4.3；一阶线性递推回引10.3.2；算法编号10.5",
+      "note": "一般形式疑应11.4.1；小节疑应11.3.2；算法编号疑应11.5。原样保留。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E007",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "printed_pages": [
+        278,
+        279
+      ],
+      "kind": "suspected_source_boundary_formula_errors",
+      "original": "b和f的边界分段只计一侧消元项，k步用2^k作为分界",
+      "note": "以i=1直接消元可见漏a1c0/b0及a1f0/b0；i=N-2对应漏右邻项。k=n分支重叠及越界。已原样保留并以推导作校注。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E008",
+      "pdf_page": 291,
+      "printed_page": 278,
+      "kind": "suspected_source_range_typo",
+      "original": "两奇偶子系统中间行上界N/2-1",
+      "note": "该上界导致x_N、x_{N+1}越界并重复末行，疑应N/2-2。已照录。"
+    },
+    {
+      "lane": "ch11",
+      "id": "CH11-E009",
+      "pdf_page": 291,
+      "printed_page": 278,
+      "kind": "suspected_source_variable_typo",
+      "original": "k步分段方程首行b_i^(k)x_0",
+      "note": "中心变元疑应x_i；放大原图确认x_0并保留。"
+    },
+    {
+      "lane": "ch12",
+      "id": "CH12-E001",
+      "pdf_page": 294,
+      "kind": "suspected_source_typography",
+      "original": "作为正多边形的周长获得圆周率的近似值",
+      "note": "原图字形明确，语句疑有排印问题；保留原文，不擅自订正。"
+    },
+    {
+      "lane": "ch12",
+      "id": "CH12-E002",
+      "pdf_pages": [
+        294,
+        302
+      ],
+      "kind": "source_numeric_typography",
+      "original": "PDF294: 3.14159265358979223; PDF302: 3.14159265358979323",
+      "note": "同一阿尔·卡西结果前后不一致。90位精度mpmath计算π=3.141592653589793238...，支持PDF294的792为排印错误；两处均按原图保留。"
+    },
+    {
+      "lane": "ch12",
+      "id": "CH12-E003",
+      "pdf_page": 302,
+      "kind": "source_label_formula_mismatch",
+      "original": "令直径为1，则内接正n边形的边长 L_n=n sin(π/n)",
+      "note": "直径1时单边长为sin(π/n)，n倍为周长。原文“边长”保留，另加校注。"
+    },
+    {
+      "lane": "ch12",
+      "id": "CH12-E004",
+      "pdf_pages": [
+        302,
+        304
+      ],
+      "kind": "source_index_data_requirement_mismatch",
+      "original": "只要割到正24576边形",
+      "note": "本页原式Lhat_n=L_2n+(L_2n-L_n)/3；表12.4的Lhat_24576需要L_49152。独立数值检查确认表中值对应该原式。正文边数与其数据需求不一致，保留原文。"
+    },
+    {
+      "lane": "ch12",
+      "id": "CH12-E005",
+      "pdf_page": 306,
+      "kind": "suspected_source_cross_reference",
+      "original": "经典数值分析中的松弛技术（参看第4章4.3节）",
+      "note": "额外实际打开PDF101（书页88）核实4.3为Romberg算法。这里松弛技术的章节指引疑有误；不擅自猜填正确章节。",
+      "reference_evidence": {
+        "pdf_page": 101,
+        "source_image": "source-images/pdf-101.jpeg",
+        "source_image_sha256": "d16249093648d0a3f28d240bb10ec574c540199663efc1c0b0f3300d5c319131",
+        "visual_review": "completed"
+      }
+    },
+    {
+      "lane": "ch13",
+      "id": "CH13-E001",
+      "pdf_page": 307,
+      "printed_page": 294,
+      "description": "正文每秒 30 万亿次与原式分母 3×10^11 不一致；按原分母约 105.7 年，而原书印约 1 年。保留原文原式并单列校注。",
+      "evidence": "staging/ch13/assets/inspection/pdf-307-calculation.png"
+    },
+    {
+      "lane": "back",
+      "id": "BACK-S001",
+      "pdf_page": 318,
+      "printed_page": 305,
+      "location": "第2章第9题第一式",
+      "status": "source_index_inconsistency_confirmed_by_exercise",
+      "source_text": "\\Delta^4y^n=2^n",
+      "note": "答案原图为y的n上标；原题明确给y_n=2^n并要求Δ^4y_n、δ^4y_n，故第一式索引与题目不一致。原答案上标保留。",
+      "evidence": [
+        {
+          "pdf_page": 56,
+          "printed_page": 43,
+          "location": "第2章第9题",
+          "source_image": "source-images/pdf-056.jpeg",
+          "source_image_sha256": "8d920c441d02fc67b331349294c5e7dcd22bb7fe4f7416a500882abe33cd765e",
+          "source_visual_review": "completed"
+        }
+      ],
+      "mathematical_check": "四阶前向差分系数(2-1)^4=1；四阶中心差分系数4-8+6-2+1/4=1/4，因此Δ^4y_n=2^n、δ^4y_n=2^(n-2)。"
+    },
+    {
+      "lane": "back",
+      "id": "BACK-S002",
+      "pdf_page": 318,
+      "printed_page": 305,
+      "location": "第4章第2题（2）的T_1下标",
+      "status": "source_index_inconsistency_confirmed_by_exercise",
+      "source_text": "T_1=1.391\\,48, S_5=1.454\\,71",
+      "note": "原答案清楚排为T_1，而原题明确给n=10，下标疑应T_10。原数值和下标仍忠实保留。",
+      "evidence": [
+        {
+          "pdf_page": 117,
+          "printed_page": 104,
+          "location": "第4章第2题（2）",
+          "source_image": "source-images/pdf-117.jpeg",
+          "source_image_sha256": "34bbe1fd2baaff483f4ef4fc557ab5dae4745e2c7964d2659bec8b3e3b5f7d33",
+          "source_visual_review": "completed"
+        }
+      ],
+      "verification_limit": "仅确认题设n=10与T_1下标不一致；未验证1.39148或1.45471数值正确性。"
+    },
+    {
+      "lane": "back",
+      "id": "BACK-S003",
+      "pdf_page": 320,
+      "printed_page": 307,
+      "location": "第8章第9题，omega=1.03及omega=1两组的第二分量",
+      "status": "source_numeric_inconsistency_confirmed_by_exercise",
+      "source_text": "第二分量分别为0.1000001、0.1000002",
+      "note": "原题明确给精确解(1/2,1,-1/2)^T及无穷范数误差<5e-6。三个原印向量误差∞范数依次为0.8999999、0.8999998、0.0000035；前两组不满足题意，第三组满足。前两组第二分量疑似小数点排印，原答案数字保留。",
+      "evidence": [
+        {
+          "pdf_page": 231,
+          "printed_page": 218,
+          "location": "第8章第9题",
+          "source_image": "source-images/pdf-231.jpeg",
+          "source_image_sha256": "9278a02f35d8d46dcbce2c16662a88803be87073c443578e348cc10db4ac1522",
+          "source_visual_review": "completed"
+        }
+      ],
+      "review_correction": "已撤回先前将omega=1.1的0.9999989列为疑误的错误指向；该组原印向量的误差∞范数3.5e-6满足原题阈值。",
+      "verification_limit": "未据量级检查推定应替换的尾数，也未声称复现原书所有迭代尾数。",
+      "mathematical_check": "用精确十进制直接比较原印向量与题给精确解，不假定初值，也不依赖额外SOR迭代结果。"
+    },
+    {
+      "lane": "back",
+      "id": "BACK-S004",
+      "pdf_page": 320,
+      "printed_page": 307,
+      "location": "第8章第10题第二、第三分量",
+      "status": "source_numeric_scale_inconsistency_confirmed_by_exercise",
+      "source_text": "x^(8)=(-4.000027,0.2999989,0.2000003)^T",
+      "note": "原题方程组精确解为(-4,3,2)^T，答案第二、三分量0.2999989、0.2000003量级不符，疑似小数点排印。原答案数字仍保留。",
+      "evidence": [
+        {
+          "pdf_page": 231,
+          "printed_page": 218,
+          "location": "第8章第10题",
+          "source_image": "source-images/pdf-231.jpeg",
+          "source_image_sha256": "9278a02f35d8d46dcbce2c16662a88803be87073c443578e348cc10db4ac1522",
+          "source_visual_review": "completed"
+        }
+      ],
+      "mathematical_check": "将(-4,3,2)^T代入三式，左边分别为-12、20、3，与原题右端逐项相等。",
+      "verification_limit": "未据此推定应替换的全部尾数。"
+    }
+  ]
+}

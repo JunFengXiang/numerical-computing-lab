@@ -1,0 +1,188 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={完全主元素消去法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{完全主元素消去法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.3.1 完全主元素消去法}\label{ux5b8cux5168ux4e3bux5143ux7d20ux6d88ux53bbux6cd5}
+
+设方程组（7.2.1）的增广矩阵为
+
+\[
+B=\left(\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&a_{1j_1}&\cdots&a_{1n}&b_1\\
+a_{21}&a_{22}&\cdots&a_{2j_1}&\cdots&a_{2n}&b_2\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{i_1 1}&a_{i_1 2}&\cdots&a_{i_1j_1}&\cdots&a_{i_1 n}&b_{i_1}\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nj_1}&\cdots&a_{nn}&b_n
+\end{array}\right).
+\]
+
+首先在 \(A\) 中选取绝对值最大的元素作为主元素，例如 \(|a_{i_1j_1}|=\max_{\substack{1\le i\le n\\1\le j\le n}}|a_{ij}|\ne0\)，然后交换 \(B\) 的第 1 行与第 \(i_1\) 行，第 1 列与第 \(j_1\) 列，经第一次消元计算得
+
+\[(A,b)\to(A^{(2)},b^{(2)}).\]
+
+重复上述过程，设已完成第 \(k-1\) 步的选主元素，交换两行及交换两列，消元计算，\((A,b)\) 约化为
+
+\[
+(A^{(k)},b^{(k)})=\left[\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&\cdots&\cdots&a_{1n}&b_1\\
+&a_{22}&\cdots&\cdots&\cdots&a_{2n}&b_2\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right],
+\]
+
+其中 \(A^{(k)}\) 元素仍记作 \(a_{ij}\)，\(b^{(k)}\) 元素仍记作 \(b_i\)（\(k=1,2,\cdots,n-1\)）。
+
+\href{../../source-images/pdf-186.jpeg}{原页扫描}
+
+第 \(k\) 步选主元素（在 \(A^{(k)}\) 右下角方框内选），即确定 \(i_k,j_k\) 使
+
+\[|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|\ne0.\]
+
+交换 \((A^{(k)},b^{(k)})\) 第 \(k\) 行与 \(i_k\) 行元素，交换 \((A^{(k)})\) 第 \(k\) 列与 \(j_k\) 列元素，将 \(a_{i_kj_k}\) 调到 \((k,k)\) 位置，再进行消元计算，最后将原方程组化为
+
+\[
+\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+&a_{22}&\cdots&a_{2n}\\
+&&\ddots&\vdots\\
+&&&a_{nn}
+\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}
+=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},
+\]
+
+其中 \(y_1,y_2,\cdots,y_n\) 的次序为未知数 \(x_1,x_2,\cdots,x_n\) 调换后的次序。回代求解得
+
+\[
+\begin{cases}
+y_n=b_n/a_{nn},\\
+y_i=\displaystyle\left(b_i-\sum_{j=i+1}^{n}a_{ij}y_j\right)/a_{ii}\quad(i=n-1,\cdots,2,1).
+\end{cases}
+\]
+
+\textbf{算法 1} 完全主元素消去法，其步骤如下：
+
+设 \(Ax=b\)。本算法用 \(A\) 的带有行、列交换的 Gauss 消去法①，消元结果冲掉 \(A\)，乘数 \(m_{ij}\) 冲掉 \(a_{ij}\)，计算解 \(x\) 冲掉常数项 \(b\)，用 \(k\) 表示对 \(A\) 的消元次数。用一整型数组 \(\mathrm{Iz}(n)\) 开始记录未知数 \(x_1,x_2,\cdots,x_n\) 的次序（即下标 \(1,2,\cdots,n\)），最后记录调换后未知数的下标。
+
+\textbf{步 1} 对于 \(i=1,2,\cdots,n\)，有 \(\mathrm{Iz}(i)\leftarrow i\)；对于 \(k=1,2,\cdots,n-1\)，做到步 6。
+
+\textbf{步 2} 选主元素 \(|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|\)。
+
+\textbf{步 3} 如果 \(a_{i_kj_k}=0\)，则计算停止（这时 \(\det A=0\)）。
+
+\textbf{步 4} （1）如果 \(i_k=k\)，则转（2），否则换行：\(a_{kj}\leftrightarrow a_{i_kj}\)（\(j=k,k+1,\cdots,n\)），\(b_k\leftrightarrow b_{i_k}\)；（2）如果 \(j_k=k\)，则转步 5，否则换列：\(a_{ik}\leftrightarrow a_{ij_k}\)（\(i=1,2,\cdots,n\)），\(\mathrm{Iz}(k)\leftrightarrow\mathrm{Iz}(j_k)\)。
+
+\textbf{步 5} 计算乘数
+
+\[a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 6} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i=k+1,\cdots,n;\;j=k+1,\cdots,n);\]
+
+\[b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 7} 回代求解
+
+（1）\(b_n\leftarrow b_n/a_{n,n}\)；（2）对于 \(i=n-1,n-2,\cdots,2,1\)，\(b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}\)。
+
+\textbf{步 8} 调整未知数的次序
+
+（1）对于 \(i=1,2,\cdots,n\)；\(a_i,\mathrm{Iz}(i)\leftarrow b_i\)；（2）对于 \(i=1,2,\cdots,n\)；\(b_i\leftarrow a_{1i}\)。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 186 的校注}\label{ux539fux4e66-pdf-ux9875-186-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-186.md}{完整原页转录} · \href{../../source-images/pdf-186.jpeg}{原页图像}
+
+校注记录：ch07a-E002。
+
+\begin{quote}
+校注（agent 补充）：算法 1 步 8（1）原书印作 \(a_i,\mathrm{Iz}(i)\leftarrow b_i\)（逗号及 Iz 为基线排印），本转录保留。按该步（2）\(b_i\leftarrow a_{1i}\) 及``调整未知数的次序''，（1）应把 \(b_i\) 暂存到第一行第 \(\mathrm{Iz}(i)\) 列，即 \(a_{1,\mathrm{Iz}(i)}\leftarrow b_i\)；疑似原书下标排印错误。参见\href{../assets/ch07a/pdf-186-step8-detail.png}{原步骤放大裁图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E002}：原书 PDF 页 186
+\end{itemize}
+
+\end{document}

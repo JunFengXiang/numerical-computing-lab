@@ -1,0 +1,36 @@
+{
+  "lane": "ch11",
+  "scope": "PDF276-293 / printed263-280",
+  "status": "passed",
+  "checks": [
+    "18 assigned pages present in order",
+    "printed-page metadata",
+    "Markdown and source-image SHA256",
+    "local image and source links",
+    "display and inline math delimiters",
+    "LaTeX environment and brace balance",
+    "19 source formula identifiers",
+    "5 source algorithm titles including original 10.5",
+    "5 original figure crops",
+    "chapter prefix star",
+    "no unresolved glyph markers"
+  ],
+  "numbered_formula_count": 19,
+  "source_algorithm_titles": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "10.5"
+  ],
+  "figure_assets": [
+    "staging/ch11/assets/figure-11-1.png",
+    "staging/ch11/assets/figure-11-2.png",
+    "staging/ch11/assets/figure-11-3.png",
+    "staging/ch11/assets/figure-11-4.png",
+    "staging/ch11/assets/figure-11-5.png"
+  ],
+  "source_errata_groups": 9,
+  "errors": [],
+  "limits": "Structural checks do not establish mathematical correctness. All 18 pages were separately viewed against the original images; suspected source errors remain as printed and are annotated."
+}

@@ -1,0 +1,245 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={平庸的新纪录},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{平庸的新纪录}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.3.6　平庸的新纪录}\label{ux5e73ux5eb8ux7684ux65b0ux7eaaux5f55}
+
+前已指出，祖冲之于公元 5 世纪所获得的准确到小数点后 7 位的圆周率 3.141 592 6\ldots 千年称雄于世界。这项纪录直到 15 世纪才被打破。阿拉伯人阿尔·卡西于 1424 年写成《圆周论》，发表了当时世界上最为精确的圆周率。
+
+阿尔·卡西的割圆过程袭用阿基米德的做法：从正六边形做起，逐步计算圆的内接与外切多边形的周长。每分割一次，令多边形的边数倍增。到了 15 世纪，阿拉伯数字和十进小数记数法的使用，给实际计算提供了很大方便。阿尔·卡西反复割圆，一直算到
+
+\[
+6\times2^{27}=805\,306\,368
+\]
+
+即正 8 亿多多边形，得出准确到小数点后 17 位的圆周率
+
+\[
+\pi=3.141\,592\,653\,589\,793\,23,
+\]
+
+从而打破了祖冲之千年称雄的世界纪录。
+
+阿尔·卡西的这项计算其实是平庸的。其一，他所使用的其实就是刘徽公式；其二，后文将会看到，运用刘徽的加速技术，用正 24 576 边形的数据就能加工出阿尔·卡西正 8 亿多多边形的结果。
+
+这里再现阿尔·卡西所获得的数据。令直径为 1，则内接正 \(n\) 边形的边长
+
+\[
+L_n=n\cdot\sin\frac{\pi}{n}.
+\]
+
+设取 \(n=6,12,24,\cdots\) 反复进行计算，计算结果列于表 12.3 中。表中数据是借助于数学软件 Mathematica 获得的，计算过程避开了舍入误差的积累。
+
+\begin{quote}
+校注（agent 补充）：本页圆周率末段印作 \(\ldots793\,23\)，PDF294（书页281）同一阿尔·卡西结果印作 \(\ldots792\,23\)，两处原文不一致，均按原页保留。
+
+校注（agent 补充）：原文称 \(L_n=n\sin(\pi/n)\) 为``边长''，该式实际为直径 1 的圆内接正 \(n\) 边形的周长；单边长应为 \(\sin(\pi/n)\)。这是原书文字与所列公式的不一致，正文未作替换。
+\end{quote}
+
+\href{../../source-images/pdf-303.jpeg}{原页图像}
+
+\textbf{表 12.3}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(L_n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\delta_n\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+6 & \(3.000\,000\,000\,000\,000\,000\quad\langle0\rangle\) & \(3.948\,815\,549\,036\,689\,1\) \\
+12 & \(3.105\,828\,541\,230\,249\,148\quad\langle1\rangle\) & \(3.987\,162\,707\,851\,017\,4\) \\
+24 & \(3.132\,628\,613\,281\,238\,197\quad\langle1\rangle\) & \(3.996\,788\,098\,191\,334\,7\) \\
+48 & \(3.139\,350\,203\,046\,867\,207\quad\langle1\rangle\) & \(3.999\,196\,863\,295\,489\,2\) \\
+96 & \(3.141\,031\,950\,890\,509\,638\quad\langle3\rangle\) & \(3.999\,799\,205\,744\,363\,9\) \\
+192 & \(3.141\,452\,472\,285\,462\,075\quad\langle3\rangle\) & \(3.999\,949\,800\,806\,102\,4\) \\
+384 & \(3.141\,557\,607\,911\,857\,645\quad\langle4\rangle\) & \(3.999\,987\,450\,162\,151\,0\) \\
+768 & \(3.141\,583\,892\,148\,318\,408\quad\langle4\rangle\) & \(3.999\,996\,862\,538\,076\,8\) \\
+1 536 & \(3.141\,590\,463\,228\,050\,095\quad\langle5\rangle\) & \(3.999\,999\,215\,634\,365\,4\) \\
+3 072 & \(3.141\,592\,105\,999\,271\,550\quad\langle6\rangle\) & \(3.999\,999\,803\,908\,581\,7\) \\
+6 144 & \(3.141\,592\,516\,692\,157\,447\quad\langle6\rangle\) & \(3.999\,999\,950\,977\,144\,8\) \\
+12 288 & \(3.141\,592\,619\,365\,383\,955\quad\langle7\rangle\) & \(3.999\,999\,987\,744\,286\,1\) \\
+24 576 & \(3.141\,592\,645\,033\,690\,896\quad\langle7\rangle\) & \(3.999\,999\,996\,936\,071\,5\) \\
+49 152 & \(3.141\,592\,651\,450\,767\,651\quad\langle8\rangle\) & \(3.999\,999\,999\,234\,017\,8\) \\
+98 304 & \(3.141\,592\,653\,055\,036\,841\quad\langle9\rangle\) & \(3.999\,999\,999\,808\,504\,4\) \\
+196 608 & \(3.141\,592\,653\,456\,104\,139\quad\langle9\rangle\) & \(3.999\,999\,999\,952\,126\,1\) \\
+393 216 & \(3.141\,592\,653\,556\,370\,963\quad\langle10\rangle\) & \(3.999\,999\,999\,988\,031\,5\) \\
+786 432 & \(3.141\,592\,653\,581\,437\,669\quad\langle11\rangle\) & \(3.999\,999\,999\,997\,007\,8\) \\
+1 572 864 & \(3.141\,592\,653\,587\,704\,346\quad\langle11\rangle\) & \(3.999\,999\,999\,999\,251\,9\) \\
+3 145 728 & \(3.141\,592\,653\,589\,271\,015\quad\langle12\rangle\) & \(3.999\,999\,999\,999\,812\,9\) \\
+6 291 456 & \(3.141\,592\,653\,589\,662\,682\quad\langle12\rangle\) & \(3.999\,999\,999\,999\,953\,2\) \\
+12 582 912 & \(3.141\,592\,653\,589\,760\,599\quad\langle13\rangle\) & \(3.999\,999\,999\,999\,988\,3\) \\
+25 165 824 & \(3.141\,592\,653\,589\,785\,078\quad\langle13\rangle\) & \(3.999\,999\,999\,999\,997\,0\) \\
+50 331 648 & \(3.141\,592\,653\,589\,791\,198\quad\langle14\rangle\) & \(3.999\,999\,999\,999\,999\,2\) \\
+100 663 296 & \(3.141\,592\,653\,589\,792\,728\quad\langle14\rangle\) & \(3.999\,999\,999\,999\,999\,8\) \\
+201 326 592 & \(3.141\,592\,653\,589\,793\,110\quad\langle15\rangle\) & \(3.999\,999\,999\,999\,999\,9\) \\
+402 653 184 & \(3.141\,592\,653\,589\,793\,206\quad\langle16\rangle\) & \\
+805 306 368 & \(3.141\,592\,653\,589\,793\,230\quad\langle17\rangle\) & \\
+\end{longtable}
+}
+
+\href{../../source-images/pdf-304.jpeg}{原页图像}
+
+表 12.3 所列的计算结果表明，在二分逼近过程中，反复计算内接正 \(n\) 边形的周长 \(L_n\)，发现阿尔·卡西的``新纪录''果然是对的。
+
+为了运用刘徽方法进行精加工，首先需要澄清偏差比是否``几乎''为定值。利用逼近数据 \(L_n\) 计算偏差 \(\Delta_n=L_{2n}-L_n\)，进而求出偏差比 \(\delta_n=\Delta_n/\Delta_{2n}\)，计算结果 \(\delta_n\) 列于表 12.3 的右侧。我们看到，这里偏差比 \(\delta_n\) 越来越逼近定值 4，因此加速公式仍具有式（12.3.3）的形式：
+
+\[
+\widehat L_n=L_{2n}+\frac13(L_{2n}-L_n).
+\]
+
+依这一公式加工表 12.3 的数据 \(L_n\)，加工结果 \(\widehat L_n\) 列于表 12.4 中。数据尾部依然标明准确到小数第几位。
+
+\textbf{表 12.4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4300}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0700}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4300}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\widehat L_n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\widehat L_n\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+6 & \(3.141\,104\,721\,640\,332\,197\quad\langle3\rangle\) & 768 & \(3.141\,592\,653\,587\,960\,658\quad\langle11\rangle\) \\
+12 & \(3.141\,561\,970\,631\,567\,880\quad\langle4\rangle\) & 1 536 & \(3.141\,592\,653\,589\,678\,702\quad\langle12\rangle\) \\
+24 & \(3.141\,590\,732\,968\,743\,543\quad\langle5\rangle\) & 3 072 & \(3.141\,592\,653\,589\,786\,079\quad\langle13\rangle\) \\
+48 & \(3.141\,592\,533\,505\,057\,115\quad\langle6\rangle\) & 6 144 & \(3.141\,592\,653\,589\,792\,791\quad\langle14\rangle\) \\
+96 & \(3.141\,592\,646\,083\,779\,554\quad\langle7\rangle\) & 12 288 & \(3.141\,592\,653\,589\,793\,210\quad\langle16\rangle\) \\
+192 & \(3.141\,592\,653\,120\,656\,168\quad\langle9\rangle\) & 24 576 & \(3.141\,592\,653\,589\,793\,236\quad\langle17\rangle\) \\
+384 & \(3.141\,592\,653\,560\,471\,996\quad\langle10\rangle\) & & \\
+\end{longtable}
+}
+
+对照表 12.3 和表 12.4 可以看出，\textbf{为了获得阿尔·卡西割到正 8 亿多多边形所创造的新纪录，运用刘徽的精加工方法只要割到正 24 576 边形，后者相当于祖冲之已经掌握的逼近数据。}
+
+\textbf{刘徽加速技术的效果简直令人难以置信！}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 304 的校注}\label{ux539fux4e66-pdf-ux9875-304-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-304.md}{完整原页转录} · \href{../../source-images/pdf-304.jpeg}{原页图像}
+
+校注记录：CH12-E004。
+
+\begin{quote}
+校注（agent 补充）：按本页原式，表中 \(\widehat L_{24\,576}\) 需要 \(L_{24\,576}\) 和 \(L_{49\,152}\) 两个数据。正文``只要割到正 24 576 边形''与公式及表下标所表示的数据需求不一致；原文和数值均予保留。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH12-E002}：原书 PDF 页 294, 302
+\item
+  \texttt{CH12-E003}：原书 PDF 页 302
+\item
+  \texttt{CH12-E004}：原书 PDF 页 302, 304
+\end{itemize}
+
+\end{document}

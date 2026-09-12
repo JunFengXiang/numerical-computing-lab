@@ -1,0 +1,278 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={引言},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{引言}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{9.4.1 引言}\label{ux5f15ux8a00}
+
+Rutishauser（在 1958 年）利用矩阵的三角分解提出了计算矩阵特征值的 LR 算法，Francis（在 1961 年、1962 年）利用矩阵的 QR 分解建立了计算矩阵特征值的 QR 方法。
+
+QR 方法是一种变换方法，是计算一般矩阵（中小型矩阵）全部特征值问题的最有效的方法之一。目前，QR 方法主要用来计算：（1）上 Hessenberg 阵的全部特征值问题，（2）对称三对角阵的全部特征值问题。QR 方法具有收敛快、算法稳定等特点。
+
+对于一般矩阵 \(A\in\mathbb R^{n\times n}\)（或对称阵），首先用 Householder 方法将 \(A\) 化为上 Hessenberg 阵 \(B\)（或对称三对角阵），然后再用 QR 方法计算 \(B\) 的全部特征值问题。
+
+事实上，除了可以用 Householder 法约化矩阵外，还可考虑用如下形式的平面旋转矩阵来约化：
+
+\[
+P_{ij}=\left(\begin{array}{*{11}{c}}
+1&&&&&&&&&&\\
+&\ddots&&&&&&&&&\\
+&&1&&&&&&&&\\
+&&&c&&&&s&&&\\
+&&&&1&&&&&&\\
+&&&&&\ddots&&&&&\\
+&&&&&&1&&&&\\
+&&&-s&&&&c&&&\\
+&&&&&&&&1&&\\
+&&&&&&&&&\ddots&\\
+&&&&&&&&&&1
+\end{array}\right),
+\tag{9.4.1}
+\]
+
+矩阵原图标注：\(c,-s\) 所在列为``第 \(i\) 列''，\(s,c\) 所在列为``第 \(j\) 列''；\(c,s\) 所在行为``第 \(i\) 行''，\(-s,c\) 所在行为``第 \(j\) 行''。其中 \(c=\cos\theta\)，\(s=\sin\theta\)。
+
+下面是用这种矩阵约化矩阵的一些结论。
+
+\textbf{引理 1}　设 \(x=(\alpha_1,\allowbreak \alpha_2,\allowbreak \cdots,\allowbreak \alpha_i,\allowbreak \cdots,\allowbreak \alpha_j,\allowbreak \cdots,\allowbreak \alpha_n)^{\mathrm T}\)，其中 \(\alpha_i,\alpha_j\) 不全为零，则可选一平面旋转矩阵 \(P_{ij}\) 使 \(P_{ij}x=y\equiv(\alpha_1,\allowbreak \alpha_2,\allowbreak \cdots,\allowbreak \alpha_i^{(1)},\allowbreak \cdots,\allowbreak \alpha_j^{(1)},\allowbreak \cdots,\allowbreak \alpha_n)^{\mathrm T}\)，其中
+
+\[
+\alpha_i^{(1)}=\sqrt{\alpha_i^2+\alpha_j^2},
+\tag{9.4.2}
+\]
+
+\[
+\alpha_j^{(1)}=0,
+\tag{9.4.3}
+\]
+
+\[
+\begin{cases}
+c=\alpha_i/\sqrt{\alpha_i^2+\alpha_j^2},\\
+s=\alpha_j/\sqrt{\alpha_i^2+\alpha_j^2}.
+\end{cases}
+\tag{9.4.4}
+\]
+
+\href{../../source-images/pdf-251.jpeg}{原页}
+
+\textbf{证明}　事实上，\(P_{ij}x\) 只改变 \(x\) 的第 \(i\) 个及第 \(j\) 个元素，且有
+
+\[
+\alpha_i^{(1)}=c\alpha_i+s\alpha_j,\qquad
+\alpha_j^{(1)}=-s\alpha_i+c\alpha_i,
+\]
+
+于是可选 \(P_{ij}\)，使 \(\alpha_j^{(1)}=-s\alpha_i+c\alpha_j=0\)，即按式（9.4.4）求 \(c,s\)，且有式（9.4.2）及式（9.4.3）。
+
+用平面旋转阵进行左变换可产生一算法，设给定 \(x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)，计算 \(c=\cos\theta\)，\(s=\sin\theta\)，\(v=\sqrt{\alpha^2+\beta^2}\)，使 \(P_{ij}x=\begin{pmatrix}c&s\\-s&c\end{pmatrix}\begin{pmatrix}\alpha\\\beta\end{pmatrix}=\begin{pmatrix}v\\0\end{pmatrix}\)，为了防止溢出，将 \(x\) 规范化，有
+
+\[
+\eta\equiv\|x\|_\infty=\max\{|\alpha|,|\beta|\}\ne0,\qquad
+x'=x/\eta=\begin{pmatrix}\alpha/\eta\\\beta/\eta\end{pmatrix},
+\]
+
+于是
+
+\[
+\begin{cases}c'=c,\ s'=s,\\v'=v/\eta.\end{cases}
+\]
+
+\textbf{算法 1}　设 \(x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)，本算法产生 \(c,s\) 及 \(v\)。
+
+\textbf{步 1}　计算 \(\eta=\max\{|\alpha|,|\beta|\}\)。
+
+\textbf{步 2}　如果 \(\eta=0\)，则 \(c\leftarrow1\)，\(s\leftarrow0\)，转步 8。
+
+\textbf{步 3}　\(\alpha'=\alpha/\eta\)。
+
+\textbf{步 4}　\(\beta'=\beta/\eta\)。
+
+\textbf{步 5}　\(v'=\sqrt{\alpha'^2+\beta'^2}\)。
+
+\textbf{步 6}　\(c=\alpha'/v'\)，\(s=\beta'/v'\)。
+
+\textbf{步 7}　\(v=\eta v'\)。
+
+\textbf{步 8}　计算终止。
+
+\textbf{定理 9.15}　如果 \(A\) 为非奇异矩阵，则存在正交矩阵 \(P_1,P_2,\cdots,P_{n-1}\)（即一系列平面旋转矩阵）使
+
+\[
+P_{n-1},\cdots,P_2P_1A=\begin{pmatrix}
+r_{11}&r_{12}&\cdots&r_{1n}\\
+&r_{22}&\cdots&r_{2n}\\
+&&\ddots&\vdots\\
+&&&r_{nn}
+\end{pmatrix}\equiv R,
+\tag{9.4.5}
+\]
+
+且 \(r_{ii}>0\quad(i=1,2,\cdots,n-1)\)。
+
+\textbf{证明}　由于 \(A\) 的第 1 列一定存在 \(a_{j1}\ne0\)，于是，如果 \(a_{j1}\ne0\ (j=2,3,\cdots,n)\)，应用算法 1，即存在平面旋转矩阵 \(P_{12},P_{13},\cdots,P_{1n}\)，使
+
+\[
+P_{1n}\cdots P_{13}P_{12}A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&\cdots&a_{1n}^{(2)}\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+\vdots&\vdots&&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}
+\end{pmatrix}\equiv A^{(2)},
+\]
+
+且记 \(P_{1n}\cdots P_{12}=P_1\)。同理，如果 \(a_{2j}^{(2)}\ne0\ (j=3,\cdots,n)\)，应用算法 1，存在平面旋转矩阵
+
+\begin{quote}
+校注（agent 补充）：引理 1 证明首式原印 \(\alpha_j^{(1)}=-s\alpha_i+c\alpha_i\)，下一行则为 \(-s\alpha_i+c\alpha_j\)。按矩阵乘法，首式末项疑应为 \(c\alpha_j\)；正文保留原印。
+
+校注（agent 补充）：定理 9.15 证明末行原印 \(a_{2j}^{(2)}\ne0\)。该步旋转消去第 2 列下方元素，疑应为 \(a_{j2}^{(2)}\ne0\)；正文保留原印。
+
+校注（agent 补充）：算法 1 步 2 的零向量分支只指定 \(c,s\) 后即终止，没有显式赋值 \(v\)。按开头的 \(v=\sqrt{\alpha^2+\beta^2}\)，此分支应有 \(v=0\)；原算法步骤保留。
+\end{quote}
+
+\href{../../source-images/pdf-252.jpeg}{原页}
+
+\(P_{23},\cdots,P_{2n}\)（记 \(P_2=P_{2n}\cdots P_{23}\)），使
+
+\[
+P_2P_1A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\\
+&r_{22}&a_{23}^{(3)}&\cdots&a_{2n}^{(3)}\\
+&&a_{33}^{(3)}&\cdots&a_{3n}^{(3)}\\
+&&\vdots&&\vdots\\
+&&a_{n3}^{(3)}&\cdots&a_{nn}^{(3)}
+\end{pmatrix}.
+\]
+
+重复上述过程，最后得到：存在正交阵 \(P_1,P_2,\cdots,P_{n-1}\)，使式（9.4.5）成立。
+
+\textbf{定理 9.16（矩阵的 QR 分解）}　如果 \(A\in\mathbb R^{n\times n}\) 为非奇异矩阵，则 \(A\) 可分解为一正交阵 \(Q\) 与上三角阵 \(R\) 的乘积，即 \(A=QR\)，且当 \(R\) 对角元素都为正数时分解唯一。
+
+\textbf{证明}　由定理 9.12，存在正交阵 \(P_1,P_2,\cdots,P_{n-1}\)，使
+
+\[
+P_{n-1}\cdots P_2P_1A=R
+\tag{9.4.6}
+\]
+
+为上三角阵，记
+
+\[
+Q^{\mathrm T}=P_{n-1}\cdots P_2P_1,
+\]
+
+于是式（9.4.6）为 \(Q^{\mathrm T}A=R\)，即 \(A=QR\)，其中 \(Q=P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}\) 为正交阵。
+
+现证唯一性：设有 \(A=Q_1R_1=Q_2R_2\)，其中 \(R_1,R_2\) 为上三角阵（显然为非奇异阵）且对角元素都为正数，\(Q_1,Q_2\) 为正交阵。于是
+
+\[
+Q_2^{\mathrm T}Q_1=R_2R_1^{-1},
+\tag{9.4.7}
+\]
+
+由式（9.4.7）知上三角阵 \(R_2R_1^{-1}\) 为正交阵，故 \(R_2R_1^{-1}\) 为对角阵，即
+
+\[
+R_2R_1^{-1}=D=\operatorname{diag}(d_1,d_2,\cdots,d_n).
+\]
+
+因为 \(R_2R_1^{-1}\) 是正交阵，所以 \(D^2=I\)，又因 \(R_1,R_2\) 对角元素都为正数，故 \(d_i>0\ (i=1,2,\cdots,n)\)，即 \(D=I\)。于是 \(R_2=R_1\)，由式（9.4.7）得到 \(Q_2=Q_1\)。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 252 的校注}\label{ux539fux4e66-pdf-ux9875-252-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-252.md}{完整原页转录} · \href{../../source-images/pdf-252.jpeg}{原页图像}
+
+校注记录：ch09b-E11。
+
+\begin{quote}
+校注（agent 补充）：定理 9.16 证明首句原印``由定理 9.12''，本段所需的平面旋转矩阵将 A 变成上三角阵的结论对应定理 9.15；原引用保留，列为疑似原书编号错误。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch09b-E11}：原书 PDF 页 252
+\item
+  \texttt{ch09b-E04}：原书 PDF 页 251
+\item
+  \texttt{ch09b-E05}：原书 PDF 页 251
+\item
+  \texttt{ch09b-E06}：原书 PDF 页 251
+\end{itemize}
+
+\end{document}

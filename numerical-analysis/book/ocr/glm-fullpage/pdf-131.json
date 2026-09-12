@@ -1,0 +1,20 @@
+{
+  "pdf_page": 131,
+  "source_image": "source-images/pdf-131.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "30490fa6e6e511b628d4338abb6286ce756026bea345e90ad4145af067e2adf1",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 708,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.125,
+  "created_utc": "2026-09-12T10:35:42.207726+00:00",
+  "raw_text_sha256": "ba9401d0750972bba2c04cbf8103e9664f267fa2ec08599dd493538bdfd24ef0",
+  "raw_text": "满足条件(5.3.9)、(5.3.11)、(5.3.12)的一族格式(5.3.7)统称三阶 Runge-Kutta 格式. 下列 Kutta 格式是其中的一个特例:\n\n$$\\begin{cases}\ny_{n+1} = y_n + \\frac{h}{6}(K_1 + 4K_2 + K_3), \\\\\nK_1 = f(x_n, y_n), \\\\\nK_2 = f\\left(x_n + \\frac{h}{2}, y_n + \\frac{h}{2}K_1\\right), \\\\\nK_3 = f\\left(x_n + h, y_n - hK_1 + 2hK_2\\right).\n\\end{cases}$$\n\n5.3.5 四阶 Runge-Kutta 方法\n\n继续上述过程, 经过较复杂的数学演算, 可以导出各种四阶 Runge-Kutta 格式, 下列经典格式是其中常用的一个:\n\n$$\\begin{cases}\ny_{n+1} = y_n + \\frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4), \\\\\nK_1 = f(x_n, y_n), \\\\\nK_2 = f\\left(x_n + \\frac{h}{2}, y_n + \\frac{h}{2}K_1\\right), \\\\\nK_3 = f\\left(x_n + \\frac{h}{2}, y_n + \\frac{h}{2}K_2\\right), \\\\\nK_4 = f\\left(x_n + h, y_n + hK_3\\right).\n\\end{cases}$$\n\n(5.3.13)\n\n四阶 Runge-Kutta 方法的每一步需要四次计算函数值 $f$, 可以证明其截断误差为 $O(h^5)$. 其证明极其烦琐, 这里从略.\n\n例 5.4 设取步长 $h=0.2$, 从 $x=0$ 直到 $x=1$ 用四阶 Runge-Kutta 方法求解初值问题(5.2.2).\n\n解 这里, 经典的四阶 Runge-Kutta 格式(5.3.13)具有如下形式:\n\n$$\\begin{cases}\ny_{n+1} = y_n + \\frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4), \\\\\nK_1 = y_n - \\frac{2x_n}{y_n}, \\\\\nK_2 = y_n + \\frac{h}{2}K_1 - \\frac{2x_n + h}{y_n + \\frac{h}{2}K_1}, \\\\\nK_3 = y_n + \\frac{h}{2}K_2 - \\frac{2x_n + h}{y_n + \\frac{h}{2}K_2}, \\\\\nK_4 = y_n + hK_3 - \\frac{2(x_n + h)}{y_n + hK_3}.\n\\end{cases}$$\n\n表 5.4 列出计算结果 $y_n$, 其中 $y(x_n)$ 仍表示准确解."
+}

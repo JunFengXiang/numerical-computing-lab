@@ -1,0 +1,133 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={习题},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{习题}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{习题}\label{ux4e60ux9898}
+
+\textbf{1.} 用幂法计算下列矩阵的主特征值及对应的特征向量：
+
+\[
+\text{（1）}\ A_1=\begin{pmatrix}7&3&-2\\3&4&-1\\-2&-1&3\end{pmatrix};\qquad
+\text{（2）}\ A_2=\begin{pmatrix}3&-4&3\\-4&6&3\\3&3&1\end{pmatrix},
+\]
+
+当特征值有三位小数稳定时迭代终止。
+
+\textbf{2.} 方阵 \(T\) 分块形式为
+
+\[
+T=\begin{pmatrix}
+T_{11}&T_{12}&\cdots&T_{1n}\\
+&T_{22}&\cdots&T_{2n}\\
+&&\ddots&\vdots\\
+&&&T_{nn}
+\end{pmatrix},
+\]
+
+其中 \(T_{ii}\ (i=1,2,\cdots,n)\) 为方阵，\(T\) 称为块上
+
+\href{../../source-images/pdf-260.jpeg}{原页}
+
+三角阵，如果对角块的阶数至多不超过 2，则称 \(T\) 为准三角形形式。用 \(\sigma(T)\) 记矩阵 \(T\) 的特征值集合，证明 \(\sigma(T)=\displaystyle\bigcup_{i=1}^{n}\sigma(T_{ii})\)。
+
+\textbf{3.} 利用反幂法求矩阵 \(\begin{pmatrix}6&2&1\\2&3&1\\1&1&1\end{pmatrix}\) 的最接近于 6 的特征值及对应的特征向量。
+
+\textbf{4.} 求矩阵 \(\begin{pmatrix}4&0&0\\0&3&1\\0&1&3\end{pmatrix}\) 与特征值 4 对应的特征向量。
+
+\textbf{5.} （1）设 \(A\) 是对称矩阵，\(\lambda\) 和 \(x\ (\|x\|_2=1)\) 是 \(A\) 的一个特征值及相应的特征向量，又设 \(P\) 为一个正交阵，使 \(Px=e_1=(1,0,\cdots,0)^{\mathrm T}\)，证明 \(B=PAP^{\mathrm T}\) 的第 1 行和第 1 列除了 \(\lambda\) 之外其余元素均为零。
+
+（2）对于矩阵 \(A=\begin{pmatrix}2&10&2\\10&5&-8\\2&-8&11\end{pmatrix}\)，\(\lambda=9\) 是其特征值，\(x=\left(\dfrac23,\dfrac13,\dfrac23\right)^{\mathrm T}\) 是相应于 9 的特征向量，试求一初等反射阵 \(P\)，使 \(Px=e_1\)，并计算 \(B=PAP^{\mathrm T}\)。
+
+\textbf{6.} 利用初等反射阵将 \(A=\begin{pmatrix}1&3&4\\3&1&2\\4&2&1\end{pmatrix}\) 正交相似约化为对称三对角阵。
+
+\textbf{7.} 设 \(A\in\mathbb R^{n\times n}\)，且 \(a_{i1},a_{j1}\) 不全为零，\(P_{ij}\) 为使 \(a_{j1}^{(2)}=0\) 的平面旋转阵，试推导 \(P_{ij}A\) 第 \(i\) 行、第 \(j\) 行元素的计算公式及 \(AP_{ij}^{\mathrm T}\) 第 \(i\) 列、第 \(j\) 列元素的计算公式。
+
+\textbf{8.} 设 \(A_{n-1}\) 是由 Householder 方法得到的矩阵，又设 \(y\) 是 \(A_{n-1}\) 的一个特征向量。
+
+（1）证明矩阵 \(A\) 对应的特征向量是 \(x=P_1P_2\cdots P_{n-2}y\)；（2）对于给出的 \(y\) 应如何计算 \(x\)？
+
+\textbf{9.} 用带位移的 QR 方法计算下列矩阵的全部特征值：
+
+\[
+\text{（1）}\ A=\begin{pmatrix}1&2&0\\2&-1&1\\0&1&3\end{pmatrix};\qquad
+\text{（2）}\ B=\begin{pmatrix}3&1&0\\1&2&1\\0&1&1\end{pmatrix}.
+\]
+
+\textbf{10.} 试用初等反射阵将
+
+\[
+A=\begin{pmatrix}1&1&1\\2&-1&-1\\2&-4&5\end{pmatrix}
+\]
+
+分解为 \(QR\)，其中 \(Q\) 为正交阵，\(R\) 为上三角阵。
+
+\href{../../source-images/pdf-261.jpeg}{原页}
+
+\section{下篇　高效算法设计}\label{ux4e0bux7bc7-ux9ad8ux6548ux7b97ux6cd5ux8bbeux8ba1}
+
+\end{document}

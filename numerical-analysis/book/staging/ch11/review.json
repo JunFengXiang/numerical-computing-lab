@@ -1,0 +1,509 @@
+{
+  "lane": "ch11",
+  "reviewer": "Codex agent ch11",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 276,
+      "printed_page": 263,
+      "path": "staging/ch11/pages/pdf-276.md",
+      "sha256": "14537c0df9d181ceb633f7e51145af91d2eb86d71ccd429e14d0815bbf320783",
+      "source_image_sha256": "8f54cf083e1716746e0bb1c26b29c10354d7554c2d7f5c1db40bba355b5bc3f5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11",
+          "title": "并行算法设计：递推计算并行化",
+          "source_prefix_star": true
+        },
+        {
+          "id": "11.1",
+          "title": "什么是并行计算"
+        },
+        {
+          "id": "11.1.1",
+          "title": "一则寓言故事"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 277,
+      "printed_page": 264,
+      "path": "staging/ch11/pages/pdf-277.md",
+      "sha256": "386ca7ee7c8569eb0700b934636bd51e562eb3aeb4c4b2457438b383d41418f5",
+      "source_image_sha256": "819df7fd0f6a6dc7410f9134d137589235e418a3af1e8de501c49f488928c760",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.1.2",
+          "title": "同步并行算法的设计策略"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 278,
+      "printed_page": 265,
+      "path": "staging/ch11/pages/pdf-278.md",
+      "sha256": "318225575ac7b85eee911b8020e54843bb676798114b33aca819e5c5dac711f7",
+      "source_image_sha256": "9bbdd87440defdca3766cd7aaf13a9ad219bcdf8ba29321f76e7e4a68e39f39d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2",
+          "title": "叠加计算"
+        },
+        {
+          "id": "11.2.1",
+          "title": "倍增技术"
+        }
+      ],
+      "formula_ids": [
+        "11.2.1",
+        "11.2.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 279,
+      "printed_page": 266,
+      "path": "staging/ch11/pages/pdf-279.md",
+      "sha256": "72c88ce2817f85f563cdfe5f72dff03e2a7e320964906bc62094f8f9149ba02a",
+      "source_image_sha256": "c4c983b9121e1378d19ba771d101c13d5f3a441c97b2c7fce849cbc7d79fe37a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [
+        "11.1"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 280,
+      "printed_page": 267,
+      "path": "staging/ch11/pages/pdf-280.md",
+      "sha256": "003791eaba73500f5903ea090b44a42ef752414177be54a3437e01498dc324cc",
+      "source_image_sha256": "07415e83d1a5521cb6963e9c8f05d6109bd879b167ff05fc65900165e6dea79f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2.2",
+          "title": "二分手续"
+        }
+      ],
+      "formula_ids": [
+        "11.2.3"
+      ],
+      "figures": [
+        "11.2"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 281,
+      "printed_page": 268,
+      "path": "staging/ch11/pages/pdf-281.md",
+      "sha256": "e539387ad65240cac1b3bcbcb2bb26ff689922b491455b195e7785ccab1fc044",
+      "source_image_sha256": "bb4a3dc8a8ee06def56f91ce85fcc203fdde9f233ae5bea6fc955de7f7663318",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2.3",
+          "title": "数列求和的二分法"
+        }
+      ],
+      "formula_ids": [
+        "11.2.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E001：原书两处式号回引（10.2.1）疑应为（11.2.1），正文保留原文并单列校注。"
+      ]
+    },
+    {
+      "pdf_page": 282,
+      "printed_page": 269,
+      "path": "staging/ch11/pages/pdf-282.md",
+      "sha256": "ccf44a909c1591915e10fd407c4e20c360e8143d2ef2c0daac254ca453fa87b2",
+      "source_image_sha256": "e94d5edd375293af683734d0e2f00f12c3a0d0cb8f4565eea6185a0e38ff4ce2",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2.4",
+          "title": "多项式求值的二分法"
+        }
+      ],
+      "formula_ids": [
+        "11.2.5"
+      ],
+      "figures": [
+        "11.3"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 283,
+      "printed_page": 270,
+      "path": "staging/ch11/pages/pdf-283.md",
+      "sha256": "d2a6c30522c5ca92200ef38232ac4fc0b465463ea4b362ca68d530a2e9eba84e",
+      "source_image_sha256": "1bc378b747d804d0fdbac0d5c9f1bb61825a09d7995f73856ec5c84e040d6bde",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2.5",
+          "title": "二分算法的效能分析"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 284,
+      "printed_page": 271,
+      "path": "staging/ch11/pages/pdf-284.md",
+      "sha256": "18bd31a67f373b43f155093b159729d49a0a170f55a3881a2fc641242bb8e382",
+      "source_image_sha256": "ce7be61a35cbce57bdde0fda944e4e1052373e53a05c4726882ad17b42815738",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.2.6",
+          "title": "二分算法的基本特征"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E002：多项式二分算法的处理机计数疑漏计xk的分量，保留原文，另列限定校注。"
+      ]
+    },
+    {
+      "pdf_page": 285,
+      "printed_page": 272,
+      "path": "staging/ch11/pages/pdf-285.md",
+      "sha256": "8bd31c4068079ed1a02653b81e503dfd69e61e0980a5d6169ed1ea527de94ae6",
+      "source_image_sha256": "e45f8d6b95498b00092808cf8f3d5195895817b7ae09930c24cdf2264225fdd6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.3",
+          "title": "一阶线性递推"
+        },
+        {
+          "id": "11.3.1",
+          "title": "相关链的二分手续"
+        }
+      ],
+      "formula_ids": [
+        "11.3.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 286,
+      "printed_page": 273,
+      "path": "staging/ch11/pages/pdf-286.md",
+      "sha256": "bbe689ff025ccfec9f77222b52981e1b476109ec4a4268ce7d9d878582b727b2",
+      "source_image_sha256": "dbc143d2e14b7df0a508842a9604753d186f7ffcbe3ce24fd522e9ef34af62ad",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.3.2",
+          "title": "算式的建立"
+        }
+      ],
+      "formula_ids": [
+        "11.3.2",
+        "11.3.3",
+        "11.3.4",
+        "11.3.5"
+      ],
+      "figures": [
+        "11.4"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 287,
+      "printed_page": 274,
+      "path": "staging/ch11/pages/pdf-287.md",
+      "sha256": "bfff2950ec66258208e729d265af6dd663cbeeedea08526f35727259513a858c",
+      "source_image_sha256": "22862fc04fc5a9b95e2f31edc9b326cb4a6680d435c1f86782185174d0174bdf",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "11.3.6",
+        "11.3.7",
+        "11.3.8",
+        "11.3.9",
+        "11.3.10",
+        "11.3.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E003：式11.3.10第二下标原印2^{k+1}，疑应2^k+1；原样转录。"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "printed_page": 275,
+      "path": "staging/ch11/pages/pdf-288.md",
+      "sha256": "f812646ffd74ebbe7366249be5116dce77187a44d20b4b82f2cf0c9bbb36e672",
+      "source_image_sha256": "3a28c8ed97081098cc143dbd123062974f8d32040435be13457bbec73820df08",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.3.3",
+          "title": "二分算法的效能分析"
+        },
+        {
+          "id": "11.4",
+          "title": "三对角方程组"
+        }
+      ],
+      "formula_ids": [
+        "11.4.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 289,
+      "printed_page": 276,
+      "path": "staging/ch11/pages/pdf-289.md",
+      "sha256": "c0e5fbd300535effb410accb116123ecc75c867469ecd8d7fd581ea1fbbaacd8",
+      "source_image_sha256": "5f58435ba1a9ec5edc72b9a7d1b77098a090970993c90270acce706473b56e06",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.4.1",
+          "title": "相关链的二分手续"
+        }
+      ],
+      "formula_ids": [
+        "11.4.2",
+        "11.4.3"
+      ],
+      "figures": [
+        "11.5"
+      ],
+      "tables": [],
+      "notes": [
+        "CH11-E004：式11.4.2第二行首项原印x_0，疑应x_1；原样转录。"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "printed_page": 277,
+      "path": "staging/ch11/pages/pdf-290.md",
+      "sha256": "551cea1fb944a64dca39ed003a774a8295f9b68adc014b28b08b7924d0dc3008",
+      "source_image_sha256": "549ed9de7aa9c279d7931745fbaee7f5acec58bc0d0621a9758442b5ae1931a1",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.4.2",
+          "title": "算式的建立"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E005：奇数子系统五个邻元原印偶数下标，保留并单列校注。",
+        "CH11-E006：一般形式原回引11.4.3，疑应11.4.1。"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "printed_page": 278,
+      "path": "staging/ch11/pages/pdf-291.md",
+      "sha256": "7fb2a29a8a3833767047356d5235e279f5883cbc588aba6f6a9ea85273578f6a",
+      "source_image_sha256": "42cf8f3188fc1aceb67cb54da38f8b5a356241de7be93f0986c292a68fae312e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E006：两处一般方程组回引11.4.3；一阶递推回引10.3.2。",
+        "CH11-E007：消元边界更新疑漏项，正文照录并另列推导。",
+        "CH11-E008：奇偶子系统中间行范围疑多一项。",
+        "CH11-E009：首行原印中心变元x_0。"
+      ]
+    },
+    {
+      "pdf_page": 292,
+      "printed_page": 279,
+      "path": "staging/ch11/pages/pdf-292.md",
+      "sha256": "439d6644681085b7aca53033e938e07b2ff696f527522ec3a7193d9e9129d2e5",
+      "source_image_sha256": "5373b026eb596e86ca6640b1da091700a60a7a2691e0d32fd8ce4358211c1d18",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "11.summary",
+          "title": "小结"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH11-E006：算法标题和引入语原印10.5，疑应11.5；保留原编号。",
+        "CH11-E007：f_i^(k)边界分段疑误延续，原样转录。"
+      ]
+    },
+    {
+      "pdf_page": 293,
+      "printed_page": 280,
+      "path": "staging/ch11/pages/pdf-293.md",
+      "sha256": "7ea7307ea8696667018ee023e1bd56b427f46d0d90246c330664e0ce627ebde5",
+      "source_image_sha256": "71e30e346de99123a50110203c5057f7fd0b1b530b85f6c2c9c471549b50ac05",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "本页为第11章小结续文，正文仅页首两段；其余为空白及背面透印，无习题。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH11-E001",
+      "pdf_page": 281,
+      "printed_page": 268,
+      "kind": "suspected_source_cross_reference_error",
+      "original": "两处回引均为（10.2.1）",
+      "note": "原样保留；本节上下文应回引数列求和式（11.2.1）。"
+    },
+    {
+      "id": "CH11-E002",
+      "pdf_page": 284,
+      "printed_page": 271,
+      "kind": "suspected_source_processor_count",
+      "original": "多项式算法每步处理机数为N/2^k，P*=N/2",
+      "note": "并行向量含Nk个系数及xk共Nk+1个分量；在所述完全同步更新安排下疑漏计计算xk的一台。可能忽略常数项或依赖未说明调度；已保留原文并加限定校注。"
+    },
+    {
+      "id": "CH11-E003",
+      "pdf_page": 287,
+      "printed_page": 274,
+      "formula_id": "11.3.10",
+      "kind": "suspected_source_index_typo",
+      "original": "i=2^k,2^{k+1},...,N-1",
+      "note": "放大原图确认指数k+1；与同页推导一致的范围应为i=2^k,2^k+1,...,N-1。已保留原式并加校注。"
+    },
+    {
+      "id": "CH11-E004",
+      "pdf_page": 289,
+      "printed_page": 276,
+      "formula_id": "11.4.2",
+      "kind": "suspected_source_index_typo",
+      "original": "第二行首项x_0",
+      "note": "放大原图确认x_0；按奇偶拆分及该行后续下标疑应为x_1。已保留原文并加校注。"
+    },
+    {
+      "id": "CH11-E005",
+      "pdf_page": 290,
+      "printed_page": 277,
+      "kind": "suspected_source_subsystem_indices",
+      "original": "奇数子系统五个邻元印为x_0,x_4,x_2,x_6,x_4",
+      "note": "分别疑应x_1,x_5,x_3,x_7,x_5；与明确标注的奇数相关链不一致。保留原式并加校注。"
+    },
+    {
+      "id": "CH11-E006",
+      "pdf_pages": [
+        290,
+        291,
+        292
+      ],
+      "printed_pages": [
+        277,
+        278,
+        279
+      ],
+      "kind": "suspected_source_cross_references",
+      "original": "一般N阶方程组回引11.4.3；一阶线性递推回引10.3.2；算法编号10.5",
+      "note": "一般形式疑应11.4.1；小节疑应11.3.2；算法编号疑应11.5。原样保留。"
+    },
+    {
+      "id": "CH11-E007",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "printed_pages": [
+        278,
+        279
+      ],
+      "kind": "suspected_source_boundary_formula_errors",
+      "original": "b和f的边界分段只计一侧消元项，k步用2^k作为分界",
+      "note": "以i=1直接消元可见漏a1c0/b0及a1f0/b0；i=N-2对应漏右邻项。k=n分支重叠及越界。已原样保留并以推导作校注。"
+    },
+    {
+      "id": "CH11-E008",
+      "pdf_page": 291,
+      "printed_page": 278,
+      "kind": "suspected_source_range_typo",
+      "original": "两奇偶子系统中间行上界N/2-1",
+      "note": "该上界导致x_N、x_{N+1}越界并重复末行，疑应N/2-2。已照录。"
+    },
+    {
+      "id": "CH11-E009",
+      "pdf_page": 291,
+      "printed_page": 278,
+      "kind": "suspected_source_variable_typo",
+      "original": "k步分段方程首行b_i^(k)x_0",
+      "note": "中心变元疑应x_i；放大原图确认x_0并保留。"
+    }
+  ],
+  "validation_notes": [
+    "18张原页均逐一通过view_image打开目视核对；多处复杂公式另用原图裁切放大。",
+    "保留章节前星号、5幅原图裁切及全部标签、5个算法标题（含原印10.5）、跨页公式和正文。",
+    "本章原书没有习题部分；书页280为小结结束。",
+    "疑似原书错误均保留原式并单列agent校注；未用数学推断替换扫描文字。",
+    "最终结构检查通过：18页顺序/元数据与双哈希/链接/数学分隔符及环境括号/19式号/5算法标题/5图/章节星号；详见staging/ch11/validation.json。",
+    "额外局部二次目视复核：PDF280式11.2.3，281与283向量，286相关链，287算法下标，289相关链，290子系统，291分段系数，292分段系数。"
+  ]
+}

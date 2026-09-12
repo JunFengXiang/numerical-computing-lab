@@ -1,0 +1,9 @@
+{
+  "status": "stopped_after_full_primary_transcription",
+  "stopped_utc": "2026-09-12T10:37:10.052572+00:00",
+  "candidate_pages": 131,
+  "reason": "All 322 source pages have primary image-based transcriptions; remaining work is independent cross review and artifact validation.",
+  "original_pdf_unchanged": true,
+  "resume_command": ".venv-ocr/bin/python tools/ocr_pages.py --pages 1-322",
+  "candidate_text_is_verified": false
+}

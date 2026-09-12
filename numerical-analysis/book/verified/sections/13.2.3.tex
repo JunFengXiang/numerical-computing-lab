@@ -1,0 +1,151 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={多项式求值的秦九韶算法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{多项式求值的秦九韶算法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{13.2.3 多项式求值的秦九韶算法}\label{ux591aux9879ux5f0fux6c42ux503cux7684ux79e6ux4e5dux97f6ux7b97ux6cd5}
+
+微积分方法的核心是逼近法。多项式是微积分学中最为基本的一种逼近工具，因而多项式求值算法在微积分计算中具有重要意义。
+
+设要对给定的 \(x\) 计算下列多项式的值：
+
+\[
+P=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n
+=\sum_{k=0}^{n}a_kx^{n-k}.
+\tag{13.2.4}
+\]
+
+由于计算每一项 \(a_kx^{n-k}\) 需做 \(n-k\) 次乘法，如果先逐项计算 \(a_kx^{n-k}\)，然后再累加求和得出多项式的值 \(P\)，这种\textbf{逐项生成算法}所要耗费的乘法次数为
+
+\[
+Q=\sum_{k=0}^{n}(n-k)\approx\frac{n^2}{2}.
+\]
+
+当 \(n\) 充分大时，这个计算量是相当大的。
+
+现在设法改进这一算法。类似于数列求和计算，首先考察两个特例：当 \(n=0\) 时，所给计算模型即为所求的解
+
+\[
+P=a_0,
+\]
+
+这时不需要做任何计算；又当 \(n=1\) 时，计算模型
+
+\[
+P=a_0x+a_1
+\]
+
+为简单的一次式，这时虽然需要进行计算，但不存在算法设计问题。
+
+注意，当 \(x=1\) 时多项式（13.2.4）便退化为和式（13.2.1），可以类比数列求和算法的设计过程讨论多项式求值算法的设计问题。
+
+设将多项式的次数规定为多项式求值问题的规模，如果从式（13.2.4）的前两项中提出公因子 \(x^{n-1}\)，则有
+
+\[
+P=(a_0x+a_1)x^{n-1}+\sum_{k=2}^{n}a_kx^{n-k}.
+\]
+
+这样，如果算出一次式
+
+\[
+v_1=a_0x+a_1
+\]
+
+的值，则所给 \(n\) 次式的计算模型（13.2.4）便化归为 \(n-1\) 次式
+
+\[
+P=v_1x^{n-1}+\sum_{k=2}^{n}a_kx^{n-k}
+\]
+
+\href{../../source-images/pdf-311.jpeg}{原页图像}
+
+的计算，从而使问题的规模减少了 1 次。不断地重复这种加工手续，使计算问题的规模逐次减 1，则经过 \(n\) 步即可将所给多项式的次数降为 0，从而获得所求的解：
+
+\textbf{算法 13.1}（秦九韶算法）　令 \(v_0=a_0\)，对 \(k=1,2,\cdots,n\) 计算
+
+\[
+v_k=xv_{k-1}+a_k,
+\tag{13.2.5}
+\]
+
+则结果 \(P=v_n\) 即为所给多项式（13.2.4）的值。
+
+容易看出，按递推算式（13.2.5）计算多项式（13.2.4）的值，总共只要做 \(n\) 次乘法，其计算量远比前述逐项生成算法的计算量小。这是一种优秀算法。
+
+这一优秀算法称作\textbf{秦九韶算法}。它是公元 13 世纪我国南宋大数学家秦九韶（1208---1261）最先提出来的。需要注意的是，国外文献常称这一算法为 Horner 算法，其实 Horner 的工作比秦九韶晚了五六百年。
+
+\textbf{秦九韶算法说明，\(n\) 次式（13.2.4）的求值问题可化归为一次式（13.2.5）求值计算的重复。}设以符号``\(\Rightarrow\)''表示一次式的求值手续，则秦九韶算法的模型加工流程如下：
+
+\[
+\underset{\text{（计算模型）}}{n\text{ 次式求值}}
+\Rightarrow n-1\text{ 次式求值}
+\Rightarrow n-2\text{ 次式求值}
+\Rightarrow\cdots\Rightarrow
+\underset{\text{（计算结果）}}{0\text{ 次式求值}}.
+\]
+
+\end{document}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 24,
+  "source_image": "source-images/pdf-024.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "1db233a8338793fd59934efba0caf867c2297a33095064aab08aa687cc32230a",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 873,
+  "possibly_truncated": false,
+  "elapsed_seconds": 25.837,
+  "created_utc": "2026-09-12T09:51:17.558122+00:00",
+  "raw_text_sha256": "6b091b42b72d99e7f513327224a93b19641a25cbadaf84bb121d25dc76b156df",
+  "raw_text": "取右端的有限项近似左端. 如果无法改变算式, 则采用增加有效位数进行运算; 在计算机上则采用双倍字长运算, 但这要增加机器计算时间和多占内存单元.\n\n1.4.3 要防止大数“吃掉”小数\n\n在数值运算中, 参加运算的数有时数量级相差很大, 而计算机位数有限, 如不注意运算次序就可能出现大数“吃掉”小数的现象, 影响计算结果的可靠性.\n\n例1.8 在五位十进制计算机上, 计算\n\n$$A = 52\\ 492 + \\sum_{i=1}^{1000} \\delta_i,$$\n\n其中 $0.1 \\leqslant \\delta_i \\leqslant 0.9$.\n\n解 把运算的数写成规格化形式, 有\n\n$$A = 0.524\\ 92 \\times 10^5 + \\sum_{i=1}^{1000} \\delta_i.$$\n\n由于在计算机上计算时要对阶, 若取 $\\delta_i = 0.9$, 对阶时 $\\delta_i = 0.000\\ 009 \\times 10^5$, 在五位的计算机中表示为机器数 0, 因此\n\n$$A = 0.524\\ 92 \\times 10^5 + 0.000\\ 009 \\times 10^5 + \\cdots + 0.000\\ 009 \\times 10^5$$\n\n$$\\triangleq 0.524\\ 92 \\times 10^5$$ （符号 $\\triangle$ 表示机器中相等），\n\n结果显然不可靠, 这是由运算中出现了大数 52 492“吃掉”小数 $\\delta_i$ 所造成的. 如果计算时先把数量级相同的 1 000 个 $\\delta_i$ 相加, 最后再加 52 492, 就不会出现大数“吃”小数的现象, 这时有\n\n$$0.1 \\times 10^3 \\leqslant \\sum_{i=1}^{1000} \\delta_i \\leqslant 0.9 \\times 10^3,$$\n\n$$0.001 \\times 10^5 + 0.524\\ 92 \\times 10^5 \\leqslant A \\leqslant 0.009 \\times 10^5 + 0.524\\ 92 \\times 10^5,$$\n\n$$52\\ 592 \\leqslant A \\leqslant 53\\ 392.$$\n\n1.4.4 注意简化计算步骤, 减少运算次数\n\n同样一个计算问题, 若能减少运算次数, 不但可节省计算机的计算时间, 还能减小舍入误差. 这是数值计算必须遵从的原则, 也是“数值分析”要研究的重要内容.\n\n例1.9 计算 $x^{255}$ 的值.\n\n解 如果逐个相乘要用 254 次乘法, 但若写成\n\n$$x^{255} = x \\cdot x^2 \\cdot x^4 \\cdot x^8 \\cdot x^{16} \\cdot x^{32} \\cdot x^{64} \\cdot x^{128},$$\n\n只要做 14 次乘法运算即可. 又如计算多项式\n\n$$P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \\cdots + a_1 x + a_0$$\n\n的值时, 若直接计算 $a_k x^k$ 再逐项相加, 一共需做\n\n$$n + (n-1) + \\cdots + 2 + 1 = \\frac{n(n+1)}{2}$$"
+}

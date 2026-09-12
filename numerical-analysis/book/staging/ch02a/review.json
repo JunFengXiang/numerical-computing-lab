@@ -1,0 +1,572 @@
+{
+  "lane": "ch02a",
+  "reviewer": "Codex agent ch02a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 27,
+      "printed_page": 14,
+      "path": "staging/ch02a/pages/pdf-027.md",
+      "sha256": "8dfc4fe3b016b92632d58e28849182cac6371132c850ed4672df043ed3d9c0e0",
+      "source_image_sha256": "d4321ccc9aa7afa952a88727037b710004dacee99610475391e07e89dc3f3411",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2",
+          "title": "插值法"
+        },
+        {
+          "id": "2.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [
+        "2.1.1",
+        "2.1.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "正文保留 x_0 ≤ x_1；独立保留 NA5E-E001 校注。",
+        "页末句未跨页补写。",
+        "ch01独立复核及原作者、root回看原尺寸裁图：补回遗漏字“为”。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-027-definition-detail.png",
+          "sha256": "b49bc23c58a03d7864611d1d9ceaa46749c95382c792c0336620d153b9a70a2f"
+        }
+      ]
+    },
+    {
+      "pdf_page": 28,
+      "printed_page": 15,
+      "path": "staging/ch02a/pages/pdf-028.md",
+      "sha256": "0d52141ab1f8e061c1df3e4df0c3e35c44317b5e81f2a6af721c49ed878033f7",
+      "source_image_sha256": "4a5cedeec5007403dad16ee9942a4f9d054a6dec48a1dcaf5a3e73c7d8d3e410",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.2",
+          "title": "Lagrange 插值"
+        },
+        {
+          "id": "2.2.1",
+          "title": "插值多项式的存在唯一性"
+        }
+      ],
+      "formula_ids": [
+        "2.2.1",
+        "2.2.2"
+      ],
+      "figures": [
+        "2.1"
+      ],
+      "tables": [],
+      "notes": [
+        "图 2.1 在 PDF 28 原页，已从既有跨页章节稿移至本页。",
+        "方程组第一行核为 a_n x_0^n；OCR 的 x_n^n 已纠正。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/figure-2.1.png",
+          "sha256": "92fa2bc9cd3d2ee00146bde5c698a6e78bc0e541a2268a6c6d88d2bdcff6c756"
+        }
+      ]
+    },
+    {
+      "pdf_page": 29,
+      "printed_page": 16,
+      "path": "staging/ch02a/pages/pdf-029.md",
+      "sha256": "c4ef01fc3a6de363d1b255575c4c40997244d017154a8d71fcd45d67abf8b979",
+      "source_image_sha256": "d6f85d0a2b961f02185f58c9774d828c5cbb69eaf36424bca09fd6d1535b1378",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.2.2",
+          "title": "线性插值与抛物插值"
+        }
+      ],
+      "formula_ids": [
+        "2.2.3",
+        "2.2.4",
+        "2.2.5"
+      ],
+      "figures": [
+        "2.2",
+        "2.3"
+      ],
+      "tables": [],
+      "notes": [
+        "补回 OCR 遗漏的点斜式与两点式标记及两幅原图。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/figure-2.2.png",
+          "sha256": "5fb4661a8c23e40e531b3695c97938f89c7d74a932d32dd333036c70eeff2ed7"
+        },
+        {
+          "path": "staging/ch02a/assets/figure-2.3.png",
+          "sha256": "3d4ce75e7d0fe17abf101717249e79384d56bca25f8bfd515dbd15a49cbff60a"
+        },
+        {
+          "path": "staging/ch02a/assets/pdf-029-intro-detail.png",
+          "sha256": "79d092249ea5c5c464f3045839ed761e4729b805ec7d8eca412916f178da5e65"
+        }
+      ]
+    },
+    {
+      "pdf_page": 30,
+      "printed_page": 17,
+      "path": "staging/ch02a/pages/pdf-030.md",
+      "sha256": "4e1104711fc5eef1773b298f74cd4d3b70f4382f36beb41848490e3cf095f6e8",
+      "source_image_sha256": "974689e5f9be2b2c7ee664fd2bd69bb19c869ed90856bb9ab6de495a444677c0",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "2.2.6",
+        "2.2.7"
+      ],
+      "figures": [
+        "2.4"
+      ],
+      "tables": [],
+      "notes": [
+        "原文为立即可得到，已据原页恢复。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/figure-2.4.png",
+          "sha256": "dfac5a86d53c84645b9d450aa127df70f5130818be5f70943b3ea70a6c540f7b"
+        }
+      ]
+    },
+    {
+      "pdf_page": 31,
+      "printed_page": 18,
+      "path": "staging/ch02a/pages/pdf-031.md",
+      "sha256": "e65eb2d31dcf61c0671290bbe763206c7cd1fbc240aecef7915decfd98823340",
+      "source_image_sha256": "a914e81a9056f56f00fb8d1c8be0b70cea1449c4d47ae55f1d826e023bf22437",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.2.3",
+          "title": "Lagrange 插值多项式"
+        }
+      ],
+      "formula_ids": [
+        "2.2.8",
+        "2.2.9",
+        "2.2.10",
+        "2.2.11",
+        "2.2.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "保留上一页公式续行与页末未展开的导语。"
+      ],
+      "visual_evidence": []
+    },
+    {
+      "pdf_page": 32,
+      "printed_page": 19,
+      "path": "staging/ch02a/pages/pdf-032.md",
+      "sha256": "19293cad658a005a311e364caf8fb5329be086e488cb475771b4876eb765b5c1",
+      "source_image_sha256": "6872f452f1ce3c6b41da73758056c57a21a47c3bd63c02ef6d4ab3b888bf3516",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.2.4",
+          "title": "插值余项"
+        }
+      ],
+      "formula_ids": [
+        "2.2.13",
+        "2.2.14",
+        "2.2.15",
+        "2.2.16"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "Rolle 证明与所有导数阶数逐式核对。"
+      ],
+      "visual_evidence": []
+    },
+    {
+      "pdf_page": 33,
+      "printed_page": 20,
+      "path": "staging/ch02a/pages/pdf-033.md",
+      "sha256": "9395747081471b3adb3ab18975ce68fdbf1e7827872889fc178f143b126bda2b",
+      "source_image_sha256": "b8eace571720b1b3c3b5ec3062570281423cf944a2a759aed77c85b393c0f999",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "2.2.17",
+        "2.2.18"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式2.2.17为二阶导数，式2.2.18为三阶导数；第二线性插值符号的波浪号已放大确认。",
+        "页末等式与下一页不等式按原页拆开。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-033-second-linear-detail.png",
+          "sha256": "38875d57691e0f82d11bea0ad043f610f5c7b1fe24faa0a86bc2c3bfda1fc2c7"
+        }
+      ]
+    },
+    {
+      "pdf_page": 34,
+      "printed_page": 21,
+      "path": "staging/ch02a/pages/pdf-034.md",
+      "sha256": "206788dfd931eb8402d5913e69d0c4ddf3186802506877a06918adb042bac095",
+      "source_image_sha256": "0fc29b0d74db86f6327b85fdeb7cce8fbee9cb0d3cd2c5359d9387dacf4ee362",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.3",
+          "title": "逐次线性插值法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "E002三个印字问题已再次放大确认，原式及独立校注全部保留。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-034-errata-detail.png",
+          "sha256": "c938c71149bd6701dfc45a65abd5754cc772c4eed240a2d2de56ecf7c2a208b4"
+        },
+        {
+          "path": "staging/ch02a/assets/pdf-034-neville-intro-detail.png",
+          "sha256": "3d6885a8e81df9c020469c3b12e53923f290339b84a9e5ea8abbe380a0616d58"
+        }
+      ]
+    },
+    {
+      "pdf_page": 35,
+      "printed_page": 22,
+      "path": "staging/ch02a/pages/pdf-035.md",
+      "sha256": "74a51ad2264181116b96782605b59817040893af0419941b0aad4f8cf586d836",
+      "source_image_sha256": "49dbf2a4a7ba787c51211328227c6e30b489a2cd8dfb53be3c42cddbc8b4504c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "2.3.1",
+        "2.3.2"
+      ],
+      "figures": [],
+      "tables": [
+        "2.1",
+        "2.2"
+      ],
+      "notes": [
+        "表2.2首行最右列经放大为 x-x_0；既有章节稿误为 x_0-x_0，已在本页更正。",
+        "保留两张表全部单元格，新增表头明确标记为整理补充。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-035-table-2.2-detail.png",
+          "sha256": "d7f31462f8d9236b84dc315886e0bdddf9e0d64fbdf67407e5ae835e0a14e9dc"
+        }
+      ]
+    },
+    {
+      "pdf_page": 36,
+      "printed_page": 23,
+      "path": "staging/ch02a/pages/pdf-036.md",
+      "sha256": "63a34b9eebcae45663561cc037a3e92f2d4c4943d62b53892b2aed4188734705",
+      "source_image_sha256": "836375ef37a4f020783096a9f30138445da2888011b772ac99b9bc7f87ea7a9a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.4",
+          "title": "差商与 Newton 插值公式"
+        },
+        {
+          "id": "2.4.1",
+          "title": "差商及其性质"
+        }
+      ],
+      "formula_ids": [
+        "2.4.1"
+      ],
+      "figures": [],
+      "tables": [
+        "2.3"
+      ],
+      "notes": [
+        "当 x=x_1 时原式 a_1(x-x_0) 确为 x 无下标1，保留并附记号校注。",
+        "恢复OCR遗漏的a_2整体分母与表2.3最后一行；保留原表下划线。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-036-coefficients-detail.png",
+          "sha256": "36974b0b311d9123e692d371a65dc49237673efeffe84bdf83ae060f9605fb22"
+        }
+      ]
+    },
+    {
+      "pdf_page": 37,
+      "printed_page": 24,
+      "path": "staging/ch02a/pages/pdf-037.md",
+      "sha256": "6f5795780f018b4598714b6ac7c3638746c9e59d1a5f8c109c9efec9136cede3",
+      "source_image_sha256": "d23c0c0d65e1f7e76f3f0bbe5f69afad0b16a6e63d01a0ea24184e93f5af1519",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.4.2",
+          "title": "Newton 插值公式"
+        }
+      ],
+      "formula_ids": [
+        "2.4.2",
+        "2.4.3",
+        "2.4.4",
+        "2.4.5"
+      ],
+      "figures": [],
+      "tables": [
+        "2.4"
+      ],
+      "notes": [
+        "表2.4逐格核对，补回OCR漏掉的三阶、四阶差商，并按原图保留下划线。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-037-table-2.4.png",
+          "sha256": "ee6fd739534c105c3e971516edc167bdcef27f1aa10fdcf44df7a3245f869ca5"
+        }
+      ]
+    },
+    {
+      "pdf_page": 38,
+      "printed_page": 25,
+      "path": "staging/ch02a/pages/pdf-038.md",
+      "sha256": "e6d6dd66e7cc2f4838da3aab3bd4f2d3209572b4d524539b2771eddcbb7f96a7",
+      "source_image_sha256": "bd7a99692593ae531064ce352165bcf0d9ef4c7c766fb99890d523d8b6e6ac86",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "2.4.6",
+        "2.4.7"
+      ],
+      "figures": [],
+      "tables": [
+        "2.5"
+      ],
+      "notes": [
+        "表2.5全部数值与斜对角下划线核对，恢复末行四阶差商0.03126。",
+        "原递推式f(x,x_0,...,x_n]的左右括号不配，保留并单列CH02A-S01。",
+        "记录表2.5原书中间舍入不一致及其对下一阶差商估计的影响，未将原表改写为重算结果。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-038-recurrence-detail.png",
+          "sha256": "220d34479998558290d5c5702ce111483fdc16f3b7283abecc8b1e9038cf13c1"
+        },
+        {
+          "path": "staging/ch02a/assets/pdf-038-table-2.5.png",
+          "sha256": "20a3312e2c6dd768a0d74fa991f5d6f010e5d42dedea7d7049aba28069904de6"
+        }
+      ]
+    },
+    {
+      "pdf_page": 39,
+      "printed_page": 26,
+      "path": "staging/ch02a/pages/pdf-039.md",
+      "sha256": "1c77e05c0409970d1f48d7b1e87ce6e7c143cab5848ae29881139e6dbf267384",
+      "source_image_sha256": "f57fdd4ef2881df89ca9222334035f79b41eb3a7e147cba67e326f13e47848df",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.5",
+          "title": "差分与等距节点插值公式"
+        },
+        {
+          "id": "2.5.1",
+          "title": "差分及其性质"
+        }
+      ],
+      "formula_ids": [
+        "2.5.1",
+        "2.5.2",
+        "2.5.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "区分大写不变算子I、移位算子E及中心差分半下标；例2.3保留原书近似误差估计符号。",
+        "记录表2.5原书中间舍入不一致及其对下一阶差商估计的影响，未将原表改写为重算结果。",
+        "例2.3原结果0.63195不能由原印多项式得到；CH02A-S04给出独立算术核验。"
+      ],
+      "visual_evidence": []
+    },
+    {
+      "pdf_page": 40,
+      "printed_page": 27,
+      "path": "staging/ch02a/pages/pdf-040.md",
+      "sha256": "d5f1f05c036e5f88e5cf450844c04272f3f4c9e1776c77abce7557ad74918d9f",
+      "source_image_sha256": "6363f71af229dd62f31baf555a9d854034d1f39fd63f94b8fdd14f017c234a2d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "2.5.4",
+        "2.5.5",
+        "2.5.6",
+        "2.5.7",
+        "2.5.8",
+        "2.5.9"
+      ],
+      "figures": [],
+      "tables": [
+        "2.6"
+      ],
+      "notes": [
+        "式2.5.5两处(-1)指数均为n-j，OCR误作j；经放大恢复。",
+        "表2.6首列表头x_k、内容f_k，保留并单列CH02A-S02；表底省略号完整恢复。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-040-backward-formula-detail.png",
+          "sha256": "401c069ed7988e7fe9911fc0c89d125097b01a1dfb0e82888b56309d4bdea9d1"
+        },
+        {
+          "path": "staging/ch02a/assets/pdf-040-table-2.6.png",
+          "sha256": "944e8d56dfd4a945ee74d88490443b3e8338e36dde03dbb75ad8c6b4bd5fe281"
+        }
+      ]
+    },
+    {
+      "pdf_page": 41,
+      "printed_page": 28,
+      "path": "staging/ch02a/pages/pdf-041.md",
+      "sha256": "95b8a8cd65da13772093d58da85c7465851ef0c31e87822bbff2cac6525aa154",
+      "source_image_sha256": "79555bd4c5f5649a88c692b1a884d983b55d16a75b49975e5700395c5624d681",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.5.2",
+          "title": "等距节点插值公式"
+        }
+      ],
+      "formula_ids": [
+        "2.5.10",
+        "2.5.11",
+        "2.5.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "前插t区间[0,1]、后插[-1,0]及各余项乘积端点逐式核对。",
+        "后插余项原书无编号，未自行添加2.5.13。"
+      ],
+      "visual_evidence": [
+        {
+          "path": "staging/ch02a/assets/pdf-041-example-detail.png",
+          "sha256": "27f8c5579744c0b8be89d3127ef324de3114a1f7f68a8f571e7d1cce1ec07fab"
+        }
+      ]
+    },
+    {
+      "pdf_page": 42,
+      "printed_page": 29,
+      "path": "staging/ch02a/pages/pdf-042.md",
+      "sha256": "eab284389168df83ad7ecb709fab8d94fd01c59019abd5d8de0fb1433364900f",
+      "source_image_sha256": "b96499cc3573b5a80557b60c2c79c8c19836c9419425ad50b1691179e8f6748b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "2.6",
+          "title": "Hermite 插值"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "2.7"
+      ],
+      "notes": [
+        "表2.7逐格核对15行与一至三阶差分，保留全部零值、负值及空白格。",
+        "保留2.6实际页首标题及本页首句，续句未跨页补写。"
+      ],
+      "visual_evidence": []
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "NA5E-E001",
+      "pdf_page": 27,
+      "description": "定义 2.1 印为 x_0 ≤ x_1，与后文互异节点前提不一致；原文与校注分列。"
+    },
+    {
+      "id": "NA5E-E002",
+      "pdf_page": 34,
+      "description": "原书 cos(0.32)<0.828、余项数值界0.178×10^-7以及中间乘积3.89×10^-4有误；保留印字与独立校注。"
+    },
+    {
+      "id": "CH02A-S01",
+      "pdf_page": 38,
+      "type": "source_typographical_error",
+      "description": "递推式末项原印f(x,x_0,...,x_n]，左右括号不配，应理解为差商f[...]；原文及校注分列。"
+    },
+    {
+      "id": "CH02A-S02",
+      "pdf_page": 40,
+      "type": "source_table_header_inconsistency",
+      "description": "表2.6首列表头原印x_k，列中为f_0,f_1,...；保留并说明表头应理解为f_k。"
+    },
+    {
+      "id": "CH02A-S03",
+      "pdf_page": 38,
+      "related_pdf_pages": [
+        39
+      ],
+      "type": "source_numerical_rounding_inconsistency",
+      "description": "表2.5混用中间舍入；精确输入重算五阶差商为2/6825≈+0.00029304，原表−0.00012。原表保留，独立说明原书估计与精度边界。"
+    },
+    {
+      "id": "CH02A-S04",
+      "pdf_page": 39,
+      "related_pdf_pages": [
+        38
+      ],
+      "type": "source_arithmetic_error",
+      "description": "例2.3原印N4(0.596)=0.63195；按原印多项式计算为0.63191751982370304，五位小数应0.63192。原文与校注分列。"
+    }
+  ],
+  "validation_notes": [
+    "本回执仅包括实际逐一打开 source-images 原页并二次文字数学对照的页。",
+    "PDF 27–32 已独立核对；既有 verified 文本仅作文字底稿。",
+    "PDF33–36实际逐页目视并对关键波浪号、表2.2首行、E002、a_2分母、x/x_1使用原图裁切复核。",
+    "PDF37–42实际逐页打开原图并对照转录，表2.4–2.6及式2.5.5另作裁切放大复核；不存在未打开原页的完成回执。",
+    "原PDF SHA256已在本轮直接计算匹配；16页文件和原图哈希、实际编号公式集、分页面标记、全部本地链接及LaTeX环境检查通过。",
+    "数值复核：表2.7全部一至三阶差分一致；表2.5统一逐层舍入的重算发现原书差异，已单列CH02A-S03；例2.3结果原书有数值错误已单列CH02A-S04；例2.4结果舍入一致。",
+    "式2.5.5以奇偶阶后向差分复核n-j符号；报告见staging/ch02a/validation.json。",
+    "16页正文均完成；41个编号公式、4幅原图、7张表完整转录。5项未相等的数值一致性检查均为已保留并校注的原书问题，不是待核文字。"
+  ]
+}

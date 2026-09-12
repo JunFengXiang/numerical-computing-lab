@@ -1,0 +1,289 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={方程组与高阶方程的情形},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{方程组与高阶方程的情形}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{5.6 方程组与高阶方程的情形}\label{ux65b9ux7a0bux7ec4ux4e0eux9ad8ux9636ux65b9ux7a0bux7684ux60c5ux5f62}
+
+\subsubsection{5.6.1 一阶方程组}\label{ux4e00ux9636ux65b9ux7a0bux7ec4}
+
+前面研究了单个方程 \(y'=f\) 的数值解法，只要把 \(y\) 和 \(f\) 理解为向量，那么，所提供的各种计算格式即可应用到一阶方程组的情形。
+
+考察一阶方程组
+
+\[
+y'_i=f_i(x,y_1,y_2,\cdots,y_N)\qquad(i=1,2,\cdots,N)
+\]
+
+的初值问题，初始条件为
+
+\[
+y_i(x_0)=y_i^0\qquad(i=1,2,\cdots,N).
+\]
+
+若采用向量的记号，记
+
+\[
+\boldsymbol y=(y_1,y_2,\cdots,y_N)^{\mathrm T},\qquad
+\boldsymbol y^0=(y_1^0,y_2^0,\cdots,y_N^0)^{\mathrm T},
+\]
+
+\[
+\boldsymbol f=(f_1,f_2,\cdots,f_N)^{\mathrm T},
+\]
+
+则上述方程组的初值问题可表示为 \(\begin{cases}\boldsymbol y'=\boldsymbol f(x,\boldsymbol y),\\\boldsymbol y(x_0)=\boldsymbol y_0.\end{cases}\) 求解这一初值问题的四阶 Runge-Kutta 格式为
+
+\[
+\boldsymbol y_{n+1}=\boldsymbol y_n+\frac h6(\boldsymbol k_1+2\boldsymbol k_2+2\boldsymbol k_3+\boldsymbol k_4).
+\]
+
+其中
+
+\[
+\boldsymbol k_1=\boldsymbol f(x_n,\boldsymbol y_n),\qquad
+\boldsymbol k_2=\boldsymbol f\left(x_n+\frac h2,\boldsymbol y_n+\frac h2\boldsymbol k_1\right),
+\]
+
+\[
+\boldsymbol k_3=\boldsymbol f\left(x_n+\frac h2,\boldsymbol y_n+\frac h2\boldsymbol k_2\right),\qquad
+\boldsymbol k_4=\boldsymbol f(x_n+h,\boldsymbol y_n+h\boldsymbol k_3);
+\]
+
+或表示为
+
+\[
+y_{i,n+1}=y_{in}+\frac h6(K_{i1}+2K_{i2}+2K_{i3}+K_{i4})\qquad(i=1,2,\cdots,N),
+\]
+
+其中
+
+\[
+\begin{aligned}
+K_{i1}&=f_i(x_n,y_{1n},y_{2n},\cdots,y_{Nn}),\\
+K_{i2}&=f_i\left(x_n+\frac h2,y_{1n}+\frac h2K_{11},y_{2n}+\frac h2K_{21},\cdots,y_{Nn}+\frac h2K_{N1}\right),\\
+K_{i3}&=f_i\left(x_n+\frac h2,y_{1n}+\frac h2K_{12},y_{2n}+\frac h2K_{22},\cdots,y_{Nn}+\frac h2K_{N2}\right),\\
+K_{i4}&=f_i(x_n+h,y_{1n}+hK_{13},y_{2n}+hK_{23},\cdots,y_{Nn}+hK_{N3}).
+\end{aligned}
+\]
+
+这里 \(y_{in}\) 是第 \(i\) 个因变量 \(y_i(x)\) 在节点 \(x_n=x_0+nh\) 的近似值。
+
+为了帮助理解这一格式的计算过程，再考察以下两个方程的特殊情形：
+
+\href{../../source-images/pdf-146.jpeg}{原页}
+
+\[
+\begin{cases}
+y'=f(x,y,z),\quad y(x_0)=y_0,\\
+z'=g(x,y,z),\quad z(x_0)=z_0,
+\end{cases}
+\]
+
+这时四阶 Runge-Kutta 格式具有如下形式：
+
+\[
+\begin{cases}
+\displaystyle y_{n+1}=y_n+\frac h6(K_1+2K_2+2K_3+K_4),\\[6pt]
+\displaystyle z_{n+1}=z_n+\frac h6(L_1+2L_2+2L_3+L_4),
+\end{cases}
+\tag{5.6.1}
+\]
+
+其中
+
+\[
+\begin{cases}
+K_1=f(x_n,y_n,z_n),\\
+\displaystyle K_2=f\left(x_n+\frac h2,y_n+\frac h2K_1,z_n+\frac h2L_1\right),\\[4pt]
+\displaystyle K_3=f\left(x_n+\frac h2,y_n+\frac h2K_2,z_n+\frac h2L_2\right),\\[4pt]
+K_4=f(x_n+h,y_n+hK_3,z_n+hL_3),\\
+L_1=g(x_n,y_n,z_n),\\
+\displaystyle L_2=g\left(x_n+\frac h2,y_n+\frac h2K_1,z_n+\frac h2L_1\right),\\[4pt]
+\displaystyle L_3=g\left(x_n+\frac h2,y_n+\frac h2K_2,z_n+\frac h2L_2\right),\\[4pt]
+L_4=g(x_n+h,y_n+hK_3,z_n+hL_3).
+\end{cases}
+\tag{5.6.2}
+\]
+
+这是一步法，利用节点 \(x_n\) 上的值 \(y_n,z_n\)，由式（5.6.2）顺序计算 \(K_1,\allowbreak L_1,\allowbreak K_2,\allowbreak L_2,\allowbreak K_3,\allowbreak L_3,\allowbreak K_4,\allowbreak L_4\)，然后代入式（5.6.1）即可求得节点 \(x_{n+1}\) 上的 \(y_{n+1},z_{n+1}\)。
+
+\subsubsection{5.6.2 化高阶方程组为一阶方程组}\label{ux5316ux9ad8ux9636ux65b9ux7a0bux7ec4ux4e3aux4e00ux9636ux65b9ux7a0bux7ec4}
+
+关于高阶微分方程（或方程组）的初值问题，原则上总可以归结为一阶方程组来求解。例如，考察下列 \(m\) 阶微分方程：
+
+\[
+y^{(m)}=f(x,y,y',\cdots,y^{(m-1)}),
+\tag{5.6.3}
+\]
+
+初始条件为
+
+\[
+y(x_0)=y_0,\quad y'(x_0)=y'_0,\quad\cdots,\quad y^{(m-1)}(x_0)=y_0^{(m-1)}.
+\tag{5.6.4}
+\]
+
+只要引进新的变量 \(y_1=y,y_2=y',\cdots,y_m=y^{(m-1)}\)，即可将 \(m\) 阶方程（5.6.3）化为如下的一阶方程组：
+
+\[
+\begin{cases}
+y'_1=y_2,\\
+y'_2=y_3,\\
+\qquad\vdots\\
+y'_{m-1}=y_m,\\
+y'_m=f(x,y_1,y_2,\cdots,y_m);
+\end{cases}
+\tag{5.6.5}
+\]
+
+初始条件（5.6.4）则相应地化为
+
+\href{../../source-images/pdf-147.jpeg}{原页}
+
+\[
+y_1(x_0)=y_0,\quad y_2(x_0)=y'_0,\quad\cdots,\quad y_m(x_0)=y_0^{(m-1)}.
+\tag{5.6.6}
+\]
+
+不难证明，初值问题（5.6.3）、（5.6.4）和（5.6.5）、（5.6.6）是彼此等价的。
+
+特别地，对于下列二阶方程的初值问题：
+
+\[
+\begin{cases}
+y''=f(x,y,y'),\\
+y(x_0)=y_0,\quad y'(x_0)=y'_0.
+\end{cases}
+\]
+
+引进新的变量 \(z=y'\)，即可化为下列一阶方程组的初值问题：
+
+\[
+\begin{cases}
+y'=z,\quad y(x_0)=y_0,\\
+z'=f(x,y,z),\quad z(x_0)=y'_0.
+\end{cases}
+\]
+
+针对这个问题应用四阶 Runge-Kutta 格式（5.6.1），有
+
+\[
+\begin{cases}
+\displaystyle y_{n+1}=y_n+\frac h6(K_1+2K_2+2K_3+K_4),\\[6pt]
+\displaystyle z_{n+1}=z_n+\frac h6(L_1+2L_2+2L_3+L_4).
+\end{cases}
+\]
+
+按式（5.6.2），有
+
+\[
+K_1=z_n,\quad L_1=f(x_n,y_n,z_n);
+\]
+
+\[
+K_2=z_n+\frac h2L_1,\quad
+L_2=f\left(x_n+\frac h2,y_n+\frac h2K_1,z_n+\frac h2L_1\right);
+\]
+
+\[
+K_3=z_n+\frac h2L_2,\quad
+L_3=f\left(x_n+\frac h2,y_n+\frac h2K_2,z_n+\frac h2L_2\right);
+\]
+
+\[
+K_4=z_n+hL_3,\quad L_4=f(x_n+h,y_n+hK_3,z_n+hL_3).
+\]
+
+如果消去 \(K_1,K_2,K_3,K_4\)，则上述格式可表示为
+
+\[
+\begin{cases}
+\displaystyle y_{n+1}=y_n+hz_n+\frac{h^2}{6}(L_1+L_2+L_3),\\[6pt]
+\displaystyle z_{n+1}=z_n+\frac h6(L_1+2L_2+2L_3+L_4),
+\end{cases}
+\]
+
+这里
+
+\[
+L_1=f(x_n,y_n,z_n),
+\]
+
+\[
+L_2=f\left(x_n+\frac h2,y_n+\frac h2z_n,z_n+\frac h2L_1\right),
+\]
+
+\[
+L_3=f\left(x_n+\frac h2,y_n+\frac h2z_n+\frac{h^2}{4}L_1,z_n+\frac h2L_2\right),
+\]
+
+\[
+L_4=f\left(x_n+h,y_n+hz_n+\frac{h^2}{2}L_2,z_n+hL_3\right).
+\]
+
+\end{document}

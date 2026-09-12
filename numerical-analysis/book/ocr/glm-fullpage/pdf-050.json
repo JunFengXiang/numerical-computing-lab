@@ -1,0 +1,20 @@
+{
+  "pdf_page": 50,
+  "source_image": "source-images/pdf-050.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "d5662924dca653e9fc5b21b06b2bbc4bc0a6ac222507ba3b7e3bfe09c883cb55",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1029,
+  "possibly_truncated": false,
+  "elapsed_seconds": 43.413,
+  "created_utc": "2026-09-12T09:40:31.605216+00:00",
+  "raw_text_sha256": "dcd0cdab352a3fd881bb80769613249ab57d8e88c3f44d1548eab11b79b4da73",
+  "raw_text": "$S''(x_0) = S''(x_n) = 0$ (2.8.4)'\n\n称为自然边界条件.\n\n(3) 当 $f(x)$ 是以 $x_n - x_0$ 为周期的周期函数时, 则要求 $S(x)$ 也是周期函数, 这时边界条件应满足\n\n$$\\begin{cases} S(x_0 + 0) = S(x_n - 0), \\\\ S'(x_0 + 0) = S'(x_n - 0), \\\\ S''(x_0 + 0) = S''(x_n - 0), \\end{cases} \\tag{2.8.5}$$\n\n而此时式(2.8.1)中 $y_0 = y_n$. 这样确定的样条函数 $S(x)$ 称为周期样条函数.\n\n2.8.2 三转角方程\n\n现在构造满足条件(2.8.1)及加上相应边界条件的三次样条函数 $S(x)$ 的表达式. 若假定 $S'(x)$ 在节点 $x_j$ 处的值为 $S'(x_j) = m_j$ ($j = 0, 1, \\dots, n$), 再由式(2.8.1), 则由分段三次 Hermite 插值式(2.7.6)可得\n\n$$S(x) = \\sum_{j=0}^{n} [y_j \\alpha_j(x) + m_j \\beta_j(x)], \\tag{2.8.6}$$\n\n其中 $\\alpha_j(x), \\beta_j(x)$ 是插值基函数, 由式(2.7.7)、式(2.7.8)表示. 显然, 表达式(2.8.6)中 $S(x)$ 及 $S'(x)$ 在整个区间 $[a, b]$ 上连续, 且满足式(2.8.1); 然而在式(2.8.6)中 $m_j$ ($j = 0, 1, \\dots, n$) 是未知的, 它可利用式(2.8.2)\n\n$$S''(x_j - 0) = S''(x_j + 0) \\quad (j = 1, \\dots, n - 1)$$\n\n及边界条件(2.8.3) (也可以是其他边界条件) 来确定. 为了求出 $m_j$, 下面考虑 $S(x)$ 在 $[x_j, x_{j+1}]$ 上的表达式\n\n$$S(x) = \\frac{(x - x_{j+1})^2 [h_j + 2(x - x_j)]}{h_j^3} y_j + \\frac{(x - x_j)^2 [h_j + 2(x_{j+1} - x)]}{h_j^3} y_{j+1} + \\frac{(x - x_{j+1})^2 (x - x_j)}{h_j^2} m_j + \\frac{(x - x_j)^2 (x - x_{j+1})}{h_j^2} m_{j+1}, \\tag{2.8.7}$$\n\n这里 $h_j = x_{j+1} - x_j$. 对 $S(x)$ 求二阶导数, 得\n\n$$S''(x) = \\frac{6x - 2x_j - 4x_{j+1}}{h_j^2} m_j + \\frac{6x - 4x_j - 2x_{j+1}}{h_j^2} m_{j+1} + \\frac{6(x_j + x_{j+1} - 2x)}{h_j^3} (y_{j+1} - y_j),$$\n\n于是\n\n$$S''(x_j + 0) = -\\frac{4}{h_j} m_j - \\frac{2}{h_j} m_{j+1} + \\frac{6}{h_j^2} (y_{j+1} - y_j).$$\n\n同理, 可得 $S''(x)$ 在区间 $[x_{j-1}, x_j]$ 上的表达式\n\n$$S''(x) = \\frac{6x - 2x_{j-1} - 4x_j}{h_j^2} m_{j-1} + \\frac{6x - 4x_{j-1} - 2x_j}{h_j^2} m_j + \\frac{6(x_{j-1} + x_j - 2x)}{h_j^2} (y_j - y_{j-1})$$"
+}

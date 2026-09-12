@@ -1,0 +1,203 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Richardson 外推加速法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Richardson 外推加速法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.3.3 Richardson 外推加速法}\label{richardson-ux5916ux63a8ux52a0ux901fux6cd5}
+
+上述加速过程还可以再继续下去，其理论依据是梯形法的余项可展开成下列级数形式。
+
+\textbf{定理 4.3} 设 \(f(x)\in C^\infty[a,b]\)，则成立
+
+\[
+T(h)=I+a_1h^2+a_2h^4+a_3h^6+\cdots+a_kh^{2k}+\cdots,
+\tag{4.3.7}
+\]
+
+其中系数 \(a_k\)（\(k=1,2,\cdots\)）与 \(h\) 无关。
+
+这一余项公式的推导将在 4.3.4 节给出。
+
+按式（4.3.7），有
+
+\[
+T\left(\frac h2\right)=I+\frac{\alpha_1}{4}h^2+\frac{\alpha_2}{16}h^4+\frac{\hat\alpha_3}{64}h^6+\cdots.
+\tag{4.3.8}
+\]
+
+注意，这里的 \(\hat\alpha_k\) 与将要出现的 \(\beta_k\)，\(\gamma_k\) 等均为与 \(h\) 无关的系数。
+
+设将式（4.3.7）与式（4.3.8）按以下方式作线性组合：
+
+\[
+T_1(h)=\frac43T\left(\frac h2\right)-\frac13T(h),
+\tag{4.3.9}
+\]
+
+则可以从余项展开式中消去误差的主要部分 \(h^2\) 项，从而得到
+
+\[
+T_1(h)=I+\beta_1h^4+\beta_2h^6+\beta_3h^8+\cdots.
+\tag{4.3.10}
+\]
+
+比较式（4.3.9）与式（4.3.4）知，这样构造出的 \(\{T_1(h)\}\) 其实就是 Simpson 值序列。
+
+又根据式（4.3.10），有
+
+\[
+T_1\left(\frac h2\right)=I+\frac{\beta_1}{16}h^4+\hat\beta_2h^6+\beta_3h^8+\cdots,
+\]
+
+若令
+
+\[
+T_2(h)=\frac{16}{15}T_1\left(\frac h2\right)-\frac1{15}T_1(h),
+\]
+
+则又可进一步从余项展开式中消去 \(h^4\) 项，从而有
+
+\[
+T_2(h)=I+\gamma_1h^6+\gamma_2h^8+\cdots.
+\]
+
+这样构造出的 \(\{T_2(h)\}\) 其实就是 Cotes 值序列。
+
+如此继续下去，每加速一次，误差的量级便提高二阶。一般地，将 \(T_0(h)=T(h)\) 按公式
+
+\[
+T_m(h)=\frac{4^m}{4^m-1}T_{m-1}\left(\frac h2\right)-\frac1{4^m-1}T_{m-1}(h)
+\tag{4.3.11}
+\]
+
+经过 \(m\)（\(m=1,2,\cdots\)）次加速后，余项便取下列形式：
+
+\[
+T_m(h)=I+\delta_1h^{2(m+1)}+\delta_2h^{2(m+2)}+\cdots.
+\tag{4.3.12}
+\]
+
+上述处理方法通常称为 Richardson 外推加速方法。
+
+设以 \(T_0^{(k)}\) 表示二分 \(k\) 次后求得的梯形值，且以 \(T_m^{(k)}\) 表示序列 \(\{T_0^{(k)}\}\) 的 \(m\) 次加速值，则依递推公式（4.3.11），即
+
+\[
+T_m^{(k)}=\frac{4^m}{4^m-1}T_{m-1}^{(k+1)}-\frac1{4^m-1}T_{m-1}^{(k)}\quad(k=1,2,\cdots)
+\tag{4.3.13}
+\]
+
+\begin{quote}
+校注（agent 补充）：式（4.3.8）的系数按原扫描保留为 \(\alpha_1\)、\(\alpha_2\)、\(\hat\alpha_3\)，相邻正文为 \(\hat\alpha_k\)；\(T_1(h/2)\) 的展开式按原扫描保留 \(\hat\beta_2\) 与未带帽的 \(\beta_3\)。这些字形已放大核对，未用常见写法替换原符号。
+
+校注（agent 补充，CH04A-E05）：式（4.3.13）原列 \(k=1,2,\cdots\)，已照录；但下一页的三角表及算法需要计算 \(T_m^{(0)}\)，因而实现同一递推式时也须允许 \(k=0\)。这是原书递推指标范围的缺漏。
+
+校注（agent 补充，CH04A-E06）：仅有 \(f\in C^\infty[a,b]\) 并不能保证式（4.3.7）的无穷级数收敛且等于 \(T(h)\)。在外推分析中应将其理解为 \(h\to0\) 时的渐近展开，即对所需有限阶截断并保留余项；本转录保留原书等式和条件。下一页式（4.3.14）的无穷 Taylor 等式也有同样的光滑性与收敛性区别。
+\end{quote}
+
+\href{../../source-images/pdf-105.jpeg}{原页图像}
+
+可以逐行构造出下列三角形数表------\(T\) 数表：
+
+\[
+\begin{array}{ccccc}
+T_0^{(0)}&&&&\\
+T_0^{(1)}&T_1^{(0)}&&&\\
+T_0^{(2)}&T_1^{(1)}&T_2^{(0)}&&\\
+T_0^{(3)}&T_1^{(2)}&T_2^{(1)}&T_3^{(0)}&\\
+\vdots&\vdots&\vdots&\vdots&\ddots
+\end{array}
+\]
+
+可以证明，如果 \(f(x)\) 充分光滑，那么 \(T\) 数表每一列的元素及对角线元素均收敛到所求的积分值 \(I\)，即
+
+\[
+\lim_{k\to\infty}T_m^{(k)}=I\quad(m\text{ 固定}),\quad\lim_{m\to\infty}T_m^{(0)}=I.
+\]
+
+电子计算机上的所谓 Romberg 算法，就是在二分过程中逐步形成 \(T\) 数表的具体方法，其步骤如下：
+
+\textbf{步 1} 准备初值。计算 \(T_0^{(0)}=\dfrac{b-a}{2}[f(a)+f(b)]\) 且令 \(1\to k\)（\(k\) 记录二分的次数）。
+
+\textbf{步 2} 求梯形值。按递推公式（4.3.1）计算梯形值 \(T_0^{(k)}\)。
+
+\textbf{步 3} 求加速值。按加速公式（4.3.13）逐个求出 \(T\) 数表第 \(k+1\) 行其余各元素 \(T_j^{(k-j)}\)（\(j=1,2,\cdots,k\)）。
+
+\textbf{步 4} 精度控制。对于指定精度 \(\varepsilon\)，若 \(|T_k^{(0)}-T_{k-1}^{(0)}|<\varepsilon\)，则终止计算，并取 \(T_k^{(0)}\) 作为所求的结果；否则令 \(k+1\to k\)（意即二分一次），转步 2 继续计算。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04A-E05}：原书 PDF 页 104
+\item
+  \texttt{CH04A-E06}：原书 PDF 页 104
+\end{itemize}
+
+\end{document}

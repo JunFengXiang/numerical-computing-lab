@@ -1,0 +1,144 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={要避免除数绝对值远远小于被除数绝对值的除法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{要避免除数绝对值远远小于被除数绝对值的除法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\paragraph{1.4.1 要避免除数绝对值远远小于被除数绝对值的除法}\label{ux8981ux907fux514dux9664ux6570ux7eddux5bf9ux503cux8fdcux8fdcux5c0fux4e8eux88abux9664ux6570ux7eddux5bf9ux503cux7684ux9664ux6cd5}
+
+用绝对值小的数作除数，舍入误差会增大，如计算 \(\frac{x}{y}\)，若 \(0 < |y| \ll |x|\)，则可能对计算结果带来严重影响，应尽量避免。
+
+\textbf{例1.6} 线性方程组 \(\begin{cases} 0.00001x_1 + x_2 = 1 \\ 2x_1 + x_2 = 2 \end{cases}\) 的准确解为 \[
+x_1 = \frac{200000}{399999} = 0.50000125,
+\] \[
+x_2 = \frac{199998}{199999} = 0.999995.
+\]
+
+\begin{quote}
+校注（agent 补充，CH01-E004）：原书把例1.6的 \(x_1\) 写成 \(200000/399999=0.50000125\)，此处照录。由原方程两式相减，\((2-0.00001)x_1=1\)，所以 \(x_1=100000/199999\approx0.5000025000125\)；原书所列 \(x_2=199998/199999\) 与后一结果一致。疑为原书 \(x_1\) 分式及小数有误，不是 OCR 错误。
+\end{quote}
+
+\href{../../source-images/pdf-023.jpeg}{查看原页}
+
+现在四位浮点十进制数（仿机器实际计算）下用消去法求解，上述方程组写成
+
+\[
+\begin{cases} 10^{-4} \times 0.1000x_1 + 10^1 \times 0.1000x_2 = 10^1 \times 0.1000, \\ 10^1 \times 0.2000x_1 + 10^1 \times 0.1000x_2 = 10^1 \times 0.2000. \end{cases}
+\]
+
+若用 \((10^{-4} \times 0.1000)/2\) 除以第一个方程然后减去第二个方程，则出现了用小数除以大数的现象，得
+
+\[
+\begin{cases} 10^{-4} \times 0.1000x_1 + 10^1 \times 0.1000x_2 = 10^1 \times 0.1000, \\ 10^6 \times 0.2000x_2 = 10^6 \times 0.2000, \end{cases}
+\]
+
+由此解出 \(x_1=0, x_2=10^1 \times 0.1000=1\)，显然严重失真. 若反过来用第二个方程消去第一个方程中含 \(x_1\) 的项，则避免了大数被小数除的现象，得
+
+\[
+\begin{cases} 10^6 \times 0.1000x_2 = 10^6 \times 0.1000, \\ 10^1 \times 0.2000x_1 + 10^1 \times 0.1000x_2 = 10^1 \times 0.2000, \end{cases}
+\]
+
+由此求得相当好的近似解 \(x_1=0.5000, x_2=10^1 \times 0.1000\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 23 的校注}\label{ux539fux4e66-pdf-ux9875-23-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-023.md}{完整原页转录} · \href{../../source-images/pdf-023.jpeg}{原页图像}
+
+校注记录：CH01-E005, CH01-E006。
+
+\begin{quote}
+校注（agent 补充）：本页末尾 Taylor 展开后的讨论续下页。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充，CH01-E005）：例1.6续文原书写``用小数除以大数''，并在第二种消去结果的首行两侧印 \(10^6\)，此处均照录。按上下文，第一种操作是将第一方程除以小量 \((10^{-4}\times0.1000)/2\)；第二种操作直接以 \(R_1-0.000005R_2\) 消去，四位浮点结果应得到 \(10^1\times0.1000x_2=10^1\times0.1000\)。原印 \(10^6\) 的等式虽可通过两侧再同乘 \(10^5\) 得到，但原文没有该缩放步骤；上述措辞和指数均列为疑误，未静默修改。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充，CH01-E006）：例1.7原文``\(6.13\times10^3\)，具有三位有效数字''照录。独立数值复算 \(10^7(1-\cos2^\circ)\approx6091.729809\)，原列 \(6130\) 的误差约 \(38.270191\)，超过三位有效数字所对应的 \(5\)。以本章有效数字定义衡量，该``三位''判断存在问题；这不影响使用半角公式减轻相消的思路。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH01-E004}：原书 PDF 页 22
+\item
+  \texttt{CH01-E005}：原书 PDF 页 23
+\item
+  \texttt{CH01-E006}：原书 PDF 页 23
+\end{itemize}
+
+\end{document}

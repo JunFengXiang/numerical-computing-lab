@@ -1,0 +1,396 @@
+{
+  "lane": "ch05b",
+  "expected_pages": [
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+  ],
+  "checked_pages": [
+    {
+      "pdf_page": 137,
+      "path": "staging/ch05b/pages/pdf-137.md",
+      "sha256": "43d418e61975c7ed2d527c854e39482ef8c249c5b4b8f64aa1d8ff23dc3ec8bb",
+      "printed_page": 124,
+      "headings": [
+        {
+          "id": "5.5",
+          "title": "线性多步法"
+        },
+        {
+          "id": "5.5.1",
+          "title": "基于数值积分的构造方法"
+        }
+      ],
+      "formula_ids": [
+        "5.5.1"
+      ],
+      "figures": [],
+      "tables": [
+        "5.5"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 138,
+      "path": "staging/ch05b/pages/pdf-138.md",
+      "sha256": "afb9cfe6489fdfff2f30cde7effea7a59ef38f850c423696fd73c1fe5cc4ca4f",
+      "printed_page": 125,
+      "headings": [
+        {
+          "id": "5.5.2",
+          "title": "Adams 显式格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.2",
+        "5.5.3",
+        "5.5.4"
+      ],
+      "figures": [],
+      "tables": [
+        "5.6"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 139,
+      "path": "staging/ch05b/pages/pdf-139.md",
+      "sha256": "906ebedcfc17320be3d9aa0f083e4829488c877b96032cc2410dcf5b69de47c0",
+      "printed_page": 126,
+      "headings": [
+        {
+          "id": "5.5.3",
+          "title": "Adams 隐式格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.5",
+        "5.5.6",
+        "5.5.7",
+        "5.5.8",
+        "5.5.9"
+      ],
+      "figures": [],
+      "tables": [
+        "5.7",
+        "5.8",
+        "5.9"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 140,
+      "path": "staging/ch05b/pages/pdf-140.md",
+      "sha256": "01ec46455bc270376a5de8c587c980a5e3a7929b8f58e3be7199445063b094e3",
+      "printed_page": 127,
+      "headings": [
+        {
+          "id": "5.5.4",
+          "title": "Adams 预测-校正系统"
+        }
+      ],
+      "formula_ids": [
+        "5.5.10",
+        "5.5.11",
+        "5.5.12",
+        "5.5.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 141,
+      "path": "staging/ch05b/pages/pdf-141.md",
+      "sha256": "97560efd6f89e659f6df309e896fc373383859e40189ad3787f3a85ff48569bc",
+      "printed_page": 128,
+      "headings": [
+        {
+          "id": "5.5.5",
+          "title": "基于 Taylor 展开的构造方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "5.10"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 142,
+      "path": "staging/ch05b/pages/pdf-142.md",
+      "sha256": "e9ee3583ebb485432b7d254143dc572e11e3047afa949f1ab069f1307e94570d",
+      "printed_page": 129,
+      "headings": [],
+      "formula_ids": [
+        "5.5.14",
+        "5.5.15",
+        "5.5.16",
+        "5.5.17",
+        "5.5.18",
+        "5.5.19",
+        "5.5.20"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 143,
+      "path": "staging/ch05b/pages/pdf-143.md",
+      "sha256": "9ec355ffaf33767d32fac4087db8e801af004ac80cf760b8f9add5883b4aef3e",
+      "printed_page": 130,
+      "headings": [
+        {
+          "id": "5.5.6",
+          "title": "Milne 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.21",
+        "5.5.22",
+        "5.5.23",
+        "5.5.24",
+        "5.5.25",
+        "5.5.26"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 144,
+      "path": "staging/ch05b/pages/pdf-144.md",
+      "sha256": "7ea03d11cabe9c7dbddec398b13aa76e144fbd2793e7afb36454fa7da701458d",
+      "printed_page": 131,
+      "headings": [
+        {
+          "id": "5.5.7",
+          "title": "Hamming 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.27",
+        "5.5.28",
+        "5.5.29",
+        "5.5.30"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 145,
+      "path": "staging/ch05b/pages/pdf-145.md",
+      "sha256": "4b33aebab392a160d1fbe697d87af3617f8875b915ad9b7ea3a9118bc85ce317",
+      "printed_page": 132,
+      "headings": [
+        {
+          "id": "5.6",
+          "title": "方程组与高阶方程的情形"
+        },
+        {
+          "id": "5.6.1",
+          "title": "一阶方程组"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 146,
+      "path": "staging/ch05b/pages/pdf-146.md",
+      "sha256": "14f83ef1b9c9b5fcee58d5a4e0b03a83406514f61aab78968a03166a0cbe4555",
+      "printed_page": 133,
+      "headings": [
+        {
+          "id": "5.6.2",
+          "title": "化高阶方程组为一阶方程组"
+        }
+      ],
+      "formula_ids": [
+        "5.6.1",
+        "5.6.2",
+        "5.6.3",
+        "5.6.4",
+        "5.6.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 147,
+      "path": "staging/ch05b/pages/pdf-147.md",
+      "sha256": "161f5671db609ade7a74c982cc661665e0cc9eecf4171f412c3f0d2e13bd2daa",
+      "printed_page": 134,
+      "headings": [
+        {
+          "id": "5.7",
+          "title": "边值问题的数值解法"
+        }
+      ],
+      "formula_ids": [
+        "5.6.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 148,
+      "path": "staging/ch05b/pages/pdf-148.md",
+      "sha256": "f91275eb64f16a14c8ed890de88cd813df32dd97aa7500d93aca5ad5359720b6",
+      "printed_page": 135,
+      "headings": [
+        {
+          "id": "5.7.1",
+          "title": "试射法"
+        },
+        {
+          "id": "5.7.2",
+          "title": "差分方程的建立"
+        }
+      ],
+      "formula_ids": [
+        "5.7.1",
+        "5.7.2",
+        "5.7.3"
+      ],
+      "figures": [
+        "5.5"
+      ],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 149,
+      "path": "staging/ch05b/pages/pdf-149.md",
+      "sha256": "622055e0390066ec473a2fdf0cc16bda0068171dea04dc3bc5e89a05f849b75d",
+      "printed_page": 136,
+      "headings": [],
+      "formula_ids": [
+        "5.7.4",
+        "5.7.5",
+        "5.7.6",
+        "5.7.7",
+        "5.7.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 150,
+      "path": "staging/ch05b/pages/pdf-150.md",
+      "sha256": "9d2c509ef50b7a70d5fe1f6a5d6cac2537cb96d274ff7880e1b36c6523a4a9d7",
+      "printed_page": 137,
+      "headings": [
+        {
+          "id": "5.7.3",
+          "title": "差分问题的可解性"
+        }
+      ],
+      "formula_ids": [
+        "5.7.9",
+        "5.7.10"
+      ],
+      "figures": [],
+      "tables": [
+        "5.11"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 151,
+      "path": "staging/ch05b/pages/pdf-151.md",
+      "sha256": "83182f33e4f7d189ae760bbbe1a3d42d0341cfe27b12922dc3fe33ba2299e9f1",
+      "printed_page": 138,
+      "headings": [
+        {
+          "id": "5.7.4",
+          "title": "差分方法的收敛性"
+        }
+      ],
+      "formula_ids": [
+        "5.7.11",
+        "5.7.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 152,
+      "path": "staging/ch05b/pages/pdf-152.md",
+      "sha256": "e34d37925ec8b228d460f66cc377e95a209351a5fffa4e300ce68ab4e7c8d732",
+      "printed_page": 139,
+      "headings": [],
+      "formula_ids": [
+        "5.7.13",
+        "5.7.14",
+        "5.7.15"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 153,
+      "path": "staging/ch05b/pages/pdf-153.md",
+      "sha256": "e7e0225eaffebb2a3ac3006be35fac5b326b4f2e1e22d3acff3a8678a19b2bdc",
+      "printed_page": 140,
+      "headings": [
+        {
+          "id": "5.summary",
+          "title": "小结"
+        },
+        {
+          "id": "5.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 154,
+      "path": "staging/ch05b/pages/pdf-154.md",
+      "sha256": "16355ccd92c578fe0578a0970924e43b86b5c6f8cddf3cd5a41a95c79895066b",
+      "printed_page": 141,
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "structural_pass": true,
+  "primary_review_complete": true,
+  "cross_review_complete": false,
+  "missing_pages": [],
+  "primary_receipt_sha256": "0aa5ffce4f4744464f2d34027c8ce90d7366a16886568a3e13ff364936f5bc04",
+  "source_errata_count": 8
+}

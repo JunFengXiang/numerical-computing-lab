@@ -1,0 +1,92 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={同步并行算法的设计策略},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{同步并行算法的设计策略}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{11.1.2　同步并行算法的设计策略}\label{ux540cux6b65ux5e76ux884cux7b97ux6cd5ux7684ux8bbeux8ba1ux7b56ux7565}
+
+采取并行处理方式运行的计算机系统称作并行机系统，简称并行机。
+
+并行机出现于 20 世纪的 70 年代初，至今仅有近 50 年的历史。1972 年，美国研制成功阵列机 Illiac IV，此后于 1976 年又进一步研制出向量机 Cray-1。并行机的更新换代和商业化开发强有力地推动了并行计算的蓬勃发展。
+
+并行机的体系结构各不相同，但大致可分为两类：一类是单指令流多数据流 SIMD（single instruction stream, multiple data stream）型，如阵列机、向量机；另一类是多指令流多数据流 MIMD（multiple instruction stream, multiple data stream）型，称作多处理机。
+
+针对 SIMD 与 MIMD 两类并行机系统，并行算法大致分为同步与异步两类。本章仅研究同步并行算法。
+
+所谓同步性，是指不同处理机在同一时刻针对不同数据执行同一种操作。同步并行计算的典型例子是向量计算。
+
+\href{../../source-images/pdf-278.jpeg}{原页图像}
+
+同步并行计算的基本策略是``分而治之''。所谓分而治之，就是将所考察的计算问题分裂成若干较小的子问题，并将这些子问题映射到多台处理机上去各自完成，然后再将分散的结果拼装成所求的解。
+
+\textbf{值得指出的是，在同步并行算法设计时，``分而治之''的设计原则往往被误解为整体上的先分后治，而将``分''与``治''两个环节截然分开。这种算法设计技术就是所谓的倍增技术。}
+
+\textbf{其实，在并行计算过程中，``分''与``治''是矛盾的两个方面，它们既是对立的，又是统一的。基于这种理解我们推荐了同步并行算法设计的二分技术。}
+
+需要强调的是，为避免局限于具体的机器特征而束缚了并行算法的研究，人们提出了理想计算机的概念。``理想化''的假设包括：任何时刻可以使用任意多台处理机，任何时刻有任意多个主存单元可供使用，处理机同主存间的数据通信时间可以忽略不计。
+
+\end{document}

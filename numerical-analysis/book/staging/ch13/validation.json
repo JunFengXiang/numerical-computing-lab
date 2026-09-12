@@ -1,0 +1,135 @@
+{
+  "lane": "ch13",
+  "result": "passed",
+  "page_count": 11,
+  "numbered_formula_count": 7,
+  "algorithms": [
+    "13.1",
+    "13.2"
+  ],
+  "figures": [
+    "13.1",
+    "13.2"
+  ],
+  "tables": [
+    "13.1"
+  ],
+  "checks": [
+    {
+      "pdf_page": 307,
+      "printed_page": 294,
+      "bytes": 2868,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 308,
+      "printed_page": 295,
+      "bytes": 2724,
+      "formula_ids": [
+        "13.2.1"
+      ],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 309,
+      "printed_page": 296,
+      "bytes": 3256,
+      "formula_ids": [
+        "13.2.2",
+        "13.2.3"
+      ],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 310,
+      "printed_page": 297,
+      "bytes": 2364,
+      "formula_ids": [
+        "13.2.4"
+      ],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 311,
+      "printed_page": 298,
+      "bytes": 2984,
+      "formula_ids": [
+        "13.2.5"
+      ],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 312,
+      "printed_page": 299,
+      "bytes": 2975,
+      "formula_ids": [
+        "13.3.1",
+        "13.3.2"
+      ],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 313,
+      "printed_page": 300,
+      "bytes": 2646,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 314,
+      "printed_page": 301,
+      "bytes": 2700,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 315,
+      "printed_page": 302,
+      "bytes": 2660,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 316,
+      "printed_page": 303,
+      "bytes": 2862,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    },
+    {
+      "pdf_page": 317,
+      "printed_page": 304,
+      "bytes": 923,
+      "formula_ids": [],
+      "links": "passed",
+      "metadata_and_hashes": "passed",
+      "math_delimiters": "passed"
+    }
+  ],
+  "erratum_arithmetic": {
+    "printed_denominator_years": 105.69930661254863,
+    "prose_speed_years": 1.0569930661254863
+  },
+  "scope": "Metadata, hashes, link resolution, math delimiter structure and declared inventories only. Semantic transcription checked against page images separately."
+}

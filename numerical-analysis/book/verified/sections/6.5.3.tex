@@ -1,0 +1,236 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={劈因子法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{劈因子法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{6.5.3 劈因子法}\label{ux5288ux56e0ux5b50ux6cd5}
+
+如果能从多项式 \(f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\) 中分离出一个二次因式
+
+\[
+\omega^*(x)=x^2+u^*x+v^*,
+\]
+
+就能获得它的一对共轭复根。劈因子法的基本思想是，从某个近似的二次因子
+
+\[
+\omega(x)=x^2+ux+v
+\]
+
+出发，用某种迭代过程使之逐步精确化。
+
+用二次式 \(\omega(x)\) 除 \(f(x)\)，商记作 \(p(x)\)，它是个 \(n-2\) 次多项式，余式为一次式，记作 \(r_0x+r_1\)，即
+
+\[
+f(x)=(x^2+ux+v)p(x)+r_0x+r_1.
+\tag{6.5.7}
+\]
+
+显然，\(r_0,r_1\) 均为 \(u,v\) 的函数 \(\begin{cases}r_0=r_0(u,v),\\r_1=r_1(u,v).\end{cases}\) 劈因子法的目的就是逐步修改 \(u,v\) 的值，使余数 \(r_0,r_1\) 变得很小。考察方程
+
+\[
+\begin{cases}
+r_0(u,v)=0,\\
+r_1(u,v)=0.
+\end{cases}
+\tag{6.5.8}
+\]
+
+这是关于 \(u,v\) 的非线性方程组，设它有解 \((u^*,v^*)\)，将 \(r_0(u^*,v^*)=0,r_1(u^*,v^*)=0\) 的左端在 \((u,v)\) 展开到一阶项，则有
+
+\[
+\begin{cases}
+r_0+\dfrac{\partial r_0}{\partial u}(u^*-u)+\dfrac{\partial r_0}{\partial v}(v^*-v)\approx0,\\
+r_1+\dfrac{\partial r_1}{\partial u}(u^*-u)+\dfrac{\partial r_1}{\partial v}(v^*-v)\approx0.
+\end{cases}
+\]
+
+这样，用 Newton 法的处理思想将非线性方程组（6.5.8）线性化，归结得到下列线性方程组：
+
+\[
+\begin{cases}
+r_0+\dfrac{\partial r_0}{\partial u}\Delta u+\dfrac{\partial r_0}{\partial v}\Delta v=0,\\
+r_1+\dfrac{\partial r_1}{\partial u}\Delta u+\dfrac{\partial r_1}{\partial v}\Delta v=0.
+\end{cases}
+\tag{6.5.9}
+\]
+
+从方程组（6.5.9）解出增量 \(\Delta u,\Delta v\)，即可得到改进的二次因式
+
+\[
+\omega(x)=x^2+(u+\Delta u)x+v+\Delta v.
+\]
+
+以下具体说明如何计算方程组（6.5.9）的各个系数。
+
+（1）计算 \(r_0\) 和 \(r_1\)。将
+
+\[
+P(x)=b_0x^{n-2}+b_1x^{n-3}+\cdots+b_{n-3}x+b_{n-2}
+\]
+
+代入式（6.5.7），并比较各次幂的系数，易知
+
+\[
+\begin{cases}
+a_0=b_0,\\
+a_1=b_1+ub_0,\\
+a_i=b_i+ub_{i-1}+vb_{i-2},\quad2\leqslant i\leqslant n-2,\\
+a_{n-1}=ub_{n-2}+vb_{n-3}+r_0,\\
+a_n=vb_{n-2}+r_1,
+\end{cases}
+\]
+
+\href{../../source-images/pdf-174.jpeg}{原页}
+
+于是 \(r_0,r_1\) 的计算公式为
+
+\[
+\begin{cases}
+b_0=a_0,\\
+b_1=a_1-ub_0,\\
+b_i=a_i-ub_{i-1}-vb_{i-2},\quad2\leqslant i\leqslant n,\\
+r_0=b_{n-1},\\
+r_1=b_n+ub_{n-1}.
+\end{cases}
+\tag{6.5.10}
+\]
+
+（2）计算 \(\dfrac{\partial r_0}{\partial v},\dfrac{\partial r_1}{\partial v}\)。对式（6.5.7）关于 \(v\) 求导，得
+
+\[
+P(x)=-(x^2+ux+v)\frac{\partial P}{\partial v}+s_0x+s_1,
+\tag{6.5.11}
+\]
+
+其中
+
+\[
+s_0=-\frac{\partial r_0}{\partial v},\quad s_1=-\frac{\partial r_1}{\partial v}.
+\tag{6.5.12}
+\]
+
+可见，用 \(x^2+ux+v\) 除 \(P(x)\)，作为余式可以得到 \(s_0x+s_1\)。由于 \(P(x)\) 是 \(n-2\) 次多项式，这里商 \(\dfrac{\partial P}{\partial v}\) 是 \(n-4\) 次多项式，记
+
+\[
+\frac{\partial P}{\partial v}=c_0x^{n-4}+c_1x^{n-5}+\cdots+c_{n-5}x+c_{n-4},
+\]
+
+则相当于式（6.5.10），这里有
+
+\[
+\begin{cases}
+c_0=b_0,\\
+c_1=b_1-ub_0,\\
+c_i=b_i-uc_{i-1}-vc_{i-2},\quad2\leqslant i\leqslant n-2,\\
+s_0=c_{n-3},\\
+s_1=c_{n-2}+uc_{n-3},
+\end{cases}
+\]
+
+而按式（6.5.12）得
+
+\[
+\frac{\partial r_0}{\partial v}=-s_0,\quad\frac{\partial r_1}{\partial v}=-s_1.
+\]
+
+（3）计算 \(\dfrac{\partial r_0}{\partial u},\dfrac{\partial r_1}{\partial u}\)。对式（6.5.7）关于 \(u\) 求导，得
+
+\[
+xP(x)=-(x^2+ux+v)\frac{\partial P}{\partial u}-\frac{\partial r_0}{\partial u}x-\frac{\partial r_1}{\partial u}.
+\]
+
+另外，由式（6.5.11）有
+
+\[
+\begin{aligned}
+xP(x)&=-(x^2+ux+v)x\frac{\partial P}{\partial v}+(s_0x+s_1)x\\
+&=-(x^2+ux+v)\left(x\frac{\partial P}{\partial v}-s_0\right)-(us_0-s_1)x-vs_0.
+\end{aligned}
+\]
+
+比较以上两式可知
+
+\[
+\frac{\partial r_0}{\partial u}=us_0-s_1,\quad\frac{\partial r_1}{\partial u}=vs_0.
+\]
+
+\begin{quote}
+校注（agent 补充）：本页原文把用 \(x^2+ux+v\) 除 \(P(x)\) 的商记为 \(\partial P/\partial v\)，并给出以 \(c_0=b_0\) 开始的递推。式（6.5.11）本身表明该商应为 \(-\partial P/\partial v\)，因此商的叙述和紧随其后的展开式疑漏印负号。转录保留原文，后续的余数 \(s_0,s_1\) 及其递推亦按原页保留。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch06-E005}：原书 PDF 页 174
+\end{itemize}
+
+\end{document}

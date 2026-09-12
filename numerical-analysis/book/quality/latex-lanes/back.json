@@ -1,0 +1,40 @@
+{
+  "lane": "back",
+  "updated_utc": "2026-09-12T10:45:57.381067+00:00",
+  "sources": [
+    {
+      "pdf_page": 318,
+      "markdown": "staging/back/pages/pdf-318.md",
+      "sha256": "62a3396edbedab142b843bd9ab226c1c29e4dec9f99b15966d9ab297e6453148"
+    },
+    {
+      "pdf_page": 319,
+      "markdown": "staging/back/pages/pdf-319.md",
+      "sha256": "090820dba0165fc7ca7ef9c816bcca6657878775d9c74a4ba55be74cbf48102d"
+    },
+    {
+      "pdf_page": 320,
+      "markdown": "staging/back/pages/pdf-320.md",
+      "sha256": "324947db0c6f450c905803eac0fb1ab2d6fdb1b321d31d17f67c93b60cfb8277"
+    },
+    {
+      "pdf_page": 321,
+      "markdown": "staging/back/pages/pdf-321.md",
+      "sha256": "f07e0bfa2a67ae73fd4d927c948f4aa4fe237ac61d1fe4ea05ec7fc0be60dc75"
+    },
+    {
+      "pdf_page": 322,
+      "markdown": "staging/back/pages/pdf-322.md",
+      "sha256": "b4f2518d759acc11052d8fc3daff975d2debcee017cc39e2ed446bffb63e88cb"
+    }
+  ],
+  "standalone_tex": ".work/lane-latex/back/content.tex",
+  "tex_sha256": "b4773f0096f45380031a9a1c475d14ffd93852037ae942d8dbd9df58bf655305",
+  "status": "compiled",
+  "render_visual_review": "pending",
+  "mathematical_correctness": "not established by compilation",
+  "warnings": [],
+  "pdf": ".work/lane-latex/back/content.pdf",
+  "pdf_sha256": "afd002fec01b0b83b8b55d423aa9e2cf70b15caeef003ba629eb68417aaedfd4",
+  "rendered_pages": 10
+}

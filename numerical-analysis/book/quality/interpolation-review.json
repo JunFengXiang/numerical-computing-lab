@@ -1,0 +1,179 @@
+{
+  "reviewer": "Codex",
+  "human_review": false,
+  "completed_utc": "2026-09-12T09:50:51.919791+00:00",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "review_scope": "逐字逐式对照已列出的章节所占原页区域；不等同于全书核验",
+  "sections": [
+    {
+      "section_id": "2.1",
+      "path": "verified/2.1-introduction.md",
+      "sha256": "2a4b0a5635db6e82fa702a6ca166cd613125866ae64139eee0e8c0d7f37056f1",
+      "printed_pages": [
+        14,
+        15
+      ],
+      "pdf_pages": [
+        27,
+        28
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": [
+        "NA5E-E001"
+      ],
+      "metadata_change_note": "仅补充 source_errata 元数据；正文与此前原页核验一致。"
+    },
+    {
+      "section_id": "2.2.1",
+      "path": "verified/2.2.1-existence-uniqueness.md",
+      "sha256": "556aede40168773ba21139e02450a428d61b31e0272df05e2ca6f26ffac36943",
+      "printed_pages": [
+        15
+      ],
+      "pdf_pages": [
+        28
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": []
+    },
+    {
+      "section_id": "2.2.2",
+      "path": "verified/2.2.2-linear-quadratic-interpolation.md",
+      "sha256": "3ac51234a2f5fd895fbba4ab562cb9716da4f7af1f3613dca818e9ba0e4b965a",
+      "printed_pages": [
+        16,
+        17,
+        18
+      ],
+      "pdf_pages": [
+        29,
+        30,
+        31
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": [],
+      "cross_review_correction": "ch02a 复核、root 回看 PDF30：恢复原文“立即可得到”。"
+    },
+    {
+      "section_id": "2.2.3",
+      "path": "verified/2.2.3-lagrange-polynomial.md",
+      "sha256": "11472dcd4ca9777fcce08de8483a8291e11054573382cc8fa688915377a5b66e",
+      "printed_pages": [
+        18,
+        19
+      ],
+      "pdf_pages": [
+        31,
+        32
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": []
+    },
+    {
+      "section_id": "2.2.4",
+      "path": "verified/2.2.4-interpolation-remainder.md",
+      "sha256": "27be2e1ab5040fef140ef35f33d34bfd27dca6820d1f48c6086a1d6ca7069ed1",
+      "printed_pages": [
+        19,
+        20,
+        21
+      ],
+      "pdf_pages": [
+        32,
+        33,
+        34
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": [
+        "NA5E-E002"
+      ]
+    },
+    {
+      "section_id": "2.3",
+      "path": "verified/2.3-successive-linear-interpolation.md",
+      "sha256": "09cee8f5d5e147e8a2acb7a1da1a675ceb3ffe0e0329de16b7dee770ffcdb9ba",
+      "printed_pages": [
+        21,
+        22,
+        23
+      ],
+      "pdf_pages": [
+        34,
+        35,
+        36
+      ],
+      "source_visual_review": "completed_by_Codex",
+      "review_type": "single_agent_source_image_comparison",
+      "normalizations": [
+        "删除重复页眉页脚",
+        "合并跨页正文",
+        "统一标点与 LaTeX 排版，保留数学符号与编号"
+      ],
+      "source_errata": [],
+      "cross_review_correction": "ch02a 复核、root 放大 PDF35：表2.2首行末格更正为 x-x_0；其余四行仍为 x_i-x_0。"
+    }
+  ],
+  "fully_transcribed_body_pdf_pages": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "partial_body_pdf_pages": [
+    {
+      "pdf_page": 36,
+      "verified_region": "页首 2.3 续文与例 2.2、表 2.3；2.4 尚未整理"
+    }
+  ],
+  "source_figures_reviewed": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4"
+  ],
+  "source_tables_reviewed": [
+    "2.1",
+    "2.2",
+    "2.3"
+  ],
+  "math_validation_reports": [
+    "quality/interpolation-symbolic-checks.json",
+    "quality/remainder-example-checks.json"
+  ],
+  "latex_render_status": "pending_after_cross_review_corrections"
+}

@@ -1,0 +1,578 @@
+{
+  "lane": "ch03a",
+  "reviewer": "Codex agent ch03a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 58,
+      "printed_page": 45,
+      "path": "staging/ch03a/pages/pdf-058.md",
+      "sha256": "a191e59e778f93a9f26d02a10ad153790668658b87760259e0a658e7be63f9d7",
+      "source_image_sha256": "68329762d96a78e0810371f7b2951764008287e38c1754be6e975f5e7ca49c3e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3",
+          "title": "函数逼近与计算"
+        },
+        {
+          "id": "3.1",
+          "title": "引言与预备知识"
+        },
+        {
+          "id": "3.1.1",
+          "title": "问题的提出"
+        }
+      ],
+      "formula_ids": [
+        "3.1.1"
+      ],
+      "figures": [
+        "3.1"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 59,
+      "printed_page": 46,
+      "path": "staging/ch03a/pages/pdf-059.md",
+      "sha256": "3d3b6353a9e524819533c14e622b20be0928fce1a11675689258ba90cb709778",
+      "source_image_sha256": "69dbda5dd3a65cd71bd4dfe32fcb2aad9caf008862fe5a93ed09b9b463e48d75",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.1.2",
+          "title": "Weierstrass 定理"
+        }
+      ],
+      "formula_ids": [
+        "3.1.2",
+        "3.1.3",
+        "3.1.4",
+        "3.1.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "本页 Lagrange 基函数求和式印为 sum l_k(x_k)=1；保留并添加原书疑误校注。"
+      ]
+    },
+    {
+      "pdf_page": 60,
+      "printed_page": 47,
+      "path": "staging/ch03a/pages/pdf-060.md",
+      "sha256": "2b818b8129ca260ee0d98955b30da8e769ee8a8bf4c22bc5ce365fd1a97d1eea",
+      "source_image_sha256": "3d608f4f80418fc53b00e676dc57e9f44836b87a55ee3598a87b06747a8fdf80",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.1.3",
+          "title": "连续函数空间 $C[a,b]$"
+        },
+        {
+          "id": "3.2",
+          "title": "最佳一致逼近多项式"
+        },
+        {
+          "id": "3.2.1",
+          "title": "最佳一致逼近多项式的存在性"
+        }
+      ],
+      "formula_ids": [
+        "3.1.6",
+        "3.1.7",
+        "3.1.8",
+        "3.1.9",
+        "3.1.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "纠正 OCR 式 (3.1.10) 丢失绝对值外括线。"
+      ]
+    },
+    {
+      "pdf_page": 61,
+      "printed_page": 48,
+      "path": "staging/ch03a/pages/pdf-061.md",
+      "sha256": "d28b0bb949275b12b312703dc89032520e10a024ce1e80f95913928b9b03865c",
+      "source_image_sha256": "3ec6e18a736fd6b1c068392d1fa8a69d499ed3ed53580ca89caa4c57c90b40d1",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.2.2",
+          "title": "Chebyshev 定理"
+        }
+      ],
+      "formula_ids": [
+        "3.2.1",
+        "3.2.2",
+        "3.2.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 62,
+      "printed_page": 49,
+      "path": "staging/ch03a/pages/pdf-062.md",
+      "sha256": "1f13888a5fc302f02a41c58e8607af9480b634280bf37c1048c0e4efb9de655d",
+      "source_image_sha256": "bf2e94db0bddf7bc3b0aed18105c23f32d682d44968b2e67f95bfaa60a528f53",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.2.4"
+      ],
+      "figures": [
+        "3.2"
+      ],
+      "tables": [],
+      "notes": [
+        "补回 OCR 遗漏的图 3.2 原图及完整标签。",
+        "正文交叉引用原印“定理 3.1”；保留并添加校注，应指定理 3.3。",
+        "独立复核 agent ch02b 指出充分性证明的符号应为不恒等；重新打开原图确认三横线后，已将误转的不等号改为不恒等号。"
+      ]
+    },
+    {
+      "pdf_page": 63,
+      "printed_page": 50,
+      "path": "staging/ch03a/pages/pdf-063.md",
+      "sha256": "99b16fe0f1cb3070a602ed0eaf5d8dd0054d5b78918e709d5b991e06fde77eec",
+      "source_image_sha256": "6e228d8601640cb0e18692e86fbef12b1d0f2c0c910c3b20b15fbcf8076748e6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.2.3",
+          "title": "最佳一次逼近多项式"
+        }
+      ],
+      "formula_ids": [
+        "3.2.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页首接 PDF 62 的 P(x)-Q(x)；按原图将 OCR 的不等号改为不恒等号。"
+      ]
+    },
+    {
+      "pdf_page": 64,
+      "printed_page": 51,
+      "path": "staging/ch03a/pages/pdf-064.md",
+      "sha256": "d6dad4e9e928a2b9689d4a9e48531c143da2d3d91c5d0eaa8a9cbc65732f334c",
+      "source_image_sha256": "9e13a91a097ae11f73592a7fd1a46abcd4c9fa6ae2bad1628e01b7f821799ed3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.2.6",
+        "3.2.7",
+        "3.2.8",
+        "3.2.9"
+      ],
+      "figures": [
+        "3.3"
+      ],
+      "tables": [],
+      "notes": [
+        "补回 OCR 漏失的公式编号 (3.2.6) 与图 3.3。",
+        "纠正例 3.1 中 OCR 把 x_2^2 识为 x^2 的三处下标。",
+        "原书交错点编号不一致，以及舍入后误差限问题已按原文保留并单列校注。"
+      ]
+    },
+    {
+      "pdf_page": 65,
+      "printed_page": 52,
+      "path": "staging/ch03a/pages/pdf-065.md",
+      "sha256": "25d8066729b78bbccb45220dd994c7f7e0b5d1ed1990b215ea76c3c8a844e352",
+      "source_image_sha256": "f7ab776ea9c60ef7a44880e5f08f0a2b0cde11fb704a263233612ae9652764ec",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.3",
+          "title": "最佳平方逼近"
+        },
+        {
+          "id": "3.3.1",
+          "title": "内积空间"
+        }
+      ],
+      "formula_ids": [
+        "3.3.1",
+        "3.3.2",
+        "3.3.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "核对权函数条件中的 |x|^n、非负连续函数以及积分区间。"
+      ]
+    },
+    {
+      "pdf_page": 66,
+      "printed_page": 53,
+      "path": "staging/ch03a/pages/pdf-066.md",
+      "sha256": "1924c73061888690b8694d20120ee3a7dcdd32c804623a1143a27d54bad53054",
+      "source_image_sha256": "35b9c0463b6c8b3ad1e1a5cb0726232e8ec98ca6af4ccc07503a3a2bdcec0cdf",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.3.4",
+        "3.3.5",
+        "3.3.6",
+        "3.3.7",
+        "3.3.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "核对全部平方范数、内积、Cauchy-Schwarz 不等式与权正交定义。"
+      ]
+    },
+    {
+      "pdf_page": 67,
+      "printed_page": 54,
+      "path": "staging/ch03a/pages/pdf-067.md",
+      "sha256": "9fd674419e6f32e46c1eff7ef1a97c659c603946060ca6c364222ccfbe77bbb4",
+      "source_image_sha256": "b103b1673c677c1dcaa5dce021b2c4a9f43887d83b2f5977f88e88de80042d4c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.3.2",
+          "title": "函数的最佳平方逼近"
+        }
+      ],
+      "formula_ids": [
+        "3.3.9",
+        "3.3.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "补回 OCR 遗漏的 (3.3.9)、(3.3.10) 编号及“函数族”的“族”。",
+        "逐项核对内积行列式四行四列的省略表示及下标 n-1。",
+        "原书术语 Cramer 按原文保留并单列校注。"
+      ]
+    },
+    {
+      "pdf_page": 68,
+      "printed_page": 55,
+      "path": "staging/ch03a/pages/pdf-068.md",
+      "sha256": "b62cc4ed182790236b1ef82f685a3ef93a3d1aa98cfb8255d599c233df16a2fb",
+      "source_image_sha256": "c9014fd21adcf836c10cffc20ee99609ddc6c8fd79fa32b3a6212b664865605a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.3.11",
+        "3.3.12",
+        "3.3.13",
+        "3.3.14",
+        "3.3.15"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "逐项核对法方程上下标、D 的展开符号及平方误差式。",
+        "(3.3.11) 下标原印小写 varphi；保留并添加符号不一致校注。"
+      ]
+    },
+    {
+      "pdf_page": 69,
+      "printed_page": 56,
+      "path": "staging/ch03a/pages/pdf-069.md",
+      "sha256": "425ff2c003e026fa4c8443703103cf3e99165ea065f2dc783dc1ccc0371fa124",
+      "source_image_sha256": "ef32c10e35c6ae6784c842f8e400418252a3a57e337cd0cbd4e397da5c3ac0b1",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.3.16",
+        "3.3.17"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "按原图保留 Hilbert 矩阵圆括号及矩阵、向量粗体。",
+        "核对 (3.3.16) 的 n+1 阶布局和 1/(2n+1)。",
+        "例 3.2 数值舍入与实际平方误差不一致，原数值保留并单列校注。"
+      ]
+    },
+    {
+      "pdf_page": 70,
+      "printed_page": 57,
+      "path": "staging/ch03a/pages/pdf-070.md",
+      "sha256": "c3a9272b79ac47e2854076ac7a1fcfce4fb7bb5835f3e1321d11cfd8e25b7a2b",
+      "source_image_sha256": "13627fd6ee46be27fe9e5c05a055075a3b93c28a3827e6efb0bb1c9a5da42e69",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.4",
+          "title": "正交多项式"
+        },
+        {
+          "id": "3.4.1",
+          "title": "正交化手续"
+        },
+        {
+          "id": "3.4.2",
+          "title": "Legendre多项式"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际标题为 3.4.1 正交化手续；补正 OCR 漏字。",
+        "构造式末尾 k=1,2,... 和递推初值 g_{n-1}=0 确为原图，保留并单列两条校注。"
+      ]
+    },
+    {
+      "pdf_page": 71,
+      "printed_page": 58,
+      "path": "staging/ch03a/pages/pdf-071.md",
+      "sha256": "0ac6b4b40364445cf2bbb50088a28123cb833b349313e14f9d872c4191b72ac2",
+      "source_image_sha256": "fb43dd6520b5ec0dba4129e6ef3fada253081948fab570356a8a2ca499a43461",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.4.1",
+        "3.4.2",
+        "3.4.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "补回 OCR 遗漏的 (3.4.1)、(3.4.2)、(3.4.3) 编号。",
+        "逐项核对权 1、区间 [-1,1]、Rodrigues 表达式系数及范数 2/(2n+1)。",
+        "原文姓名拼作 Rodrigul；照录。",
+        "首项推导的分母原印 2^2 n!，保留并单列系数校注。"
+      ]
+    },
+    {
+      "pdf_page": 72,
+      "printed_page": 59,
+      "path": "staging/ch03a/pages/pdf-072.md",
+      "sha256": "c003c10982d7f4cf69fabb5deb9533fce245017ce8e33b7cd7803002e636618d",
+      "source_image_sha256": "081611befc6fa141e9d0a0cc3a617c7408c48c837068277ca7ff264593686e33",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.4.4",
+        "3.4.5"
+      ],
+      "figures": [
+        "3.4"
+      ],
+      "tables": [],
+      "notes": [
+        "逐项核对递推系数 n/(2n+1)、(n+1)/(2n+1) 及 P_2 至 P_6 的全部系数。",
+        "补回 OCR 遗漏图 3.4 原图及标签。"
+      ]
+    },
+    {
+      "pdf_page": 73,
+      "printed_page": 60,
+      "path": "staging/ch03a/pages/pdf-073.md",
+      "sha256": "22dfa35fa55166360f61f85db88bbf6562df99aadcad183b8055303f6acd32d7",
+      "source_image_sha256": "49f2c4857c9928e6dfc58bb215ee17964bd032a108a10acd80cb0241a761bc6f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.4.3",
+          "title": "Chebyshev多项式"
+        }
+      ],
+      "formula_ids": [
+        "3.4.6",
+        "3.4.7"
+      ],
+      "figures": [
+        "3.5"
+      ],
+      "tables": [
+        "3.1"
+      ],
+      "notes": [
+        "完整转录表 3.1 的 T_0 至 T_8 九项表达式。",
+        "核对 Chebyshev 权函数 1/sqrt(1-x^2)、区间与角变量范围。",
+        "补回图 3.5 原图及所有标签。"
+      ]
+    },
+    {
+      "pdf_page": 74,
+      "printed_page": 61,
+      "path": "staging/ch03a/pages/pdf-074.md",
+      "sha256": "43bc64daa3cfb2692475021f5875824424bd152ece06f17f8cafe8e569ed3315",
+      "source_image_sha256": "eb7583f1d203c1c7dee6a2a70eaca2096c4c67c6fb288628743d78de8b9ff47a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "3.4.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "补回 OCR 遗漏的 (3.4.8) 编号。",
+        "逐项核对 n=m=0 时为 pi，n=m 非零时为 pi/2。",
+        "例 3.3 原书定理号为 3.6，保留并单列校注，应指 3.7。"
+      ]
+    },
+    {
+      "pdf_page": 75,
+      "printed_page": 62,
+      "path": "staging/ch03a/pages/pdf-075.md",
+      "sha256": "ec429fb8249be3e3897fdbb935c92863db653f54ead1c11f3ac127ebfeeacdbc",
+      "source_image_sha256": "8940d262f895c7c7b3bdb1223f999c3d3ab46b7109c05ea4294ef2d21a23738a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "3.4.4",
+          "title": "其他常用的正交多项式"
+        }
+      ],
+      "formula_ids": [
+        "3.4.9",
+        "3.4.10"
+      ],
+      "figures": [],
+      "tables": [
+        "3.2"
+      ],
+      "notes": [
+        "完整转录表 3.2 共九行，包括原表 1=T_0。",
+        "式 (3.4.9) 的求和上限为 [n/2]，并保留公式后的特殊规定 T_0=1/2；已添加约定说明。",
+        "核对第二类 Chebyshev 权 sqrt(1-x^2) 与正交常数 pi/2；末式无原编号。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch03a-E01",
+      "pdf_page": 59,
+      "printed_page": 46,
+      "kind": "source_typographical_error",
+      "location": "Lagrange 插值多项式后无编号求和式",
+      "source": "\\sum_{k=0}^{n} l_k(x_k)=1",
+      "note": "原图确印 x_k；由 l_k(x_k)=1 左端为 n+1，通常恒等式应为 sum l_k(x)=1。转录保留原文。"
+    },
+    {
+      "id": "ch03a-E02",
+      "pdf_page": 62,
+      "printed_page": 49,
+      "kind": "source_cross_reference_error",
+      "location": "图 3.2 旁正文",
+      "source": "定理 3.1 表明",
+      "note": "上下文在解释定理 3.3 的正、负偏差点性质，应为定理 3.3；定理 3.1 为 Weierstrass 定理。原文保留。"
+    },
+    {
+      "id": "ch03a-E03",
+      "pdf_page": 64,
+      "printed_page": 51,
+      "kind": "source_index_inconsistency",
+      "location": "“另外两个偏差点必在区间端点”后",
+      "source": "x_0=a, x_1=b",
+      "note": "本页前文三个点编号为 x_1<x_2<x_3，按该编号端点应为 x_1=a, x_3=b。转录保留原书。"
+    },
+    {
+      "id": "ch03a-E04",
+      "pdf_page": 64,
+      "printed_page": 51,
+      "kind": "rounded_coefficient_error_bound",
+      "location": "例 3.1 页末误差限",
+      "source": "max |sqrt(1+x^2)-P_1(x)| <= 0.045, P_1=0.955+0.414x",
+      "note": "把印出的舍入系数作为精确数，x=1 时误差 sqrt(2)-1.369=0.04521356237... 大于 0.045。原书数值及不等式均保留。"
+    },
+    {
+      "id": "ch03a-E05",
+      "pdf_page": 67,
+      "printed_page": 54,
+      "kind": "source_terminology_error",
+      "location": "定理 3.6",
+      "source": "Cramer 行列式",
+      "note": "式 (3.3.10) 为内积 Gram 矩阵的行列式，通常应称 Gram 行列式。原文保留并加校注。"
+    },
+    {
+      "id": "ch03a-E06",
+      "pdf_page": 68,
+      "printed_page": 55,
+      "kind": "source_symbol_case_inconsistency",
+      "location": "式 (3.3.11) 两处 inf 下标",
+      "source": "S\\in\\varphi",
+      "note": "原图为小写 varphi，而前文子集记为大写 Phi；应指 Phi。原符号保留。"
+    },
+    {
+      "id": "ch03a-E07",
+      "pdf_page": 69,
+      "printed_page": 56,
+      "kind": "rounded_inner_product_squared_error",
+      "location": "例 3.2 平方误差",
+      "source": "||delta||_2^2 = 0.0026",
+      "note": "该数来自舍入内积；对印出的 S=0.934+0.426x 直接积分，实际平方误差约为 0.0007136323726914。原书数值保留。"
+    },
+    {
+      "id": "ch03a-E08",
+      "pdf_page": 70,
+      "printed_page": 57,
+      "kind": "source_index_error",
+      "location": "正交化构造式末尾",
+      "source": "k=1,2,...",
+      "note": "k 是求和哑指标，外部应为 n=1,2,...；原文保留。"
+    },
+    {
+      "id": "ch03a-E09",
+      "pdf_page": 70,
+      "printed_page": 57,
+      "kind": "source_initial_value_error",
+      "location": "三项递推的初值",
+      "source": "g_{n-1}(x)=0",
+      "note": "一般 n 时与 g_0=1 冲突；通常初值应为 g_{-1}(x)=0。原文保留。"
+    },
+    {
+      "id": "ch03a-E10",
+      "pdf_page": 71,
+      "printed_page": 58,
+      "kind": "source_coefficient_error",
+      "location": "式 (3.4.1) 后展开 P_n 的无编号公式",
+      "source": "1/(2^2 n!)",
+      "note": "原图确印 2^2；根据 (3.4.1) 及随后 a_n，应为 1/(2^n n!)。原式保留。"
+    },
+    {
+      "id": "ch03a-E11",
+      "pdf_page": 74,
+      "printed_page": 61,
+      "kind": "source_cross_reference_error",
+      "location": "例 3.3",
+      "source": "由定理 3.6 可知",
+      "note": "应指本页定理 3.7 的最小偏差性质，3.6 为内积行列式判别条件。原文保留。"
+    }
+  ],
+  "validation_notes": [
+    "每页原图已实际打开并逐字逐式与 OCR 候选对照；OCR 只作底稿。",
+    "单页保留跨页边界；图为原页裁切；页眉页脚重复文字略去。",
+    "完整公式编号序列核对通过：3.1.1–3.1.10、3.2.1–3.2.9、3.3.1–3.3.17、3.4.1–3.4.10，共 46 个。",
+    "750 个行内/独立数学片段通过 XeLaTeX 语法编译且无缺字；编译不作为数学正确性证明。",
+    "18 份文件与 18 张原图的 SHA-256 实际计算核对；Markdown 原页和图链接均可解析。",
+    "5 幅裁切图已再次打开检查边界及符号标签，2 张公式表全部九行核对。",
+    "Pandoc 将全部 750 个数学片段解析为 Math 节点，46 个编号均位于数学节点内；与逐页登记完全一致。"
+  ]
+}

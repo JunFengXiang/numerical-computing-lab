@@ -1,0 +1,33 @@
+{
+  "source_pages": [
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+  ],
+  "source_page_count": 19,
+  "standalone_tex": "staging/ch07a/qa/content.tex",
+  "standalone_pdf": "staging/ch07a/qa/content.pdf",
+  "tex_sha256": "c32f4043c8f8eac65b7945ce5b44de6c0222e4aa61ccf402bc32f6feeb691374",
+  "pdf_sha256": "dd4babf314b4753262d2608b7cdd523fffe39b3f3010ca5258dd11d2edf28b58",
+  "compiled": true,
+  "rendered_pages": 38,
+  "compile_warnings": [],
+  "render_visual_review": "38-page contact sheets inspected; dense QA pages13,25,38 viewed at full size; table7.1 rerendered and inspected after alignment fix",
+  "note": "QA版，分页与原书不同；编译和数值样例检查不替代原图核验。"
+}

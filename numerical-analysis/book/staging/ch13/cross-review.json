@@ -1,0 +1,102 @@
+{
+  "lane": "ch13",
+  "reviewer": "Codex agent ch12 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 307,
+      "sha256": "a1e99930703a3a97d301727b71382af5f31a2f139ebf89bf7a329f7e988d7607",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页及运算量局部图：章前星号、Cramer次数(n+1)n!(n-1)、20阶约10^21、分母指数11均与转录相符。",
+        "校注数值复算：按3×10^11为105.6993年，按正文30万亿=3×10^13为1.05699年；保留原书错误的处理正确。"
+      ]
+    },
+    {
+      "pdf_page": 308,
+      "sha256": "7b0019d11afb44ddd8609708825a6070a427ac9c1126bdf1fa1a07eb3afce980",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：13.1.2、13.2、13.2.1全部段落及式13.2.1一致；跨页部分和定义完整。"
+      ]
+    },
+    {
+      "pdf_page": 309,
+      "sha256": "0b88c695da3719c1094ef2c8345b1144bda79181e107909cc81d23584d250944",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：式13.2.2、13.2.3、n+1至1项和式链、计算模型/所求结果标签及两项设计特征完整一致。"
+      ]
+    },
+    {
+      "pdf_page": 310,
+      "sha256": "dd15eaed557f8eb1dca2af5ad48eb736e4d1cbec5cc616e534046dccb943a990",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：13.2.4及所有未编号展开式完整；下标n-k、求和上下限、近似号和Q≈n²/2均保持原文。"
+      ]
+    },
+    {
+      "pdf_page": 311,
+      "sha256": "453f5c651b8b53af1204af4b66df1ccff9ac2ac7d95b32592cadd47585e0c345",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：算法13.1的v_0、k=1…n、v_k=xv_(k-1)+a_k、P=v_n及n次乘法一致；求值链和底部开方引言完整。"
+      ]
+    },
+    {
+      "pdf_page": 312,
+      "sha256": "f3834c910df69a6393189e78c9c4142932d6fc0eea1574d4f08a22a4e2db2009",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：两项式号、开方推导、算法13.2初值和停止条件全部一致；原书输出x_k保留，未擅自改成x_(k+1)。",
+        "校正技术两项要求及末句跨页接续与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 313,
+      "sha256": "acad6ea27ab8b5fa5dc33064903a2f0c77136f06581408d925aecfad2e03f95a",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：13.4下两组松弛式的符号、F_0/F_1、ω>0及全部正文一致。"
+      ]
+    },
+    {
+      "pdf_page": 314,
+      "sha256": "d6498e184d3a9b2af928d9afcdb4e6d1aaf618bcecafd0f8ffde190fb07df720",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：面积尺度100π、两组带分数、36/105校正和近似S_3072的完整计算链一致；结绳记数引言及跨页接续完整。"
+      ]
+    },
+    {
+      "pdf_page": 315,
+      "sha256": "aa6ed37700cb52f6b4bead027b40bf41bf4fabaa41d633a9c372fb34f1ecd9df",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页及两幅裁切图：图13.1三列标题、0–4步、13个初始结点、奇/偶/奇/奇与空实符号均完整一致。",
+        "图13.2箭头向左，左至右○○●○及1 1 0 1一致；原图crop未截漏标签；信息压缩式N/log_2N→+∞和(1101)_2=13一致。"
+      ]
+    },
+    {
+      "pdf_page": 316,
+      "sha256": "2f9833e1f41db34145e63b57fb4658d80e1e7690b53b5a742e4d1f564b527439",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页及表格放大图：2^64秒=5849亿年照原书保留；N=2^n、n=log_2N及加速比均一致。",
+        "表13.1三列表头、四项设计技术、八个设计机理短语和四个设计思想全部一致；末尾“本”与下页“质上”接续完整。"
+      ]
+    },
+    {
+      "pdf_page": 317,
+      "sha256": "6c4dd31cd16c3050f2f4a09c67769e310c6abaa5a862a0936970c29316d070af",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重开全页：顶部两段全部转录；其余区域为背页透印，无遗漏的本页正文。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

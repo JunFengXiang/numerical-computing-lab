@@ -1,0 +1,405 @@
+{
+  "lane": "ch10",
+  "reviewer": "Codex agent ch10",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 261,
+      "printed_page": 248,
+      "path": "staging/ch10/pages/pdf-261.md",
+      "sha256": "5132978cfb73a3dd2fea940f83f10343643e9760a6635c73907ac8c2ace0ede5",
+      "source_image_sha256": "60cb36df750ba23ad0f51f99919505ff782dc66b2d9df1392b93207df8ebc494",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "下篇",
+          "title": "高效算法设计",
+          "kind": "part"
+        },
+        {
+          "id": "10",
+          "title": "快速算法设计：快速 Walsh 变换",
+          "source_prefix_star": true
+        },
+        {
+          "id": "10.1",
+          "title": "美的 Walsh 函数"
+        },
+        {
+          "id": "10.1.1",
+          "title": "微积分的逼近法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "保留原章名前的星号；本页含下篇篇名。"
+      ]
+    },
+    {
+      "pdf_page": 262,
+      "printed_page": 249,
+      "path": "staging/ch10/pages/pdf-262.md",
+      "sha256": "26b6bf04909222e4dbeec0322efa753cbee2a9b713fd3977a93d92ea1d6c2b8e",
+      "source_image_sha256": "fb5facb5b0c81b189d1e7664335fc3da0621b2a225f0907f4e38411b9fde5432",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.1.2",
+          "title": "Walsh 函数的复杂性"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 263,
+      "printed_page": 250,
+      "path": "staging/ch10/pages/pdf-263.md",
+      "sha256": "39f8c4dbba43a4dee18d77ee4c8c083ac43613043acd2f8b671b3384e9ac3bca",
+      "source_image_sha256": "b81f01919449bafb10bfac7f4130fc1d37e45d769aa6e9b992815de4a054cf11",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.1.3",
+          "title": "Walsh 分析的数学美"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "10.1"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 264,
+      "printed_page": 251,
+      "path": "staging/ch10/pages/pdf-264.md",
+      "sha256": "41d2b6f5491a60ab347b986231bfd85fe34644099d2117d7bc04662608f1c1b1",
+      "source_image_sha256": "7f5f6d75c83401d5926c9bf7d820d7dd965398717b7ee3ea96f82ae76040b500",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.2",
+          "title": "Walsh 函数代数化"
+        },
+        {
+          "id": "10.2.1",
+          "title": "时基上的二分集"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "10.2"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 265,
+      "printed_page": 252,
+      "path": "staging/ch10/pages/pdf-265.md",
+      "sha256": "c25a2cef44dd4f552322b360691cd28d30ee2f975e5fbbe3cc616f6de2c26c8d",
+      "source_image_sha256": "0161fb16675fb4fa89540ecce42022a484cfd249684b4c5b86699ac5b7e48438",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.2.2",
+          "title": "Walsh 函数的矩阵表示"
+        },
+        {
+          "id": "10.3",
+          "title": "Walsh 阵的二分演化"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 266,
+      "printed_page": 253,
+      "path": "staging/ch10/pages/pdf-266.md",
+      "sha256": "86a34c6c18b3fbaff419726c4222dd83d3bfd1219fa6dd8814250e578f9e7dd0",
+      "source_image_sha256": "a28477ba03b74f6201ee3568b5312a87fa8b2e4d589d9a44c65f9d318488346b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.3.1",
+          "title": "矩阵的对称性复制"
+        },
+        {
+          "id": "10.3.2",
+          "title": "Walsh 阵的演化生成"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "10.1"
+      ],
+      "notes": [
+        "镜像偶复制为双点记号，奇复制为单点记号，已放大核对；表 10.1 全表转录。"
+      ]
+    },
+    {
+      "pdf_page": 267,
+      "printed_page": 254,
+      "path": "staging/ch10/pages/pdf-267.md",
+      "sha256": "4b9142310543ec498a42f78b317ab7c82aab575c0c66c7fb2205ec9baa7e4b93",
+      "source_image_sha256": "32aafea599a2aadb14f374b2f2efcf7f80364072a078a08c6f2217d22b3a5aba",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.3.3",
+          "title": "Walsh 阵的演化机制"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 268,
+      "printed_page": 255,
+      "path": "staging/ch10/pages/pdf-268.md",
+      "sha256": "e740d775dc16600437b56c3eef77715e0730de69486250f4e04197fb36a76052",
+      "source_image_sha256": "70af69d0a4164ec9bc9cb4a87bcbd4954538615054d53b0b1d8a60c8dd79a773",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.3.4",
+          "title": "Hadamard 阵的演化生成"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "10.3"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 269,
+      "printed_page": 256,
+      "path": "staging/ch10/pages/pdf-269.md",
+      "sha256": "0adb9852ef8ef565ca1192977a1fb43e0af8cd129432cfddfb77bb496e707c02",
+      "source_image_sha256": "f42e82d81320db7d6398545bc5f4e6daa4e937d14d23d02d4111166bda4fb31e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "10.3.1"
+      ],
+      "figures": [
+        "10.4"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 270,
+      "printed_page": 257,
+      "path": "staging/ch10/pages/pdf-270.md",
+      "sha256": "27078312dfd96a100963793a1ca5538d876e8dce9a20e3e97b98bb908aabcb5d",
+      "source_image_sha256": "bca098dae84b860642d330545c33f64e3a449c6908372c701178792d5057177b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.4",
+          "title": "快速变换 FWT"
+        },
+        {
+          "id": "10.4.1",
+          "title": "FWT 的设计思想"
+        }
+      ],
+      "formula_ids": [
+        "10.4.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH10-E002：未归一化 Hadamard 阵的正交阵术语疑误，保留原文另注。"
+      ]
+    },
+    {
+      "pdf_page": 271,
+      "printed_page": 258,
+      "path": "staging/ch10/pages/pdf-271.md",
+      "sha256": "c8ceecef07044de9b534b529aef659d51a67a7065ac85b99df8b7e6297647e51",
+      "source_image_sha256": "7dd0faf3c4a2d50a311ef5ecca6c7b0ba194dc53d18322b82f93b3fbe56700d9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.4.2",
+          "title": "FWT 的演化机制"
+        }
+      ],
+      "formula_ids": [
+        "10.4.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "CH10-E001：两处 H_{N/2}(N/2+i,j) 均为原图印式，保留并单列校注；原文定理 1 照录，对应前页定理 10.1。"
+      ]
+    },
+    {
+      "pdf_page": 272,
+      "printed_page": 259,
+      "path": "staging/ch10/pages/pdf-272.md",
+      "sha256": "02fd04121cc29be0d9d0b9ad81541d7ba5c5a34e374cca90c0a3fecd7e2a61ff",
+      "source_image_sha256": "7c4d30c293c0c1debcb3bf88d7c1b0537c1f4027a7ab265971b5c772c7629dee",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.4.3",
+          "title": "FWT 的计算流程"
+        }
+      ],
+      "formula_ids": [
+        "10.4.3"
+      ],
+      "figures": [
+        "10.5",
+        "10.6"
+      ],
+      "tables": [],
+      "notes": [
+        "原图 10.5 顶部圆形未印文字标签；正文重复的字按原页照录。"
+      ]
+    },
+    {
+      "pdf_page": 273,
+      "printed_page": 260,
+      "path": "staging/ch10/pages/pdf-273.md",
+      "sha256": "4aedcb3f561ffbacd18ae1639b1bdd6f9d9f6a358e60834ac206f96cbd79ad24",
+      "source_image_sha256": "a791e54e958e11d52d77394dfe58235b6b9cb7e9129736f50b6f70b89ef0919a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [
+        "10.7",
+        "10.8"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 274,
+      "printed_page": 261,
+      "path": "staging/ch10/pages/pdf-274.md",
+      "sha256": "d9f6449dfc74652c98f27992ed07256aa7515c9b284c65afe648673aaae6f756",
+      "source_image_sha256": "e0dd1cde41da2a6c6c98d7f3bbb1ab1b54b5bccf2236c39fb1b0ed9fb01879cc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.4.4",
+          "title": "FWT 的算法实现"
+        }
+      ],
+      "formula_ids": [
+        "10.4.4"
+      ],
+      "figures": [
+        "10.9"
+      ],
+      "tables": [],
+      "notes": [
+        "CH10-E004：式 (10.4.4) 的 l 上限原印 2^k，保留原式并说明应为 2^{k-1}。"
+      ]
+    },
+    {
+      "pdf_page": 275,
+      "printed_page": 262,
+      "path": "staging/ch10/pages/pdf-275.md",
+      "sha256": "fe5ebba641c1760de0bc1bf622f6fffe458e93d985f76adef5df09d3c45eade5",
+      "source_image_sha256": "4f23fd63fb1aa0776a3e22c332cd06793e522784b9e0a7a9b1c637278af95489",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "10.summary",
+          "title": "小结"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "算法 10.1 与本章小结完整转录；本章无单列章末习题；原文 Hartly 拼写照录。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH10-E001",
+      "pdf_page": 271,
+      "printed_page": 258,
+      "kind": "matrix_index",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "两组未编号公式的第二式均含 H_{N/2}(N/2+i,j)",
+      "analysis": "N/2 阶矩阵的行指标 N/2+i 超出本章 0 至 N/2-1 的范围。由定理 10.1，两处应为 H_{N/2}(i,j)。原文及式 (10.4.2) 均保留。",
+      "evidence": "staging/ch10/assets/erratum-p271-indices.png"
+    },
+    {
+      "id": "CH10-E002",
+      "pdf_page": 270,
+      "printed_page": 257,
+      "kind": "terminology",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "Hadamard 阵是对称正交阵",
+      "analysis": "按本章未归一化的定义，H_N^T H_N=N I，严格说 H_N/sqrt(N) 才是通常定义的正交矩阵。原文术语照录；其逆变换 1/N 因子正确。"
+    },
+    {
+      "id": "CH10-E003",
+      "pdf_page": 272,
+      "printed_page": 259,
+      "kind": "duplicated_character",
+      "status": "source_preserved_with_agent_note",
+      "source_text": "使问题的的规模减半",
+      "analysis": "原图重复的字已照录。"
+    },
+    {
+      "id": "CH10-E004",
+      "pdf_page": 274,
+      "printed_page": 261,
+      "kind": "algorithm_index_range",
+      "status": "source_preserved_with_agent_note",
+      "formula_id": "10.4.4",
+      "source_text": "l=1,2,...,2^k",
+      "analysis": "算式按 (l-1)N_{k-1} 定位上一阶段的数据段，应有 l=1,...,2^{k-1}。原上限会令数据索引超出 0 至 N-1。前文描述第 k 阶段结果段数的 2^k 不需更改。算法 10.1 对此式的引用受同一范围疑误影响。",
+      "evidence": "staging/ch10/assets/erratum-p274-range.png"
+    }
+  ],
+  "validation_notes": [
+    "所有已列入 pages 的页均通过 tools.view_image 实际打开原页；未使用 OCR 候选替代原页核对。",
+    "图为 source-images 原图裁切，保留图号、全部文字标签，另有可检索图意；公式及数值矩阵已全文转录。",
+    "排版规范化仅调整中文标点、数学空白和矩阵分组线，不静默修改原书数学内容。",
+    "PDF 261 至 275 的第二遍原页目视复核已完成，重点复看跨页衔接、矩阵符号、公式编号、标题与算法上下标。",
+    "validate_lane.py 已通过：15 页正文及源图 SHA256、链接、数学环境与公式编号检查；12 个正负号矩阵实例的尺寸检查；Walsh 与 Hadamard 矩阵元素对照递推关系、Walsh 解析式中点取值检查。",
+    "算法范围校注另以 N=2,4,8 的全部基向量作验证，采用校注中的 l 上限 2^(k-1) 与 Hadamard 直接变换一致；正文保留原印 2^k。验证记录在 staging/ch10/validation.json。"
+  ]
+}

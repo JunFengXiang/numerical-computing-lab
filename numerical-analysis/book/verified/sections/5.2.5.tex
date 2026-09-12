@@ -1,0 +1,191 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Euler 两步格式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Euler 两步格式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.2.5 Euler 两步格式}\label{euler-ux4e24ux6b65ux683cux5f0f}
+
+再考察改进的 Euler 格式 (5.2.10)、(5.2.11)，可以看到，其预测公式（Euler 格式）的精度差，与校正公式（梯形格式）不匹配。现在构造能与梯形方法在精度上相匹配的显式方法，为此改用中心差商 \(\dfrac{y(x_{n+1})-y(x_{n-1})}{2h}\) 替代方程 (5.2.4) 左端的导数项 \(y'(x_n)\)，这时离散化得到所谓 \textbf{Euler 两步格式}
+
+\[
+y_{n+1}=y_{n-1}+2hf(x_n,y_n).\tag{5.2.13}
+\]
+
+前面介绍过的数值方法，无论是 Euler 方法、后退的 Euler 方法，还是改进的 Euler 方法，它们都是\textbf{单步法}，其特点是在计算 \(y_{n+1}\) 时只用到前面一步的信息 \(y_n\)；然而，Euler 两步格式除了含 \(y_n\) 外，还显含更前面一步的信息 \(y_{n+1}\)------即调用了前面两步的信息，\textbf{Euler 两步法}因此而得名。
+
+单步法的优点是``自开始''，只要给出初值 \(y_0\)，依计算公式即可顺次计算 \(y_1,y_2,\cdots\)。然而两步法不是自开始的，在实际计算时，除了给出初值 \(y_0\) 外，还需要求助于其他单步法再提供一个\textbf{开始值} \(y_1\)，然后才能启动计算公式依次计算 \(y_2,y_3,\cdots\)。
+
+两步法的优点是，由于它调用了两个节点上的已知信息，从而能以较少的计算量获得较高的精度。
+
+现在用 Euler 两步格式与梯形格式相匹配，得到如下预测-校正系统：
+
+\begin{quote}
+\textbf{校注（agent 补充，原书疑误）}：表 5.2 在 \(x_n=0.8\) 的 \(y_n\) 原印为 \(1.6153\)，已按原图保留。按例 5.2 所列递推式从 \(y_0=1\)、\(h=0.1\) 计算，得 \(y_7=1.5525140913\cdots\)、\(y_8=1.6164747827\cdots\)，保留四位小数应为 \(1.6165\)。这是原书数值疑误，非 OCR 修正；其余各行按同一计算与表中四位小数相符。
+
+\textbf{校注（agent 补充，原书下标错误）}：本页``两步格式''说明中的``更前面一步的信息 \(y_{n+1}\)''原图确实印为 \(n+1\)；按紧邻的式 (5.2.13)，此处应指 \(y_{n-1}\)。正文保留原印下标。
+\end{quote}
+
+\href{../../source-images/pdf-125.jpeg}{原页}
+
+预测
+
+\[
+\bar y_{n+1}=y_{n-1}+2hf(x_n,y_n),\tag{5.2.14}
+\]
+
+校正
+
+\[
+y_{n+1}=y_n+\frac{h}{2}[f(x_n,y_n)+f(x_{n+1},\bar y_{n+1})].\tag{5.2.15}
+\]
+
+与改进的 Euler 格式 (5.2.10)、(5.2.11) 比较，系统 (5.2.14)、(5.2.15) 的一个突出的特点是，它的预测公式与校正公式具有同等精度。下面将会看到，据此能比较方便地估计出截断误差，并且基于这种估计，可以提供一种提高精度的简易方法。
+
+截断误差的分析仍用 Taylor 方法。假设预测公式 (5.2.14) 中的 \(y_n\) 和 \(y_{n-1}\) 都是准确的，即 \(y_n=y(x_n)\)，\(y_{n-1}=y(x_{n-1})\)，则容易验证其局部截断误差
+
+\[
+y(x_{n+1})-\bar y_{n+1}\approx\frac{h^3}{3}y'''(x_n).\tag{5.2.16}
+\]
+
+此外，在分析校正公式 (5.2.15) 的误差时，假定其中的预测值 \(\bar y_{n+1}\) 是准确的，即 \(\bar y_{n+1}=y(x_{n+1})\)，这时有
+
+\[
+y(x_{n+1})-y_{n+1}\approx-\frac{h^3}{12}y'''(x_n).\tag{5.2.17}
+\]
+
+比较式 (5.2.16) 和式 (5.2.17) 可发现，校正值的误差 \(y(x_{n+1})-y_{n+1}\) 大约只有预测值的误差 \(y(x_{n+1})-\bar y_{n+1}\) 的 \(1/4\)（注意符号相反），即有
+
+\[
+\frac{y(x_{n+1})-y_{n+1}}{y(x_{n+1})-\bar y_{n+1}}\approx-\frac{1}{4}.
+\]
+
+由此可导出下列事后估计式：
+
+\[
+\begin{cases}
+y(x_{n+1})-\bar y_{n+1}\approx-\dfrac{4}{5}(\bar y_{n+1}-y_{n+1}),\\
+y(x_{n+1})-y_{n+1}\approx\dfrac{1}{5}(\bar y_{n+1}-y_{n+1}).
+\end{cases}\tag{5.2.18}
+\]
+
+可以期望，利用这样估计出的误差作为计算结果的一种补偿，有可能使精度得到改善。
+
+设以 \(p_n\) 和 \(c_n\) 分别表示第 \(n\) 步的预测值和校正值，按估计式 (5.2.18)，\(p_{n+1}-\dfrac{4}{5}(p_{n+1}-c_{n+1})\) 和 \(c_{n+1}+\dfrac{1}{5}(p_{n+1}-c_{n+1})\) 分别可以取作 \(p_{n+1}\) 和 \(c_{n+1}\) 的改进值。在校正值 \(c_{n+1}\) 尚未求出之前，可用上一步的偏差值 \(p_n-c_n\) 替代 \(p_{n+1}-c_{n+1}\) 来改进预测值 \(p_{n+1}\)，这样设计的计算方案共有六个环节：
+
+预测
+
+\[
+p_{n+1}=y_{n-1}+2hy'_n,
+\]
+
+改进
+
+\[
+m_{n+1}=p_{n+1}-\frac{4}{5}(p_n-c_n),
+\]
+
+计算
+
+\[
+m'_{n+1}=f(x_{n+1},m_{n+1}),
+\]
+
+校正
+
+\[
+c_{n+1}=y_n+\frac{h}{2}(m'_{n+1}+y'_n),
+\]
+
+改进
+
+\[
+y_{n+1}=c_{n+1}+\frac{1}{5}(p_{n+1}-c_{n+1}),
+\]
+
+\href{../../source-images/pdf-126.jpeg}{原页}
+
+计算
+
+\[
+y'_{n+1}=f(x_{n+1},y_{n+1}).
+\]
+
+运用上述方案计算 \(y_{n+1}\) 时，要用到先一步的信息 \(y_n,y'_n,p_n-c_n\) 和更前一步的信息 \(y_{n-1}\)，因此在启动计算之前必须给出开始值 \(y_1\) 和 \(p_1-c_1\)，\(y_1\) 可用其他单步法（例如改进的 Euler 方法）来计算，\(p_1-c_1\) 则一般令它等于零。（计算的实践表明，这种简单的处理方法通常可以获得令人满意的效果。）
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch05a-E001}：原书 PDF 页 124
+\item
+  \texttt{ch05a-E002}：原书 PDF 页 124
+\end{itemize}
+
+\end{document}

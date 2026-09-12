@@ -1,0 +1,20 @@
+{
+  "pdf_page": 65,
+  "source_image": "source-images/pdf-065.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f7ab776ea9c60ef7a44880e5f08f0a2b0cde11fb704a263233612ae9652764ec",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 748,
+  "possibly_truncated": false,
+  "elapsed_seconds": 25.727,
+  "created_utc": "2026-09-12T09:55:43.612968+00:00",
+  "raw_text_sha256": "451e52b25295a69e06c378e078df0742c2f4a5a390b2bc3d230e101ab0f929f6",
+  "raw_text": "在式(3.2.9)中若令 $x = \\frac{b}{a} \\leqslant 1$, 则可得一个求根式的公式\n$$\\sqrt{a^2 + b^2} \\approx 0.955a + 0.414b.$$\n\n3.3 最佳平方逼近\n\n用均方误差最小作为度量标准, 研究函数 $f(x) \\in C[a,b]$ 的逼近多项式, 就是这一节要讨论的最佳平方逼近问题. 若存在 $P_n^*(x) \\in H_n$, 使\n$$\\|f - P_n^*\\|_2 = \\sqrt{\\int_a^b [f(x) - P_n^*(x)]^2 \\mathrm{d}x} = \\inf_{P \\in H_n} \\|f - P\\|_2,$$\n(3.3.1)\n$P_n^*(x)$ 就是 $f(x)$ 在 $[a,b]$ 上的最佳平方逼近多项式. 这一节将研究 $P_n^*(x)$ 是否存在, 如何计算 $P_n^*(x)$, 为此先介绍一些有关内积空间的预备知识.\n\n3.3.1 内积空间\n\n定义3.4 设在区间 $(a,b)$ 内, 非负函数 $\\rho(x)$ 满足以下条件, 就称 $\\rho(x)$ 为区间 $(a,b)$ 内的权函数:\n\n$1^\\circ \\int_a^b |x|^n \\rho(x) \\mathrm{d}x (n = 0,1,\\cdots)$ 存在;\n\n$2^\\circ$ 对于非负的连续函数 $g(x)$, 若\n$$\\int_a^b g(x) \\rho(x) \\mathrm{d}x = 0,$$\n(3.3.2)\n则在 $(a,b)$ 内 $g(x) \\equiv 0$.\n\n定义3.5 设 $f(x), g(x) \\in C[a,b], \\rho(x)$ 是 $[a,b]$ 上的权函数, 积分\n$$(f,g) = \\int_a^b \\rho(x) f(x) g(x) \\mathrm{d}x$$\n(3.3.3)\n称为函数 $f(x)$ 与 $g(x)$ 在 $[a,b]$ 上的内积.\n\n容易验证这样定义的内积满足下列四条公理:\n\n(1) $(f,g) = (g,f)$;\n\n(2) $(cf,g) = c(f,g), c$ 为常数;\n\n(3) $(f_1 + f_2, g) = (f_1, g) + (f_2, g)$;\n\n(4) $(f,f) \\geqslant 0$, 当且仅当 $f=0$ 时 $(f,f)=0$.\n\n满足内积定义的函数空间称为内积空间, 因此, 连续函数空间 $C[a,b]$ 上定义了内积就形成一个内积空间. 这里定义的内积是 $n$ 维 Euclid 空间 $\\mathbf{R}^n$ 中两个向量内积定义的推广, 设\n$$f = (f_1, f_2, \\cdots, f_n)^{\\mathrm{T}}, \\quad g = (g_1, g_2, \\cdots, g_n)^{\\mathrm{T}},$$\n\n·52·"
+}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 125,
+  "source_image": "source-images/pdf-125.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "317985c1c9463de2c19206f12ed3f38daded6f62b3905b7c3a872f0f3876a6f6",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 983,
+  "possibly_truncated": false,
+  "elapsed_seconds": 31.608,
+  "created_utc": "2026-09-12T10:32:46.424486+00:00",
+  "raw_text_sha256": "fbc597d7001b533a3443306b1c1867df31587fb966082d43eb0e688fedd05331",
+  "raw_text": "预测 $y_{n+1} = y_{n-1} + 2hf(x_n, y_n)$, (5.2.14)\n校正 $y_{n+1} = y_n + \\frac{h}{2}[f(x_n, y_n) + f(x_{n+1}, \\bar{y}_{n+1})]$. (5.2.15)\n\n与改进的 Euler 格式 (5.2.10)、(5.2.11) 比较，系统 (5.2.14)、(5.2.15) 的一个突出的特点是，它的预测公式与校正公式具有同等精度. 下面将会看到，据此能比较方便地估计出截断误差，并且基于这种估计，可以提供一种提高精度的简易方法.\n\n截断误差的分析仍用 Taylor 方法. 假设预测公式 (5.2.14) 中的 $y_n$ 和 $y_{n-1}$ 都是准确的，即 $y_n = y(x_n), y_{n-1} = y(x_{n-1})$, 则容易验证其局部截断误差\n\n$$y(x_{n+1}) - \\bar{y}_{n+1} \\approx \\frac{h^3}{3} y''(x_n).$$ (5.2.16)\n\n此外，在分析校正公式 (5.2.15) 的误差时，假定其中的预测值 $\\bar{y}_{n+1}$ 是准确的，即 $\\bar{y}_{n+1} = y(x_{n+1})$, 这时有\n\n$$y(x_{n+1}) - y_{n+1} \\approx -\\frac{h^3}{12} y''(x_n).$$ (5.2.17)\n\n比较式 (5.2.16) 和式 (5.2.17) 可发现，校正值的误差 $y(x_{n+1}) - y_{n+1}$ 大约只有预测值的误差 $y(x_{n+1}) - \\bar{y}_{n+1}$ 的 1/4（注意符号相反），即有\n\n$$\\frac{y(x_{n+1}) - y_{n+1}}{y(x_{n+1}) - \\bar{y}_{n+1}} \\approx -\\frac{1}{4}.$$\n\n由此可导出下列事后估计式：\n\n$$\\begin{cases}\ny(x_{n+1}) - \\bar{y}_{n+1} \\approx -\\frac{4}{5}(\\bar{y}_{n+1} - y_{n+1}), \\\\\ny(x_{n+1}) - y_{n+1} \\approx \\frac{1}{5}(\\bar{y}_{n+1} - y_{n+1}).\n\\end{cases}$$ (5.2.18)\n\n可以期望，利用这样估计出的误差作为计算结果的一种补偿，有可能使精度得到改善.\n\n设以 $p_n$ 和 $c_n$ 分别表示第 $n$ 步的预测值和校正值，按估计式 (5.2.18), $p_{n+1} - \\frac{4}{5}(p_{n+1} - c_{n+1})$ 和 $c_{n+1} + \\frac{1}{5}(p_{n+1} - c_{n+1})$ 分别可以取作 $p_{n+1}$ 和 $c_{n+1}$ 的改进值. 在校正值 $c_{n+1}$ 尚未求出之前，可用上一步的偏差值 $p_n - c_n$ 替代 $p_{n+1} - c_{n+1}$ 来改进预测值 $p_{n+1}$, 这样设计的计算方案共有六个环节:\n\n预测 $p_{n+1} = y_{n-1} + 2hy_n'$,\n\n改进 $m_{n+1} = p_{n+1} - \\frac{4}{5}(p_n - c_n)$,\n\n计算 $m'_{n+1} = f(x_{n+1}, m_{n+1})$,\n\n校正 $c_{n+1} = y_n + \\frac{h}{2}(m'_{n+1} + y_n')$,\n\n改进 $y_{n+1} = c_{n+1} + \\frac{1}{5}(p_{n+1} - c_{n+1})$,\n\n• 112 •"
+}

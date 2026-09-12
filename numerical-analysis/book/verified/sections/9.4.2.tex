@@ -1,0 +1,386 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={QR算法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{QR算法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{9.4.2 QR 算法}\label{qr-ux7b97ux6cd5}
+
+设 \(A=A_1=(a_{ij})\in\mathbb R^{n\times n}\)，且对 \(A\) 进行 QR 分解，即 \(A=QR\)，其中 \(R\) 为上三角阵，\(Q\) 为正交阵，于是可得到一新矩阵
+
+\[
+B=RQ=Q^{\mathrm T}AQ.
+\]
+
+显然，\(B\) 是由 \(A\) 经过正交相似变换得到，因此 \(B\) 与 \(A\) 特征值相同。再对 \(B\) 进行 QR 分解，又可得一新的矩阵，重复这过程可得到矩阵序列。
+
+设 \(A=A_1\)，QR 分解，得 \(A_1=Q_1R_1\)，作矩阵 \(A_2=R_1Q_1=Q_1^{\mathrm T}A_1Q_1\)，\(\cdots\)，求得 \(A_k\) 后将 \(A_k\) 进行 QR 分解，得 \(A_k=Q_kR_k\)，作矩阵 \(A_{k+1}=R_kQ_k=Q_k^{\mathrm T}A_kQ_k\cdots\)。
+
+QR 算法，就是利用矩阵的 QR 分解，按上述递推法则构造矩阵序列 \(\{A_k\}\) 的过程。只要 \(A\) 为非奇异矩阵，则由 QR 算法就完全确定 \(\{A_k\}\)。
+
+\textbf{定理 9.17（基本 QR 方法）}　设 \(A=A_1\in\mathbb R^{n\times n}\)，QR 算法为
+
+\[
+\begin{cases}
+A_k=Q_kR_k\quad(Q_k^{\mathrm T}Q_k=I,\ R_k\text{ 为上三角阵}),\\
+A_{k+1}=R_kQ_k\quad(k=1,2,\cdots),
+\end{cases}
+\tag{9.4.8}
+\]
+
+\begin{quote}
+校注（agent 补充）：定理 9.16 证明首句原印``由定理 9.12''，本段所需的平面旋转矩阵将 A 变成上三角阵的结论对应定理 9.15；原引用保留，列为疑似原书编号错误。
+\end{quote}
+
+\href{../../source-images/pdf-253.jpeg}{原页}
+
+且记 \(\widetilde Q_k\equiv Q_1Q_2\cdots Q_k\)，\(\widetilde R_k\equiv R_k\cdots R_2R_1\)，则有
+
+\(1^\circ\)　\(A_{k+1}\) 相似于 \(A_k\)，即 \(A_{k+1}=Q_k^{\mathrm T}A_kQ_k\)；
+
+\(2^\circ\)　\(A_{k+1}=(Q_1Q_2\cdots Q_k)^{\mathrm T}A_1(Q_1Q_2\cdots Q_k)=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k\)；
+
+\(3^\circ\)　\(A^k\) 的 QR 分解式为 \(A^k=\widetilde Q_k\widetilde R_k\)。
+
+\textbf{证明}　结论 \(1^\circ\)、\(2^\circ\) 显然，现用归纳法证结论 \(3^\circ\)。显然，当 \(k=1\) 时有 \(A_1=\widetilde Q_1\widetilde R_1=Q_1R_1\)，设 \(A^{k-1}\) 有分解式 \(A^{k-1}=\widetilde Q_{k-1}\widetilde R_{k-1}\)，于是
+
+\[
+\begin{aligned}
+\widetilde Q_k\widetilde R_k
+&=Q_1Q_2\cdots(Q_kR_k)\cdots R_1
+=Q_1Q_2\cdots Q_{k-1}A_kR_{k-1}\cdots R_1\\
+&=\widetilde Q_{k-1}A_k\widetilde R_{k-1}
+=A\widetilde Q_{k-1}\widetilde R_{k-1}=A^k
+\quad\text{（因为 }A_k=\widetilde Q_{k-1}^{\mathrm T}A\widetilde Q_{k-1}\text{）}.
+\end{aligned}
+\]
+
+由定理 9.13 知，将 \(A_k\) 进行 QR 分解，即将 \(A_k\) 用正交变换（左变换）化为上三角阵。
+
+\[
+Q_k^{\mathrm T}A_k=R_k,\qquad
+A_{k+1}=Q_k^{\mathrm T}A_kQ_k=P_{n-1}\cdots P_2P_1A_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T},
+\]
+
+其中
+
+\[
+Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1.
+\]
+
+这就是说 \(A_{k+1}\) 可由 \(A_k\) 按下述方法求得：
+
+（1）左变换 \(P_{n-1}\cdots P_2P_1A_k=R_k\)（上三角阵）；（2）右变换 \(R_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}=A_{k+1}\)。
+
+\textbf{引理 2}　设 \(M_k=Q_kR_k\)，其中 \(Q_k\) 为正交阵，\(R_k\) 为具有正对角元素的上三角阵，如果 \(M_k\to I\ (k\to\infty)\)，则 \(Q_k\to I\)，及 \(R_k\to I\ (k\to\infty)\)。
+
+\textbf{证明}　设 \(R_k^{\mathrm T}R_k=M_k^{\mathrm T}M_k\to I\ (k\to\infty)\)，记 \(R_k=(r_{ij}^{(k)})\)，矩阵 \(R_k^{\mathrm T}R_k\) 第 1 行是
+
+\[
+r_{11}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)}),
+\]
+
+因此有
+
+\[
+r_{11}^{(k)}\to1,\ r_{12}^{(k)}\to0,\ \cdots,\ r_{1n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.9}
+\]
+
+\(R_k^{\mathrm T}R_k\) 第 2 行是
+
+\[
+r_{12}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)})
++r_{22}^{(k)}\cdot(0,r_{22}^{(k)},r_{23}^{(k)},\cdots,r_{2n}^{(k)}),
+\]
+
+利用式（9.4.9）的结果，则有
+
+\[
+r_{22}^{(k)}\to1,\ r_{23}^{(k)}\to0,\ \cdots,\ r_{2n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.10}
+\]
+
+对于 \(R_k^{\mathrm T}R_k\) 其他行同理可得，故 \(R_k\to I\ (k\to\infty)\)，且易知有 \(R_k^{-1}\to I\ (k\to\infty)\)，因此 \(Q_k=M_kR_k^{-1}\to I\ (k\to\infty)\)。
+
+\textbf{定理 9.18（QR 方法的收敛性）}　设 \(A=(a_{ij})\in\mathbb R^{n\times n}\)，
+
+\(1^\circ\) 如果 \(A\) 的特征值满足：\(|\lambda_1|>|\lambda_2|>\cdots>|\lambda_n|>0\)；
+
+\(2^\circ\) \(A\) 有标准形 \(A=XDX^{-1}\) 其中 \(D=\operatorname{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)\)，且设 \(X^{-1}\) 有三角分解 \(X^{-1}=LU\)（\(L\) 为单位下三角阵，\(U\) 为上三角阵），则由 QR 算法产生的 \(\{A_k\}\) 本质上收敛于上三角阵，即
+
+\[
+A_k\xrightarrow{\text{本质上}}R=
+\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix}\quad(k\to\infty)
+\]
+
+\begin{quote}
+校注（agent 补充）：本页将 QR 分解引用为``定理 9.13''，而 PDF247 上定理 9.13 的结论是约化为上 Hessenberg 阵；本页所述左变换为上三角阵的结论见定理 9.15。保留原引用，列为疑似原书编号错误。
+\end{quote}
+
+\href{../../source-images/pdf-254.jpeg}{原页}
+
+或
+
+\[
+a_{ii}^{(k)}\to\lambda_i\quad(k\to\infty),
+\tag{9.4.11}
+\]
+
+当 \(i>j\) 时，
+
+\[
+a_{ij}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.12}
+\]
+
+当 \(i<j\) 时，\(a_{ij}^{(k)}\) 极限不一定存在。
+
+\textbf{证明}　由于 \(A_{k+1}=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k\) 且 \(\widetilde Q_k\) 为 \(A^k\) 的 QR 分解中的正交矩阵。下面来确定 \(\widetilde Q_k\) 的表达式，进而考虑 \(A_{k+1}\) 的极限情况。
+
+由于 \(A\) 为非奇异矩阵，所以存在非奇异矩阵 \(X\) 使 \(X^{-1}AX=D\)，则
+
+\[
+A^k=XD^kX^{-1},
+\tag{9.4.13}
+\]
+
+又有假设 \(X^{-1}=LU\)，于是式（9.4.13）为
+
+\[
+A^k=XD^kLU=X(D^kLD^{-k})D^kU.
+\]
+
+显然
+
+\[
+D^kLD^{-k}=I+E_k,
+\]
+
+其中
+
+\[
+E_k=\begin{pmatrix}
+0&&&&\\
+\left(\dfrac{\lambda_2}{\lambda_1}\right)^k l_{21}&0&&&\\
+\left(\dfrac{\lambda_3}{\lambda_1}\right)^k l_{31}&\left(\dfrac{\lambda_3}{\lambda_2}\right)^k l_{32}&0&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+\left(\dfrac{\lambda_n}{\lambda_1}\right)^k l_{n1}&\left(\dfrac{\lambda_n}{\lambda_2}\right)^k l_{n2}&\cdots&\left(\dfrac{\lambda_n}{\lambda_{n-1}}\right)^k l_{n,n-1}&0
+\end{pmatrix}.
+\]
+
+由假设条件 \(|\lambda_i/\lambda_j|<1\)（当 \(i>j\) 时），则 \(E_k\to O\ (k\to\infty)\) 且
+
+\[
+\|E_k\|_\infty\leq c\max_{1\leq j\leq n-1}|\lambda_{j+1}/\lambda_j|^k
+\quad(c\text{ 为正的常数},\ k\geq1).
+\tag{9.4.14}
+\]
+
+显然矩阵 \(X\) 有 QR 分解：\(X=QR\)，其中 \(Q\) 为正交阵，\(R\) 为非奇异上三角阵。于是
+
+\[
+A^k=QR(I+E_k)D^kU=Q(I+RE_kR^{-1})RD^kU.
+\tag{9.4.15}
+\]
+
+由于 \(R(I+E_k)\)（当 \(k\) 充分大时）为非奇异，则 \(I+RE_kR^{-1}\) 亦非奇异，于是 \((I+RE_kR^{-1})\) 有 QR 分解（要求 \(R_k\) 对角元素均为正）
+
+\[
+I+RE_kR^{-1}=Q_kR_k\quad\text{且}\quad Q_kR_k\to I\quad\text{（当 }k\to\infty\text{ 时）},
+\]
+
+由引理 2 有 \(Q_k\to I,R_k\to I\)（当 \(k\to\infty\) 时），由式（4.15）有
+
+\[
+A^k=(QQ_k)(R_kRD^kU),
+\tag{9.4.16}
+\]
+
+式（9.4.16）为 \(A^k\) 的 QR 分解式，但 \(R_kRD^kU\)（为上三角阵）对角元素不一定大于零，现引入对角阵
+
+\[
+D_k=\operatorname{diag}(\pm1,\pm1,\cdots,\pm1),
+\]
+
+以便保证 \(D_k(R_kRD^kU)\) 对角元素都为正数。从而得到 \(A^k\) 的 QR 分解式
+
+\[
+A^k=(QQ_kD_k)(D_kR_kRD^kU),
+\]
+
+由 \(A^k\) 矩阵 QR 分解的唯一性得到
+
+\[
+\begin{cases}
+\widetilde Q_k=QQ_kD_k,\\
+\widetilde R_k=D_kR_kRD^kU,
+\end{cases}
+\tag{9.4.17}
+\]
+
+\begin{quote}
+校注（agent 补充）：式（9.4.16）前原印``由式（4.15）有''，本页对应公式编号为（9.4.15）。正文保留原印编号。
+\end{quote}
+
+\href{../../source-images/pdf-255.jpeg}{原页}
+
+从而
+
+\[
+A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k
+=D_kQ_k^{\mathrm T}(RDR^{-1})Q_kD_k
+\quad\text{（注意 }Q^{\mathrm T}AQ=RDR^{-1}\text{）},
+\]
+
+其中
+
+\[
+R_0\equiv RDR^{-1}=\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix},
+\]
+
+于是
+
+\[
+A_{k+1}=g_k^{\mathrm T}R_0g_k,
+\]
+
+其中
+
+\[
+\begin{cases}
+g_k=Q_kD_k,\\
+R_0=RDR^{-1}\quad\text{（上三角阵）},\\
+Q_k\to I\quad(k\to\infty),\\
+D_k\text{ 为对角阵，其元素为 }+1\text{ 或 }-1.
+\end{cases}
+\]
+
+由此即证得式（9.4.11）、式（9.4.12）。且收敛速度依赖于 \(Q_k\to I\) 收敛速度；即依赖于式（9.4.14）的界。
+
+\textbf{定理 9.19}　如果对称阵 \(A\) 满足定理 9.18 条件，则由 QR 算法产生的 \(\{A_k\}\) 收敛于对角阵。
+
+\textbf{证明}　由定理 9.18 即知。下面提一下关于 QR 算法收敛性的另一结果。
+
+设 \(A\in\mathbb R^{n\times n}\)，如果 \(A\) 的等模特征值中只有实重特征值或多重复的共轭特征值，则由 QR 算法产生 \(\{A_k\}\) 本质收敛于分块上三角阵（对角块为一阶和二阶子块）且对角块每一个 \(2\times2\) 子块给出 \(A\) 的一对共轭复特征值，每一个对角子块给出 \(A\) 的实特征值，即
+
+\[
+A_k\to\begin{pmatrix}
+\lambda_1&\times&\cdots&\times&\times\times&\cdots&\times\times\\
+&\lambda_2&\ddots&\vdots&\vdots&&\vdots\\
+&&\ddots&\times&\vdots&&\vdots\\
+&&&\lambda_m&\times\times&\cdots&\times\times\\
+&&&&B_l&\ddots&\vdots\\
+&&&&&\ddots&\times\times\\
+&&&&&&B_l
+\end{pmatrix}.
+\]
+
+其中 \(m+2l=n\)，\(B_i\) 为 \(2\times2\) 子块给出 \(A\) 一对共轭特征值。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 255 的校注}\label{ux539fux4e66-pdf-ux9875-255-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-255.md}{完整原页转录} · \href{../../source-images/pdf-255.jpeg}{原页图像}
+
+校注记录：ch09b-E12。
+
+\begin{quote}
+校注（agent 补充）：上方分块上三角阵中第一个二阶对角块原印为 \(B_l\)，与末块同名；放大字形确认后照录。按 \(m+2l=n\) 及顺序编号，第一个二阶块疑应为 \(B_1\)。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch09b-E12}：原书 PDF 页 255
+\item
+  \texttt{ch09b-E11}：原书 PDF 页 252
+\item
+  \texttt{ch09b-E07}：原书 PDF 页 253
+\item
+  \texttt{ch09b-E08}：原书 PDF 页 254
+\end{itemize}
+
+\end{document}

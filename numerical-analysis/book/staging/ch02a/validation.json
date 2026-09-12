@@ -1,0 +1,878 @@
+{
+  "lane": "ch02a",
+  "status": "transcription_checks_pass_with_documented_source_numerical_discrepancies",
+  "human_review": false,
+  "checks": [
+    {
+      "check": "Original PDF SHA256 matches source provenance",
+      "pass": true,
+      "source_observation": false,
+      "detail": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2"
+    },
+    {
+      "check": "Exactly PDF27 through PDF42 in receipts",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-027.jpeg"
+      ]
+    },
+    {
+      "check": "PDF27 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF27 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-028.jpeg",
+        "../assets/figure-2.1.png"
+      ]
+    },
+    {
+      "check": "PDF28 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF28 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-029.jpeg",
+        "../assets/figure-2.2.png",
+        "../assets/figure-2.3.png"
+      ]
+    },
+    {
+      "check": "PDF29 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF29 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-030.jpeg",
+        "../assets/figure-2.4.png"
+      ]
+    },
+    {
+      "check": "PDF30 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF30 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-031.jpeg"
+      ]
+    },
+    {
+      "check": "PDF31 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF31 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-032.jpeg"
+      ]
+    },
+    {
+      "check": "PDF32 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF32 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-033.jpeg"
+      ]
+    },
+    {
+      "check": "PDF33 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF33 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-034.jpeg"
+      ]
+    },
+    {
+      "check": "PDF34 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF34 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-035.jpeg",
+        "../assets/pdf-035-table-2.2-detail.png"
+      ]
+    },
+    {
+      "check": "PDF35 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF35 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-036.jpeg",
+        "../assets/pdf-036-coefficients-detail.png"
+      ]
+    },
+    {
+      "check": "PDF36 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF36 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-037.jpeg"
+      ]
+    },
+    {
+      "check": "PDF37 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF37 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-038.jpeg",
+        "../assets/pdf-038-recurrence-detail.png"
+      ]
+    },
+    {
+      "check": "PDF38 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF38 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-039.jpeg"
+      ]
+    },
+    {
+      "check": "PDF39 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF39 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-040.jpeg",
+        "../assets/pdf-040-table-2.6.png"
+      ]
+    },
+    {
+      "check": "PDF40 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF40 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-041.jpeg"
+      ]
+    },
+    {
+      "check": "PDF41 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF41 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 file digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 image digest",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 display delimiters and LaTeX environments",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 page provenance",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 local Markdown links",
+      "pass": true,
+      "source_observation": false,
+      "detail": [
+        "../../../source-images/pdf-042.jpeg"
+      ]
+    },
+    {
+      "check": "PDF42 no unresolved markers",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 all original numbered formulas present",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "PDF42 one tag per display",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.7 has all 15 data rows",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.7 order1 all displayed differences from transcribed values",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.7 order2 all displayed differences from transcribed values",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.7 order3 all displayed differences from transcribed values",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.5 has all 6 data rows",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Table2.5 order1 sequential rounded differences match transcribed table",
+      "pass": true,
+      "source_observation": true,
+      "detail": {
+        "recomputed": [
+          "1.11600",
+          "1.18600",
+          "1.27573",
+          "1.38410",
+          "1.51533"
+        ],
+        "source_printed": [
+          "1.11600",
+          "1.18600",
+          "1.27573",
+          "1.38410",
+          "1.51533"
+        ]
+      }
+    },
+    {
+      "check": "Table2.5 order2 sequential rounded differences match transcribed table",
+      "pass": false,
+      "source_observation": true,
+      "detail": {
+        "recomputed": [
+          "0.28000",
+          "0.35892",
+          "0.43348",
+          "0.52492"
+        ],
+        "source_printed": [
+          "0.28000",
+          "0.35893",
+          "0.43348",
+          "0.52493"
+        ]
+      }
+    },
+    {
+      "check": "Table2.5 order3 sequential rounded differences match transcribed table",
+      "pass": false,
+      "source_observation": true,
+      "detail": {
+        "recomputed": [
+          "0.19730",
+          "0.21303",
+          "0.22860"
+        ],
+        "source_printed": [
+          "0.19733",
+          "0.21300",
+          "0.22863"
+        ]
+      }
+    },
+    {
+      "check": "Table2.5 order4 sequential rounded differences match transcribed table",
+      "pass": false,
+      "source_observation": true,
+      "detail": {
+        "recomputed": [
+          "0.03146",
+          "0.03114"
+        ],
+        "source_printed": [
+          "0.03134",
+          "0.03126"
+        ]
+      }
+    },
+    {
+      "check": "Table2.5 order5 sequential rounded differences match transcribed table",
+      "pass": false,
+      "source_observation": true,
+      "detail": {
+        "recomputed": [
+          "-0.00049"
+        ],
+        "source_printed": [
+          "-0.00012"
+        ]
+      }
+    },
+    {
+      "check": "Example2.3 N4 rounds to printed0.63195",
+      "pass": false,
+      "source_observation": true,
+      "detail": {
+        "computed": "0.63191751982370304",
+        "rounded5dp": "0.63192",
+        "printed": "0.63195"
+      }
+    },
+    {
+      "check": "Example2.3 printed fifth difference estimate below3.63e-9",
+      "pass": true,
+      "source_observation": false,
+      "detail": "3.62320293888E-9"
+    },
+    {
+      "check": "Example2.4 computation rounds to1.62",
+      "pass": true,
+      "source_observation": false,
+      "detail": "1.6228"
+    },
+    {
+      "check": "Formula2.5.5 n=1 backward difference sign",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Formula2.5.5 n=2 backward difference sign",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Formula2.5.5 n=3 backward difference sign",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Formula2.5.5 n=4 backward difference sign",
+      "pass": true,
+      "source_observation": false
+    },
+    {
+      "check": "Formula2.5.5 n=5 backward difference sign",
+      "pass": true,
+      "source_observation": false
+    }
+  ],
+  "passed": 143,
+  "total": 148,
+  "limitations": [
+    "Structure and arithmetic checks supplement actual agent visual review; neither is human review or proof of absolute accuracy.",
+    "The Example2.3 error quantity is a heuristic using the printed next divided difference; no global function error bound is proved from finite data alone.",
+    "Full manuscript Markdown/LaTeX rendering and central index integration belong to root acceptance."
+  ]
+}

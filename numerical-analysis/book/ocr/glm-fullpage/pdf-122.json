@@ -1,0 +1,20 @@
+{
+  "pdf_page": 122,
+  "source_image": "source-images/pdf-122.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "421f85a559d9880dd388eec6b51a2fa839459b1261b0e3fe75cec317afcc3a92",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 936,
+  "possibly_truncated": false,
+  "elapsed_seconds": 30.015,
+  "created_utc": "2026-09-12T10:31:17.855061+00:00",
+  "raw_text_sha256": "a18d9491e2937852f8933272fde1020916eaee3fdc157964f3be9ca5e536e09c",
+  "raw_text": "$y_{n+1}^{(2)} = y_n + hf(x_{n+1}, y_{n+1}^{(1)})$.\n\n如此反复进行迭代，得\n$y_{n+1}^{(k+1)} = y_n + hf(x_{n+1}, y_{n+1}^{(k)})$ ($k=0, 1, \\dots$).\n\n如果迭代过程收敛，则极限值 $y_{n+1} = \\lim_{k \\to \\infty} y_{n+1}^{(k)}$ 必满足隐式方程(5.2.5)，从而获得后退的 Euler 方法的解.\n\n再考察后退的 Euler 格式的局部截断误差. 假设 $y_n = y(x_n)$, 则按式(5.2.5)有\n$y_{n+1} = y(x_n) + hf(x_{n+1}, y_{n+1})$, (5.2.6)\n\n由于 $f(x_{n+1}, y_{n+1}) = f(x_{n+1}, y(x_{n+1})) + f_y(x_{n+1}, \\eta)[y_{n+1} - y(x_{n+1})]$, 其中 $\\eta$ 介于 $y_{n+1}$ 与 $y(x_{n+1})$ 之间. 又\n$f(x_{n+1}, y(x_{n+1})) = y'(x_{n+1}) = y'(x_n) + hy''(x_n) + \\dots$,\n代入式(5.2.6)有\n$y_{n+1} = hf_y(x_{n+1}, \\eta)[y_{n+1} - y(x_{n+1})] + y(x_n) + hy'(x_n) + h^2y''(x_n) + \\dots$,\n将它与 Taylor 展开式\n$y(x_{n+1}) = y(x_n) + hy'(x_n) + \\frac{h^2}{2}y''(x_n) + \\dots$\n\n相减，得\n$y(x_{n+1}) - y_{n+1} = hf_y(x_{n+1}, \\eta)[y(x_{n+1}) - y_{n+1}] - \\frac{h^2}{2}y''(x_n) + \\dots$.\n\n再注意到 $\\frac{1}{1 - hf_y(x_{n+1}, \\eta)} = 1 + hf_y(x_{n+1}, \\eta) + \\dots$,\n\n最后整理，得\n$y(x_{n+1}) - y_{n+1} \\approx -\\frac{h^2}{2}y''(x_n)$. (5.2.7)\n\n5.2.3 梯形格式\n\n比较 Euler 格式与后退的 Euler 格式的误差公式(5.2.3)、(5.2.7)，可以看到，如果将这两种方法进行算术平均，即可消除误差的主要部分 $\\pm \\frac{h^2}{2}y''_n$ 而获得更高的精度. 这种平均化方法通常称为梯形方法，其计算格式为\n$y_{n+1} = y_n + \\frac{h}{2}[f(x_n, y_n) + f(x_{n+1}, y_{n+1})]$. (5.2.8)\n\n梯形方法的这种平均化思想亦可借助于几何直观来说明，仍设顶点 $P_n(x_n, y_n)$ 落在积分曲线 $y = y(x)$ 上（见图 5.3），用 Euler 方法求解时，过点 $P_n$ 以斜率 $f(x_n, y_n)$ 引折线交 $x = x_{n+1}$ 得出顶点 $A$，而用后退的 Euler 方法求解时，则以点 $Q(x_{n+1}, y_{n+1})$ 的斜率 $f(x_{n+1}, y_{n+1})$ 从顶点 $P_n$ 引折线交 $x = x_{n+1}$ 得另一顶点 $A$ 和 $B$ 两点均偏离"
+}

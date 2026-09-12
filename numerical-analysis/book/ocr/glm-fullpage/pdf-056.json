@@ -1,0 +1,20 @@
+{
+  "pdf_page": 56,
+  "source_image": "source-images/pdf-056.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "8d920c441d02fc67b331349294c5e7dcd22bb7fe4f7416a500882abe33cd765e",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1163,
+  "possibly_truncated": false,
+  "elapsed_seconds": 37.398,
+  "created_utc": "2026-09-12T09:44:30.375186+00:00",
+  "raw_text_sha256": "33e913a72d9ab4eb7a0663d39f7b9bdeb35c641c740ad1e32522412bf0b5f6ab",
+  "raw_text": "函数我们都未涉及，需要对样条函数作更进一步研究的读者可参看文献[3].\n\n习 题\n\n1. 根据式(2.2.2)定义的 Vandermonde 行列式，令\n$$V_n(x) = V_n(x_0, x_1, \\cdots, x_{n-1}, x) = \\begin{vmatrix}\n1 & x_0 & x_0^2 & \\cdots & x_0^n \\\\\n\\vdots & \\vdots & \\vdots & & \\vdots \\\\\n1 & x_{n-1} & x_{n-1}^2 & \\cdots & x_{n-1}^n \\\\\n1 & x & x^2 & \\cdots & x^n\n\\end{vmatrix},$$\n证明 $V_n(x)$ 是 $n$ 次多项式，它的根是 $x_0, x_1, \\cdots, x_{n-1}$，且\n$$V_n(x) = V_{n-1}(x_0, x_1, \\cdots, x_{n-1})(x - x_0) \\cdots (x - x_{n-1}).$$\n2. 当 $x=1, -1, 2$ 时，$f(x)=0, -3, 4$，求 $f(x)$ 的二次插值多项式.\n3. 给出 $f(x)=\\ln x$ 的数值表（见表2.9），用线性插值及二次插值计算 $\\ln 0.54$ 的近似值.\n\n表2.9\n| $x$ | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| $\\ln x$ | $-0.916$ 291 | $-0.693$ 147 | $-0.510$ 826 | $-0.357$ 765 | $-0.223$ 144 |\n\n4. 给出 $\\cos x, 0^\\circ \\leq x \\leq 90^\\circ$ 的函数表，步长 $h=1'=(1/60)^\\circ$，若函数表具有五位有效数字，研究用线性插值求 $\\cos x$ 近似值时的总误差限.\n5. 设 $x_k=x_0+kh$，$k=0, 1, 2, 3$，求 $\\max_{x_0 \\leq x \\leq x_3} |l_2(x)|$.\n6. 设 $x_j (j=0, 1, \\cdots, n)$ 为互异节点，求证：\n(1) $\\sum_{j=0}^{n} x_j^k l_j(x) \\equiv x^k$ ($k=0, 1, \\cdots, n$);\n(2) $\\sum_{j=0}^{n} (x_j - x)^k l_j(x) \\equiv 0$ ($k=1, 2, \\cdots, n$).\n7. 设 $f(x) \\in C^2 [a, b]$ 且 $f(a)=f(b)=0$，求证 $\\max_{a \\leq x \\leq b} |f(x)| \\leq \\frac{1}{8} (b-a)^2 \\max_{a \\leq x \\leq b} |f''(x)|$.\n8. 在 $-4 \\leq x \\leq 4$ 上给出 $f(x)=e^x$ 的等距节点函数表，若用二次插值求 $e^x$ 的近似值，要使截断误差不超过 $10^{-6}$，使用函数表的步长 $h$ 应取多少?\n9. 若 $y_n=2^n$，求 $\\Delta^4 y_n$ 及 $\\delta^4 y_n$.\n10. 如果 $f(x)$ 是 $m$ 次多项式，记 $\\Delta f(x)=f(x+h)-f(x)$，证明 $f(x)$ 的 $k$ 阶差分 $\\Delta^k f(x)$ ($0 \\leq k \\leq m$) 是 $m-k$ 次多项式，并且 $\\Delta^{m+l} f(x)=0$ ($l$ 为正整数).\n11. 证明 $\\Delta(f_k g_k)=f_k \\Delta g_k+g_{k+1} \\Delta f_k$.\n12. $\\sum_{k=0}^{n-1} f_k \\Delta g_k=f_n g_n-f_0 g_0-\\sum_{k=0}^{n-1} g_{k+1} \\Delta f_k$.\n13. 证明 $\\sum_{j=0}^{n-1} \\Delta^2 y_j=\\Delta y_n-\\Delta y_0$.\n14. 若 $f(x)=a_0+a_1 x+\\cdots+a_{n-1} x^{n-1}+a_n x^n$ 有 $n$ 个不同实根 $x_1, x_2, \\cdots, x_n$，证明："
+}

@@ -1,0 +1,255 @@
+{
+  "lane": "ch11",
+  "reviewer": "Codex agent ch10 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 276,
+      "sha256": "14537c0df9d181ceb633f7e51145af91d2eb86d71ccd429e14d0815bbf320783",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立打开原页，逐段对照章名前星号、引言及故事开头；正文与跨页衔接吻合。"
+      ]
+    },
+    {
+      "pdf_page": 277,
+      "sha256": "386ca7ee7c8569eb0700b934636bd51e562eb3aeb4c4b2457438b383d41418f5",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立打开原页，对照人物名称、数字、SIMD/MIMD英文和同步性定义，未发现转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 278,
+      "sha256": "318225575ac7b85eee911b8020e54843bb676798114b33aca819e5c5dac711f7",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立打开原页并用original分辨率复看；式11.2.1、11.2.2的求和界、N=2^n和正文吻合。"
+      ]
+    },
+    {
+      "pdf_page": 279,
+      "sha256": "72c88ce2817f85f563cdfe5f72dff03e2a7e320964906bc62094f8f9149ba02a",
+      "source_visual_review": "completed",
+      "notes": [
+        "原分裂式的全部四个子区间与范围逐项吻合；图11.1的15个和式标签及向下箭头已对照。",
+        "已另行实际打开资产 figure-11-1.png；图框、图号、所有标签及外侧方向/步数标签完整，裁切与本页原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 280,
+      "sha256": "003791eaba73500f5903ea090b44a42ef752414177be54a3437e01498dc324cc",
+      "source_visual_review": "completed",
+      "notes": [
+        "图11.2的全部和式标签及向上箭头、式11.2.3的一般索引、算法11.1和正文已逐项对照。",
+        "已另行实际打开资产 figure-11-2.png；图框、图号、所有标签及外侧方向/步数标签完整，裁切与本页原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 281,
+      "sha256": "e539387ad65240cac1b3bcbcb2bb26ff689922b491455b195e7785ccab1fc044",
+      "source_visual_review": "completed",
+      "notes": [
+        "式11.2.4、算法11.2及向量末项下标与原图吻合；独立确认CH11-E001的两处10.2.1原印，校注指向11.2.1有明确本章定义依据。"
+      ]
+    },
+    {
+      "pdf_page": 282,
+      "sha256": "ccf44a909c1591915e10fd407c4e20c360e8143d2ef2c0daac254ca453fa87b2",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图11.3的全部15个系数标签与二分方向逐项吻合；多项式两层展开、式11.2.5以及算法11.3开头均已对照。",
+        "已另行实际打开资产 figure-11-3.png；图框、图号、所有标签及外侧方向/步数标签完整，裁切与本页原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 283,
+      "sha256": "d2a6c30522c5ca92200ef38232ac4fc0b465463ea4b362ca68d530a2e9eba84e",
+      "source_visual_review": "completed",
+      "notes": [
+        "向量递推的全部末项下标、x分量与原图一致；时间界、处理机台数界、加速比和效率定义逐句核对。"
+      ]
+    },
+    {
+      "pdf_page": 284,
+      "sha256": "18bd31a67f373b43f155093b159729d49a0a170f55a3881a2fc641242bb8e382",
+      "source_visual_review": "completed",
+      "notes": [
+        "两类算法的复杂度和处理机计数均忠实原印。CH11-E002仅在各分量完全同步的安排下指出额外x分量；认可此限定疑点，不将一般调度下的P*结论判定为已证错误。"
+      ]
+    },
+    {
+      "pdf_page": 285,
+      "sha256": "8bd31c4068079ed1a02653b81e503dfd69e61e0980a5d6169ed1ea527de94ae6",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字核对二分法基本特征续文、11.3引言与相关链定义；式11.3.1的初值和范围均与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 286,
+      "sha256": "bbe689ff025ccfec9f77222b52981e1b476109ec4a4268ce7d9d878582b727b2",
+      "source_visual_review": "completed",
+      "notes": [
+        "式11.3.2至11.3.5的步长、末项下标及系数次序均逐式核对。图11.4全部32个x标签、链间顺序和7个波纹标记与文字表一致。",
+        "已另行实际打开资产 figure-11-4.png；图框、图号、所有标签及外侧方向/步数标签完整，裁切与本页原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 287,
+      "sha256": "bfff2950ec66258208e729d265af6dd663cbeeedea08526f35727259513a858c",
+      "source_visual_review": "completed",
+      "notes": [
+        "式11.3.6至11.3.11以及全部无号推导逐项对照；11.3.10第二范围项的+1确在指数内。与同页紧前推导的连续范围不符，CH11-E003原印及校注依据确认。"
+      ]
+    },
+    {
+      "pdf_page": 288,
+      "sha256": "f812646ffd74ebbe7366249be5116dce77187a44d20b4b82f2cf0c9bbb36e672",
+      "source_visual_review": "completed",
+      "notes": [
+        "算法11.4结果、效能分析及式11.4.1三行方程逐项吻合；包括处理机计数的两个不同幂次、S/E近似号与N=2^n假设。"
+      ]
+    },
+    {
+      "pdf_page": 289,
+      "sha256": "c0e5fbd300535effb410accb116123ecc75c867469ecd8d7fd581ea1fbbaacd8",
+      "source_visual_review": "completed",
+      "notes": [
+        "相关链全部下标和双向箭头核对；11.4.2第二行x_0确为原印，与该行余下模2^k余1的下标矛盾，确认CH11-E004。图11.5的32个x标签、步0至3和波纹标记均一致。",
+        "已另行实际打开资产 figure-11-5.png；图框、图号、所有标签及外侧方向/步数标签完整，裁切与本页原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 290,
+      "sha256": "551cea1fb944a64dca39ed003a774a8295f9b68adc014b28b08b7924d0dc3008",
+      "source_visual_review": "completed",
+      "notes": [
+        "六个子系统全部系数/变量逐项核对；奇子系统五处偶下标确为原印，确认CH11-E005。一般形式回引11.4.3亦照录，11.4.1才定义一般N情形，确认CH11-E006的本页部分。"
+      ]
+    },
+    {
+      "pdf_page": 291,
+      "sha256": "7fb2a29a8a3833767047356d5235e279f5883cbc588aba6f6a9ea85273578f6a",
+      "source_visual_review": "completed",
+      "notes": [
+        "b/c/f的一阶与k阶全部分段、两个奇偶子系统及所有范围逐项对照。确认三处11.4.3回引中本页两处、10.3.2原印，以及E007边界漏项、E008中间范围越界、E009中心x_0，正文均忠实保留。"
+      ]
+    },
+    {
+      "pdf_page": 292,
+      "sha256": "439d6644681085b7aca53033e938e07b2ff696f527522ec3a7193d9e9129d2e5",
+      "source_visual_review": "completed",
+      "notes": [
+        "f_i^(k)三分支的每个邻项和范围均与原图一致；两处算法10.5原印、最终求解式、全部小结段落及求和递推已核。E006编号校注与E007终步范围校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 293,
+      "sha256": "7ea7307ea8696667018ee023e1bd56b427f46d0d90246c330664e0ce627ebde5",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字核对小结续句、华中科技大学并行计算研究所、20世纪80年代中期和软件包名；原页以下为空白，无遗漏习题或续文。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CH11-X-SOURCE-E001",
+      "source_erratum_id": "CH11-E001",
+      "pdf_pages": [
+        281
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "原图两处均为10.2.1；目标求和定义在PDF278式11.2.1，原文照录和校注均准确。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E002",
+      "source_erratum_id": "CH11-E002",
+      "pdf_pages": [
+        283,
+        284
+      ],
+      "status": "qualified_source_concern",
+      "note": "原图计数N/2^k和向量N_k+1分量均确认。校注明确以每个分量完全同步执行乘加为前提，并保留未说明调度的可能性；独立审查仅确认这一条件性计数疑点，不断言P*在任何调度下均错误。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E003",
+      "source_erratum_id": "CH11-E003",
+      "pdf_pages": [
+        287
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "原图11.3.10清楚印为2^{k+1}，同页上一组系数公式及11.3.7均为连续范围2^k,2^k+1,...；该矛盾直接来自本页推导而非外部惯例。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E004",
+      "source_erratum_id": "CH11-E004",
+      "pdf_pages": [
+        289
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "11.4.2第二行首项确为x_0。该行其余下标均模2^k余1，前面的第一次奇偶拆链以x_1为首，与原印x_0不相容；校注准确。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E005",
+      "source_erratum_id": "CH11-E005",
+      "pdf_pages": [
+        290
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "奇子系统原印五个变元依次x_0,x_4,x_2,x_6,x_4；同页文字明确其链为x_1↔x_3↔x_5↔x_7且后续四个子系统不含这些混合邻项。校注指向x_1,x_5,x_3,x_7,x_5正确。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E006",
+      "source_erratum_id": "CH11-E006",
+      "pdf_pages": [
+        290,
+        291,
+        292
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "三个一般N方程组回引原印均为11.4.3，但11.4.3明确是N=8示例，11.4.1才为一般形式；10.3.2主题实际对应11.3.2；两处算法10.5原印与本章前四个11.x算法编号不一致。原印与校注均已逐处核实。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E007",
+      "source_erratum_id": "CH11-E007",
+      "pdf_pages": [
+        291,
+        292
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "独立从11.4.1消去i=1两邻元得出校注中的b_1和f_1两项减式，原印第一分支漏左项，i=N-2对称漏右项。并用有理数检查N=8、a_i=c_i=1（端点无邻项）、b_i=4、已知解x_i=i+1：源公式生成的新i=1方程残差-1，完整两邻消元残差0。k=n=3时首尾范围均为0..7，右邻访问8..11、左邻访问-4..-1，直接确认重叠与越界。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E008",
+      "source_erratum_id": "CH11-E008",
+      "pdf_pages": [
+        291
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "两处中间范围原印N/2-1；代入上界，偶系统第三项x_{2i+2}=x_N、奇系统第三项x_{2i+3}=x_{N+1}，且中心分别等于单列末行的x_{N-2},x_{N-1}。校注把中间上界疑改N/2-2有直接索引依据。"
+    },
+    {
+      "id": "CH11-X-SOURCE-E009",
+      "source_erratum_id": "CH11-E009",
+      "pdf_pages": [
+        291
+      ],
+      "status": "confirmed_source_erratum",
+      "note": "k步方程第一分支中心确印x_0。取k=1,i=1应复现本页奇系统首行b_1^(1)x_1+c_1^(1)x_3=f_1^(1)，原印x_0无法复现；校注依据成立。"
+    }
+  ],
+  "unresolved": [],
+  "final_verification": {
+    "page_count": 18,
+    "figure_count": 5,
+    "source_errata_count": 9,
+    "all_current_md_sha256_match": true,
+    "all_primary_review_sha256_match": true,
+    "all_source_image_sha256_match_primary": true,
+    "unresolved_count": 0,
+    "statement": "18张原页及5张图裁切均由本agent实际打开核对；独立复核只写此回执，未改primary正文。E002保留为附条件的处理机计数疑点，其余8组原书疑误有原页和本章内推导的明确依据。"
+  }
+}

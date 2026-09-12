@@ -1,0 +1,20 @@
+{
+  "pdf_page": 26,
+  "source_image": "source-images/pdf-026.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "1fa83ba1bb798cc34f65a1ac7fcb81e6852c57522105cd902f2dcaa12d110751",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 410,
+  "possibly_truncated": false,
+  "elapsed_seconds": 19.634,
+  "created_utc": "2026-09-12T09:52:03.739779+00:00",
+  "raw_text_sha256": "11a2993755021e40e0441a231144ef275be40cde3f404b28a291bbf6fddccb64",
+  "raw_text": "计算到 $y_{10}$ 时误差有多大？这个计算过程稳定吗？\n\n12. 计算 $(\\sqrt{2}-1)^6$, 取 $\\sqrt{2} \\approx 1.4$, 利用下式计算, 哪一个得到的结果最好?\n\n$$\\frac{1}{(\\sqrt{2}+1)^6}, \\quad (3-2\\sqrt{2})^3, \\quad \\frac{1}{(3+2\\sqrt{2})^3}, \\quad 99-70\\sqrt{2}.$$\n\n13. $f(x)=\\ln(x-\\sqrt{x^2-1})$, 求 $f(30)$ 的值. 求对数时误差有多大? 若改用另一等价公式\n\n$$\\ln(x-\\sqrt{x^2-1})=-\\ln(x+\\sqrt{x^2+1})$$\n\n计算, 求对数时误差有多大?\n\n14. 试用消元法解方程组 $\\begin{cases} x_1+10^{10}x_2=10^{10}, \\\\ x_1+x_2=2, \\end{cases}$ 假定只用三位数计算, 结果是否可靠?\n\n15. 已知三角形面积 $S=\\frac{1}{2}ab\\sin c$, 其中 $c$ 为弧度, $0<c<\\frac{\\pi}{2}$, 且测量 $a, b, c$ 的误差分别为 $\\Delta a$, $\\Delta b$, $\\Delta c$. 证明面积的误差 $\\Delta S$ 满足\n\n$$\\left|\\frac{\\Delta S}{S}\\right| \\leqslant \\left|\\frac{\\Delta a}{a}\\right| + \\left|\\frac{\\Delta b}{b}\\right| + \\left|\\frac{\\Delta c}{c}\\right|.$$\n\n· 13 ·"
+}

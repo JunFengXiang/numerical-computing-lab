@@ -1,0 +1,20 @@
+{
+  "pdf_page": 11,
+  "source_image": "source-images/pdf-011.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "31adbe9219103620a329280eab30e6bab0efb9d9997a060153d919a73a0e0d0c",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 525,
+  "possibly_truncated": false,
+  "elapsed_seconds": 22.384,
+  "created_utc": "2026-09-12T09:28:55.392817+00:00",
+  "raw_text_sha256": "70698e95a8c07130c0f41b942fc851417ae15c6a51ddee50703b17661cb5db6e",
+  "raw_text": "习题····· (158)\n\n第8章 解线性方程组的迭代法····· (202)\n8.1 引言 ····· (202)\n8.2 Jacobi 迭代法与 Gauss-Seidel 迭代法 ····· (204)\n8.2.1 Jacobi 迭代法 ····· (204)\n8.2.2 Gauss-Seidel 迭代法 ····· (205)\n8.3 迭代法的收敛性 ····· (206)\n8.4 解线性方程组的超松弛迭代法 ····· (213)\n小结····· (217)\n习题····· (217)\n\n第9章 矩阵的特征值与特征向量计算····· (220)\n9.1 引言 ····· (220)\n9.2 幂法及反幂法 ····· (222)\n9.2.1 幂法 ····· (222)\n9.2.2 加速方法 ····· (225)\n9.2.3 反幂法 ····· (227)\n9.3 Householder 方法 ····· (230)\n9.3.1 引言 ····· (230)\n9.3.2 用正交相似变换约化矩阵 ····· (232)\n9.4 QR算法 ····· (237)\n9.4.1 引言 ····· (237)\n9.4.2 QR算法 ····· (239)\n9.4.3 带原点位移的QR方法 ····· (242)\n小结····· (246)\n习题····· (246)\n\n下篇 高效算法设计\n\n*第10章 快速算法设计:快速Walsh变换····· (248)\n10.1 美的Walsh函数 ····· (248)\n10.1.1 微积分的逼近法 ····· (248)\n10.1.2 Walsh函数的复杂性 ····· (249)\n10.1.3 Walsh分析的数学美 ····· (250)\n10.2 Walsh函数代数化 ····· (251)\n10.2.1 时基上的二分集 ····· (251)\n10.2.2 Walsh函数的矩阵表示 ····· (252)\n\n·6·"
+}

@@ -1,0 +1,146 @@
+{
+  "lane": "ch03b",
+  "reviewer": "Codex agent ch03a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 76,
+      "sha256": "1ad027de5a46df69e40dcb97cc22f224bad89b26faaf56bfaaf6eccc858beeac",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐式检查 U、Laguerre、Hermite 的区间、权、递推与归一化；原书 e^n 疑误校注确由原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 77,
+      "sha256": "39464846790c43f19a52a1439a44d1a64952b4fec4a6180afd4cb11f0212b966",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对全部展开系数、均方误差式和例 3.4 数值；原书 delta_k 下标校注由原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 78,
+      "sha256": "e4c11662adc358fc5ad48c58ea9ded7dd5c023fcb3efd2f50391045c9f7b80e1",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐式核对例 3.4 的两种误差、区间变换和完整 3.6.1 开头；原书最大误差式 S_3 无星号校注与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 79,
+      "sha256": "d2d0fb4bee83cc03e8617c7769b41424027fd6cd2a47e443a4c1870614b0a2a9",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐式核对加权最小二乘、偏导、法方程及矩阵；原书 (3.6.1) 求和 i=1、小写 varphi 校注由原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 80,
+      "sha256": "64688efe2bed89c761323b731b2632de6d5009d8085776a8307d0a17f28a3de8",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对表 3.3 全部 15 个数据项、表 3.4 全部 16 组数据与单位、图 3.6 标签；权函数上标星号确由原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 81,
+      "sha256": "edb1d9359d2a6530035f14debc1ffbc03172fb775160ae241d9e20c618e75271",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对两个拟合模型、线性方程数值、误差上下标与图 3.7 全部轴标签；e^(-1.0567t) 及漏帽号的校注均由原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 82,
+      "sha256": "75ceb07e2a2f42fede7d1d6a5c3ef8e8370be3f12eafcb80e72f11b15b3a945e",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对离散正交求和、三项递推、第一行 a_{k+1} 以及 beta 的共同 k 范围；两条疑误校注均符合原印。"
+      ]
+    },
+    {
+      "pdf_page": 83,
+      "sha256": "21513096ae8d8124e1733d421794f4ed0a496e4429c1425c8ed68d4900edcd6d",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐行核对归纳证明、三项递推各下标及 C_j 求和；首式字母 l、下一段数字 1 及页尾 alpha_k 星号均与原图一致，校注有据。"
+      ]
+    },
+    {
+      "pdf_page": 84,
+      "sha256": "bcab6452c5529c60e3a4f1df021603c9fc652d7b38ac66c8a6984170c512e669",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对多元最小二乘全部索引及 3.7.1；原书 a_0,a_2 列表、k=1 与后续 k=0 不一致、内积 phi_i 的校注均有原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 85,
+      "sha256": "9ad3423e906477e4c5922cda5e2681647a71ea75ba4bbf8c1028d3f1a1912e50",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对 Fourier 积分上下限、离散三角正交分情况常数、2m+1 及截断次数；原书最后条件 k,j 校注符合原图。"
+      ]
+    },
+    {
+      "pdf_page": 86,
+      "sha256": "57d8e36d2b20773f66a901b161157175cf02861d4f0ee41fb2c9706acff2821f",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对复向量、指数正负号、N 点几何级数证明、正反变换归一化和全部四式编号。"
+      ]
+    },
+    {
+      "pdf_page": 87,
+      "sha256": "6fc5dcb72b6b51adbbbad978fd043667c02e35d4c366a87e6077ea239c4d69ab",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对 FFT 引言、模 N 余数和三重求和每个二进制下标及幂；N/2 个值与 w 的余数两项校注确由原文支持。"
+      ]
+    },
+    {
+      "pdf_page": 88,
+      "sha256": "790288fea97a3cc9bd4fd70d994e2e86bb6941efb0e26e11c653c3821d7c1b4e",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐式核对 (3.7.12)–(3.7.14) 的三重拆分、二进制下标、蝴蝶运算重排与乘幂；正文和跨页衔接完整。"
+      ]
+    },
+    {
+      "pdf_page": 89,
+      "sha256": "b2b8783698ee6934dbaf9d77917b393da8334cbcf13d595b5106526e3506a344",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐单元核对表 3.5 的 8 列全部中间结果、(3.7.15)–(3.7.16) 索引与循环界；表中 A_1(0)+A_1(5)、C_i 及操作次数指数 q/1 均为原印，三条疑误校注有原图支持。"
+      ]
+    },
+    {
+      "pdf_page": 90,
+      "sha256": "82c733557745e62640f18a2ee9b36899585398183d22773e660c09408b98542b",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐步核对改进 FFT 的 8 步、奇偶数组交换、全部读取偏移与 j 上界；步骤 5、6 的原书疑误校注由原图支持。小结两段、参考文献号及习题 1(1) 均完整。"
+      ]
+    },
+    {
+      "pdf_page": 91,
+      "sha256": "e92a6efc3e420b15f9511994eba5fa7ba32d4c956ca23ccdcaf8f07719757e96",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字逐式核对习题 1(2)–22 的次数、区间、权函数、积分及递推关系；题 10 定义左端无星号、题 15 的 (3.4.5) 引用确为原印，校注依据明确。"
+      ]
+    },
+    {
+      "pdf_page": 92,
+      "sha256": "2df9a1fb92ecf83abea74d85d7b9e7da7bca8c27610f836903ca13ce19dc41fa",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐项核对表 3.6 的 5 组、表 3.7 的 6 组和表 3.8 的 12 组数据及单位、全部题 23–27；无漏表、错数或漏题。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

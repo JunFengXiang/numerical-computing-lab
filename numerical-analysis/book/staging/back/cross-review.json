@@ -1,0 +1,129 @@
+{
+  "lane": "back",
+  "reviewer": "Codex agent ch13 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 318,
+      "sha256": "62a3396edbedab142b843bd9ab226c1c29e4dec9f99b15966d9ab297e6453148",
+      "source_visual_review": "completed",
+      "notes": [
+        "已逐项比对第1至4章答案。y^n与T_1确见于原扫描；新增校注已回查PDF056/117，区分索引错误与未验证的求积数值。原答案正文未被静默更改。"
+      ],
+      "path": "staging/back/pages/pdf-318.md",
+      "source_image_sha256": "29b9f3114ab42d65ee97ad86a5ef267dc4878ecda194048a1e650a3ef2956ce7",
+      "primary_receipt_hash_match": true
+    },
+    {
+      "pdf_page": 319,
+      "sha256": "090820dba0165fc7ca7ef9c816bcca6657878775d9c74a4ba55be74cbf48102d",
+      "source_visual_review": "completed",
+      "notes": [
+        "已逐项比对第4章续题、第5至7章所有列出答案、四个系数条件、LU递推与回代公式。"
+      ],
+      "path": "staging/back/pages/pdf-319.md",
+      "source_image_sha256": "493762d77c5bcec2cc1868d2ddb04afa2e2660a2c8dbe544ec1c2df0957168ba",
+      "primary_receipt_hash_match": true
+    },
+    {
+      "pdf_page": 320,
+      "sha256": "324947db0c6f450c905803eac0fb1ab2d6fdb1b321d31d17f67c93b60cfb8277",
+      "source_visual_review": "completed",
+      "notes": [
+        "已逐项比对4×4逆矩阵、3×3特征值矩阵、所有向量及上下标；A_s末下标另行放大核对为s。",
+        "BACK-S003校注已纠正为前两组第2分量问题，omega=1.1的向量满足原题误差阈值。BACK-S004已给出原题与精确解对比，未推定全部应改尾数。"
+      ],
+      "path": "staging/back/pages/pdf-320.md",
+      "source_image_sha256": "e9ae9aa69241410577008806306334e96917ef230f589c8efe201c4d9a086fe5",
+      "primary_receipt_hash_match": true
+    },
+    {
+      "pdf_page": 321,
+      "sha256": "f07e0bfa2a67ae73fd4d927c948f4aa4fe237ac61d1fe4ea05ec7fc0be60dc75",
+      "source_visual_review": "completed",
+      "notes": [
+        "20条参考文献逐条比对作者、书名、出版地、出版社、年份、卷版次及译者；未发现转录差异。"
+      ],
+      "path": "staging/back/pages/pdf-321.md",
+      "source_image_sha256": "d452c6f9a0bb8e84a415e49712db3c398e1e8bbace03aa41fd39267d9d7fcd13",
+      "primary_receipt_hash_match": true
+    },
+    {
+      "pdf_page": 322,
+      "sha256": "b4f2518d759acc11052d8fc3daff975d2debcee017cc39e2ed446bffb63e88cb",
+      "source_visual_review": "completed",
+      "notes": [
+        "17项封底书目、两级标题、规划标志、编辑姓名、ISBN 978-7-5680-3946-8、条码 9 787568 039468、定价39.80元逐项比对；未发现转录差异。"
+      ],
+      "path": "staging/back/pages/pdf-322.md",
+      "source_image_sha256": "de52b3c0312ee02e6ed055a98db0fafba6247622af1130e5f7568c3aa1e951d9",
+      "primary_receipt_hash_match": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "BACK-CROSS-001",
+      "kind": "agent_annotation_error",
+      "pdf_page": 320,
+      "location": "第8章第9题文末校注及 BACK-S003",
+      "status": "resolved",
+      "description": "原注怀疑 omega=1.1 的第二分量0.9999989，但原题 PDF231 明示精确解(1/2,1,-1/2)；该值满足给定分量误差，错位的是前两组0.1000001、0.1000002。原答案数值转录本身与原图一致。",
+      "requested_change": "保持原答案，改为标注前两组第二分量错误，说明不代表原书所有数值尾数均已复现。",
+      "evidence_pdf_pages": [
+        231,
+        320
+      ],
+      "resolution": "原转录agent已改正校注及主回执，保留全部原书答案数值。独立复核当前MD并确认SHA与主回执一致。",
+      "resolved_sha256": "324947db0c6f450c905803eac0fb1ab2d6fdb1b321d31d17f67c93b60cfb8277"
+    }
+  ],
+  "unresolved": [],
+  "source_errata_checks": [
+    {
+      "id": "BACK-S001",
+      "exercise_pdf_page": 56,
+      "exercise_printed_page": 43,
+      "answer_pdf_page": 318,
+      "conclusion": "原题明确 y_n=2^n 并求 Delta^4 y_n 与 delta^4 y_n；答案第一式 y^n 属上下标不一致，原图转录正确。",
+      "mathematical_check": "前向四阶系数给出(16-32+24-8+1)2^n=2^n；中心四阶给出(4-8+6-2+1/4)2^n=2^(n-2)。"
+    },
+    {
+      "id": "BACK-S002",
+      "exercise_pdf_page": 117,
+      "exercise_printed_page": 104,
+      "answer_pdf_page": 318,
+      "conclusion": "原题第2题（2）明确n=10，答案扫描明确T_1；支持下标疑误，必须保留原式。",
+      "mathematical_check": "仅核定n与下标不一致；未验证给出的求积数值。原题在x=0端点有奇性，不能将该项当已验证数值结果。"
+    },
+    {
+      "id": "BACK-S003",
+      "exercise_pdf_page": 231,
+      "exercise_printed_page": 218,
+      "answer_pdf_page": 320,
+      "conclusion": "校注已修正。原题精确解(1/2,1,-1/2)，原书三向量误差∞范数分别为0.8999999、0.8999998、0.0000035，前两组错误，第三组满足5e-6阈值。",
+      "mathematical_check": "以精确十进制直接比较原向量与题给精确解；原书所有迭代尾数并未全部复现。"
+    },
+    {
+      "id": "BACK-S004",
+      "exercise_pdf_page": 231,
+      "exercise_printed_page": 218,
+      "answer_pdf_page": 320,
+      "conclusion": "原题精确解(-4,3,2)，原答0.2999989与0.2000003分别与第2、3分量量级不符；支持原书数值排印疑误。",
+      "mathematical_check": "零初值、omega=.9的SOR第8次得到(-4.000025571,2.999987901,2.000003528)，相邻迭代差∞范数约6.397e-5；仅验证量级与迭代次数，未声称复现全部尾数。"
+    }
+  ],
+  "verification_scope": "通过指PDF318–322全部5页转录与原图一致、已发现的校注误判修复且当前MD哈希与主回执匹配；并不表示全体习题答案已作独立数学验证。",
+  "verification_limits": [
+    "BACK-S002只确认n=10与T_1下标不一致，1.39148和1.45471的数值正确性未验证；当前正文已明确说明。",
+    "BACK-S003和BACK-S004未依据量级自行推定全部应替换尾数；当前正文已明确说明。"
+  ],
+  "inventories_checked": {
+    "reference_entries": 20,
+    "back_cover_book_entries": 17,
+    "back_cover_isbn": "978-7-5680-3946-8",
+    "back_cover_barcode": "9 787568 039468",
+    "back_cover_price": "39.80元"
+  },
+  "completed_at_utc": "2026-09-12T10:29:24.485231+00:00"
+}

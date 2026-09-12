@@ -1,0 +1,563 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss 主元素消去法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss 主元素消去法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{7.3 Gauss 主元素消去法}\label{gauss-ux4e3bux5143ux7d20ux6d88ux53bbux6cd5}
+
+由 Gauss 消去法知道，在消元过程中可能出现 \(a_{kk}^{(k)}=0\) 的情况，这时消去法将无法进行；即使在主元素 \(a_{kk}^{(k)}\ne0\) 但很小时，用其作除数，也会导致其他元素数量级的严重增长和舍入误差的扩散，最后会使得计算解不可靠。
+
+\textbf{例 7.3} 求解方程组
+
+\[
+\begin{pmatrix}
+0.001&2.000&3.000\\
+-1.000&3.712&4.623\\
+-2.000&1.072&5.643
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=\begin{pmatrix}1.000\\2.000\\3.000\end{pmatrix}.
+\]
+
+用四位浮点数进行计算。精确解舍入到四位有效数字为
+
+\[x^*=(-0.490\,4,\;-0.051\,04,\;0.367\,5)^{\mathrm T}.\]
+
+\textbf{解} ［方法 1］用 Gauss 消去法求解。
+
+\[
+(A,b)=\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+-1.000&3.712&4.623&2.000\\
+-2.000&1.072&5.643&3.000
+\end{array}\right)
+\]
+
+\[m_{21}=-1.000/0.001=-1000,\quad m_{31}=-2.000/0.001=-2000\]
+
+\[
+\longrightarrow\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+0&2004&3005&1002\\
+0&4001&6006&2003
+\end{array}\right),\qquad m_{32}=4001/2004=1.997
+\]
+
+\[
+\longrightarrow\left(\begin{array}{rrr|r}
+0.001&2.000&3.000&1.000\\
+0&2004&3005&1002\\
+0&0&5.000&2.000
+\end{array}\right),
+\]
+
+计算解为
+
+\[\bar{x}=(-0.400\,0,\;-0.099\,80,\;0.400\,0)^{\mathrm T}.\]
+
+显然，计算解 \(\bar{x}\) 是一个很坏的结果，不能作为方程组的近似解。其原因是在消元计算时用了小主元 0.001，使得约化后的方程组元素数量级大大增长，经再舍入使得在计算第 3 行第 3 列的元素时发生了严重的相消情况（第 3 行第 3 列的元素舍入到第四位数字的正确值是 5.922），因此经消元后得到的三角方程组就不准确了。
+
+［方法 2］交换行，避免绝对值小的主元作除数。
+
+\[
+(A,b)\xrightarrow{r_1\leftrightarrow r_3}
+\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+-1.000&3.712&4.623&2.000\\
+0.001&2.000&3.000&1.000
+\end{array}\right)
+\]
+
+\[m_{21}=0.500\,0,\qquad m_{31}=-0.000\,5\]
+
+\href{../../source-images/pdf-185.jpeg}{原页扫描}
+
+\[
+\longrightarrow\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+0&3.176&1.801&0.500\,0\\
+0&2.001&3.003&1.002
+\end{array}\right),\qquad m_{32}=0.630\,0
+\]
+
+\[
+\longrightarrow\left(\begin{array}{rrr|r}
+-2.000&1.072&5.643&3.000\\
+0&3.176&1.801&0.500\,0\\
+0&0&1.868&0.687\,0
+\end{array}\right),
+\]
+
+得计算解为
+
+\[x=(-0.490\,0,\;-0.051\,13,\;0.367\,8)^{\mathrm T}\approx x^*.\]
+
+这个例子告诉我们，在采用 Gauss 消去法解方程组时，小主元可能产生麻烦，故应避免采用绝对值小的主元素 \(a_{kk}^{(k)}\)。对一般矩阵来说，最好每一步都选取系数矩阵（或消元后的低阶矩阵）中绝对值最大的元素作为主元素，以使 Gauss 消去法具有较好的数值稳定性。
+
+下面介绍主元素消去法。本节总假定方程组（7.2.1）的 \(A\) 非奇异。
+
+\subsubsection{7.3.1 完全主元素消去法}\label{ux5b8cux5168ux4e3bux5143ux7d20ux6d88ux53bbux6cd5}
+
+设方程组（7.2.1）的增广矩阵为
+
+\[
+B=\left(\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&a_{1j_1}&\cdots&a_{1n}&b_1\\
+a_{21}&a_{22}&\cdots&a_{2j_1}&\cdots&a_{2n}&b_2\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{i_1 1}&a_{i_1 2}&\cdots&a_{i_1j_1}&\cdots&a_{i_1 n}&b_{i_1}\\
+\vdots&\vdots&&\vdots&&\vdots&\vdots\\
+a_{n1}&a_{n2}&\cdots&a_{nj_1}&\cdots&a_{nn}&b_n
+\end{array}\right).
+\]
+
+首先在 \(A\) 中选取绝对值最大的元素作为主元素，例如 \(|a_{i_1j_1}|=\max_{\substack{1\le i\le n\\1\le j\le n}}|a_{ij}|\ne0\)，然后交换 \(B\) 的第 1 行与第 \(i_1\) 行，第 1 列与第 \(j_1\) 列，经第一次消元计算得
+
+\[(A,b)\to(A^{(2)},b^{(2)}).\]
+
+重复上述过程，设已完成第 \(k-1\) 步的选主元素，交换两行及交换两列，消元计算，\((A,b)\) 约化为
+
+\[
+(A^{(k)},b^{(k)})=\left[\begin{array}{cccccc|c}
+a_{11}&a_{12}&\cdots&\cdots&\cdots&a_{1n}&b_1\\
+&a_{22}&\cdots&\cdots&\cdots&a_{2n}&b_2\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right],
+\]
+
+其中 \(A^{(k)}\) 元素仍记作 \(a_{ij}\)，\(b^{(k)}\) 元素仍记作 \(b_i\)（\(k=1,2,\cdots,n-1\)）。
+
+\href{../../source-images/pdf-186.jpeg}{原页扫描}
+
+第 \(k\) 步选主元素（在 \(A^{(k)}\) 右下角方框内选），即确定 \(i_k,j_k\) 使
+
+\[|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|\ne0.\]
+
+交换 \((A^{(k)},b^{(k)})\) 第 \(k\) 行与 \(i_k\) 行元素，交换 \((A^{(k)})\) 第 \(k\) 列与 \(j_k\) 列元素，将 \(a_{i_kj_k}\) 调到 \((k,k)\) 位置，再进行消元计算，最后将原方程组化为
+
+\[
+\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+&a_{22}&\cdots&a_{2n}\\
+&&\ddots&\vdots\\
+&&&a_{nn}
+\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}
+=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},
+\]
+
+其中 \(y_1,y_2,\cdots,y_n\) 的次序为未知数 \(x_1,x_2,\cdots,x_n\) 调换后的次序。回代求解得
+
+\[
+\begin{cases}
+y_n=b_n/a_{nn},\\
+y_i=\displaystyle\left(b_i-\sum_{j=i+1}^{n}a_{ij}y_j\right)/a_{ii}\quad(i=n-1,\cdots,2,1).
+\end{cases}
+\]
+
+\textbf{算法 1} 完全主元素消去法，其步骤如下：
+
+设 \(Ax=b\)。本算法用 \(A\) 的带有行、列交换的 Gauss 消去法①，消元结果冲掉 \(A\)，乘数 \(m_{ij}\) 冲掉 \(a_{ij}\)，计算解 \(x\) 冲掉常数项 \(b\)，用 \(k\) 表示对 \(A\) 的消元次数。用一整型数组 \(\mathrm{Iz}(n)\) 开始记录未知数 \(x_1,x_2,\cdots,x_n\) 的次序（即下标 \(1,2,\cdots,n\)），最后记录调换后未知数的下标。
+
+\textbf{步 1} 对于 \(i=1,2,\cdots,n\)，有 \(\mathrm{Iz}(i)\leftarrow i\)；对于 \(k=1,2,\cdots,n-1\)，做到步 6。
+
+\textbf{步 2} 选主元素 \(|a_{i_kj_k}|=\max_{\substack{k\le i\le n\\k\le j\le n}}|a_{ij}|\)。
+
+\textbf{步 3} 如果 \(a_{i_kj_k}=0\)，则计算停止（这时 \(\det A=0\)）。
+
+\textbf{步 4} （1）如果 \(i_k=k\)，则转（2），否则换行：\(a_{kj}\leftrightarrow a_{i_kj}\)（\(j=k,k+1,\cdots,n\)），\(b_k\leftrightarrow b_{i_k}\)；（2）如果 \(j_k=k\)，则转步 5，否则换列：\(a_{ik}\leftrightarrow a_{ij_k}\)（\(i=1,2,\cdots,n\)），\(\mathrm{Iz}(k)\leftrightarrow\mathrm{Iz}(j_k)\)。
+
+\textbf{步 5} 计算乘数
+
+\[a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 6} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i=k+1,\cdots,n;\;j=k+1,\cdots,n);\]
+
+\[b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 7} 回代求解
+
+（1）\(b_n\leftarrow b_n/a_{n,n}\)；（2）对于 \(i=n-1,n-2,\cdots,2,1\)，\(b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}\)。
+
+\textbf{步 8} 调整未知数的次序
+
+（1）对于 \(i=1,2,\cdots,n\)；\(a_i,\mathrm{Iz}(i)\leftarrow b_i\)；（2）对于 \(i=1,2,\cdots,n\)；\(b_i\leftarrow a_{1i}\)。
+
+\subsubsection{7.3.2 列主元素消去法}\label{ux5217ux4e3bux5143ux7d20ux6d88ux53bbux6cd5}
+
+完全主元素消去法在选主元素时要花费较多机器时间。下面介绍另一种常用的
+
+\begin{quote}
+① 在实际计算中可以考虑设计不进行行、列交换的算法。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：算法 1 步 8（1）原书印作 \(a_i,\mathrm{Iz}(i)\leftarrow b_i\)（逗号及 Iz 为基线排印），本转录保留。按该步（2）\(b_i\leftarrow a_{1i}\) 及``调整未知数的次序''，（1）应把 \(b_i\) 暂存到第一行第 \(\mathrm{Iz}(i)\) 列，即 \(a_{1,\mathrm{Iz}(i)}\leftarrow b_i\)；疑似原书下标排印错误。参见\href{../assets/ch07a/pdf-186-step8-detail.png}{原步骤放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-187.jpeg}{原页扫描}
+
+方法即列主元素消去法。它仅考虑依次按列选主元素，然后换行使之变到主元位置上，再进行消元计算。设用列主元素消去法解 \(Ax=b\) 已完成 \(k-1\) 步计算，即有
+
+\[
+(A,b)\to(A^{(k)},b^{(k)})=
+\left(\begin{array}{cccccc|c}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}&b_1^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}&b_2^{(2)}\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}&b_k^{(k)}\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}&b_n^{(n)}
+\end{array}\right),
+\]
+
+且 \(A^{(k)}x=b^{(k)}\) 与 \(Ax=b\) 等价，第 \(k\) 步选主元素（在 \(A^{(k)}\) 第 \(k\) 列方框内选），即确定 \(i_k\) 使
+
+\[|a_{i_k,k}^{(k)}|=\max_{k\le i\le n}|a_{ik}^{(k)}|.\]
+
+\textbf{算法 2} 列主元素消去法，其步骤如下：
+
+设 \(Ax=b\)。本算法用 \(A\) 的具有行交换的列主元素消去法①，消元结果冲掉 \(A\)，乘数 \(m_{ij}\) 冲掉 \(a_{ij}\)，计算解 \(x\) 冲掉常数项 \(b\)，行列式存放在 \(\det A\)。
+
+\textbf{步 1} \(\det A\leftarrow1\)，对于 \(k=1,2,\cdots,n-1\) 做到步 7。
+
+\textbf{步 2} 按列选主元素 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)。
+
+\textbf{步 3} 如果 \(a_{i_kk}=0\)，则 \(\det A\leftarrow0\)，计算停止。
+
+\textbf{步 4} 如果 \(i_k=k\)，则转步 5，否则换行：
+
+\[a_{kj}\leftrightarrow a_{i_kj}\quad(j=k,k+1,\cdots,n),\quad b_k\leftrightarrow b_{i_k},\quad \det A\leftarrow-\det A.\]
+
+\textbf{步 5} 计算乘数 \(m_{ik}\)
+
+\[a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n)\;(|m_{ik}|\le1).\]
+
+\textbf{步 6} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i,j=k+1,\cdots,n),\quad b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 7} \(\det A\leftarrow a_{kk}\det A\)。
+
+\textbf{步 8} 回代求解
+
+\[b_n\leftarrow b_n/a_{nn},\quad b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}\quad(i=n-1,n-2,\cdots,1).\]
+
+\textbf{步 9} \(\det A\leftarrow a_{nn}\det A\)。
+
+例 7.3 的方法 2 用的就是列主元素消去法。
+
+下面用矩阵运算来描述解式（7.2.1）的列主元素消去法：
+
+\[
+\begin{cases}
+L_1I_{1i_1}A^{(1)}=A^{(2)},\quad L_1I_{1i_1}b^{(1)}=b^{(2)},\\
+L_kI_{ki_k}A^{(k)}=A^{(k+1)},\quad L_kI_{ki_k}b^{(k)}=b^{(k+1)},
+\end{cases}
+\tag{7.3.1}
+\]
+
+其中 \(L_k\) 的元素满足 \(|m_{ik}|\le1\)（\(k=1,2,\cdots,n-1\)），\(I_{ki_k}\) 是初等排列矩阵（由交换单位矩阵 \(I\) 的第 \(k\) 行与第 \(i_k\) 行得到）。
+
+\begin{quote}
+① 在列主元素消去法中，可考虑用一整型数组 \(\mathrm{Ip}(n)\) 来记录主行。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：本页首个增广矩阵右下角原书印作 \(b_n^{(n)}\)，已保留。此处描述第 \(k-1\) 步完成后的 \((A^{(k)},b^{(k)})\)，同列第 \(k\) 行是 \(b_k^{(k)}\)，所以末行相应应为 \(b_n^{(k)}\)；疑似原书上标排印错误。参见\href{../assets/ch07a/pdf-187-rhs-detail.png}{原矩阵放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-188.jpeg}{原页扫描}
+
+利用式（7.3.1）得到
+
+\[L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}A=A^{(n)}=U,\]
+
+简记作
+
+\[\widetilde{P}A=U,\quad\widetilde{P}b=b^{(n)},\]
+
+其中
+
+\[\widetilde{P}=L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}.\]
+
+下面就 \(n=4\) 的情况来考察一下矩阵 \(\widetilde{P}\)。
+
+\[
+\begin{aligned}
+U=A^{(4)}&=L_3I_{3i_3}L_2I_{2i_2}L_1I_{1i_1}A\\
+&=L_3(I_{3i_3}L_2I_{3i_3})(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3})(I_{3i_3}I_{2i_2}I_{1i_1})A\\
+&\equiv\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1PA,
+\end{aligned}
+\tag{7.3.2}
+\]
+
+其中
+
+\[\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3},\quad
+\widetilde{L}_2=I_{3i_3}L_2I_{3i_3},\quad
+\widetilde{L}_3=L_3,\quad P=I_{3i_3}I_{2i_2}I_{1i_1}.\]
+
+由本章的习题 8 知 \(\widetilde{L}_k\)（\(k=1,2,3\)）亦为单位下三角阵，其元素的绝对值不大于 1。记 \(L^{-1}=\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1\)，由式（7.3.2）得到 \(PA=LU\)，其中 \(P\) 为排列矩阵，\(L\) 为单位下三角阵，\(U\) 为上三角阵。这说明对式（7.2.1）应用列主元素消去法，相当于对 \((A\mid b)\) 先进行一系列行交换后再对 \(PAx=Pb\) 应用 Gauss 消去法。在实际计算中只能在计算过程中进行行的交换。
+
+总结以上的讨论可得如下定理。
+
+\textbf{定理 7.5（列主元素的三角分解定理）} 如果 \(A\) 为非奇异矩阵，则存在排列矩阵 \(P\)，使
+
+\[PA=LU,\]
+
+其中 \(L\) 为单位下三角阵，\(U\) 为上三角阵。
+
+\(L\) 元素存放在数组 \(A\) 的下三角部分，\(U\) 元素存放在 \(A\) 上三角部分，由整型数组 \(\mathrm{Ip}(n)\) 记录可知 \(P\) 的情况。
+
+\subsubsection{7.3.3 Gauss-Jordan 消去法}\label{gauss-jordan-ux6d88ux53bbux6cd5}
+
+Gauss 消去法始终是消去对角线下方的元素，现考虑 Gauss 消去法的一种修正，即消去对角线下方和上方的元素，这种方法称为 Gauss-Jordan 消去法。
+
+设用 Gauss-Jordan 消去法已完成 \((k-1)\) 步，于是 \(Ax=b\) 化为等价方程组 \(A^{(k)}x=b^{(k)}\)，其中
+
+\[
+(A^{(k)},b^{(k)})=\left(\begin{array}{ccccccc|c}
+1&&&&a_{1k}&\cdots&a_{1n}&b_1\\
+&1&&&\vdots&&\vdots&\vdots\\
+&&\ddots&&\vdots&&\vdots&\vdots\\
+&&&1&a_{k-1,k}&\cdots&a_{k-1,n}&\vdots\\
+&&&&a_{kk}&\cdots&a_{kn}&b_k\\
+&&&&\vdots&&\vdots&\vdots\\
+&&&&a_{nk}&\cdots&a_{nn}&b_n
+\end{array}\right),\quad k=1,2,\cdots,n.
+\]
+
+\begin{quote}
+校注（agent 补充）：式（7.3.2）第二行第二个括号内原书印作 \(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3}\)，其中 \(L_{2i_2}\) 在本段未定义。本页紧接着定义 \(\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3}\)，因而该处 \(L_{2i_2}\) 疑为 \(I_{2i_2}\) 的排印错误；此处保留原式。参见\href{../assets/ch07a/pdf-188-permutation-detail.png}{原式放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-189.jpeg}{原页扫描}
+
+在第 \(k\) 步计算时，考虑对上述矩阵的第 \(k\) 行上、下都进行消元计算。
+
+\textbf{步 1} 按列选主元素，即确定 \(i_k\) 使 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)。
+
+\textbf{步 2} 换行（当 \(i_k\ne k\)）交换 \((A,b)\) 第 \(k\) 行与第 \(i_k\) 行元素。
+
+\textbf{步 3} 计算乘数
+
+\[m_{ik}=-a_{ik}/a_{kk}\quad(i=1,2,\cdots,n;\;i\ne k),\quad m_{kk}=1/a_{kk}.\]
+
+（\(m_{ik}\) 可保存在存放 \(a_{ik}\) 的单元中。）
+
+\textbf{步 4} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k;\\j=k+1,\cdots,n\end{array}\right),\]
+
+\[b_i\leftarrow b_i+m_{ik}b_k\quad(i=1,2,\cdots,n;\;i\ne k).\]
+
+\textbf{步 5} 计算主行 \(a_{kj}\leftarrow a_{kj}\cdot m_{kk}\)（\(j=k,k+1,\cdots,n\)），\(b_k\leftarrow b_k\cdot m_{kk}\)。
+
+上述过程结束后，有
+
+\[
+(A,b)\to(A^{(k+1)},b^{(k+1)})=
+\left(\begin{array}{cccc|c}
+1&&&&\widehat{b}_1\\
+&1&&&\widehat{b}_2\\
+&&\ddots&&\vdots\\
+&&&1&\widehat{b}_n
+\end{array}\right)
+\]
+
+这说明用 Gauss-Jordan 消去法将 \(A\) 约化为单位矩阵，计算解就在常数项位置得到，因此用不着回代求解。用 Gauss-Jordan 消去法解方程组的计算量大约需要 \(n^3/2\) 次乘除法运算，比 Gauss 消去法计算量大，但用 Gauss-Jordan 消去法求一个矩阵的逆矩阵还是比较合适的。
+
+\textbf{定理 7.6（Gauss-Jordan 消去法求逆矩阵）} 设 \(A\) 为非奇异矩阵，方程组 \(AX=I_n\) 的增广矩阵为 \(C=(A\mathbin{\vdots}I_n)\)。如果对 \(C\) 应用 Gauss-Jordan 消去法化为 \((I_n\mathbin{\vdots}T)\)，则 \(A^{-1}=T\)。
+
+事实上，求 \(A\) 的逆矩阵 \(A^{-1}\)，即求 \(n\) 阶矩阵 \(X\)，使 \(AX=I_n\)，其中 \(I_n\) 为单位矩阵。将 \(X\) 按列分块 \(X=(x_1,x_2,\cdots,x_n)\)，\(I=(e_1,e_2,\cdots,e_n)\)，于是求解 \(AX=I_n\) 等价于求解 \(n\) 个方程组 \(Ax_j=e_j\)（\(j=1,2,\cdots,n\)）。我们可用 Gauss-Jordan 消去法求解 \(AX=I_n\)。
+
+\textbf{例 7.4} 用 Gauss-Jordan 消去法求 \(A=\begin{pmatrix}1&2&3\\2&4&5\\3&5&6\end{pmatrix}\) 的逆矩阵 \(A^{-1}\)。
+
+\textbf{解}
+
+\[
+C=\left(\begin{array}{rrr|rrr}
+1&2&3&1&0&0\\
+2&4&5&0&1&0\\
+3&5&6&0&0&1
+\end{array}\right)
+\xrightarrow{r_1\leftrightarrow r_3}
+\left(\begin{array}{rrr|rrr}
+\boxed{3}&5&6&0&0&1\\
+2&4&5&0&1&0\\
+1&2&3&1&0&0
+\end{array}\right)
+\]
+
+\[
+\xrightarrow{\text{第一次消元}}
+\left(\begin{array}{rrr|rrr}
+1&5/3&2&0&0&1/3\\
+0&2/3&1&0&1&-2/3\\
+0&1/3&1&1&0&-1/3
+\end{array}\right)
+\]
+
+原图标注：上述最后一列 \(\begin{pmatrix}1/3\\-2/3\\-1/3\end{pmatrix}\) 以方框标出，标为 \(c_3\)。
+
+\href{../../source-images/pdf-190.jpeg}{原页扫描}
+
+\[
+\xrightarrow{\text{第二次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&-1/2&0&-5/2&2\\
+0&1&3/2&0&3/2&-1\\
+0&0&\boxed{1/2}&1&-1/2&0
+\end{array}\right)
+\]
+
+原图标注：上述右侧第二列 \(\begin{pmatrix}-5/2\\3/2\\-1/2\end{pmatrix}\) 以方框标出，标为 \(c_2\)。
+
+\[
+\xrightarrow{\text{第三次消元}}
+\left(\begin{array}{rrr|rrr}
+1&0&0&1&-3&2\\
+0&1&0&-3&3&-1\\
+0&0&1&2&-1&0
+\end{array}\right)=(I_n\mid A^{-1}).
+\]
+
+原图标注：上述右侧第一列 \(\begin{pmatrix}1\\-3\\2\end{pmatrix}\) 以方框标出，标为 \(c_1\)。
+
+小方框内为每次按列所选的主元素，且
+
+\[m_1=(m_{11},m_{21},m_{31})^{\mathrm T}=c_3,\quad
+m_2=(m_{12},m_{22},m_{32})^{\mathrm T}=c_2,\quad
+m_3=(m_{13},m_{23},m_{33})^{\mathrm T}=c_1.\]
+
+为了节省内存单元，不必将单位矩阵存放起来，\(c_3\) 存放在 \(A\) 的第 1 列位置，\(c_2\) 存放在 \(A\) 的第 2 列位置，\(c_1\) 存放在 \(A\) 的第 3 列位置，经消元计算，最后再调整一下列就可在 \(A\) 的位置得到 \(A^{-1}\)。注意第 \(k\) 步消元时，由 \(A\) 的第 \(k\) 列
+
+\[a_k=(a_{1k},\cdots,a_{kk},\cdots,a_{nk})^{\mathrm T}\]
+
+计算 \(m_k=\left(-\dfrac{a_{1k}}{a_{kk}},\allowbreak \cdots,\allowbreak -1,\allowbreak \cdots,\allowbreak -\dfrac{a_{nk}}{a_{kk}}\right)^{\mathrm T}\) 且冲掉 \(a_k\)。
+
+最后，在 \(A\) 位置如何调整列呢？事实上，在 \(A\) 位置最后得到矩阵 \(PA\equiv A_1\)（其中 \(P\) 为排列矩阵）的逆矩阵 \(A_1^{-1}\)，于是 \(A^{-1}=A_1^{-1}P\)。
+
+\textbf{算法 3} Gauss-Jordan 列主元素方法求逆，其步骤如下。
+
+本算法是用列主元素的 Gauss-Jordan 方法求 \(A^{-1}\)，计算结果存放在原矩阵 \(A\) 的数组中。用整型数组 \(\mathrm{Ip}(n)\) 记录主行，\(A\) 的行列式值存放在 \(\det A\)。
+
+\textbf{步 1} \(\det A\leftarrow1\)；对于 \(k=1,2,\cdots,n\) 做到步 8。
+
+\textbf{步 2} 按列选主元素 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)；\(c_0\leftarrow a_{i_kk}\)，\(\mathrm{Ip}(k)\leftarrow i_k\)。
+
+\textbf{步 3} 如果 \(c_0=0\)，则计算停止（此时 \(A\) 为奇异矩阵）。
+
+\textbf{步 4} 如果 \(i_k=k\)，则转步 5，否则换行：\(a_{kj}\leftrightarrow a_{i_kj}\)（\(j=1,2,\cdots,n\)），\(\det A\leftarrow-\det A\)。
+
+\textbf{步 5} \(\det A\leftarrow\det A\cdot c_0\)。
+
+\textbf{步 6} 计算 \(h\leftarrow a_{kk}\leftarrow1/c_0\)；\(a_{ik}\leftarrow m_{ik}=-a_{ik}\cdot h\)（\(i=1,2,\cdots,n;\;i\ne k\)）。
+
+\textbf{步 7} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}+m_{ik}a_{kj}\quad
+\left(\begin{array}{l}i=1,2,\cdots,n;\;i\ne k\\j=1,2,\cdots,n;\;j\ne k\end{array}\right).\]
+
+\textbf{步 8} 计算主行 \(a_{kj}\leftarrow a_{kj}\cdot h\)（\(j=1,2,\cdots,n;\;j\ne k\)）。
+
+\textbf{步 9} 交换列对于 \(k=n-1,n-2,\cdots,2,1\)，
+
+（1）\(t=\mathrm{Ip}(k)\)；
+
+（2）如果 \(t\le k\)，则转（3），否则换列：\(a_{ik}\leftrightarrow a_{it}\)（\(i=1,2,\cdots,n\)）；
+
+（3）继续循环。
+
+\begin{quote}
+校注（agent 补充）：解释段中 \(m_k\) 的第 \(k\) 个分量原书印作 \(-1\)，此处保留。按上一页所给 \(m_{kk}=1/a_{kk}\)、本页算法 3 步 6 的 \(a_{kk}\leftarrow1/c_0\)，以及例 7.4 第一次消元的 \(m_1=c_3=(1/3,-2/3,-1/3)^{\mathrm T}\)，用于原地求逆时该位置应为 \(1/a_{kk}\)；疑似原书公式错误。参见\href{../assets/ch07a/pdf-190-multiplier-detail.png}{原文放大裁图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E002}：原书 PDF 页 186
+\item
+  \texttt{ch07a-E003}：原书 PDF 页 187
+\item
+  \texttt{ch07a-E004}：原书 PDF 页 188
+\item
+  \texttt{ch07a-E005}：原书 PDF 页 190
+\end{itemize}
+
+\end{document}

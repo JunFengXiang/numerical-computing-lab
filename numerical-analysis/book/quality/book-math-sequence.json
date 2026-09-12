@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "source_math_nodes": 10636,
+  "exported_math_fragments": 10636,
+  "source_sequence_sha256": "540a1e818d657487e3ad054cb9d7dcb7b5508e873dbeda803eb4dc04798dcf33",
+  "exported_sequence_sha256": "540a1e818d657487e3ad054cb9d7dcb7b5508e873dbeda803eb4dc04798dcf33",
+  "first_mismatches": [],
+  "source_markdown_sha256": "33f40d624e0427247ffa6b1345c06142b064a8156d17745ad46103f1146e682c"
+}

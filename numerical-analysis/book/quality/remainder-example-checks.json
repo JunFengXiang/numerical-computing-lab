@@ -1,0 +1,91 @@
+{
+  "status": "pass",
+  "created_utc": "2026-09-12T11:06:02.544035+00:00",
+  "source_markdown": "verified/sections/2.2.4.md",
+  "source_markdown_sha256": "88dc254b59e78235a4f068af7a19826555d144787376b096aa3d18c6c0e98b36",
+  "passed": 15,
+  "total": 15,
+  "nodes": [
+    "8/25",
+    "17/50",
+    "9/25"
+  ],
+  "values": [
+    "314567/1000000",
+    "333487/1000000",
+    "176137/500000"
+  ],
+  "evaluation_point": "3367/10000",
+  "computed_values": {
+    "linear": "0.33036520000000000000",
+    "linear_alternative": "0.33038714500000000000",
+    "quadratic": "0.33037436203750000000"
+  },
+  "sin_target": "0.3303741915556280137626049",
+  "checks": [
+    {
+      "check": "Corrected linear matches exact interpolation",
+      "pass": true
+    },
+    {
+      "check": "Corrected linear_alternative matches exact interpolation",
+      "pass": true
+    },
+    {
+      "check": "Corrected quadratic matches exact interpolation",
+      "pass": true
+    },
+    {
+      "check": "R2 derivative order is three in 2.2.18",
+      "pass": true
+    },
+    {
+      "check": "General derivative order and factorial retained",
+      "pass": true
+    },
+    {
+      "check": "Source cos bound is demonstrably false",
+      "pass": true,
+      "detail": "0.949235418082440867575307273766"
+    },
+    {
+      "check": "Corrected conservative cos bound is valid",
+      "pass": true
+    },
+    {
+      "check": "Source exponent understates its own product",
+      "pass": true,
+      "detail": "1.77200694000000000e-7"
+    },
+    {
+      "check": "Corrected bound multiplication",
+      "pass": true
+    },
+    {
+      "check": "Middle product preserves all digits",
+      "pass": true
+    },
+    {
+      "check": "Printed substitution does not equal reported final value",
+      "pass": true,
+      "detail": "0.330282653112500000"
+    },
+    {
+      "check": "Corrected quadratic rounds to textbook final six significant digits",
+      "pass": true
+    },
+    {
+      "check": "Node rounding bound",
+      "pass": true
+    },
+    {
+      "check": "Combined conservative bound",
+      "pass": true
+    },
+    {
+      "check": "Actual tabulated-data result is within combined bound",
+      "pass": true
+    }
+  ],
+  "limitations": "Audits this one source example and the displayed derivative order; it does not validate all textbook arithmetic."
+}

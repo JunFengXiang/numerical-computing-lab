@@ -1,0 +1,20 @@
+{
+  "pdf_page": 91,
+  "source_image": "source-images/pdf-091.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "05a5c80b500c0bd07da83a83e0def14470f357a0f137cc202fa8ed2703ef04e9",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1178,
+  "possibly_truncated": false,
+  "elapsed_seconds": 42.709,
+  "created_utc": "2026-09-12T10:14:07.607420+00:00",
+  "raw_text_sha256": "49dd5e3ebe033c137fcea35ff82e8a0156909062fc01d61a664995d85c8a4f86",
+  "raw_text": "(2) 对 $f(x)=\\sin x$ 在 $[0,\\pi/2]$ 上求一次和三次 Bernstein 多项式, 画出图形, 并与相应的 Taylor 级数部分和误差作比较.\n\n2. 求证:\n(1) 当 $m \\leqslant f(x) \\leqslant M$ 时, $m \\leqslant B_n(f,x) \\leqslant M$; (2) 当 $f(x)=x$ 时, $B_n(f,x)=x$.\n\n3. 在次数不超过 6 的多项式中, 求 $f(x)=\\sin 4x$ 在 $[0,2\\pi]$ 上的最佳一致逼近多项式.\n\n4. 假设 $f(x)$ 在 $[a,b]$ 上连续, 求 $f(x)$ 的零次最佳一致逼近多项式.\n\n5. 选取常数 $a$, 使 $\\max_{0 \\leqslant x \\leqslant 1} |x^3-ax|$ 达到极小, 又问这个解是否唯一.\n\n6. 求 $f(x)=\\sin x$ 在 $[0,\\pi/2]$ 上的最佳一次逼近多项式, 并估计误差.\n\n7. 求 $f(x)=\\mathrm{e}^x$ 在 $[0,1]$ 上的最佳一次逼近多项式.\n\n8. 如何选取 $r$, 使 $p(x)=x^2+r$ 在 $[-1,1]$ 上与零偏差最小? $r$ 是否唯一?\n\n9. 设 $f(x)=x^4+3x^3-1$, 在 $[0,1]$ 上求三次最佳逼近多项式.\n\n10. 令 $T_n(x)=T_n(2x-1), x \\in [0,1]$, 求 $T_0^*(x), T_1^*(x), T_2^*(x), T_3^*(x)$.\n\n11. 试证 $\\{T_n^*(x)\\}$ 是在 $[0,1]$ 上带权 $\\rho=\\frac{1}{\\sqrt{x-x^2}}$ 的正交多项式.\n\n12. $f(x)$ 是 $[-a,a]$ 上的连续奇(偶)函数, 证明: 不管 $n$ 是奇数或偶数, $f(x)$ 的最佳逼近多项式 $F_n^*(x) \\in H_n$ 也是奇(偶)函数.\n\n13. 求 $a,b$, 使 $\\int_{0}^{\\frac{\\pi}{2}} [ax+b-\\sin x]^2 \\mathrm{d}x$ 为最小, 并与题 1 及题 6 的一次逼近多项式误差作比较.\n\n14. $f(x), g(x) \\in C^1 [a,b]$, 定义\n(1) $(f,g)=\\int_{a}^{b} f'(x)g'(x) \\mathrm{d}x$, (2) $(f,g)=\\int_{a}^{b} f'(x)g'(x) \\mathrm{d}x+f(a)g(a)$, 它们是否构成内积?\n\n15. 用 Schwarz 不等式 (3.4.5) 估计 $\\int_{0}^{1} \\frac{x^6}{1+x} \\mathrm{d}x$ 的上界, 并用积分中值定理估计同一积分的上、下界, 并比较其结果.\n\n16. 选择 $a$, 使积分 $\\int_{-1}^{1} (x-ax^2)^2 \\mathrm{d}x, \\int_{-1}^{1} |x-ax^2| \\mathrm{d}x$ 取得最小值.\n\n17. 设 $\\varphi_1=\\operatorname{span}\\{1,x\\}, \\varphi_2=\\operatorname{span}\\{x^{100},x^{101}\\}$, 分别在 $\\varphi_1, \\varphi_2$ 上求一元素, 使其为 $x^2 \\in C[0,1]$ 的最佳平方逼近, 并比较其结果.\n\n18. $f(x)=|x|$ 在 $[-1,1]$ 上, 求在 $\\varphi_1=\\operatorname{span}\\{1,x^2,x^4\\}$ 上的最佳平方逼近.\n\n19. $u_n(x)=\\frac{\\sin[(n+1)\\arccos x]}{\\sqrt{1-x^2}}$ 是第二类 Chebyshev 多项式, 证明它有递推关系\n$u_{n+1}(x)=2xu_n(x)-u_{n-1}(x)$.\n\n20. 将 $f(x)=\\sin \\frac{1}{2}x$ 在 $[-1,1]$ 上按 Legendre 多项式及 Chebyshev 多项式展开, 求三次最佳平方逼近多项式并画出误差图形, 再计算均方误差.\n\n21. 把 $f(x)=\\arccos x$ 在 $[-1,1]$ 上展开成 Chebyshev 级数.\n\n22. 用最小二乘法求一个形如 $y=a+bx^2$ 的经验公式, 使它与表 3.6 所示数据相拟合, 并求均方误差.\n\n• 78 •"
+}

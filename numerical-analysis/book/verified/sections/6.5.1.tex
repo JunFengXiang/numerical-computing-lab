@@ -1,0 +1,155 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={多项式求值的秦九韶算法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{多项式求值的秦九韶算法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{6.5.1 多项式求值的秦九韶算法}\label{ux591aux9879ux5f0fux6c42ux503cux7684ux79e6ux4e5dux97f6ux7b97ux6cd5}
+
+多项式的一个重要特点是求值方便。
+
+设给定多项式
+
+\[
+f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n,
+\]
+
+其中系数 \(a_i\ (0\leqslant i\leqslant n)\) 均为实数。用一次式 \(x-x_0\) 除 \(f(x)\)，商记作 \(P(x)\)，余数显然等于 \(f(x_0)\)，即有
+
+\[
+f(x)=f(x_0)+(x-x_0)P(x).
+\tag{6.5.1}
+\]
+
+现在具体确定 \(P(x)\) 与 \(f(x_0)\)。令
+
+\[
+p(x)=b_0x^{n-1}+b_1x^{n-2}+\cdots+b_{n-2}x+b_{n-1},
+\]
+
+代入式（6.5.1），并比较两端同次幂的系数，得
+
+\[
+\begin{cases}
+a_0=b_0,\\
+a_i=b_i-x_0b_{i-1},\quad1\leqslant i\leqslant n-1,\\
+a_n=f(x_0)-x_0b_{n-1}.
+\end{cases}
+\]
+
+从而有
+
+\[
+\begin{cases}
+b_0=a_0,\\
+b_i=a_i+x_0b_{i-1},\quad1\leqslant i\leqslant n,\\
+f(x_0)=b_n.
+\end{cases}
+\tag{6.5.2}
+\]
+
+\href{../../source-images/pdf-172.jpeg}{原页}
+
+这里提供的一种计算函数值 \(f(x_0)\) 的有效算法称为秦九韶法①。这种算法的优点是计算量小，结构紧凑，容易编制计算程序。
+
+进一步考察 \(f(x)\) 的 Taylor 展开式
+
+\[
+f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+\]
+
+将它表示为式（6.5.1）的形式，则式中
+
+\[
+P(x)=f'(x_0)+\frac{f''(x_0)}{2!}(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n-1}.
+\]
+
+由此可见，导数 \(f'(x_0)\) 又可看作 \(P(x)\) 用因式 \(x-x_0\) 相除得出的余数，即有
+
+\[
+P(x)=f'(x_0)+(x-x_0)Q(x),
+\]
+
+其中 \(Q(x)\) 是 \(n-2\) 次多项式。设
+
+\[
+Q(x)=c_0x^{n-2}+c_1x^{n-3}+\cdots+c_{n-3}x+c_{n-2},
+\]
+
+那么，再用秦九韶算法又可求出值 \(f'(x_0)\)，对应于式（6.5.2），这里计算公式是
+
+\[
+\begin{cases}
+c_0=b_0,\\
+c_i=b_i+x_0c_{i-1},\quad1\leqslant i\leqslant n-1,\\
+f'(x_0)=c_{n-1}.
+\end{cases}
+\tag{6.5.3}
+\]
+
+继续这一过程，可以依次求出 \(f(x)\) 在点 \(x_0\) 的各阶导数。
+
+\end{document}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 66,
+  "source_image": "source-images/pdf-066.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "35b9c0463b6c8b3ad1e1a5cb0726232e8ec98ca6af4ccc07503a3a2bdcec0cdf",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1071,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.681,
+  "created_utc": "2026-09-12T09:56:12.305700+00:00",
+  "raw_text_sha256": "4a4e2573c8abc567703a627a70f743b1b446cc29831006bfe1b28f2f34a4701a",
+  "raw_text": "其内积定义为 $(f, g) = \\sum_{k=1}^{n} f_{k} g_{k}$; 向量 $f \\in \\mathbf{R}^{n}$ 的模(范数)定义为\n$$\\| f \\|_{2} = \\left( \\sum_{k=1}^{n} f_{k}^{2} \\right)^{\\frac{1}{2}},$$\n将它推广到任何内积空间中就有下面的定义.\n\n定义 3.6 $f(x) \\in C[a, b]$, 量\n$$\\| f \\|_{2} = \\sqrt{\\int_{a}^{b} \\rho(x) f^{2}(x) \\mathrm{d}x} = \\sqrt{(f, f)}$$\n(3.3.4)\n\n称为 $f(x)$ 的 Euclid 范数.\n\n它同样满足范数三条性质(见 3.1 节), 头两条是显然的, 下面定理包含了第三条性质和其他重要结论.\n\n定理 3.5 对于任何 $f, g \\in C[a, b]$, 下列结论成立:\n$1^{\\circ} |(f, g)| \\leqslant \\| f \\|_{2} \\| g \\|_{2}$ (Cauchy-Schwarz 不等式); (3.3.5)\n$2^{\\circ} \\| f + g \\|_{2} \\leqslant \\| f \\|_{2} + \\| g \\|_{2}$ (三角不等式); (3.3.6)\n$3^{\\circ} \\| f + g \\|_{2}^{2} + \\| f - g \\|_{2}^{2} = 2(\\| f \\|_{2}^{2} + \\| g \\|_{2}^{2})$ (平行四边形定律).\n\n证明 若 $g=0$, 则式(3.3.5)显然成立, 现考虑 $g \\neq 0$. 对于任何实数 $\\lambda$, 有\n$$0 \\leqslant (f + \\lambda g, f + \\lambda g) = (f, f) + 2\\lambda(f, g) + \\lambda^{2}(g, g).$$\n\n现取 $\\lambda = -\\frac{(f, g)}{\\| g \\|_{2}^{2}}$, 代入上式得\n$$\\| f \\|_{2}^{2} - 2 \\frac{|(f, g)|^{2}}{\\| g \\|_{2}^{2}} + \\frac{|(f, g)|^{2}}{\\| g \\|_{2}^{2}} \\geqslant 0, \\quad |(f, g)|^{2} \\leqslant \\| f \\|_{2}^{2} \\| g \\|_{2}^{2}.$$\n两边开平方即得式(3.3.5).\n\n利用式(3.3.5)考虑\n$$\\| f + g \\|_{2}^{2} = (f + g, f + g) = (f, f) + 2(f, g) + (g, g)$$\n$$\\leqslant \\| f \\|_{2}^{2} + 2 |(f, g)| + \\| g \\|_{2}^{2}$$\n$$\\leqslant \\| f \\|_{2}^{2} + 2 \\| f \\|_{2} \\| g \\|_{2} + \\| g \\|_{2}^{2}$$\n$$= (\\| f \\|_{2} + \\| g \\|_{2})^{2},$$\n两边开方则得式(3.3.6).\n\n平行四边形定律可直接计算得出, 可作为习题由读者完成. 证毕.\n\n在 $n$ 维空间中两个向量正交的定义也可推广到内积空间中.\n\n定义 3.7 若 $f(x), g(x) \\in C[a, b]$ 满足\n$(f, g) = \\int_{a}^{b} \\rho(x) f(x) g(x) \\mathrm{d}x = 0,$ (3.3.7)\n\n则称 $f$ 与 $g$ 在 $[a, b]$ 上带权 $\\rho(x)$ 正交. 若函数族 $\\varphi_{0}(x), \\varphi_{1}(x), \\cdots, \\varphi_{n}(x), \\cdots$ 满足关系\n$(\\varphi_{j}, \\varphi_{k}) = \\int_{a}^{b} \\rho(x) \\varphi_{j}(x) \\varphi_{k}(x) \\mathrm{d}x = \\begin{cases} 0, & j \\neq k, \\\\ A_{k} > 0, & j = k, \\end{cases}$ (3.3.8)"
+}

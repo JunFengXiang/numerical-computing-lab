@@ -1,0 +1,218 @@
+{
+  "status": "pass",
+  "created_utc": "2026-09-12T11:06:02.917323+00:00",
+  "checked_markdown_sha256": "b46a76b75f91b78839fe89fb460885182c4069a677e8d29d5efbf24c170a0115",
+  "method": "Parse selected transcribed LaTeX with SymPy/ANTLR and check exact identities.",
+  "limitations": "These algebraic and integrity checks do not replace visual transcription review or prove full-book accuracy.",
+  "assumptions": [
+    "Linear nodes a != b",
+    "Quadratic nodes a,b,c pairwise distinct"
+  ],
+  "passed": 43,
+  "total": 43,
+  "checks": [
+    {
+      "check": "2.2.3 equals 2.2.4",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "2.2.5 equals 2.2.4",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L1 left node",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L1 right node",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "linear partition of unity",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "linear basis 0 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "linear basis 0 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "linear basis 1 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "linear basis 1 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "2.2.7 equals expanded L2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic partition of unity",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 0 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 0 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 0 at node 2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 1 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 1 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 1 at node 2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 2 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 2 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "quadratic basis 2 at node 2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 at node 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 at node 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 at node 2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 rational nonuniform case 0",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 rational nonuniform case 1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "L2 rational nonuniform case 2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "Vandermonde product limits and orientation in transcription",
+      "pass": true
+    },
+    {
+      "check": "Vandermonde exact orientation n=1",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "Vandermonde exact orientation n=2",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "Vandermonde exact orientation n=3",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "Vandermonde exact orientation n=4",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "NA5E-E001 repeated-node family satisfies both conditions",
+      "pass": true,
+      "residual": "0"
+    },
+    {
+      "check": "NA5E-E001 family contains distinct polynomials",
+      "pass": true
+    },
+    {
+      "check": "Original PDF SHA-256 unchanged",
+      "pass": true
+    },
+    {
+      "check": "Source image integrity PDF 27",
+      "pass": true
+    },
+    {
+      "check": "Source image integrity PDF 28",
+      "pass": true
+    },
+    {
+      "check": "Source image integrity PDF 29",
+      "pass": true
+    },
+    {
+      "check": "Source image integrity PDF 30",
+      "pass": true
+    },
+    {
+      "check": "Source image integrity PDF 31",
+      "pass": true
+    },
+    {
+      "check": "Figure 2.1 crop integrity",
+      "pass": true
+    },
+    {
+      "check": "Figure 2.2 crop integrity",
+      "pass": true
+    },
+    {
+      "check": "Figure 2.3 crop integrity",
+      "pass": true
+    },
+    {
+      "check": "Figure 2.4 crop integrity",
+      "pass": true
+    }
+  ]
+}

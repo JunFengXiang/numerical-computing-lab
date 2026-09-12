@@ -1,0 +1,153 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={三次样条函数},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{三次样条函数}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{2.8.1 三次样条函数}\label{ux4e09ux6b21ux6837ux6761ux51fdux6570}
+
+\textbf{定义 2.5}　若函数 \(S(x)\in C^2[a,b]\)，且在每个小区间 \([x_j,x_{j+1}]\) 上是三次多项式，其中 \(a=x_0<x_1<\cdots<x_n=b\) 是给定节点，则称 \(S(x)\) 是节点 \(x_0,x_1,\cdots,x_n\) 上的\textbf{三次样条函数}。若在节点 \(x_j\) 上给定函数值 \(y_j=f(x_j)\)（\(j=0,1,\cdots,n\)），且
+
+\[S(x_j)=y_j\quad(j=0,1,\cdots,n)\tag{2.8.1}\]
+
+成立，则称 \(S(x)\) 为\textbf{三次样条插值函数}。
+
+从定义知，要求出 \(S(x)\)，在每个小区间 \([x_j,x_{j+1}]\) 上要确定 4 个待定系数，共有 \(n\) 个小区间，故应确定 \(4n\) 个参数。根据 \(S(x)\) 在 \([a,b]\) 上二阶导数连续，在节点 \(x_j\)（\(j=1,2,\cdots,n-1\)）处应满足连续性条件
+
+\[\begin{gathered}
+S(x_j-0)=S(x_j+0),\quad S'(x_j-0)=S'(x_j+0),\\
+S''(x_j-0)=S''(x_j+0),
+\end{gathered}\tag{2.8.2}\]
+
+共有 \(3n-3\) 个条件，再加上 \(S(x)\) 满足插值条件（2.8.1），共有 \(4n-2\) 个条件，因此还需要 2 个条件才能确定 \(S(x)\)。通常可在区间 \([a,b]\) 端点 \(a=x_0,b=x_n\) 上各加一个条件（称为\textbf{边界条件}），边界条件可根据实际问题的要求给定。常见的有以下三种：
+
+（1）已知两端的一阶导数值，即
+
+\[\begin{cases}S'(x_0)=f'_0,\\S'(x_n)=f'_n.\end{cases}\tag{2.8.3}\]
+
+（2）两端的二阶导数已知，即
+
+\[\begin{cases}S''(x_0)=f''_0,\\S''(x_n)=f''_n.\end{cases}\tag{2.8.4}\]
+
+特殊情况下的边界条件
+
+\begin{quote}
+续页：自然边界条件及第三类边界条件见下一页。
+\end{quote}
+
+\begin{quote}
+\textbf{校注（agent 补充；原书论证条件疑漏）}：本页开头承接上一页``当 \(f(x)\in C[a,b]\) 时''即宣称分段三次 Hermite 插值一致收敛，原文已保留。由（2.7.13）实际还需控制 \(h\max_k|f'_k|\to0\)；仅有连续性既不保证节点导数存在，也不能控制随加密节点变化的导数值。比如加上 \(f\in C^1[a,b]\) 就足以使节点导数一致有界，从该估计推出结论。本注是对原文论证条件的补充，不属于教材正文。
+\end{quote}
+
+\href{../../source-images/pdf-050.jpeg}{查看原页}
+
+\begin{quote}
+本页接上页 2.8.1 正文。
+\end{quote}
+
+\[S''(x_0)=S''(x_n)=0\tag{2.8.4'}\]
+
+称为\textbf{自然边界条件}。
+
+（3）当 \(f(x)\) 是以 \(x_n-x_0\) 为周期的周期函数时，则要求 \(S(x)\) 也是周期函数，这时边界条件应满足
+
+\[\begin{cases}
+S(x_0+0)=S(x_n-0),\\
+S'(x_0+0)=S'(x_n-0),\\
+S''(x_0+0)=S''(x_n-0),
+\end{cases}\tag{2.8.5}\]
+
+而此时式（2.8.1）中 \(y_0=y_n\)。这样确定的样条函数 \(S(x)\) 称为\textbf{周期样条函数}。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 50 的校注}\label{ux539fux4e66-pdf-ux9875-50-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-050.md}{完整原页转录} · \href{../../source-images/pdf-050.jpeg}{原页图像}
+
+校注记录：ch02b-E003。
+
+\begin{quote}
+\textbf{校注（agent 补充；原书疑误）}：本页末式第三项的分母在原扫描中为 \(h_{j-1}^2\)，上面原样保留，参见\href{../assets/ch02b/pdf-050-second-derivative-detail.png}{原式放大裁图}。由同页前一个区间的 \(S''(x)\) 公式换下标，第三项分母应为 \(h_{j-1}^3\)；这样代入 \(x=x_j\) 才得到下一页的 \(-6(y_j-y_{j-1})/h_{j-1}^2\)。这是原书幂次疑误；OCR 还漏掉了多个 \(j-1\) 下标，已按图补回。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch02b-E002}：原书 PDF 页 49
+\item
+  \texttt{ch02b-E003}：原书 PDF 页 50
+\end{itemize}
+
+\end{document}

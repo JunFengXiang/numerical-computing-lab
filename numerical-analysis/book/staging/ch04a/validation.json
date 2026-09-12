@@ -1,0 +1,296 @@
+{
+  "lane": "ch04a",
+  "passed": true,
+  "checks": [
+    {
+      "name": "page_metadata_and_local_links",
+      "passed": true,
+      "details": [
+        {
+          "pdf_page": 93,
+          "math_nodes": 35,
+          "markdown_sha256": "64210cadabfded597ffdfc87d12b5c8b58d0e9add42eb446cc12ee9e3f355ee9"
+        },
+        {
+          "pdf_page": 94,
+          "math_nodes": 39,
+          "markdown_sha256": "5c36723fea3f428aae44a8cf4be7822a7ccb146a1d2705232f934d7371eda83a"
+        },
+        {
+          "pdf_page": 95,
+          "math_nodes": 30,
+          "markdown_sha256": "c6d2a7f87cfd3d2589ffc08b4841f044fbb119a5015787cf241ef76466f3d20f"
+        },
+        {
+          "pdf_page": 96,
+          "math_nodes": 41,
+          "markdown_sha256": "775c3059968486df6d97c6d52d00678f049cb18dc763b52b713b75783634c850"
+        },
+        {
+          "pdf_page": 97,
+          "math_nodes": 60,
+          "markdown_sha256": "9003208edca18daed1e4abb2e58178aa06804e9b8f7f1641e36accd6567a35da"
+        },
+        {
+          "pdf_page": 98,
+          "math_nodes": 23,
+          "markdown_sha256": "bea2ed38144638debf4e3b224458f3d540e80518fb9fa9b608908d1c8f6b70bb"
+        },
+        {
+          "pdf_page": 99,
+          "math_nodes": 25,
+          "markdown_sha256": "b7e19e7eadcc2ea177eddea8c6a685596c28d43a76952413dd77243098348a36"
+        },
+        {
+          "pdf_page": 100,
+          "math_nodes": 52,
+          "markdown_sha256": "4f05c5c3c37198bf5db5f38db98883ee46ea6a4c319478a8cea11d0256cd4530"
+        },
+        {
+          "pdf_page": 101,
+          "math_nodes": 20,
+          "markdown_sha256": "476f0f65a080a36d7d946707d5ff622b395c340d1675360f044c025c4e8f240d"
+        },
+        {
+          "pdf_page": 102,
+          "math_nodes": 54,
+          "markdown_sha256": "7f306a6c29b269746b34610f4c7598ff254f808fc8f9e190607c92e39a03a423"
+        },
+        {
+          "pdf_page": 103,
+          "math_nodes": 52,
+          "markdown_sha256": "308d3197aa99f945435a25f937dbfc22a3ffc798910ec20b7ccb315ea8c3f9d5"
+        },
+        {
+          "pdf_page": 104,
+          "math_nodes": 43,
+          "markdown_sha256": "46a1e0e8b5cfd04e9d1075417a91ffd5271c8253f61109cd7492cc4783271111"
+        },
+        {
+          "pdf_page": 105,
+          "math_nodes": 29,
+          "markdown_sha256": "dcc284c682a5976311b25a2f8aafaf2d0e7c89d4e823e6dfb26a5f0cea9b89d0"
+        }
+      ]
+    },
+    {
+      "name": "formula_number_coverage",
+      "passed": true,
+      "details": {
+        "count": 39,
+        "expected_count": 39,
+        "duplicate_ids": []
+      }
+    },
+    {
+      "name": "cotes_table_n_1",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "1/2",
+          "1/2"
+        ],
+        "sum": "1",
+        "moments_through_degree": 1
+      }
+    },
+    {
+      "name": "cotes_table_n_2",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "1/6",
+          "2/3",
+          "1/6"
+        ],
+        "sum": "1",
+        "moments_through_degree": 3
+      }
+    },
+    {
+      "name": "cotes_table_n_3",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "1/8",
+          "3/8",
+          "3/8",
+          "1/8"
+        ],
+        "sum": "1",
+        "moments_through_degree": 3
+      }
+    },
+    {
+      "name": "cotes_table_n_4",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "7/90",
+          "16/45",
+          "2/15",
+          "16/45",
+          "7/90"
+        ],
+        "sum": "1",
+        "moments_through_degree": 5
+      }
+    },
+    {
+      "name": "cotes_table_n_5",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "19/288",
+          "25/96",
+          "25/144",
+          "25/144",
+          "25/96",
+          "19/288"
+        ],
+        "sum": "1",
+        "moments_through_degree": 5
+      }
+    },
+    {
+      "name": "cotes_table_n_6",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "41/840",
+          "9/35",
+          "9/280",
+          "34/105",
+          "9/280",
+          "9/35",
+          "41/840"
+        ],
+        "sum": "1",
+        "moments_through_degree": 7
+      }
+    },
+    {
+      "name": "cotes_table_n_7",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "751/17280",
+          "3577/17280",
+          "49/640",
+          "2989/17280",
+          "2989/17280",
+          "49/640",
+          "3577/17280",
+          "751/17280"
+        ],
+        "sum": "1",
+        "moments_through_degree": 7
+      }
+    },
+    {
+      "name": "cotes_table_n_8",
+      "passed": true,
+      "details": {
+        "coefficients": [
+          "989/28350",
+          "2944/14175",
+          "-464/14175",
+          "5248/14175",
+          "-454/2835",
+          "5248/14175",
+          "-464/14175",
+          "2944/14175",
+          "989/28350"
+        ],
+        "sum": "1",
+        "moments_through_degree": 9
+      }
+    },
+    {
+      "name": "remainder_sign_scale_derivative_n_1",
+      "passed": true,
+      "details": {
+        "tested_function": "x^2",
+        "exact_error": "(a - b)**3/6",
+        "derivative_factor": "2"
+      }
+    },
+    {
+      "name": "remainder_sign_scale_derivative_n_2",
+      "passed": true,
+      "details": {
+        "tested_function": "x^4",
+        "exact_error": "(a - b)**5/120",
+        "derivative_factor": "24"
+      }
+    },
+    {
+      "name": "remainder_sign_scale_derivative_n_4",
+      "passed": true,
+      "details": {
+        "tested_function": "x^6",
+        "exact_error": "(a - b)**7/2688",
+        "derivative_factor": "720"
+      }
+    },
+    {
+      "name": "source_errata_E01_counterexample",
+      "passed": true,
+      "details": {
+        "n": 9,
+        "coefficients": [
+          "2857/89600",
+          "15741/89600",
+          "27/2240",
+          "1209/5600",
+          "2889/44800",
+          "2889/44800",
+          "1209/5600",
+          "27/2240",
+          "15741/89600",
+          "2857/89600"
+        ]
+      }
+    },
+    {
+      "name": "source_errata_E02_significant_digits",
+      "passed": true,
+      "details": {
+        "absolute_error": "1961/5000000",
+        "decimal_error": "0.0003922000000",
+        "significant_digits": 3,
+        "definition": "book 1.3.3, equation (1.3.2)"
+      }
+    },
+    {
+      "name": "source_errata_E07_trapezoid_table_k5",
+      "passed": true,
+      "details": {
+        "function": "sin(x)/x, f(0)=1",
+        "interval": [
+          0,
+          1
+        ],
+        "n": 32,
+        "working_decimal_digits": 80,
+        "computed_value": "0.94605856096276806717841406481438040534397808978087806399884106865355288368401881",
+        "rounded_to_7_decimal_places": "0.9460586",
+        "source_table_value_preserved": "0.9460596"
+      }
+    },
+    {
+      "name": "latex_math_syntax",
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "math_nodes": 503,
+        "log": "staging/ch04a/math-syntax-build.log",
+        "scope": "LaTeX syntax only; typesetting overflow is not evaluated in this math-only diagnostic."
+      }
+    }
+  ],
+  "limits": [
+    "符号计算不能替代原页视觉核验。",
+    "数学语法诊断 PDF 不作为教材排版交付；中央稿件合并和最终渲染由 root 完成。"
+  ]
+}

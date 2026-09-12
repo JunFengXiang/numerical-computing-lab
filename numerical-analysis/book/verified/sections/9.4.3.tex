@@ -1,0 +1,358 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={带原点位移的QR方法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{带原点位移的QR方法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{9.4.3 带原点位移的 QR 方法}\label{ux5e26ux539fux70b9ux4f4dux79fbux7684-qr-ux65b9ux6cd5}
+
+在定理 9.18 证明中进一步分析可知，\(a_{nn}^{(k)}\to\lambda_n\ (k\to\infty)\) 速度依赖于比值 \(r_n=|\lambda_n/\lambda_{n-1}|\)，当 \(r_n\) 很小时，收敛较快，如果 \(s\) 为 \(\lambda_n\) 一个估计，且对 \(A-sI\) 运用 QR 算法，则 \((n,n-1)\) 元素将以收敛因子 \(\left|\dfrac{\lambda_n-s}{\lambda_{n-1}-s}\right|\) 线性收敛于零，\((n,n)\) 元素将比在基本算法中收敛更快。
+
+\begin{quote}
+校注（agent 补充）：上方分块上三角阵中第一个二阶对角块原印为 \(B_l\)，与末块同名；放大字形确认后照录。按 \(m+2l=n\) 及顺序编号，第一个二阶块疑应为 \(B_1\)。
+\end{quote}
+
+\href{../../source-images/pdf-256.jpeg}{原页}
+
+为此，为了加速收敛，选择数列 \(\{s_k\}\)，按下述方法构造矩阵序列 \(\{A_k\}\)，称为\textbf{带原点位移的 QR 算法}。
+
+\textbf{步 1}　设 \(A=A_1\in\mathbb R^{n\times n}\)。
+
+\textbf{步 2}　将 \(A_k-s_kI\) 进行 QR 分解，即 \(A_k-s_kI=Q_kR_k\)，\(k=1,2,\cdots\)。
+
+\textbf{步 3}　构造新矩阵 \(A_{k+1}=R_kQ_k+s_kI=Q_k^{\mathrm T}A_kQ_k\)。
+
+\textbf{步 4}　\(A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k\)，其中 \(\widetilde Q_k=Q_1Q_2\cdots Q_k\)，\(\widetilde R_k=R_k\cdots R_2R_1\)。
+
+\textbf{步 5}　矩阵 \((A-s_1I)(A-s_2I)\cdots(A-s_kI)\equiv\varphi(A)\) 有 QR 分解式 \(\varphi(A)=\widetilde Q_k\widetilde R_k\)。
+
+\textbf{步 6}　带位移 QR 方法变换一步的计算：首先用正交变换（左变换）将 \(A_k-s_kI\) 化为上三角阵，即
+
+\[
+P_{n-1}\cdots P_2P_1(A_k-s_kI)=R_k,
+\]
+
+其中 \(Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1\) 为一系列平面旋转矩阵的乘积。于是
+
+\[
+A_{k+1}=P_{n-1}\cdots P_2P_1(A_k-s_kI)P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}+s_kI.
+\]
+
+下面考虑用 QR 算法计算上 Hessenberg 阵特征值。
+
+设
+
+\[
+A=A_1=\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{pmatrix},\quad A\in\mathbb R^{n\times n}.
+\]
+
+（1）左变换计算。选择平面旋转阵 \(P_{12},P_{23},\cdots,P_{n-1,n}\)，使
+
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R.
+\]
+
+首先
+
+\[
+a_{ii}\leftarrow a_{ii}-s_1\quad(i=1,2,\cdots,n).
+\]
+
+第一次左变换，选择平面旋转阵 \(P_{12}\)，使第 2 行第 1 列元素为零。
+
+\[
+P_{12}(A_1-s_1I)=\begin{pmatrix}
+v_1&\begin{matrix}a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&\boxed{\begin{matrix}
+a_{22}^{(2)}&a_{23}^{(2)}&\cdots&a_{2n}^{(2)}\\
+a_{32}&a_{33}&\cdots&a_{3n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+
+设已完成第 \(i-1\) 次左变换，则
+
+\[
+P_{i-1,i}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&a_{12}^{(2)}&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&v_2&a_{23}^{(2)}&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{2n}^{(2)}\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&&\vdots\end{matrix}\\
+&&&v_{i-1}&\begin{matrix}a_{i-1,i}^{(i-1)}&\cdots&\cdots&a_{i-1,n}^{(i-1)}\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+a_{ii}^{(i)}&\cdots&\cdots&a_{in}^{(i)}\\
+a_{i+1,i}&\ddots&&a_{i+1,n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+
+\href{../../source-images/pdf-257.jpeg}{原页}
+
+现进行第 \(i\) 次左变换，选择 \(P_{i,i+1}\)（常数 \(c_i,s_i\)）及 \(v_k\) 使 \((i+1,i)\)---元素为零，则有
+
+\[
+P_{i,i+1}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&\times&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&v_2&\times&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&\vdots\end{matrix}\\
+&&&v_i&\begin{matrix}\times&\cdots&\times\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+\times&\times&\cdots&\times\\
+\times&\ddots&\ddots&\vdots\\
+&\ddots&\ddots&\times\\
+&&\times&\times
+\end{matrix}}
+\end{pmatrix},
+\]
+
+继续这过程，最后
+
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R\quad\text{（上三角阵）},
+\]
+
+其中 \(P_{i,i+1}\ (i=1,2,\cdots,n+1)\) 为平面旋转阵。
+
+（2）右变换计算。计算 \(RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}\)，其中上三角阵 \(R\) 元素仍记作 \(a_{ij}\ (i\leq j)\)，于是
+
+\[
+RP_{12}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(2)}&a_{13}&\cdots&a_{1n}\\
+a_{21}^{(2)}&a_{22}^{(2)}&a_{23}&\cdots&a_{2n}\\
+&&a_{33}&\cdots&a_{3n}\\
+&&&\ddots&\vdots\\
+&&&&a_{nn}
+\end{pmatrix},
+\]
+
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(3)}&a_{13}^{(3)}&a_{14}&\cdots\\
+a_{21}^{(2)}&a_{22}^{(3)}&a_{23}^{(3)}&a_{24}&\cdots\\
+&a_{32}^{(3)}&a_{33}^{(3)}&a_{34}&\cdots\\
+&&a_{43}^{(3)}&a_{44}&\cdots\\
+&&&\ddots&\ddots
+\end{pmatrix}.
+\]
+
+继续这过程，最后
+
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}
+=\begin{bmatrix}
+\times&\times&\cdots&\cdots&\times\\
+\times&\times&\cdots&\cdots&\times\\
+&\times&\ddots&&\vdots\\
+&&\ddots&\ddots&\vdots\\
+&&&\times&\times
+\end{bmatrix}\quad\text{（为上 Hessenberg 阵）},
+\]
+
+故 \(A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}+s_1I\) 为上 Hessenberg 阵。
+
+由上面的构造可知，如果 \(A\) 为上 Hessenberg 阵，则用 QR 算法产生的 \(A_2,A_3,\cdots,A_k,\cdots\) 亦是上 Hessenberg 阵。显然，每一次左变换仅改变矩阵的两行，而每一次右变换仅改变矩阵的两列。为了节省存储量，左变换和右变换可以同时进行，例如
+
+\[
+\begin{aligned}
+P_{23}P_{12}(A-s_1I)&\to P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}
+\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}\\
+&\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}P_{23}^{\mathrm T}\to\cdots
+\end{aligned}
+\]
+
+实际计算时，用不同位移 \(s_1,s_2,\cdots,s_k,\cdots\) 反复应用上述变换就产生一正交相似于上 Hessenberg 阵 \(A\) 的序列 \(\{A_k\}\)，如果选取 \(s_k=a_{nn}^{(k)}\)，那么当 \(a_{n,n-1}^{(k)}\) 充分小，\(A_k\) 有形式
+
+\begin{quote}
+校注（agent 补充）：本页开头第 \(i\) 次左变换原印``及 \(v_k\)''，对应矩阵对角位置为 \(v_i\)，疑为下标不一致；保留原印。
+
+校注（agent 补充）：左变换最后一式之后原印 \(i=1,2,\cdots,n+1\)。因 \(P_{i,i+1}\) 作用于 \(n\) 阶矩阵，且乘积末项为 \(P_{n-1,n}\)，上限疑应为 \(n-1\)；保留原印。
+\end{quote}
+
+\href{../../source-images/pdf-258.jpeg}{原页}
+
+\[
+\left(\begin{array}{ccccc|c}
+\times&\times&\times&\cdots&\times&\times\\
+&\times&\times&\cdots&\times&\times\\
+&&\ddots&\ddots&\vdots&\vdots\\
+&&&\times&\times&\times\\\hline
+&&&&&\lambda_n
+\end{array}\right)_{n\times n}
+\equiv\left(\begin{array}{c|c}
+B&\begin{matrix}\times\\\times\\\vdots\\\times\end{matrix}\\\hline
+O&\lambda_n
+\end{array}\right),
+\]
+
+则数 \(\lambda_n=a_{nn}^{(k)}\) 为 \(A\) 的近似特征值。采用收缩方法，继续对 \(B\in\mathbb R^{(n-1)\times(n-1)}\) 应用 QR 算法，就可逐步求出 \(A\) 其余近似特征值。
+
+判别 \(a_{n,n-1}^{(k)}\) 充分小的准则如下：
+
+（1）\(|a_{n,n-1}^{(k)}|\leq\varepsilon\|A\|_\infty\)；
+
+（2）或将 \(a_{n,n-1}^{(k)}\) 与相邻元素进行比较 \(|a_{n,n-1}^{(k)}|\leq\varepsilon\min(|a_{nn}^{(k)}|,|a_{n-1,n-1}^{(k)}|)\)，其中 \(\varepsilon=10^{-t}\)，\(t\) 是计算中有效数字的个数。
+
+上述应用带位移的 QR 算法，可计算上 Hessenberg 阵 \(A\) 所有特征值，但不能计算 \(A\) 复特征值，因为上述 QR 算法是在实数中进行计算的，位移 \(s_k=a_{nn}\) 不能逼近一个复特征值。关于避免复数运算求上 Hessenberg 阵复特征值的 QR 算法------隐式位移的 QR 算法请参看有关文献。
+
+一般来说位移 \(s_k\) 常用的选取方法有两种：
+
+（1）选取 \(s_k=a_{nn}^{(k)}\)；
+
+（2）选取 \(s_k\) 是 \(2\times2\) 矩阵 \(\begin{pmatrix}a_{n-1,n-1}^{(k)}&a_{n-1,n}^{(k)}\\a_{n,n-1}^{(k)}&a_{nn}^{(k)}\end{pmatrix}\)，特征值 \(\lambda\) 且 \(|a_{nn}^{(k)}-\lambda|\) 为最小（记 \(A_k=(a_{ij}^{(k)})\)）。
+
+\textbf{例 9.6}　用 QR 方法计算对称三对角阵的全部特征值
+
+\[
+A=A_1=\begin{pmatrix}2&1&0\\1&3&1\\0&1&4\end{pmatrix}.
+\]
+
+\textbf{解}　采用第一种选位移方法，即选 \(s_k=a_{nn}^{(k)}\)。又 \(s_1=4\)。
+
+\[
+P_{23}P_{12}(A_1-s_1I)=R=\begin{pmatrix}
+2.236\,1&-1.342&0.447\,2\\
+&1.095\,4&-0.365\,1\\
+&&0.816\,50
+\end{pmatrix},
+\]
+
+\[
+A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}+s_1I
+=\begin{pmatrix}
+1.400\,0&0.489\,9&0\\
+0.489\,9&3.266\,7&0.745\,4\\
+0&0.745\,4&4.333\,3
+\end{pmatrix},
+\]
+
+\[
+A_3=\begin{pmatrix}
+1.291\,5&0.201\,7&0\\
+0.201\,7&3.020\,2&0.272\,4\\
+0&0.272\,4&4.688\,4
+\end{pmatrix},\qquad
+A_4=\begin{pmatrix}
+1.273\,7&0.099\,3&0\\
+0.099\,3&2.994\,3&0.007\,2\\
+0&0.007\,2&4.732\,0
+\end{pmatrix},
+\]
+
+\href{../../source-images/pdf-259.jpeg}{原页}
+
+\[
+A_5=\begin{pmatrix}
+1.269\,4&0.049\,8&0\\
+0.049\,8&2.998\,6&0\\
+0&0&\boxed{4.732\,1}
+\end{pmatrix},\qquad
+\widetilde A_5=\begin{pmatrix}1.269\,4&0.049\,8\\0.049\,8&2.998\,6\end{pmatrix}.
+\]
+
+现在收缩，继续对 \(A_5\) 的子矩阵 \(\widetilde A_5\in\mathbb R^{2\times2}\) 进行变换，得到
+
+\[
+\widetilde A_6=P_{12}(\widetilde A_5-s_5I)P_{12}^{\mathrm T}+s_5I
+=\begin{pmatrix}\boxed{1.268\,0}&-4\times10^{-5}\\-4\times10^{-5}&\boxed{3.000\,0}\end{pmatrix},
+\]
+
+故求得 \(A\) 近似特征值为
+
+\[
+\lambda_1\approx4.732\,1,\qquad\lambda_2\approx3.000\,0,\qquad\lambda_3\approx1.268\,0,
+\]
+
+且 \(A\) 的特征值是
+
+\[
+\lambda_1=3+\sqrt3\approx4.732\,1,\qquad\lambda_2=3.0,\qquad\lambda_3=3-\sqrt3\approx1.267\,9.
+\]
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch09b-E12}：原书 PDF 页 255
+\item
+  \texttt{ch09b-E09}：原书 PDF 页 257
+\item
+  \texttt{ch09b-E10}：原书 PDF 页 257
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,169 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={矩阵的三角分解},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{矩阵的三角分解}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.2.2 矩阵的三角分解}\label{ux77e9ux9635ux7684ux4e09ux89d2ux5206ux89e3}
+
+下面借助矩阵理论进一步对消去法作些分析，从而建立 Gauss 消去法与矩阵因式分解的关系。
+
+设式（7.2.1）中 \(A\) 的各顺序主子式均不为零。由于对 \(A\) 施行行的初等变换相当于用初等矩阵左乘 \(A\)，于是对式（7.2.1）施行第一次消元后化为式（7.2.7），这时 \(A^{(1)}\) 化为 \(A^{(2)}\)，\(b^{(1)}\) 化为 \(b^{(2)}\)，即
+
+\[L_1A^{(1)}=A^{(2)},\qquad L_1b^{(1)}=b^{(2)},\]
+
+其中
+
+\[
+L_1=\begin{pmatrix}
+1&&&&\\
+-m_{21}&1&&&\\
+-m_{31}&&1&&\\
+\vdots&&&\ddots&\\
+-m_{n1}&&&&1
+\end{pmatrix}.
+\]
+
+\href{../../source-images/pdf-182.jpeg}{原页扫描}
+
+一般第 \(k\) 步消元，\(A^{(k)}\) 化为 \(A^{(k+1)}\)，\(b^{(k)}\) 化为 \(b^{(k+1)}\)，相当于
+
+\[L_kA^{(k)}=A^{(k+1)},\qquad L_kb^{(k)}=b^{(k+1)}.\]
+
+重复这一过程，最后得到
+
+\[
+\begin{cases}
+L_{n-1}\cdots L_2L_1A^{(1)}=A^{(n)},\\
+L_{n-1}\cdots L_2L_1b^{(1)}=b^{(n)},
+\end{cases}
+\tag{7.2.14}
+\]
+
+其中
+
+\[
+L_k=\begin{pmatrix}
+1&&&&&\\
+&\ddots&&&&\\
+&&1&&&\\
+&&-m_{k+1,k}&1&&\\
+&&\vdots&&\ddots&\\
+&&-m_{nk}&&&1
+\end{pmatrix}.
+\]
+
+将上三角矩阵 \(A^{(n)}\) 记作 \(U\)，由式（7.2.14）得到
+
+\[A=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}U=LU,\]
+
+其中
+
+\[
+L=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}
+=\begin{pmatrix}
+1&&&&\\
+m_{21}&1&&&\\
+m_{31}&m_{32}&1&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+m_{n1}&m_{n2}&\cdots&m_{n,n-1}&1
+\end{pmatrix}.
+\]
+
+为单位下三角矩阵。
+
+这就是说，Gauss 消去法实质上产生了一个将 \(A\) 分解为两个三角矩阵相乘的因式分解，于是得到如下重要定理，它在解方程组的直接法中起着重要作用。
+
+\textbf{定理 7.3（矩阵的 LU 分解）} 设 \(A\) 为 \(n\) 阶矩阵，如果 \(A\) 的顺序主子式 \(D_i\ne0\)（\(i=1,2,\cdots,n-1\)），则 \(A\) 可分解为一个单位下三角矩阵 \(L\) 和一个上三角矩阵 \(U\) 的乘积，且这种分解是唯一的。
+
+\textbf{证明} 根据以上 Gauss 消去法的矩阵分析，\(A=LU\) 的存在性已经得到证明，现仅在 \(A\) 为非奇异矩阵的假定下来证明它的唯一性，当 \(A\) 为奇异矩阵的情况留作课外练习。
+
+设
+
+\[A=LU=L_1U_1,\]
+
+其中 \(L,L_1\) 为单位下三角矩阵；\(U,U_1\) 为上三角矩阵。
+
+由于 \(U_1^{-1}\) 存在，故
+
+\[L^{-1}L_1=UU_1^{-1}.\]
+
+上式右端为上三角矩阵，左端为单位下三角矩阵，从而上式两端都必须等于单位矩阵，故 \(U=U_1\)，\(L=L_1\)。证毕。
+
+\textbf{例 7.2} 对于例 7.1，系数矩阵 \(A=\begin{pmatrix}1&1&1\\0&4&-1\\2&-2&1\end{pmatrix}\)，由 Gauss 消去法，有
+
+\href{../../source-images/pdf-183.jpeg}{原页扫描}
+
+\[m_{21}=0,\quad m_{31}=2,\quad m_{32}=-1,\]
+
+故
+
+\[
+A=\begin{pmatrix}1&0&0\\0&1&0\\2&-1&1\end{pmatrix}
+\begin{pmatrix}1&1&1\\0&4&-1\\0&0&-2\end{pmatrix}=LU.
+\]
+
+\end{document}

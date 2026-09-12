@@ -1,0 +1,546 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={矩阵的条件数},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{矩阵的条件数}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.6.1 矩阵的条件数}\label{ux77e9ux9635ux7684ux6761ux4ef6ux6570}
+
+考虑线性方程组 \(Ax=b\)，其中设 \(A\) 为非奇异矩阵，\(x\) 为方程组的精确解。
+
+由于 \(A\)（或 \(b\)）元素是测量得到的，或者是计算的结果，所以 \(A\)（或 \(b\)）常带有某些观测误差或者包含有舍入误差。因此，在处理实际问题 \((A+\delta A)x=b+\delta b\) 时，通常要考虑 \(A\)（或 \(b\)）的微小误差对解的影响，即考虑估计 \(x-y\)，其中 \(y\) 是 \((A+\delta A)y=b+\delta b\) 的解。
+
+首先考察一个例子。
+
+\textbf{例 7.8} 设有方程组
+
+\[
+\begin{pmatrix}1&1\\1&1.0001\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\end{pmatrix}
+=\begin{pmatrix}2\\2\end{pmatrix}
+\]
+
+或
+
+\[
+Ax=b,
+\tag{7.6.1}
+\]
+
+它的精确解为
+
+\[
+x=(2,0)^{\mathrm T}.
+\]
+
+现在考虑常数项的微小变化对方程组解的影响，即考察方程组
+
+\[
+\begin{pmatrix}1&1\\1&1.000\,1\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\end{pmatrix}
+=\begin{pmatrix}2\\2.000\,1\end{pmatrix}
+\]
+
+或
+
+\[
+A(x+\delta x)=b+\delta b,
+\tag{7.6.2}
+\]
+
+其中 \(\delta b=(0,0.000\,1)^{\mathrm T},y=x+\delta x\)，\(x\) 为式（7.6.1）的解。显然方程组（7.6.2）的解为
+
+\[
+x+\delta x=(1,1)^{\mathrm T}.
+\]
+
+可以看到，式（7.6.1）的常数项 \(b\) 的第二个分量只有 \(\frac1{10\,000}\) 的微小变化，方程组的解却变化很大。这样的方程组称为病态方程组。
+
+\textbf{定义 7.7} 如果矩阵 \(A\) 或常数项 \(b\) 的微小变化，引起方程组 \(Ax=b\) 解的巨大变化，则称此方程组为\textbf{病态方程组}，矩阵 \(A\) 称为\textbf{病态矩阵}（相对于方程组而言），否则称方程组为\textbf{良态方程组}，\(A\) 称为\textbf{良态矩阵}。
+
+应该注意，矩阵的病态性质是矩阵本身的特性，下面希望找出刻画矩阵病态性质
+
+（正文续下页。）
+
+\begin{quote}
+校注（agent 补充，原书疑误）：本页定理 7.18 证明原文为 \(Bx_0=x_0\)，以及 \((I\pm B)^{-1}=I\mp B(I-B)^{-1}\)，均按印刷内容保留。若同时处理 \(I+B\) 和 \(I-B\) 两种情形，前式应为 \(Bx_0=\mp x_0\)，后式右端的逆矩阵应为 \((I\pm B)^{-1}\)；原文写法只与减号分支一致。前式符号不影响随后所取范数等于 1 的结论。\href{../assets/ch07b/205-inverse-signs.png}{原式局部图}。
+\end{quote}
+
+\href{../../source-images/pdf-206.jpeg}{原页图像}
+
+（续 7.6.1 矩阵的条件数。）
+
+的量。设有方程组
+
+\[
+Ax=b,
+\tag{7.6.3}
+\]
+
+其中 \(A\) 为非奇异阵，\(x\) 为式（7.6.3）的精确解。下面研究当方程组的系数矩阵 \(A\)（或 \(b\)）有微小误差（扰动）时对解的影响。
+
+现设 \(A\) 是精确的，\(b\) 有误差 \(\delta b\)，解为 \(x+\delta x\)，则
+
+\[
+A(x+\delta x)=b+\delta b,\quad\delta x=A^{-1}\delta b,\quad\|\delta x\|\leqslant\|A^{-1}\|\|\delta b\|.
+\tag{7.6.4}
+\]
+
+由式（7.6.3），有
+
+\[
+\|b\|\leqslant\|A\|\|x\|,
+\]
+
+即
+
+\[
+\frac1{\|x\|}\leqslant\frac{\|A\|}{\|b\|}\quad\text{（设 }b\neq0\text{）},
+\tag{7.6.5}
+\]
+
+于是由式（7.6.4）式及式（7.6.5），有如下定理。
+
+\textbf{定理 7.19} 设 \(A\) 是非奇异阵，\(Ax=b\neq0\)，且 \(A(x+\delta x)=b+\delta b\)，则
+
+\[
+\frac{\|\delta x\|}{\|x\|}\leqslant\|A^{-1}\|\|A\|\frac{\|\delta b\|}{\|b\|}.
+\]
+
+上式给出了解的相对误差的上界，常数项 \(b\) 的相对误差在解中可能放大 \(\|A^{-1}\|\|A\|\) 倍。
+
+现设 \(b\) 是精确的，\(A\) 有微小误差（扰动）\(\delta A\)，解为 \(x+\delta x\)，则
+
+\[
+(A+\delta A)(x+\delta x)=b,
+\]
+
+\[
+(A+\delta A)\delta x=-(\delta A)x.
+\tag{7.6.6}
+\]
+
+如果 \(\delta A\) 不受限制的话，\(A+\delta A\) 可能奇异，而
+
+\[
+(A+\delta A)=A(I+A^{-1}\delta A).
+\]
+
+由定理 7.18 知，当 \(\|A^{-1}\delta A\|<1\) 时，\((I+A^{-1}\delta A)^{-1}\) 存在，由式（7.6.6），有
+
+\[
+\delta x=-(I+A^{-1}\delta A)^{-1}A^{-1}(\delta A)x,\quad
+\|\delta x\|\leqslant\frac{\|A^{-1}\|\|\delta A\|\|x\|}{1-\|A^{-1}(\delta A)\|}.
+\]
+
+设 \(\|A^{-1}\|\|\delta A\|<1\)，即得
+
+\[
+\frac{\|\delta x\|}{\|x\|}
+\leqslant
+\frac{\|A^{-1}\|\|A\|\dfrac{\|\delta A\|}{\|A\|}}
+{1-\|A^{-1}\|\|A\|\dfrac{\|\delta A\|}{\|A\|}}.
+\tag{7.6.7}
+\]
+
+\textbf{定理 7.20} 设 \(A\) 为非奇异矩阵，\(Ax=b\neq0\)，且 \((A+\delta A)(x+\delta x)=b\)，如果 \(\|A^{-1}\|\|\delta A\|<1\)，则式（7.6.7）成立。
+
+如果 \(\delta A\) 充分小，且在 \(\|A^{-1}\|\|\delta A\|<1\) 条件下，那么式（7.6.7）说明矩阵 \(A\) 的相对误差 \(\frac{\|\delta A\|}{\|A\|}\) 在解中可能放大 \(\|A^{-1}\|\|A\|\) 倍。
+
+总之，量 \(\|A^{-1}\|\|A\|\) 愈小，由 \(A\)（或 \(b\)）的相对误差引起的解的相对误差就愈小；量 \(\|A^{-1}\|\|A\|\) 愈大，该解的相对误差就可能愈大。所以量 \(\|A^{-1}\|\|A\|\) 实际上刻画了解对原始数据变化的灵敏度，即刻画了方程组的病态程度，于是引进下述定
+
+（定义续下页。）
+
+\href{../../source-images/pdf-207.jpeg}{原页图像}
+
+（续 7.6.1 矩阵的条件数。）
+
+义。
+
+\textbf{定义 7.8} 设 \(A\) 为非奇异矩阵，称数 \(\operatorname{cond}(A)_v=\|A^{-1}\|_v\|A\|_v\)（\(v=1,2\) 或 \(\infty\)）为矩阵 \(A\) 的\textbf{条件数}。
+
+由此看出矩阵的条件数与范数有关。
+
+矩阵的条件数是一个十分重要的概念。由上面讨论知，当 \(A\) 的条件数相对地大时，即 \(\operatorname{cond}(A)\gg1\) 时，式（7.6.3）是病态的（即 \(A\) 是病态矩阵，或者说 \(A\) 是坏条件的）；当 \(A\) 的条件数相对地小时，式（7.6.3）是良态的（或者说 \(A\) 是好条件的）。\(A\) 的条件数愈大，方程组的病态程度愈严重，也就愈难得到方程组的比较准确的解。
+
+通常使用的条件数有
+
+（1）\(\operatorname{cond}(A)_\infty=\|A^{-1}\|_\infty\|A\|_\infty\)；
+
+（2）\(A\) 的\textbf{谱条件数}
+
+\[
+\operatorname{cond}(A)_2=\|A\|_2\|A^{-1}\|_2
+=\sqrt{\frac{\lambda_{\max}(A^{\mathrm T}A)}{\lambda_{\min}(A^{\mathrm T}A)}}.
+\]
+
+当 \(A\) 为对称阵时，\(\operatorname{cond}(A)_2=\frac{|\lambda_1|}{|\lambda_n|}\)，其中 \(\lambda_1,\lambda_n\) 为 \(A\) 的绝对值最大和绝对值最小的特征值。
+
+条件数有如下性质：
+
+（1）对任何非奇异矩阵 \(A\)，都有 \(\operatorname{cond}(A)_v\geqslant1\)。事实上，
+
+\[
+\operatorname{cond}(A)_v=\|A^{-1}\|_v\|A\|_v\geqslant\|A^{-1}A\|_v=1.
+\]
+
+（2）设 \(A\) 为非奇异矩阵，\(c\) 为不等于零的常数，则 \(\operatorname{cond}(cA)_v=\operatorname{cond}(A)_v\)。
+
+（3）如果 \(A\) 为正交矩阵，则 \(\operatorname{cond}(A)_2=1\)；如果 \(A\) 为非奇异矩阵，\(R\) 为正交矩阵，则
+
+\[
+\operatorname{cond}(RA)_2=\operatorname{cond}(AR)_2=\operatorname{cond}(A)_2.
+\]
+
+\textbf{例 7.9} 已知 Hilbert 矩阵
+
+\[
+H_n=\begin{pmatrix}
+1&\frac12&\cdots&\frac1n\\[4pt]
+\frac12&\frac13&\cdots&\frac1{n+1}\\
+\vdots&\vdots&&\vdots\\
+\frac1n&\frac1{1+n}&\cdots&\frac1{2n-1}
+\end{pmatrix},
+\]
+
+计算 \(H_3\) 的条件数。
+
+\textbf{解}
+
+\[
+H_3=\begin{pmatrix}
+1&\frac12&\frac13\\[4pt]
+\frac12&\frac13&\frac14\\[4pt]
+\frac13&\frac14&\frac15
+\end{pmatrix},\quad
+H_3^{-1}=\begin{pmatrix}
+9&-36&30\\
+-36&192&-180\\
+30&-180&180
+\end{pmatrix}.
+\]
+
+（例 7.9 解续下页。）
+
+\href{../../source-images/pdf-208.jpeg}{原页图像}
+
+（续 7.6.1 例 7.9。）
+
+（1）计算 \(H_3\) 条件数 \(\operatorname{cond}(H_3)_\infty\)。
+
+\[
+\|H_3\|_\infty=11/6,\quad\|H_3^{-1}\|_\infty=408,
+\]
+
+所以 \(\operatorname{cond}(H_3)_\infty=748\)。同样可计算 \(\operatorname{cond}(H_6)=2.9\times10^6\)。一般当 \(n\) 愈大时，\(H_n\) 的病态愈严重。
+
+（2）考虑方程组
+
+\[
+H_3x=(11/6,13/12,47/60)^{\mathrm T}=b.
+\]
+
+设 \(H_3\) 及 \(b\) 有微小误差（取三位有效数字），有
+
+\[
+\begin{pmatrix}
+1.00&0.500&0.333\\
+0.500&0.333&0.250\\
+0.333&0.250&0.200
+\end{pmatrix}
+\begin{pmatrix}x_1+\delta x_1\\x_2+\delta x_2\\x_3+\delta x_3\end{pmatrix}
+=\begin{pmatrix}1.83\\1.08\\0.783\end{pmatrix},
+\tag{7.6.8}
+\]
+
+简记作 \((H_3+\delta H_3)(x+\delta x)=b+\delta b\)。方程组 \(H_3x=b\) 与式（7.6.8）的精确解为
+
+\[
+x=(1,1,1)^{\mathrm T},\quad
+x+\delta x=(1.089\,512\,538,\ 0.487\,967\,062,\ 1.491\,002\,798)^{\mathrm T},
+\]
+
+于是
+
+\[
+\delta x=(0.089\,5,\ -0.512\,0,\ 0.491\,0)^{\mathrm T},\quad
+\frac{\|\delta H_3\|_\infty}{\|H_3\|_\infty}\approx0.18\times10^{-3}<0.02\%,
+\]
+
+\[
+\frac{\|\delta b\|_\infty}{\|b\|_\infty}\approx0.182\%,\quad
+\frac{\|\delta x\|_\infty}{\|x\|_\infty}\approx51.2\%.
+\]
+
+这就是说，\(H_3\) 与 \(b\) 相对误差不超过 \(0.3\%\)，而引起解的相对误差超过 \(50\%\)。
+
+由上面讨论可知，要判别一个矩阵是否病态，需要计算条件数 \(\operatorname{cond}(A)=\|A^{-1}\|\|A\|\)，而计算 \(A^{-1}\) 是比较费劲的。那么在实际计算中如何发现病态情况呢？
+
+（1）如果在 \(A\) 的三角约化时（尤其是用主元素消去法解方程组（7.6.3）时）出现小主元，那么对大多数矩阵来说，\(A\) 是病态矩阵。例如用选主元的直接三角分解法解方程组（7.6.8）（用双精度累加计算 \(\sum_i a_ib_i\)，结果舍入为三位浮点数），则有
+
+\[
+I_{23}(H_3+\delta H_3)
+=\begin{pmatrix}
+1&&\\
+0.333&1&\\
+0.500&0.994&1
+\end{pmatrix}
+\begin{pmatrix}
+1&0.500\,0&0.333\,0\\
+&0.083\,5&0.089\,1\\
+&&\boxed{-0.005\,07}
+\end{pmatrix}
+=LU.
+\]
+
+（2）如果 \(A\) 的最大特征值和最小特征值之比（按绝对值）是大的，则 \(A\) 是病态的，即当 \(|\lambda_1|/|\lambda_n|\) 是大的，其中 \(A\) 特征值次序为
+
+\[
+|\lambda_1|\geqslant|\lambda_2|\geqslant\cdots\geqslant|\lambda_n|>0.
+\]
+
+显然
+
+\[
+|\lambda_1|\leqslant\|A\|,\quad\frac1{|\lambda_n|}\leqslant\|A^{-1}\|,
+\]
+
+因此
+
+\[
+\operatorname{cond}(A)\geqslant\frac{|\lambda_1|}{|\lambda_n|}\gg1.
+\]
+
+（3）如果系数矩阵的行列式值相对来说很小，或系数矩阵某些行近似线性相关，则 \(A\) 可能是病态的。
+
+（条目（4）续下页。）
+
+\begin{quote}
+校注（agent 补充，原书疑误）：原文印作 \(\operatorname{cond}(H_6)=2.9\times10^6\)，这里保留。沿用本例的 \(\infty\)-范数，对 \(6\times6\) Hilbert 矩阵作有理数精确运算得到 \(\|H_6\|_\infty\|H_6^{-1}\|_\infty=29\,070\,279\approx2.9\times10^7\)，原书指数疑应为 7。\href{../assets/ch07b/208-h6-cond.png}{原文局部图}。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充，ch07b-E014）：本页称为``精确解''的小数向量按原书照录。对式（7.6.8）所列有限小数作精确有理数求解，结果为 \((153\,971,\allowbreak 68\,960,\allowbreak 210\,710)^{\mathrm T}/141\,321\approx(1.0895125282,\allowbreak 0.4879671103,\allowbreak 1.4910027526)^{\mathrm T}\)，与所印三个分量的末几位不符。因此原书这些小数不能视作式（7.6.8）的精确解；该差异不影响后文约 \(51.2\%\) 的结论。
+\end{quote}
+
+\href{../../source-images/pdf-209.jpeg}{原页图像}
+
+（续 7.6.1 矩阵的条件数。）
+
+（4）如果系数矩阵 \(A\) 元素间数量级相差很大，并且无一定规则，则 \(A\) 可能是病态的。
+
+病态问题通常不能用选主元素的消去法来解决。对于此类问题一般采用高精度的算术运算（采用双倍字长进行运算）或者预处理方法。即将求解 \(Ax=b\) 的问题转化为求解一等价方程组
+
+\[
+\begin{cases}
+PAQy=Pb,\\
+y=Q^{-1}x.
+\end{cases}
+\]
+
+通过选择非奇异矩阵 \(P,Q\)，使 \(\operatorname{cond}(PAQ)<\operatorname{cond}(A)\)。一般选择 \(P,Q\) 为对角阵或者三角阵。
+
+当矩阵 \(A\) 的元素大小不均时，在 \(A\) 的行（或列）中引进适当的比例因子（使矩阵 \(A\) 的所有行或列按 \(\infty\)-范数大体上有相同的长度，使 \(A\) 的系数均衡），对 \(A\) 的条件数是有影响的。但这种方法不能保证 \(A\) 的条件数一定得到改善。
+
+\textbf{例 7.10} 设 \(A=\begin{pmatrix}1&10^4\\1&1\end{pmatrix}\)，且
+
+\[
+\begin{pmatrix}1&10^4\\1&1\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\end{pmatrix}
+=\begin{pmatrix}10^4\\2\end{pmatrix},
+\tag{7.6.9}
+\]
+
+计算 \(\operatorname{cond}(A)_\infty\)。
+
+\textbf{解} 由
+
+\[
+A=\begin{pmatrix}1&10^4\\1&1\end{pmatrix},
+\]
+
+有
+
+\[
+A^{-1}=\frac1{10^4-1}\begin{pmatrix}-1&10^4\\1&-1\end{pmatrix},\quad
+\operatorname{cond}(A)_\infty=\frac{(1+10^4)^2}{10^4-1}\approx10^4.
+\]
+
+现在 \(A\) 的第 1 行引进比例因子。如用 \(s_1=\max_{1\leqslant i\leqslant2}|a_{1i}|=10^4\) 除第一个方程式，得 \(A'x=b'\)，即
+
+\[
+\begin{pmatrix}10^{-4}&1\\1&1\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\end{pmatrix}
+=\begin{pmatrix}1\\2\end{pmatrix},
+\tag{7.6.10}
+\]
+
+\[
+(A')^{-1}=\frac1{1-10^{-4}}\begin{pmatrix}-1&1\\1&-10^{-4}\end{pmatrix},\quad
+\operatorname{cond}(A')_\infty=\frac1{1-10^{-4}}\approx4.
+\]
+
+当用列主元素消去法解式（7.6.9）时（计算到三位数字），得
+
+\[
+(A,b)\longrightarrow
+\left(\begin{array}{cc|c}
+1&10^4&10^4\\
+0&-10^4&-10^4
+\end{array}\right),
+\]
+
+于是得到很坏的结果：\(x_1=0,x_2=1\)。
+
+现用列主元素消去法解式（7.6.10），得
+
+（例 7.10 解续下页。）
+
+\begin{quote}
+校注（agent 补充，原书疑误）：\(\operatorname{cond}(A')_\infty\) 的分式分子原图为 1，而后面印作 \(\approx4\)，这里保留。由本页两个矩阵，\(\|A'\|_\infty=2\)，\(\|(A')^{-1}\|_\infty=2/(1-10^{-4})\)，故条件数应为 \(4/(1-10^{-4})=40\,000/9\,999\approx4.0004\)。\href{../assets/ch07b/209-scaled-cond.png}{原式局部图}。
+\end{quote}
+
+\href{../../source-images/pdf-210.jpeg}{原页图像}
+
+（续 7.6.1 例 7.10。）
+
+\[
+(A',b')\longrightarrow
+\left(\begin{array}{cc|c}1&1&2\\10^{-4}&1&1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{cc|c}1&1&2\\0&1&1\end{array}\right),
+\]
+
+从而得到较好的结果：\(x_1=1,x_2=1\)。
+
+设 \(\overline x\) 为方程组 \(Ax=b\) 的近似解，于是可计算 \(\overline x\) 的剩余向量 \(r=b-A\overline x\)，当 \(r\) 很小时，\(\overline x\) 是否为 \(Ax=b\) 一个较好的近似解呢？下述定理给出了解答。
+
+\textbf{定理 7.21（事后误差估计）}
+
+\(1^\circ\) 设 \(A\) 为非奇异矩阵，\(x\) 是精确解，\(Ax=b\neq0\)；
+
+\(2^\circ\) 设 \(\overline x\) 是方程组的近似解，\(r=b-A\overline x\)，则
+
+\[
+\frac{\|x-\overline x\|}{\|x\|}\leqslant\operatorname{cond}(A)\cdot\frac{\|r\|}{\|b\|}.
+\tag{7.6.11}
+\]
+
+\textbf{证明} 由 \(x-\overline x=A^{-1}r\)，得
+
+\[
+\|x-\overline x\|\leqslant\|A^{-1}\|\|r\|,
+\tag{7.6.12}
+\]
+
+又有
+
+\[
+\|b\|=\|Ax\|\leqslant\|A\|\|x\|,
+\]
+
+\[
+\frac1{\|x\|}\leqslant\frac{\|A\|}{\|b\|},
+\tag{7.6.13}
+\]
+
+由式（7.6.12）及式（7.6.13）即得到式（7.6.11）。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 210 的校注}\label{ux539fux4e66-pdf-ux9875-210-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-210.md}{完整原页转录} · \href{../../source-images/pdf-210.jpeg}{原页图像}
+
+校注记录：ch07b-E010。
+
+\begin{quote}
+校注（agent 补充，原书疑误）：向后误差分析段中印刷方程为 \((A+\delta A)x=b\)，而紧邻文字明确指计算解 \(\overline x\) 是其精确解。此处保留原式；按本段符号约定，应写 \((A+\delta A)\overline x=b\)。\href{../assets/ch07b/210-backward-error.png}{原文局部图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07b-E007}：原书 PDF 页 205
+\item
+  \texttt{ch07b-E008}：原书 PDF 页 208
+\item
+  \texttt{ch07b-E009}：原书 PDF 页 209
+\item
+  \texttt{ch07b-E010}：原书 PDF 页 210
+\item
+  \texttt{ch07b-E014}：原书 PDF 页 208
+\end{itemize}
+
+\end{document}

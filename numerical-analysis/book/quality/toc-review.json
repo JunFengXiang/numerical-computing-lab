@@ -1,0 +1,29 @@
+{
+  "reviewer": "Codex",
+  "human_review": false,
+  "reviewed_utc": "2026-09-12T09:50:51.919791+00:00",
+  "source_pdf_pages": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "scope": "章节、节、小结、习题、附录目录逐项与原页对照",
+  "entry_count": 275,
+  "source_prefix_stars_on_chapters": [
+    10,
+    11,
+    12
+  ],
+  "exceptions": [
+    {
+      "id": "7.exercises",
+      "issue": "目录页码印字残损，OCR 错读为 158",
+      "resolution": "正文书页 199 / PDF 212 的习题标题和页脚已视觉确认"
+    }
+  ]
+}

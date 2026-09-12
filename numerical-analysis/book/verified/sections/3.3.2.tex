@@ -1,0 +1,220 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={函数的最佳平方逼近},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{函数的最佳平方逼近}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{3.3.2 函数的最佳平方逼近}\label{ux51fdux6570ux7684ux6700ux4f73ux5e73ux65b9ux903cux8fd1}
+
+下面研究在区间 \([a,b]\) 上一般的最佳平方逼近问题. 对 \(f(x) \in C[a,b]\) 及 \(C[a,b]\)
+
+\begin{quote}
+校注（agent 补充，原书术语疑误）：原页定理 3.6 写作``Cramer 行列式''，按原文保留。式 (3.3.10) 是由内积组成的 Gram 行列式，通常称``Gram（格拉姆）行列式''。
+\end{quote}
+
+\href{../../source-images/pdf-068.jpeg}{查看原页}
+
+中的一个子集 \(\Phi = \text{span}\{\varphi_0, \varphi_1, \dots, \varphi_n\}\), 若存在 \(S^*(x) \in \Phi\), 使 \[
+\| f - S^* \|_2^2 = \inf_{S \in \varphi} \| f - S \|_2^2 = \inf_{S \in \varphi} \int_a^b \rho(x) [f(x) - S(x)]^2 \mathrm{d}x, \tag{3.3.11}
+\] 则称 \(S^*(x)\) 是 \(f(x)\) 在子集 \(\Phi \subseteq C[a, b]\) 中的最佳平方逼近函数. 为了求 \(S^*(x)\), 由式 (3.3.11)可知, 该问题等价于求多元函数 \[
+I(a_0, a_1, \dots, a_n) = \int_a^b \rho(x) \left[ \sum_{j=0}^n a_j \varphi_j(x) - f(x) \right]^2 \mathrm{d}x \tag{3.3.12}
+\] 的最小值. 由于 \(I(a_0, a_1, \dots, a_n)\) 是关于 \(a_0, a_1, \dots, a_n\) 的二次函数, 利用多元函数极值的必要条件 \[
+\frac{\partial I}{\partial a_k} = 0 \quad (k = 0, 1, \dots, n),
+\] \[
+\frac{\partial I}{\partial a_k} = 2 \int_a^b \rho(x) \left[ \sum_{j=0}^n a_j \varphi_j(x) - f(x) \right] \varphi_k(x) \mathrm{d}x = 0 \quad (k = 0, 1, \dots, n),
+\] 于是有 \[
+\sum_{j=0}^n (\varphi_k, \varphi_j) a_j = (f, \varphi_k) \quad (k = 0, 1, \dots, n). \tag{3.3.13}
+\] 这是关于 \(a_0, a_1, \dots, a_n\) 的线性方程组, 称为法方程. 由于 \(\varphi_0, \varphi_1, \dots, \varphi_n\) 线性无关, 故系数行列式 \(G(\varphi_0, \varphi_1, \dots, \varphi_n) \neq 0\), 于是方程组 (3.3.13) 有唯一解 \(a_k = a_k^* (k = 0, 1, \dots, n)\), 从而得到 \[
+S^*(x) = a_0^* \varphi_0(x) + \dots + a_n^* \varphi_n(x).
+\] 下面证明 \(S^*(x)\) 满足式 (3.3.11), 即对任何 \(S(x) \in \Phi\), 有 \[
+\int_a^b \rho(x) [f(x) - S^*(x)]^2 \mathrm{d}x \leqslant \int_a^b \rho(x) [f(x) - S(x)]^2 \mathrm{d}x. \tag{3.3.14}
+\] 为此只要考虑 \[
+D = \int_a^b \rho(x) [f(x) - S(x)]^2 \mathrm{d}x - \int_a^b \rho(x) [f(x) - S^*(x)]^2 \mathrm{d}x
+\] \[
+= \int_a^b \rho(x) [S(x) - S^*(x)]^2 \mathrm{d}x + 2 \int_a^b \rho(x) [S^*(x) - S(x)] [f(x) - S^*(x)] \mathrm{d}x.
+\] 由于 \(S^*(x)\) 的系数 \(a_k^*\) 是方程 (3.3.13) 的解, 故 \[
+\int_a^b \rho(x) [f(x) - S^*(x)] \varphi_k(x) \mathrm{d}x = 0 \quad (k = 0, 1, \dots, n),
+\] 从而上式第二个积分为零, 于是 \[
+D = \int_a^b \rho(x) [S(x) - S^*(x)]^2 \mathrm{d}x \geqslant 0,
+\] 故式 (3.3.14) 成立. 这就证明了 \(S^*(x)\) 是 \(f(x)\) 在 \(\Phi\) 中的最佳平方逼近函数. 若令 \(\delta = f(x) - S^*(x)\), 则平方误差为 \[
+\|\delta\|_2^2 = (f - S^*, f - S^*) = (f, f) - (S^*, f) = \|f\|_2^2 - \sum_{k=0}^n a_k^* (\varphi_k, f). \tag{3.3.15}
+\]
+
+\begin{quote}
+校注（agent 补充，原书符号不一致）：式 (3.3.11) 两处下确界下标原印 \(S\in\varphi\)（小写），本页前文子集定义为 \(\Phi\)（大写）。此处按原图保留小写，所指应为前文的 \(\Phi\)。
+\end{quote}
+
+\href{../../source-images/pdf-069.jpeg}{查看原页}
+
+取 \(\varphi_k(x) = x^k, \rho(x) \equiv 1, f(x) \in C[0,1]\), 即要在 \(H_n\) 中求 \(n\) 次最佳平方逼近多项式
+
+\[
+S^*(x) = a_0^* + a_1^* x + \cdots + a_n^* x^n,
+\]
+
+此时
+
+\[
+(\varphi_j, \varphi_k) = \int_0^1 x^{k+j} \mathrm{d}x = \frac{1}{k+j+1},
+\]
+
+\[
+(f, \varphi_k) = \int_0^1 f(x) x^k \mathrm{d}x \equiv d_k.
+\]
+
+若用 \(\boldsymbol{H}\) 表示行列式 \(G_n = G(1, x, x^2, \cdots, x^n)\) 对应的矩阵，则
+
+\[\boldsymbol{H} = \begin{pmatrix}
+1 & 1/2 & \cdots & 1/(n+1) \\
+1/2 & 1/3 & \cdots & 1/(n+2) \\
+\vdots & \vdots & & \vdots \\
+1/(n+1) & 1/(n+2) & \cdots & 1/(2n+1)
+\end{pmatrix}, \tag{3.3.16}
+\]
+
+\(\boldsymbol{H}\) 称为 Hilbert 矩阵. 记
+
+\[
+\boldsymbol{a} = (a_0, a_1, \cdots, a_n)^{\mathrm{T}}, \quad \boldsymbol{d} = (d_0, d_1, \cdots, d_n)^{\mathrm{T}},
+\]
+
+其中
+
+\[
+d_k = (f, x^k) (k=0, 1, \cdots, n), \tag{3.3.17}
+\]
+
+则方程
+
+\[\boldsymbol{H}\boldsymbol{a}=\boldsymbol{d}
+\]
+
+的解 \(a_k = a_k^*\) (\(k=0, 1, \cdots, n\)) 即为所求.
+
+例 3.2 设 \(f(x) = \sqrt{1+x^2}\), 求 \([0,1]\) 上的一次最佳平方逼近多项式.
+
+解 利用式 (3.3.17), 得
+
+\[
+d_0 = \int_0^1 \sqrt{1+x^2} \mathrm{d}x = \frac{1}{2} \ln(1+\sqrt{2}) + \frac{\sqrt{2}}{2} \approx 1.147,
+\]
+
+\[
+d_1 = \int_0^1 x \sqrt{1+x^2} \mathrm{d}x = \frac{1}{3} (1+x^2)^{\frac{3}{2}} \Bigg|_0^1 = \frac{2\sqrt{2}-1}{3} \approx 0.609,
+\]
+
+由方程组
+
+\[
+\begin{bmatrix}
+1 & \frac{1}{2} \\
+\frac{1}{2} & \frac{1}{3}
+\end{bmatrix} \begin{pmatrix} a_0 \\ a_1 \end{pmatrix} = \begin{pmatrix} 1.147 \\ 0.609 \end{pmatrix},
+\]
+
+解出
+
+\[
+a_0 = 0.934, \quad a_1 = 0.426, \quad S_1^*(x) = 0.934 + 0.426x.
+\]
+
+平方误差
+
+\[
+\|\delta\|_2^2 = (f, f) - (S_1^*, f)
+\]
+
+\[
+= \int_0^1 (1+x^2) \mathrm{d}x - 0.426 d_1 - 0.934 d_0 = 0.0026,
+\]
+
+最大误差
+
+\[
+\|\delta\|_\infty = \max_{0 \leqslant x \leqslant 1} |\sqrt{1+x^2} - S_1^*(x)| \approx 0.066.
+\]
+
+用 \(\{1, x, x^2, \cdots, x^n\}\) 作基求最佳平方逼近多项式, 当 \(n\) 较大时, 系数矩阵式 (3.3.16) 是高度病态的 (病态矩阵概念见第 7 章), 求法方程 (3.3.13) 的解时, 舍入误差很大, 这时, 用正交多项式作基才能求得最小平方逼近多项式 (见 3.5 节).
+
+\begin{quote}
+校注（agent 补充，数值舍入）：原书例 3.2 的系数与平方误差 \(0.0026\) 均按原文保留。该数值来自把 \(d_0,d_1\) 分别近似为 \(1.147,0.609\) 后代入简化式；对于印出的函数 \(S_1^*(x)=0.934+0.426x\)，直接计算 \(\int_0^1[\sqrt{1+x^2}-S_1^*(x)]^2\,\mathrm{d}x\approx0.0007136324\)，与 \(0.0026\) 不同。舍入后的系数不再严格满足精确内积对应的法方程，不能把简化式的数值视为实际平方误差。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03a-E05}：原书 PDF 页 67
+\item
+  \texttt{ch03a-E06}：原书 PDF 页 68
+\item
+  \texttt{ch03a-E07}：原书 PDF 页 69
+\end{itemize}
+
+\end{document}

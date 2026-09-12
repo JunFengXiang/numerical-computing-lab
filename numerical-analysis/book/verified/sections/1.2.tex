@@ -1,0 +1,236 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={误差来源与误差分析的重要性},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{误差来源与误差分析的重要性}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{1.2 误差来源与误差分析的重要性}\label{ux8befux5deeux6765ux6e90ux4e0eux8befux5deeux5206ux6790ux7684ux91cdux8981ux6027}
+
+用计算机解决科学计算问题首先要建立数学模型,它是对被描述的实际问题进行抽象、简化而得到的,因而是近似的.我们把数学模型与实际问题之间出现的这种误差称为模型误差.只有实际问题提法正确,建立数学模型时又抽象、简化得合理,才能得到好的结果.由于这种误差难以用数量表示,通常都假定数学模型是合理的,这种误差可忽略不计,在``数值分析''中不予讨论.在数学模型中往往还有一些根据观测得到的物理量,如温度、长度、电压等,这些参量显然也包含误差.这种由观测产生的误差称为观测误差,在``数值分析''中也不讨论这种误差.数值分析只研究用数值方法求解数学模型产生的误差.
+
+当数学模型不能得到精确解时,通常要用数值方法求它的近似解,其近似解与精确解之间的误差称为截断误差或方法误差.例如,当函数 \(f(x)\) 用 Taylor多项式
+
+\[
+P_n(x)=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n)}(0)}{n!}x^n
+\]
+
+近似代替时,数值方法的截断误差是
+
+\[
+R_n(x)=f(x)-P_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1},\qquad \xi\text{ 在 }x\text{ 与 }0\text{ 之间}.
+\]
+
+\href{../../source-images/pdf-016.jpeg}{查看原页}
+
+有了求解数学问题的计算公式以后，用计算机进行数值计算时，由于计算机的字长有限，原始数据在计算机上表示会产生误差，计算过程又可能产生新的误差，这种误差称为舍入误差，例如，用3.14159近似代替\(\pi\)，产生的误差
+
+\[
+R = \pi - 3.14159 = 0.0000026\cdots
+\]
+
+就是舍入误差. 在``数值分析''中除了研究数学问题的算法外，还要研究计算结果的误差是否满足精度要求，这就是误差估计问题. 本书主要讨论算法的截断误差与舍入误差，对舍入误差通常只作一些定性分析. 下面举例说明误差分析的重要性.
+
+\textbf{例1.1} 计算 \(I_n = \mathrm{e}^{-1} \int_{0}^{1} x^n \mathrm{e}^{x} \mathrm{d}x (n = 0,1,\cdots)\)，并估计误差.
+
+\textbf{解} 由分部积分可得计算 \(I_n\) 的递推公式
+
+\[
+I_n = 1 - n I_{n-1} \quad (n = 1,2,\cdots), \tag{1.2.1}
+\]
+
+\[
+I_0 = \mathrm{e}^{-1} \int_{0}^{1} \mathrm{e}^{x} \mathrm{d}x = 1 - \mathrm{e}^{-1}.
+\]
+
+若计算出 \(I_0\)，代入式(1.2.1)，可逐次求出 \(I_1, I_2, \cdots\) 的值. 要算出 \(I_0\) 就要先计算 \(\mathrm{e}^{-1}\)，若用 Taylor多项式展开部分和
+
+\[
+\mathrm{e}^{-1} \approx 1 + (-1) + \frac{(-1)^2}{2!} + \cdots + \frac{(-1)^k}{k!},
+\]
+
+并取 \(k=7\)，用四位小数计算，则得 \(\mathrm{e}^{-1} \approx 0.3679\)，截断误差
+
+\[
+R_7 = |\mathrm{e}^{-1} - 0.3679| \leqslant \frac{1}{8!} < \frac{1}{4} \times 10^{-4}.
+\]
+
+计算过程中小数点后第五位的数字按四舍五入原则舍入，由此产生的舍入误差这里先不讨论. 当初值取为 \(I_0 \approx 0.6321 = \tilde{I}_0\) 时，用式(1.2.1)递推的计算公式为 方案(A)
+
+\[
+\begin{cases}
+\tilde{I}_0 = 0.6321, \\
+\tilde{I}_n = 1 - n \tilde{I}_{n-1} \quad (n = 1,2,\cdots).
+\end{cases}
+\]
+
+计算结果如表1.1的 \(\tilde{I}_n\) 列所示. 用 \(\tilde{I}_0\) 近似 \(I_0\) 产生的误差 \(E_0 = I_0 - \tilde{I}_0\) 就是初值误差，它对后面计算结果是有影响的.
+
+表1.1
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\tilde{I}_n\) (用方案(A)计算)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(I_n^*\) (用方案(B)计算)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(n\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\tilde{I}_n\) (用方案(A)计算)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(I_n^*\) (用方案(B)计算)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & 0.6321 & 0.6321 & 5 & 0.1480 & 0.1455 \\
+1 & 0.3679 & 0.3679 & 6 & 0.1120 & 0.1268 \\
+2 & 0.2642 & 0.2643 & 7 & 0.2160 & 0.1121 \\
+3 & 0.2074 & 0.2073 & 8 & -0.728 & 0.1035 \\
+4 & 0.1704 & 0.1708 & 9 & 7.552 & 0.0684 \\
+\end{longtable}
+}
+
+\href{../../source-images/pdf-017.jpeg}{查看原页}
+
+从表1.1可以看到，\(\tilde{I}_8\) 出现负值，这与一切 \(I_n > 0\) 相矛盾. 实际上，由积分估值得
+
+\[
+\frac{e^{-1}}{n+1} = e^{-1}\left(\min_{0 \leqslant x \leqslant 1} e^x\right)\int_0^1 x^n \mathrm{d}x < I_n < e^{-1}\left(\max_{0 \leqslant x \leqslant 1} e^x\right)\int_0^1 x^n \mathrm{d}x = \frac{1}{n+1}. \tag{1.2.2}
+\]
+
+因此，当 \(n\) 较大时，用 \(\tilde{I}_n\) 近似 \(I_n\) 显然是不正确的. 这里，计算公式与每步计算都是正确的，那么，是什么原因使计算结果错误呢？主要就是初值 \(\tilde{I}_0\) 有误差 \(E_0 = I_0 - \tilde{I}_0\)， 由此引起以后各步计算的误差 \(E_n = I_n - \tilde{I}_n\) 满足关系 \(E_n = -nE_{n-1}(n=1,2,\cdots)\). 容易推得
+
+\[
+E_n = (-1)^n n! E_0,
+\]
+
+这说明 \(\tilde{I}_0\) 有误差 \(E_0\)，则 \(\tilde{I}_n\) 就是 \(E_0\) 的 \(n!\) 倍误差. 例如，\(n=8\)，若 \(|E_0| = \frac{1}{2} \times 10^{-4}\)，则 \(|E_8| = 8! \times |E_0| > 2\). 这就说明 \(\tilde{I}_8\) 完全不能近似 \(I_8\) 了. 我们现在换一种计算方案. 由式(1.2.2)取 \(n=9\)，得
+
+\[
+\frac{e^{-1}}{10} < I_9 < \frac{1}{10},
+\]
+
+粗略取 \(I_9 \approx \frac{1}{2}\left(\frac{1}{10} + \frac{e^{-1}}{10}\right) = 0.0684 = I_9^*\)， 然后将式(1.2.1)倒过来算，即由 \(I_9^*\) 算出 \(I_8^*, I_7^*, \cdots, I_1^*\)，公式为 方案(B)
+
+\[
+\begin{cases} I_9^* = 0.0684, \\ I_{n-1}^* = \frac{1}{n}(1 - I_n^*) \quad (n = 9, 8, \cdots, 1). \end{cases}
+\]
+
+计算结果如表1.1中的 \(I_n^*\) 列所示. 可以发现，\(I_0^*\) 与 \(I_0\) 的误差不超过 \(10^{-4}\). 由于 \(|E_0^*| = \frac{1}{n!}|E_n^*|, E_0^*\) 比 \(E_n^*\) 缩小了 \(n!\) 倍，因此，尽管 \(E_9^*\) 较大，但由于误差逐步缩小，故可用 \(I_n^*\) 近似 \(I_n\). 反之，当用方案(A)计算时，尽管初值 \(\tilde{I}_0\) 相当准确，但由于误差传播是逐步扩大的，因而计算结果不可靠. 此例说明，在数值计算中如不注意误差分析，用了类似于方案(A)的计算公式，就会出现``差之毫厘，失之千里''的错误结果. 尽管数值计算中估计误差比较困难，但仍应重视计算过程中的误差分析.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 17 的校注}\label{ux539fux4e66-pdf-ux9875-17-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-017.md}{完整原页转录} · \href{../../source-images/pdf-017.jpeg}{原页图像}
+
+校注记录：CH01-E001。
+
+\begin{quote}
+校注（agent 补充）：本页定义1.1末尾``绝''字与下一页``对误差''相接。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充，CH01-E001）：原书写``则 \(\tilde{I}_n\) 就是 \(E_0\) 的 \(n!\) 倍误差''，此处照录。由上式 \(E_n=(-1)^n n!E_0\) 可知，应理解为近似值 \(\tilde{I}_n\) 的误差绝对值为初值误差绝对值的 \(n!\) 倍；疑为原书表述不严谨，不是 OCR 错误。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH01-E001}：原书 PDF 页 17
+\end{itemize}
+
+\end{document}

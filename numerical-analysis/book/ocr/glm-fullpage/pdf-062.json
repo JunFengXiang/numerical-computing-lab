@@ -1,0 +1,20 @@
+{
+  "pdf_page": 62,
+  "source_image": "source-images/pdf-062.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "bf2e94db0bddf7bc3b0aed18105c23f32d682d44968b2e67f95bfaa60a528f53",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 932,
+  "possibly_truncated": false,
+  "elapsed_seconds": 37.355,
+  "created_utc": "2026-09-12T09:54:22.339700+00:00",
+  "raw_text_sha256": "8f2f582d637f43aece7d4176e759961e2e1f8596aa1db281df39ad7e62d0b446",
+  "raw_text": "定理 3.3 若 $P(x) \\in H_n$ 是 $f(x) \\in C[a,b]$ 的最佳逼近多项式，则 $P(x)$ 同时存在正、负偏差点.\n\n证明 因 $P(x)$ 是 $f(x)$ 的最佳逼近多项式，故 $\\mu = E_n$. 由于 $P(x)$ 在 $[a,b]$ 上总有偏差点存在，故可用反证法求证. 不妨假定只有正偏差点，没有负偏差点，于是，对于一切 $x \\in [a,b]$ 都有\n\n$$P(x) - f(x) > -E_n.$$\n\n因 $P(x) - f(x)$ 在 $[a,b]$ 上连续，故有最小值大于 $-E_n$，用 $-E_n + 2h$ 表示，其中 $h > 0$. 于是，对于一切 $x \\in [a,b]$ 都有\n\n$$-E_n + 2h \\leqslant P(x) - f(x) \\leqslant E_n,$$\n\n$$-E_n + h \\leqslant [P(x) - h] - f(x) \\leqslant E_n - h,$$\n\n即\n\n$$|[P(x) - h] - f(x)| \\leqslant E_n - h.$$\n\n它表示多项式 $P(x) - h$ 与 $f(x)$ 的偏差小于 $E_n$，与 $E_n$ 是最小偏差的假定矛盾.\n\n同样，可证明只有负偏差点没有正偏差点也是不成立的. 证毕.\n\n定理 3.3 的证明从几何上看是十分明显的. 如图 3.2 所示，考察两曲线\n\n$$y = f(x) + E_n \\quad \\text{与} \\quad y = f(x) - E_n$$\n\n在 $[a,b]$ 间形成带状区域，曲线 $y = P(x)$ 在 $[a,b]$ 上就位于这带状区域之间. 定理 3.1 表明，$P(x)$ 的图形应当与这两条曲线至少各接触一次，这是十分明显的. 若不与 $y = f(x) - E_n$ 接触，则可把曲线 $y = P(x)$ 稍向下移动就得到位于曲线 $y = f(x)$ 较窄带状区域内的曲线 $y = P(x) - h$. 下面给出反映最佳逼近多项式特征的 Chebyshev 定理.\n\n定理 3.4 $P(x) \\in H_n$ 是 $f(x) \\in C[a,b]$ 的最佳逼近多项式的充分必要条件是 $P(x)$ 在 $[a,b]$ 上至少有 $n+2$ 个轮流为“正”、“负”的偏差点，即有 $n+2$ 个点 $a \\leqslant x_1 < x_2 < \\cdots < x_{n+2} \\leqslant b$，使\n\n$$P(x_k) - f(x_k) = (-1)^k \\sigma \\parallel P(x) - f(x) \\parallel_\\infty,$$\n\n$$\\sigma = \\pm 1, \\quad k = 1, 2, \\cdots, n+2,$$\n\n(3.2.4)\n\n这样的点组称为 Chebyshev 交错点组.\n\n证明 只证充分性. 假定在 $[a,b]$ 上有 $n+2$ 个点使式 (3.2.4) 成立，要证明 $P(x)$ 是 $f(x)$ 在 $[a,b]$ 上的最佳逼近多项式. 用反证法求证. 若存在 $Q(x) \\in H_n, Q(x) \\neq P(x)$，使\n\n$$\\| f(x) - Q(x) \\|_\\infty < \\| f(x) - P(x) \\|_\\infty.$$\n\n由于 $P(x) - Q(x) = [P(x) - f(x)] - [Q(x) - f(x)]$ 在点 $x_1, x_2, \\cdots, x_{n+2}$ 上的符号与 $P(x_k) - f(x_k)$ ($k=1, \\cdots, n+2$) 一致，故 $P(x) -$\n\n• 49 •"
+}

@@ -1,0 +1,531 @@
+{
+  "lane": "ch05b",
+  "reviewer": "Codex agent ch05b",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 137,
+      "printed_page": 124,
+      "path": "staging/ch05b/pages/pdf-137.md",
+      "sha256": "43d418e61975c7ed2d527c854e39482ef8c249c5b4b8f64aa1d8ff23dc3ec8bb",
+      "source_image_sha256": "24c3042ed41cfaddae1b990137eab3f62a64879f84847ada670c199090c23cb8",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5",
+          "title": "线性多步法"
+        },
+        {
+          "id": "5.5.1",
+          "title": "基于数值积分的构造方法"
+        }
+      ],
+      "formula_ids": [
+        "5.5.1"
+      ],
+      "figures": [],
+      "tables": [
+        "5.5"
+      ],
+      "notes": []
+    },
+    {
+      "pdf_page": 138,
+      "printed_page": 125,
+      "path": "staging/ch05b/pages/pdf-138.md",
+      "sha256": "afb9cfe6489fdfff2f30cde7effea7a59ef38f850c423696fd73c1fe5cc4ca4f",
+      "source_image_sha256": "e435ecb2580909d627b538997c73d047f05897cefeb17bc53cba8ba207908d14",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.2",
+          "title": "Adams 显式格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.2",
+        "5.5.3",
+        "5.5.4"
+      ],
+      "figures": [],
+      "tables": [
+        "5.6"
+      ],
+      "notes": [
+        "原印刷差分展开式疑误见 ch05b-E001；完整保留并附独立校注。"
+      ]
+    },
+    {
+      "pdf_page": 139,
+      "printed_page": 126,
+      "path": "staging/ch05b/pages/pdf-139.md",
+      "sha256": "906ebedcfc17320be3d9aa0f083e4829488c877b96032cc2410dcf5b69de47c0",
+      "source_image_sha256": "d4c069777c7a0c21ed8a9baa709139998cff80a78f6a3c375304b74f0975bcb8",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.3",
+          "title": "Adams 隐式格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.5",
+        "5.5.6",
+        "5.5.7",
+        "5.5.8",
+        "5.5.9"
+      ],
+      "figures": [],
+      "tables": [
+        "5.7",
+        "5.8",
+        "5.9"
+      ],
+      "notes": []
+    },
+    {
+      "pdf_page": 140,
+      "printed_page": 127,
+      "path": "staging/ch05b/pages/pdf-140.md",
+      "sha256": "01ec46455bc270376a5de8c587c980a5e3a7929b8f58e3be7199445063b094e3",
+      "source_image_sha256": "fde404d50a84202ecb1546f0d47ef6a32668e7f2bbdbde450e98667d667ea8bb",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.4",
+          "title": "Adams 预测-校正系统"
+        }
+      ],
+      "formula_ids": [
+        "5.5.10",
+        "5.5.11",
+        "5.5.12",
+        "5.5.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 141,
+      "printed_page": 128,
+      "path": "staging/ch05b/pages/pdf-141.md",
+      "sha256": "97560efd6f89e659f6df309e896fc373383859e40189ad3787f3a85ff48569bc",
+      "source_image_sha256": "bcef87b58d18fab58e3dd8c8cf1c5c6211c1d14f6360da59af231b05c4d2610e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.5",
+          "title": "基于 Taylor 展开的构造方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "5.10"
+      ],
+      "notes": [
+        "完整转录含原书疑误 ch05b-E002、E003、E004；均已放大核对。",
+        "仅本页内容计入完成；PDF120仅作例5.1解析解交叉核查。"
+      ]
+    },
+    {
+      "pdf_page": 142,
+      "printed_page": 129,
+      "path": "staging/ch05b/pages/pdf-142.md",
+      "sha256": "e9ee3583ebb485432b7d254143dc572e11e3047afa949f1ab069f1307e94570d",
+      "source_image_sha256": "754b7347a2e49552d843afc7fac26e0d80a9f3c1737aa5a9dd985e89cd2d086d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.5.14",
+        "5.5.15",
+        "5.5.16",
+        "5.5.17",
+        "5.5.18",
+        "5.5.19",
+        "5.5.20"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 143,
+      "printed_page": 130,
+      "path": "staging/ch05b/pages/pdf-143.md",
+      "sha256": "9ec355ffaf33767d32fac4087db8e801af004ac80cf760b8f9add5883b4aef3e",
+      "source_image_sha256": "d8a53872d372af1c2f1915661e6233f4fe5b5e68e36067e2134feb2ed6ff0436",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.6",
+          "title": "Milne 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.21",
+        "5.5.22",
+        "5.5.23",
+        "5.5.24",
+        "5.5.25",
+        "5.5.26"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式（5.5.21）原书排印异常见 ch05b-E005；已附局部原图。"
+      ]
+    },
+    {
+      "pdf_page": 144,
+      "printed_page": 131,
+      "path": "staging/ch05b/pages/pdf-144.md",
+      "sha256": "7ea03d11cabe9c7dbddec398b13aa76e144fbd2793e7afb36454fa7da701458d",
+      "source_image_sha256": "2b6118e2dd3893395a350d80a6149c9c645cd76d9e2e852664a1d470edab019e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.5.7",
+          "title": "Hamming 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.5.27",
+        "5.5.28",
+        "5.5.29",
+        "5.5.30"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 145,
+      "printed_page": 132,
+      "path": "staging/ch05b/pages/pdf-145.md",
+      "sha256": "4b33aebab392a160d1fbe697d87af3617f8875b915ad9b7ea3a9118bc85ce317",
+      "source_image_sha256": "c316797c5fec232dbe95a9b70fb5e3580ceb675900b5ac803b18ded84a40af89",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.6",
+          "title": "方程组与高阶方程的情形"
+        },
+        {
+          "id": "5.6.1",
+          "title": "一阶方程组"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 146,
+      "printed_page": 133,
+      "path": "staging/ch05b/pages/pdf-146.md",
+      "sha256": "14f83ef1b9c9b5fcee58d5a4e0b03a83406514f61aab78968a03166a0cbe4555",
+      "source_image_sha256": "994ff752e719844e42f3bb88223b780481a311bfd42f2808bf29c10f0d5a0e3d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.6.2",
+          "title": "化高阶方程组为一阶方程组"
+        }
+      ],
+      "formula_ids": [
+        "5.6.1",
+        "5.6.2",
+        "5.6.3",
+        "5.6.4",
+        "5.6.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 147,
+      "printed_page": 134,
+      "path": "staging/ch05b/pages/pdf-147.md",
+      "sha256": "161f5671db609ade7a74c982cc661665e0cc9eecf4171f412c3f0d2e13bd2daa",
+      "source_image_sha256": "840a38d51fd8158d26bd3963b42eaa6ee8f4c8beb3771603d1c5dd7a80f678e3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.7",
+          "title": "边值问题的数值解法"
+        }
+      ],
+      "formula_ids": [
+        "5.6.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 148,
+      "printed_page": 135,
+      "path": "staging/ch05b/pages/pdf-148.md",
+      "sha256": "f91275eb64f16a14c8ed890de88cd813df32dd97aa7500d93aca5ad5359720b6",
+      "source_image_sha256": "95767e32b9a96d0ed793c346530a13a375bce7c39bcd0f268860acdad5295fe5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.7.1",
+          "title": "试射法"
+        },
+        {
+          "id": "5.7.2",
+          "title": "差分方程的建立"
+        }
+      ],
+      "formula_ids": [
+        "5.7.1",
+        "5.7.2",
+        "5.7.3"
+      ],
+      "figures": [
+        "5.5"
+      ],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 149,
+      "printed_page": 136,
+      "path": "staging/ch05b/pages/pdf-149.md",
+      "sha256": "622055e0390066ec473a2fdf0cc16bda0068171dea04dc3bc5e89a05f849b75d",
+      "source_image_sha256": "df35e46bd61dc399855fb868deb60c9712207abba8badb302907d04743588227",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.7.4",
+        "5.7.5",
+        "5.7.6",
+        "5.7.7",
+        "5.7.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 150,
+      "printed_page": 137,
+      "path": "staging/ch05b/pages/pdf-150.md",
+      "sha256": "9d2c509ef50b7a70d5fe1f6a5d6cac2537cb96d274ff7880e1b36c6523a4a9d7",
+      "source_image_sha256": "57d839b53f13ebba3bc4172193c4016cfd1d59a5ce5ce05941ef7a40443a43f9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.7.3",
+          "title": "差分问题的可解性"
+        }
+      ],
+      "formula_ids": [
+        "5.7.9",
+        "5.7.10"
+      ],
+      "figures": [],
+      "tables": [
+        "5.11"
+      ],
+      "notes": []
+    },
+    {
+      "pdf_page": 151,
+      "printed_page": 138,
+      "path": "staging/ch05b/pages/pdf-151.md",
+      "sha256": "83182f33e4f7d189ae760bbbe1a3d42d0341cfe27b12922dc3fe33ba2299e9f1",
+      "source_image_sha256": "34e35302a949a7e0277c79773dad85cd4a7d57ca0996c89fbf060d8da3258ab8",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.7.4",
+          "title": "差分方法的收敛性"
+        }
+      ],
+      "formula_ids": [
+        "5.7.11",
+        "5.7.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "定理5.2负最小值条件原文为严格l<0，定理5.3的等号情况引用可对-y应用正最大值侧补足；已单列agent校注，未改原文。"
+      ]
+    },
+    {
+      "pdf_page": 152,
+      "printed_page": 139,
+      "path": "staging/ch05b/pages/pdf-152.md",
+      "sha256": "e34d37925ec8b228d460f66cc377e95a209351a5fffa4e300ce68ab4e7c8d732",
+      "source_image_sha256": "6ef76647de0549278b59906dc30a15b617117b2f4b944067a867634ca1a13bdb",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.7.13",
+        "5.7.14",
+        "5.7.15"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "括注波浪号原印位置疑误见 ch05b-E006。",
+        "定理5.2在l<=0下的引用可用其l>=0侧作用于相反数补足，见PDF151校注。"
+      ]
+    },
+    {
+      "pdf_page": 153,
+      "printed_page": 140,
+      "path": "staging/ch05b/pages/pdf-153.md",
+      "sha256": "e7e0225eaffebb2a3ac3006be35fac5b326b4f2e1e22d3acff3a8678a19b2bdc",
+      "source_image_sha256": "5fe32b274dff2cc2e500e01806076b5df3befa6b65f8659cf1e902014983e32d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.summary",
+          "title": "小结"
+        },
+        {
+          "id": "5.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "习题1–5完整转录，不解题。",
+        "小结五处原印节号疑误见ch05b-E007。"
+      ]
+    },
+    {
+      "pdf_page": 154,
+      "printed_page": 141,
+      "path": "staging/ch05b/pages/pdf-154.md",
+      "sha256": "16355ccd92c578fe0578a0970924e43b86b5c6f8cddf3cd5a41a95c79895066b",
+      "source_image_sha256": "08cda5e8947aca9b8fbcd5f32657528ce00d34101697ad2ee623a44c81bbd3da",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "习题6–15及全部小题完整转录，不解题。",
+        "习题14称谓疑误见ch05b-E008。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch05b-E001",
+      "pdf_page": 138,
+      "printed_page": 125,
+      "location": "5.5.2，式（5.5.4）上方未编号差分展开式",
+      "original": "Delta^j f_(n-j) = sum_(i=0)^r (-1)^i binom(j,i) f_(n-j)",
+      "assessment": "疑似原书排印错误，求和项末尾应为 f_(n-i)；原文已保留。上限 r 在约定超范围二项系数为零时可成立。",
+      "evidence": "j=r=1 时原印刷式右边为零，通常左边为 f_n-f_(n-1)。已放大查看原图下部。"
+    },
+    {
+      "id": "ch05b-E002",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "两条事后估计式及计算方案两条改进式",
+      "original": "251/720 和 19/720",
+      "assessment": "疑似原书错误。由前两条局部误差式消元，相关分母应为270；原式保留。",
+      "evidence": "原图已局部放大；251+19=270。"
+    },
+    {
+      "id": "ch05b-E003",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "计算方案第一条计算式",
+      "original": "m_(n+1)=f(x_(n+1),m_(n+1))",
+      "assessment": "疑似原书漏印prime。应为导数m prime，正文保留原式。",
+      "evidence": "原图局部放大无prime，下一校正式使用m prime。"
+    },
+    {
+      "id": "ch05b-E004",
+      "pdf_page": 141,
+      "printed_page": 128,
+      "location": "表5.10最后一行准确值",
+      "original": "1.7231",
+      "assessment": "疑似原书数字对调，应为1.7321；表格保留原值。",
+      "evidence": "另目视PDF120书107页的解析解y=sqrt(1+2x)及表5.1，sqrt(3)约1.7321。"
+    },
+    {
+      "id": "ch05b-E005",
+      "pdf_page": 143,
+      "printed_page": 130,
+      "location": "式（5.5.21）右端开头",
+      "original": "alpha_0 y_(n+1) alpha_1 y_(n-1)",
+      "assessment": "疑似原书排印错位，预期为alpha_0 y_n + alpha_1 y_(n-1)；正文按可见字形保留并附局部原图。",
+      "evidence": "已放大目视；依据同页文字及式（5.5.19）、（5.5.22）。"
+    },
+    {
+      "id": "ch05b-E006",
+      "pdf_page": 152,
+      "printed_page": 139,
+      "location": "式（5.7.15）后括注",
+      "original": "l(tilde y_n)就是l(y_n)",
+      "assessment": "疑似原书波浪号位置错，应是tilde l(y_n)；保留原文并独立校注。",
+      "evidence": "原页局部放大显示波浪号在y上；式（5.7.15）定义了tilde l而未定义tilde y。"
+    },
+    {
+      "id": "ch05b-E007",
+      "pdf_page": 153,
+      "printed_page": 140,
+      "location": "小结五处节号",
+      "original": [
+        "7.3.1",
+        "7.3.4",
+        "7.2.1",
+        "7.2.4",
+        "7.5.7"
+      ],
+      "assessment": "原书交叉引用与本版章节号不符，原文保留；对应主题为5.3.1、5.3.5、5.2.1、5.2.4、5.5.7。",
+      "evidence": "已目视原页引用，与本书章节索引比对；PDF140正文指向5.3.5，PDF144实际标题5.5.7。"
+    },
+    {
+      "id": "ch05b-E008",
+      "pdf_page": 154,
+      "printed_page": 141,
+      "location": "习题14",
+      "original": "初值问题，y(0)=y(1)=0",
+      "assessment": "称谓疑误，给定两端条件按本章定义属于边值问题；正文保留。",
+      "evidence": "已放大目视习题14，未代做习题。"
+    }
+  ],
+  "validation_notes": [
+    "PDF151：定理5.2负最小值侧严格条件l<0及定理5.3等号情形的引用均照原文。附补足论证说明，此条不将定理本身判为错误。",
+    "实际核对范围为PDF137–154，印刷页124–141，第5章常微分方程数值解法后半。18张原图均逐页打开目视，未运行OCR，未修改其他lane或中央文件。",
+    "图5.5为原图裁切，完整提供图中符号标签与图意；表5.5–5.11已转为可检索表格。figure/table字段仅记本页实际对象，不把跨页引用当作对象。",
+    "全部原书疑误以原印刷正文加独立agent校注保存；unresolved为空表示无未辨认字形，不表示原书数学绝对无误。",
+    "结构检查与LaTeX编译不等同于视觉或数学核验。本lane不声称人工核验或独立交叉复核。"
+  ]
+}

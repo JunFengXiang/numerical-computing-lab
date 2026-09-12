@@ -1,0 +1,106 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={二分算法的基本特征},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{二分算法的基本特征}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{11.2.6　二分算法的基本特征}\label{ux4e8cux5206ux7b97ux6cd5ux7684ux57faux672cux7279ux5f81}
+
+本小节从最简单的计算模型------叠加计算入手，考察并行计算的二分算法的基本特征。
+
+在设计原理上，并行的二分算法与串行的递推算法，两者的设计过程都是计算模型不断演化的过程，其区别在于，串行递推算法的规模逐次减 1，而并行二分算法的规模则为逐次减半。例如，累加求和算法的加工过程为
+
+\(N\) 项和式 \(\to\) \(N-1\) 项和式 \(\to\) \(N-2\) 项和式 \(\to\cdots\to\) 1 项和式，
+
+而二分求和算法的加工过程是
+
+\(N\) 项和式 \(\Rightarrow\) \(N/2\) 项和式 \(\Rightarrow\) \(N/4\) 项和式 \(\Rightarrow\cdots\Rightarrow\) 1 项和式。
+
+可见，串行算法与并行算法的设计思想是一脉相承的，后者可以视作是前者的延伸与发展。
+
+从算法的结构来看，并行的二分算法与串行递推算法均具有递归结构，即将复杂
+
+\begin{quote}
+校注（agent 补充，CH11-E002）：多项式算法的处理机计数按原书照录。上一页的向量形式同时更新 \(N_k\) 个系数及 \(x_k\)，共有 \(N_k+1\) 个分量；在原书所述每个分量完全同步执行一次乘法和一次加法的安排下，处理机数应计入计算 \(x_k\) 的额外一台。原书此处写 \(N/2^k\)，可能省略了常数项或依赖未说明的调度，属处理机台数界的疑误；未据此改动原式。
+\end{quote}
+
+\href{../../source-images/pdf-285.jpeg}{原页图像}
+
+计算归结为简单计算的重复。譬如数列求和计算，是将多项求和归结为简单的二项求和的重复，而多项式求值是将高次式求值归结为简单的一次式求值的重复，等等。对串行算法这里所谓``重复''意味着循环，而并行算法所指的``重复''则综合采取串行与并行两种处理方式。
+
+从算法效能的角度来看，串行算法与并行算法各有所长，前者拥有高效率，而后者则具有高速度。不过，并行算法的高速度是以处理机台数的增加为代价的。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH11-E002}：原书 PDF 页 284
+\end{itemize}
+
+\end{document}

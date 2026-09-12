@@ -1,0 +1,103 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={重差加速法则},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{重差加速法则}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.4.2　重差加速法则}\label{ux91cdux5deeux52a0ux901fux6cd5ux5219}
+
+考察收敛的逼近数列 \(\{a_n\}\)：
+
+\[
+a_1,a_2,\cdots,a_n\to a^*.
+\]
+
+假设它满足重差公设，即其偏差比 \(\delta_n=\Delta_n/\Delta_{n+1}\)，\(\Delta_n=a_{n+1}-a_n\) ``几乎''为定值 \(\delta\)，亦即
+
+\[
+\frac{a_{n+1}-a_n}{a_{n+2}-a_{n+1}}\approx\delta,\quad\delta>1,
+\tag{12.4.1}
+\]
+
+则所生成的数列
+
+\[
+\begin{aligned}
+\widehat a_n&=a_{n+1}+\frac{1}{\delta-1}(a_{n+1}-a_n)\\
+&=\left(1+\frac{1}{\delta-1}\right)a_{n+1}-\frac{1}{\delta-1}a_n
+\end{aligned}
+\tag{12.4.2}
+\]
+
+远比原先的数列 \(\{a_n\}\) 收敛得更快，即 \(\widehat a_n\) 比 \(a_n\) 具有更高的精度。
+
+这一加速方法称作\textbf{重差加速法则}。式（12.4.2）称作\textbf{重差加速公式}，或称精加工公式。\(\widehat a_n\) 称作 \(a_n\) 的\textbf{改进值}。
+
+重差加速的提出显然是前述刘徽加速的推广。仿照上一节的讨论不难证明重差加速的合理性。这里无需赘述。
+
+\textbf{值得强调指出的是，刘徽重差加速技术是极度并行的。因为松弛因子 \(\delta\) 是整个逼近过程 \(\{a_n\}\) 的普适常数，所以精加工公式（12.4.2）对任何数据 \(\{a_n\}\) 均有效。}
+
+\end{document}

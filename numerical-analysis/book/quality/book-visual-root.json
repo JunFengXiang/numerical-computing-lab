@@ -1,0 +1,18 @@
+{
+  "pdf": "textbook.pdf",
+  "pdf_sha256": "78e9bc52a78e11fda17e6ca4f6f6b8a4e859dc307f855eea6fa4a62a0bedae11",
+  "reviewer": "Codex root agent",
+  "human_review": false,
+  "created_utc": "2026-09-12T11:15:30.265390+00:00",
+  "status": "pass",
+  "full_pdf_pages_reviewed": [
+    1,
+    246
+  ],
+  "issues": [],
+  "notes": [
+    "封面完整且无缺字、裁切或重叠。",
+    "PDF246完整对照ch05a排版页32；差异为自动脚注编号由批次1改为全书3，正文、公式5.4.8/5.4.9和校注一致，脚注内容完整。"
+  ],
+  "source_reference": "quality/book-latex.json"
+}

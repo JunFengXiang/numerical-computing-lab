@@ -1,0 +1,168 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={习题},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{习题}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{习题}\label{ux4e60ux9898}
+
+\textbf{1.} 用二分法求方程 \(x^2-x-1=0\) 的正根，要求误差小于 \(0.05\)。
+
+\textbf{2.} 用比例求根法求 \(f(x)=1-x\sin x=0\) 在区间 \((0,1)\) 内的一个根，直到近似根 \(x_k\) 满足精度 \(|f(x_k)|<0.005\) 时终止计算。
+
+\textbf{3.} 为求方程 \(x^3-x^2-1=0\) 在 \(x_0=1.5\) 附近的一个根，设将方程改写成下列等价形式，并建立相应的迭代公式。
+
+（1）\(x=1+1/x^2\)，迭代公式 \(x_{k+1}=1+1/x_k^2\)；
+
+（2）\(x^3=1+x^2\)，迭代公式 \(x_{k+1}=\sqrt[3]{1+x_k^2}\)；
+
+（3）\(x^2=\dfrac{1}{x-1}\)，迭代公式 \(x_{k+1}=1/\sqrt{x_k-1}\)。
+
+试分析每种迭代公式的收敛性，并选取一种公式求出具有四位有效数字的近似根。
+
+\textbf{4.} 比较以下两种求 \(\mathrm{e}^x+10x-2=0\) 的根到三位小数所需的计算量：
+
+（1）在区间 \((0,1)\) 内用二分法；
+
+（2）用迭代法 \(x_{k+1}=(2-\mathrm{e}^{x_k})/10\)，取初值 \(x_0=0\)。
+
+\textbf{5.} 给定函数 \(f(x)\)，设对一切 \(x\)，\(f'(x)\) 存在且 \(0<m\leqslant f'(x)\leqslant M\)，证明对于范围 \(0<\lambda<2/M\) 内的任意定数 \(\lambda\)，迭代过程 \(x_{k+1}=x_k-\lambda f(x_k)\) 均收敛于 \(f(x)\) 的根 \(x^*\)。
+
+\textbf{6.} 已知 \(x=\varphi(x)\) 在区间 \((a,b)\) 内只有一根，且当 \(a<x<b\) 时，\(|\varphi'(x)|\geqslant k>1\)，
+
+（1）如何将 \(x=\varphi(x)\) 化为适于迭代的形式？
+
+（2）将 \(x=\tan x\) 化为适于迭代的形式，并求 \(x=4.5\ \mathrm{rad}\) 附近的根。
+
+\textbf{7.} 用下列方法求 \(f(x)=x^3-3x-1=0\) 在 \(x_0=2\) 附近的根。根的准确值 \(x^*=1.879\,385\,24\cdots\)，要求计算结果准确到四位有效数字。
+
+（1）用 Newton 法；
+
+（2）用弦截法，取 \(x_0=2,x_1=1.9\)；
+
+（3）用抛物线法，取 \(x_0=1,x_1=3,x_2=2\)。
+
+\begin{quote}
+校注（agent 补充）：习题 2 的区间在原页确为 \((0,1)\)，转录保留。对 \(0<x<1\) 有 \(0<x\sin x<1\)，从而 \(1-x\sin x>0\)，故该区间不含题述方程的根。此为原题条件的疑误；未替教材指定修正后的区间，也未代做该题。
+\end{quote}
+
+\href{../../source-images/pdf-176.jpeg}{原页}
+
+\textbf{8.} 分别用二分法和 Newton 法求 \(x-\tan x=0\) 的最小正根。
+
+\textbf{9.} 研究求 \(\sqrt{a}\) 的 Newton 公式 \(x_{k+1}=\dfrac{1}{2}\left(x_k+\dfrac{a}{x_k}\right)\)，\(x_0>0\)，证明：对于一切 \(k=1,2,\cdots\)，有 \(x_k\geqslant\sqrt{a}\)，且序列 \(x_1,x_2,\cdots\) 是单调递减的。
+
+\textbf{10.} 对于 \(f(x)=0\) 的 Newton 公式 \(x_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}\)，证明
+
+\[
+R_k=\frac{x_k-x_{k-1}}{(x_{k-1}-x_{k-2})^2}
+\]
+
+收敛到 \(-\dfrac{f''(x^*)}{2f'(x^*)}\)，这里 \(x^*\) 为 \(f(x)=0\) 的根。
+
+\textbf{11.} 试就下列函数讨论 Newton 法的收敛性和收敛速度：
+
+（1） \[
+f(x)=\begin{cases}
+\sqrt{x},&x\geqslant0,\\
+-\sqrt{-x},&x<0;
+\end{cases}
+\]
+
+（2） \[
+f(x)=\begin{cases}
+\sqrt[3]{x^2},&x\geqslant0,\\
+-\sqrt[3]{x^2},&x<0.
+\end{cases}
+\]
+
+\textbf{12.} 应用 Newton 法于方程 \(x^3-a=0\)，导出求立方根 \(\sqrt[3]{a}\) 的迭代公式，并讨论其收敛性。
+
+\textbf{13.} 应用 Newton 法于方程 \(f(x)=1-\dfrac{a}{x^2}=0\)，导出求 \(\sqrt{a}\) 的迭代公式，并求 \(\sqrt{115}\) 的值。
+
+\textbf{14.} 应用 Newton 法于方程 \(f(x)=x^n-a=0\) 和 \(f(x)=1-\dfrac{a}{x^n}=0\)，分别导出求 \(\sqrt[n]{a}\) 的迭代公式，并求
+
+\[
+\lim_{k\to\infty}\frac{\sqrt[n]{a}-x_{k+1}}{(\sqrt[n]{a}-x_k)^2}.
+\]
+
+\textbf{15.} 证明迭代公式 \(x_{k+1}=\dfrac{x_k(x_k^2+3a)}{3x_k^2+a}\) 是计算 \(\sqrt{a}\) 的三阶方法。假定初值 \(x_0\) 充分靠近根 \(x^*\)，求
+
+\[
+\lim_{k\to\infty}\frac{\sqrt{a}-x_{k+1}}{(\sqrt{a}-x_k)^3}.
+\]
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch06-E006}：原书 PDF 页 175
+\end{itemize}
+
+\end{document}

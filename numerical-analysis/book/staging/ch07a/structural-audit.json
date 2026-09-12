@@ -1,0 +1,341 @@
+{
+  "lane": "ch07a",
+  "expected_pages": [
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+  ],
+  "checked_pages": [
+    {
+      "pdf_page": 177,
+      "path": "staging/ch07a/pages/pdf-177.md",
+      "sha256": "56e679dbcd600a69080b08db5703d19685ff5275b3866de5b3276d3d9ac501e7",
+      "printed_page": 164,
+      "headings": [
+        {
+          "id": "7",
+          "title": "解线性方程组的直接方法"
+        },
+        {
+          "id": "7.1",
+          "title": "引言"
+        },
+        {
+          "id": "7.2",
+          "title": "Gauss 消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 178,
+      "path": "staging/ch07a/pages/pdf-178.md",
+      "sha256": "bc691dfba45ff93e99c04196d0b5fc7286cc6170900b69ee452841812eb235a3",
+      "printed_page": 165,
+      "headings": [
+        {
+          "id": "7.2.1",
+          "title": "消元手续"
+        }
+      ],
+      "formula_ids": [
+        "7.2.1",
+        "7.2.2",
+        "7.2.3",
+        "7.2.4",
+        "7.2.5",
+        "7.2.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 179,
+      "path": "staging/ch07a/pages/pdf-179.md",
+      "sha256": "7ba16bbc71d991a9ad86934f9ee615864518c294fd466753c1120f1e8b01b381",
+      "printed_page": 166,
+      "headings": [],
+      "formula_ids": [
+        "7.2.7",
+        "7.2.8",
+        "7.2.9",
+        "7.2.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 180,
+      "path": "staging/ch07a/pages/pdf-180.md",
+      "sha256": "23193a80e79c3bf1d386f6ff6b01f5c29b32b5c6dd761c8fe3ade8528e2e8b9a",
+      "printed_page": 167,
+      "headings": [],
+      "formula_ids": [
+        "7.2.11",
+        "7.2.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 181,
+      "path": "staging/ch07a/pages/pdf-181.md",
+      "sha256": "96eba9d86019adbaff6c29d637e0cecc8cdba9d5a4fe1405695f1058a99a917e",
+      "printed_page": 168,
+      "headings": [
+        {
+          "id": "7.2.2",
+          "title": "矩阵的三角分解"
+        }
+      ],
+      "formula_ids": [
+        "7.2.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 182,
+      "path": "staging/ch07a/pages/pdf-182.md",
+      "sha256": "147bc483749b6f72fb7c9aec03102e948236a8ea29de4cefd87817deb1c169ac",
+      "printed_page": 169,
+      "headings": [],
+      "formula_ids": [
+        "7.2.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 183,
+      "path": "staging/ch07a/pages/pdf-183.md",
+      "sha256": "de9fa270f6e0d622bfcc7c6c0f294d42b986e1242456eb75be63741b17a3d903",
+      "printed_page": 170,
+      "headings": [
+        {
+          "id": "7.2.3",
+          "title": "计算量"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "7.1"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 184,
+      "path": "staging/ch07a/pages/pdf-184.md",
+      "sha256": "ae59df7cb409a910a7c7a95157a003ebb18faa71975db7f32b6703f2f4f98a3b",
+      "printed_page": 171,
+      "headings": [
+        {
+          "id": "7.3",
+          "title": "Gauss 主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 185,
+      "path": "staging/ch07a/pages/pdf-185.md",
+      "sha256": "6a485d3757c5fbcf4fd487ec817fac8771ad8ebd0c47e3f15b30d4da97eed0f3",
+      "printed_page": 172,
+      "headings": [
+        {
+          "id": "7.3.1",
+          "title": "完全主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 186,
+      "path": "staging/ch07a/pages/pdf-186.md",
+      "sha256": "fc45105811ef522adc8af4b1308fc619b01c2615ff07964fb56bd15d5d913629",
+      "printed_page": 173,
+      "headings": [
+        {
+          "id": "7.3.2",
+          "title": "列主元素消去法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 187,
+      "path": "staging/ch07a/pages/pdf-187.md",
+      "sha256": "e2a5283510c6b289a6353d705fb88b7a8c33b81d7b8fac3b4bf96b70f0be57e5",
+      "printed_page": 174,
+      "headings": [],
+      "formula_ids": [
+        "7.3.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 188,
+      "path": "staging/ch07a/pages/pdf-188.md",
+      "sha256": "8e001cc2c2aa29ffcc3295791908fe500e405cb0629991599d916011a75b841e",
+      "printed_page": 175,
+      "headings": [
+        {
+          "id": "7.3.3",
+          "title": "Gauss-Jordan 消去法"
+        }
+      ],
+      "formula_ids": [
+        "7.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 189,
+      "path": "staging/ch07a/pages/pdf-189.md",
+      "sha256": "5291feb26ed2b52aeea4cb6dd5ed053d9be132ebd26907db16ac573ed10089b8",
+      "printed_page": 176,
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 190,
+      "path": "staging/ch07a/pages/pdf-190.md",
+      "sha256": "1730331789677d0f9f8ab6290b6236f4c93fb22adbaf209051ed151a8f0390db",
+      "printed_page": 177,
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 191,
+      "path": "staging/ch07a/pages/pdf-191.md",
+      "sha256": "af95a7c87ff3f01688d23fcbcfbf0a706088bdfde12d809649e3763abdfa57e6",
+      "printed_page": 178,
+      "headings": [
+        {
+          "id": "7.4",
+          "title": "Gauss 消去法的变形"
+        },
+        {
+          "id": "7.4.1",
+          "title": "直接三角分解法"
+        }
+      ],
+      "formula_ids": [
+        "7.4.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 192,
+      "path": "staging/ch07a/pages/pdf-192.md",
+      "sha256": "308bc0f2e6bb6da1c0cf825e044ff96add52de7e872f61d55027673661222f60",
+      "printed_page": 179,
+      "headings": [],
+      "formula_ids": [
+        "7.4.2",
+        "7.4.3",
+        "7.4.4",
+        "7.4.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 193,
+      "path": "staging/ch07a/pages/pdf-193.md",
+      "sha256": "b4b4fc43c1a8c98cad0cb0044f906b626568579c61d6a57d2502edc2204eda9e",
+      "printed_page": 180,
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 194,
+      "path": "staging/ch07a/pages/pdf-194.md",
+      "sha256": "01f68c12f49b42c4eb5cd2d85195661cd46e8aa65f7c87c99f1f19815ea08dc6",
+      "printed_page": 181,
+      "headings": [
+        {
+          "id": "7.4.2",
+          "title": "平方根法"
+        }
+      ],
+      "formula_ids": [
+        "7.4.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 195,
+      "path": "staging/ch07a/pages/pdf-195.md",
+      "sha256": "eb8df11229975e30dd5bb6b188595831c90b0bd8942e206b563ebbae439a4693",
+      "printed_page": 182,
+      "headings": [],
+      "formula_ids": [
+        "7.4.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "structural_pass": true,
+  "primary_review_complete": true,
+  "cross_review_complete": false,
+  "missing_pages": [],
+  "primary_receipt_sha256": "118d00340ff155f5df44a448cb3afc7bf96c4427da7d95cd361552a7d8beedc1",
+  "source_errata_count": 6
+}

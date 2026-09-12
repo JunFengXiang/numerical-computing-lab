@@ -1,0 +1,222 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Newton 法的局部收敛性},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Newton 法的局部收敛性}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{6.3.3 Newton 法的局部收敛性}\label{newton-ux6cd5ux7684ux5c40ux90e8ux6536ux655bux6027}
+
+对于一种迭代过程，为了保证它是有效的，需要肯定它的收敛性，同时考察它的收敛速度。所谓迭代过程的收敛速度，是指在接近收敛的过程中迭代误差的下降速度。
+
+\textbf{定义 6.2} 设迭代过程 \(x_{k+1}=\varphi(x_k)\) 收敛于方程 \(x=\varphi(x)\) 的根 \(x^*\)，如果迭代误差 \(e_k=x_k-x^*\) 当 \(k\to\infty\) 时成立下列渐近关系式：
+
+\[
+\frac{e_{k+1}}{e_k^p}\to C\quad(C\ne0\text{ 为常数}),
+\]
+
+则称该迭代过程是 \(p\) 阶收敛的。特别地，\(p=1\) 时称为线性收敛，\(p>1\) 时称为超线性收敛，\(p=2\) 时称为平方收敛。
+
+\textbf{定理 6.3} 对于迭代过程 \(x_{k+1}=\varphi(x_k)\)，如果 \(\varphi^{(p)}(x)\) 在所求根 \(x^*\) 的邻近连续，并且
+
+\[
+\begin{cases}
+\varphi'(x^*)=\varphi''(x^*)=\cdots=\varphi^{(p-1)}(x^*)=0,\\
+\varphi^{(p)}(x^*)\ne0,
+\end{cases}
+\tag{6.3.5}
+\]
+
+则该迭代过程在点 \(x^*\) 邻近是 \(p\) 阶收敛的。
+
+\textbf{证明} 由于 \(\varphi'(x^*)=0\)，据定理 6.2 立即可以断定迭代过程 \(x_{k+1}=\varphi(x_k)\) 具有局部收敛性。
+
+再将 \(\varphi(x_k)\) 在根 \(x^*\) 处展开，利用条件（6.3.5），则有
+
+\[
+\varphi(x_k)=\varphi(x^*)+\frac{\varphi^{(p)}(\zeta)}{p!}(x_k-x^*)^p.
+\]
+
+注意到
+
+\[
+\varphi(x_k)=x_{k+1},\quad\varphi(x^*)=x^*,
+\]
+
+由上式得
+
+\[
+x_{k+1}-x^*=\frac{\varphi^{(p)}(\zeta)}{p!}(x_k-x^*)^p,
+\]
+
+因此对于迭代误差，有 \(\dfrac{e_{k+1}}{e_k^p}\to\dfrac{\varphi^{(p)}(x^*)}{p!}\)。这表明迭代过程 \(x_{k+1}=\varphi(x_k)\) 确实是 \(p\) 阶收敛的。证毕。
+
+由上述定理可知，迭代过程的收敛速度依赖于迭代函数 \(\varphi(x)\) 的选取。如果当 \(x\in[a,b]\) 时 \(\varphi'(x)\ne0\)，则该迭代过程只可能是线性收敛的。
+
+对于 Newton 公式（6.3.3），其迭代函数为
+
+\href{../../source-images/pdf-165.jpeg}{原页}
+
+\[
+\varphi(x)=x-\frac{f(x)}{f'(x)},\quad\varphi'(x)=\frac{f(x)f''(x)}{[f'(x)]^2}.
+\]
+
+假定 \(x^*\) 是 \(f(x)\) 的一个单根，即 \(f(x^*)=0,f'(x^*)\ne0\)，则由上式知 \(\varphi'(x^*)=0\)，于是依据定理 6.3 可以断定，Newton 法在根 \(x^*\) 的邻近是平方收敛的。
+
+\textbf{例 6.7} 用 Newton 法解方程
+
+\[
+x\mathrm{e}^x-1=0.
+\tag{6.3.6}
+\]
+
+\textbf{解} 这里 Newton 公式为 \(x_{k+1}=x_k-\dfrac{x_k-\mathrm{e}^{-x_k}}{1+x_k}\)，取迭代初值 \(x_0=0.5\)，迭代结果列于表 6.7 中。
+
+表 6.7
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(0.5\) \\
+\(1\) & \(0.571\,02\) \\
+\(2\) & \(0.567\,16\) \\
+\(3\) & \(0.567\,14\) \\
+\end{longtable}
+}
+
+所给方程（6.3.6）实际上是方程 \(x=\mathrm{e}^{-x}\) 的等价形式。比较例 6.7 与例 6.5 的计算结果可以看出，Newton 法的收敛速度是很快的。
+
+下面列出 Newton 法的计算步骤：
+
+\textbf{步 1} 准备。选定初始近似值 \(x_0\)，计算 \(f_0=f(x_0),f'_0=f'(x_0)\)。
+
+\textbf{步 2} 迭代。按公式 \(x_1=x_0-f_0/f'_0\) 迭代一次，得新的近似值 \(x_1\)，计算
+
+\[
+f_1=f(x_1),\quad f'_1=f'(x_1).
+\]
+
+\textbf{步 3} 控制。如果 \(x_1\) 满足 \(|\delta|<\varepsilon_1\) 或 \(|f_1|<\varepsilon_2\)，则终止迭代，以 \(x_1\) 作为所求的根；否则转步 4。此处 \(\varepsilon_1,\varepsilon_2\) 是允许误差，而
+
+\[
+\delta=\begin{cases}
+|x_1-x_0|,&\text{当 }|x_1|<C\text{ 时},\\
+\dfrac{|x_1-x_0|}{|x_1|},&\text{当 }|x_1|\geqslant C\text{ 时},
+\end{cases}
+\]
+
+其中 \(C\) 是取绝对误差或相对误差的控制常数，一般可取 \(C=1\)。
+
+\textbf{步 4} 修改。如果迭代次数达到预先指定的次数 \(N\) 或者 \(f'_1=0\)，则方法失败，否则以 \((x_1,f_1,f')\) 代替 \((x_0,f_0,f'_0)\) 转步 2 继续迭代。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 165 的校注}\label{ux539fux4e66-pdf-ux9875-165-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-165.md}{完整原页转录} · \href{../../source-images/pdf-165.jpeg}{原页图像}
+
+校注记录：ch06-E002, ch06-E008。
+
+\begin{quote}
+校注（agent 补充）：原页步 4 的替换三元组印为 \((x_1,f_1,f')\)，第三项未印下标 \(1\)，转录保留原式。结合步 2 的定义及被替换的 \(f'_0\)，这里疑应为 \(f'_1\)。这是原扫描上的疑似漏印，非 OCR 改写；局部原图见 \href{../assets/ch06/detail-p165-step4.png}{步 4 裁切}。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：本页首段``单根''推出``平方收敛''的原文亦予保留。若按前页定义 6.2 要求精确收敛阶的极限常数非零，则还需 \(f''(x^*)\ne0\) 才能断言恰为二阶；在通常光滑性条件下，单根保证的是局部至少二阶收敛。例如 \(f(x)=x+x^3\) 在单根 \(0\) 附近的 Newton 迭代为 \(x_{k+1}=2x_k^3/(1+3x_k^2)\)，实际为三阶。这是原文收敛阶表述的适用条件说明。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch06-E002}：原书 PDF 页 165
+\item
+  \texttt{ch06-E008}：原书 PDF 页 165
+\end{itemize}
+
+\end{document}

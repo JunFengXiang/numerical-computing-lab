@@ -1,0 +1,146 @@
+{
+  "lane": "ch10",
+  "reviewer": "Codex agent ch09b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 261,
+      "sha256": "5132978cfb73a3dd2fea940f83f10343643e9760a6635c73907ac8c2ace0ede5",
+      "source_visual_review": "completed",
+      "notes": [
+        "已独立重开对应原图，逐段核对正文、页码、公式及本页图中文字。"
+      ]
+    },
+    {
+      "pdf_page": 262,
+      "sha256": "26b6bf04909222e4dbeec0322efa753cbee2a9b713fd3977a93d92ea1d6c2b8e",
+      "source_visual_review": "completed",
+      "notes": [
+        "已独立重开对应原图，逐段核对正文、页码、公式及本页图中文字。"
+      ]
+    },
+    {
+      "pdf_page": 263,
+      "sha256": "39f8c4dbba43a4dee18d77ee4c8c083ac43613043acd2f8b671b3384e9ac3bca",
+      "source_visual_review": "completed",
+      "notes": [
+        "已独立重开对应原图，逐段核对正文、页码、公式及本页图中文字。"
+      ]
+    },
+    {
+      "pdf_page": 264,
+      "sha256": "41d2b6f5491a60ab347b986231bfd85fe34644099d2117d7bc04662608f1c1b1",
+      "source_visual_review": "completed",
+      "notes": [
+        "已重开原图并逐段比对；图10.2原图裁切及标签完整。"
+      ]
+    },
+    {
+      "pdf_page": 265,
+      "sha256": "c25a2cef44dd4f552322b360691cd28d30ee2f975e5fbbe3cc616f6de2c26c8d",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐一核对 W1、W2、W4、W8 所有元素、矩阵维数及顺序；Haar 波两个区间端点无误。"
+      ]
+    },
+    {
+      "pdf_page": 266,
+      "sha256": "86a34c6c18b3fbaff419726c4222dd83d3bfd1219fa6dd8814250e578f9e7dd0",
+      "source_visual_review": "completed",
+      "notes": [
+        "表10.1四种复制方案、镜像偶/奇复制四个向量的全部正负号及点记号均已核对。"
+      ]
+    },
+    {
+      "pdf_page": 267,
+      "sha256": "4b9142310543ec498a42f78b317ab7c82aab575c0c66c7fb2205ec9baa7e4b93",
+      "source_visual_review": "completed",
+      "notes": [
+        "镜像复制生成的2、4、8阶矩阵逐元素核对，次序吻合，分组虚线的说明符合原页。"
+      ]
+    },
+    {
+      "pdf_page": 268,
+      "sha256": "e740d775dc16600437b56c3eef77715e0730de69486250f4e04197fb36a76052",
+      "source_visual_review": "completed",
+      "notes": [
+        "W_N镜像行构成、正负块矩阵B和图10.3（原图及裁切）全部标签/回路已核对。"
+      ]
+    },
+    {
+      "pdf_page": 269,
+      "sha256": "0adb9852ef8ef565ca1192977a1fb43e0af8cd129432cfddfb77bb496e707c02",
+      "source_visual_review": "completed",
+      "notes": [
+        "H1/H2/H4/H8全元素、式10.3.1、定理10.1全部下标/边界与图10.4已核对。"
+      ]
+    },
+    {
+      "pdf_page": 270,
+      "sha256": "27078312dfd96a100963793a1ca5538d876e8dce9a20e3e97b98bb908aabcb5d",
+      "source_visual_review": "completed",
+      "notes": [
+        "式10.4.1、逆变换与1-WT/2-WT全部公式已逐项核对。独立确认原印“对称正交阵”；CH10-E002关于未归一化 H_N^T H_N=NI 的校注依据成立。"
+      ]
+    },
+    {
+      "pdf_page": 271,
+      "sha256": "c8ceecef07044de9b534b529aef659d51a67a7065ac85b99df8b7e6297647e51",
+      "source_visual_review": "completed",
+      "notes": [
+        "全部和式上下限、i/j下标及式10.4.2已核对。原印两处H_{N/2}(N/2+i,j)与“定理1”均确认；CH10-E001解释符合定理10.1与矩阵索引范围。"
+      ]
+    },
+    {
+      "pdf_page": 272,
+      "sha256": "02fd04121cc29be0d9d0b9ad81541d7ba5c5a34e374cca90c0a3fecd7e2a61ff",
+      "source_visual_review": "completed",
+      "notes": [
+        "图10.5/10.6原页及裁切所有标签与连线已核对；运算量、式10.4.3和步1首式匹配。原印“的的”重复已确认，照录校注无误。"
+      ]
+    },
+    {
+      "pdf_page": 273,
+      "sha256": "4aedcb3f561ffbacd18ae1639b1bdd6f9d9f6a358e60834ac206f96cbd79ad24",
+      "source_visual_review": "completed",
+      "notes": [
+        "步1/步2共14个赋值、每对上下标/正负号与图10.7/10.8原图及裁切全部数据流和模块标示核对完成。"
+      ]
+    },
+    {
+      "pdf_page": 274,
+      "sha256": "d9f6449dfc74652c98f27992ed07256aa7515c9b284c65afe648673aaae6f756",
+      "source_visual_review": "completed",
+      "notes": [
+        "步3八条赋值与图10.9全流程已独立核对；N_k、l/j范围、式10.4.4全部下标已对照原图。再看放大裁片独立确认原印2^k与CH10-E004指出应为2^{k-1}的依据，保留原式做法正确。"
+      ]
+    },
+    {
+      "pdf_page": 275,
+      "sha256": "fe5ebba641c1760de0bc1bf622f6fffe458e93d985f76adef5df09d3c45eade5",
+      "source_visual_review": "completed",
+      "notes": [
+        "算法10.1全部初值/迭代/结果、章末小结全部正文和两组矩阵演化序列逐项核对。Hartly为原印拼写；本章无单列章末习题。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CH10-CROSS-01",
+      "pdf_page": 264,
+      "type": "transcription_text",
+      "severity": "minor",
+      "description": "E4 引出句原印“又得含 4 个子段”，当前 MD 为“又得含有 4 个子段”，多一“有”字。",
+      "status": "withdrawn",
+      "resolution": "重新打开原尺寸放大裁片后确认“又得含有 4 个…”含有“有”字，primary 正确；初次缩放预览误判。"
+    }
+  ],
+  "unresolved": [],
+  "verification_notes": [
+    "已实际逐张重新打开 PDF261–275 原图，全15页进行独立逐段逐式核对；所有W1/W2/W4/W8、H1/H2/H4/H8元素均逐行比对。",
+    "图10.1–10.9原页及对应9个裁切均已打开核对，全部原图符号标签与可检索说明对应；表10.1的所有单元与两级表头无漏项。",
+    "CH10-E001/E002/E004及重复“的”的校注均独立确认原字形和依据。无仍成立的转录错误；CH10-CROSS-01已放大复核撤回，未修改primary。",
+    "终检确认15个当前MD哈希与本交叉回执及primary review完全一致。"
+  ]
+}

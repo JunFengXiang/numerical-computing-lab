@@ -1,0 +1,20 @@
+{
+  "pdf_page": 112,
+  "source_image": "source-images/pdf-112.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f0ede3aa197e1360ee888be936ffbcece008b3f7d9cb3834637b11aa612ba253",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 576,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.332,
+  "created_utc": "2026-09-12T10:25:56.488319+00:00",
+  "raw_text_sha256": "985b04aae7ae16885068bfaaf0ef674fcd822fc38695c1d6328765c04c2f0a0b",
+  "raw_text": "4.5 数值微分\n\n4.5.1 中点方法\n\n按照数学分析的定义，导数 $f'(a)$ 是差商 $\\frac{f(a+h)-f(a)}{h}$ 当 $h \\to 0$ 时的极限. 如果精度要求不高，我们可以简单地取差商作为导数的近似值，这样便建立起一种数值微分方法，即\n\n$$f'(a) \\approx \\frac{f(a+h)-f(a)}{h}.$$\n\n类似地，亦可用向后差商作近似运算，即\n\n$$f'(a) \\approx \\frac{f(a)-f(a-h)}{h}$$\n\n或用中心差商作近似计算，即\n\n$$f'(a) \\approx \\frac{f(a+h)-f(a-h)}{2h}.$$\n\n后一种数值微分方法称中点方法，它其实是前两种方法的算术平均.\n\n在图 4.3 上，上述三种导数的近似值分别表示弦线 $AB$、$AC$ 和 $BC$ 的斜率，比较这三种弦线与切线 $AT$（其斜率等于导数值 $f'(a)$）平行的程度，从图形上可以明显地看出，其中以 $BC$ 的斜率更接近于切线 $AT$ 的斜率. 因此就精度而言，以中点方法更为可取.\n\n上述三种数值微分方法有个共同点，它们都是将导数的计算归结为计算 $f$ 在若干节点上的函数值. 这类数值微分方法称为机械求导方法.\n\n要利用中点公式\n\n$$G(h) = \\frac{f(a+h)-f(a-h)}{2h}$$\n\n计算导数 $f'(a)$ 的近似值，首先必须选取合适的步长，为此需要进行误差分析. 分别将 $f(a \\pm h)$ 在 $x=a$ 处作 Taylor 展开，有\n\n$$f(a \\pm h) = f(a) \\pm h f'(a) + \\frac{h^2}{2!} f''(a) \\pm \\frac{h^3}{3!} f'''(a) + \\frac{h^4}{4!} f^{(4)}(a) \\pm \\frac{h^5}{5!} f^{(5)}(a) + \\cdots,$$\n\n代入上式得\n\n$$G(h) = f'(a) + \\frac{h^2}{3!} f''(a) + \\frac{h^4}{5!} f^{(5)}(a) + \\cdots.$$\n\n· 99·"
+}

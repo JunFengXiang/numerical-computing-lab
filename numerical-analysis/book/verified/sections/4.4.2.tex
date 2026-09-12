@@ -1,0 +1,186 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Gauss-Legendre 公式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Gauss-Legendre 公式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{4.4.2 Gauss-Legendre 公式}\label{gauss-legendre-ux516cux5f0f}
+
+不失一般性，可取 \(a=-1,b=1\) 而考察区间 \([-1,1]\) 上的 Gauss 公式①
+
+\[
+\int_{-1}^{1}f(x)\,\mathrm{d}x\approx\sum_{k=0}^{n}A_kf(x_k).
+\tag{4.4.4}
+\]
+
+我们知道，Legendre 多项式（见式（3.4.1））是区间 \([-1,1]\) 上的正交多项式，因此，Legendre 多项式 \(P_{n+1}(x)\) 的零点就是求积公式（4.4.4）的 Gauss 点。形如式（4.4.4）的 Gauss 公式特别地称为 Gauss-Legendre 公式。
+
+若取 \(P_1(x)=x\) 的零点 \(x_0=0\) 作节点构造求积公式
+
+\[
+\int_{-1}^{1}f(x)\,\mathrm{d}x\approx A_0f(0),
+\]
+
+令它对 \(f(x)=1\) 准确成立，即可定出 \(A_0=2\)。这样构造出的一点 Gauss-Legendre 公式是中矩形公式。
+
+再取 \(P_2(x)=\dfrac12(3x^2-1)\) 的两个零点 \(\pm\dfrac1{\sqrt3}\) 构造求积公式：
+
+\[
+\int_{-1}^{1}f(x)\,\mathrm{d}x\approx
+A_0f\left(-\frac1{\sqrt3}\right)+A_1f\left(\frac1{\sqrt3}\right),
+\]
+
+令它对于 \(f(x)=1,x\) 都准确成立，有
+
+\[
+\begin{cases}
+A_0+A_1=2,\\[3pt]
+A_0\left(-\dfrac1{\sqrt3}\right)+A_1\left(\dfrac1{\sqrt3}\right)=0.
+\end{cases}
+\]
+
+由此解出 \(A_0=A_1=1\)，从而得到两点 Gauss-Legendre 公式
+
+\[
+\int_{-1}^{1}f(x)\,\mathrm{d}x\approx
+f\left(-\frac1{\sqrt3}\right)+f\left(\frac1{\sqrt3}\right).
+\]
+
+三点 Gauss-Legendre 公式的形式是
+
+\[
+\begin{aligned}
+&\int_{-1}^{1}f(x)\,\mathrm{d}x\\
+&\quad\approx\frac59f\left(-\frac{\sqrt{15}}5\right)
++\frac89f(0)+\frac59f\left(\frac{\sqrt{15}}5\right).
+\end{aligned}
+\]
+
+\textbf{表 4.5}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}rcc@{}}
+\toprule\noalign{}
+\(n\) & \(x_k\) & \(A_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0 & \(0.000\,000\,0\) & \(2.000\,000\,0\) \\
+1 & \(\pm0.577\,350\,3\) & \(1.000\,000\,0\) \\
+2 & \(\pm0.774\,596\,7\) & \(0.555\,555\,6\) \\
+2 & \(0.000\,000\,0\) & \(0.888\,888\,9\) \\
+3 & \(\pm0.861\,136\,3\) & \(0.347\,854\,8\) \\
+3 & \(\pm0.339\,881\,0\) & \(0.652\,145\,2\) \\
+4 & \(\pm0.906\,179\,3\) & \(0.236\,926\,9\) \\
+4 & \(\pm0.538\,469\,3\) & \(0.478\,628\,7\) \\
+4 & \(0.000\,000\,0\) & \(0.568\,888\,9\) \\
+\end{longtable}
+}
+
+表 4.5 列出了 Gauss-Legendre 公式（4.4.4）的节点
+
+（本句续下页。）
+
+① 对于任意求积区间 \([a,b]\)，通过变换 \(x=\dfrac{b-a}{2}t+\dfrac{a+b}{2}\) 可以化到区间 \([-1,1]\) 上，这时
+
+\[
+\int_a^b f(x)\,\mathrm{d}x
+=\frac{b-a}{2}\int_{-1}^{1}f\left(\frac{b-a}{2}t+\frac{a+b}{2}\right)\,\mathrm{d}t.
+\]
+
+\begin{quote}
+校注（agent 补充，CH04B-E002）：表 4.5 的 \(n=3\) 第二对节点在原扫描中印为 \(\pm0.339\,881\,0\)，本表原样保留；这是疑似原书数值排印错误。\(P_4(x)=(35x^4-30x^2+3)/8\) 的较小正零点为 \(\sqrt{(15-2\sqrt{30})/35}\approx0.339\,981\,0436\)，保留七位小数应为 \(0.339\,981\,0\)。原表权重 \(0.652\,145\,2\) 未改动。\href{../assets/ch04b/review-table-4-5.png}{表 4.5 原扫描局部}。
+\end{quote}
+
+\href{../../source-images/pdf-109.jpeg}{原页图像}
+
+\subsubsection{4.4.2 Gauss-Legendre 公式（续）}\label{gauss-legendre-ux516cux5f0fux7eed}
+
+和系数。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04B-E002}：原书 PDF 页 108
+\end{itemize}
+
+\end{document}

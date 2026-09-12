@@ -1,0 +1,126 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={小结},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{小结}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+插值理论是一个古老而实用的课题，它是数值微积分、函数逼近、微分方程数值解等数值分析的基础。本章介绍的插值方法及差商与差分等概念是数值计算最基本的内容。Lagrange 插值多项式是数值积分与常微分方程数值解的重要工具，理论上较重要。而分段多项式插值由于具有良好的稳定性与收敛性，因此更便于应用，特别是样条函数的理论与应用，自 20 世纪 60 年代以来得到越来越多的重视。本章只介绍了三次样条函数，它是实际应用中最重要的样条函数之一。至于 \(B\) 样条和一般样条
+
+\begin{quote}
+续页：小结在下一页续完。
+\end{quote}
+
+\begin{quote}
+\textbf{校注（agent 补充；原书疑误）}：本页（2.8.24）下面矩阵的末行次对角元印为 \(\lambda_n\)，而自然边界的（2.8.14）对应位置为 \(1\)；向量 \(\boldsymbol m\) 的第二项印为 \(m_2\)，按方程顺序应为 \(m_1\)。上述均保留原图，参见\href{../assets/ch02b/pdf-055-matrix-detail.png}{矩阵与向量原图裁切}。本页没有为自然边界另定义 \(\lambda_n\)，不能沿用前页周期边界的同名系数。
+\end{quote}
+
+\begin{quote}
+\textbf{校注（agent 补充；原书疑误）}：式（2.8.27）最后一个范数原图上方确有多余的 \(m\)，已按原式转录为 \(\|\boldsymbol g\|_\infty^m\)；由（2.8.25）应得 \(\|\boldsymbol m\|_\infty\leqslant\|\boldsymbol g\|_\infty\)，无这个幂次。参见\href{../assets/ch02b/pdf-055-eq-2-8-27-detail.png}{原式放大裁图}。其后``将式（2.8.9）及式（2.8.28）代入''中的（2.8.9）应指此处的范数估计（2.8.27）；原文编号已保留。
+\end{quote}
+
+\href{../../source-images/pdf-056.jpeg}{查看原页}
+
+\begin{quote}
+本页接上页小结。
+\end{quote}
+
+函数我们都未涉及，需要对样条函数作更进一步研究的读者可参看文献 {[}3{]}。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 56 的校注}\label{ux539fux4e66-pdf-ux9875-56-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-056.md}{完整原页转录} · \href{../../source-images/pdf-056.jpeg}{原页图像}
+
+校注记录：ch02b-E012。
+
+\begin{quote}
+\textbf{校注（agent 补充；原书表值疑误）}：表 2.9 在 \(x=0.7\) 列原扫描为 \(-0.357765\)，已保留，参见\href{../assets/ch02b/table-2-9.png}{表 2.9 原图裁切}。实际 \(\ln0.7\approx-0.356674944\)，六位小数为 \(-0.356675\)，故原表这一项疑有数字误排。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch02b-E009}：原书 PDF 页 55
+\item
+  \texttt{ch02b-E010}：原书 PDF 页 55
+\item
+  \texttt{ch02b-E011}：原书 PDF 页 55
+\item
+  \texttt{ch02b-E012}：原书 PDF 页 56
+\end{itemize}
+
+\end{document}

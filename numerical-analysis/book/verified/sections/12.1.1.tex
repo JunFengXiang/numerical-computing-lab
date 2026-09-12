@@ -1,0 +1,118 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={阿基米德的``穷竭法''},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{阿基米德的``穷竭法''}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.1.1　阿基米德的``穷竭法''}\label{ux963fux57faux7c73ux5fb7ux7684ux7a77ux7aedux6cd5}
+
+在数学史上，圆周率这个奇妙的数字牵动着一代又一代数学家的心，不少人为之耗费了毕生的精力。据文献记载，在这方面做出过突出贡献的，当首推古希腊的阿基米德。在公元前 3 世纪，阿基米德求出了 \(\pi\) 的近似值 3.14，突破了古率 \(\pi=3\) 的传统观念。阿基米德开创了圆周率科学计算的新纪元。
+
+被誉为``古代数学之神''的阿基米德，其重大数学成就之一，是用所谓``穷竭法''计算一些曲边图形的面积，例如用内接与外切正多边形的周长来``穷竭''圆周，当多边形边数足够多时，作为正多边形的周长获得圆周率的近似值。他从正 6 边形做起，割到 12 边形、24 边形、48 边形，一直割到内接与外切正 96 边形，得到 \(\pi\) 的弱近似值 \(\dfrac{223}{71}\) 与强近似值 \(\dfrac{22}{7}\)，据此得知 \(\pi\) 约等于 3.14。
+
+此后一直到 17 世纪，在长达两千年的漫长岁月中，许多数学家都效仿阿基米德的做法，用内接与外切多边形的周长逼近圆周长，令边数逐步增多，从而获得越来越准确的圆周率。
+
+譬如，在 15 世纪，阿拉伯数学家阿尔·卡西从正 6 边形、正 12 边形一直割到正 \(6\times2^{27}\)（约 8 亿）边形，求得准确到小数点后 17 位的圆周率
+
+\[
+\pi=3.141\,592\,653\,589\,792\,23.
+\]
+
+17 世纪初，德国人鲁道夫从圆的内接与外切正方形做起，用正 \(2^{64}\)（约 1800 亿亿）边形的周长逼近圆周长，得出准确到小数点后 35 位的圆周率。鲁道夫为此感到自豪，要求在他的墓碑上铭刻这项成就。因此德国人常称 \(\pi\) 为``鲁道夫数''。
+
+总之，为了计算圆周率，从阿基米德到鲁道夫，西方人孜孜不倦地探索了两千年，除了阿基米德的穷竭法以外，再没有找到更好的方法和途径。然而这种方法由于收敛速度缓慢，在近代科学计算中已被人们摈弃了。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 294 的校注}\label{ux539fux4e66-pdf-ux9875-294-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-294.md}{完整原页转录} · \href{../../source-images/pdf-294.jpeg}{原页图像}
+
+校注记录：CH12-E001, CH12-E002。
+
+\begin{quote}
+校注（agent 补充）：原页印作``作为正多边形的周长获得圆周率的近似值''，语句疑有排印问题，转录保留原文。
+
+校注（agent 补充）：本页阿尔·卡西圆周率末段印作 \(\ldots792\,23\)，PDF302（书页289）同一结果印作 \(\ldots793\,23\)。独立高精度计算所得 \(\pi=3.141\,592\,653\,589\,793\,238\ldots\)，支持本页``792''为排印错误；此处仍保留原数值。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH12-E001}：原书 PDF 页 294
+\item
+  \texttt{CH12-E002}：原书 PDF 页 294, 302
+\end{itemize}
+
+\end{document}

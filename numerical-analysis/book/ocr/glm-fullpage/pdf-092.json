@@ -1,0 +1,20 @@
+{
+  "pdf_page": 92,
+  "source_image": "source-images/pdf-092.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "4f5db0f791206b1d02a31ae441ef27851453ba0cc8426e3a62e8d0dd63289b23",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 380,
+  "possibly_truncated": false,
+  "elapsed_seconds": 27.36,
+  "created_utc": "2026-09-12T10:14:34.983735+00:00",
+  "raw_text_sha256": "0435f1caad5ed60abbf4cec0ae2db0eeab4120442a16d4831799836ad61a4632",
+  "raw_text": "23. 观察物体的直线运动,得出时间 $t$ 与距离 $s$ 的关系如表 3.7所示,求运动方程.\n\n表 3.7\n$t/\\text{s}$ 0 0.9 1.9 3.0 3.9 5.0\n$s/\\text{m}$ 0 10 30 50 80 110\n\n24. 在某化学反应里,根据实验所得分解物的质量分数 $y$ 与时间 $t$ 的关系如表 3.8所示,用最小二乘拟合求 $y=F(t)$.\n\n表 3.8\n$t/\\text{min}$ 0 5 10 15 20 25\n$y/\\times 10^{-4}$ 0 1.27 2.16 2.86 3.44 3.87\n$t/\\text{min}$ 30 35 40 45 50 55\n$y/\\times 10^{-4}$ 4.15 4.37 4.51 4.58 4.62 4.64\n\n25. 编出用正交多项式作最小二乘拟合的程序框图.\n\n26. 编出改进 FFT 算法的程序框图.\n\n27. 已知 $\\{x_k\\} = (4,3,2,1,0,1,2,3)$,用改进 FFT 算法求 $\\{x_k\\}$ 离散频谱 $\\{C_k\\}$ ($k=0,1,\\cdots,7$)."
+}

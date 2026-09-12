@@ -1,0 +1,20 @@
+{
+  "pdf_page": 33,
+  "source_image": "source-images/pdf-033.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "b8eace571720b1b3c3b5ec3062570281423cf944a2a759aed77c85b393c0f999",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1098,
+  "possibly_truncated": false,
+  "elapsed_seconds": 28.073,
+  "created_utc": "2026-09-12T09:32:08.694868+00:00",
+  "raw_text_sha256": "1bb0d6e7d53e65b21be47f672710689f4247ecf5f465c3c65544fbb7acaccfdd",
+  "raw_text": "$$R_1(x) = \\frac{1}{2} f''(\\xi) \\omega_2(x) = \\frac{1}{2} f''(\\xi)(x - x_0)(x - x_1), \\quad \\xi \\in [x_0, x_1];$$\n(2.2.17)\n\n当 $n=2$ 时, 抛物插值的余项为\n$$R_2(x) = \\frac{1}{6} f''(\\xi)(x - x_0)(x - x_1)(x - x_2), \\quad \\xi \\in [x_0, x_2].$$\n(2.2.18)\n\n例2.1 已知 $\\sin 0.32 = 0.314\\ 567, \\sin 0.34 = 0.333\\ 487, \\sin 0.36 = 0.352\\ 274$, 用线性插值及抛物插值计算 $\\sin 0.336\\ 7$ 的值, 并估计截断误差.\n\n解 由题意取 $x_0 = 0.32, y_0 = 0.314\\ 567, x_1 = 0.34, y_1 = 0.333\\ 487, x_2 = 0.36, y_2 = 0.352\\ 274$.\n\n用线性插值计算, 取 $x_0 = 0.32$ 及 $x_1 = 0.34$, 由式(2.2.3)得\n$$\\sin 0.336\\ 7 \\approx L_1(0.336\\ 7) = y_0 + \\frac{y_1 - y_0}{x_1 - x_0}(0.336\\ 7 - x_0)$$\n$$= 0.314\\ 567 + \\frac{0.018\\ 92}{0.02} \\times 0.016\\ 7$$\n$$= 0.330\\ 365.$$\n\n其截断误差由式(2.2.17)得\n$$|R_1(x)| \\leqslant \\frac{M_2}{2}|(x - x_0)(x - x_1)|,$$\n\n其中\n$$M_2 = \\max_{x_0 \\leqslant x \\leqslant x_1}|f''(x)|.$$\n\n因\n$$f(x) = \\sin x, \\quad f''(x) = -\\sin x,$$\n\n可取\n$$M_2 = \\max_{x_0 \\leqslant x \\leqslant x_1}|\\sin x| = \\sin x_1 \\leqslant 0.333\\ 5,$$\n\n于是\n$$|R_1(0.336\\ 7)| = |\\sin 0.336\\ 7 - L_1(0.336\\ 7)|$$\n$$\\leqslant \\frac{1}{2} \\times 0.333\\ 5 \\times 0.016\\ 7 \\times 0.003\\ 3$$\n$$\\leqslant 0.92 \\times 10^{-5}.$$\n\n若取 $x_1 = 0.34, x_2 = 0.36$ 为节点, 则线性插值为\n$$\\sin 0.336\\ 7 \\approx \\tilde{L}_1(0.336\\ 7) = y_1 + \\frac{y_2 - y_1}{x_2 - x_1}(0.336\\ 7 - x_1)$$\n$$= 0.333\\ 487 + \\frac{0.018\\ 787}{0.02} \\times (-0.003\\ 3)$$\n$$= 0.330\\ 387,$$\n\n其截断误差为\n$$| \\tilde{R}_1(x) | \\leqslant \\frac{M_2}{2}|(x - x_1)(x - x_2)|,$$\n\n其中\n$$M_2 = \\max_{x_0 \\leqslant x \\leqslant x_2}|f''(x)| \\leqslant 0.352\\ 3.$$\n\n于是\n$$| \\tilde{R}_1(0.336\\ 7) | = |\\sin 0.336\\ 7 - \\tilde{L}_1(0.336\\ 7)|$$\n\n• 20 •"
+}

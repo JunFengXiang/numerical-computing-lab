@@ -1,0 +1,137 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Hamming 格式},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Hamming 格式}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.5.7 Hamming 格式}\label{hamming-ux683cux5f0f}
+
+上述预测-校正系统的缺点是稳定性差。为了改善稳定性，重新挑选校正公式。为此考察式（5.5.21）中不显含 \(y'_{n-2}\) 的一类格式
+
+\[
+y_{n+1}=\alpha_0y_n+\alpha_1y_{n-1}+\alpha_2y_{n-2}+h(\beta_{-1}y'_{n+1}+\beta_0y'_n+\beta_1y'_{n-1}),
+\tag{5.5.28}
+\]
+
+按条件（5.5.22），形如式（5.5.28）的四阶格式含有一个自由度------譬如可取 \(\alpha_1\) 为独立参数。若取 \(\alpha_1=1\) 即得 Simpson 格式（5.5.27）。
+
+Hamming 用 \(\alpha_1\) 的不同数值进行试验，发现当 \(\alpha_1=0\) 时格式的稳定性能较好，即
+
+\[
+y_{n+1}=\frac18(9y_n-y_{n-2})+\frac{3h}{8}(y'_{n+1}+2y'_n-y'_{n-1}),
+\tag{5.5.29}
+\]
+
+其局部截断误差为
+
+\[
+y(x_{n+1})-y_{n+1}\approx-\frac{h^5}{40}y_n^{(5)}.
+\tag{5.5.30}
+\]
+
+Hamming 格式（5.5.29）不能用数值积分方法推导出来。
+
+用 Milne 格式（5.5.24）与 Hamming 格式（5.5.29）相匹配，并利用误差公式（5.5.25）、（5.5.30）改进计算结果，即可建立下列预测-校正系统：
+
+预测
+
+\[
+p_{n+1}=y_{n-3}+\frac{4h}{3}(2y'_n-y'_{n-1}+2y'_{n-2}),
+\]
+
+改进
+
+\[
+m_{n+1}=p_{n+1}-\frac{112}{121}(p_n-c_n),
+\]
+
+计算
+
+\[
+m'_{n+1}=f(x_{n+1},m_{n+1}),
+\]
+
+校正
+
+\[
+c_{n+1}=\frac18(9y_n-y_{n-2})+\frac{3h}{8}(m'_{n+1}+2y'_n-y'_{n-1}),
+\]
+
+改进
+
+\[
+y_{n+1}=c_{n+1}+\frac9{121}(p_{n+1}-c_{n+1}),
+\]
+
+\href{../../source-images/pdf-145.jpeg}{原页}
+
+计算
+
+\[
+y'_{n+1}=f(x_{n+1},y_{n+1}).
+\]
+
+\end{document}

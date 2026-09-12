@@ -1,0 +1,20 @@
+{
+  "pdf_page": 124,
+  "source_image": "source-images/pdf-124.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "6c2492452bf0f88eb8d25ccf304dfb37cf6153fa0dffefc93714724ee853ecda",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 865,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.45,
+  "created_utc": "2026-09-12T10:32:14.806083+00:00",
+  "raw_text_sha256": "315efddc1e8d44a0593a0c48c104aef7d0fa31e14b07c5c82cd86e248dc148f6",
+  "raw_text": "例 5.2 用改进的 Euler 方法求解初值问题(5.2.2).\n解 改进的 Euler 格式为\n$$\\begin{cases}\ny_p = y_n + h \\left( y_n - \\frac{2x_n}{y_n} \\right), \\\\\ny_c = y_n + h \\left( y_p - \\frac{2x_{n+1}}{y_p} \\right), \\\\\ny_{n+1} = \\frac{1}{2} (y_p + y_c).\n\\end{cases}$$\n仍取 $h=0.1$, 计算结果如表 5.2 所示. 与例 5.1 Euler 方法的计算结果比较, 改进的 Euler 方法明显地改善了精度.\n\n表 5.2\n$$\\begin{array}{c|c|c|c|c|c}\nx_n & y_n & y(x_n) & x_n & y_n & y(x_n) \\\\\n\\hline\n0.1 & 1.0959 & 1.0954 & 0.6 & 1.4860 & 1.4832 \\\\\n0.2 & 1.1841 & 1.1832 & 0.7 & 1.5525 & 1.5492 \\\\\n0.3 & 1.2662 & 1.2649 & 0.8 & 1.6153 & 1.6125 \\\\\n0.4 & 1.3434 & 1.3416 & 0.9 & 1.6782 & 1.6733 \\\\\n0.5 & 1.4164 & 1.4142 & 1.0 & 1.7379 & 1.7321\n\\end{array}$$\n\n5.2.5 Euler 两步格式\n\n再考察改进的 Euler 格式(5.2.10)、(5.2.11), 可以看到, 其预测公式(Euler 格式)的精度差, 与校正公式(梯形格式)不匹配. 现在构造能与梯形方法在精度上相匹配的显式方法, 为此改用中心差商 $\\frac{y(x_{n+1}) - y(x_{n-1})}{2h}$ 替代方程(5.2.4)左端的导数项 $y'(x_n)$, 这时离散化得到所谓 Euler 两步格式\n$$y_{n+1} = y_{n-1} + 2hf(x_n, y_n).$$\n(5.2.13)\n\n前面介绍过的数值方法, 无论是 Euler 方法、后退的 Euler 方法, 还是改进的 Euler 方法, 它们都是单步法, 其特点是在计算 $y_{n+1}$ 时只用到前面一步的信息 $y_n$; 然而, Euler 两步格式除了含 $y_n$ 外, 还显含更前面一步的信息 $y_{n+1}$ ——即调用了前面两步的信息, Euler 两步法因此而得名.\n\n单步法的优点是“自开始”, 只要给出初值 $y_0$, 依计算公式即可顺次计算 $y_1$, $y_2$, …. 然而两步法不是自开始的, 在实际计算时, 除了给出初值 $y_0$ 外, 还需要求助于其他单步法再提供一个开始值 $y_1$, 然后才能启动计算公式依次计算 $y_2$, $y_3$, ….\n\n两步法的优点是, 由于它调用了两个节点上的已知信息, 从而能以较少的计算量获得较高的精度.\n\n现在用 Euler 两步格式与梯形格式相匹配, 得到如下预测-校正系统:\n\n• 111 •"
+}

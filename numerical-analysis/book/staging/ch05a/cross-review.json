@@ -1,0 +1,227 @@
+{
+  "lane": "ch05a",
+  "reviewer": "Codex agent ch04b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 119,
+      "sha256": "a4007f23b7ec58e2737962caf18ed4c520294833eabb9894a4cb505d05e024ed",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对章节标题、初值问题、Lipschitz 条件、差分格式定义和跨页末句；与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 120,
+      "sha256": "01f2aa0b2fdd7d5f6f59861e5f87613faff6fa4b5c3ca873708dd0201c18ee4d",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对 Euler 格式、例5.1、表5.1全部数值、图5.1和5.2及标签；两处“极点”确为原印。",
+        "另已打开核验独立插图文件fig-5.1.png，边界和标签完整，与整页图一致；asset SHA256=c25ca81ad8d4acf6f939b55efad24317a37f1740b20d0e246f74566ee67c8d84。",
+        "另已打开核验独立插图文件fig-5.2.png，边界和标签完整，与整页图一致；asset SHA256=ddb7f0863c65085c66bf3bedf4cceaf1afa549e5d9f501e985e39d9945ba50ec。"
+      ]
+    },
+    {
+      "pdf_page": 121,
+      "sha256": "60ccd9cf819cdc7cdd13117b60509b8730fcb7cb9e42292f98be93870e0b20f7",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对局部截断误差、前/后向差商、后退 Euler 和初始迭代；全部公式、撇号及上下标与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 122,
+      "sha256": "16e0976ff845990c4a6cb09470cb8c6cec33bf05a274faec282265f4f008bde1",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对后退 Euler 误差推导中各 f_y、负号、Taylor 项；梯形公式及图5.3标签与原图一致。",
+        "另已打开核验独立插图文件fig-5.3.png，边界和标签完整，与整页图一致；asset SHA256=a71e9cf9a90c07e0797eee4195998489d52c6e8cb3dcee537f4952faf5049da9。"
+      ]
+    },
+    {
+      "pdf_page": 123,
+      "sha256": "5ff2feb32f9edf4b43f4a2d7f9445cf0ecb4dc35e29809b6d101a7363304245d",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对迭代收敛因子 hL/2、预测横线和改进 Euler 四种等价表示；与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 124,
+      "sha256": "4892edae9425aa86ceb03200ba6b013aa280cdff49d139ea4480b6100e517f71",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对表5.2所有行、预测/校正公式及两步法。两处既有原书疑误字形均确认；40位Decimal独立复算 y8=1.61647478275206，其他九行四舍五入值一致。"
+      ]
+    },
+    {
+      "pdf_page": 125,
+      "sha256": "7d1a6924005ab66b9172ee6bbbb58aef269c3d5aff267c62f8437859b35c920f",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对预测/校正误差 h^3/3 与 -h^3/12、事后补偿系数 -4/5 和1/5、六环节前五项；与原图及Taylor关系一致。"
+      ]
+    },
+    {
+      "pdf_page": 126,
+      "sha256": "dab2c6fa91d4d9ece457befaa9ad2f4ad1b4ff4a88ac140f32d816d4f883d418",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对六环节末项、启动信息、Taylor函数序列及三阶全导数展开；原文、全部偏导和阶次一致。"
+      ]
+    },
+    {
+      "pdf_page": 127,
+      "sha256": "088ab08323c03b4484ef0b8d00ad468a6ccc5e2ed95cd7b71d4e2c8e16297207",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对阶数定义、Taylor余项区间、例5.3的一至四阶导数、表5.3全部数据及平均斜率定义；与原图一致，导数链式法则也相符。"
+      ]
+    },
+    {
+      "pdf_page": 128,
+      "sha256": "104ee20960e2b6ecac3baab1fb3dc7b4cafae85d53bfd56e96e7aaf640242c1a",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对改进Euler阶段平均式、二阶RK节点 n+p、0<p≤1、三个待定系数和Taylor匹配展开；与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 129,
+      "sha256": "ab5f0f1baa97012e70311fa80f0bd94cbb51d4d6d067300cc44a1809f7fd84ab",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对二阶条件、变形Euler和三阶RK系统；原文两处 n+p 误印经核图确认，应指第三阶段 n+q，既有校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 130,
+      "sha256": "647336230e4380eed77bdc0a4908ca2ffd9a20d305bd81cd532f8f54e86433f9",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对D、D^2、D横线、阶段展开及三阶条件；主转录员已改正两处多余上标逗号，当前两处D横线平方均为2，与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 131,
+      "sha256": "5a3f2500d61ea7d0669035e440429c364c5dfe571d66ca07d5aab777fcc27247",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对Kutta三阶格式、经典RK4全部阶段及例5.4代入分式；阶次、系数和自变量均与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 132,
+      "sha256": "b355bada55bbec2dae1c5bfcfdd2212815e181633af85951cd7f136c768bc455",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对表5.4全部数值、变步长原理及1/16和1/15误差系数；40位Decimal另行复算RK4五行与原表四舍五入一致，(5.3.15)原印等号已保留。"
+      ]
+    },
+    {
+      "pdf_page": 133,
+      "sha256": "44f5c8c09f2813204dabd543b9fa22c89319f886f38e3443af2606964595635e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对变步长判据、收敛定义中固定节点与n趋无穷、Euler差分方程及指数极限；全部文字和式号与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 134,
+      "sha256": "d71e0aa43874e0b18df53a2591f2cf3bf9f821637d00ea06450e7e670dd8b0b0",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核对定理5.1全部假设、局部至整体误差递推、等比求和和页脚注；原印Lipschitz右端缺绝对值、h指数q两项均经原图及推导确认。"
+      ]
+    },
+    {
+      "pdf_page": 135,
+      "sha256": "a4bdfff3ae347ad378bae5a76208b62b3fb8a832338aa5a3ac3f9e01b77a86e7",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对页首指数、整体误差估计式、改进Euler的Lipschitz常数、稳定性定义和模型方程假设；原书页首指数n/h错印及校正链式估计已核图并独立推导确认。"
+      ]
+    },
+    {
+      "pdf_page": 136,
+      "sha256": "0f5d06425d2265547b0440b6488b47caa06f4a867fdca171fee51f53e350bcba",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对扰动递推、条件稳定h≤-2/λ=2τ、时间常数、后退Euler无条件稳定、例5.5及图5.4全部标签；原句“步长h应使τ不超过2τ”确为原印，校注成立。",
+        "另已打开核验独立插图文件fig-5.4.png，边界和标签完整，与整页图一致；asset SHA256=45f723e5a1115460607a079a4ca4aae7dc8a46f4d9daae380dc9a8ee3cf11fcc。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch05a-cross-E001",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E001",
+      "pdf_page": 124,
+      "verdict": "confirmed",
+      "notes": "原表确印1.6153；独立复算例5.2给出1.61647478275206，四位小数为1.6165。primary保留原值和单列校注正确。"
+    },
+    {
+      "id": "ch05a-cross-E002",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E002",
+      "pdf_page": 124,
+      "verdict": "confirmed",
+      "notes": "原文确印“更前面一步的信息 y_{n+1}”，与式(5.2.13)中的 y_{n-1} 不一致；primary保留及校注正确。"
+    },
+    {
+      "id": "ch05a-cross-E003",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E003",
+      "pdf_page": 129,
+      "verdict": "confirmed",
+      "notes": "原图两处第三阶段所述节点确印 n+p；同页定义和(5.3.7)要求 n+q。primary保留原文及校注正确。"
+    },
+    {
+      "id": "ch05a-cross-T001",
+      "kind": "transcription_error",
+      "pdf_page": 130,
+      "status": "resolved",
+      "original": "D横线的平方上标为2，无逗号",
+      "transcription": "K3展开及(5.3.10)后一行均为 \\overline{\\mathrm D}^{,2}",
+      "requested_fix": "两处改为 \\overline{\\mathrm D}^{2} 并更新primary SHA",
+      "notification": "已通知 /root/ch05a 和 /root",
+      "resolution": "主转录员修正两处多余逗号；独立复核文件两处上标现均为2。",
+      "resolved_sha256": "647336230e4380eed77bdc0a4908ca2ffd9a20d305bd81cd532f8f54e86433f9"
+    },
+    {
+      "id": "ch05a-cross-E004",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E004",
+      "pdf_page": 134,
+      "verdict": "confirmed",
+      "notes": "式(5.4.5)原图右端确为L_phi(y-y横线)，缺绝对值；取y<y横线和L_phi>0时右端负，不能界定左端绝对差。primary原样保留与校注成立。"
+    },
+    {
+      "id": "ch05a-cross-E005",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E005",
+      "pdf_page": 134,
+      "verdict": "confirmed",
+      "notes": "式(5.4.9)原图h指数明确为q。由(5.4.8)反复递推，非齐次项为Ch^(p+1)[(1+hL)^n-1]/(hL)，因此指数为p；primary原样保留与校注成立。"
+    },
+    {
+      "id": "ch05a-cross-E006",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E006",
+      "pdf_page": 135,
+      "verdict": "confirmed",
+      "notes": "页首原图中间指数确为nL_phi、末指数为hL_phi，MD原样保留正确；1+u≤e^u给出(1+hL)^n≤e^(nhL)≤e^(TL)，既有校注成立。原不等链如取n=2,h=0.1,L=1即失败。"
+    },
+    {
+      "id": "ch05a-cross-E007",
+      "kind": "source_erratum_crosscheck",
+      "primary_id": "ch05a-E007",
+      "pdf_page": 136,
+      "verdict": "confirmed",
+      "notes": "原句明确印“步长h应使τ不超过2τ=0.02”；由λ=-100得稳定条件|1-100h|≤1，即0≤h≤0.02，故被约束的是h，不是固定τ=0.01。primary保留原句与校注成立。"
+    }
+  ],
+  "unresolved": []
+}

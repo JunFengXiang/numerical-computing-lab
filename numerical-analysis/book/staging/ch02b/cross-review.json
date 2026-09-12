@@ -1,0 +1,131 @@
+{
+  "lane": "ch02b",
+  "reviewer": "Codex agent ch02a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 43,
+      "sha256": "7bf2cfc815ee631326783f45af20b926d74e121769ca83bf6151e53524295d15",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立打开原图逐行核对；Hermite条件、双重节点基函数、log求导式及k≠j完整。"
+      ]
+    },
+    {
+      "pdf_page": 44,
+      "sha256": "c7973eea1611b80cbbfdcaa36cf7e64eb7c7cccfbfe2dcf0e1697f20acffb1c9",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对全部α/β值和一阶导数条件、分母次序、平方及2n+2阶余项；与当前转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 45,
+      "sha256": "43536f75b052bb6cad84bdbf086fa8150c42905352a054121fd03d9ad9fcb5ec",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对例2.5参数A及Rolle余项、Runge段落和末行跨页处；与当前转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 46,
+      "sha256": "7b65694b15d0d6c80f91dc39413ab89b942563de5ad53bf83fb948843524c088",
+      "source_visual_review": "completed",
+      "notes": [
+        "正文、图2.5标签、条件及2.7.1–2.7.3已独立核对。第二分支原图确为倒置分数，校注按端点条件给出的更正成立。"
+      ]
+    },
+    {
+      "pdf_page": 47,
+      "sha256": "e338afce7df4b085d354e2a0c5e5d3ab8f5e9d5fb4838c2173b36825297f190a",
+      "source_visual_review": "completed",
+      "notes": [
+        "图2.6和连续模证明完整；四项Hermite分母、平方和f′下标与原页一致。"
+      ]
+    },
+    {
+      "pdf_page": 48,
+      "sha256": "4cb11d375eab8aa9675953fb18a168b201e2635c841693770ef220b84f5faac7",
+      "source_visual_review": "completed",
+      "notes": [
+        "2.7.6–2.7.13及跨页文字均与原图一致；两个β界4/27、总界8/27和max范围0≤k≤n准确。"
+      ]
+    },
+    {
+      "pdf_page": 49,
+      "sha256": "875a4dcb7893bdf8c96fd01b2c53034d7bbf04cc1bf0be7bc591b4112d738cff",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图与正文一致；Hermite一致收敛仅给f∈C[a,b]的条件不足，所附h·max|f′k|→0及C1充分条件校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 50,
+      "sha256": "09dea860fb6ac4c946e1c4e6cf1d2a54eaf87ba6d971d46bd7e8d0765d75bc61",
+      "source_visual_review": "completed",
+      "notes": [
+        "自然及周期边界条件、三转角四项式和二阶导数逐式核对；末式第三项原印h_(j−1)^2，校注更正为三次幂符合二次求导及左端点代入。"
+      ]
+    },
+    {
+      "pdf_page": 51,
+      "sha256": "e866fc5dea3446f410cc73a56df723c2f649f2f30e406d892e9e768e632c6497",
+      "source_visual_review": "completed",
+      "notes": [
+        "两张三对角矩阵逐格核对，m/g向量及已知端点移项正确；h平方、λ/μ次序、自然边界行和原文“则”均保留。"
+      ]
+    },
+    {
+      "pdf_page": 52,
+      "sha256": "2adb335aeeaeb01d627a27d9eb0cd3ad9af948829f15e1dab3a415665d1692d8",
+      "source_visual_review": "completed",
+      "notes": [
+        "周期边界未归一化方程、λ/μ、循环矩阵全部格点以及三弯矩2.8.16–2.8.18逐式核对；原图确将λ_n分子印成h_(n−1)、两角印0，现有校注的h_0、λ_1、μ_n及循环追赶法说明均成立。"
+      ]
+    },
+    {
+      "pdf_page": 53,
+      "sha256": "6260e58db0fc5c7bea15b865b33eb7cef8a21d9e11066905a50dd42459ecc483",
+      "source_visual_review": "completed",
+      "notes": [
+        "全部三弯矩端点式、边界条件、步骤1–6、节点与端点一阶导数条件已核对；原页确标“步6”，正文完整。"
+      ]
+    },
+    {
+      "pdf_page": 54,
+      "sha256": "3c7f1659e1b265535b57be41151f14af3407c4062a0a290b2d07de1279d0b0d5",
+      "source_visual_review": "completed",
+      "notes": [
+        "表2.8两栏全部21个x行及f/S/L数值逐格核对；范数原式的max下标i与x_j、逆矩阵界首项a_ij均由放大原图确认，校注正确。",
+        "采用三弯矩方程和精确有理数高斯消元独立重算上一页的夹持样条，得到S(-4.8)=0.04162182604249764、S(-4.5)=0.04716801119813742，与现有三转角计算校注一致，原表数值仍保留。"
+      ]
+    },
+    {
+      "pdf_page": 55,
+      "sha256": "b59a0b79b592355ef0c501582e73666e0272c066f646f421c544cda8c651d635",
+      "source_visual_review": "completed",
+      "notes": [
+        "自然边界矩阵逐格、向量、定理条件、收敛性证明和小结均已核对；末行λ_n、向量第二项m_2及2.8.27末项上方的m确见原图。现有更正为1、m_1、无幂次及引用2.8.27符合前页方程与范数推导。"
+      ]
+    },
+    {
+      "pdf_page": 56,
+      "sha256": "d038e84e4eb0de1c2af69402d562a5cc08e5777de0a05cc1fd05d5ccb92eda1c",
+      "source_visual_review": "completed",
+      "notes": [
+        "小结续文与习题1–14全部核对；第6题两处原图均为恒等号≡，第9题差分算子Δ/δ及指数4、各求和上下界准确。表2.9逐格核对，原表ln0.7印−0.357765，独立计算ln(0.7)=−0.35667494393873245，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 57,
+      "sha256": "068ceaf9fd8e43d7397669852b6fa1a6355e4e23d2ad75c571af7a8b3645976f",
+      "source_visual_review": "completed",
+      "notes": [
+        "第14题续式及15–26题逐字逐式核对，包含第17题四阶导数、两项平方与4!、第24题两组边界条件和表2.10、25题两条积分式。第18题放大原图确为P(0)=P(−k+1)及重复的Hermite误差限要求；原书条件无法确定，现有校注不补造条件，转录无未决字形。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

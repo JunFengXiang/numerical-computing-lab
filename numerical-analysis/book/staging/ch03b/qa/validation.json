@@ -1,0 +1,59 @@
+{
+  "lane": "ch03b",
+  "pages": 17,
+  "source_pdf_page_range": [
+    76,
+    92
+  ],
+  "printed_page_range": [
+    63,
+    79
+  ],
+  "numbered_formulas": 39,
+  "display_math_blocks": 125,
+  "math_snippets_compiled": 724,
+  "xelatex_exit_code": 0,
+  "xelatex_fontset": "fandol",
+  "xelatex_pdf_pages": 23,
+  "math_compile_scope": "syntax check of extracted math; not full manuscript layout acceptance",
+  "all_page_and_source_image_hashes_match": true,
+  "all_links_exist": true,
+  "formula_ids_sequence_matches": true,
+  "tables": [
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8"
+  ],
+  "figures": [
+    "3.6",
+    "3.7"
+  ],
+  "source_errata_records": 23,
+  "unresolved": [],
+  "issues": [],
+  "assets_sha256": {
+    "staging/ch03b/assets/figure-3-6.png": "65554a7d55e9a7aa57509119f67f45ec45536f3ca8d40d1e150dbc5442884d10",
+    "staging/ch03b/assets/figure-3-7.png": "23b8ec8f680445593c1b659bf39112319a3b64d7e96adeedaaf0896af1889ba8",
+    "staging/ch03b/assets/p076-laguerre-formula.png": "b3b52d7c2819c01cff033190240b3dab8d0c1d8fa3dd8d165ad677962ae54786",
+    "staging/ch03b/assets/p077-error-formula.png": "a087dac40fc54a5c3000266c8cc8222ccd81e04ec2571ee7665629ff6beaf505",
+    "staging/ch03b/assets/p079-minimum-formula.png": "73ef150db5d0587830d158bc6f73d9d4c8b1c3a3881d16c3587f16ed884b75ec",
+    "staging/ch03b/assets/p080-minimum-inequality.png": "9095ea3e3143f1d41de14d9bdba3f1b2016295f68bc77b1604ecef0a707cd679",
+    "staging/ch03b/assets/p081-exponential-fit.png": "ea774bd0bfc88a5bcdbb287bea783fba7303dd14157fbcebea4072881366a9e3",
+    "staging/ch03b/assets/p082-recursion-coefficients.png": "3ccf48b7bc4805ef8050b2a331798ed6f172f53c395ab90f32aa86645f9ab64a",
+    "staging/ch03b/assets/p083-fit-coefficients.png": "953f2a57b8971a1d865fa86fe7a3db7df17e0065d02171acb61906fef8ede90e",
+    "staging/ch03b/assets/p083-induction-start.png": "4170ff9073f097a87a195c2c58176f4d441930cbac4e4659ebcd9b1c11023e53",
+    "staging/ch03b/assets/p084-multivariate-formulas.png": "554bfa03c9498910d569f60b10282adfd75bfc965052cf05899b1d2a61418aa2",
+    "staging/ch03b/assets/p088-stage-definitions.png": "918c5c7ec7beb2f1960a429a34c4752fc7d9b3e9f22ca32b29e38eeadcdc3541",
+    "staging/ch03b/assets/p089-general-fft.png": "fd6e982225c525e9e8d639a323b573af0d733ad2f3c9ba8ecda2ee0ddfa7bf19",
+    "staging/ch03b/assets/p089-operation-count.png": "3411667835b3c0f4bd71714fc743ddbe767f549ef8f6e15d1e1bea8423e5b1f4",
+    "staging/ch03b/assets/p090-fft-steps.png": "9b874772aefd4b84410648fed1130679a6453c394ff842e933fad950d6f07788",
+    "staging/ch03b/assets/p091-exercise-10.png": "2844a2cc6ef118d0ebefa510c0e7bdfc6917d46713bb970d320bb89b766c411a",
+    "staging/ch03b/assets/p091-exercise-15.png": "f5394ca599380e06c634dcd9b3ea3177d517e5dd7c07faf915e74e07e069600b",
+    "staging/ch03b/assets/p091-exercises-5-8.png": "60edcf9ac7f58db80b18affc2cf816384cf68c77e9f85966db07756a4f0326b9",
+    "staging/ch03b/assets/table-3-5-source.png": "8c903dfabd63a16425eb740a274f518c68b3049af5f5f723315b78ef9f637aa0",
+    "staging/ch03b/assets/table-3-6-source.png": "a7c6f6b71044700d9bacdad3510ec9aac4b39c39160415ab640dc8df954948a9"
+  }
+}

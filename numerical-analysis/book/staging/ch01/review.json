@@ -1,0 +1,421 @@
+{
+  "lane": "ch01",
+  "reviewer": "Codex agent ch01",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 14,
+      "printed_page": 1,
+      "path": "staging/ch01/pages/pdf-014.md",
+      "sha256": "10f83be9ad9a4ccd7e80c0b708cd06f092e3050923797529d3e56cb959d9bb63",
+      "source_image_sha256": "40f0c72c84d5bb35fa35a50a1c493386544b3c8c6b9c7fffd97453ab1604a25d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "上篇",
+          "title": "数值算法分析"
+        },
+        {
+          "id": "1",
+          "title": "绪论"
+        },
+        {
+          "id": "1.1",
+          "title": "数值分析研究的对象与特点"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "1.1"
+      ],
+      "tables": [],
+      "notes": [
+        "实际打开原页目视核对：书页1；全页三段正文及跨页断字已保留；图1.1五个框和四个箭头逐一核对并裁切原图。"
+      ]
+    },
+    {
+      "pdf_page": 15,
+      "printed_page": 2,
+      "path": "staging/ch01/pages/pdf-015.md",
+      "sha256": "1c0c1f678433f0d6b1855a905e1d0f567e99fc878b0a219e2e037e045c4372d5",
+      "source_image_sha256": "ffd3273be9714299c1649f38cae255c614c52b9e1a66408388e48119e6c00a79",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.2",
+          "title": "误差来源与误差分析的重要性"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开原页目视核对：书页2；1.1四点特点、学习建议和1.2误差来源全文；Taylor多项式和余项的导数阶数、阶乘、幂次与xi位置已复核；无印刷公式编号。"
+      ]
+    },
+    {
+      "pdf_page": 16,
+      "printed_page": 3,
+      "path": "staging/ch01/pages/pdf-016.md",
+      "sha256": "2d583d1ed512acdb7aca2821effdb1968755b9c5887fa75fa833e31623a7020f",
+      "source_image_sha256": "fc95fcc2ab9bd1ca9d4f13b213dde8e298ecf91126cf0f9085131759655c2e82",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "1.2.1"
+      ],
+      "figures": [],
+      "tables": [
+        "1.1"
+      ],
+      "notes": [
+        "实际打开书页3全页并放大表1.1；20个数值逐格核对，保留-0.728和7.552原有位数；复核I和tilde I区分、积分上下限、1.2.1编号及方案A全部步骤。",
+        "OCR遗漏公式(1.2.1)编号，已按原图补回。"
+      ]
+    },
+    {
+      "pdf_page": 17,
+      "printed_page": 4,
+      "path": "staging/ch01/pages/pdf-017.md",
+      "sha256": "c54642253c10fc9849c12bdbf9f03a96b263c1267281d535ab0b0a0df268c1f8",
+      "source_image_sha256": "97c57af582ca741ec65be6315551c936346f80b43609b754cc50208329d1a67a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.3",
+          "title": "误差的基本概念"
+        },
+        {
+          "id": "1.3.1",
+          "title": "误差与误差限"
+        }
+      ],
+      "formula_ids": [
+        "1.2.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页4全页并放大上半页；确认开头是tilde I_8，不是I_8；核对1.2.2严格不等号、极值区间、En符号和n!；方案B倒推到n=1，定义1.1的e*=x*-x及跨页断字均已保留。",
+        "CH01-E001：原书关于n!倍误差的表述已保留并单列校注。"
+      ]
+    },
+    {
+      "pdf_page": 18,
+      "printed_page": 5,
+      "path": "staging/ch01/pages/pdf-018.md",
+      "sha256": "e4af1b29ba8c86826b979dccfccfedaa63362e1c58ee5a9d10f5bc07afca2d80",
+      "source_image_sha256": "f9bccadbcc081f28f07c099b6b481790cf9967237555a843e2a9ffa20e599680",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.3.2",
+          "title": "相对误差与相对误差限"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页5全页，复核定义1.1续文、强/弱近似值、765mm例的区间、相对误差分母x与x*、二次项等式四段变形、e*与epsilon*区分；所有正文与无编号公式均已转录。"
+      ]
+    },
+    {
+      "pdf_page": 19,
+      "printed_page": 6,
+      "path": "staging/ch01/pages/pdf-019.md",
+      "sha256": "150baedcf9199d8fb6068b91d17a04950522a026da6634526974ba0b636c60e8",
+      "source_image_sha256": "96c66c6c6ac818dfe5ead63ac5e9b00e66df305e9b5de3af7da25e2c8066f86e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.3.3",
+          "title": "有效数字"
+        }
+      ],
+      "formula_ids": [
+        "1.3.1",
+        "1.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页6全页，核对1.3.1的m和-(n-1)、1.3.2的m-n+1、例1.2全部四个输入及四个输出、例1.3米与千米对应的-2/-5误差幂；保留末位零和跨页断字。"
+      ]
+    },
+    {
+      "pdf_page": 20,
+      "printed_page": 7,
+      "path": "staging/ch01/pages/pdf-020.md",
+      "sha256": "390a7ac0c2302d46db2bf8b6ed8c118ddcf7899bf16feae431d75bdbc9208e5f",
+      "source_image_sha256": "4fc5b23fb1b4aeb3c2b4c1e5add140550bf43cb1af7c10be38297aaa008cadb6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.3.4",
+          "title": "数值运算的误差估计"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页7全页，逐项核对定理1.1正反命题的2a1与2(a1+1)、两段证明、例1.4的0.125乘10^-3、三条四则运算误差限公式；保留除法条件x2*不为0；修复OCR未闭合数学定界符。"
+      ]
+    },
+    {
+      "pdf_page": 21,
+      "printed_page": 8,
+      "path": "staging/ch01/pages/pdf-021.md",
+      "sha256": "ccaee1db226021933d4dcfe3fb7c49fe89aeab3fc4fb3ad99ff20b74b77bb929",
+      "source_image_sha256": "9425fa3250a938e505f51519ced55c436de6e3ff0a6211a9d1b293f495d752cc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "1.3.3",
+        "1.3.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页8全页并分别放大高阶项条件及1.3.4；确认求和上限原书印k，OCR给n，已恢复原文k并单列CH01-E002。",
+        "复核一元Taylor展开、二阶项系数1/2、多元展开的k=1至n及例1.5全部偏导、110/80/0.2/0.1/27/8800/0.31%数值与单位。",
+        "原书高阶项条件的比值顺序已原样保留，单列CH01-E003。"
+      ]
+    },
+    {
+      "pdf_page": 22,
+      "printed_page": 9,
+      "path": "staging/ch01/pages/pdf-022.md",
+      "sha256": "af72ae116a6b1612f4c679fba766c0c63044a6d974e5c47ddf441c5280f7c106",
+      "source_image_sha256": "b0fcd9e4918532e7a133dd4e95d1608c6da5ecfb00fe79090063369a25d80bb4",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.4",
+          "title": "数值运算中误差分析的方法与原则"
+        },
+        {
+          "id": "1.4.1",
+          "title": "要避免除数绝对值远远小于被除数绝对值的除法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页9全页并放大例1.6；核对两段误差分析方法、epsilon0、标题、0<|y|远小于|x|条件；确认原图x1确为200000/399999，保留并列CH01-E004。"
+      ]
+    },
+    {
+      "pdf_page": 23,
+      "printed_page": 10,
+      "path": "staging/ch01/pages/pdf-023.md",
+      "sha256": "1e3e892c1f34e13a4af7a39837a6d72283d82f09f8ea9d2c85067d6de386abcd",
+      "source_image_sha256": "536c1f41899c052abfad06148bf1223c59842a4ab9ad524fa80d4a7f1e823cfc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.4.2",
+          "title": "要避免两相近数相减"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页10全页并放大例1.6消去过程、例1.7；逐个核对三个方程组的10^-4/10^1/10^6和0.1000/0.2000及x1/x2；保留原图第二种首行10^6，详列CH01-E005。",
+        "例1.7的角度符号、sin平方、6.13乘10^3、lg商式及根式有理化均核对；三位有效数字判断与独立复算不符，原文保留并列CH01-E006。"
+      ]
+    },
+    {
+      "pdf_page": 24,
+      "printed_page": 11,
+      "path": "staging/ch01/pages/pdf-024.md",
+      "sha256": "20a3667527a802ce650d6f54b32b9dd12da32c58423df9e78dd96674f51d6f34",
+      "source_image_sha256": "1db233a8338793fd59934efba0caf867c2297a33095064aab08aa687cc32230a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.4.3",
+          "title": "要防止大数“吃掉”小数"
+        },
+        {
+          "id": "1.4.4",
+          "title": "注意简化计算步骤，减少运算次数"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页11全页并放大机器相等符号；确认正文说明中的符号也是triangleq，修正OCR只给triangle。",
+        "例1.8的1000项上下限、52492、52592与53392均核对；例1.9的2/4/8/16/32/64/128幂、254和14次乘法及多项式计数公式已转录。"
+      ]
+    },
+    {
+      "pdf_page": 25,
+      "printed_page": 12,
+      "path": "staging/ch01/pages/pdf-025.md",
+      "sha256": "b0b6bc67850d6ecbfa385b839462e062a4ec6546046452799186b8a9c806b249",
+      "source_image_sha256": "53e5cbae01146e6f72a16eebf5b422eeec71cfe914e943c6bd8d9e59167e3b56",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "1.summary",
+          "title": "小结"
+        },
+        {
+          "id": "1.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [
+        "1.4.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页12全页并放大习题3数值行；确认x5*=7乘1.0，保留原样。",
+        "秦九韶算法Sn=an、Sk=xS(k+1)+ak、k=n-1至0、Pn=S0及1.4.1编号全部核对；小结及习题1至10全文和习题11本页部分已逐项转录；特别区分Y与y、根号783与根号2。"
+      ]
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 13,
+      "path": "staging/ch01/pages/pdf-026.md",
+      "sha256": "7241e96859fad146c86792d5a020f7f66acdb05b0e4b0ae2c868f553ed4dd423",
+      "source_image_sha256": "1fa83ba1bb798cc34f65a1ac7fcb81e6852c57522105cd902f2dcaa12d110751",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开书页13全页并放大习题13等价式；确认右端根号内为x^2+1，原样保留并列CH01-E007。",
+        "习题11续问、12四个候选表达式、13两次求对数问句、14的10^10及三位数条件、15的0<c<pi/2和三个误差绝对值全已核对；确认下半页无其他正文。",
+        "独立校对agent front指出习题15遗漏一阶误差限定；再次核对原图及有限乘积展开，保留原题并追加CH01-E008。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH01-E001",
+      "pdf_page": 17,
+      "printed_page": 4,
+      "type": "suspected_source_wording_error",
+      "source_text": "则tilde I_n就是E_0的n!倍误差",
+      "note": "原文照录；由E_n=(-1)^n n!E_0，应指近似值tilde I_n的误差绝对值为初值误差绝对值的n!倍。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p017-top.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E002",
+      "pdf_page": 21,
+      "printed_page": 8,
+      "formula_id": "1.3.4",
+      "type": "suspected_source_formula_typo",
+      "source_text": "sum_{k=1}^{k}",
+      "note": "放大原图确认上限是k；由n元函数及式1.3.3，应为n。转录保留k并单列校注。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p021-eq-1-3-4.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E003",
+      "pdf_page": 21,
+      "printed_page": 8,
+      "type": "suspected_source_condition_error",
+      "source_text": "假定f′(x*)与f″(x*)的比值不太大",
+      "note": "原句照录；忽略二阶项相对一阶项应控制|f″(xi)|epsilon(x*)/(2|f′(x*)|)，疑有比值顺序或条件表述问题。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p021-condition.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E004",
+      "pdf_page": 22,
+      "printed_page": 9,
+      "example_id": "1.6",
+      "type": "source_numerical_error",
+      "source_text": "x1=200000/399999=0.50000125",
+      "note": "由两原方程相减得(2-0.00001)x1=1，故x1=100000/199999约0.5000025000125；原列x2与此解一致。原文未改。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p022-example-1-6.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E005",
+      "pdf_page": 23,
+      "printed_page": 10,
+      "example_id": "1.6",
+      "type": "suspected_source_wording_and_exponent_error",
+      "source_text": "用小数除以大数；第二种消去首行10^6乘0.1000x2=10^6乘0.1000",
+      "note": "原文保留。第一操作实际为第一方程除以小量；第二种直接消去后四位浮点首行应为10^1乘0.1000x2=10^1乘0.1000。原式可以额外同乘10^5得到但文本未给该步。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p023-elimination.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E006",
+      "pdf_page": 23,
+      "printed_page": 10,
+      "example_id": "1.7",
+      "type": "source_significant_digits_error",
+      "source_text": "6.13乘10^3，具有三位有效数字",
+      "note": "实际A约6091.729809，6130误差约38.270191>5，不满足本章三位有效数字定义；原文照录并附校注。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p023-example-1-7.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E007",
+      "pdf_page": 26,
+      "printed_page": 13,
+      "exercise_id": "13",
+      "type": "source_formula_sign_error",
+      "source_text": "ln(x-sqrt(x^2-1))=-ln(x+sqrt(x^2+1))",
+      "note": "原图确认右侧为+1，原样保留。由(x-sqrt(x^2-1))(x+sqrt(x^2-1))=1，相应等价式右侧根号内应为x^2-1。",
+      "unresolved": false,
+      "evidence_image": "staging/ch01/assets/review-p026-exercise-13.png",
+      "handling": "original_preserved_with_agent_note"
+    },
+    {
+      "id": "CH01-E008",
+      "pdf_page": 26,
+      "printed_page": 13,
+      "exercise_id": "15",
+      "type": "source_missing_first_order_qualification",
+      "source_text": "面积误差满足|Delta S/S|≤|Delta a/a|+|Delta b/b|+|Delta c/c|",
+      "note": "原文保留。有限误差取Delta a/a=Delta b/b=0.01且Delta c=0，精确面积相对变化0.0201>0.02；应注明一阶近似/微分解释。由独立校对agent front提出，ch01复核。",
+      "unresolved": false,
+      "evidence_image": "source-images/pdf-026.jpeg",
+      "handling": "original_preserved_with_agent_note"
+    }
+  ],
+  "validation_notes": [
+    "本 lane 已实际打开 PDF14 至26每张原图，逐页核对全文、公式、表格、算法和习题；放大疑误区域的图像留在 assets/。",
+    "13页的 YAML、原页与图链接、MD 与原图 SHA-256、数学定界符及花括号检查通过；source_sha256 按转录协议传递。",
+    "7个编号公式、图1.1、表1.1、9个例题与15道习题均覆盖；跨页断文已标注，无未决识别项。",
+    "全部 MD 经 Pandoc 转为 LaTeX 并由 XeLaTeX 成功编译；最新编译日志无错误、警告或溢出诊断。QA PDF 为排版核对副本。",
+    "已实看 QA PDF 第3、8、13、14页渲染，检查表格、偏导公式、算法、习题及原图图1.1裁切。",
+    "独立 agent front 实看 PDF14 至26并逐文逐式复核，通过；其提出的 CH01-E008 已复核并添加，全部当前 MD 哈希再次核对一致。独立回执见 staging/ch01/cross-review.json。",
+    "原书疑误均原样保留，推断、反例与说明仅置于明确标注的 agent 校注中；不是人工核验。"
+  ]
+}

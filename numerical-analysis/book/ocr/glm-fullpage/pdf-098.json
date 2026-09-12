@@ -1,0 +1,20 @@
+{
+  "pdf_page": 98,
+  "source_image": "source-images/pdf-098.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "b320fdb722f185feea4fe04b5da40b87f5801471e93cb1686268b75480d60f67",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 849,
+  "possibly_truncated": false,
+  "elapsed_seconds": 36.908,
+  "created_utc": "2026-09-12T10:18:01.605837+00:00",
+  "raw_text_sha256": "2fb052ce71c6f47ffe4c98d44660108958ada158d64dc4d1e120009931a7c0f9",
+  "raw_text": "据此可以断定 $R[f] = 0$, 因为被积函数\n$$H(u) = \\prod_{j=0}^{n} \\left(u + \\frac{n}{2} - j\\right) = \\prod_{j=-n/2}^{n/2} (u - j)$$\n是个奇函数. 证毕.\n\n4.2.3 几种低阶求积公式的余项\n\n首先考察梯形公式, 按余项公式(4.1.7), 梯形公式(4.1.1)的余项为\n$$R_T = I - T = \\int_a^b \\frac{f''(\\xi)}{2} (x - a)(x - b) \\mathrm{d}x.$$\n这里积分的核函数 $(x - a)(x - b)$ 在区间 $[a,b]$ 上保号 (非正), 应用积分中值定理, 在 $(a,b)$ 内存在一点 $\\eta$, 使\n$$R_T = \\frac{f''(\\eta)}{2} \\int_a^b (x - a)(x - b) \\mathrm{d}x = -\\frac{f''(\\eta)}{12} (b - a)^3, \\quad \\eta \\in (a,b).$$\n再研究 Simpson 公式(4.2.3)的余项 $R_S = I - S$. 为此构造次数不大于三的多项式 $H(x)$, 使之满足\n$$H(a) = f(a), \\quad H(b) = f(b), \\quad H(c) = f(c), \\quad H'(c) = f'(c),$$\n(4.2.6)\n这里 $c = \\frac{a + b}{2}$. 由于 Simpson 公式具有三次代数精度, 它对于这样构造出的三次式 $H(x)$ 是准确的:\n$$\\int_a^b H(x) \\mathrm{d}x = \\frac{b - a}{6} \\left[ H(a) + 4 H(c) + H(b) \\right].$$\n而由插值条件(4.2.6)知, 上式右端实际上等于按 Simpson 公式(4.2.3)求得的积分值 $S$, 因此积分余项\n$$R_S = I - S = \\int_a^b \\left[ f(x) - H(x) \\right] \\mathrm{d}x.$$\n不难证明, 对于满足条件(4.2.6)的多项式 $H(x)$, 其插值余项\n$$f(x) - H(x) = \\frac{f^{(4)}(\\xi)}{4!} (x - a)(x - c)^2 (x - b),$$\n故有\n$$R_S = \\int_a^b \\frac{f^{(4)}(\\xi)}{4!} (x - a)(x - c)^2 (x - b) \\mathrm{d}x.$$\n这时积分核 $(x - a)(x - c)^2 (x - b)$ 在 $[a,b]$ 上保号 (非正), 用积分中值定理有\n$$R_S = \\frac{f^{(4)}(\\eta)}{4!} \\int_a^b (x - a)(x - c)^2 (x - b) \\mathrm{d}x = -\\frac{b - a}{180} \\left(\\frac{b - a}{2}\\right)^4 f^{(4)}(\\eta).$$\n(4.2.7)\n关于 Cotes 公式(4.2.4)的积分余项, 这里不再具体推导, 仅列出结果如下:\n$$R_C = I - C = -\\frac{2(b - a)}{945} \\left(\\frac{b - a}{4}\\right)^6 f^{(6)}(\\eta).$$\n(4.2.8)"
+}

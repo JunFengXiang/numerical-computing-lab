@@ -1,0 +1,85 @@
+{
+  "lane": "ch09b",
+  "updated_utc": "2026-09-12T10:37:09.160312+00:00",
+  "sources": [
+    {
+      "pdf_page": 247,
+      "markdown": "staging/ch09b/pages/pdf-247.md",
+      "sha256": "8b3561b7c8f1f6a6fe63a400e988aa230405e9defc50314c5bce7cb6809406a9"
+    },
+    {
+      "pdf_page": 248,
+      "markdown": "staging/ch09b/pages/pdf-248.md",
+      "sha256": "68a7b19ab97b5aa9783bc77879b7b5eeef8f0b7df9e7a6e1402a2c0ba9db265a"
+    },
+    {
+      "pdf_page": 249,
+      "markdown": "staging/ch09b/pages/pdf-249.md",
+      "sha256": "7a055793b65c3653b943d42443932151325989c8914c15d513e3f35020117cb4"
+    },
+    {
+      "pdf_page": 250,
+      "markdown": "staging/ch09b/pages/pdf-250.md",
+      "sha256": "3099ed483f813fe3da7589be4b5d6531b84ad2dc043da232ed3c3e555b92e6d3"
+    },
+    {
+      "pdf_page": 251,
+      "markdown": "staging/ch09b/pages/pdf-251.md",
+      "sha256": "c085bc0d336f52f5cf6481ab440d3d5cf5029aafbddc1b1d7b7af902d41302cc"
+    },
+    {
+      "pdf_page": 252,
+      "markdown": "staging/ch09b/pages/pdf-252.md",
+      "sha256": "54698d8ca3503a1ee85858fec172c68dcdfaf3e8aa2704bc96d3ecdd587f3bf9"
+    },
+    {
+      "pdf_page": 253,
+      "markdown": "staging/ch09b/pages/pdf-253.md",
+      "sha256": "7e761dc97f1167bec0f4e11c5952198aa538f361950f146439b0ef8eeae5bc49"
+    },
+    {
+      "pdf_page": 254,
+      "markdown": "staging/ch09b/pages/pdf-254.md",
+      "sha256": "bce292295fcc61b7adb289f9b7ba7262f391992e20e08a26718dcd53be708c9e"
+    },
+    {
+      "pdf_page": 255,
+      "markdown": "staging/ch09b/pages/pdf-255.md",
+      "sha256": "20113387bb0f8d7fe9ec3ef8305acbf6349f520c37acbb88d31292cf76a2e052"
+    },
+    {
+      "pdf_page": 256,
+      "markdown": "staging/ch09b/pages/pdf-256.md",
+      "sha256": "714b953db0db3b952442b23586d1e212b8fe8aac8c66ea0b2b2cda9d7417db25"
+    },
+    {
+      "pdf_page": 257,
+      "markdown": "staging/ch09b/pages/pdf-257.md",
+      "sha256": "a26a4e6ac44108b9ba5ed5953f1f47728c4d7cc2e2caa80e89c6dd12560b1507"
+    },
+    {
+      "pdf_page": 258,
+      "markdown": "staging/ch09b/pages/pdf-258.md",
+      "sha256": "efbd6c855feb71c1c3865dcfe4b1ec66dc744b10e7c90252f64394777c273691"
+    },
+    {
+      "pdf_page": 259,
+      "markdown": "staging/ch09b/pages/pdf-259.md",
+      "sha256": "49b29dd5e30167a234829198813c7d74b96e113021a7ff726f7027784e755b0e"
+    },
+    {
+      "pdf_page": 260,
+      "markdown": "staging/ch09b/pages/pdf-260.md",
+      "sha256": "d047aa2793a7b8441fdb415e7f92f9e02e084b379a4affc64025c6327e8b5603"
+    }
+  ],
+  "standalone_tex": ".work/lane-latex/ch09b/content.tex",
+  "tex_sha256": "345852005e510184f6965ee1e626bf880226764c8810ce1f7898f80fbf31bbe1",
+  "status": "compiled",
+  "render_visual_review": "pending",
+  "mathematical_correctness": "not established by compilation",
+  "warnings": [],
+  "pdf": ".work/lane-latex/ch09b/content.pdf",
+  "pdf_sha256": "3e722d64a02fc401344e5e6cab511dcfecb70a0d8908b61778be8cb8135c10cc",
+  "rendered_pages": 26
+}

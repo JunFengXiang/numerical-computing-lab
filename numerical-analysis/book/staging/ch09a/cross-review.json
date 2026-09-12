@@ -1,0 +1,151 @@
+{
+  "lane": "ch09a",
+  "reviewer": "Codex agent ch08 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 233,
+      "sha256": "8a180f3233852896c006ab77835a16c42e49646983ffe1f931d4ccc70cb54b6a",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新逐项对照原图，章标题、9.1引言、定理9.1–9.3及公式9.1.1–9.1.2一致。"
+      ]
+    },
+    {
+      "pdf_page": 234,
+      "sha256": "b13d62c66d42204a489fce91ccc3777eb8be9a8e8d13d3c1bca85ae51ee84425",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对定理9.3后半及Rayleigh商；E001逗号与E002原印指数2独立确认。",
+        "发现页末反迭法/反幂法字形差异，已交原agent核实。",
+        "再次实际打开末段内存放大图，确认原印反幂法，原MD正确；撤销CR001。"
+      ]
+    },
+    {
+      "pdf_page": 235,
+      "sha256": "58e0c1c2bde2eb200c4a504a637821b1a0dfff5768d170ed2949d3cb98e8f62e",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新逐项核对9.2.1–9.2.6及向量展开；E003两处原印a_1独立确认。"
+      ]
+    },
+    {
+      "pdf_page": 236,
+      "sha256": "b4fb5253c9dc5f5d9318d28ab49d81c040afa1f6493418b510716f180fe3029d",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对重根情形、规范化序列及9.2.7–9.2.8；另实际打开9.2.8裁切，E004原印Av0及lambda_i^k独立确认。"
+      ]
+    },
+    {
+      "pdf_page": 237,
+      "sha256": "77f4ef0adb51c5d7661df53190997340249bae01fa0a02a88823e3f204ed7c1d",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对u_k/v_k规范化推导、定理9.6和例9.1矩阵及全部8位数字；E005因子下标i及E006分母缺括号独立确认。"
+      ]
+    },
+    {
+      "pdf_page": 238,
+      "sha256": "d7cf607001a7342efa6d9f7d744ebac854527dea002b838af67eaa1932c175a5",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对平移法与例9.2；表9.1原图及裁切均实际打开，10行全部分量、k值、空白单元格、8位数逐格与MD一致；E007原印lambda1/lambda2独立确认。"
+      ]
+    },
+    {
+      "pdf_page": 239,
+      "sha256": "f1f86f5825729a1c56385171471efb80ad2c7e8cf66026e59a1aab5ce48f911b",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对最优位移推导、9.2.10及例9.3矩阵；表9.2原图及裁切均实际打开，7行全部分量及8位数逐格一致，末段三个特征值数值一致。"
+      ]
+    },
+    {
+      "pdf_page": 240,
+      "sha256": "0909a380454c30208eae3b25def17e70e74f7100c5a3d70a588886fdd6206716",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对Rayleigh商加速与反幂法引入，9.2.11的求和系数a_j^2及幂次2k+1、2k与原图一致；定理9.8跨页首部完整。"
+      ]
+    },
+    {
+      "pdf_page": 241,
+      "sha256": "59195424a42da6b00d863ffebca393ab9dd47e9e8005853742e10e9d6c77d383",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对定理9.8后半、9.2.12和定理9.9全部三项条件、逆幂次及两个极限；初始展开a_i非零与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 242,
+      "sha256": "c015bee7e3414ff52f425beffd1837e46bc588c437a0ecde6bef7460803efb40",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对9.2.13–9.2.14、例9.4全部文字及A/P/L/U矩阵；另打开LU与向量裁切逐项核对0.29405e-3、v1/u1/v2/u2及精确向量各分量，均一致。"
+      ]
+    },
+    {
+      "pdf_page": 243,
+      "sha256": "f4947af13ebcab8727f68cefdcad1b02b4dbd7a47e852125017dac25c92f66a9",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对9.3/9.3.1、定理9.10、Hessenberg定义及反射矩阵全部元素；另打开H(w)矩阵裁切核对n-1/n下标、所有负号和平方；原印若要求求出已保留。"
+      ]
+    },
+    {
+      "pdf_page": 244,
+      "sha256": "2422635d312b242670305419acadd8c3ed6f2b83372a8ac8abc217f74ad5144b",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对定理9.11/9.12及推论的全部公式；图9.1原图与裁切均已实际打开，w/v/x/y/O/S/v'标签及实虚线关系完整；E008原印H的下标a已独立放大确认。"
+      ]
+    },
+    {
+      "pdf_page": 245,
+      "sha256": "b5af12bd5d9e3d4299468ae1d301073e9af5114c4a1ae79aecd75a1ee70085a9",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对rho分量推导、符号选择、算法1全部3步及算法2全部6步，alpha/u箭头方向、缩放eta、内积计算与2n^2次数均与原图一致；9.3.2首段完整。"
+      ]
+    },
+    {
+      "pdf_page": 246,
+      "sha256": "35bf164ea26d7b4d1a34f8228c73bb52fbdda545cd5c877553d76a4c65df26e4",
+      "source_visual_review": "completed",
+      "notes": [
+        "重新完整核对首个A分块、9.3.1、U1、A2、Ak展开矩阵全部行列及9.3.2；U1左上原印I已确认。E009右上块A21及E010求和缺迭代上标、rho中的列下标n均独立实际打开原图并放大确认。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch09a-CR001",
+      "pdf_page": 234,
+      "status": "closed_not_an_error",
+      "location": "末段两类方法说明",
+      "issue": "原图似印反迭法，MD为反幂法；原agent正在回图确认。",
+      "resolution": "按原图坐标(1010,2400,1470,2490)重新内存裁切并实际打开，确认原印反幂法，两个幂同形；原MD无误。"
+    }
+  ],
+  "unresolved": [],
+  "source_errata_independently_confirmed": [
+    "ch09a-E001",
+    "ch09a-E002",
+    "ch09a-E003",
+    "ch09a-E004",
+    "ch09a-E005",
+    "ch09a-E006",
+    "ch09a-E007",
+    "ch09a-E008",
+    "ch09a-E009",
+    "ch09a-E010"
+  ],
+  "validation_notes": [
+    "14页原图均逐张实际打开并逐项对照Markdown；表9.1/9.2全部数值及图9.1标签完整复核。",
+    "10项既有校注已独立核对原印及推导依据；正文保留原书印法。",
+    "最终14个Markdown SHA256与交叉复核记录和primary review.json完全一致；无未决项。",
+    "本回执为独立agent复核，不是人工复核。"
+  ]
+}

@@ -1,0 +1,227 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={列主元素消去法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{列主元素消去法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{7.3.2 列主元素消去法}\label{ux5217ux4e3bux5143ux7d20ux6d88ux53bbux6cd5}
+
+完全主元素消去法在选主元素时要花费较多机器时间。下面介绍另一种常用的
+
+\begin{quote}
+① 在实际计算中可以考虑设计不进行行、列交换的算法。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：算法 1 步 8（1）原书印作 \(a_i,\mathrm{Iz}(i)\leftarrow b_i\)（逗号及 Iz 为基线排印），本转录保留。按该步（2）\(b_i\leftarrow a_{1i}\) 及``调整未知数的次序''，（1）应把 \(b_i\) 暂存到第一行第 \(\mathrm{Iz}(i)\) 列，即 \(a_{1,\mathrm{Iz}(i)}\leftarrow b_i\)；疑似原书下标排印错误。参见\href{../assets/ch07a/pdf-186-step8-detail.png}{原步骤放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-187.jpeg}{原页扫描}
+
+方法即列主元素消去法。它仅考虑依次按列选主元素，然后换行使之变到主元位置上，再进行消元计算。设用列主元素消去法解 \(Ax=b\) 已完成 \(k-1\) 步计算，即有
+
+\[
+(A,b)\to(A^{(k)},b^{(k)})=
+\left(\begin{array}{cccccc|c}
+a_{11}^{(1)}&a_{12}^{(1)}&\cdots&\cdots&\cdots&a_{1n}^{(1)}&b_1^{(1)}\\
+&a_{22}^{(2)}&\cdots&\cdots&\cdots&a_{2n}^{(2)}&b_2^{(2)}\\
+&&\ddots&&&\vdots&\vdots\\
+&&&a_{kk}^{(k)}&\cdots&a_{kn}^{(k)}&b_k^{(k)}\\
+&&&\vdots&&\vdots&\vdots\\
+&&&a_{nk}^{(k)}&\cdots&a_{nn}^{(k)}&b_n^{(n)}
+\end{array}\right),
+\]
+
+且 \(A^{(k)}x=b^{(k)}\) 与 \(Ax=b\) 等价，第 \(k\) 步选主元素（在 \(A^{(k)}\) 第 \(k\) 列方框内选），即确定 \(i_k\) 使
+
+\[|a_{i_k,k}^{(k)}|=\max_{k\le i\le n}|a_{ik}^{(k)}|.\]
+
+\textbf{算法 2} 列主元素消去法，其步骤如下：
+
+设 \(Ax=b\)。本算法用 \(A\) 的具有行交换的列主元素消去法①，消元结果冲掉 \(A\)，乘数 \(m_{ij}\) 冲掉 \(a_{ij}\)，计算解 \(x\) 冲掉常数项 \(b\)，行列式存放在 \(\det A\)。
+
+\textbf{步 1} \(\det A\leftarrow1\)，对于 \(k=1,2,\cdots,n-1\) 做到步 7。
+
+\textbf{步 2} 按列选主元素 \(|a_{i_kk}|=\max_{k\le i\le n}|a_{ik}|\)。
+
+\textbf{步 3} 如果 \(a_{i_kk}=0\)，则 \(\det A\leftarrow0\)，计算停止。
+
+\textbf{步 4} 如果 \(i_k=k\)，则转步 5，否则换行：
+
+\[a_{kj}\leftrightarrow a_{i_kj}\quad(j=k,k+1,\cdots,n),\quad b_k\leftrightarrow b_{i_k},\quad \det A\leftarrow-\det A.\]
+
+\textbf{步 5} 计算乘数 \(m_{ik}\)
+
+\[a_{ik}\leftarrow m_{ik}=a_{ik}/a_{kk}\quad(i=k+1,\cdots,n)\;(|m_{ik}|\le1).\]
+
+\textbf{步 6} 消元计算
+
+\[a_{ij}\leftarrow a_{ij}-m_{ik}a_{kj}\quad(i,j=k+1,\cdots,n),\quad b_i\leftarrow b_i-m_{ik}b_k\quad(i=k+1,\cdots,n).\]
+
+\textbf{步 7} \(\det A\leftarrow a_{kk}\det A\)。
+
+\textbf{步 8} 回代求解
+
+\[b_n\leftarrow b_n/a_{nn},\quad b_i\leftarrow\left(b_i-\sum_{j=i+1}^{n}a_{ij}b_j\right)/a_{ii}\quad(i=n-1,n-2,\cdots,1).\]
+
+\textbf{步 9} \(\det A\leftarrow a_{nn}\det A\)。
+
+例 7.3 的方法 2 用的就是列主元素消去法。
+
+下面用矩阵运算来描述解式（7.2.1）的列主元素消去法：
+
+\[
+\begin{cases}
+L_1I_{1i_1}A^{(1)}=A^{(2)},\quad L_1I_{1i_1}b^{(1)}=b^{(2)},\\
+L_kI_{ki_k}A^{(k)}=A^{(k+1)},\quad L_kI_{ki_k}b^{(k)}=b^{(k+1)},
+\end{cases}
+\tag{7.3.1}
+\]
+
+其中 \(L_k\) 的元素满足 \(|m_{ik}|\le1\)（\(k=1,2,\cdots,n-1\)），\(I_{ki_k}\) 是初等排列矩阵（由交换单位矩阵 \(I\) 的第 \(k\) 行与第 \(i_k\) 行得到）。
+
+\begin{quote}
+① 在列主元素消去法中，可考虑用一整型数组 \(\mathrm{Ip}(n)\) 来记录主行。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：本页首个增广矩阵右下角原书印作 \(b_n^{(n)}\)，已保留。此处描述第 \(k-1\) 步完成后的 \((A^{(k)},b^{(k)})\)，同列第 \(k\) 行是 \(b_k^{(k)}\)，所以末行相应应为 \(b_n^{(k)}\)；疑似原书上标排印错误。参见\href{../assets/ch07a/pdf-187-rhs-detail.png}{原矩阵放大裁图}。
+\end{quote}
+
+\href{../../source-images/pdf-188.jpeg}{原页扫描}
+
+利用式（7.3.1）得到
+
+\[L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}A=A^{(n)}=U,\]
+
+简记作
+
+\[\widetilde{P}A=U,\quad\widetilde{P}b=b^{(n)},\]
+
+其中
+
+\[\widetilde{P}=L_{n-1}I_{n-1,i_{n-1}}\cdots L_2I_{2i_2}L_1I_{1i_1}.\]
+
+下面就 \(n=4\) 的情况来考察一下矩阵 \(\widetilde{P}\)。
+
+\[
+\begin{aligned}
+U=A^{(4)}&=L_3I_{3i_3}L_2I_{2i_2}L_1I_{1i_1}A\\
+&=L_3(I_{3i_3}L_2I_{3i_3})(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3})(I_{3i_3}I_{2i_2}I_{1i_1})A\\
+&\equiv\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1PA,
+\end{aligned}
+\tag{7.3.2}
+\]
+
+其中
+
+\[\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3},\quad
+\widetilde{L}_2=I_{3i_3}L_2I_{3i_3},\quad
+\widetilde{L}_3=L_3,\quad P=I_{3i_3}I_{2i_2}I_{1i_1}.\]
+
+由本章的习题 8 知 \(\widetilde{L}_k\)（\(k=1,2,3\)）亦为单位下三角阵，其元素的绝对值不大于 1。记 \(L^{-1}=\widetilde{L}_3\widetilde{L}_2\widetilde{L}_1\)，由式（7.3.2）得到 \(PA=LU\)，其中 \(P\) 为排列矩阵，\(L\) 为单位下三角阵，\(U\) 为上三角阵。这说明对式（7.2.1）应用列主元素消去法，相当于对 \((A\mid b)\) 先进行一系列行交换后再对 \(PAx=Pb\) 应用 Gauss 消去法。在实际计算中只能在计算过程中进行行的交换。
+
+总结以上的讨论可得如下定理。
+
+\textbf{定理 7.5（列主元素的三角分解定理）} 如果 \(A\) 为非奇异矩阵，则存在排列矩阵 \(P\)，使
+
+\[PA=LU,\]
+
+其中 \(L\) 为单位下三角阵，\(U\) 为上三角阵。
+
+\(L\) 元素存放在数组 \(A\) 的下三角部分，\(U\) 元素存放在 \(A\) 上三角部分，由整型数组 \(\mathrm{Ip}(n)\) 记录可知 \(P\) 的情况。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 188 的校注}\label{ux539fux4e66-pdf-ux9875-188-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-188.md}{完整原页转录} · \href{../../source-images/pdf-188.jpeg}{原页图像}
+
+校注记录：ch07a-E004。
+
+\begin{quote}
+校注（agent 补充）：式（7.3.2）第二行第二个括号内原书印作 \(I_{3i_3}L_{2i_2}L_1I_{2i_2}I_{3i_3}\)，其中 \(L_{2i_2}\) 在本段未定义。本页紧接着定义 \(\widetilde{L}_1=I_{3i_3}I_{2i_2}L_1I_{2i_2}I_{3i_3}\)，因而该处 \(L_{2i_2}\) 疑为 \(I_{2i_2}\) 的排印错误；此处保留原式。参见\href{../assets/ch07a/pdf-188-permutation-detail.png}{原式放大裁图}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch07a-E002}：原书 PDF 页 186
+\item
+  \texttt{ch07a-E003}：原书 PDF 页 187
+\item
+  \texttt{ch07a-E004}：原书 PDF 页 188
+\end{itemize}
+
+\end{document}

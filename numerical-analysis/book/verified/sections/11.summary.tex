@@ -1,0 +1,125 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={小结},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{小结}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+我们生活在一个巨变的时代。并行机的出现，使科学计算领域发生了翻天覆地的变化。一个并行机系统可能拥有成千上万台处理机。面对这样一个全新的计算平台，人们感到迷茫。国外一些权威专家强调，并行算法是一门``全新''的算法，在设计过程中必须彻底摆脱传统算法设计思想的``束缚''。``串行''与``并行''难道是水火不容、不可调和的吗？
+
+本章侧重于同步并行算法的研究。所展示的研究成果表明，串行算法与并行算法是一脉相承的。
+
+在众多形形色色的计算模型中，数列求和无疑是最简单的。本章以这种简单模型作为并行算法设计的源头，透过它阐述并行算法设计的基本策略与基本特征。
+
+数列求和是一个累加过程，它具有时序性与递推性。事实上，累加求和
+
+\[
+\begin{cases}
+S_0=a_0,\\
+S_i=S_{i-1}+a_i,\quad i=1,2,\cdots,N-1,
+\end{cases}
+\]
+
+本质上是个递推过程
+
+\[
+S_0\to S_1\to\cdots\to S_{N-1}.
+\]
+
+我们看到，数列求和的二分算法将这种递推过程加工成如图 11.3 所示的递推结构。由此可见，递推不是串行算法的专利，并行算法进一步强化了递推结构。
+
+然而无可非议的是，递推计算是并行算法设计的困难所在。前人提出的倍增技术试图绕开这个难点，而将递推关系式转化为某种累算形式的展开式来处理。这种``节外生枝''的处理方法增加了问题的复杂性。
+
+与此不同，本章所推荐的二分技术直接开发递推算式内在的并行性。借助于形象
+
+\begin{quote}
+校注（agent 补充，CH11-E006）：本页``因此有算法 10.5''及算法标题均印为 10.5，已照录。按本章算法 11.1---11.4 的连续编号，此算法疑应编号 11.5；属于原书编号疑误。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充，CH11-E007）：本页 \(f_i^{(k)}\) 的分段定义延续上一页系数更新的边界问题，原式已完整保留。尤其 \(k=n\) 时首、尾范围重叠，公式还可能引用越界的邻元系数；相关直接消元对照见 PDF 291 的校注。
+\end{quote}
+
+\href{../../source-images/pdf-293.jpeg}{原页图像}
+
+直观的相关链，二分法着眼于二分手续的设计。
+
+需要指出的是，在介绍并行算法时，本章尽量回避算法的简单罗列，力图通过一些典型算法揭示同步并行算法的二分技术的有效性。运用二分技术可以设计出一系列优秀的并行算法。笔者所在的华中科技大学并行计算研究所，在 20 世纪 80 年代中期曾针对国产银河巨型机研制成功了一个``线性代数二分法软件包''。
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH11-E006}：原书 PDF 页 290, 291, 292
+\item
+  \texttt{CH11-E007}：原书 PDF 页 291, 292
+\end{itemize}
+
+\end{document}

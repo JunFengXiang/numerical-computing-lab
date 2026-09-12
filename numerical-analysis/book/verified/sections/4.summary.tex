@@ -1,0 +1,108 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={小结},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{小结}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+本章介绍积分和微分的数值计算方法。我们知道，积分和微分是两种分析运算，它们都是用极限来定义的。数值积分和数值微分则归结为函数值的四则运算，从而使计算过程可以在计算机上完成。
+
+处理数值积分和数值微分的基本方法是逼近法：设法构造某个简单函数 \(P(x)\) 近似 \(f(x)\)，然后对 \(P(x)\) 求积（求导）得到 \(f(x)\) 的积分（导数）的近似值。本章基于插值原理推导了数值积分和数值微分的基本公式。
+
+插值求积公式分 Newton-Cotes 公式与 Gauss 公式两类。前者取等距节点，算法简单而容易编制程序。Gauss 公式的精度高，但节点没有规律。运用带权的 Gauss 公式，能把复杂的积分化简，还可以直接计算奇异积分。构造 Gauss 公式会碰到选取求积节点（所谓 Gauss 点）的困难。
+
+梯形法是众所周知的一种简单的求积方法。可以看到，将二分过程中的梯形值适当进行加权平均，会获得高精度的积分值。运用这种外推加速技术的 Romberg 算法，在电子计算机上有着广泛的应用。
+
+限于篇幅，本章略去了数值积分的一些重要内容，如奇异积分、振荡函数的积分等，这些内容在文献 {[}7{]} 中有较为详尽的论述。关于高维积分的数值计算，有兴趣的读者可参看文献 {[}8{]}。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 117 的校注}\label{ux539fux4e66-pdf-ux9875-117-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-117.md}{完整原页转录} · \href{../../source-images/pdf-117.jpeg}{原页图像}
+
+校注记录：CH04B-E005。
+
+\begin{quote}
+校注（agent 补充，CH04B-E005）：第 1 题（4）首项的分母在原扫描中明确印为``1''，故保留 \(h[f(0)+f(h)]/1\)。该处疑为原书排印错误：仅作排印一致性检查，当 \(f\equiv1\) 时，积分为 \(h\)，而所印右端为 \(2h\)，并且导数项为零；疑应将分母印为``2''。此处不求解题中参数或代数精度。\href{../assets/ch04b/review-p117-exercises.png}{习题原扫描局部}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH04B-E005}：原书 PDF 页 117
+\end{itemize}
+
+\end{document}

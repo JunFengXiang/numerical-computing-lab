@@ -1,0 +1,186 @@
+{
+  "lane": "ch03a",
+  "reviewer": "Codex agent ch02b (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 58,
+      "sha256": "a191e59e778f93a9f26d02a10ad153790668658b87760259e0a658e7be63f9d7",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图逐字逐式核对正文、Taylor 多项式、e^ε 余项、区间、图3.1全部标签；与当前转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 59,
+      "sha256": "3d3b6353a9e524819533c14e622b20be0928fce1a11675689258ba90cb709778",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐式核对3.1.2–3.1.5及Bernstein构造、m阶导数；ch03a-E01确认：原图确为sum l_k(x_k)=1，左端依基函数性质等于n+1，校注正确。"
+      ]
+    },
+    {
+      "pdf_page": 60,
+      "sha256": "2b818b8129ca260ee0d98955b30da8e769ee8a8bf4c22bc5ce365fd1a97d1eea",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字逐式核对3.1.6–3.1.10、范数三性质及章节标题；绝对值外括线已正确转录。",
+        "PDF60公式后标题空行由root导出预处理解决，源内容不需更改。"
+      ]
+    },
+    {
+      "pdf_page": 61,
+      "sha256": "d28b0bb949275b12b312703dc89032520e10a024ce1e80f95913928b9b03865c",
+      "source_visual_review": "completed",
+      "notes": [
+        "逐字逐式核对H_n、最小偏差定义、定理3.2、正负偏差点定义，原图与转录相符。"
+      ]
+    },
+    {
+      "pdf_page": 62,
+      "sha256": "1f13888a5fc302f02a41c58e8607af9480b634280bf37c1048c0e4efb9de655d",
+      "source_visual_review": "completed",
+      "notes": [
+        "定理3.3/3.4证明、交错点组与图3.2标签已核对；E02原印定理3.1确应指本页3.3，校注成立。",
+        "原图不恒等符号 Q(x)\\not\\equiv P(x) 原被转录为 neq；已由原作者修正。独立复读新稿，并核新 SHA-256 与主审回执一致。"
+      ]
+    },
+    {
+      "pdf_page": 63,
+      "sha256": "99b16fe0f1cb3070a602ed0eaf5d8dd0054d5b78918e709d5b991e06fde77eec",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对充分性续文、唯一性证明所有等式、Lagrange插值推论及最佳一次逼近标题；不恒等于0已正确转录。"
+      ]
+    },
+    {
+      "pdf_page": 64,
+      "sha256": "d6dad4e9e928a2b9689d4a9e48531c143da2d3d91c5d0eaa8a9cbc65732f334c",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对3.2.6–3.2.9、例3.1全部数值与图3.3标签；E03端点编号原书确不一致。",
+        "E04独立复算：sqrt(2)−(0.955+0.414)=0.0452135623730951>0.045，舍入系数与印出误差限不一致，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 65,
+      "sha256": "25d8066729b78bbccb45220dd994c7f7e0b5d1ed1990b215ea76c3c8a844e352",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对根式近似公式、3.3.1–3.3.3、权函数两条件、内积四公理及向量分量，原图与转录相符。"
+      ]
+    },
+    {
+      "pdf_page": 66,
+      "sha256": "1924c73061888690b8694d20120ee3a7dcdd32c804623a1143a27d54bad53054",
+      "source_visual_review": "completed",
+      "notes": [
+        "核对3.3.4–3.3.8、Cauchy-Schwarz推导、各平方范数与分母、三角不等式及权正交关系，原图与转录相符。"
+      ]
+    },
+    {
+      "pdf_page": 67,
+      "sha256": "9fd674419e6f32e46c1eff7ef1a97c659c603946060ca6c364222ccfbe77bbb4",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对三角函数正交积分、线性无关定义、Φ 的张成集合和 3.3.10 内积行列式的全部行列下标。",
+        "ch03a-E05：原图确印 Cramer 行列式；该内积矩阵的行列式通常称 Gram 行列式，原文保留及独立校注合适。"
+      ]
+    },
+    {
+      "pdf_page": 68,
+      "sha256": "b62cc4ed182790236b1ef82f685a3ef93a3d1aa98cfb8255d599c233df16a2fb",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对 3.3.11–3.3.15、最小二乘正规方程、平方范数展开和正交消项。",
+        "ch03a-E06：3.3.11 两处 inf 下标确印小写 varphi，前文定义空间为大写 Phi；校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 69,
+      "sha256": "425ff2c003e026fa4c8443703103cf3e99165ea065f2dc783dc1ccc0371fa124",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图逐项核对 Hilbert 矩阵 3.3.16、3.3.17 积分及例 3.2 的全部舍入数值。",
+        "ch03a-E07 独立复算：使用精确内积，对印出 S=0.934+0.426x 直接积分得平方误差 0.0007136323726914；使用舍入内积的简化式得 0.0026013333333332。原书 0.0026 与校注来源分析一致。"
+      ]
+    },
+    {
+      "pdf_page": 70,
+      "sha256": "c3a9272b79ac47e2854076ac7a1fcfce4fb7bb5835f3e1321d11cfd8e25b7a2b",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对正交化构造、首一多项式的五条性质、递推系数、根所在区间和 Legendre 章节跨页文字。",
+        "ch03a-E08：求和式末尾确为 k=1,2,...，而 k 已是求和哑指标，外部应为 n。ch03a-E09：原图确印 g_{n-1}=0，与一般 n 下 g_0=1 冲突；递推初值应为 g_{-1}=0。两条校注均成立。"
+      ]
+    },
+    {
+      "pdf_page": 71,
+      "sha256": "0ac6b4b40364445cf2bbb50088a28123cb833b349313e14f9d872c4191b72ac2",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对 Rodrigues 型定义、原印 Rodrigul 拼写、年份、首项系数、3.4.2–3.4.3 和分部积分证明；端点导数阶数、双阶乘及余弦积分均逐式核过。",
+        "ch03a-E10：展开式分母原图确为 2^2 n!，由 3.4.1 的导数定义及其后 a_n 可直接推得应为 2^n n!，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 72,
+      "sha256": "c003c10982d7f4cf69fabb5deb9533fce245017ce8e33b7cd7803002e636618d",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对奇偶性、3.4.5 递推推导中两组分数系数和 P_2 至 P_6 全部系数、首一 Legendre 多项式最小平方逼近陈述。",
+        "图 3.4 原图及独立图块均核对，P_0–P_3、x、y、O、端点标注及图题完整。"
+      ]
+    },
+    {
+      "pdf_page": 73,
+      "sha256": "22dfa35fa55166360f61f85db88bbf6562df99aadcad183b8055303f6acd32d7",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对 Legendre 最小平方证明的正交展开、全部根的性质、Chebyshev 定义及 3.4.6–3.4.7 递推。",
+        "表 3.1 的 T_0 至 T_8 共 9 行逐项核对次数、系数和符号；图 3.5 原图及独立图块的 T_0–T_3、坐标及正负 1 标签完整。"
+      ]
+    },
+    {
+      "pdf_page": 74,
+      "sha256": "43bc64daa3cfb2692475021f5875824424bd152ece06f17f8cafe8e569ed3315",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对 Chebyshev 首一化系数、定理 3.7 的交错点证明、例 3.3 的残差和二次逼近系数；3.4.8 的三种正交积分值及换元界限完整。",
+        "ch03a-E11：例 3.3 原图确印由定理 3.6 可知，实际调用本页定理 3.7 的最小偏差性质，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 75,
+      "sha256": "ec429fb8249be3e3897fdbb935c92863db653f54ead1c11f3ac127ebfeeacdbc",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开原图核对 Chebyshev 零点、3.4.9 求和上界与二项式系数、T_0=1/2 的局部约定、第二类正交多项式的权、3.4.10 及正交积分证明。",
+        "表 3.2 的 x^0 至 x^8 共 9 行逐项核对分母、系数及 T 下标；表格采用通常 T_0=1，转录校注已区分公式 3.4.9 的半权约定，无遗漏或未经标注的数学改写。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "ch03a-cross-01",
+      "pdf_page": 62,
+      "kind": "transcription_symbol",
+      "status": "resolved",
+      "original": "Q(x)\\not\\equiv P(x)",
+      "transcription": "Q(x)\\neq P(x)",
+      "action": "原作者已将 neq 修为 not-equiv；独立复核文字与当前 SHA-256，修正符合原图。",
+      "resolved_sha256": "1f13888a5fc302f02a41c58e8607af9480b634280bf37c1048c0e4efb9de655d"
+    }
+  ],
+  "unresolved": [],
+  "validation_notes": [
+    "PDF 58–75 共 18 页全部重新打开原图逐字逐式复核；五幅图另打开独立图块确认标签边界，两张表逐行逐项核过。",
+    "11 条 source_errata 均独立确认原印内容；数学、索引、定理引用与舍入误差校注有依据。所有原印内容均保留，校注与原文分开。",
+    "唯一新增转录问题为 PDF 62 的不恒等符号，已经原作者修正并复核。未修改 primary 或中央文件。",
+    "本回执是独立 AI 交叉复核，不是人工审定。",
+    "只读调用 audit_lane：18 个当前 Markdown 哈希、primary/cross 回执哈希、源图哈希、页范围、公式编号和结构全部通过，无未决项。"
+  ],
+  "primary_review_sha256": "62425da4edc2d3473308d9b78035d51e2d6a2865e83877a497bb18c1aae21b7c",
+  "updated_utc": "2026-09-12T10:32:57.309028+00:00"
+}

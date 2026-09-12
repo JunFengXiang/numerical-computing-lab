@@ -1,0 +1,20 @@
+{
+  "pdf_page": 4,
+  "source_image": "source-images/pdf-004.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "5a5d36f97704737a90f5377a18cd8537293f7722ebee3134c14b3938d61f6cc6",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 234,
+  "possibly_truncated": false,
+  "elapsed_seconds": 17.771,
+  "created_utc": "2026-09-12T09:46:15.174124+00:00",
+  "raw_text_sha256": "916f7dc0c3f4c9fa1e8694d3e661ff87003fd871d8af6b956c5f8db711c671c1",
+  "raw_text": "第5版前言\n\n本书于1981年由华中科技大学出版社出版，至今已有37年. 本书1988年获国家教委优秀教材二等奖，在国内为许多高校所选用.\n\n今天，数值计算已进入超级计算的新时代，科技革命迅猛发展的新形势迫切要求普及推广高性能计算方面的新知识，鉴于这一认识本书推出第5版.\n\n作为高效算法设计的关键技术，二分演化技术具有深邃的文化内涵，其设计思想新奇而玄妙，这方面内容可能尚未为人们所熟悉，笔者深信它处于算法设计学的前沿，因此选取快速算法设计、并行算法设计和加速算法设计方面的几个典型案例，汇集成讲座资料作为本书第10~13章，奉献给立志于从事高性能计算的读者参考.\n\n本书中的第10~13章(讲座资料)由王能超撰写，错误与不当之处请读者不吝指正.\n\n本书的再版，得到华中科技大学出版社的鼎力支持，在此表示衷心的感谢!\n\n作者\n2018年1月"
+}

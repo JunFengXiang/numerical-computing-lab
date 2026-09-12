@@ -1,0 +1,20 @@
+{
+  "pdf_page": 74,
+  "source_image": "source-images/pdf-074.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "eb7583f1d203c1c7dee6a2a70eaca2096c4c67c6fb288628743d78de8b9ff47a",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 914,
+  "possibly_truncated": false,
+  "elapsed_seconds": 27.11,
+  "created_utc": "2026-09-12T09:59:55.188851+00:00",
+  "raw_text_sha256": "ac8554499b0221ca7e8c02b4780b6dc4bbb8acbf3a560892fa63fb3a8a6345bc",
+  "raw_text": "由递推关系式(3.4.7)还可得到 $T_n(x)$ 的最高项系数是 $2^{n-1}(n \\geqslant 1)$.\n\n性质 2 $T_n(x)$ 对零的偏差最小. 它可写成如下定理.\n\n定理 3.7 在区间 $[-1,1]$ 上所有最高项系数为 1 的一切 $n$ 次多项式中, $\\omega_n(x) = \\frac{1}{2^{n-1}} T_n(x)$ 与零的偏差最小, 其偏差为 $\\frac{1}{2^{n-1}}$.\n\n证明 由于 $\\omega_n(x) = \\frac{1}{2^{n-1}} T_n(x) = x^n - P_{n-1}^*(x)$,\n\n$\\max_{-1 \\leqslant x \\leqslant 1} |\\omega_n(x)| = \\frac{1}{2^{n-1}} \\max_{-1 \\leqslant x \\leqslant 1} |T_n(x)| = \\frac{1}{2^{n-1}}$,\n\n且点 $x_k = \\cos \\frac{k}{n}\\pi (k=0,1,\\cdots,n)$ 是 $T_n(x)$ 的 Chebyshev 交错点组, 由定理 3.4 可知, 在区间 $[-1,1]$ 上, $x^n$ 在 $H_{n-1}$ 中最佳逼近多项式为 $P_{n-1}^*(x)$, 即 $\\omega_n(x)$ 是与零的偏差最小的多项式. 证毕.\n\n例 3.3 求 $f(x) = 2x^3 + x^2 + 2x - 1$ 在 $[-1,1]$ 上的最佳二次逼近多项式.\n\n解 由题意, 所求最佳逼近多项式 $P_{2}^*(x)$ 应满足\n\n$\\max_{-1 \\leqslant x \\leqslant 1} |f(x) - P_{2}^*(x)| = \\min$.\n\n由定理 3.6 可知, 当\n\n$f(x) - P_{2}^*(x) = \\frac{1}{2} T_3(x) = 2x^3 - \\frac{3}{2}x$\n\n时, 与零偏差最小, 故\n\n$P_{2}^*(x) = f(x) - \\frac{1}{2} T_3(x) = x^2 + \\frac{7}{2}x - 1$\n\n就是 $f(x)$ 在 $[-1,1]$ 上的最佳二次逼近多项式.\n\n性质 3 Chebyshev 多项式 $\\{T_k(x)\\}$ 在区间 $[-1,1]$ 上带权 $\\rho(x) = 1 / \\sqrt{1-x^2}$ 正交, 且\n\n$$\\int_{-1}^{1} \\frac{T_n(x)T_m(x)dx}{\\sqrt{1-x^2}} = \\begin{cases} 0, & n \\neq m, \\\\ \\frac{\\pi}{2}, & n = m \\neq 0, \\\\ \\pi, & n = m = 0. \\end{cases}$$\n\n事实上, 令 $x = \\cos \\theta$, 则 $\\mathrm{d}x = -\\sin \\theta \\mathrm{d}\\theta$, 于是\n\n$$\\int_{-1}^{1} \\frac{T_n(x)T_m(x)}{\\sqrt{1-x^2}} \\mathrm{d}x = \\int_{0}^{\\pi} \\cos n\\theta \\cos m\\theta \\mathrm{d}\\theta = \\begin{cases} 0, & n \\neq m, \\\\ \\frac{\\pi}{2}, & n = m \\neq 0, \\\\ \\pi, & n = m = 0. \\end{cases}$$\n\n性质 4 $T_{2k}(x)$ 只含 $x$ 的偶次幂, $T_{2k+1}(x)$ 只含 $x$ 的奇次幂.\n\n此性质由递推关系直接得到.\n\n• 61 •"
+}

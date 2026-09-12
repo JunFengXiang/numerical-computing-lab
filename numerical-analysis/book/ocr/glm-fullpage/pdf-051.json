@@ -1,0 +1,20 @@
+{
+  "pdf_page": 51,
+  "source_image": "source-images/pdf-051.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "ab12505ea4c0d241ab04daf9b3fb0fdc890c6e46eed5a73919ba13386e312279",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1387,
+  "possibly_truncated": false,
+  "elapsed_seconds": 45.165,
+  "created_utc": "2026-09-12T09:41:16.781063+00:00",
+  "raw_text_sha256": "41d095ed3110372f0ce4b5dbe86bf0d38b5cce604db1ff6e6bff27f8f0298cc9",
+  "raw_text": "及 $S''(x_j - 0) = \\frac{2}{h_{j-1}} m_{j-1} + \\frac{4}{h_{j-1}} m_j - \\frac{6}{h_{j-1}^2}(y_j - y_{j-1})$.\n\n由条件 $S''(x_j + 0) = S''(x_j - 0)$ ($j = 1, 2, \\dots, n-1$)，可得\n$$\\frac{1}{h_{j-1}} m_{j-1} + 2\\left(\\frac{1}{h_{j-1}} + \\frac{1}{h_j}\\right) m_j + \\frac{1}{h_j} m_{j+1}$$\n$$= 3\\left(\\frac{y_{j+1} - y_j}{h_j^2} + \\frac{y_j - y_{j-1}}{h_j^2}\\right) (j = 1, 2, \\dots, n-1),$$\n(2.8.8)\n\n用 $\\frac{1}{h_{j-1}} + \\frac{1}{h_j}$ 除全式，并注意 $y_j = f_j, \\frac{y_{j+1} - y_j}{h_j} = f[x_j, x_{j+1}]$，方程(2.8.8)可简化为\n$$\\lambda_j m_{j-1} + 2m_j + \\mu_j m_{j+1} = g_j \\quad (j = 1, 2, \\dots, n-1),$$\n(2.8.9)\n\n其中 $\\lambda_j = \\frac{h_j}{h_{j-1} + h_j}, \\mu_j = \\frac{h_{j-1}}{h_{j-1} + h_j} \\quad (j = 1, 2, \\dots, n-1),$ (2.8.10)\n$$g_j = 3(\\lambda_j f[x_{j-1}, x_j] + \\mu_j f[x_j, x_{j+1}]) \\quad (j = 1, 2, \\dots, n-1).$$\n(2.8.11)\n\n方程(2.8.9)是关于未知数 $m_0, m_1, \\dots, m_n$ 的 $n-1$ 个方程，若加上已知条件(2.8.3)：$m_0 = f'_0$ 则 $m_n = f'_n$，那么方程(2.8.9)为只含 $m_1, \\dots, m_{n-1}$ 的 $n-1$ 个方程，写成矩阵形式便是\n$$\\begin{bmatrix}\n2 & \\mu_1 & 0 & \\dots & \\dots & 0 \\\\\n\\lambda_2 & 2 & \\mu_2 & \\ddots & \\vdots & \\vdots \\\\\n0 & \\lambda_3 & 2 & \\mu_3 & \\ddots & \\vdots \\\\\n\\vdots & \\vdots & \\ddots & \\ddots & \\ddots & 0 \\\\\n0 & \\vdots & \\ddots & 0 & \\lambda_{n-1} & 2 \\\\\n0 & \\dots & \\dots & 0 & \\lambda_{n-1} & 2\n\\end{bmatrix} \\begin{bmatrix}\nm_1 \\\\\nm_2 \\\\\nm_3 \\\\\n\\vdots \\\\\nm_{n-2} \\\\\nm_{n-1}\n\\end{bmatrix} = \\begin{bmatrix}\ng_1 - \\lambda_1 f'_0 \\\\\ng_2 \\\\\ng_3 \\\\\n\\vdots \\\\\ng_{n-2} \\\\\ng_{n-1} - \\mu_{n-1} f'_n\n\\end{bmatrix}.$$\n(2.8.12)\n\n如果边界条件为式(2.8.4)，则\n$$\\begin{cases}\n2m_0 + m_1 = 3f[x_0, x_1] - \\frac{h_0}{2} f''_0 = g_0, \\\\\nm_{n-1} + 2m_n = 3f[x_{n-1}, x_n] + \\frac{h_{n-1}}{2} f''_n = g_n.\n\\end{cases}$$\n(2.8.13)\n\n如果边界条件为式(2.8.4)'，则\n$$\\begin{cases}\n2m_0 + m_1 = 3f[x_0, x_1] = g_0, \\\\\nm_{n-1} + 2m_n = 3f[x_{n-1}, x_n] = g_n.\n\\end{cases}$$\n(2.8.13)'\n\n于是，式(2.8.9)与式(2.8.13)或式(2.8.13)'合并后用矩阵形式表示为\n$$\\begin{bmatrix}\n2 & 1 & 0 & \\dots & \\dots & 0 \\\\\n\\lambda_1 & 2 & \\mu_1 & \\ddots & \\vdots & \\vdots \\\\\n0 & \\lambda_2 & 2 & \\mu_2 & \\ddots & \\vdots \\\\\n\\vdots & \\vdots & \\ddots & \\ddots & \\ddots & 0 \\\\\n\\vdots & \\vdots & \\ddots & 0 & \\lambda_{n-1} & 2 \\\\\n0 & \\dots & \\dots & 0 & 1 & 2\n\\end{bmatrix} \\begin{bmatrix}\nm_0 \\\\\nm_1 \\\\\nm_2 \\\\\n\\vdots \\\\\nm_{n-1} \\\\\nm_n\n\\end{bmatrix} = \\begin{bmatrix}\ng_0 \\\\\ng_1 \\\\\ng_2 \\\\\n\\vdots \\\\\ng_{n-1} \\\\\ng_n\n\\end{bmatrix}.$$\n(2.8.14)"
+}

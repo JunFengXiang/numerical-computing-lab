@@ -1,0 +1,44 @@
+{
+  "canonical_source": "verified/*.md",
+  "exporter": "pandoc",
+  "exports": [
+    {
+      "markdown": "verified/2.1-introduction.md",
+      "markdown_sha256": "2a4b0a5635db6e82fa702a6ca166cd613125866ae64139eee0e8c0d7f37056f1",
+      "latex": "verified/2.1-introduction.tex",
+      "latex_sha256": "88ab40da3814d20b9067288816a3c2373cbe29b4c38e9aa3cfb98fb8db597b46"
+    },
+    {
+      "markdown": "verified/2.2.1-existence-uniqueness.md",
+      "markdown_sha256": "556aede40168773ba21139e02450a428d61b31e0272df05e2ca6f26ffac36943",
+      "latex": "verified/2.2.1-existence-uniqueness.tex",
+      "latex_sha256": "4c8a82917114fa51cd482aa952028e49ef92613871d36c45a1a1ff2d323d15bd"
+    },
+    {
+      "markdown": "verified/2.2.2-linear-quadratic-interpolation.md",
+      "markdown_sha256": "3ac51234a2f5fd895fbba4ab562cb9716da4f7af1f3613dca818e9ba0e4b965a",
+      "latex": "verified/2.2.2-linear-quadratic-interpolation.tex",
+      "latex_sha256": "eb213353f71cdc390b77bcf85ce86e4e41ae88628c6631d3508e1c8989ea4e37"
+    },
+    {
+      "markdown": "verified/2.2.3-lagrange-polynomial.md",
+      "markdown_sha256": "11472dcd4ca9777fcce08de8483a8291e11054573382cc8fa688915377a5b66e",
+      "latex": "verified/2.2.3-lagrange-polynomial.tex",
+      "latex_sha256": "a3eef9e2e3c28f47c01a5738bb54736f09bfd58dd998795ff05eb1275d9d3509"
+    },
+    {
+      "markdown": "verified/2.2.4-interpolation-remainder.md",
+      "markdown_sha256": "27be2e1ab5040fef140ef35f33d34bfd27dca6820d1f48c6086a1d6ca7069ed1",
+      "latex": "verified/2.2.4-interpolation-remainder.tex",
+      "latex_sha256": "336e3cc7a5088c6b798dd6f4df5bdb5443cf09c7861e90456409d7a49134dffd"
+    },
+    {
+      "markdown": "verified/2.3-successive-linear-interpolation.md",
+      "markdown_sha256": "09cee8f5d5e147e8a2acb7a1da1a675ceb3ffe0e0329de16b7dee770ffcdb9ba",
+      "latex": "verified/2.3-successive-linear-interpolation.tex",
+      "latex_sha256": "ccfbd5317da86abc2e2682ea40917da30d7c11122f0b2e80083ae1595bca2b2e"
+    }
+  ],
+  "standalone_latex": "verified/textbook.tex",
+  "standalone_sha256": "23ffd104a8992e6dc38b0429b8e97eb977a8037bf851cc6760cd547aa24d06ed"
+}

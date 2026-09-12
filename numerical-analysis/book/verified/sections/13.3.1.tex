@@ -1,0 +1,118 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={开方算法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{开方算法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{13.3.1 开方算法}\label{ux5f00ux65b9ux7b97ux6cd5}
+
+四千多年以前，在亚洲西南部的古巴比伦地区（现伊拉克境内）就已经萌发出数学智慧的幼芽。古巴比伦数学取得了一系列重要成就，譬如制成了有关开方值的数表。古巴比伦人制造开方表的方法难以考证，不过可以想象其计算方法必定相当简单。
+
+现代电子计算机上又是怎样计算开方值的呢？
+
+相对于加减乘除四则运算来说，开方运算无疑是复杂的。人们自然希望将复杂的开方运算归结为四则运算的重复，为此需要设计某种算法。
+
+\href{../../source-images/pdf-312.jpeg}{原页图像}
+
+给定 \(a>0\)，求开方根 \(\sqrt{a}\) 的问题就是要解方程
+
+\[
+x^2-a=0.
+\tag{13.3.1}
+\]
+
+这是个非线性的二次方程，从初等数学的角度来看，它的求解有难度。该如何化难为易呢？
+
+设给定某个预报值 \(x_0\)，我们希望借助于某种简单方法确定校正量 \(\Delta x\)，使校正值 \(x_1=x_0+\Delta x\) 能够比较准确地满足所给方程（13.3.1），即有
+
+\[
+(x_0+\Delta x)^2\approx a.
+\]
+
+假设校正量 \(\Delta x\) 是个小量，为简化计算，舍弃上式中的高阶小量 \((\Delta x)^2\)，而令
+
+\[
+x_0^2+2x_0\Delta x=a.
+\]
+
+这是关于 \(\Delta x\) 的一次方程，据此定出 \(\Delta x\)，从而对校正值 \(x_1=x_0+\Delta x\) 有
+
+\[
+x_1=\frac{1}{2}\left(x_0+\frac{a}{x_0}\right).
+\]
+
+反复施行这种预报校正手续，即可导出开方公式
+
+\[
+x_{k+1}=\frac{1}{2}\left(x_k+\frac{a}{x_k}\right),\quad k=0,1,2,\cdots.
+\tag{13.3.2}
+\]
+
+从给定的某个初值 \(x_0>0\) 出发，利用上式反复迭代，即可获得满足精度要求的开方值 \(\sqrt{a}\)。
+
+\textbf{算法 13.2}（开方算法）　任给 \(x_0>0\)，对 \(k=0,1,2,\cdots\) 执行算式（13.3.2），直到偏差 \(|x_{k+1}-x_k|<\varepsilon\)（\(\varepsilon\) 为给定精度）为止，最终获得的近似值 \(x_k\) 即为所求。
+
+\end{document}

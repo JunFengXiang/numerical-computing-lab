@@ -1,0 +1,20 @@
+{
+  "pdf_page": 86,
+  "source_image": "source-images/pdf-086.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "5289b6ea76cef8d6fa9ba0e23edd363185c8e7ff0244c28cf73c0d0fc9ce15bc",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1103,
+  "possibly_truncated": false,
+  "elapsed_seconds": 41.603,
+  "created_utc": "2026-09-12T10:10:28.598926+00:00",
+  "raw_text_sha256": "ff1ac17e6f343846701c09657eccfa6636ca254122ba75eab7e53795a67047dc",
+  "raw_text": "就是三角插值多项式,系数仍由式(3.7.4)表示.\n\n更一般情形,假定 $f(x)$ 是以 $2\\pi$ 为周期的复函数,给定在 $N$ 个等分点 $x_j = \\frac{2\\pi}{N} j$ ($j=0,1,\\cdots,N-1$)上的值 $f_j = f\\left(\\frac{2\\pi}{N} j\\right)$,由于\n\n$$e^{i j x} = \\cos(j x) + i \\sin(j x) \\quad (j=0,1,\\cdots,N-1; i=\\sqrt{-1}),$$\n\n函数族 $\\{1, e^{i x}, \\cdots, e^{i (N-1) x}\\}$ 在区间 $[0,2\\pi]$ 上是正交的.将函数 $e^{i j x}$ 在等距点集 $x_k = \\frac{2\\pi}{N} k$ ($k=0,1,\\cdots,N-1$)上的值 $e^{i j x_k}$ 组成的向量记作\n\n$$\\varphi_j = (1, e^{i j \\frac{2\\pi}{N}}, \\cdots, e^{i j \\frac{2\\pi}{N} (N-1)})^T.$$\n\n当 $j=0,1,\\cdots,N-1$时,$N$个复向量 $\\varphi_0, \\varphi_1, \\cdots, \\varphi_{N-1}$具有下面所定义的正交性:\n\n$$(\\varphi_l, \\varphi_s) = \\sum_{k=0}^{N-1} e^{i l \\frac{2\\pi}{N} k} e^{-i s \\frac{2\\pi}{N} k} = \\sum_{k=0}^{N-1} e^{i (l-s) \\frac{2\\pi}{N} k} = \\begin{cases} 0, & l \\neq s, \\\\ N, & l=s. \\end{cases}$$\n\n(3.7.5)\n\n事实上,令 $r = e^{i (l-s) \\frac{2\\pi}{N}}$,若 $0 \\leqslant l,s \\leqslant N-1$,则有\n\n$$0 \\leqslant l \\leqslant N-1, \\quad -(N-1) \\leqslant -s \\leqslant 0,$$\n\n于是 $-(N-1) \\leqslant l-s \\leqslant N-1, \\quad -1 < -\\frac{N-1}{N} \\leqslant \\frac{l-s}{N} \\leqslant \\frac{N-1}{N} < 1.$\n\n若 $l-s \\neq 0$,则 $r \\neq 1$,从而 $r^N = e^{i (l-s) 2\\pi} = 1$,于是\n\n$$(\\varphi_l, \\varphi_s) = \\sum_{k=0}^{N-1} r^k = \\frac{1-r^N}{1-r} = 0.$$\n\n若 $l=s$,则 $r=1$,于是 $(\\varphi_s, \\varphi_s) = \\sum_{k=0}^{N-1} r^k = N$.这就证明了式(3.7.5)成立,即 $\\varphi_0, \\varphi_1, \\cdots, \\varphi_{N-1}$是正交的.\n\n因此,$f(x)$在 $N$个点 $\\left\\{x_j = \\frac{2\\pi}{N} j, j=0,1,\\cdots,N-1\\right\\}$上的最小二乘 Fourier 逼近为\n\n$$S(x) = \\sum_{k=0}^{n-1} C_k e^{i k x}, \\quad n \\leqslant N,$$\n\n(3.7.6)\n\n其中\n\n$$C_k = \\frac{1}{N} \\sum_{j=0}^{N-1} f_j e^{-i k j \\frac{2\\pi}{N}} \\quad (k=0,1,\\cdots,N-1).$$\n\n(3.7.7)\n\n在式(3.7.6)中,若 $n=N$,则 $S(x)$为 $f(x)$在点 $x_j (j=0,1,\\cdots,N-1)$上的插值函数,即 $S(x_j) = f(x_j)$,于是由式(3.7.6)得\n\n$$f_j = \\sum_{k=0}^{N-1} C_k e^{i k \\frac{2\\pi}{N} j} \\quad (j=0,1,\\cdots,N-1).$$\n\n(3.7.8)\n\n式(3.7.7)表示了由 $\\{f_j\\}$求 $\\{C_k\\}$的过程,称为 $f(x)$的离散 Fourier 变换,简称"
+}

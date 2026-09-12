@@ -1,0 +1,331 @@
+{
+  "lane": "ch02b",
+  "expected_pages": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57
+  ],
+  "checked_pages": [
+    {
+      "pdf_page": 43,
+      "path": "staging/ch02b/pages/pdf-043.md",
+      "sha256": "7bf2cfc815ee631326783f45af20b926d74e121769ca83bf6151e53524295d15",
+      "printed_page": 30,
+      "headings": [],
+      "formula_ids": [
+        "2.6.1",
+        "2.6.2",
+        "2.6.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 44,
+      "path": "staging/ch02b/pages/pdf-044.md",
+      "sha256": "c7973eea1611b80cbbfdcaa36cf7e64eb7c7cccfbfe2dcf0e1697f20acffb1c9",
+      "printed_page": 31,
+      "headings": [],
+      "formula_ids": [
+        "2.6.4",
+        "2.6.5",
+        "2.6.6",
+        "2.6.7",
+        "2.6.8",
+        "2.6.9",
+        "2.6.10"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 45,
+      "path": "staging/ch02b/pages/pdf-045.md",
+      "sha256": "43536f75b052bb6cad84bdbf086fa8150c42905352a054121fd03d9ad9fcb5ec",
+      "printed_page": 32,
+      "headings": [
+        {
+          "id": "2.7",
+          "title": "分段低次插值"
+        },
+        {
+          "id": "2.7.1",
+          "title": "多项式插值的问题"
+        }
+      ],
+      "formula_ids": [
+        "2.6.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 46,
+      "path": "staging/ch02b/pages/pdf-046.md",
+      "sha256": "7b65694b15d0d6c80f91dc39413ab89b942563de5ad53bf83fb948843524c088",
+      "printed_page": 33,
+      "headings": [
+        {
+          "id": "2.7.2",
+          "title": "分段线性插值"
+        }
+      ],
+      "formula_ids": [
+        "2.7.1",
+        "2.7.2",
+        "2.7.3"
+      ],
+      "figures": [
+        "2.5"
+      ],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 47,
+      "path": "staging/ch02b/pages/pdf-047.md",
+      "sha256": "e338afce7df4b085d354e2a0c5e5d3ab8f5e9d5fb4838c2173b36825297f190a",
+      "printed_page": 34,
+      "headings": [
+        {
+          "id": "2.7.3",
+          "title": "分段三次 Hermite 插值"
+        }
+      ],
+      "formula_ids": [
+        "2.7.4",
+        "2.7.5"
+      ],
+      "figures": [
+        "2.6"
+      ],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 48,
+      "path": "staging/ch02b/pages/pdf-048.md",
+      "sha256": "4cb11d375eab8aa9675953fb18a168b201e2635c841693770ef220b84f5faac7",
+      "printed_page": 35,
+      "headings": [],
+      "formula_ids": [
+        "2.7.6",
+        "2.7.7",
+        "2.7.8",
+        "2.7.9",
+        "2.7.10",
+        "2.7.11",
+        "2.7.12",
+        "2.7.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 49,
+      "path": "staging/ch02b/pages/pdf-049.md",
+      "sha256": "875a4dcb7893bdf8c96fd01b2c53034d7bbf04cc1bf0be7bc591b4112d738cff",
+      "printed_page": 36,
+      "headings": [
+        {
+          "id": "2.8",
+          "title": "三次样条插值"
+        },
+        {
+          "id": "2.8.1",
+          "title": "三次样条函数"
+        }
+      ],
+      "formula_ids": [
+        "2.8.1",
+        "2.8.2",
+        "2.8.3",
+        "2.8.4"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 50,
+      "path": "staging/ch02b/pages/pdf-050.md",
+      "sha256": "09dea860fb6ac4c946e1c4e6cf1d2a54eaf87ba6d971d46bd7e8d0765d75bc61",
+      "printed_page": 37,
+      "headings": [
+        {
+          "id": "2.8.2",
+          "title": "三转角方程"
+        }
+      ],
+      "formula_ids": [
+        "2.8.4'",
+        "2.8.5",
+        "2.8.6",
+        "2.8.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 51,
+      "path": "staging/ch02b/pages/pdf-051.md",
+      "sha256": "e866fc5dea3446f410cc73a56df723c2f649f2f30e406d892e9e768e632c6497",
+      "printed_page": 38,
+      "headings": [],
+      "formula_ids": [
+        "2.8.8",
+        "2.8.9",
+        "2.8.10",
+        "2.8.11",
+        "2.8.12",
+        "2.8.13",
+        "2.8.13'",
+        "2.8.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 52,
+      "path": "staging/ch02b/pages/pdf-052.md",
+      "sha256": "2adb335aeeaeb01d627a27d9eb0cd3ad9af948829f15e1dab3a415665d1692d8",
+      "printed_page": 39,
+      "headings": [
+        {
+          "id": "2.8.3",
+          "title": "三弯矩方程"
+        }
+      ],
+      "formula_ids": [
+        "2.8.15",
+        "2.8.16",
+        "2.8.17",
+        "2.8.18"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 53,
+      "path": "staging/ch02b/pages/pdf-053.md",
+      "sha256": "6260e58db0fc5c7bea15b865b33eb7cef8a21d9e11066905a50dd42459ecc483",
+      "printed_page": 40,
+      "headings": [
+        {
+          "id": "2.8.4",
+          "title": "计算步骤与例题"
+        }
+      ],
+      "formula_ids": [
+        "2.8.19",
+        "2.8.20"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 54,
+      "path": "staging/ch02b/pages/pdf-054.md",
+      "sha256": "3c7f1659e1b265535b57be41151f14af3407c4062a0a290b2d07de1279d0b0d5",
+      "printed_page": 41,
+      "headings": [
+        {
+          "id": "2.8.5",
+          "title": "三次样条插值的收敛性"
+        }
+      ],
+      "formula_ids": [
+        "2.8.21",
+        "2.8.22",
+        "2.8.23"
+      ],
+      "figures": [],
+      "tables": [
+        "2.8"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 55,
+      "path": "staging/ch02b/pages/pdf-055.md",
+      "sha256": "b59a0b79b592355ef0c501582e73666e0272c066f646f421c544cda8c651d635",
+      "printed_page": 42,
+      "headings": [
+        {
+          "id": "2.summary",
+          "title": "小结"
+        }
+      ],
+      "formula_ids": [
+        "2.8.24",
+        "2.8.25",
+        "2.8.26",
+        "2.8.27",
+        "2.8.28"
+      ],
+      "figures": [],
+      "tables": [],
+      "pass": true
+    },
+    {
+      "pdf_page": 56,
+      "path": "staging/ch02b/pages/pdf-056.md",
+      "sha256": "d038e84e4eb0de1c2af69402d562a5cc08e5777de0a05cc1fd05d5ccb92eda1c",
+      "printed_page": 43,
+      "headings": [
+        {
+          "id": "2.exercises",
+          "title": "习题"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "2.9"
+      ],
+      "pass": true
+    },
+    {
+      "pdf_page": 57,
+      "path": "staging/ch02b/pages/pdf-057.md",
+      "sha256": "068ceaf9fd8e43d7397669852b6fa1a6355e4e23d2ad75c571af7a8b3645976f",
+      "printed_page": 44,
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "2.10"
+      ],
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "structural_pass": true,
+  "primary_review_complete": true,
+  "cross_review_complete": false,
+  "missing_pages": [],
+  "primary_receipt_sha256": "ae6799a69fabdcc1ba6072403be8cd4cc66f1db4624c14e0bb16734e4fcba2af",
+  "source_errata_count": 13,
+  "cross_review_status": "in_progress"
+}

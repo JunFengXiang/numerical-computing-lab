@@ -1,0 +1,20 @@
+{
+  "pdf_page": 46,
+  "source_image": "source-images/pdf-046.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "61a1b03dc30c9dbe822e5034edc27f75f67cd3fa2d90713a14caeda5cf0b563d",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 933,
+  "possibly_truncated": false,
+  "elapsed_seconds": 26.722,
+  "created_utc": "2026-09-12T09:38:23.518971+00:00",
+  "raw_text_sha256": "38a1f2f049b5906dc8556e779b0ff661171c0532c9ad697e88f483b505626549",
+  "raw_text": "$L_n(x) = \\sum_{j=0}^{n} \\frac{1}{1+x_j^2} \\frac{\\omega_{n+1}(x)}{(x-x_j)\\omega_{n+1}'(x_j)}$\n\n当 $n \\to \\infty$ 时只在 $|x| \\leqslant 3.63$ 内收敛，而在这区间外是发散的.\n\n下面取 $n=10$，根据计算画出 $y=L_{10}(x)$\n及 $y=1/(1+x^2)$ 在 $[-5,5]$ 上的图形，如图2.5所示.\n\n从图2.5可看到，在 $x=\\pm 5$ 附近 $L_{10}(x)$\n与 $f(x)=1/(1+x^2)$ 偏离很远，例如，$L_{10}(4.8)$\n$=1.80438, f(4.8)=0.04160.$ 这说明用高次插值多项式 $L_n(x)$ 近似 $f(x)$ 效果并不好，因而\n通常不用高次插值，而用低次插值. 从该例看到，如果把 $y=1/(1+x^2)$ 在节点 $x=0, \\pm 1,$\n$\\pm 2, \\pm 3, \\pm 4, \\pm 5$ 处用折线连起来，显然比 $L_{10}(x)$ 逼近 $f(x)$ 好得多. 这正是下面要讨论的分段低次插值的出发点.\n\n2.7.2 分段线性插值\n\n所谓分段线性插值，就是将插值点用折线段连接起来逼近 $f(x).$ 设已知节点 $a$\n$=x_0 < x_1 < \\cdots < x_n = b$ 上的函数值 $f_0, f_1, \\cdots, f_n$，记 $h_k = x_{k+1} - x_k, h = \\max_k h_k.$ 称 $I_h(x)$ 为分段线性插值函数，如果满足：\n\n(1) 记 $I_h(x) \\in C[a,b]$;\n\n(2) $I_h(x_k) = f_k(k=0,1,\\cdots,n)$;\n\n(3) $I_h(x)$ 在每个区间 $[x_k,x_{k+1}]$ 上是线性函数，\n则由定义可知，$I_h(x)$ 在每个小区间 $[x_k,x_{k+1}]$ 上可表示为\n\n$$I_h(x) = \\frac{x-x_{k+1}}{x_k-x_{k+1}} f_k + \\frac{x-x_k}{x_{k+1}-x_k} f_{k+1} \\quad (x_k \\leqslant x \\leqslant x_{k+1}).$$\n\n若用插值基函数表示，则 $I_h(x)$ 在整个区间 $[a,b]$ 上可表示为\n\n$$I_h(x) = \\sum_{j=0}^{n} f_j l_j(x),$$\n\n其中基函数 $l_j(x)$ 满足条件 $l_j(x_k) = \\delta_{jk}(j,k=0,1,\\cdots,n)$，其形式是\n\n$$l_j(x) = \\begin{cases} \\frac{x-x_{j-1}}{x_j-x_{j-1}}, & x_{j-1} \\leqslant x \\leqslant x_j \\quad (j=0 \\text{ 略去}), \\\\ \\frac{x_j-x_{j+1}}{x_j-x_{j+1}}, & x_j \\leqslant x \\leqslant x_{j+1} \\quad (j=n \\text{ 略去}), \\\\ 0, & x \\in [a,b], x \\notin [x_{j-1},x_{j+1}]. \\end{cases}$$\n\n分段线性插值基函数 $l_j(x)$ 只在 $x_j$ 附近不为零，在其他地方均为零，这种性质称为局部非零性质，如图2.6所示. 当 $x \\in [x_k,x_{k+1}]$ 时，"
+}

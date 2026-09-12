@@ -1,0 +1,20 @@
+{
+  "pdf_page": 6,
+  "source_image": "source-images/pdf-006.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "d839429eafbd7a75d17491953183b592dcdc689bc06184c3fc084b091e4234dc",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 422,
+  "possibly_truncated": false,
+  "elapsed_seconds": 19.068,
+  "created_utc": "2026-09-12T09:26:40.856273+00:00",
+  "raw_text_sha256": "6238a9dfb4ac28c095efd1f6396410a8a4aa285045a5cfa24a529fb5e84b7a9b",
+  "raw_text": "目 录\n\n上篇 数值算法分析\n\n第1章 绪论 (1)\n1.1 数值分析研究的对象与特点 (1)\n1.2 误差来源与误差分析的重要性 (2)\n1.3 误差的基本概念 (4)\n1.3.1 误差与误差限 (4)\n1.3.2 相对误差与相对误差限 (5)\n1.3.3 有效数字 (6)\n1.3.4 数值运算的误差估计 (7)\n1.4 数值运算中误差分析的方法与原则 (9)\n1.4.1 要避免除数绝对值远远小于被除数绝对值的除法 (9)\n1.4.2 要避免两相近数相减 (10)\n1.4.3 要防止大数“吃掉”小数 (11)\n1.4.4 注意简化计算步骤，减少运算次数 (11)\n小结 (12)\n习题 (12)\n\n第2章 插值法 (14)\n2.1 引言 (14)\n2.2 Lagrange插值 (15)\n2.2.1 插值多项式的存在唯一性 (15)\n2.2.2 线性插值与抛物插值 (16)\n2.2.3 Lagrange插值多项式 (18)\n2.2.4 插值余项 (19)\n2.3 逐次线性插值法 (21)\n2.4 差商与 Newton插值公式 (23)\n2.4.1 差商及其性质 (23)\n2.4.2 Newton插值公式 (24)\n2.5 差分与等距节点插值公式 (26)\n2.5.1 差分及其性质 (26)\n2.5.2 等距节点插值公式 (28)\n2.6 Hermite插值 (29)\n\n·1·"
+}

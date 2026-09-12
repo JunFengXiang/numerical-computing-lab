@@ -1,0 +1,51 @@
+{
+  "scope": "ch09b merged PDF rendering regression",
+  "pdf_path": "textbook.pdf",
+  "pdf_sha256": "78e9bc52a78e11fda17e6ca4f6f6b8a4e859dc307f855eea6fa4a62a0bedae11",
+  "reviewer": "Codex agent ch13",
+  "human_review": false,
+  "rendered_pages_reviewed": [
+    478,
+    482,
+    485
+  ],
+  "status": "pass",
+  "issues": [],
+  "page_comparisons": [
+    {
+      "pdf_page": 478,
+      "lane": "ch09b",
+      "lane_pdf_page": 19,
+      "whole_page_visual_review": "completed",
+      "notes": [
+        "整页与分章稿对照完成，六步位移 QR 算法、Hessenberg 矩阵及底部分块方框均完整；底部矩阵直接从两份 PDF 放大复看。",
+        "提供的 918×1188 像素整页图在排除顶部 50 像素页眉后，无逐像素差异。"
+      ]
+    },
+    {
+      "pdf_page": 482,
+      "lane": "ch09b",
+      "lane_pdf_page": 23,
+      "whole_page_visual_review": "completed",
+      "notes": [
+        "整页与分章稿对照完成；逐像素差异局限于页首分块矩阵区域，已分别从两份 PDF 放大复看。",
+        "分块线、矩阵括号、乘号、省略号、B、O、lambda_n 与 n×n 维数标记全部可读，无裁切或相互覆盖。",
+        "下方例 9.6 的数值矩阵已额外放大检查，数字、负号和下标完整。"
+      ]
+    },
+    {
+      "pdf_page": 485,
+      "lane": "ch09b",
+      "lane_pdf_page": 26,
+      "whole_page_visual_review": "completed",
+      "notes": [
+        "整页与分章稿对照完成，习题 3–10 全部目视，矩阵、转置、分式和上下标已放大检查，无碰撞或裁切。",
+        "提供的 918×1188 像素整页图在排除顶部 50 像素页眉后，无逐像素差异。"
+      ]
+    }
+  ],
+  "notes": [
+    "仅覆盖上述 3 个最终合并 PDF 排版页的渲染回归；不替代整本书审查或原书数学正确性审查。",
+    "未修改任何数学正文、源 TeX 或 PDF。"
+  ]
+}

@@ -1,0 +1,128 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Newton 下山法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Newton 下山法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{6.3.5 Newton 下山法}\label{newton-ux4e0bux5c71ux6cd5}
+
+前面已经讨论过 Newton 法的局部收敛性。一般来说，Newton 法的收敛性依赖
+
+\href{../../source-images/pdf-167.jpeg}{原页}
+
+于初值 \(x_0\) 的选取，如果 \(x_0\) 偏离所求的根 \(x^*\) 比较远，则 Newton 法可能发散。
+
+例如，用 Newton 法求方程
+
+\[
+x^3-x-1=0,
+\tag{6.3.9}
+\]
+
+在 \(x=1.5\) 附近的一个根 \(x^*\)。设取迭代初值 \(x_0=1.5\)，用 Newton 公式
+
+\[
+x_{k+1}=x_k-\frac{x_k^3-x_k-1}{3x_k^2-1}
+\tag{6.3.10}
+\]
+
+计算，得
+
+\[
+x_1=1.347\,83,\quad x_2=1.325\,20,\quad x_3=1.324\,72.
+\]
+
+迭代三次得到的结果 \(x_3\) 有六位有效数字。
+
+但是，如果改用 \(x_0=0.6\) 作为迭代初值，则依 Newton 公式（6.3.10）迭代一次得
+
+\[
+x_1=17.9.
+\]
+
+这个结果反而比 \(x_0=0.6\) 更偏离了所求的根 \(x^*=1.324\,72\)。
+
+为了防止迭代发散，对迭代过程再附加一项要求，即具有单调性
+
+\[
+|f(x_{k+1})|<|f(x_k)|.
+\tag{6.3.11}
+\]
+
+满足这项要求的算法称为下山法。
+
+将 Newton 法与下山法结合起来使用，即可在下山法保证函数值稳定下降的前提下，用 Newton 法加快收敛速度。为此，将 Newton 法的计算结果 \(\bar{x}_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}\) 与前一步的近似值 \(x_k\) 适当加权平均作为新的改进值，即
+
+\[
+x_{k+1}=\lambda\bar{x}_{k+1}+(1-\lambda)x_k,
+\tag{6.3.12}
+\]
+
+其中 \(\lambda\ (0<\lambda\leqslant1)\) 称为下山因子。在希望挑选下山因子时，希望使单调性条件（6.3.11）成立。
+
+下山因子的选择是个逐步探索的过程。设从 \(\lambda=1\) 开始反复将 \(\lambda\) 减半进行试算，如果能定出值 \(\lambda\) 使单调性条件（6.3.11）成立，则称``下山成功''。与此相反，如果在上述过程中找不到使条件（6.3.11）成立的下山因子 \(\lambda\)，则称``下山失败''，这时需另选初值 \(x_0\) 重算。
+
+\end{document}

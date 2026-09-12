@@ -1,0 +1,20 @@
+{
+  "pdf_page": 5,
+  "source_image": "source-images/pdf-005.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "8a6d6a1ff03753a201a772ff8fa0c4d1f93e2389058b07c04af413cdf1cfbdd7",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 337,
+  "possibly_truncated": false,
+  "elapsed_seconds": 18.414,
+  "created_utc": "2026-09-12T09:46:33.593971+00:00",
+  "raw_text_sha256": "92b4e09762c33f0c34eb79feb6b131c8a8996e3dab1bce0b22b2b5ba94f5dc96",
+  "raw_text": "第2版前言\n\n1980年7月在大连召开的工科院校“应用数学专业教学学术会议”，根据教育部直属工科院校“应用数学专业教学计划”制定了“数值分析”课大纲，并决定由清华大学、华中工学院、浙江大学合编试用教材。本书就是根据这次会议的决定编写的。全书共分9章，第1～3章由李庆扬编写，第4～6章由王能超编写，第7～9章由易大义编写。教材初稿于1980年12月投交华中工学院出版社。\n\n1981年元月在杭州召开的工科院校计算数学第一次教材审稿会，对本书初稿进行了审查，1982年元月在上海交通大学召开的第二次计算数学教材审稿会，又对本书第1版提出了修改意见。会议考虑到理工科院校各专业普遍开设“数值分析”课的情况，重新修订了大纲（72学时）。本书第2版就是根据新大纲的要求修改的，它保持了第1版的主要内容及特点，但选材更注意基本要求，减少了部分内容，增加了部分习题答案。本书可作为理工科院校应用数学、力学、物理、计算机软件等专业大学生及其他专业研究生“数值分析”（或“计算方法”）课的教材，也可供学习“计算方法”的科技工作者参考。\n\n我们对参加两次审稿会的同志表示衷心感谢，他们以认真负责的态度对本书提出了许多宝贵意见，对提高教材质量起了很大作用。\n\n编者\n1982年7月"
+}

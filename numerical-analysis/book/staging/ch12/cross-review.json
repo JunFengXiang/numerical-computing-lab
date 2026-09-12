@@ -1,0 +1,157 @@
+{
+  "lane": "ch12",
+  "reviewer": "Codex agent ch11 (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 294,
+      "sha256": "3257dfb15d3b5412cf19cc6bea3886e50b4081fb93d71089206272b43e8748a4",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开全页核对；章节星号、两个分数、2的指数和π原印末段79223均与MD一致。CH12-E001语句与CH12-E002数字疑误原样保留。"
+      ]
+    },
+    {
+      "pdf_page": 295,
+      "sha256": "b034fc76c03e173177771e4fb46bd84741bff573a1f1536c63a8749338fa3a10",
+      "source_visual_review": "completed",
+      "notes": [
+        "重开全页核对；两处π取值界、6·2^(n-1)、24576边形及引文/跨页末句与MD一致。"
+      ]
+    },
+    {
+      "pdf_page": 296,
+      "sha256": "3d8415d7ae4671d3f390bcab9c7e0d065514779129323a8bf1eeca3dfa0e095b",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页逐段核对一致；S_2n双侧不等式、半径10寸、强近似值和所有强调文字齐全。"
+      ]
+    },
+    {
+      "pdf_page": 297,
+      "sha256": "00f092b4e576562153baaf8310526154867e7348bd4fafd83800e2438c4b20ed",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页核对一致；带分数313又584/625、314又64/625、314又4/25及ω=36/105和式12.2.2逐项相符。"
+      ]
+    },
+    {
+      "pdf_page": 298,
+      "sha256": "d0dd2aa2723f0dca1d237fd5c01e75098f115f153252628f67d4c60dbbec51cf",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；0<ω<1、Δ_n定义、双侧挤压公式、一正一负权重全部核对。"
+      ]
+    },
+    {
+      "pdf_page": 299,
+      "sha256": "9a1476c566d39d043418f7960bbbc33b8ef85bdd252d5f6be7a1cf5b7dce627f",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；表12.1的5行n/S_n/Δ_n/δ_n及空格逐格核对，全部带分数与原图相符。"
+      ]
+    },
+    {
+      "pdf_page": 300,
+      "sha256": "de36924250a0e149bca623681c33919dc7f7c550b9baec22ad7b6bf6fb670a47",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；大小写N/n、级数相消范围、式12.3.2等号及相邻残差比近似号都按原图保留。"
+      ]
+    },
+    {
+      "pdf_page": 301,
+      "sha256": "c1bfd118330044e5c26e0feff477779fa96530fb3c6473cbc36873fba9d60b08",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；表12.2的9行、17个近似值与每个精度尖括注逐格核对；尺度变换校注与前表事实相符。"
+      ]
+    },
+    {
+      "pdf_page": 302,
+      "sha256": "7a07db36c50dc3793a82d9f2ae6c4811d8c1f0985a20529236c1b16b14bedb14",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；π本页末段79323，与PDF294原印差异明确；6×2^27=805306368、边长原词与周长公式相符于校注说明。"
+      ]
+    },
+    {
+      "pdf_page": 303,
+      "sha256": "ea5de8f35b84a540faf0a438766f3c97c11fed315e9d85769dc0b72dd8161030",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页表12.3逐格读核：28个L_n长数、26个δ_n长数、28个精度标记及末两空格全部与MD相同；上下半表另放大再核。"
+      ]
+    },
+    {
+      "pdf_page": 304,
+      "sha256": "75e6697b88aab831b763697caafb6be7de3873c41da7fde22289e4680a6c00da",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；表12.4左右两栏的13个长数和精度标记逐格核对；Lhat_n原式确需L_2n，已有24576/49152数据需求校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 305,
+      "sha256": "56bf37f75cd85136a8403288ac1ccdae8645eff0b84aa67f9adfe7e583230c07",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；Δ_n、δ_n、δ>1条件、式12.4.1及12.4.2两行中分子/分母/正负号和所有上下标相符。"
+      ]
+    },
+    {
+      "pdf_page": 306,
+      "sha256": "3b2a483d5d08a7a62b319b6c7eaa10710f26563e42f3c8772ae71c22a04bc948",
+      "source_visual_review": "completed",
+      "notes": [
+        "全页一致；Φ、Φ′、ξ_1与ξ_2、两处误差比及δ/(δ-1)逐项核对；额外重开PDF101核实4.3确为Romberg算法，支持CH12-E005；末段说明性限定完整。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": [],
+  "source_errata_review": [
+    {
+      "id": "CH12-E001",
+      "status": "confirmed_source_reading_annotation_acceptable",
+      "note": "PDF294原文确印“作为正多边形的周长获得圆周率的近似值”，校注保留疑误措辞而未猜改。"
+    },
+    {
+      "id": "CH12-E002",
+      "status": "confirmed",
+      "note": "PDF294与302的π尾段分别79223及79323；100位π计算为3.141592653589793238...，前者排印误差判断成立。"
+    },
+    {
+      "id": "CH12-E003",
+      "status": "confirmed",
+      "note": "PDF302确印边长；直径1时n sin(π/n)为周长，单边长为sin(π/n)。"
+    },
+    {
+      "id": "CH12-E004",
+      "status": "confirmed",
+      "note": "PDF304原式Lhat_n=L_2n+(L_2n-L_n)/3；Lhat_24576需要L_49152；表值独立高精度检查也对应此下标。"
+    },
+    {
+      "id": "CH12-E005",
+      "status": "confirmed",
+      "note": "PDF306确印第4章4.3节；本次另重开PDF101，标题为4.3 Romberg算法。"
+    }
+  ],
+  "numeric_supplement": {
+    "precision_decimal_digits": 100,
+    "table12_3_L_n_rows": 28,
+    "table12_3_delta_n_values": 26,
+    "table12_4_Lhat_n_rows": 13,
+    "total_checked_numeric_values": 67,
+    "max_error_in_last_printed_unit": "0.966783093031636870721716032274008513339509933326085372522666084347431214174169587513611009601064195",
+    "criterion": "Each printed decimal differs from independent n*sin(pi/n), derived delta ratio, or extrapolated value by at most one unit of its last printed decimal place. This supplements full visual reading; it does not replace it."
+  },
+  "validation_notes": [
+    "13张源图全部重新逐页打开并完整核对；补充放大了古文字形、2张长数值表及重差/导数公式。",
+    "4张表都已逐格核对：表12.1共5行，表12.2共9行，表12.3共28行，表12.4共13条双栏数据；41条长结果数及其δ列全部保留。",
+    "文字、带分数、π长位数、7个编号公式、章节星号、跨页续句、章末说明性限定均与原图一致。",
+    "全部13个MD哈希同时匹配当前文件与primary review.json；所有原图哈希匹配primary回执。",
+    "本次只写cross-review.json，未修改任何primary文件。"
+  ]
+}

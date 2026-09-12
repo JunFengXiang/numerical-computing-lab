@@ -1,0 +1,92 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={一则寓言故事},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{一则寓言故事}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{11.1.1　一则寓言故事}\label{ux4e00ux5219ux5bd3ux8a00ux6545ux4e8b}
+
+20 世纪 80 年代初国产银河巨型机问世，国内掀起一股并行算法热。究竟什么是并行计算呢？这里先讲一个生动的寓言故事。
+
+相传很久很久以前，有一个年轻的国王名叫川行，是个数学天才。川行爱上了邻国聪颖美丽且爱好数学的公主邱比郑南。
+
+川行差人前往邻国求婚。公主答应了这桩婚事，但提出了一项先决条件，她要亲自考核一下川行的数学才能。公主的考题是，针对一个 15 位数求出它的真因子。
+
+接到试题之后，川行立即忙碌起来，一个数接一个数地试算。川行有数学才能，算得很快，然而由于 15 位数的真因子可能是个 8 位数，找出全部真因子要花费上亿次
+
+\href{../../source-images/pdf-277.jpeg}{原页图像}
+
+整数除法，总的计算量大得惊人。
+
+川行感到很为难。这是一道``大数分解''的数学难题，如何才能尽快地找出它的答案呢？
+
+川行有个足智多谋的宰相名叫孔幻士。孔幻士提出了一个计谋：将全国老百姓按军、师、团、营、连、排、班、兵 8 个等级编号，每 10 个兵组成 1 班，10 个班为 1 排，10 个排为 1 连\ldots\ldots10 个师为 1 军，10 个军全归川行统帅。这样，在编的每个老百姓都有一个 8 位十进制的编号。完成这种编制以后，通知全国老百姓用自己的编号去除公主给出的 15 位数，能除尽的立即上报，给予重奖。这样很快找出了所有的真因子，而川行则依靠全国老百姓的帮助赢得了公主的爱情。
+
+这则寓言浅显易懂，但意味深长。公主``邱比郑南''是``求比证难''的谐音。大数分解问题的可解性不言而喻，但具体求解却很困难。国王``川行''是``串行''的谐音。串行计算的效率很低，往往不能承担大规模的计算工程。宰相``孔幻士''则是``空换时''的谐音，其含义是，并行计算的设计思想是用扩大空间、增加处理机台数为代价来换取计算时间的节省。``空换时''是并行计算的基本策略。
+
+这则故事所涉及的大数分解问题有重大的学术价值，求解这类问题的计算量随着``大数''的增大而急剧增长。譬如，计算一个 155 位数的真因子，如果用串行算法进行计算，即使用每秒亿次的巨型机去承担，也得要连续工作上万年。当然这是没有实际意义的。1990 年 6 月 20 日美国报道了一则消息：贝尔实验室用 1 000 台处理机并行计算，仅仅花费了几个月的时间，就成功地找出一个 155 位数的 3 个真因子，它们分别是 7 位数、49 位数和 99 位数。这是科学计算的一项重大突破。当年我国《科技日报》评价这项成就为``1990 年世界十大科技成就之一''。
+
+\end{document}

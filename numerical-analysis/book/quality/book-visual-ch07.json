@@ -1,0 +1,250 @@
+{
+  "pdf": "textbook.pdf",
+  "pdf_sha256": "78e9bc52a78e11fda17e6ca4f6f6b8a4e859dc307f855eea6fa4a62a0bedae11",
+  "reviewer": "Codex agent ch02b",
+  "human_review": false,
+  "scope": [
+    "ch07a",
+    "ch07b"
+  ],
+  "rendered_pages_reviewed": [
+    325,
+    326,
+    327,
+    335,
+    337,
+    338,
+    339,
+    340,
+    343,
+    346,
+    347,
+    348,
+    349,
+    387,
+    389,
+    393
+  ],
+  "status": "pass",
+  "pages": [
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 3,
+      "full_pdf_page": 325,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：方程组、A/x/b矩阵及式7.2.1–7.2.6完整；所给两张PNG除页码外一致。"
+      ],
+      "full_render_sha256": "df2f8587d5d5d7445eb04fcaf33abe0a1d2877dc3a0b399f4b96e7c8cab18177",
+      "lane_render_sha256": "ef5228b4e7ab1b831f11b6ee71dfa31c7662a24e1ceaa2b089e86ed3d602e939",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 4,
+      "full_pdf_page": 326,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：三步增广矩阵所有数字、负号、竖分隔线、行变换箭头及脚注完整；竖线像素/间距变化未造成碰撞。",
+        "另直接从最终PDF和lane PDF分别三倍放大同一区域成对复核，数字/表线/上下标边界正常。"
+      ],
+      "full_render_sha256": "15d390193ee9bd5ab860346e8b5a3c2f4b821a62d9916bb64b48a0f231568f9e",
+      "lane_render_sha256": "8efa5cbe0adbbc1b4a739e39933eeafa7d3d441c380f1405bb6b67c441aaaf83",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 5,
+      "full_pdf_page": 327,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：消元矩阵7.2.7、A^(k)分块和7.2.9上下标完整；所给PNG除页码外一致。"
+      ],
+      "full_render_sha256": "a6606181a1ae3cb25fee00194e23e79a518e18028f6c3efb085978da1ae7c285",
+      "lane_render_sha256": "e4f8e509c7c9079f2216b032058bb0c8204d27ae958ffdd0e54856e0dff677f3",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 13,
+      "full_pdf_page": 335,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：LU数值矩阵与表7.1全部行列、分式合计行和计算量长式完整；表线细微变化没有覆盖字符。",
+        "另直接从最终PDF和lane PDF分别三倍放大同一区域成对复核，数字/表线/上下标边界正常。"
+      ],
+      "full_render_sha256": "d8c5f81fd6d187dcbf8c7d252d8d6e1f7dd45c91c56064479e44dabd63f461be",
+      "lane_render_sha256": "3fedc3ceccc6836e0e9b2cc5bda95394c01c24f9a2d045c47905415571287392",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 15,
+      "full_pdf_page": 337,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：例7.3三组数值增广矩阵中所有小数、负号、右端项与消元箭头清楚，分隔竖线变化没有触及条目。"
+      ],
+      "full_render_sha256": "39c3de44d931d7ae1f4c280dd04e8ad2b872d384a666ac0e2435d12a653daa71",
+      "lane_render_sha256": "19e43d56c03f637c6d055b5c909d1132240f4a4e18a5b3786b77eb24c1cbe6b8",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 16,
+      "full_pdf_page": 338,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：行交换箭头r1↔r3、3×4增广矩阵全部数字和乘数完整，无碰撞。"
+      ],
+      "full_render_sha256": "1df7475ec29abbe0d2f67be2c5b109ca38776b9229a9ba54e8efa01c788c586d",
+      "lane_render_sha256": "179fb04aa120f88c0a68930fb407976a3bc274e46ead92aa20cf90c3b4c23945",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 17,
+      "full_pdf_page": 339,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：两步数值增广矩阵和完全主元素B矩阵的i1/j1下标、省略号、右端列及竖线完整，未发生覆盖。"
+      ],
+      "full_render_sha256": "a80d6648f996c5e0d3ea27cd6c204d5bfa0a065d7c9c36a15d7042f667bbe2b0",
+      "lane_render_sha256": "c8c26b8b771b7976178479b84fb225bf5ba2189bd756ca258fa5f8df46da711e",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 18,
+      "full_pdf_page": 340,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：方括号分块矩阵A^(k),b^(k)的对角项、末行项、空位、省略号与竖分隔线完整。"
+      ],
+      "full_render_sha256": "4083909dd49f1d6251a2cd576ba44cc59a2cdbdb548b7ff1b5635d20b3eaafb2",
+      "lane_render_sha256": "63e93ea85a9fecf62d7718fe9b00d859f9206427afa6b8d084a31bfc58d2fb86",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 21,
+      "full_pdf_page": 343,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：算法2首个增广矩阵的多层上下标与竖线留有间距，算法各步及底部回代长式未裁切。",
+        "另直接从最终PDF和lane PDF分别三倍放大同一区域成对复核，数字/表线/上下标边界正常。"
+      ],
+      "full_render_sha256": "296f991b736702b1d31f83f7a974c75ed8e2fc6e543f278da9ca944cd4b21fe4",
+      "lane_render_sha256": "d461c8ed83120a705f5ec23e437db983c8d55cab7b7f7987ddebfa9615ad14ee",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 24,
+      "full_pdf_page": 346,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：Gauss-Jordan分块矩阵中单位对角、k−1行下标与右端列清楚，延伸竖线未遮挡符号。"
+      ],
+      "full_render_sha256": "d29f80d726749e6d937aeb49732f6358eb5e5a5323b32958fab35d9575b1a270",
+      "lane_render_sha256": "7f71c650289bd1c7708171bb43d719fe3815b6e0169d19d53bc03100b7f5e52e",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 25,
+      "full_pdf_page": 347,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：单位矩阵与带帽右端列均完整，竖分隔线与帽号/下标保持分离；算法及例7.4无裁切。"
+      ],
+      "full_render_sha256": "47dfb24f468232178242755110841e50de9b1d5bd468d89d7418ef6ebeb7e42a",
+      "lane_render_sha256": "493e6fdc8b41809b5bee9341ee29fff0b809192eb2d90d59c13dfdfd9ce3d45a",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 26,
+      "full_pdf_page": 348,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：6列增广矩阵、方框主元素3、第一次消元分数与列向量说明完整；分块线没有吞掉正负号。"
+      ],
+      "full_render_sha256": "92c7eb715047995aa5360d7887a782013048d60bc92fc9ff28272c94b930eed6",
+      "lane_render_sha256": "611160ae336384ff19841ddd705d15128773aea2a4fee6fdbfd81f9b5583ae16",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07a",
+      "lane_pdf_page": 27,
+      "full_pdf_page": 349,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：第二/三次消元矩阵、方框1/2、分数正负号及逆矩阵分块线完整，算法3无版面回归。"
+      ],
+      "full_render_sha256": "1d4bc814061a923273e1b1c6ee8d938f488a8988ac3a77e5c44144348277a3a5",
+      "lane_render_sha256": "9b05595c40f36ae23add8c360bd62e6cd5ff19018fb7a7f098a02d754e06523b",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07b",
+      "lane_pdf_page": 28,
+      "full_pdf_page": 387,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：例7.10的10^4与10^−4矩阵、分式逆矩阵、最下方增广矩阵未裁切或碰撞，新增全书页眉未侵入正文。"
+      ],
+      "full_render_sha256": "3fb337d937d27a13d116267246246167a6b26ed61d35cac8a45271a3005bdf21",
+      "lane_render_sha256": "e2f4458245f6a71055c3b9a5af4ba90f5f2c4acc65440d234ded3ffd20761a7e",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07b",
+      "lane_pdf_page": 30,
+      "full_pdf_page": 389,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：页首两步增广矩阵、10^−4上标与竖线无碰撞，7.6.11–7.6.13误差界及正文完整。"
+      ],
+      "full_render_sha256": "e8a19e2c74424303c6e93d1d4edf746b20fd9dd4791d06d6c56384cbbe7cec68",
+      "lane_render_sha256": "1f98feffd2c2e09bfcccc4ff5742d90e1d5c7b847a023b4acc862b9bb9323110",
+      "render_pair_matches_current_pdfs": true
+    },
+    {
+      "lane": "ch07b",
+      "lane_pdf_page": 34,
+      "full_pdf_page": 393,
+      "status": "pass",
+      "issues": [],
+      "notes": [
+        "成对目视：习题1–4的长方程组、分块矩阵、消元和求和公式完整；所给两PNG正文一致，仅页眉/页码改变。"
+      ],
+      "full_render_sha256": "5e5d022fb784ff1f54bf9f63d4d150305ed5201fea1576ee7085073198f83fb6",
+      "lane_render_sha256": "29648e3810e6fa2e1be51d695c86906106916e4cc83439757d4db09e65d4a1b4",
+      "render_pair_matches_current_pdfs": true
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "按quality/book-latex.json列出的ch07a/ch07b共16个changed_content_pages逐张成对比较最终全书和lane渲染，16页均实际目视。",
+    "全书326、335、343页另从两份PDF的同一区域以三倍分辨率成对放大，核对增广矩阵数字/负号/分隔竖线、表7.1分式合计行及多层上下标。",
+    "全部32张比较PNG与对应当前PDF按1.5倍分辨率即时重渲染的像素逐张一致，回执绑定已实际核对的当前PDF，而非旧图。",
+    "未发现矩阵条目或符号缺失、裁切、碰撞或Markdown泄露。325、327、393页的所供PNG正文一致，页眉/页码变化仍已逐页确认。",
+    "本轮仅检查最终合并的局部排版回归；未改源码、未重编译。"
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "lane": "ch05a",
+  "reviewer": "Codex agent ch05a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 119,
+      "printed_page": 106,
+      "path": "staging/ch05a/pages/pdf-119.md",
+      "sha256": "a4007f23b7ec58e2737962caf18ed4c520294833eabb9894a4cb505d05e024ed",
+      "source_image_sha256": "5e2aee24ca1a25d6caaa11e3e15916549bda9a17edca27ba5001ce411c1abe91",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5",
+          "title": "常微分方程数值解法"
+        },
+        {
+          "id": "5.1",
+          "title": "引言"
+        },
+        {
+          "id": "5.2",
+          "title": "Euler 方法"
+        },
+        {
+          "id": "5.2.1",
+          "title": "Euler 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.1.1",
+        "5.1.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；式 (5.1.1)、(5.1.2) 原版共用左大括号，按协议分为独立编号公式。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 120,
+      "printed_page": 107,
+      "path": "staging/ch05a/pages/pdf-120.md",
+      "sha256": "01f2aa0b2fdd7d5f6f59861e5f87613faff6fa4b5c3ca873708dd0201c18ee4d",
+      "source_image_sha256": "dcbaee1dfff1e0cfdbb13e6bf60b6c329f008b19b2513398d4acad5282782e4b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.2.1",
+        "5.2.2"
+      ],
+      "figures": [
+        "5.1",
+        "5.2"
+      ],
+      "tables": [
+        "5.1"
+      ],
+      "notes": [
+        "原页已打开核对；表 5.1 全部 10 行数值逐项对照；图 5.1、5.2 保存原图裁切。原页开头两处印为“极点”，放大核实后保留。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 121,
+      "printed_page": 108,
+      "path": "staging/ch05a/pages/pdf-121.md",
+      "sha256": "60ccd9cf819cdc7cdd13117b60509b8730fcb7cb9e42292f98be93870e0b20f7",
+      "source_image_sha256": "f002947d3f9175c8650265d8ab4d616bc7fa29789ed3ae1af9d93309122a31cd",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.2.2",
+          "title": "后退的 Euler 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.2.3",
+        "5.2.4",
+        "5.2.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；局部截断误差、向后差商及迭代上标 (0)、(1) 已二次对照。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 122,
+      "printed_page": 109,
+      "path": "staging/ch05a/pages/pdf-122.md",
+      "sha256": "16e0976ff845990c4a6cb09470cb8c6cec33bf05a274faec282265f4f008bde1",
+      "source_image_sha256": "421f85a559d9880dd388eec6b51a2fa839459b1261b0e3fe75cec317afcc3a92",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.2.3",
+          "title": "梯形格式"
+        }
+      ],
+      "formula_ids": [
+        "5.2.6",
+        "5.2.7",
+        "5.2.8"
+      ],
+      "figures": [
+        "5.3"
+      ],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；放大确认偏导数记法为 f_y，无额外撇号；误差式 (5.2.7) 负号已核对。图 5.3 原图裁切与全部标签已保存。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 123,
+      "printed_page": 110,
+      "path": "staging/ch05a/pages/pdf-123.md",
+      "sha256": "5ff2feb32f9edf4b43f4a2d7f9445cf0ecb4dc35e29809b6d101a7363304245d",
+      "source_image_sha256": "58146470775fda4f68c58c9186091d8dd88452d3dbd01d75d6c1fea263a7ff10",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.2.4",
+          "title": "改进的 Euler 格式"
+        }
+      ],
+      "formula_ids": [
+        "5.2.9",
+        "5.2.10",
+        "5.2.11",
+        "5.2.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；梯形迭代、收敛因子 hL/2、预测值横线与校正值区别已逐式对照。"
+      ]
+    },
+    {
+      "pdf_page": 124,
+      "printed_page": 111,
+      "path": "staging/ch05a/pages/pdf-124.md",
+      "sha256": "4892edae9425aa86ceb03200ba6b013aa280cdff49d139ea4480b6100e517f71",
+      "source_image_sha256": "6c2492452bf0f88eb8d25ccf304dfb37cf6153fa0dffefc93714724ee853ecda",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.2.5",
+          "title": "Euler 两步格式"
+        }
+      ],
+      "formula_ids": [
+        "5.2.13"
+      ],
+      "figures": [],
+      "tables": [
+        "5.2"
+      ],
+      "notes": [
+        "原页已打开核对；表 5.2 全部数值逐项转录并复算；发现两处原书疑误，原文保留并另列校注。关键数字及下标均已额外放大核对。"
+      ]
+    },
+    {
+      "pdf_page": 125,
+      "printed_page": 112,
+      "path": "staging/ch05a/pages/pdf-125.md",
+      "sha256": "7d1a6924005ab66b9172ee6bbbb58aef269c3d5aff267c62f8437859b35c920f",
+      "source_image_sha256": "317985c1c9463de2c19206f12ed3f38daded6f62b3905b7c3a872f0f3876a6f6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.2.14",
+        "5.2.15",
+        "5.2.16",
+        "5.2.17",
+        "5.2.18"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；式 (5.2.16)–(5.2.18) 三阶导数、符号与 4/5、1/5 系数二次对照；六环节中的前五项在本页，第六项跨页。"
+      ]
+    },
+    {
+      "pdf_page": 126,
+      "printed_page": 113,
+      "path": "staging/ch05a/pages/pdf-126.md",
+      "sha256": "dab2c6fa91d4d9ece457befaa9ad2f4ad1b4ff4a88ac140f32d816d4f883d418",
+      "source_image_sha256": "b802ff412ef7cec48d90c0698ce19c972840decebdcff004cef5abb28ed4ff4b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3",
+          "title": "Runge-Kutta 方法"
+        },
+        {
+          "id": "5.3.1",
+          "title": "Taylor 级数法"
+        }
+      ],
+      "formula_ids": [
+        "5.3.1",
+        "5.3.2",
+        "5.3.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；六环节末项、Taylor 展开及全导数递推逐项核验；式 (5.3.2) 的偏导阶数与乘积括号已二次对照。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 127,
+      "printed_page": 114,
+      "path": "staging/ch05a/pages/pdf-127.md",
+      "sha256": "088ab08323c03b4484ef0b8d00ad468a6ccc5e2ed95cd7b71d4e2c8e16297207",
+      "source_image_sha256": "c4b110454f39f63194f07a84a9b93e9759a9b1a38c812f36027815e0a063afd3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3.2",
+          "title": "Runge-Kutta 方法的基本思想"
+        }
+      ],
+      "formula_ids": [
+        "5.3.4"
+      ],
+      "figures": [],
+      "tables": [
+        "5.3"
+      ],
+      "notes": [
+        "原页已打开核对；定义 5.1、例 5.3 的一至四阶导数、表 5.3 三行数据和平均斜率定义完整转录。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 128,
+      "printed_page": 115,
+      "path": "staging/ch05a/pages/pdf-128.md",
+      "sha256": "104ee20960e2b6ecac3baab1fb3dc7b4cafae85d53bfd56e96e7aaf640242c1a",
+      "source_image_sha256": "bbeb0f101256c8f23145c7a774b3dbe9a45ddff6119ef7f0f5dcbfe12a69316d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3.3",
+          "title": "二阶 Runge-Kutta 方法"
+        }
+      ],
+      "formula_ids": [
+        "5.3.5"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；二阶 Runge-Kutta 待定系数、节点 n+p 与 p 的范围已二次对照。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 129,
+      "printed_page": 116,
+      "path": "staging/ch05a/pages/pdf-129.md",
+      "sha256": "ab5f0f1baa97012e70311fa80f0bd94cbb51d4d6d067300cc44a1809f7fd84ab",
+      "source_image_sha256": "8dd946a2bb2a7eee27c84d2fc3ef8d44e9b3057a4a7cd46dfeb859666dd1b046",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3.4",
+          "title": "三阶 Runge-Kutta 方法"
+        }
+      ],
+      "formula_ids": [
+        "5.3.6",
+        "5.3.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；二阶条件、变形 Euler 与三阶格式逐式转录。两处第三阶段节点 n+p 经放大确认为原书下标错误，保留并校注。"
+      ]
+    },
+    {
+      "pdf_page": 130,
+      "printed_page": 117,
+      "path": "staging/ch05a/pages/pdf-130.md",
+      "sha256": "647336230e4380eed77bdc0a4908ca2ffd9a20d305bd81cd532f8f54e86433f9",
+      "source_image_sha256": "907a8d101ca079254752fac4c9d2566cdf17658f1e0526fd1d60d5e7577536e4",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.3.8",
+        "5.3.9",
+        "5.3.10",
+        "5.3.11",
+        "5.3.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；D、D^2、带横线的 D 和阶段展开系数逐项二次对照；保留原书对 D^2 的显式定义。",
+        "独立交叉复核按原图确认后，删除两处 D 横线平方中的意外字面逗号，均改为 ^{2}。"
+      ]
+    },
+    {
+      "pdf_page": 131,
+      "printed_page": 118,
+      "path": "staging/ch05a/pages/pdf-131.md",
+      "sha256": "5a3f2500d61ea7d0669035e440429c364c5dfe571d66ca07d5aab777fcc27247",
+      "source_image_sha256": "30490fa6e6e511b628d4338abb6286ce756026bea345e90ad4145af067e2adf1",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3.5",
+          "title": "四阶 Runge-Kutta 方法"
+        }
+      ],
+      "formula_ids": [
+        "5.3.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；三阶 Kutta、经典四阶 RK 和例 5.4 全部阶段公式逐项对照。表 5.4 在次页。"
+      ]
+    },
+    {
+      "pdf_page": 132,
+      "printed_page": 119,
+      "path": "staging/ch05a/pages/pdf-132.md",
+      "sha256": "b355bada55bbec2dae1c5bfcfdd2212815e181633af85951cd7f136c768bc455",
+      "source_image_sha256": "e3e78ee6977297368f4c02bfcb3549078a367ef777e159d5286f7173fd43d3f3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.3.6",
+          "title": "变步长的 Runge-Kutta 方法"
+        }
+      ],
+      "formula_ids": [
+        "5.3.14",
+        "5.3.15"
+      ],
+      "figures": [],
+      "tables": [
+        "5.4"
+      ],
+      "notes": [
+        "原页已打开核对；表 5.4 五行数值与 RK4 独立复算一致；步长折半的上标 h、h/2、误差因子 1/16、1/15 与原页逐式对照。式 (5.3.15) 原印使用等号，保留。"
+      ]
+    },
+    {
+      "pdf_page": 133,
+      "printed_page": 120,
+      "path": "staging/ch05a/pages/pdf-133.md",
+      "sha256": "44f5c8c09f2813204dabd543b9fa22c89319f886f38e3443af2606964595635e",
+      "source_image_sha256": "19e8189247cce2dc28cf68e4a9a9ef3f5b6adda64469076fd80fd0cb10baacfb",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.4",
+          "title": "单步法的收敛性和稳定性"
+        },
+        {
+          "id": "5.4.1",
+          "title": "单步法的收敛性"
+        }
+      ],
+      "formula_ids": [
+        "5.4.1",
+        "5.4.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；变步长两种处理分支、收敛性定义及 Euler 极限论证完整转录。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 134,
+      "printed_page": 121,
+      "path": "staging/ch05a/pages/pdf-134.md",
+      "sha256": "d71e0aa43874e0b18df53a2591f2cf3bf9f821637d00ea06450e7e670dd8b0b0",
+      "source_image_sha256": "d091e005c6d7c0c3aad66282fa5c8f527aff3011e9a4ca1697941fe4426b3768",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.4.3",
+        "5.4.4",
+        "5.4.5",
+        "5.4.6",
+        "5.4.7",
+        "5.4.8",
+        "5.4.9"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；定理 5.1、全部误差递推及页下注完整转录；(5.4.5) 缺绝对值、(5.4.9) 指数 q 已额外放大确认并单列原书校注。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 135,
+      "printed_page": 122,
+      "path": "staging/ch05a/pages/pdf-135.md",
+      "sha256": "a4bdfff3ae347ad378bae5a76208b62b3fb8a832338aa5a3ac3f9e01b77a86e7",
+      "source_image_sha256": "6df05776cab8b5524ab4485dd36acaba4b129bb1b2c19765303ba17ca78ffa0e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5.4.2",
+          "title": "单步法的稳定性"
+        }
+      ],
+      "formula_ids": [
+        "5.4.10",
+        "5.4.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；页首不等式的 n、h 两处指数已放大确认，正文保留并附正确估计；改进 Euler 的 Lipschitz 常数、稳定性定义和扰动值逐项对照。末句跨页。"
+      ]
+    },
+    {
+      "pdf_page": 136,
+      "printed_page": 123,
+      "path": "staging/ch05a/pages/pdf-136.md",
+      "sha256": "0f5d06425d2265547b0440b6488b47caa06f4a867fdca171fee51f53e350bcba",
+      "source_image_sha256": "667b5ff4799d58851c93bc7bdc0c281699a16556c2dcf0d51c4cfe0df96ed47a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "5.4.12",
+        "5.4.13"
+      ],
+      "figures": [
+        "5.4"
+      ],
+      "tables": [],
+      "notes": [
+        "原页已打开核对；条件稳定/无条件稳定、时间常数、例 5.5 全部本页内容转录。原句“步长 h 应使 τ 不超过”已放大确认并校注。图 5.4 原图及全部文字刻度标签保存；末句续 PDF 137，表 5.5 在后续 lane。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch05a-E001",
+      "pdf_page": 124,
+      "printed_page": 111,
+      "location": "表 5.2，x_n=0.8 的 y_n",
+      "kind": "suspected_source_numeric_error",
+      "original": "1.6153",
+      "suggested": "1.6165",
+      "evidence": "原页放大确认为 1.6153；按例 5.2 的递推式从 y_0=1、h=0.1 复算得 y_8=1.6164747827…；其余九行与四位小数输出相符。正文保留原值。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p124-table.png"
+      ]
+    },
+    {
+      "id": "ch05a-E002",
+      "pdf_page": 124,
+      "printed_page": 111,
+      "location": "5.2.5 单步法与两步法比较段",
+      "kind": "source_index_error",
+      "original": "更前面一步的信息 y_{n+1}",
+      "suggested": "y_{n-1}",
+      "evidence": "原页放大确认为 n+1；本页式 (5.2.13) 为 y_{n+1}=y_{n-1}+2hf(x_n,y_n)，所指前一步应为 n-1。正文保留原印。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p124-index.png"
+      ]
+    },
+    {
+      "id": "ch05a-E003",
+      "pdf_page": 129,
+      "printed_page": 116,
+      "location": "5.3.4 引入第三阶段节点与预测 K_3 的两处正文",
+      "kind": "source_index_error",
+      "original": "x_{n+p}=x_n+qh；为了预测点 x_{n+p} 处的斜率值 K_3",
+      "suggested": "两处 x_{n+p} 应为 x_{n+q}",
+      "evidence": "两处均已放大确认原印 n+p；同页 K_3=f(x_{n+q},y_{n+q}) 及式 (5.3.7) 明确其节点是 x_n+qh。正文保留原印。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p129-third-node.png",
+        "staging/ch05a/assets/check-p129-predict-node.png"
+      ]
+    },
+    {
+      "id": "ch05a-E004",
+      "pdf_page": 134,
+      "printed_page": 121,
+      "location": "式 (5.4.5)",
+      "kind": "source_missing_absolute_value",
+      "original": "L_φ(y−ȳ)",
+      "suggested": "L_φ|y−ȳ|",
+      "evidence": "右端只有圆括号，经原图放大确认；对 y<ȳ 且 L_φ>0 时，原印右端为负，不能作为绝对差上界。正文保留原式并说明。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p134-lipschitz.png"
+      ]
+    },
+    {
+      "id": "ch05a-E005",
+      "pdf_page": 134,
+      "printed_page": 121,
+      "location": "式 (5.4.9)",
+      "kind": "source_exponent_error",
+      "original": "Ch^q/L_φ",
+      "suggested": "Ch^p/L_φ",
+      "evidence": "原印 q 已放大确认；从式 (5.4.8) 等比求和得 Ch^(p+1)/(hL_φ)=Ch^p/L_φ，且次页 (5.4.10) 用 p。正文保留原式。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p134-bound.png"
+      ]
+    },
+    {
+      "id": "ch05a-E006",
+      "pdf_page": 135,
+      "printed_page": 122,
+      "location": "页首无编号不等式",
+      "kind": "source_exponent_errors",
+      "original": "(1+hL_φ)^n≤(e^(nL_φ))^n≤e^(hL_φ)",
+      "suggested": "(1+hL_φ)^n≤(e^(hL_φ))^n=e^(nhL_φ)≤e^(TL_φ)",
+      "evidence": "原页中间 n 和末项 h 均经放大确认；利用前页 nh≤T 及 1+u≤e^u 得校注所列估计，与式 (5.4.10) 相符。正文保留原式。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p135-exponents.png"
+      ]
+    },
+    {
+      "id": "ch05a-E007",
+      "pdf_page": 136,
+      "printed_page": 123,
+      "location": "例 5.5 稳定性步长说明",
+      "kind": "source_wording_symbol_error",
+      "original": "步长 h 应使 τ 不超过 2τ=0.02",
+      "suggested": "步长 h 应不超过 2τ=0.02",
+      "evidence": "原句“使 τ”经放大确认；本页式 (5.4.13) 的被约束量是 h，正文保留原印并校注。",
+      "evidence_images": [
+        "staging/ch05a/assets/check-p136-step.png"
+      ]
+    }
+  ],
+  "validation_notes": [
+    "仅已实际打开原图且完成逐字逐式核对的页列入 pages；此回执为 agent 核验，不是人工核验。",
+    "18 页 YAML、页码、文件/源图 SHA-256、原图链接、数学括号/环境和 48 个连续公式编号结构检查通过；详见 staging/ch05a/validation.json。",
+    "图 5.1–5.4 的裁切文件均再次打开检查，文字刻度标签完整。",
+    "表 5.1–5.4 用 40 位 Decimal 按原页递推式复算；仅表 5.2 在 x=0.8 的原值 1.6153 与复算四位小数 1.6165 不同，已列为 ch05a-E001 并保留原值。",
+    "书页 123 的末句和表 5.5 续后续 lane，不凭上下文补写。"
+  ]
+}

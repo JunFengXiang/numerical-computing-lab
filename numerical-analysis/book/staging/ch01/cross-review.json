@@ -1,0 +1,139 @@
+{
+  "lane": "ch01",
+  "reviewer": "Codex agent front (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 14,
+      "sha256": "10f83be9ad9a4ccd7e80c0b708cd06f092e3050923797529d3e56cb959d9bb63",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重看整页，三段正文及末尾跨页“理”字完整；图 1.1 五框标签和四支向右箭头与转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 15,
+      "sha256": "1c0c1f678433f0d6b1855a905e1d0f567e99fc878b0a219e2e037e045c4372d5",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重看整页，四条特点及误差来源论述完整；逐项核对 P_n、R_n、导数 n/n+1 阶、阶乘、x 幂次和 xi 区间，未发现转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 16,
+      "sha256": "2d583d1ed512acdb7aca2821effdb1968755b9c5887fa75fa833e31623a7020f",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行对照原图；表 1.1 的 20 个数值均核过，包括 -0.728、7.552；积分 0–1、e 的负指数、方案 A 与初值误差的正负顺序均一致。"
+      ]
+    },
+    {
+      "pdf_page": 17,
+      "sha256": "c54642253c10fc9849c12bdbf9f03a96b263c1267281d535ab0b0a0df268c1f8",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对 1.2.2 的 min/max 区间、两个严格不等号、误差递推及方案 B 倒推 n=9 至 1；定义 1.1 跨页断字正确。",
+        "独立检查 CH01-E001：原文确将近似值称为倍误差；E_n=(-1)^n n! E_0 推出误差绝对值按 n! 放大，校注的限定合理且与原文分开。"
+      ]
+    },
+    {
+      "pdf_page": 18,
+      "sha256": "e4af1b29ba8c86826b979dccfccfedaa63362e1c58ee5a9d10f5bc07afca2d80",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行对照误差定义续文、765 mm 区间、强弱近似值及相对误差；检查 e 与 epsilon 字形、分母 x/x*、平方项变形及百分数，转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 19,
+      "sha256": "150baedcf9199d8fb6068b91d17a04950522a026da6634526974ba0b636c60e8",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对标准形式 1.3.1 的 m、-(n-1)，1.3.2 的 m-n+1，例 1.2 四组输入输出与末位零，例 1.3 两套单位和指数；均一致。",
+        "另从原图内存裁切放大末行，确认原印为 0.000005/0.00980，共五个零后为 5；转录未少写或多写小数位。"
+      ]
+    },
+    {
+      "pdf_page": 20,
+      "sha256": "390a7ac0c2302d46db2bf8b6ed8c118ddcf7899bf16feae431d75bdbc9208e5f",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核定定理 1.1 正反命题及两段证明，分母 2a_1 / 2(a_1+1)、指数和绝对值一致；例 1.4 原书取四位的充分条件及 4.472 均忠实保留。",
+        "独立检查四则误差公式的两项正号、约等号、|x_2*|^2 和 x_2* 非零条件，未发现转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 21,
+      "sha256": "ccaee1db226021933d4dcfe3fb7c49fe89aeab3fc4fb3ad99ff20b74b77bb929",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重看整页，Taylor 两阶式、两个 n 上限及 1.3.3、1.3.4 的每个上下标/绝对值一致；后者原图上限确为 k，校注保留原式。",
+        "对 CH01-E002/E003 独立核验：n 元展开要求 n 项而原印 k；二阶项相对一阶项的比率为 |f″(xi)|epsilon/(2|f′(x*)|)，与校注一致且未掩盖原文。",
+        "例 1.5 长 l 与宽 d、四个偏导/误差值、面积 8800、误差 27 和 0.31% 均对照原图；80×0.2+110×0.1=27。"
+      ]
+    },
+    {
+      "pdf_page": 22,
+      "sha256": "af72ae116a6b1612f4c679fba766c0c63044a6d974e5c47ddf441c5280f7c106",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核对概率分析法、数值稳定性定义与 epsilon_0、1.4.1 标题及 0<|y|≪|x|；例 1.6 两方程、分式和小数均忠实于原印。",
+        "用有理数独立消元得到 x_1=100000/199999、x_2=199998/199999，支持 CH01-E004，原文与校注分离。"
+      ]
+    },
+    {
+      "pdf_page": 23,
+      "sha256": "1e3e892c1f34e13a4af7a39837a6d72283d82f09f8ea9d2c85067d6de386abcd",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对三组消元方程的所有指数、四位尾数和变量下标；原印第三组首行确为 10^6，CH01-E005 未静默修改并保留了额外缩放的可能性。",
+        "独立核对 cos 2°、sin 1°、半角恒等式、lg 商式、根式有理化和 Taylor 导数；计算 10^7(1-cos 2°)=6091.729809042379，6130 误差为 38.270190957621，大于三位有效数字容限 5，支持 CH01-E006。",
+        "全页正文与续页标记一致，无新增转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 24,
+      "sha256": "20a3667527a802ce650d6f54b32b9dd12da32c58423df9e78dd96674f51d6f34",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐式核对例 1.8：A=52492、1000 项 delta_i、0.1/0.9 界、0.000009×10^5、机器相等三角符号与 52592≤A≤53392 均一致。",
+        "例 1.9 的 x^255 分解各幂 1、2、4、8、16、32、64、128、14/254 次乘法，以及多项式和 n(n+1)/2 全部核对。"
+      ]
+    },
+    {
+      "pdf_page": 25,
+      "sha256": "b0b6bc67850d6ecbfa385b839462e062a4ec6546046452799186b8a9c806b249",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对秦九韶算法 1.4.1 的 S_n、S_{k+1}、k 从 n-1 至 0 和 P_n=S_0；全文小结完整。",
+        "独立核对习题 1–10 及习题 11 本页条件，特别是题 3 的五个数/末位零、原印 7×1.0，题 4 的 x_4* 下标，题 6 大写 Y 和根号 783、题 8 的 N 至 N+1 积分，题 10 的±0.1 s；未发现转录差异。"
+      ]
+    },
+    {
+      "pdf_page": 26,
+      "sha256": "7241e96859fad146c86792d5a020f7f66acdb05b0e4b0ae2c868f553ed4dd423",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立重新打开整页，习题 11 续问及 12–15 全文/表达式均与转录一致；原页下半部仅透印，无另漏正文。",
+        "CH01-E007 原图右端确为 sqrt(x²+1)；共轭乘积为 1 的恒等式要求 sqrt(x²−1)，原文和校注区分正确。",
+        "习题 15 有有限误差与一阶近似的表述问题，已通知原 agent 补校注，见 CR-CH01-F001。",
+        "复核原 agent 新增 CH01-E008：保留习题15原题，以精确有理数复算 (101/100)^2-1=201/10000>2/100，校注明确有限误差高阶项与一阶/微分解释；新哈希已复核。"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CR-CH01-F001",
+      "pdf_page": 26,
+      "kind": "source_condition_needs_annotation",
+      "status": "resolved",
+      "description": "习题 15 的相对误差不等式对一般有限误差不严格成立；一阶误差/微分解释需与原题区分。",
+      "independent_evidence": "保持 c 不变，Δa/a=Δb/b=0.01，则 (S+ΔS)/S=1.01²，ΔS/S=0.0201>0.02；有 ab 乘积高阶项。",
+      "requested_action": "保留原题；补充 agent 校注，说明按一阶误差或微分理解，不应作为任意有限误差的严格上界。",
+      "resolution": "原 agent 已在 PDF26 追加 CH01-E008 并保留原题；独立复核校注数学反例、条件表述及当前 MD 哈希均通过。",
+      "source_erratum": "CH01-E008"
+    }
+  ],
+  "unresolved": []
+}

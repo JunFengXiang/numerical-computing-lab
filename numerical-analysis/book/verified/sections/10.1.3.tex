@@ -1,0 +1,90 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Walsh分析的数学美},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Walsh分析的数学美}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{10.1.3　Walsh 分析的数学美}\label{walsh-ux5206ux6790ux7684ux6570ux5b66ux7f8e}
+
+后文将揭示出一个惊人的事实：表面看起来极其复杂的 Walsh 函数系，竟然是由一个简单得不能再简单的方波 \(R(x)=1\) 演化生成的。实际上，从方波 \(R(x)\) 出发，经过伸缩、平移的二分手续，即可演化生成 Walsh 函数系。Walsh 函数系是个完备的正交函数系，它可以用来逼近一般的复杂函数。这样，Walsh 逼近有下述路线图：
+
+\[
+R(x)=1\xrightarrow[\text{（二分手续）}]{\text{伸缩＋平移}}\text{Walsh 函数系}\xrightarrow{\text{组合}}\text{复杂函数 }f(x).
+\]
+
+与 Fourier 分析相比，Walsh 分析更为简洁，它表明：在某种意义上，任何复杂函数 \(f(x)\) 都是简单的方波 \(R(x)=1\) 二分演化的结果。
+
+综上所述，数学史上近三个世纪提出的三种逼近方法，即 18 世纪初（1715 年）的 Taylor 分析、19 世纪初（1822 年）的 Fourier 分析和 20 世纪初（1923 年）的 Walsh 分析，它们都是数学美的光辉典范，是``百年绝唱三首数学诗''。
+
+这些逼近工具一个比一个更美。Fourier 分析具有深度的数学美，而 Walsh 分析
+
+\href{../../source-images/pdf-264.jpeg}{原页}
+
+则具有极度的数学美。
+
+问题在于，为了撩开 Walsh 函数玄妙而神秘的面纱，必须换一种思维方式进行考察。
+
+\end{document}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 121,
+  "source_image": "source-images/pdf-121.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f002947d3f9175c8650265d8ab4d616bc7fa29789ed3ae1af9d93309122a31cd",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 921,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.417,
+  "created_utc": "2026-09-12T10:30:47.826200+00:00",
+  "raw_text_sha256": "c7da06a9ad856e56d6ff6442eafd0c8bd813d9c2248d78f32ede9b6907f9256f",
+  "raw_text": "精度. 为简化分析, 假定 $y_{n}$ 是准确的, 即在 $y_{n}=y(x_{n})$ 的前提下估计误差 $y(x_{n+1})-y_{n+1}$, 这种误差称为局部截断误差. 注意到\n$$f(x_{n}, y_{n})=f(x_{n}, y(x_{n}))=y^{\\prime}(x_{n}),$$\nEuler 格式(5.2.1)的局部截断误差显然为\n$$y(x_{n+1})-y_{n+1}=\\frac{h^{2}}{2}y^{\\prime\\prime}(\\xi)\\approx \\frac{h^{2}}{2}y^{\\prime\\prime}(x_{n}).$$\n(5.2.3)\n\n5.2.2 后退的 Euler 格式\n\n方程 $y^{\\prime}=f(x,y)$ 中含有导数项 $y^{\\prime}(x)$, 这是微分方程的本质特征, 也正是它难以求解的症结所在. 数值解法的关键在于设法消除其导数项, 这项手续称为离散化. 由于差分是微分的近似运算, 实现离散化的基本途径之一是直接用差商替代导数. 譬如, 若在点 $x_{n}$ 列出方程\n$$y^{\\prime}(x_{n})=f(x_{n}, y(x_{n})),$$\n(5.2.4)\n并用差商 $\\frac{y(x_{n+1})-y(x_{n})}{h}$ 近似替代其中的导数 $y^{\\prime}(x_{n})$, 结果有\n$$y(x_{n+1})\\approx y(x_{n})+hf(x_{n}, y(x_{n})).$$\n设 $y(x_{n})$ 的近似值 $y_{n}$ 已知, 用它代入上式右端进行计算, 并取计算结果 $y_{n+1}$ 作为 $y(x_{n+1})$ 的近似值, 这就是 Euler 格式.\n对于在点 $x_{n+1}$ 列出的方程(5.1.1), 有\n$$y^{\\prime}(x_{n+1})=f(x_{n+1}, y(x_{n+1})),$$\n若用向后差商 $\\frac{y(x_{n+1})-y(x_{n})}{h}$ 替代导数 $y^{\\prime}(x_{n+1})$, 则可将上式离散化得\n$$\\frac{y_{n+1}-y_{n}}{h}=f(x_{n+1}, y_{n+1}),$$\n即\n$$y_{n+1}=y_{n}+hf(x_{n+1}, y_{n+1}),$$\n(5.2.5)\n此为后退的 Euler 格式.\n后退的 Euler 格式与 Euler 格式有着本质的区别, 后者是关于 $y_{n+1}$ 的一个直接的计算格式, 这类格式是显式的; 而格式(5.2.5)的右端含有未知的 $y_{n+1}$, 它实际上是关于 $y_{n+1}$ 的一个函数方程, 这类格式是隐式的.\n显式与隐式两类方法各有特点. 考虑到数值稳定性等因素, 人们有时需要选用隐式方法, 但使用显式算法远比隐式方便.\n隐式方程(5.2.5)通常用迭代法求解, 而迭代过程的实质是逐步显式化.\n设用 Euler 格式 $y_{n+1}^{(0)}=y_{n}+hf(x_{n}, y_{n})$ 给出迭代初值 $y_{n+1}^{(0)}$, 用它代入式(5.2.5)的右端, 使之转化为显式, 直接计算得\n$$y_{n+1}^{(1)}=y_{n}+hf(x_{n+1}, y_{n+1}^{(0)})$$,\n然后再用 $y_{n+1}^{(1)}$ 代入式(5.2.5)的右端, 又有\n\n• 108 •"
+}

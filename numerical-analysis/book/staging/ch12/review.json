@@ -1,0 +1,394 @@
+{
+  "lane": "ch12",
+  "reviewer": "Codex agent ch12",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 294,
+      "printed_page": 281,
+      "path": "staging/ch12/pages/pdf-294.md",
+      "sha256": "3257dfb15d3b5412cf19cc6bea3886e50b4081fb93d71089206272b43e8748a4",
+      "source_image_sha256": "247568a7c55aab3f843e3a60d3038cef166302af23e2ea1775e7f4bb538fe989",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12",
+          "title": "加速算法设计：重差加速技术",
+          "source_prefix_star": true
+        },
+        {
+          "id": "12.1",
+          "title": "千古疑案"
+        },
+        {
+          "id": "12.1.1",
+          "title": "阿基米德的“穷竭法”"
+        },
+        {
+          "id": "12.1.2",
+          "title": "祖冲之“缀术”之谜"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "章节前有星号，已保留。",
+        "原文“作为正多边形的周长获得圆周率的近似值”疑有排印问题，保留并加校注。",
+        "12.1.2 续下页。",
+        "圆周率末段79223按原图保留，与PDF302及独立高精度π计算不符，已加校注。"
+      ]
+    },
+    {
+      "pdf_page": 295,
+      "printed_page": 282,
+      "path": "staging/ch12/pages/pdf-295.md",
+      "sha256": "b034fc76c03e173177771e4fb46bd84741bff573a1f1536c63a8749338fa3a10",
+      "source_image_sha256": "ed6800362c254092b8f5eaea467f082bbdff76edbc59aecc8727e52cc9708fc3",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.2",
+          "title": "神来之笔"
+        },
+        {
+          "id": "12.2.1",
+          "title": "数学史上一篇千古奇文"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "古文引文“肭数”“盈肭”按放大后的原页字形保留。",
+        "页末句跨至下一页。"
+      ]
+    },
+    {
+      "pdf_page": 296,
+      "printed_page": 283,
+      "path": "staging/ch12/pages/pdf-296.md",
+      "sha256": "3d8415d7ae4671d3f390bcab9c7e0d065514779129323a8bf1eeca3dfa0e095b",
+      "source_image_sha256": "432e8024791af437dacaba64b7b0f76effca6ea51ecfad8438c46d8a619e2ee2",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.2.2",
+          "title": "“一飞冲天”的“刘徽神算”"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页首承上页末句；页末句及公式续下页。"
+      ]
+    },
+    {
+      "pdf_page": 297,
+      "printed_page": 284,
+      "path": "staging/ch12/pages/pdf-297.md",
+      "sha256": "00f092b4e576562153baaf8310526154867e7348bd4fafd83800e2438c4b20ed",
+      "source_image_sha256": "2f25046c744a051a6004bb0dd5f97a366e4d243a0d2f4afe6535559a346c508b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3",
+          "title": "奇光异彩"
+        }
+      ],
+      "formula_ids": [
+        "12.2.1",
+        "12.2.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "带分数保留原形式。",
+        "12.3 页末词“收敛”跨页，按原页分别保留。"
+      ]
+    },
+    {
+      "pdf_page": 298,
+      "printed_page": 285,
+      "path": "staging/ch12/pages/pdf-298.md",
+      "sha256": "d0dd2aa2723f0dca1d237fd5c01e75098f115f153252628f67d4c60dbbec51cf",
+      "source_image_sha256": "39d3522819fd0f49025668624ae925faf4520e2e9b8f8fa842164b25a763c132",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3.1",
+          "title": "刘徽的新视野"
+        }
+      ],
+      "formula_ids": [
+        "12.3.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "承上页“收”字续写；校正公式的区间为 0<ω<1，已复核。"
+      ]
+    },
+    {
+      "pdf_page": 299,
+      "printed_page": 286,
+      "path": "staging/ch12/pages/pdf-299.md",
+      "sha256": "9a1476c566d39d043418f7960bbbc33b8ef85bdd252d5f6be7a1cf5b7dce627f",
+      "source_image_sha256": "e082f762316d3b286ca829b270d60856f3a9fad80825cd3c32e28901d18faaa5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3.2",
+          "title": "偏差比中传出好“消息”"
+        },
+        {
+          "id": "12.3.3",
+          "title": "只要做一次“俯冲”"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "12.1"
+      ],
+      "notes": [
+        "表12.1五行全部数据及空白单元格已转录；末句续下页。"
+      ]
+    },
+    {
+      "pdf_page": 300,
+      "printed_page": 287,
+      "path": "staging/ch12/pages/pdf-300.md",
+      "sha256": "de36924250a0e149bca623681c33919dc7f7c550b9baec22ad7b6bf6fb670a47",
+      "source_image_sha256": "e9906538d25def18d1c130cce2df7a3106ec56d3d86c00480d338d9acd75cf6d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3.4",
+          "title": "差之毫厘，失之千里"
+        }
+      ],
+      "formula_ids": [
+        "12.3.2",
+        "12.3.3"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "近似关系链的大写N和小写n分别保留；式12.3.2原印等号，后续残差比原印近似号。",
+        "页末“直到”跨页。"
+      ]
+    },
+    {
+      "pdf_page": 301,
+      "printed_page": 288,
+      "path": "staging/ch12/pages/pdf-301.md",
+      "sha256": "c1bfd118330044e5c26e0feff477779fa96530fb3c6473cbc36873fba9d60b08",
+      "source_image_sha256": "fb8d476931af288b495e496d2335fd97b718e25c540b39b1c3263e82621119f0",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3.5",
+          "title": "“缀术”再剖析"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "12.2"
+      ],
+      "notes": [
+        "表12.2九行全部数字及精度括注已转录。",
+        "原表S_n尺度与表12.1不同，保留原值并作校注；引文续下页。"
+      ]
+    },
+    {
+      "pdf_page": 302,
+      "printed_page": 289,
+      "path": "staging/ch12/pages/pdf-302.md",
+      "sha256": "7a07db36c50dc3793a82d9f2ae6c4811d8c1f0985a20529236c1b16b14bedb14",
+      "source_image_sha256": "3639283882d3e1aa7f938b033377e45072620b2bc96ecbb0f6fdfe6232b473fe",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.3.6",
+          "title": "平庸的新纪录"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "承上页引文。",
+        "本页圆周率与PDF294同一结果的末段不一致，已分别保留。",
+        "原文将L_n周长公式称作“边长”，已保留并加校注。"
+      ]
+    },
+    {
+      "pdf_page": 303,
+      "printed_page": 290,
+      "path": "staging/ch12/pages/pdf-303.md",
+      "sha256": "ea5de8f35b84a540faf0a438766f3c97c11fed315e9d85769dc0b72dd8161030",
+      "source_image_sha256": "4655cd140ff6ef55c70efbb778f4864db5cdee4647910d7d5d9233208b19f4ea",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "12.3"
+      ],
+      "notes": [
+        "全页表12.3：28行L_n与26个δ_n全部转录，底部两格留空。",
+        "上下半表另行裁切放大目视复核，并补做90位精度数值检查。"
+      ]
+    },
+    {
+      "pdf_page": 304,
+      "printed_page": 291,
+      "path": "staging/ch12/pages/pdf-304.md",
+      "sha256": "75e6697b88aab831b763697caafb6be7de3873c41da7fde22289e4680a6c00da",
+      "source_image_sha256": "49c9dd43f4b2f347f51a94fd14ec5acfb043d59cecdfb7f2efefa2188aa3e60a",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.4",
+          "title": "万能引擎"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "12.4"
+      ],
+      "notes": [
+        "表12.4双栏排列及13个数值、精度括注全部保留。",
+        "正文边数24576与原式所需L_49152不一致，已保留并加校注。"
+      ]
+    },
+    {
+      "pdf_page": 305,
+      "printed_page": 292,
+      "path": "staging/ch12/pages/pdf-305.md",
+      "sha256": "56bf37f75cd85136a8403288ac1ccdae8645eff0b84aa67f9adfe7e583230c07",
+      "source_image_sha256": "375e74b050fc410001fe2db47a29704acd4b39c21fe67e9abcf0de9db65d5be5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.4.1",
+          "title": "逼近加速的重差公设"
+        },
+        {
+          "id": "12.4.2",
+          "title": "重差加速法则"
+        }
+      ],
+      "formula_ids": [
+        "12.4.1",
+        "12.4.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "重差定义及公式12.4.1、12.4.2另行放大核对，保留δ>1条件。"
+      ]
+    },
+    {
+      "pdf_page": 306,
+      "printed_page": 293,
+      "path": "staging/ch12/pages/pdf-306.md",
+      "sha256": "3b2a483d5d08a7a62b319b6c7eaa10710f26563e42f3c8772ae71c22a04bc948",
+      "source_image_sha256": "7de33929b1828679bb47e7aa7a06de88d4fb4d1e9d86f5d201cd78677e48a786",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "12.4.3",
+          "title": "重差加速的逻辑推理"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "Φ、ξ_1、ξ_2及各导数、上下标已放大核对。",
+        "原文“第4章4.3节”指引保留；另实际打开PDF101核实其标题为Romberg算法，记录疑误。",
+        "章末正文完整，原章无独立小结或习题。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH12-E001",
+      "pdf_page": 294,
+      "kind": "suspected_source_typography",
+      "original": "作为正多边形的周长获得圆周率的近似值",
+      "note": "原图字形明确，语句疑有排印问题；保留原文，不擅自订正。"
+    },
+    {
+      "id": "CH12-E002",
+      "pdf_pages": [
+        294,
+        302
+      ],
+      "kind": "source_numeric_typography",
+      "original": "PDF294: 3.14159265358979223; PDF302: 3.14159265358979323",
+      "note": "同一阿尔·卡西结果前后不一致。90位精度mpmath计算π=3.141592653589793238...，支持PDF294的792为排印错误；两处均按原图保留。"
+    },
+    {
+      "id": "CH12-E003",
+      "pdf_page": 302,
+      "kind": "source_label_formula_mismatch",
+      "original": "令直径为1，则内接正n边形的边长 L_n=n sin(π/n)",
+      "note": "直径1时单边长为sin(π/n)，n倍为周长。原文“边长”保留，另加校注。"
+    },
+    {
+      "id": "CH12-E004",
+      "pdf_pages": [
+        302,
+        304
+      ],
+      "kind": "source_index_data_requirement_mismatch",
+      "original": "只要割到正24576边形",
+      "note": "本页原式Lhat_n=L_2n+(L_2n-L_n)/3；表12.4的Lhat_24576需要L_49152。独立数值检查确认表中值对应该原式。正文边数与其数据需求不一致，保留原文。"
+    },
+    {
+      "id": "CH12-E005",
+      "pdf_page": 306,
+      "kind": "suspected_source_cross_reference",
+      "original": "经典数值分析中的松弛技术（参看第4章4.3节）",
+      "note": "额外实际打开PDF101（书页88）核实4.3为Romberg算法。这里松弛技术的章节指引疑有误；不擅自猜填正确章节。",
+      "reference_evidence": {
+        "pdf_page": 101,
+        "source_image": "source-images/pdf-101.jpeg",
+        "source_image_sha256": "d16249093648d0a3f28d240bb10ec574c540199663efc1c0b0f3300d5c319131",
+        "visual_review": "completed"
+      }
+    }
+  ],
+  "validation_notes": [
+    "PDF294–297 已实际逐页打开；PDF294、295的疑似语句和古文字形另外放大复看。",
+    "未使用 OCR 作为唯一依据；未声称人工核验。",
+    "PDF298–301已实际逐页打开核对；表12.1与12.2转为可检索表格。",
+    "PDF302–306已实际逐页打开核对，长数值表、重差公式、迭代推导均另行裁切放大。",
+    "全章PDF294–306共13页完成；书页281–293逐页目视确认。",
+    "全章18个标题（含带星号章题）、7个编号公式、4张数值表，未见原图、独立算法框、章末小结或习题。",
+    "表12.3与12.4共41行独立90位精度mpmath复核，均在原表末位单位误差内；结果见staging/ch12/numeric-check.json。此项为视觉核对补充，不替代逐页核对。",
+    "跨页句子只保留所在页内容，用HTML注释标明承续关系。",
+    "原书的历史评价和推断均为教材转录；未据此新增历史事实主张。"
+  ]
+}

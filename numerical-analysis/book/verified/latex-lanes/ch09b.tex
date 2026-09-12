@@ -1,0 +1,1111 @@
+% Generated from reviewed lane; compile via book/textbook.tex.
+\clearpage
+
+原书 PDF 页 247；印刷页码 234。
+
+\href{source-images/pdf-247.jpeg}{原页}
+
+设 \(U_k=\begin{pmatrix}I&O\\O&R_k\end{pmatrix}\)，则
+
+\[
+A_{k+1}=U_kA_kU_k=
+\begin{pmatrix}
+A_{11}^{(k)}&a_{12}^{(k)}&A_{13}^{(k)}R_k\\
+O&R_ka_{22}^{(k)}&R_kA_{23}^{(k)}R_k
+\end{pmatrix}
+=
+\begin{pmatrix}
+A_{11}^{(k)}&a_{12}^{(k)}&A_{13}^{(k)}R_k\\
+O&-\sigma_ke_1&R_kA_{23}^{(k)}R_k
+\end{pmatrix}.
+\tag{9.3.3}
+\]
+
+由式（9.3.3）知，\(A_{k+1}\) 的左上角 \(k+1\) 阶子阵为上 Hessenberg 阵，从而约化又进了一步，重复这过程，直到
+
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}
+=\begin{pmatrix}
+a_{11}&\times&\times&\cdots&\times\\
+-\sigma_1&a_{22}^{(2)}&\times&\cdots&\times\\
+&-\sigma_2&a_{33}^{(3)}&\ddots&\vdots\\
+&&\ddots&\ddots&\times\\
+&&&-\sigma_{n-1}&a_{nn}^{(n-1)}
+\end{pmatrix}=A_{n-1}.
+\]
+
+总结上述讨论，有如下定理。
+
+\textbf{定理 9.13}　如果 \(A\in\mathbb R^{n\times n}\)，则存在初等反射阵 \(U_1,U_2,\cdots,U_{n-2}\)，使
+
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}=C\quad\text{（上 Hessenberg 阵）}.
+\]
+
+在 \(A_k\to A_{k+1}=U_kA_kU_k\) 的进一步约化中，需要计算 \(R_k\) 和 \(A_{13}^{(k)}R_k\)，\(R_kA_{23}^{(k)}R_k\)。用初等反射阵正交相似约化 \(A\) 为上 Hessenberg 阵，大约需要 \(\dfrac53n^3\) 次乘法运算。
+
+由于 \(U_k\) 都是正交阵，所以 \(A_1\sim A_2\sim\cdots\sim A_{n-1}\)。求 \(A\) 的特征值问题，就转化为求上 Hessenberg 阵 \(C\) 的特征值问题。由定理 9.13，记 \(P=U_{n-2}\cdots U_2U_1\)，则
+
+\[
+PAP^{\mathrm T}=C.
+\]
+
+设 \(y\) 是 \(C\) 的对应特征值 \(\lambda\) 的特征向量，则 \(P^{\mathrm T}y\) 为 \(A\) 的对应特征值 \(\lambda\) 的特征向量，且
+
+\[
+P^{\mathrm T}y=U_1U_2\cdots U_{n-2}y
+=(I-\lambda_1^{-1}u_1u_1^{\mathrm T})\cdots(I-\lambda_{n-2}^{-1}u_{n-2}u_{n-2}^{\mathrm T})y.
+\]
+
+\textbf{定理 9.14}　如果 \(A\in\mathbb R^{n\times n}\) 为对称阵，则存在初等反射阵 \(U_1,U_2,\cdots,U_{n-2}\)，使
+
+\[
+U_{n-2}\cdots U_2U_1AU_1U_2\cdots U_{n-2}=A_{n-1}
+=\begin{pmatrix}
+c_1&b_1&&&\\
+b_1&c_2&b_2&&\\
+&\ddots&\ddots&\ddots&\\
+&&b_{n-2}&c_{n-1}&b_{n-1}\\
+&&&b_{n-1}&c_n
+\end{pmatrix}\equiv C.
+\]
+
+\textbf{证明}　由定理 9.13，存在初等反射阵 \(U_1,U_2,\cdots,U_{n-2}\)，使 \(A_{n-1}\) 为上 Hessenberg 阵，但 \(A_{n-1}\) 又为对称阵，因此 \(A_{n-1}\) 为对称三对角阵。
+
+由上面讨论可知，在由 \(A_k\to A_{k+1}=U_kA_kU_k\) 一步计算过程中，只需计算 \(R_k\) 和 \(R_kA_{23}^{(k)}R_k\)。由于 \(A\) 的对称性，故只需计算 \(R_kA_{23}^{(k)}R_k\) 的对角线下面的元素。注意到
+
+\[
+R_kA_{23}^{(k)}R_k=(I-\rho_k^{-1}u_ku_k^{\mathrm T})(A_{23}^{(k)}-\rho_k^{-1}A_{23}^{(k)}u_ku_k^{\mathrm T}),
+\]
+
+\begin{quote}
+校注（agent 补充）：本页 \(P^{\mathrm T}y\) 展开式原印为 \(\lambda_1^{-1}\)、\(\lambda_{n-2}^{-1}\)，而同页下方及次页初等反射阵的归一化因子使用 \(\rho_k^{-1}\)。此处保留原印 \(\lambda\)，记为疑似原书符号不一致。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 248；印刷页码 235。
+
+\href{source-images/pdf-248.jpeg}{原页}
+
+引进记号
+
+\[
+r_k=\rho_k^{-1}A_{23}^{(k)}u_k,\qquad
+ t_k=r_k-\frac{\rho_k^{-1}}2(u_k^{\mathrm T}r_k)u_k,
+\]
+
+则
+
+\[
+R_kA_{23}^{(k)}R_k=A_{23}^{(k)}-u_kt_k^{\mathrm T}-t_ku_k^{\mathrm T}
+\quad(i=k+1,\cdots,n;\ j=k+1,\cdots,i).
+\]
+
+\textbf{算法 3}　正交相似约化对称阵为对称三对角阵。设 \(A\in\mathbb R^{n\times n}\) 是对称阵，本算法确定初等反射阵 \(U_1,U_2,\cdots,U_{n-2}\)，使 \(U_{n-2}\cdots U_1AU_1\cdots U_{n-2}=C\)（对称三对角阵），\(C\) 的对角元 \(c_i\) 存放在单元 \(c_1,c_2,\cdots,c_n\) 中，\(C\) 的非对角元 \(b_i\) 存放在单元 \(b_1,b_2,\cdots,b_{n-1}\) 中。单元 \(b_1,b_2,\cdots,b_n\) 最初可用来存放 \(r_k\) 及 \(t_k\) 的分量，确定 \(U_k\) 的向量 \(u_k\) 的分量 \(u_{k+1,k},\cdots,u_{nk}\)，存放在 \(A\) 的相应位置。\(\rho_k\) 冲掉 \(a_{kk}\)。约化 \(A\) 的结果冲掉 \(A\)，数组 \(A\) 的上部元素不变。如果步 \(k\) 不需要变换，则置 \(\rho_k\) 为零。
+
+对于 \(k=1,2,\cdots,n-2\)，做到 \(L\)。
+
+\textbf{步 1}　\(c_k=a_{kk}\)。
+
+\textbf{步 2}　确定变换：
+
+（1）计算 \(\eta=\max\limits_{k+1\leq i\leq n}|a_{ik}|\)；
+
+（2）如果 \(\eta=0\)，则
+
+\[
+\begin{cases}
+a_{kk}\to\rho_k=0,\\
+b_k\to0,\\
+\text{转 }L,\text{否则继续};
+\end{cases}
+\]
+
+（3）计算 \(a_{ik}\leftarrow u_{ik}=a_{ik}/\eta\quad(i=k+1,\cdots,n)\)；
+
+（4）\(\sigma=\operatorname{sgn}(u_{k+1,k})\sqrt{u_{k+1,k}^2+\cdots+u_{nk}^2}\)；
+
+（5）\(u_{k+1,k}\leftarrow u_{k+1,k}+\sigma\)；
+
+（6）\(a_{kk}\leftarrow\rho_k=\sigma u_{k+1,k}\)；
+
+（7）\(b_k\leftarrow-\sigma\eta\)。
+
+\textbf{步 3}　应用变换：
+
+（1）\(\sigma=0\)；
+
+（2）计算 \(A_{23}^{(k)}u_k\) 及 \(u_k^{\mathrm T}r_k\)，对于 \(i=k+1,\cdots,n\)，做
+
+\[
+\begin{cases}
+b_i\leftarrow s=\displaystyle\sum_{j=k+1}^{n}a_{ij}u_{jk}+\displaystyle\sum_{j=i+1}^{n}a_{ji}u_{jk},\\
+\sigma\leftarrow\sigma+su_{ik};
+\end{cases}
+\]
+
+（3）计算 \(t_k\)
+
+\[
+b_i\leftarrow\rho_k^{-1}\left(b_i-\rho_k^{-1}\frac\sigma2u_{ik}\right)
+\quad(i=k+1,\cdots,n);
+\]
+
+（4）计算 \(R_kA_{23}^{(k)}R_k\)
+
+对于 \(i=k+1,k+2,\cdots,n;\ j=k+1,\cdots,i\)，做 \(a_{ij}\leftarrow a_{ij}-u_{ik}b_j-b_iu_{jk}\)。
+
+\(L\)：继续循环。
+
+对于 \(k=n-1\)，有
+
+\[
+c_{n-1}\leftarrow a_{n-1,n-1},\qquad c_n\leftarrow a_{nn},\qquad b_{n-1}\leftarrow a_{n,n-1}.
+\]
+
+\begin{quote}
+校注（agent 补充）：算法 3 步 3（2）第一个求和上限原印为 \(n\)。按只存储、更新下三角部分的算法结构，该上限疑应为 \(i\)，否则 \(j>i\) 的项与第二个求和重叠，且会读入未更新的上三角元素。正文保留原印，列为疑似原书错误。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 249；印刷页码 236。
+
+\href{source-images/pdf-249.jpeg}{原页}
+
+将对称阵 \(A\) 用初等反射阵正交相似约化为对称三对角阵约需做 \(\dfrac23n^3\) 次乘法运算。
+
+用正交矩阵进行约化，有一些特点，如构造的 \(U_k\) 容易求逆，且 \(U_k\) 的元素数量级不大，因此这个算法是十分稳定的。
+
+\textbf{例 9.5}　用 Householder 方法将下述矩阵化为上 Hessenberg 阵
+
+\[
+A_1=A=\begin{pmatrix}-4&-3&-7\\2&3&2\\4&2&7\end{pmatrix}.
+\]
+
+\textbf{解}　（1）对于 \(k=1\)，确定变换 \(U_1=\begin{pmatrix}1&\begin{matrix}0&0\end{matrix}\\\begin{matrix}0\\0\end{matrix}&R_1\end{pmatrix}\)，\(a_{21}^{(1)}=\begin{pmatrix}2\\4\end{pmatrix}\)，其中 \(R_1\) 为初等反射阵且使
+
+\[
+R_1a_{21}^{(1)}=-\sigma_1\begin{pmatrix}1\\0\end{pmatrix},\qquad
+\sigma_1=\|a_{21}^{(1)}\|_2=\sqrt{20}\approx4.472\,136,
+\]
+
+\[
+u_1=a_{21}^{(1)}+\sigma_1\rho_1=\begin{pmatrix}2+\sqrt{20}\\4\end{pmatrix}
+\approx\begin{pmatrix}6.472\,136\\4\end{pmatrix},
+\]
+
+\[
+\rho_1=\sigma_1(\sigma_1+a_{21})=\sqrt{20}(\sqrt{20}+2)\approx28.944\,27,\qquad
+R_1=I-\rho_1^{-1}u_1u_1^{\mathrm T}.
+\]
+
+（2）计算 \(R_1A_{22}^{(1)}\)。记
+
+\[
+A_{22}^{(1)}=\begin{pmatrix}3&2\\2&7\end{pmatrix}\equiv(a_1,a_2),
+\]
+
+于是
+
+\[
+R_1A_{22}^{(1)}=(R_1a_1,R_1a_2)
+=\begin{pmatrix}-3.130\,496&-7.155\,419\\-1.788\,855&1.341\,640\end{pmatrix},
+\]
+
+其中
+
+\[
+R_1a_i=(I-\rho_1^{-1}u_1u_1^{\mathrm T})a_i
+=a_i-(\rho_1^{-1}u_1^{\mathrm T}a_i)u_1\quad(i=1,2).
+\]
+
+（3）计算 \(A_{12}^{(1)}R_1\) 及 \((R_1A_{22}^{(1)})R_1\)，即计算
+
+\[
+\begin{pmatrix}A_{12}^{(1)}\\(R_1A_{22}^{(1)})\end{pmatrix}R_1
+\equiv\begin{pmatrix}b_1^{\mathrm T}\\b_2^{\mathrm T}\\b_3^{\mathrm T}\end{pmatrix}R_1
+=\begin{pmatrix}b_1^{\mathrm T}R_1\\b_2^{\mathrm T}R_1\\b_3^{\mathrm T}R_1\end{pmatrix}
+=\begin{pmatrix}
+7.602\,634&-0.447\,212\\
+7.800\,003&-0.399\,999\\
+-0.399\,999&2.200\,000
+\end{pmatrix},
+\]
+
+其中
+
+\[
+b_i^{\mathrm T}R_1=b_i^{\mathrm T}-(\rho_1^{-1}b_i^{\mathrm T}u_1)u_1^{\mathrm T}
+\quad(i=1,2,3).
+\]
+
+（4）计算 \(A_2=U_1A_1U_1\)。
+
+\[
+A_2=\begin{pmatrix}-4&A_{12}^{(1)}R_1\\
+\begin{matrix}-\sigma_1\\0\end{matrix}&R_1A_{22}^{(1)}R_1
+\end{pmatrix}
+=\begin{pmatrix}
+-4&7.602\,634&-0.447\,212\\
+-4.472\,136&7.800\,003&-0.399\,999\\
+0&-0.399\,999&2.200\,000
+\end{pmatrix}
+\]
+
+为上 Hessenberg 阵。
+
+\begin{quote}
+校注（agent 补充）：例 9.5（1）原印 \(u_1=a_{21}^{(1)}+\sigma_1\rho_1\) 中的 \(\rho_1\) 已经由放大原图确认。结合紧随的列向量以及同段将 \(\rho_1\) 定义为标量的公式，这里疑应为第一单位向量 \(e_1\)；正文保留原印。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 250；印刷页码 237。
+
+\href{source-images/pdf-250.jpeg}{原页}
+
+\subsection{9.4 QR 算法}\label{ch09b-qr-ux7b97ux6cd5}
+
+\subsubsection{9.4.1 引言}\label{ch09b-ux5f15ux8a00}
+
+Rutishauser（在 1958 年）利用矩阵的三角分解提出了计算矩阵特征值的 LR 算法，Francis（在 1961 年、1962 年）利用矩阵的 QR 分解建立了计算矩阵特征值的 QR 方法。
+
+QR 方法是一种变换方法，是计算一般矩阵（中小型矩阵）全部特征值问题的最有效的方法之一。目前，QR 方法主要用来计算：（1）上 Hessenberg 阵的全部特征值问题，（2）对称三对角阵的全部特征值问题。QR 方法具有收敛快、算法稳定等特点。
+
+对于一般矩阵 \(A\in\mathbb R^{n\times n}\)（或对称阵），首先用 Householder 方法将 \(A\) 化为上 Hessenberg 阵 \(B\)（或对称三对角阵），然后再用 QR 方法计算 \(B\) 的全部特征值问题。
+
+事实上，除了可以用 Householder 法约化矩阵外，还可考虑用如下形式的平面旋转矩阵来约化：
+
+\[
+P_{ij}=\left(\begin{array}{*{11}{c}}
+1&&&&&&&&&&\\
+&\ddots&&&&&&&&&\\
+&&1&&&&&&&&\\
+&&&c&&&&s&&&\\
+&&&&1&&&&&&\\
+&&&&&\ddots&&&&&\\
+&&&&&&1&&&&\\
+&&&-s&&&&c&&&\\
+&&&&&&&&1&&\\
+&&&&&&&&&\ddots&\\
+&&&&&&&&&&1
+\end{array}\right),
+\tag{9.4.1}
+\]
+
+矩阵原图标注：\(c,-s\) 所在列为``第 \(i\) 列''，\(s,c\) 所在列为``第 \(j\) 列''；\(c,s\) 所在行为``第 \(i\) 行''，\(-s,c\) 所在行为``第 \(j\) 行''。其中 \(c=\cos\theta\)，\(s=\sin\theta\)。
+
+下面是用这种矩阵约化矩阵的一些结论。
+
+\textbf{引理 1}　设 \(x=(\alpha_1,\alpha_2,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)^{\mathrm T}\)，其中 \(\alpha_i,\alpha_j\) 不全为零，则可选一平面旋转矩阵 \(P_{ij}\) 使 \(P_{ij}x=y\equiv(\alpha_1,\alpha_2,\cdots,\alpha_i^{(1)},\cdots,\alpha_j^{(1)},\cdots,\alpha_n)^{\mathrm T}\)，其中
+
+\[
+\alpha_i^{(1)}=\sqrt{\alpha_i^2+\alpha_j^2},
+\tag{9.4.2}
+\]
+
+\[
+\alpha_j^{(1)}=0,
+\tag{9.4.3}
+\]
+
+\[
+\begin{cases}
+c=\alpha_i/\sqrt{\alpha_i^2+\alpha_j^2},\\
+s=\alpha_j/\sqrt{\alpha_i^2+\alpha_j^2}.
+\end{cases}
+\tag{9.4.4}
+\]
+
+\clearpage
+
+原书 PDF 页 251；印刷页码 238。
+
+\href{source-images/pdf-251.jpeg}{原页}
+
+\textbf{证明}　事实上，\(P_{ij}x\) 只改变 \(x\) 的第 \(i\) 个及第 \(j\) 个元素，且有
+
+\[
+\alpha_i^{(1)}=c\alpha_i+s\alpha_j,\qquad
+\alpha_j^{(1)}=-s\alpha_i+c\alpha_i,
+\]
+
+于是可选 \(P_{ij}\)，使 \(\alpha_j^{(1)}=-s\alpha_i+c\alpha_j=0\)，即按式（9.4.4）求 \(c,s\)，且有式（9.4.2）及式（9.4.3）。
+
+用平面旋转阵进行左变换可产生一算法，设给定 \(x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)，计算 \(c=\cos\theta\)，\(s=\sin\theta\)，\(v=\sqrt{\alpha^2+\beta^2}\)，使 \(P_{ij}x=\begin{pmatrix}c&s\\-s&c\end{pmatrix}\begin{pmatrix}\alpha\\\beta\end{pmatrix}=\begin{pmatrix}v\\0\end{pmatrix}\)，为了防止溢出，将 \(x\) 规范化，有
+
+\[
+\eta\equiv\|x\|_\infty=\max\{|\alpha|,|\beta|\}\ne0,\qquad
+x'=x/\eta=\begin{pmatrix}\alpha/\eta\\\beta/\eta\end{pmatrix},
+\]
+
+于是
+
+\[
+\begin{cases}c'=c,\ s'=s,\\v'=v/\eta.\end{cases}
+\]
+
+\textbf{算法 1}　设 \(x=\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)，本算法产生 \(c,s\) 及 \(v\)。
+
+\textbf{步 1}　计算 \(\eta=\max\{|\alpha|,|\beta|\}\)。
+
+\textbf{步 2}　如果 \(\eta=0\)，则 \(c\leftarrow1\)，\(s\leftarrow0\)，转步 8。
+
+\textbf{步 3}　\(\alpha'=\alpha/\eta\)。
+
+\textbf{步 4}　\(\beta'=\beta/\eta\)。
+
+\textbf{步 5}　\(v'=\sqrt{\alpha'^2+\beta'^2}\)。
+
+\textbf{步 6}　\(c=\alpha'/v'\)，\(s=\beta'/v'\)。
+
+\textbf{步 7}　\(v=\eta v'\)。
+
+\textbf{步 8}　计算终止。
+
+\textbf{定理 9.15}　如果 \(A\) 为非奇异矩阵，则存在正交矩阵 \(P_1,P_2,\cdots,P_{n-1}\)（即一系列平面旋转矩阵）使
+
+\[
+P_{n-1},\cdots,P_2P_1A=\begin{pmatrix}
+r_{11}&r_{12}&\cdots&r_{1n}\\
+&r_{22}&\cdots&r_{2n}\\
+&&\ddots&\vdots\\
+&&&r_{nn}
+\end{pmatrix}\equiv R,
+\tag{9.4.5}
+\]
+
+且 \(r_{ii}>0\quad(i=1,2,\cdots,n-1)\)。
+
+\textbf{证明}　由于 \(A\) 的第 1 列一定存在 \(a_{j1}\ne0\)，于是，如果 \(a_{j1}\ne0\ (j=2,3,\cdots,n)\)，应用算法 1，即存在平面旋转矩阵 \(P_{12},P_{13},\cdots,P_{1n}\)，使
+
+\[
+P_{1n}\cdots P_{13}P_{12}A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&\cdots&a_{1n}^{(2)}\\
+0&a_{22}^{(2)}&\cdots&a_{2n}^{(2)}\\
+\vdots&\vdots&&\vdots\\
+0&a_{n2}^{(2)}&\cdots&a_{nn}^{(2)}
+\end{pmatrix}\equiv A^{(2)},
+\]
+
+且记 \(P_{1n}\cdots P_{12}=P_1\)。同理，如果 \(a_{2j}^{(2)}\ne0\ (j=3,\cdots,n)\)，应用算法 1，存在平面旋转矩阵
+
+\begin{quote}
+校注（agent 补充）：引理 1 证明首式原印 \(\alpha_j^{(1)}=-s\alpha_i+c\alpha_i\)，下一行则为 \(-s\alpha_i+c\alpha_j\)。按矩阵乘法，首式末项疑应为 \(c\alpha_j\)；正文保留原印。
+
+校注（agent 补充）：定理 9.15 证明末行原印 \(a_{2j}^{(2)}\ne0\)。该步旋转消去第 2 列下方元素，疑应为 \(a_{j2}^{(2)}\ne0\)；正文保留原印。
+
+校注（agent 补充）：算法 1 步 2 的零向量分支只指定 \(c,s\) 后即终止，没有显式赋值 \(v\)。按开头的 \(v=\sqrt{\alpha^2+\beta^2}\)，此分支应有 \(v=0\)；原算法步骤保留。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 252；印刷页码 239。
+
+\href{source-images/pdf-252.jpeg}{原页}
+
+\(P_{23},\cdots,P_{2n}\)（记 \(P_2=P_{2n}\cdots P_{23}\)），使
+
+\[
+P_2P_1A=\begin{pmatrix}
+r_{11}&a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\\
+&r_{22}&a_{23}^{(3)}&\cdots&a_{2n}^{(3)}\\
+&&a_{33}^{(3)}&\cdots&a_{3n}^{(3)}\\
+&&\vdots&&\vdots\\
+&&a_{n3}^{(3)}&\cdots&a_{nn}^{(3)}
+\end{pmatrix}.
+\]
+
+重复上述过程，最后得到：存在正交阵 \(P_1,P_2,\cdots,P_{n-1}\)，使式（9.4.5）成立。
+
+\textbf{定理 9.16（矩阵的 QR 分解）}　如果 \(A\in\mathbb R^{n\times n}\) 为非奇异矩阵，则 \(A\) 可分解为一正交阵 \(Q\) 与上三角阵 \(R\) 的乘积，即 \(A=QR\)，且当 \(R\) 对角元素都为正数时分解唯一。
+
+\textbf{证明}　由定理 9.12，存在正交阵 \(P_1,P_2,\cdots,P_{n-1}\)，使
+
+\[
+P_{n-1}\cdots P_2P_1A=R
+\tag{9.4.6}
+\]
+
+为上三角阵，记
+
+\[
+Q^{\mathrm T}=P_{n-1}\cdots P_2P_1,
+\]
+
+于是式（9.4.6）为 \(Q^{\mathrm T}A=R\)，即 \(A=QR\)，其中 \(Q=P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}\) 为正交阵。
+
+现证唯一性：设有 \(A=Q_1R_1=Q_2R_2\)，其中 \(R_1,R_2\) 为上三角阵（显然为非奇异阵）且对角元素都为正数，\(Q_1,Q_2\) 为正交阵。于是
+
+\[
+Q_2^{\mathrm T}Q_1=R_2R_1^{-1},
+\tag{9.4.7}
+\]
+
+由式（9.4.7）知上三角阵 \(R_2R_1^{-1}\) 为正交阵，故 \(R_2R_1^{-1}\) 为对角阵，即
+
+\[
+R_2R_1^{-1}=D=\operatorname{diag}(d_1,d_2,\cdots,d_n).
+\]
+
+因为 \(R_2R_1^{-1}\) 是正交阵，所以 \(D^2=I\)，又因 \(R_1,R_2\) 对角元素都为正数，故 \(d_i>0\ (i=1,2,\cdots,n)\)，即 \(D=I\)。于是 \(R_2=R_1\)，由式（9.4.7）得到 \(Q_2=Q_1\)。
+
+\subsubsection{9.4.2 QR 算法}\label{ch09b-qr-ux7b97ux6cd5-1}
+
+设 \(A=A_1=(a_{ij})\in\mathbb R^{n\times n}\)，且对 \(A\) 进行 QR 分解，即 \(A=QR\)，其中 \(R\) 为上三角阵，\(Q\) 为正交阵，于是可得到一新矩阵
+
+\[
+B=RQ=Q^{\mathrm T}AQ.
+\]
+
+显然，\(B\) 是由 \(A\) 经过正交相似变换得到，因此 \(B\) 与 \(A\) 特征值相同。再对 \(B\) 进行 QR 分解，又可得一新的矩阵，重复这过程可得到矩阵序列。
+
+设 \(A=A_1\)，QR 分解，得 \(A_1=Q_1R_1\)，作矩阵 \(A_2=R_1Q_1=Q_1^{\mathrm T}A_1Q_1\)，\(\cdots\)，求得 \(A_k\) 后将 \(A_k\) 进行 QR 分解，得 \(A_k=Q_kR_k\)，作矩阵 \(A_{k+1}=R_kQ_k=Q_k^{\mathrm T}A_kQ_k\cdots\)。
+
+QR 算法，就是利用矩阵的 QR 分解，按上述递推法则构造矩阵序列 \(\{A_k\}\) 的过程。只要 \(A\) 为非奇异矩阵，则由 QR 算法就完全确定 \(\{A_k\}\)。
+
+\textbf{定理 9.17（基本 QR 方法）}　设 \(A=A_1\in\mathbb R^{n\times n}\)，QR 算法为
+
+\[
+\begin{cases}
+A_k=Q_kR_k\quad(Q_k^{\mathrm T}Q_k=I,\ R_k\text{ 为上三角阵}),\\
+A_{k+1}=R_kQ_k\quad(k=1,2,\cdots),
+\end{cases}
+\tag{9.4.8}
+\]
+
+\begin{quote}
+校注（agent 补充）：定理 9.16 证明首句原印``由定理 9.12''，本段所需的平面旋转矩阵将 A 变成上三角阵的结论对应定理 9.15；原引用保留，列为疑似原书编号错误。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 253；印刷页码 240。
+
+\href{source-images/pdf-253.jpeg}{原页}
+
+且记 \(\widetilde Q_k\equiv Q_1Q_2\cdots Q_k\)，\(\widetilde R_k\equiv R_k\cdots R_2R_1\)，则有
+
+\(1^\circ\)　\(A_{k+1}\) 相似于 \(A_k\)，即 \(A_{k+1}=Q_k^{\mathrm T}A_kQ_k\)；
+
+\(2^\circ\)　\(A_{k+1}=(Q_1Q_2\cdots Q_k)^{\mathrm T}A_1(Q_1Q_2\cdots Q_k)=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k\)；
+
+\(3^\circ\)　\(A^k\) 的 QR 分解式为 \(A^k=\widetilde Q_k\widetilde R_k\)。
+
+\textbf{证明}　结论 \(1^\circ\)、\(2^\circ\) 显然，现用归纳法证结论 \(3^\circ\)。显然，当 \(k=1\) 时有 \(A_1=\widetilde Q_1\widetilde R_1=Q_1R_1\)，设 \(A^{k-1}\) 有分解式 \(A^{k-1}=\widetilde Q_{k-1}\widetilde R_{k-1}\)，于是
+
+\[
+\begin{aligned}
+\widetilde Q_k\widetilde R_k
+&=Q_1Q_2\cdots(Q_kR_k)\cdots R_1
+=Q_1Q_2\cdots Q_{k-1}A_kR_{k-1}\cdots R_1\\
+&=\widetilde Q_{k-1}A_k\widetilde R_{k-1}
+=A\widetilde Q_{k-1}\widetilde R_{k-1}=A^k
+\quad\text{（因为 }A_k=\widetilde Q_{k-1}^{\mathrm T}A\widetilde Q_{k-1}\text{）}.
+\end{aligned}
+\]
+
+由定理 9.13 知，将 \(A_k\) 进行 QR 分解，即将 \(A_k\) 用正交变换（左变换）化为上三角阵。
+
+\[
+Q_k^{\mathrm T}A_k=R_k,\qquad
+A_{k+1}=Q_k^{\mathrm T}A_kQ_k=P_{n-1}\cdots P_2P_1A_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T},
+\]
+
+其中
+
+\[
+Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1.
+\]
+
+这就是说 \(A_{k+1}\) 可由 \(A_k\) 按下述方法求得：
+
+（1）左变换 \(P_{n-1}\cdots P_2P_1A_k=R_k\)（上三角阵）；（2）右变换 \(R_kP_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}=A_{k+1}\)。
+
+\textbf{引理 2}　设 \(M_k=Q_kR_k\)，其中 \(Q_k\) 为正交阵，\(R_k\) 为具有正对角元素的上三角阵，如果 \(M_k\to I\ (k\to\infty)\)，则 \(Q_k\to I\)，及 \(R_k\to I\ (k\to\infty)\)。
+
+\textbf{证明}　设 \(R_k^{\mathrm T}R_k=M_k^{\mathrm T}M_k\to I\ (k\to\infty)\)，记 \(R_k=(r_{ij}^{(k)})\)，矩阵 \(R_k^{\mathrm T}R_k\) 第 1 行是
+
+\[
+r_{11}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)}),
+\]
+
+因此有
+
+\[
+r_{11}^{(k)}\to1,\ r_{12}^{(k)}\to0,\ \cdots,\ r_{1n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.9}
+\]
+
+\(R_k^{\mathrm T}R_k\) 第 2 行是
+
+\[
+r_{12}^{(k)}\cdot(r_{11}^{(k)},r_{12}^{(k)},\cdots,r_{1n}^{(k)})
++r_{22}^{(k)}\cdot(0,r_{22}^{(k)},r_{23}^{(k)},\cdots,r_{2n}^{(k)}),
+\]
+
+利用式（9.4.9）的结果，则有
+
+\[
+r_{22}^{(k)}\to1,\ r_{23}^{(k)}\to0,\ \cdots,\ r_{2n}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.10}
+\]
+
+对于 \(R_k^{\mathrm T}R_k\) 其他行同理可得，故 \(R_k\to I\ (k\to\infty)\)，且易知有 \(R_k^{-1}\to I\ (k\to\infty)\)，因此 \(Q_k=M_kR_k^{-1}\to I\ (k\to\infty)\)。
+
+\textbf{定理 9.18（QR 方法的收敛性）}　设 \(A=(a_{ij})\in\mathbb R^{n\times n}\)，
+
+\(1^\circ\) 如果 \(A\) 的特征值满足：\(|\lambda_1|>|\lambda_2|>\cdots>|\lambda_n|>0\)；
+
+\(2^\circ\) \(A\) 有标准形 \(A=XDX^{-1}\) 其中 \(D=\operatorname{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)\)，且设 \(X^{-1}\) 有三角分解 \(X^{-1}=LU\)（\(L\) 为单位下三角阵，\(U\) 为上三角阵），则由 QR 算法产生的 \(\{A_k\}\) 本质上收敛于上三角阵，即
+
+\[
+A_k\xrightarrow{\text{本质上}}R=
+\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix}\quad(k\to\infty)
+\]
+
+\begin{quote}
+校注（agent 补充）：本页将 QR 分解引用为``定理 9.13''，而 PDF247 上定理 9.13 的结论是约化为上 Hessenberg 阵；本页所述左变换为上三角阵的结论见定理 9.15。保留原引用，列为疑似原书编号错误。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 254；印刷页码 241。
+
+\href{source-images/pdf-254.jpeg}{原页}
+
+或
+
+\[
+a_{ii}^{(k)}\to\lambda_i\quad(k\to\infty),
+\tag{9.4.11}
+\]
+
+当 \(i>j\) 时，
+
+\[
+a_{ij}^{(k)}\to0\quad(k\to\infty).
+\tag{9.4.12}
+\]
+
+当 \(i<j\) 时，\(a_{ij}^{(k)}\) 极限不一定存在。
+
+\textbf{证明}　由于 \(A_{k+1}=\widetilde Q_k^{\mathrm T}A_1\widetilde Q_k\) 且 \(\widetilde Q_k\) 为 \(A^k\) 的 QR 分解中的正交矩阵。下面来确定 \(\widetilde Q_k\) 的表达式，进而考虑 \(A_{k+1}\) 的极限情况。
+
+由于 \(A\) 为非奇异矩阵，所以存在非奇异矩阵 \(X\) 使 \(X^{-1}AX=D\)，则
+
+\[
+A^k=XD^kX^{-1},
+\tag{9.4.13}
+\]
+
+又有假设 \(X^{-1}=LU\)，于是式（9.4.13）为
+
+\[
+A^k=XD^kLU=X(D^kLD^{-k})D^kU.
+\]
+
+显然
+
+\[
+D^kLD^{-k}=I+E_k,
+\]
+
+其中
+
+\[
+E_k=\begin{pmatrix}
+0&&&&\\
+\left(\dfrac{\lambda_2}{\lambda_1}\right)^k l_{21}&0&&&\\
+\left(\dfrac{\lambda_3}{\lambda_1}\right)^k l_{31}&\left(\dfrac{\lambda_3}{\lambda_2}\right)^k l_{32}&0&&\\
+\vdots&\vdots&\ddots&\ddots&\\
+\left(\dfrac{\lambda_n}{\lambda_1}\right)^k l_{n1}&\left(\dfrac{\lambda_n}{\lambda_2}\right)^k l_{n2}&\cdots&\left(\dfrac{\lambda_n}{\lambda_{n-1}}\right)^k l_{n,n-1}&0
+\end{pmatrix}.
+\]
+
+由假设条件 \(|\lambda_i/\lambda_j|<1\)（当 \(i>j\) 时），则 \(E_k\to O\ (k\to\infty)\) 且
+
+\[
+\|E_k\|_\infty\leq c\max_{1\leq j\leq n-1}|\lambda_{j+1}/\lambda_j|^k
+\quad(c\text{ 为正的常数},\ k\geq1).
+\tag{9.4.14}
+\]
+
+显然矩阵 \(X\) 有 QR 分解：\(X=QR\)，其中 \(Q\) 为正交阵，\(R\) 为非奇异上三角阵。于是
+
+\[
+A^k=QR(I+E_k)D^kU=Q(I+RE_kR^{-1})RD^kU.
+\tag{9.4.15}
+\]
+
+由于 \(R(I+E_k)\)（当 \(k\) 充分大时）为非奇异，则 \(I+RE_kR^{-1}\) 亦非奇异，于是 \((I+RE_kR^{-1})\) 有 QR 分解（要求 \(R_k\) 对角元素均为正）
+
+\[
+I+RE_kR^{-1}=Q_kR_k\quad\text{且}\quad Q_kR_k\to I\quad\text{（当 }k\to\infty\text{ 时）},
+\]
+
+由引理 2 有 \(Q_k\to I,R_k\to I\)（当 \(k\to\infty\) 时），由式（4.15）有
+
+\[
+A^k=(QQ_k)(R_kRD^kU),
+\tag{9.4.16}
+\]
+
+式（9.4.16）为 \(A^k\) 的 QR 分解式，但 \(R_kRD^kU\)（为上三角阵）对角元素不一定大于零，现引入对角阵
+
+\[
+D_k=\operatorname{diag}(\pm1,\pm1,\cdots,\pm1),
+\]
+
+以便保证 \(D_k(R_kRD^kU)\) 对角元素都为正数。从而得到 \(A^k\) 的 QR 分解式
+
+\[
+A^k=(QQ_kD_k)(D_kR_kRD^kU),
+\]
+
+由 \(A^k\) 矩阵 QR 分解的唯一性得到
+
+\[
+\begin{cases}
+\widetilde Q_k=QQ_kD_k,\\
+\widetilde R_k=D_kR_kRD^kU,
+\end{cases}
+\tag{9.4.17}
+\]
+
+\begin{quote}
+校注（agent 补充）：式（9.4.16）前原印``由式（4.15）有''，本页对应公式编号为（9.4.15）。正文保留原印编号。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 255；印刷页码 242。
+
+\href{source-images/pdf-255.jpeg}{原页}
+
+从而
+
+\[
+A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k
+=D_kQ_k^{\mathrm T}(RDR^{-1})Q_kD_k
+\quad\text{（注意 }Q^{\mathrm T}AQ=RDR^{-1}\text{）},
+\]
+
+其中
+
+\[
+R_0\equiv RDR^{-1}=\begin{pmatrix}
+\lambda_1&\times&\cdots&\times\\
+&\lambda_2&\ddots&\vdots\\
+&&\ddots&\times\\
+&&&\lambda_n
+\end{pmatrix},
+\]
+
+于是
+
+\[
+A_{k+1}=g_k^{\mathrm T}R_0g_k,
+\]
+
+其中
+
+\[
+\begin{cases}
+g_k=Q_kD_k,\\
+R_0=RDR^{-1}\quad\text{（上三角阵）},\\
+Q_k\to I\quad(k\to\infty),\\
+D_k\text{ 为对角阵，其元素为 }+1\text{ 或 }-1.
+\end{cases}
+\]
+
+由此即证得式（9.4.11）、式（9.4.12）。且收敛速度依赖于 \(Q_k\to I\) 收敛速度；即依赖于式（9.4.14）的界。
+
+\textbf{定理 9.19}　如果对称阵 \(A\) 满足定理 9.18 条件，则由 QR 算法产生的 \(\{A_k\}\) 收敛于对角阵。
+
+\textbf{证明}　由定理 9.18 即知。下面提一下关于 QR 算法收敛性的另一结果。
+
+设 \(A\in\mathbb R^{n\times n}\)，如果 \(A\) 的等模特征值中只有实重特征值或多重复的共轭特征值，则由 QR 算法产生 \(\{A_k\}\) 本质收敛于分块上三角阵（对角块为一阶和二阶子块）且对角块每一个 \(2\times2\) 子块给出 \(A\) 的一对共轭复特征值，每一个对角子块给出 \(A\) 的实特征值，即
+
+\[
+A_k\to\begin{pmatrix}
+\lambda_1&\times&\cdots&\times&\times\times&\cdots&\times\times\\
+&\lambda_2&\ddots&\vdots&\vdots&&\vdots\\
+&&\ddots&\times&\vdots&&\vdots\\
+&&&\lambda_m&\times\times&\cdots&\times\times\\
+&&&&B_l&\ddots&\vdots\\
+&&&&&\ddots&\times\times\\
+&&&&&&B_l
+\end{pmatrix}.
+\]
+
+其中 \(m+2l=n\)，\(B_i\) 为 \(2\times2\) 子块给出 \(A\) 一对共轭特征值。
+
+\subsubsection{9.4.3 带原点位移的 QR 方法}\label{ch09b-ux5e26ux539fux70b9ux4f4dux79fbux7684-qr-ux65b9ux6cd5}
+
+在定理 9.18 证明中进一步分析可知，\(a_{nn}^{(k)}\to\lambda_n\ (k\to\infty)\) 速度依赖于比值 \(r_n=|\lambda_n/\lambda_{n-1}|\)，当 \(r_n\) 很小时，收敛较快，如果 \(s\) 为 \(\lambda_n\) 一个估计，且对 \(A-sI\) 运用 QR 算法，则 \((n,n-1)\) 元素将以收敛因子 \(\left|\dfrac{\lambda_n-s}{\lambda_{n-1}-s}\right|\) 线性收敛于零，\((n,n)\) 元素将比在基本算法中收敛更快。
+
+\begin{quote}
+校注（agent 补充）：上方分块上三角阵中第一个二阶对角块原印为 \(B_l\)，与末块同名；放大字形确认后照录。按 \(m+2l=n\) 及顺序编号，第一个二阶块疑应为 \(B_1\)。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 256；印刷页码 243。
+
+\href{source-images/pdf-256.jpeg}{原页}
+
+为此，为了加速收敛，选择数列 \(\{s_k\}\)，按下述方法构造矩阵序列 \(\{A_k\}\)，称为\textbf{带原点位移的 QR 算法}。
+
+\textbf{步 1}　设 \(A=A_1\in\mathbb R^{n\times n}\)。
+
+\textbf{步 2}　将 \(A_k-s_kI\) 进行 QR 分解，即 \(A_k-s_kI=Q_kR_k\)，\(k=1,2,\cdots\)。
+
+\textbf{步 3}　构造新矩阵 \(A_{k+1}=R_kQ_k+s_kI=Q_k^{\mathrm T}A_kQ_k\)。
+
+\textbf{步 4}　\(A_{k+1}=\widetilde Q_k^{\mathrm T}A\widetilde Q_k\)，其中 \(\widetilde Q_k=Q_1Q_2\cdots Q_k\)，\(\widetilde R_k=R_k\cdots R_2R_1\)。
+
+\textbf{步 5}　矩阵 \((A-s_1I)(A-s_2I)\cdots(A-s_kI)\equiv\varphi(A)\) 有 QR 分解式 \(\varphi(A)=\widetilde Q_k\widetilde R_k\)。
+
+\textbf{步 6}　带位移 QR 方法变换一步的计算：首先用正交变换（左变换）将 \(A_k-s_kI\) 化为上三角阵，即
+
+\[
+P_{n-1}\cdots P_2P_1(A_k-s_kI)=R_k,
+\]
+
+其中 \(Q_k^{\mathrm T}=P_{n-1}\cdots P_2P_1\) 为一系列平面旋转矩阵的乘积。于是
+
+\[
+A_{k+1}=P_{n-1}\cdots P_2P_1(A_k-s_kI)P_1^{\mathrm T}P_2^{\mathrm T}\cdots P_{n-1}^{\mathrm T}+s_kI.
+\]
+
+下面考虑用 QR 算法计算上 Hessenberg 阵特征值。
+
+设
+
+\[
+A=A_1=\begin{pmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{pmatrix},\quad A\in\mathbb R^{n\times n}.
+\]
+
+（1）左变换计算。选择平面旋转阵 \(P_{12},P_{23},\cdots,P_{n-1,n}\)，使
+
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R.
+\]
+
+首先
+
+\[
+a_{ii}\leftarrow a_{ii}-s_1\quad(i=1,2,\cdots,n).
+\]
+
+第一次左变换，选择平面旋转阵 \(P_{12}\)，使第 2 行第 1 列元素为零。
+
+\[
+P_{12}(A_1-s_1I)=\begin{pmatrix}
+v_1&\begin{matrix}a_{12}^{(2)}&a_{13}^{(2)}&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&\boxed{\begin{matrix}
+a_{22}^{(2)}&a_{23}^{(2)}&\cdots&a_{2n}^{(2)}\\
+a_{32}&a_{33}&\cdots&a_{3n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+
+设已完成第 \(i-1\) 次左变换，则
+
+\[
+P_{i-1,i}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&a_{12}^{(2)}&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{1n}^{(2)}\end{matrix}\\
+&v_2&a_{23}^{(2)}&\cdots&\begin{matrix}\cdots&\cdots&\cdots&a_{2n}^{(2)}\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&&\vdots\end{matrix}\\
+&&&v_{i-1}&\begin{matrix}a_{i-1,i}^{(i-1)}&\cdots&\cdots&a_{i-1,n}^{(i-1)}\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+a_{ii}^{(i)}&\cdots&\cdots&a_{in}^{(i)}\\
+a_{i+1,i}&\ddots&&a_{i+1,n}\\
+&\ddots&\ddots&\vdots\\
+&&a_{n,n-1}&a_{nn}
+\end{matrix}}
+\end{pmatrix}.
+\]
+
+\clearpage
+
+原书 PDF 页 257；印刷页码 244。
+
+\href{source-images/pdf-257.jpeg}{原页}
+
+现进行第 \(i\) 次左变换，选择 \(P_{i,i+1}\)（常数 \(c_i,s_i\)）及 \(v_k\) 使 \((i+1,i)\)---元素为零，则有
+
+\[
+P_{i,i+1}\cdots P_{23}P_{12}(A_1-s_1I)
+=\begin{pmatrix}
+v_1&\times&\cdots&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&v_2&\times&\cdots&\begin{matrix}\cdots&\cdots&\times\end{matrix}\\
+&&\ddots&\ddots&\begin{matrix}&&\vdots\end{matrix}\\
+&&&v_i&\begin{matrix}\times&\cdots&\times\end{matrix}\\
+&&&&\boxed{\begin{matrix}
+\times&\times&\cdots&\times\\
+\times&\ddots&\ddots&\vdots\\
+&\ddots&\ddots&\times\\
+&&\times&\times
+\end{matrix}}
+\end{pmatrix},
+\]
+
+继续这过程，最后
+
+\[
+P_{n-1,n}\cdots P_{23}P_{12}(A_1-s_1I)=R\quad\text{（上三角阵）},
+\]
+
+其中 \(P_{i,i+1}\ (i=1,2,\cdots,n+1)\) 为平面旋转阵。
+
+（2）右变换计算。计算 \(RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}\)，其中上三角阵 \(R\) 元素仍记作 \(a_{ij}\ (i\leq j)\)，于是
+
+\[
+RP_{12}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(2)}&a_{13}&\cdots&a_{1n}\\
+a_{21}^{(2)}&a_{22}^{(2)}&a_{23}&\cdots&a_{2n}\\
+&&a_{33}&\cdots&a_{3n}\\
+&&&\ddots&\vdots\\
+&&&&a_{nn}
+\end{pmatrix},
+\]
+
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}=\begin{pmatrix}
+a_{11}^{(2)}&a_{12}^{(3)}&a_{13}^{(3)}&a_{14}&\cdots\\
+a_{21}^{(2)}&a_{22}^{(3)}&a_{23}^{(3)}&a_{24}&\cdots\\
+&a_{32}^{(3)}&a_{33}^{(3)}&a_{34}&\cdots\\
+&&a_{43}^{(3)}&a_{44}&\cdots\\
+&&&\ddots&\ddots
+\end{pmatrix}.
+\]
+
+继续这过程，最后
+
+\[
+RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}
+=\begin{bmatrix}
+\times&\times&\cdots&\cdots&\times\\
+\times&\times&\cdots&\cdots&\times\\
+&\times&\ddots&&\vdots\\
+&&\ddots&\ddots&\vdots\\
+&&&\times&\times
+\end{bmatrix}\quad\text{（为上 Hessenberg 阵）},
+\]
+
+故 \(A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}\cdots P_{n-1,n}^{\mathrm T}+s_1I\) 为上 Hessenberg 阵。
+
+由上面的构造可知，如果 \(A\) 为上 Hessenberg 阵，则用 QR 算法产生的 \(A_2,A_3,\cdots,A_k,\cdots\) 亦是上 Hessenberg 阵。显然，每一次左变换仅改变矩阵的两行，而每一次右变换仅改变矩阵的两列。为了节省存储量，左变换和右变换可以同时进行，例如
+
+\[
+\begin{aligned}
+P_{23}P_{12}(A-s_1I)&\to P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}
+\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}\\
+&\to P_{34}P_{23}P_{12}(A-s_1I)P_{12}^{\mathrm T}P_{23}^{\mathrm T}\to\cdots
+\end{aligned}
+\]
+
+实际计算时，用不同位移 \(s_1,s_2,\cdots,s_k,\cdots\) 反复应用上述变换就产生一正交相似于上 Hessenberg 阵 \(A\) 的序列 \(\{A_k\}\)，如果选取 \(s_k=a_{nn}^{(k)}\)，那么当 \(a_{n,n-1}^{(k)}\) 充分小，\(A_k\) 有形式
+
+\begin{quote}
+校注（agent 补充）：本页开头第 \(i\) 次左变换原印``及 \(v_k\)''，对应矩阵对角位置为 \(v_i\)，疑为下标不一致；保留原印。
+
+校注（agent 补充）：左变换最后一式之后原印 \(i=1,2,\cdots,n+1\)。因 \(P_{i,i+1}\) 作用于 \(n\) 阶矩阵，且乘积末项为 \(P_{n-1,n}\)，上限疑应为 \(n-1\)；保留原印。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 258；印刷页码 245。
+
+\href{source-images/pdf-258.jpeg}{原页}
+
+\[
+\left(\begin{array}{ccccc|c}
+\times&\times&\times&\cdots&\times&\times\\
+&\times&\times&\cdots&\times&\times\\
+&&\ddots&\ddots&\vdots&\vdots\\
+&&&\times&\times&\times\\\hline
+&&&&&\lambda_n
+\end{array}\right)_{n\times n}
+\equiv\left(\begin{array}{c|c}
+B&\begin{matrix}\times\\\times\\\vdots\\\times\end{matrix}\\\hline
+O&\lambda_n
+\end{array}\right),
+\]
+
+则数 \(\lambda_n=a_{nn}^{(k)}\) 为 \(A\) 的近似特征值。采用收缩方法，继续对 \(B\in\mathbb R^{(n-1)\times(n-1)}\) 应用 QR 算法，就可逐步求出 \(A\) 其余近似特征值。
+
+判别 \(a_{n,n-1}^{(k)}\) 充分小的准则如下：
+
+（1）\(|a_{n,n-1}^{(k)}|\leq\varepsilon\|A\|_\infty\)；
+
+（2）或将 \(a_{n,n-1}^{(k)}\) 与相邻元素进行比较 \(|a_{n,n-1}^{(k)}|\leq\varepsilon\min(|a_{nn}^{(k)}|,|a_{n-1,n-1}^{(k)}|)\)，其中 \(\varepsilon=10^{-t}\)，\(t\) 是计算中有效数字的个数。
+
+上述应用带位移的 QR 算法，可计算上 Hessenberg 阵 \(A\) 所有特征值，但不能计算 \(A\) 复特征值，因为上述 QR 算法是在实数中进行计算的，位移 \(s_k=a_{nn}\) 不能逼近一个复特征值。关于避免复数运算求上 Hessenberg 阵复特征值的 QR 算法------隐式位移的 QR 算法请参看有关文献。
+
+一般来说位移 \(s_k\) 常用的选取方法有两种：
+
+（1）选取 \(s_k=a_{nn}^{(k)}\)；
+
+（2）选取 \(s_k\) 是 \(2\times2\) 矩阵 \(\begin{pmatrix}a_{n-1,n-1}^{(k)}&a_{n-1,n}^{(k)}\\a_{n,n-1}^{(k)}&a_{nn}^{(k)}\end{pmatrix}\)，特征值 \(\lambda\) 且 \(|a_{nn}^{(k)}-\lambda|\) 为最小（记 \(A_k=(a_{ij}^{(k)})\)）。
+
+\textbf{例 9.6}　用 QR 方法计算对称三对角阵的全部特征值
+
+\[
+A=A_1=\begin{pmatrix}2&1&0\\1&3&1\\0&1&4\end{pmatrix}.
+\]
+
+\textbf{解}　采用第一种选位移方法，即选 \(s_k=a_{nn}^{(k)}\)。又 \(s_1=4\)。
+
+\[
+P_{23}P_{12}(A_1-s_1I)=R=\begin{pmatrix}
+2.236\,1&-1.342&0.447\,2\\
+&1.095\,4&-0.365\,1\\
+&&0.816\,50
+\end{pmatrix},
+\]
+
+\[
+A_2=RP_{12}^{\mathrm T}P_{23}^{\mathrm T}+s_1I
+=\begin{pmatrix}
+1.400\,0&0.489\,9&0\\
+0.489\,9&3.266\,7&0.745\,4\\
+0&0.745\,4&4.333\,3
+\end{pmatrix},
+\]
+
+\[
+A_3=\begin{pmatrix}
+1.291\,5&0.201\,7&0\\
+0.201\,7&3.020\,2&0.272\,4\\
+0&0.272\,4&4.688\,4
+\end{pmatrix},\qquad
+A_4=\begin{pmatrix}
+1.273\,7&0.099\,3&0\\
+0.099\,3&2.994\,3&0.007\,2\\
+0&0.007\,2&4.732\,0
+\end{pmatrix},
+\]
+
+\clearpage
+
+原书 PDF 页 259；印刷页码 246。
+
+\href{source-images/pdf-259.jpeg}{原页}
+
+\[
+A_5=\begin{pmatrix}
+1.269\,4&0.049\,8&0\\
+0.049\,8&2.998\,6&0\\
+0&0&\boxed{4.732\,1}
+\end{pmatrix},\qquad
+\widetilde A_5=\begin{pmatrix}1.269\,4&0.049\,8\\0.049\,8&2.998\,6\end{pmatrix}.
+\]
+
+现在收缩，继续对 \(A_5\) 的子矩阵 \(\widetilde A_5\in\mathbb R^{2\times2}\) 进行变换，得到
+
+\[
+\widetilde A_6=P_{12}(\widetilde A_5-s_5I)P_{12}^{\mathrm T}+s_5I
+=\begin{pmatrix}\boxed{1.268\,0}&-4\times10^{-5}\\-4\times10^{-5}&\boxed{3.000\,0}\end{pmatrix},
+\]
+
+故求得 \(A\) 近似特征值为
+
+\[
+\lambda_1\approx4.732\,1,\qquad\lambda_2\approx3.000\,0,\qquad\lambda_3\approx1.268\,0,
+\]
+
+且 \(A\) 的特征值是
+
+\[
+\lambda_1=3+\sqrt3\approx4.732\,1,\qquad\lambda_2=3.0,\qquad\lambda_3=3-\sqrt3\approx1.267\,9.
+\]
+
+\subsection{小结}\label{ch09b-ux5c0fux7ed3}
+
+本章介绍了计算一般矩阵主特征值及对应特征向量的迭代法（幂法），这种方法在计算过程中原始矩阵 \(A\) 始终不变。因此，这种方法适于求高阶稀疏矩阵的特征值问题。主特征值为复特征值情况可参看文献 {[}11{]}。
+
+反幂法是计算矩阵特征向量的一个有效方法，主要用来计算 Hessenberg 阵或三对角阵对应于一个给定的近似特征值的特征向量。
+
+本章还介绍了正交相似变换的方法，例如正交相似约化一般矩阵 \(A\) 为上 Hessenberg 阵的 Householder 方法，计算一般矩阵 \(A\) 全部特征值问题的 QR 方法，这些方法都是利用矩阵的正交相似变换约化矩阵 \(A\) 为某种简单形式，以期求 \(A\) 的特征值的方法。这种方法将破坏原始矩阵。QR 方法（与 Householder 方法结合使用）收敛快，精度高，是求任意实矩阵（中、小型）特征值问题的最有效的方法之一。对计算矩阵特征值问题有兴趣的读者可参看文献 {[}10{]}、{[}13{]}、{[}14{]}。
+
+\subsection{习题}\label{ch09b-ux4e60ux9898}
+
+\textbf{1.} 用幂法计算下列矩阵的主特征值及对应的特征向量：
+
+\[
+\text{（1）}\ A_1=\begin{pmatrix}7&3&-2\\3&4&-1\\-2&-1&3\end{pmatrix};\qquad
+\text{（2）}\ A_2=\begin{pmatrix}3&-4&3\\-4&6&3\\3&3&1\end{pmatrix},
+\]
+
+当特征值有三位小数稳定时迭代终止。
+
+\textbf{2.} 方阵 \(T\) 分块形式为
+
+\[
+T=\begin{pmatrix}
+T_{11}&T_{12}&\cdots&T_{1n}\\
+&T_{22}&\cdots&T_{2n}\\
+&&\ddots&\vdots\\
+&&&T_{nn}
+\end{pmatrix},
+\]
+
+其中 \(T_{ii}\ (i=1,2,\cdots,n)\) 为方阵，\(T\) 称为块上
+
+\clearpage
+
+原书 PDF 页 260；印刷页码 247。
+
+\href{source-images/pdf-260.jpeg}{原页}
+
+三角阵，如果对角块的阶数至多不超过 2，则称 \(T\) 为准三角形形式。用 \(\sigma(T)\) 记矩阵 \(T\) 的特征值集合，证明 \(\sigma(T)=\displaystyle\bigcup_{i=1}^{n}\sigma(T_{ii})\)。
+
+\textbf{3.} 利用反幂法求矩阵 \(\begin{pmatrix}6&2&1\\2&3&1\\1&1&1\end{pmatrix}\) 的最接近于 6 的特征值及对应的特征向量。
+
+\textbf{4.} 求矩阵 \(\begin{pmatrix}4&0&0\\0&3&1\\0&1&3\end{pmatrix}\) 与特征值 4 对应的特征向量。
+
+\textbf{5.} （1）设 \(A\) 是对称矩阵，\(\lambda\) 和 \(x\ (\|x\|_2=1)\) 是 \(A\) 的一个特征值及相应的特征向量，又设 \(P\) 为一个正交阵，使 \(Px=e_1=(1,0,\cdots,0)^{\mathrm T}\)，证明 \(B=PAP^{\mathrm T}\) 的第 1 行和第 1 列除了 \(\lambda\) 之外其余元素均为零。
+
+（2）对于矩阵 \(A=\begin{pmatrix}2&10&2\\10&5&-8\\2&-8&11\end{pmatrix}\)，\(\lambda=9\) 是其特征值，\(x=\left(\dfrac23,\dfrac13,\dfrac23\right)^{\mathrm T}\) 是相应于 9 的特征向量，试求一初等反射阵 \(P\)，使 \(Px=e_1\)，并计算 \(B=PAP^{\mathrm T}\)。
+
+\textbf{6.} 利用初等反射阵将 \(A=\begin{pmatrix}1&3&4\\3&1&2\\4&2&1\end{pmatrix}\) 正交相似约化为对称三对角阵。
+
+\textbf{7.} 设 \(A\in\mathbb R^{n\times n}\)，且 \(a_{i1},a_{j1}\) 不全为零，\(P_{ij}\) 为使 \(a_{j1}^{(2)}=0\) 的平面旋转阵，试推导 \(P_{ij}A\) 第 \(i\) 行、第 \(j\) 行元素的计算公式及 \(AP_{ij}^{\mathrm T}\) 第 \(i\) 列、第 \(j\) 列元素的计算公式。
+
+\textbf{8.} 设 \(A_{n-1}\) 是由 Householder 方法得到的矩阵，又设 \(y\) 是 \(A_{n-1}\) 的一个特征向量。
+
+（1）证明矩阵 \(A\) 对应的特征向量是 \(x=P_1P_2\cdots P_{n-2}y\)；（2）对于给出的 \(y\) 应如何计算 \(x\)？
+
+\textbf{9.} 用带位移的 QR 方法计算下列矩阵的全部特征值：
+
+\[
+\text{（1）}\ A=\begin{pmatrix}1&2&0\\2&-1&1\\0&1&3\end{pmatrix};\qquad
+\text{（2）}\ B=\begin{pmatrix}3&1&0\\1&2&1\\0&1&1\end{pmatrix}.
+\]
+
+\textbf{10.} 试用初等反射阵将
+
+\[
+A=\begin{pmatrix}1&1&1\\2&-1&-1\\2&-4&5\end{pmatrix}
+\]
+
+分解为 \(QR\)，其中 \(Q\) 为正交阵，\(R\) 为上三角阵。
+

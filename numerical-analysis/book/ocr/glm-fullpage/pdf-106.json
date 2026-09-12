@@ -1,0 +1,20 @@
+{
+  "pdf_page": 106,
+  "source_image": "source-images/pdf-106.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "cff9874a339f1e3e05baaa8899b3784f7ecafbdafd608f895a8c7be76b27434a",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1080,
+  "possibly_truncated": false,
+  "elapsed_seconds": 34.285,
+  "created_utc": "2026-09-12T10:22:46.173818+00:00",
+  "raw_text_sha256": "8f3df53be049f83085a48d4b0718cd0585dc8c9dbf920d59546ea8b54dfa89f6",
+  "raw_text": "为简洁起见，这里省略了符号 $\\sum_{k=0}^{n-1}$ 中的上、下限.\n\n另一方面，将式(4.3.14)在子区间 $[x_k, x_{k+1}]$ 上求积分，有\n$$\\int_{x_k}^{x_{k+1}} f(x) \\mathrm{d}x = h f_{k+\\frac{1}{2}} + \\frac{2}{3!} \\left( \\frac{h}{2} \\right)^3 f''_{k+\\frac{1}{2}} + \\frac{2}{5!} \\left( \\frac{h}{2} \\right)^5 f^{(4)}_{k+\\frac{1}{2}} + \\frac{2}{7!} \\left( \\frac{h}{2} \\right)^7 f^{(6)}_{k+\\frac{1}{2}} + \\cdots,$$\n然后再关于 $k$ 从 0 到 $n-1$ 求和，得\n$$I = \\int_a^b f(x) \\mathrm{d}x$$\n$$= h \\sum f_{k+\\frac{1}{2}} + \\frac{h^3}{3! \\times 2^2} \\sum f''_{k+\\frac{1}{2}} + \\frac{h^5}{5! \\times 2^4} \\sum f^{(4)}_{k+\\frac{1}{2}} + \\frac{h^7}{7! \\times 2^6} \\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots. \\tag{4.3.16}$$\n\n利用式(4.3.16)从式(4.3.15)中消去项 $h \\sum f_{k+\\frac{1}{2}}$，得\n$$T(h) = I + \\frac{h^2}{2! \\times 6} \\sum f''_{k+\\frac{1}{2}} + \\frac{h^5}{4! \\times 20} \\sum f^{(4)}_{k+\\frac{1}{2}} + \\frac{3h^7}{6! \\times 224} \\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots. \\tag{4.3.17}$$\n\n又对 $f''(x)$ 应用式(4.3.16)，并注意到\n$$\\int_a^b f''(x) \\mathrm{d}x = f'(b) - f'(a),$$\n有\n$$h \\sum f''_{k+\\frac{1}{2}} = f'(b) - f'(a) - \\frac{h^3}{3! \\times 2^2} \\sum f^{(4)}_{k+\\frac{1}{2}} - \\frac{h^5}{5! \\times 2^4} \\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots,$$\n代入式(4.3.17)，整理得\n$$T(h) = I + \\frac{h^2}{2! \\times 6} \\left[ f'(b) - f'(a) \\right] - \\frac{h^5}{4! \\times 30} \\sum f^{(4)}_{k+\\frac{1}{2}} - \\frac{h^7}{6! \\times 56} \\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots.$$\n再对 $f^{(4)}(x)$ 应用式(4.3.16)，有\n$$h \\sum f^{(4)}_{k+\\frac{1}{2}} = f''(b) - f''(a) - \\frac{h^3}{3! \\times 2^2} \\sum f^{(6)}_{k+\\frac{1}{2}} + \\cdots,$$\n从而可进一步得\n$$T(h) = I + \\frac{h^2}{2! \\times 6} \\left[ f'(b) - f'(a) \\right] - \\frac{h^4}{4! \\times 30} \\left[ f''(b) - f''(a) \\right]$$\n$$+ \\frac{h^7}{6! \\times 42} \\sum f^{(6)}_{k+\\frac{1}{2}} - \\cdots. \\tag{4.3.18}$$\n\n反复施行上述手续，即可得到形如式(4.3.7)的余项公式.\n\n最后再强调一下，应用 Romberg 方法时，一定要注意余项展开式(4.3.7)成立这个前提，不然就得不出正确的结果.\n\n4.4 Gauss公式\n\n形如式(4.1.3)的机械求积公式"
+}

@@ -1,0 +1,20 @@
+{
+  "pdf_page": 21,
+  "source_image": "source-images/pdf-021.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "9425fa3250a938e505f51519ced55c436de6e3ff0a6211a9d1b293f495d752cc",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1141,
+  "possibly_truncated": false,
+  "elapsed_seconds": 29.638,
+  "created_utc": "2026-09-12T09:50:02.531728+00:00",
+  "raw_text_sha256": "d9bc88e4552a8385aec673703951319edbc083bcf6df3f15970ec02d6d4b9836",
+  "raw_text": "用函数的 Taylor 展开式进行估计. 设 $f(x)$ 是一元函数, $x$ 的近似值为 $x^*$, 以 $f(x^*)$ 近似 $f(x)$, 其误差限记作 $\\varepsilon(f(x^*))$, 可用 Taylor 展开\n\n$$f(x) - f(x^*) = f'(x^*) (x - x^*) + \\frac{f''(\\xi)}{2} (x - x^*)^2,$$\n\n$\\xi$ 介于 $x, x^*$ 之间. 取绝对值得\n\n$$|f(x) - f(x^*)| \\leqslant |f'(x^*)| \\varepsilon(x^*) + \\frac{|f''(\\xi)|}{2} \\varepsilon^2(x^*).$$\n\n假定 $f'(x^*)$ 与 $f''(x^*)$ 的比值不太大, 可忽略 $\\varepsilon(x^*)$ 的高阶项, 于是可得计算函数的误差限为\n\n$$\\varepsilon(f(x^*)) \\approx |f'(x^*)| \\varepsilon(x^*).$$\n\n当 $f$ 为多元函数时计算 $A = f(x_1, x_2, \\cdots, x_n)$, 如果 $x_1, x_2, \\cdots, x_n$ 的近似值为 $x_1^*, x_2^*, \\cdots, x_n^*$, 则 $A$ 的近似值为 $A^* = f(x_1^*, x_2^*, \\cdots, x_n^*)$, 于是函数值 $A^*$ 的误差 $e(A^*)$ 由 Taylor 展开, 得\n\n$$e(A^*) = A^* - A = f(x_1^*, x_2^*, \\cdots, x_n^*) - f(x_1, x_2, \\cdots, x_n)$$\n\n$$\\approx \\sum_{k=1}^{n} \\left( \\frac{\\partial f(x_1^*, x_2^*, \\cdots, x_n^*)}{\\partial x_k} \\right) (x_k^* - x_k) = \\sum_{k=1}^{n} \\left( \\frac{\\partial f}{\\partial x_k} \\right)^* e_k^*,\n\n于是误差限为\n\n$$\\varepsilon(A^*) \\approx \\sum_{k=1}^{n} \\left| \\left( \\frac{\\partial f}{\\partial x_k} \\right)^* \\right| \\varepsilon(x_k^*);$$\n\n(1.3.3)\n\n而 $A^*$ 的相对误差限为\n\n$$\\varepsilon_r^* = \\varepsilon_r(A^*) = \\frac{\\varepsilon(A^*)}{|A^*|} \\approx \\sum_{k=1}^{n} \\left| \\left( \\frac{\\partial f}{\\partial x_k} \\right)^* \\right| \\frac{\\varepsilon(x_k^*)}{|A^*|}.$$\n\n(1.3.4)\n\n例 1.5 已测得某场地长 $l$ 的值为 $l^* = 110$ m, 宽 $d$ 的值为 $d^* = 80$ m, 已知 $|l - l^*| \\leqslant 0.2$ m, $|d - d^*| \\leqslant 0.1$ m, 试求面积 $S = ld$ 的绝对误差限与相对误差限.\n\n解 因 $S = ld, \\frac{\\partial S}{\\partial l} = d, \\frac{\\partial S}{\\partial d} = l$, 由式(1.3.3)知\n\n$$\\varepsilon(S^*) \\approx \\left| \\left( \\frac{\\partial S}{\\partial l} \\right)^* \\right| \\varepsilon(l^*) + \\left| \\left( \\frac{\\partial S}{\\partial d} \\right)^* \\right| \\varepsilon(d^*),$$\n\n其中\n\n$$\\left( \\frac{\\partial S}{\\partial l} \\right)^* = d^* = 80 \\text{ m}, \\quad \\left( \\frac{\\partial S}{\\partial d} \\right)^* = l^* = 110 \\text{ m},$$\n\n而\n\n$$\\varepsilon(l^*) = 0.2 \\text{ m}, \\quad \\varepsilon(d^*) = 0.1 \\text{ m},$$\n\n于是绝对误差限为\n\n$$\\varepsilon(S^*) \\approx (80 \\times 0.2 + 110 \\times 0.1) \\text{ m}^2 = 27 \\text{ m}^2;$$\n\n相对误差限为\n\n$$\\varepsilon_r(S^*) = \\frac{\\varepsilon(S^*)}{|S^*|} = \\frac{\\varepsilon(S^*)}{l^* d^*} \\approx \\frac{27}{8800} = 0.31\\%.$$"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "human_review": false,
+  "reviewed_pdf_pages": [
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275
+  ],
+  "file_and_source_image_hashes_checked": 15,
+  "formula_ids": [
+    "10.3.1",
+    "10.4.1",
+    "10.4.2",
+    "10.4.3",
+    "10.4.4"
+  ],
+  "figure_count": 9,
+  "table_count": 1,
+  "sign_matrix_instances_checked_for_square_shape": 12,
+  "matrix_checks": "Transcribed W2/W4/W8 and H2/H4/H8 agree with the source mirror/block recurrences; Walsh cosine-product midpoint samples agree; H^T H = N I.",
+  "algorithm_check": "The separately annotated l bound 2^(k-1) produces all basis-vector Hadamard transforms for N=2,4,8. No source formulas were silently changed.",
+  "source_range_counterexample": {
+    "N": 8,
+    "k": 1,
+    "l": 2,
+    "j": 0,
+    "first_accessed_index": 8,
+    "valid_max_index": 7
+  },
+  "limitations": "Structural and algebraic checks support agent visual review; no claim of human review or absolute absence of transcription errors."
+}

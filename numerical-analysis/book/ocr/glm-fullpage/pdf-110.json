@@ -1,0 +1,20 @@
+{
+  "pdf_page": 110,
+  "source_image": "source-images/pdf-110.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "6018bd10081eb9f6d508805cb9d0bdfa7ed2d0f90fcaf36a8dec9e35d1859c2a",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 780,
+  "possibly_truncated": false,
+  "elapsed_seconds": 32.623,
+  "created_utc": "2026-09-12T10:24:55.977213+00:00",
+  "raw_text_sha256": "fe7ebaec46b708978cbb682f03140932f81c1939b280f7c11bf5dd8fef9f8113",
+  "raw_text": "算机字长的限制引进的舍入误差)的数据 $f_k^*$, 故实际求得的积分值为\n$$I_n^* = \\sum_{k=0}^{n} A_k f_k^*.$$\n人们自然关心, 数据误差对积分值的影响能否加以控制呢?\n由于 Gauss 公式的求积系数具有非负性, 故\n$$|I_n^* - I_n| \\leqslant \\sum_{k=0}^{n} A_k |f_k^* - f_k| \\leqslant \\left( \\sum_{k=0}^{n} A_k \\right) \\max_{0 \\leqslant k \\leqslant n} |f_k^* - f_k|.$$\n再利用式(4.1.4)的第一式, 有\n$$|I_n^* - I_n| \\leqslant (b-a) \\max_{0 \\leqslant k \\leqslant n} |f_k^* - f_k|,$$\n由此即可断定 Gauss 公式是稳定的.\n\n4.4.5 带权的 Gauss 公式\n\n考察积分 $I = \\int_a^b \\rho(x)f(x) \\mathrm{d}x$, 这里 $\\rho(x) \\geqslant 0$ 称为权函数, 当 $\\rho(x) \\equiv 1$ 时即为普通积分.\n\n可以仿照处理普通积分的方法讨论带权的积分. 考察求积公式\n$$\\int_a^b \\rho(x)f(x) \\mathrm{d}x \\approx \\sum_{k=0}^{n} A_k f(x_k),$$\n如果它对于任意次数不超过 $2n+1$ 的多项式均能准确地成立, 则称之为 Gauss 型的. 上述 Gauss 公式的求积节点 $x_k$ 仍称为 Gauss 点. 同样地, $x_k(k=0,1,\\cdots,n)$ 是 Gauss 点的充要条件为, $\\omega(x) = \\prod_{k=0}^{n}(x-x_k)$ 是区间 $[a,b]$ 上关于权函数 $\\rho(x)$ 的正交多项式.\n\n若 $a=-1, b=1$, 且取权函数 $\\rho(x) = \\frac{1}{\\sqrt{1-x^2}}$, 则所建立的 Gauss 公式为\n$$\\int_{-1}^{1} \\frac{f(x)}{\\sqrt{1-x^2}} \\mathrm{d}x \\approx \\sum_{k=0}^{n} A_k f(x_k).$$\n式(4.4.6)称为 Gauss-Chebyshev 公式. 由于区间 $[-1,1]$ 上关于权函数 $\\frac{1}{\\sqrt{1-x^2}}$ 的正交多项式是 Chebyshev 多项式 (见 3.4.2 节), 因此求积公式(4.4.6)的 Gauss 点是 $n+1$ 次 Chebyshev 多项式的零点, 即为\n$$x_k = \\cos \\left( \\frac{2k+1}{2n+2}\\pi \\right) \\quad (k=0,1,\\cdots,n).$$\n值得指出的是, 运用正交多项式的零点构造 Gauss 求积公式, 这种方法只是针对某些特殊的权函数才有效. 构造 Gauss 公式的一般方法则是 4.1.2 节介绍过的待定系数法.\n\n例如, 设要构造下列形式的 Gauss 公式:\n\n• 97 •"
+}

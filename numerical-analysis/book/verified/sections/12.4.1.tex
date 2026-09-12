@@ -1,0 +1,92 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={逼近加速的重差公设},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{逼近加速的重差公设}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{12.4.1　逼近加速的重差公设}\label{ux903cux8fd1ux52a0ux901fux7684ux91cdux5deeux516cux8bbe}
+
+\textbf{逼近加速是个难题，如果没有一个深邃的思想作为指导是很难圆满解决的。}重差术是刘徽学说又一亮点。限于篇幅，这里避开重差术的历史渊源以及它在测高望远领域中的广泛应用，而仅仅着眼于它同逼近加速技术的联系。
+
+讨论一般形式的逼近过程
+
+\[
+\{a_n\}:a_0,a_1,a_2,\cdots.
+\]
+
+设逼近数列 \(\{a_n\}\) 单调有界，则它必有极限 \(a^*\)。记其\textbf{偏差} \(\Delta_n=a_{n+1}-a_n\)，相邻偏差的比值
+
+\[
+\delta_n=\frac{\Delta_n}{\Delta_{n+1}}=\frac{a_{n+1}-a_n}{a_{n+2}-a_{n+1}}
+\]
+
+称为\textbf{重差}。
+
+\textbf{顾名思义，重差就是差数的重叠，即偏差比。}
+
+如果逼近过程的重差 \(\delta_n\) ``几乎''是个定值 \(\delta\)，则称它满足\textbf{重差公设}。容易想象，重差公设是逼近数列的一个本质属性。我们将会看到，重差公设是保证逼近加速的一台万能引擎。
+
+\end{document}

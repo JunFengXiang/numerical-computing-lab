@@ -1,0 +1,565 @@
+{
+  "lane": "ch09a",
+  "reviewer": "Codex agent ch09a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 233,
+      "printed_page": 220,
+      "path": "staging/ch09a/pages/pdf-233.md",
+      "sha256": "8a180f3233852896c006ab77835a16c42e49646983ffe1f931d4ccc70cb54b6a",
+      "source_image_sha256": "2cdc3239d3c3114b88e2a0c254aa0d927569b76f64a35ad5fbb293a743ac5492",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9",
+          "title": "矩阵的特征值与特征向量计算"
+        },
+        {
+          "id": "9.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [
+        "9.1.1",
+        "9.1.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，目视确认书页 220；核对定理 9.1–9.3、公式 9.1.1–9.1.2、特征多项式及圆盘求和上下限；证明跨页续 PDF 234。"
+      ]
+    },
+    {
+      "pdf_page": 234,
+      "printed_page": 221,
+      "path": "staging/ch09a/pages/pdf-234.md",
+      "sha256": "b13d62c66d42204a489fce91ccc3777eb8be9a8e8d13d3c1bca85ae51ee84425",
+      "source_image_sha256": "0530320ab713ebd6c55b935b0ca5d98c3795c712c305043a83af040ecf622867",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，目视确认书页 221；逐项核对定义 9.1、定理 9.4 的三条结论及证明；另裁切并实际打开 Gerschgorin 不等式和范数展开式，确认原页逗号及指数 2，记录 ch09a-E001、ch09a-E002。"
+      ]
+    },
+    {
+      "pdf_page": 235,
+      "printed_page": 222,
+      "path": "staging/ch09a/pages/pdf-235.md",
+      "sha256": "58e0c1c2bde2eb200c4a504a637821b1a0dfff5768d170ed2949d3cb98e8f62e",
+      "source_image_sha256": "ad55cb4167e517cca4c4242a9f1d0089e7f5dd9d5f3dde257675e6d96f4a4ae5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.2",
+          "title": "幂法及反幂法"
+        },
+        {
+          "id": "9.2.1",
+          "title": "幂法"
+        }
+      ],
+      "formula_ids": [
+        "9.2.1",
+        "9.2.2",
+        "9.2.3",
+        "9.2.4",
+        "9.2.5",
+        "9.2.6"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，目视确认书页 222；核对迭代向量序列、9.2.1–9.2.6 和跨页末公式；放大实际查看两处求和系数，确认印作 a_1，记录 ch09a-E003。"
+      ]
+    },
+    {
+      "pdf_page": 236,
+      "printed_page": 223,
+      "path": "staging/ch09a/pages/pdf-236.md",
+      "sha256": "b4fb5253c9dc5f5d9318d28ab49d81c040afa1f6493418b510716f180fe3029d",
+      "source_image_sha256": "3f3117546561e223698a97ca533138068a4141448770782be3a35b72ac160f06",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.2.7",
+        "9.2.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 223；核对定理 9.5、重复主特征值展开、规范化序列和 9.2.7–9.2.8；实际打开 9.2.8 裁切图，确认原印 Av_0、λ_i^k，记 ch09a-E004。"
+      ]
+    },
+    {
+      "pdf_page": 237,
+      "printed_page": 224,
+      "path": "staging/ch09a/pages/pdf-237.md",
+      "sha256": "77f4ef0adb51c5d7661df53190997340249bae01fa0a02a88823e3f204ed7c1d",
+      "source_image_sha256": "efb5c10fbd6a49611b71aaba94e8c2020edc6da280cf0df763177af4ef2acd6e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.2.9"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 224；核对定理 9.6、公式 9.2.9、例 9.1 的 3×3 矩阵和数值；实际打开页首分子及 v_k 分母裁切图，确认原式疑误 ch09a-E005、ch09a-E006。"
+      ]
+    },
+    {
+      "pdf_page": 238,
+      "printed_page": 225,
+      "path": "staging/ch09a/pages/pdf-238.md",
+      "sha256": "d7cf607001a7342efa6d9f7d744ebac854527dea002b838af67eaa1932c175a5",
+      "source_image_sha256": "f45f1d6f08425d03007dda5015ccbbe6fd8767ec494e469d6d440e63f5891877",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.2.2",
+          "title": "加速方法"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "9.1"
+      ],
+      "notes": [
+        "实际打开全页原图，确认书页 225；另实际打开表 9.1 裁切图，逐行核对 10 个数据行、向量分量和 8 位数值；核对原点平移法、例 9.2，确认首段 r=λ_1/λ_2 原印并记 ch09a-E007。"
+      ]
+    },
+    {
+      "pdf_page": 239,
+      "printed_page": 226,
+      "path": "staging/ch09a/pages/pdf-239.md",
+      "sha256": "f1f86f5825729a1c56385171471efb80ad2c7e8cf66026e59a1aab5ce48f911b",
+      "source_image_sha256": "3cf405d2817b294dd2a743b852a2a666f0d9b177068ba79e59f8caa5492d960e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.2.10"
+      ],
+      "figures": [],
+      "tables": [
+        "9.2"
+      ],
+      "notes": [
+        "实际打开全页原图，确认书页 226；核对 9.2.10 的不等号、最优位移公式、例 9.3 矩阵及结尾数值；另实际打开表 9.2 放大图，逐行核对全部 7 行和空白初始 max 单元格。"
+      ]
+    },
+    {
+      "pdf_page": 240,
+      "printed_page": 227,
+      "path": "staging/ch09a/pages/pdf-240.md",
+      "sha256": "0909a380454c30208eae3b25def17e70e74f7100c5a3d70a588886fdd6206716",
+      "source_image_sha256": "fe3c66de7679f27c0c19787856c91f254e47435ec710a2a0a2404e6225aad0ac",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.2.3",
+          "title": "反幂法"
+        }
+      ],
+      "formula_ids": [
+        "9.2.11"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 227；核对 Rayleigh 商加速法、定理 9.7、反幂法序列和定理 9.8 跨页起始；实际打开 9.2.11 裁切图，确认求和索引 j、系数 a_j^2 及幂次 2k+1/2k。"
+      ]
+    },
+    {
+      "pdf_page": 241,
+      "printed_page": 228,
+      "path": "staging/ch09a/pages/pdf-241.md",
+      "sha256": "59195424a42da6b00d863ffebca393ab9dd47e9e8005853742e10e9d6c77d383",
+      "source_image_sha256": "af29e5a92f17a7db207a019921b8361c603279c545f7791c1ea534390fc0564d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.2.12"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 228；核对定理 9.8 后半、9.2.12、定理 9.9 三项条件与两个极限；实际打开初始向量系数和定理 9.9 第三项的裁切，确认原印均为 a_i≠0，按原式保留。"
+      ]
+    },
+    {
+      "pdf_page": 242,
+      "printed_page": 229,
+      "path": "staging/ch09a/pages/pdf-242.md",
+      "sha256": "c015bee7e3414ff52f425beffd1837e46bc588c437a0ecde6bef7460803efb40",
+      "source_image_sha256": "86ff7b0d0b20fd20c48c6a90c3477235c686320b188a6a138f4c6eedab9b93df",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.2.13",
+        "9.2.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 229；核对 9.2.13–9.2.14、例 9.4 的 A、P、L、U 四个矩阵；另实际打开 LU 与迭代向量裁切图，核对 0.29405×10^-3、负号、v_1/v_2/u_1/u_2 的全部数值。"
+      ]
+    },
+    {
+      "pdf_page": 243,
+      "printed_page": 230,
+      "path": "staging/ch09a/pages/pdf-243.md",
+      "sha256": "f4947af13ebcab8727f68cefdcad1b02b4dbd7a47e852125017dac25c92f66a9",
+      "source_image_sha256": "329c2ff33957737410c8b4676549d7bbec560e45f26fae7c4a4f5dbbb8faba7b",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.3",
+          "title": "Householder 方法"
+        },
+        {
+          "id": "9.3.1",
+          "title": "引言"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 230；核对定理 9.10 的上三角分块、定义 9.2 的 Hessenberg 条件和定义 9.3；实际打开首段文字裁切，保留原印“若要求求出”；实际打开 H(w) 矩阵裁切，逐项核对 n-1/n 下标和全部负号。"
+      ]
+    },
+    {
+      "pdf_page": 244,
+      "printed_page": 231,
+      "path": "staging/ch09a/pages/pdf-244.md",
+      "sha256": "2422635d312b242670305419acadd8c3ed6f2b83372a8ac8abc217f74ad5144b",
+      "source_image_sha256": "d5f8c248fdf7d973b5dd0f85a207d08894a7ac1d0b1d0476085ab4ac8996ee75",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [],
+      "figures": [
+        "9.1"
+      ],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 231；核对定理 9.11–9.12 全证明及推论的符号、范数平方、ρ 定义；实际打开 Ha 文字裁切，确认 a 下标位置并记录 ch09a-E008；实际打开图 9.1 原图裁切，确认 w/v/x/y/O/S/v′ 全部标签及虚线。"
+      ]
+    },
+    {
+      "pdf_page": 245,
+      "printed_page": 232,
+      "path": "staging/ch09a/pages/pdf-245.md",
+      "sha256": "b5af12bd5d9e3d4299468ae1d301073e9af5114c4a1ae79aecd75a1ee70085a9",
+      "source_image_sha256": "29063a7c8f7ac4932cf9f7af82be79e0d93802d2dbdd13e87c8e265dccc9e124",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "9.3.2",
+          "title": "用正交相似变换约化矩阵"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 232；逐项核对两个算法共 9 个步骤及 HA 运算公式；实际打开算法裁切图，辨认 Greek alpha、算法 1 的右箭头和算法 2 的左箭头；保留“冲掉”的原书措辞。"
+      ]
+    },
+    {
+      "pdf_page": 246,
+      "printed_page": 233,
+      "path": "staging/ch09a/pages/pdf-246.md",
+      "sha256": "35bf164ea26d7b4d1a34f8228c73bb52fbdda545cd5c877553d76a4c65df26e4",
+      "source_image_sha256": "737acbede5befe64df2be14ab86723af5469acce2d9d7752f8237d5377467d11",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "9.3.1",
+        "9.3.2"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "实际打开全页原图，确认书页 233；实际逐一打开初始分块、A_2、一般 A_k、9.3.2 四个裁切图；逐项核对块尺寸、全部行列下标、两处正交变换公式与 9.3.1–9.3.2；原图分块虚线以 LaTeX 数组分隔线表达；疑误 ch09a-E009、ch09a-E010 保留原式另注。",
+        "补充实际打开 U_1 小块裁切图，确认左上原印 I，并按原样转录。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "ch09a-E001",
+      "pdf_page": 234,
+      "printed_page": 221,
+      "kind": "suspected_source_erratum",
+      "location": "定理 9.3 证明不等式",
+      "source_form": "|lambda-a_ii| <= sum |a_ij|, |x_j/x_i| <= sum |a_ij|",
+      "explanation": "原图逗号将所需连乘拆开；由上一行应为 sum |a_ij||x_j/x_i| 的链式不等式。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p234-gershgorin.png"
+    },
+    {
+      "id": "ch09a-E002",
+      "pdf_page": 234,
+      "printed_page": 221,
+      "kind": "source_erratum",
+      "location": "定理 9.4 证明范数展开式",
+      "source_form": "norm(x,2)=(sum a_i^2)^2",
+      "explanation": "括号外指数原印 2；规范化正交性给出指数 1/2。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p234-norm.png"
+    },
+    {
+      "id": "ch09a-E003",
+      "pdf_page": 235,
+      "printed_page": 222,
+      "kind": "source_erratum",
+      "location": "9.2.3 后 v_k 展开与 epsilon_k 定义",
+      "source_form": "sum_{i=2}^n a_1(lambda_i/lambda_1)^k x_i",
+      "explanation": "两处系数原印 a_1，前一行展开要求 a_i。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p235-power-expansion.png"
+    },
+    {
+      "id": "ch09a-E004",
+      "pdf_page": 236,
+      "printed_page": 223,
+      "kind": "source_erratum",
+      "location": "式 9.2.8",
+      "source_form": "Av_0 = sum a_i lambda_i^k x_i = lambda_i^k[...]",
+      "explanation": "中间式应为 A^k v_0，提取公共因子应为 lambda_1^k；原图漏幂及下标 i 均保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p236-9-2-8.png"
+    },
+    {
+      "id": "ch09a-E005",
+      "pdf_page": 237,
+      "printed_page": 224,
+      "kind": "source_erratum",
+      "location": "页首 u_k 展开第一行分子",
+      "source_form": "lambda_i^k [a_1 x_1 + sum ...]",
+      "explanation": "原印 lambda_i^k；根据同式分母及下一行相消应为 lambda_1^k。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p237-u-k-numerator.png"
+    },
+    {
+      "id": "ch09a-E006",
+      "pdf_page": 237,
+      "printed_page": 224,
+      "kind": "source_erratum",
+      "location": "v_k 展开式分母",
+      "source_form": "max[lambda_1^(k-1) a_1 x_1 + sum ...]",
+      "explanation": "根据 max(A^(k-1)v_0)，lambda_1^(k-1) 应乘整个括号，疑漏括号。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p237-v-k-denominator.png"
+    },
+    {
+      "id": "ch09a-E007",
+      "pdf_page": 238,
+      "printed_page": 225,
+      "kind": "source_erratum",
+      "location": "9.2.2 第一段",
+      "source_form": "r=lambda_1/lambda_2",
+      "explanation": "与前页及本页例 9.2 的 lambda_2/lambda_1 颠倒；原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p238-ratio.png"
+    },
+    {
+      "id": "ch09a-E008",
+      "pdf_page": 244,
+      "printed_page": 231,
+      "kind": "suspected_source_erratum",
+      "location": "图 9.1 旁的 Householder 方法说明",
+      "source_form": "H_a = sigma e_1",
+      "explanation": "原图 a 印为 H 的下标；由语义及后续定理应是矩阵向量乘积 Ha。原排式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p244-Ha.png"
+    },
+    {
+      "id": "ch09a-E009",
+      "pdf_page": 246,
+      "printed_page": 233,
+      "kind": "source_erratum",
+      "location": "A_2 的二阶分块式右上块",
+      "source_form": "A_21^(1) R_1",
+      "explanation": "与页首 A 的分块及分块乘法不符，应为 A_12^(1) R_1；原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p246-A-2.png"
+    },
+    {
+      "id": "ch09a-E010",
+      "pdf_page": 246,
+      "printed_page": 233,
+      "kind": "source_erratum",
+      "location": "式 9.3.2 的 sigma_k 与 rho_k",
+      "source_form": "sum a_ik^2; rho_k=sigma_k(sigma_k+a_(k+1,n)^(k))",
+      "explanation": "求和疑漏迭代上标 (k)；由 u_k 的首分量和范数平方恒等式，rho_k 中列下标应为 k 而非原印 n。原式保留。",
+      "evidence_asset": "staging/ch09a/assets/review-p246-9-3-2.png"
+    }
+  ],
+  "validation_notes": [
+    "PDF 233–246 共 14 页均已逐一实际打开原页图像；放大证据路径和页级核对内容见各页 notes。",
+    "完整保留正文、全部行内和独立数学式、定理 9.1–9.12 及证明、例 9.1–9.4、表 9.1 的 10 行与表 9.2 的 7 行、图 9.1 和算法 1/2 共 9 个步骤。",
+    "本 lane 原页无习题或脚注；末页在 9.3.2 式（9.3.2）结束，正文续 PDF 247。",
+    "原书疑误 10 项保留原式并在 source_errata 与页面校注单列；没有未辨认字形或待核标记。",
+    "各 Markdown 文件与 source-images 哈希、页码对应、全部相对链接、数学定界符及环境配对已校验。",
+    "validation/math-check.tex 从正文及校注提取 575 个数学片段；XeLaTeX + amsmath 编译用于语法检查，不能代替原页目视核验或数学正确性证明。",
+    "仅写入 staging/ch09a/，未修改原 PDF、source-images、中央索引、verified、STATUS 或其他 lane；未运行 OCR 或子 agent。"
+  ],
+  "assets": [
+    {
+      "path": "staging/ch09a/assets/fig-9-1.png",
+      "sha256": "d62ed61ac4de2dc76344c2788f79508bf578a2ac24cdb176cf119935ad019431",
+      "role": "source_figure_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p234-gershgorin.png",
+      "sha256": "b2414186ab86aed1f9526f15d8287734267c9a3528b97bd59b61c1ee2e2a7d74",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p234-norm.png",
+      "sha256": "8327a9e3aef51af4b080defe08705bb73601ac49d414f2c5421775114b03944d",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p235-power-expansion.png",
+      "sha256": "094c2c2c9854e1b530cdb784738feb4117a6a0a84dcf17388f92121e3551b079",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p236-9-2-8.png",
+      "sha256": "64a28963695c957ef5172e72be47b6fc4590e6668cf6df94594a31021250dfbe",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p237-u-k-numerator.png",
+      "sha256": "4efe0121aaae84393025e3b4386d8e7b724415b1f231cfd474148ab709ceb115",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p237-v-k-denominator.png",
+      "sha256": "5b940bce397fcf45e46d99aa973cb0228f89a9267ea47b4ae0e3817f6f0c3e1c",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p238-ratio.png",
+      "sha256": "83fbb796646d6eeacb3127cae9d7c5b0973af31c7b7f4749a37a0aa129618809",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p238-table-9-1.png",
+      "sha256": "7f16ef2ba06eb9d22109be34540acfa253808f935e7b6843c383a3dee0b60ba0",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p239-table-9-2.png",
+      "sha256": "9eb74ff0af0effb430bd0f120b3ab1451869c19d087a1e9eae58c0e80b8c7f77",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p240-9-2-11.png",
+      "sha256": "ffb63f5d5cd397bc33f4e0b923bec467810ac2ec7e36ab5b4b33a65f07db04af",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p241-initial-coefficient.png",
+      "sha256": "7c766020a1c80b83249de40ff5df6ca98a676006804867810aaf60d860aafc3a",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p241-theorem-9-9-condition.png",
+      "sha256": "84e9ce49512b65280c3d19d2f05056b5660b3c49b82cbae4f98097b79cbef1cf",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p242-lu-and-vectors.png",
+      "sha256": "eb417362d0fd1cdccaf905a90480a2e3df9d0a30bd898051e504aa4091431e01",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p243-intro-text.png",
+      "sha256": "46f70e516dea3043e446b0380ff10127ec400bfb3359717a8c9dcdf4578a9cfd",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p243-reflection-matrix.png",
+      "sha256": "393cf81aa42cb90a508a41db4af8a99a2f798a8dc96db28cca27145c96039e49",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p244-Ha.png",
+      "sha256": "13ad2e77f87be13a812a538304b5e80418c515aef962ed5cdcd99756add49083",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p245-algorithm-1.png",
+      "sha256": "c5398b189b12ae55322403926b00603f85a87883b6aee5b7a8642dce7330b599",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p245-algorithm-2.png",
+      "sha256": "33ee49caaeb076ee0d5051f47191ea034f099cc8e8754f39749bad034e94de2a",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p246-9-3-2.png",
+      "sha256": "5b1edede6014e801c644e7a0144a498232e3a05dbac0b3c91793e5e92d0cbe74",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p246-A-2.png",
+      "sha256": "cacb19f1b99b356991754ee5ad88934d65d39af66353e72edbe694f8e6449491",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p246-A-k.png",
+      "sha256": "401cd767fb96afe92615c52ca4cdb06ece44a325f439c12750ce7b74b569d787",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p246-U-1.png",
+      "sha256": "15acc3b564b546a2f506f7924fbb40bca534476e6d061b9ed932cd0203682ca1",
+      "role": "source_visual_review_crop"
+    },
+    {
+      "path": "staging/ch09a/assets/review-p246-initial-partition.png",
+      "sha256": "9f04fd63f5fafbb1ba39f64f7f611056576d24cbc44411b8aae68648019a4afa",
+      "role": "source_visual_review_crop"
+    }
+  ],
+  "validation_results": {
+    "page_count": 14,
+    "expected_pdf_pages": [
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246
+    ],
+    "file_and_link_issues": [],
+    "math_fragment_count": 575,
+    "math_syntax_compile": "passed",
+    "human_review": false
+  }
+}

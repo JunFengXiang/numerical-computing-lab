@@ -1,0 +1,30 @@
+{
+  "pages": 18,
+  "pdf_range": [
+    58,
+    75
+  ],
+  "printed_range": [
+    45,
+    62
+  ],
+  "numbered_formulas": 46,
+  "figures": 5,
+  "tables": 2,
+  "source_errata": 11,
+  "unresolved": 0,
+  "markdown_links": "passed",
+  "page_and_image_sha256": "passed",
+  "formula_sequence": "passed",
+  "math_fragments": 750,
+  "xelatex_math_syntax": "passed",
+  "missing_glyphs": [],
+  "note": "Compilation verifies LaTeX syntax only; source content was checked against each original page image.",
+  "post_cross_review_revalidation": {
+    "page": 62,
+    "change": "不等号改为原印不恒等号",
+    "sha256": "1f13888a5fc302f02a41c58e8607af9480b634280bf37c1048c0e4efb9de655d",
+    "pandoc_math_count": 60,
+    "all_18_page_hashes": "passed"
+  }
+}

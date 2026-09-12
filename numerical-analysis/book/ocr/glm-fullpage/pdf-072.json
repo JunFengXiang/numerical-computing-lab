@@ -1,0 +1,20 @@
+{
+  "pdf_page": 72,
+  "source_image": "source-images/pdf-072.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "081611befc6fa141e9d0a0cc3a617c7408c48c837068277ca7ff264593686e33",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 898,
+  "possibly_truncated": false,
+  "elapsed_seconds": 27.096,
+  "created_utc": "2026-09-12T09:59:02.904366+00:00",
+  "raw_text_sha256": "4b42d17056bf21df9ce075135685c9fa4fabdbaf323e94d37ecf328345aaa7b7",
+  "raw_text": "性质 2 奇偶性\n$$P_n(-x) = (-1)^n P_n(x).$$\n(3.4.4)\n\n由于 $\\varphi(x) = (x^2 - 1)^n$ 是偶次多项式，经过偶次求导仍为偶次多项式，经过奇次求导则为奇次多项式，故 $n$ 为偶数时 $P_n(x)$ 为偶函数，$n$ 为奇数时 $P_n(x)$ 为奇函数，于是式(3.4.4)成立.\n\n性质 3 递推关系 考虑 $n+1$ 次多项式 $xP_n(x)$，它可表示为\n$$xP_n(x) = a_0P_0(x) + a_1P_1(x) + \\cdots + a_{n+1}P_{n+1}(x),$$\n两边乘以 $P_k(x)$，并从 $-1$ 到 $1$ 积分，得\n$$\\int_{-1}^{1} xP_n(x)P_k(x) \\mathrm{d}x = a_k \\int_{-1}^{1} P_k^2(x) \\mathrm{d}x.$$\n当 $k \\leqslant n-2$ 时，$xP_k(x)$ 次数不大于 $n-1$，上式左端积分为零，故得 $a_k = 0$. 当 $k=n$ 时 $xP_n^2(x)$ 为奇函数，左端积分仍为零，故 $a_n = 0$. 于是\n$$xP_n(x) = a_{n-1}P_{n-1}(x) + a_{n+1}P_{n+1}(x),$$\n其中\n$$a_{n-1} = \\frac{2n-1}{2} \\int_{-1}^{1} xP_n(x)P_{n-1}(x) \\mathrm{d}x = \\frac{2n-1}{2} \\frac{2n}{4n^2-1} = \\frac{n}{2n+1},$$\n$$a_{n+1} = \\frac{2n+3}{2} \\int_{-1}^{1} xP_n(x)P_{n+1}(x) \\mathrm{d}x = \\frac{2n+3}{2} \\frac{2(n+1)}{(2n+1)(2n+3)} = \\frac{n+1}{2n+1},$$\n从而得到以下的递推公式：\n$$(n+1)P_{n+1}(x) = (2n+1)xP_n(x) - nP_{n-1}(x) \\quad (n=1,2,\\cdots).$$\n(3.4.5)\n由 $P_0(x)=1$，$P_1(x)=x$，\n利用式(3.4.5)就可推出\n$$P_2(x) = (3x^2 - 1)/2,$$\n$$P_3(x) = (5x^3 - 3x)/2,$$\n$$P_4(x) = (35x^4 - 30x^2 + 3)/8,$$\n$$P_5(x) = (63x^5 - 70x^3 + 15x)/8,$$\n$$P_6(x) = (231x^6 - 315x^4 + 105x^2 - 5)/16,$$\n$\\vdots$\n\n图 3.4给出了 $P_0(x), P_1(x), P_2(x), P_3(x)$ 的图形.\n\n性质 4 在所有最高项系数为 1 的 $n$ 次多项式中，Legendre 多项式 $\\widetilde{P}_n(x)$ 在 $[-1,1]$ 上与零的平方误差最小.\n\n设 $Q_n(x)$ 是任意一个最高项系数为 1 的 $n$ 次多项式，它可表示为"
+}

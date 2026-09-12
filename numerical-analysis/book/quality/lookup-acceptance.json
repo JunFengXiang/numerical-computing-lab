@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "query": "根据2.2.1的线性插值画出图",
+      "expected_status": "resolved_with_conflict",
+      "actual_status": "resolved_with_conflict",
+      "resolved_section": "2.2.2",
+      "pass": true
+    },
+    {
+      "query": "2.2.1",
+      "expected_status": "resolved",
+      "actual_status": "resolved",
+      "resolved_section": "2.2.1",
+      "pass": true
+    },
+    {
+      "query": "公式2.2.4",
+      "expected_status": "resolved_formula",
+      "actual_status": "resolved_formula",
+      "resolved_section": null,
+      "pass": true
+    },
+    {
+      "query": "第13章",
+      "expected_status": "resolved",
+      "actual_status": "resolved",
+      "resolved_section": "13",
+      "pass": true
+    },
+    {
+      "query": "99.9",
+      "expected_status": "unknown_section",
+      "actual_status": "unknown_section",
+      "resolved_section": null,
+      "pass": true
+    },
+    {
+      "query": "8.4",
+      "expected_status": "resolved",
+      "actual_status": "resolved",
+      "resolved_section": "8.4",
+      "pass": true
+    }
+  ],
+  "case_count": 6
+}

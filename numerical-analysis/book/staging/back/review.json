@@ -1,0 +1,253 @@
+{
+  "lane": "back",
+  "reviewer": "Codex agent back",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 318,
+      "printed_page": 305,
+      "path": "staging/back/pages/pdf-318.md",
+      "sha256": "62a3396edbedab142b843bd9ab226c1c29e4dec9f99b15966d9ab297e6453148",
+      "source_image_sha256": "29b9f3114ab42d65ee97ad86a5ef267dc4878ecda194048a1e650a3ef2956ce7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "answers",
+          "title": "部分习题答案"
+        },
+        {
+          "id": "1",
+          "title": "第 1 章"
+        },
+        {
+          "id": "2",
+          "title": "第 2 章"
+        },
+        {
+          "id": "3",
+          "title": "第 3 章"
+        },
+        {
+          "id": "4",
+          "title": "第 4 章"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "答案题号保留，未将题号作为原书公式编号。",
+        "原页两栏按章与题号顺序整合；两处下标疑误已回看原题PDF56、117核定不一致，原答案仍保留。",
+        "第4章第2题（2）只核定n与T下标不一致，未宣称其答案数值已验证。"
+      ]
+    },
+    {
+      "pdf_page": 319,
+      "printed_page": 306,
+      "path": "staging/back/pages/pdf-319.md",
+      "sha256": "090820dba0165fc7ca7ef9c816bcca6657878775d9c74a4ba55be74cbf48102d",
+      "source_image_sha256": "493762d77c5bcec2cc1868d2ddb04afa2e2660a2c8dbe544ec1c2df0957168ba",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "5",
+          "title": "第 5 章"
+        },
+        {
+          "id": "6",
+          "title": "第 6 章"
+        },
+        {
+          "id": "7",
+          "title": "第 7 章"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "答案题号保留，未将题号作为原书公式编号。",
+        "页首为第4章第12题续文；页末第7章第10题（1）承接下一页（2）、（3）。"
+      ]
+    },
+    {
+      "pdf_page": 320,
+      "printed_page": 307,
+      "path": "staging/back/pages/pdf-320.md",
+      "sha256": "324947db0c6f450c905803eac0fb1ab2d6fdb1b321d31d17f67c93b60cfb8277",
+      "source_image_sha256": "e9ae9aa69241410577008806306334e96917ef230f589c8efe201c4d9a086fe5",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "8",
+          "title": "第 8 章"
+        },
+        {
+          "id": "9",
+          "title": "第 9 章"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "页首承第7章第10题（2）、（3）。",
+        "4×4逆矩阵及3×3特征值计算矩阵逐项转录；末矩阵下标放大确认为字母s。",
+        "已回看原题PDF231，BACK-S003撤回对omega=1.1的误判，改为原题可证不符的前两组第二分量。",
+        "BACK-S004已由原题的精确解确认第二、三分量量级不符；原答案数值全部保留。"
+      ]
+    },
+    {
+      "pdf_page": 321,
+      "printed_page": 308,
+      "path": "staging/back/pages/pdf-321.md",
+      "sha256": "f07e0bfa2a67ae73fd4d927c948f4aa4fe237ac61d1fe4ea05ec7fc0be60dc75",
+      "source_image_sha256": "d452c6f9a0bb8e84a415e49712db3c398e1e8bbace03aa41fd39267d9d7fcd13",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "references",
+          "title": "参考文献"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "20条参考文献全部转录，作者、译者、年份及卷版次二次对照。",
+        "英文保留Process单数及Springer-verlag的小写v，仅连接印刷断行。"
+      ]
+    },
+    {
+      "pdf_page": 322,
+      "printed_page": null,
+      "path": "staging/back/pages/pdf-322.md",
+      "sha256": "b4f2518d759acc11052d8fc3daff975d2debcee017cc39e2ed446bffb63e88cb",
+      "source_image_sha256": "de52b3c0312ee02e6ed055a98db0fafba6247622af1130e5f7568c3aa1e951d9",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": null,
+          "title": "普通高等教育“十三五”规划教材"
+        },
+        {
+          "id": null,
+          "title": "普通高等院校数学精品教材"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [
+        "无编号封底十三五标志",
+        "无编号封底二维码和ISBN条码"
+      ],
+      "tables": [],
+      "notes": [
+        "实际目视确认本页是封底，无印刷页码，printed_page为null。",
+        "完整转录17项书目、策划/责任编辑姓名、ISBN、条码数字和定价。",
+        "十三五标志、两个二维码与条码保留原扫描裁切；未虚构二维码目标。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "BACK-S001",
+      "pdf_page": 318,
+      "printed_page": 305,
+      "location": "第2章第9题第一式",
+      "status": "source_index_inconsistency_confirmed_by_exercise",
+      "source_text": "\\Delta^4y^n=2^n",
+      "note": "答案原图为y的n上标；原题明确给y_n=2^n并要求Δ^4y_n、δ^4y_n，故第一式索引与题目不一致。原答案上标保留。",
+      "evidence": [
+        {
+          "pdf_page": 56,
+          "printed_page": 43,
+          "location": "第2章第9题",
+          "source_image": "source-images/pdf-056.jpeg",
+          "source_image_sha256": "8d920c441d02fc67b331349294c5e7dcd22bb7fe4f7416a500882abe33cd765e",
+          "source_visual_review": "completed"
+        }
+      ],
+      "mathematical_check": "四阶前向差分系数(2-1)^4=1；四阶中心差分系数4-8+6-2+1/4=1/4，因此Δ^4y_n=2^n、δ^4y_n=2^(n-2)。"
+    },
+    {
+      "id": "BACK-S002",
+      "pdf_page": 318,
+      "printed_page": 305,
+      "location": "第4章第2题（2）的T_1下标",
+      "status": "source_index_inconsistency_confirmed_by_exercise",
+      "source_text": "T_1=1.391\\,48, S_5=1.454\\,71",
+      "note": "原答案清楚排为T_1，而原题明确给n=10，下标疑应T_10。原数值和下标仍忠实保留。",
+      "evidence": [
+        {
+          "pdf_page": 117,
+          "printed_page": 104,
+          "location": "第4章第2题（2）",
+          "source_image": "source-images/pdf-117.jpeg",
+          "source_image_sha256": "34bbe1fd2baaff483f4ef4fc557ab5dae4745e2c7964d2659bec8b3e3b5f7d33",
+          "source_visual_review": "completed"
+        }
+      ],
+      "verification_limit": "仅确认题设n=10与T_1下标不一致；未验证1.39148或1.45471数值正确性。"
+    },
+    {
+      "id": "BACK-S003",
+      "pdf_page": 320,
+      "printed_page": 307,
+      "location": "第8章第9题，omega=1.03及omega=1两组的第二分量",
+      "status": "source_numeric_inconsistency_confirmed_by_exercise",
+      "source_text": "第二分量分别为0.1000001、0.1000002",
+      "note": "原题明确给精确解(1/2,1,-1/2)^T及无穷范数误差<5e-6。三个原印向量误差∞范数依次为0.8999999、0.8999998、0.0000035；前两组不满足题意，第三组满足。前两组第二分量疑似小数点排印，原答案数字保留。",
+      "evidence": [
+        {
+          "pdf_page": 231,
+          "printed_page": 218,
+          "location": "第8章第9题",
+          "source_image": "source-images/pdf-231.jpeg",
+          "source_image_sha256": "9278a02f35d8d46dcbce2c16662a88803be87073c443578e348cc10db4ac1522",
+          "source_visual_review": "completed"
+        }
+      ],
+      "review_correction": "已撤回先前将omega=1.1的0.9999989列为疑误的错误指向；该组原印向量的误差∞范数3.5e-6满足原题阈值。",
+      "verification_limit": "未据量级检查推定应替换的尾数，也未声称复现原书所有迭代尾数。",
+      "mathematical_check": "用精确十进制直接比较原印向量与题给精确解，不假定初值，也不依赖额外SOR迭代结果。"
+    },
+    {
+      "id": "BACK-S004",
+      "pdf_page": 320,
+      "printed_page": 307,
+      "location": "第8章第10题第二、第三分量",
+      "status": "source_numeric_scale_inconsistency_confirmed_by_exercise",
+      "source_text": "x^(8)=(-4.000027,0.2999989,0.2000003)^T",
+      "note": "原题方程组精确解为(-4,3,2)^T，答案第二、三分量0.2999989、0.2000003量级不符，疑似小数点排印。原答案数字仍保留。",
+      "evidence": [
+        {
+          "pdf_page": 231,
+          "printed_page": 218,
+          "location": "第8章第10题",
+          "source_image": "source-images/pdf-231.jpeg",
+          "source_image_sha256": "9278a02f35d8d46dcbce2c16662a88803be87073c443578e348cc10db4ac1522",
+          "source_visual_review": "completed"
+        }
+      ],
+      "mathematical_check": "将(-4,3,2)^T代入三式，左边分别为-12、20、3，与原题右端逐项相等。",
+      "verification_limit": "未据此推定应替换的全部尾数。"
+    }
+  ],
+  "validation_notes": [
+    "已实际打开318–322五张完整原图，并对密集公式、数值矩阵、参考文献、封底书目和ISBN分别查看局部放大图。",
+    "逐页文字与数学二次对照原图；没有将OCR候选、编译通过或程序检查等同于原页核验。",
+    "本lane未使用OCR候选、未运行GPU OCR、未启动子agent。",
+    "无无法辨认的转录字符；4项校注均已另外实际打开原题PDF56、117、231交叉核查，核定索引或数值量级不一致；未替换原答案数值。",
+    "BACK-S003原先将合理的0.9999989列为疑误，已依据独立复核和原题撤回并纠正指向。",
+    "对第4章第2题（2）的两个结果数值，以及SOR结果的全部尾数，不作已完整复现的声明。",
+    "所有原页均无独立编号公式、编号图或编号表，答案题号与参考文献编号已保留。",
+    "封底为无页码页面，未套用N-13产生虚构页码。"
+  ]
+}

@@ -1,0 +1,175 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Taylor 级数法},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Taylor 级数法}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{5.3.1 Taylor 级数法}\label{taylor-ux7ea7ux6570ux6cd5}
+
+设初值问题 (5.1.1)、(5.1.2) 有解 \(y=y(x)\)，用 Taylor 展开，有
+
+\[
+y(x_{n+1})=y(x_n)+hy'(x_n)+\frac{h^2}{2!}y''(x_n)+\frac{h^3}{3!}y'''(x_n)+\cdots,\tag{5.3.1}
+\]
+
+其中 \(y(x)\) 的各阶导数依据所给方程 (5.1.1) 可以用函数 \(f\) 来表达。下面引进函数序列 \(f^{(j)}(x,y)\) 来描述求导过程，即
+
+\[
+y'=f\equiv f^{(0)},\qquad
+y''=\frac{\partial f^{(0)}}{\partial x}+f\frac{\partial f^{(0)}}{\partial y}\equiv f^{(1)},\qquad
+y'''=\frac{\partial f^{(1)}}{\partial x}+f\frac{\partial f^{(1)}}{\partial y}\equiv f^{(2)},\qquad\cdots.
+\]
+
+一般地
+
+\[
+y^{(j)}=\frac{\partial f^{(j-2)}}{\partial x}+f\frac{\partial f^{(j-2)}}{\partial y}\equiv f^{(j-1)},\qquad j=2,3,\cdots,
+\]
+
+而具体写出则有
+
+\[
+\begin{cases}
+y'=f,\\
+y''=\dfrac{\partial f}{\partial x}+f\dfrac{\partial f}{\partial y},\\
+y'''=\dfrac{\partial^2f}{\partial x^2}+2f\dfrac{\partial^2f}{\partial x\partial y}
++f^2\dfrac{\partial^2f}{\partial y^2}
++\dfrac{\partial f}{\partial y}\left(\dfrac{\partial f}{\partial x}+f\dfrac{\partial f}{\partial y}\right),\\
+\qquad\vdots
+\end{cases}\tag{5.3.2}
+\]
+
+在展开式 (5.3.1) 的右端截取若干项，并且在 \((x_n,y_n)\) 按式 (5.3.2) 计算系数 \(y^{(j)}(x_n)\) 的近似值 \(y_n^{(j)}\)，结果导出下列 \textbf{Taylor 格式}
+
+\[
+y_{n+1}=y_n+hy'_n+\frac{h^2}{2!}y''_n+\cdots+\frac{h^p}{p!}y_n^{(p)},\tag{5.3.3}
+\]
+
+其中一阶 Taylor 格式 \((p=1)\)
+
+\[
+y_{n+1}=y_n+hy'_n
+\]
+
+就是 Euler 格式，而提高 Taylor 格式的阶 \(p\) 即可提高计算结果的精度。显然，\(p\) 阶
+
+\href{../../source-images/pdf-127.jpeg}{原页}
+
+Taylor 格式 (5.3.3) 的局部截断误差为
+
+\[
+y(x_{n+1})-y_{n+1}=\frac{h^{p+1}}{(p+1)!}y^{(p+1)}(\xi),\qquad x_n<\xi<x_{n+1},
+\]
+
+因此，它按下述定义具有 \(p\) 阶精度。
+
+\textbf{定义 5.1} 如果一种方法的局部截断误差为 \(O(h^{p+1})\)，则称该方法具有 \(p\) 阶精度。
+
+\textbf{例 5.3} 用 Taylor 级数法求解例 5.1 的初值问题 (5.2.2)。
+
+\textbf{解} 直接求导知
+
+\[
+\begin{aligned}
+y'&=y-\frac{2x}{y},\\
+y''&=y'-\frac{2}{y^2}(y-xy'),\\
+y'''&=y''+\frac{2}{y^2}(xy''+2y')-\frac{4x(y')^2}{y^3},\\
+y^{(4)}&=y'''+\frac{2}{y^2}(xy'''+3y'')-\frac{12y'}{y^3}(xy''+y')+\frac{12x(y')^3}{y^4}.
+\end{aligned}
+\]
+
+据此用四阶 Taylor 格式即可获得令人满意的结果（仍取步长 \(=0.1\) 计算，结果如表 5.3 所示）。
+
+\textbf{表 5.3}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(x_n\) & \(y_n\) & \(y(x_n)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0.1 & 1.0954 & 1.0954 \\
+0.2 & 1.1832 & 1.1832 \\
+0.3 & 1.2649 & 1.2649 \\
+\end{longtable}
+}
+
+应当指出，Taylor 格式 (5.3.3) 从形式上看似简单，但具体构造这种格式往往是相当困难的，因为它需要按式 (5.3.2) 提供导数值 \(y_n^{(j)}\)。当阶数提高时，求导过程式 (5.3.2) 可能很复杂，因此 Taylor 级数法通常不直接使用，但可以用它来启发思路。
+
+\end{document}

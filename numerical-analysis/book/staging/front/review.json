@@ -1,0 +1,1999 @@
+{
+  "lane": "front",
+  "reviewer": "Codex agent front",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 1,
+      "printed_page": null,
+      "path": "staging/front/pages/pdf-001.md",
+      "sha256": "dc555036cc910c3c8e78ba19bff9fab34aebe37a5349eec917c8c82fe4e06b9f",
+      "source_image_sha256": "c0ed0c1e28433aa0b953e993c32f07bc1aa8b79543e3c16fba05f087211e217f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.cover",
+          "title": "数值分析（第5版）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "封面全部可见文字已对照原图；OCR 候选多出的“获奖”不见于原页，未采用。",
+        "封面装饰完整保存为 assets/cover-original.png；为原图，不是生成或重绘图。"
+      ]
+    },
+    {
+      "pdf_page": 2,
+      "printed_page": null,
+      "path": "staging/front/pages/pdf-002.md",
+      "sha256": "7f5f8a4aa91a90a3a03452baebb222598b27866ee74d320991ca2f3efc8a8abc",
+      "source_image_sha256": "f126c397cb5846664f114034a03bbd89861d8fd16620281ae9feb351a168efda",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.title",
+          "title": "数值分析（第5版）——数值算法分析与高效算法设计"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "扉页，无印刷页码；背面透印文字不属本页正文。"
+      ]
+    },
+    {
+      "pdf_page": 3,
+      "printed_page": null,
+      "path": "staging/front/pages/pdf-003.md",
+      "sha256": "6b7a8c61b018c94c314c6bd756225a2667c7e4cb045fe38aeea5f265ec0c505a",
+      "source_image_sha256": "f94340d4667eddf09e6b36d7a2eec71c065eff742b4f0fdfbfd1f78d47e24993",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.summary",
+          "title": "内容提要"
+        },
+        {
+          "id": "front.cip",
+          "title": "图书在版编目（CIP）数据"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "版权页，无印刷页码。",
+        "CIP 分类号 O241 的首字为大写字母 O；省略号是原页书目著录符号。",
+        "出版信息表系原版双列信息的线性整理；“地址”为表格整理标签。",
+        "出版社标志局部放大确认字样为“华中出版”，并保留原图裁切。"
+      ]
+    },
+    {
+      "pdf_page": 4,
+      "printed_page": null,
+      "path": "staging/front/pages/pdf-004.md",
+      "sha256": "433106b0b01a874084e6cf5046fd5a1889c76a306bca3065d7b5e7e3e38b94de",
+      "source_image_sha256": "5a5d36f97704737a90f5377a18cd8537293f7722ebee3134c14b3938d61f6cc6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.preface5",
+          "title": "第5版前言"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "无印刷页码；保留原页对 1981 年出版社名称和 1988 年获奖的表述，未用外部知识改写。"
+      ]
+    },
+    {
+      "pdf_page": 5,
+      "printed_page": null,
+      "path": "staging/front/pages/pdf-005.md",
+      "sha256": "072348014aea73cce02ad1cf3541075d7c7311235a833c60871556e44e9fda9e",
+      "source_image_sha256": "8a6d6a1ff03753a201a772ff8fa0c4d1f93e2389058b07c04af413cdf1cfbdd7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.preface2",
+          "title": "第2版前言"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "无印刷页码；本页为书中保留的第 2 版前言，不是第 5 版的章数或现时教材信息。"
+      ]
+    },
+    {
+      "pdf_page": 6,
+      "printed_page": 1,
+      "path": "staging/front/pages/pdf-006.md",
+      "sha256": "039724569214a536284e31ed2036ba20ba398e604b97b6ee2d58e63ccb8e44fd",
+      "source_image_sha256": "d839429eafbd7a75d17491953183b592dcdc689bc06184c3fc084b091e4234dc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc",
+          "title": "目录"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 1；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 30,
+      "toc_entries": [
+        {
+          "id": "1",
+          "title": "绪论",
+          "printed_page_start": 1,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.1",
+          "title": "数值分析研究的对象与特点",
+          "printed_page_start": 1,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.2",
+          "title": "误差来源与误差分析的重要性",
+          "printed_page_start": 2,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.3",
+          "title": "误差的基本概念",
+          "printed_page_start": 4,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.3.1",
+          "title": "误差与误差限",
+          "printed_page_start": 4,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.3.2",
+          "title": "相对误差与相对误差限",
+          "printed_page_start": 5,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.3.3",
+          "title": "有效数字",
+          "printed_page_start": 6,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.3.4",
+          "title": "数值运算的误差估计",
+          "printed_page_start": 7,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.4",
+          "title": "数值运算中误差分析的方法与原则",
+          "printed_page_start": 9,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.4.1",
+          "title": "要避免除数绝对值远远小于被除数绝对值的除法",
+          "printed_page_start": 9,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.4.2",
+          "title": "要避免两相近数相减",
+          "printed_page_start": 10,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.4.3",
+          "title": "要防止大数“吃掉”小数",
+          "printed_page_start": 11,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.4.4",
+          "title": "注意简化计算步骤，减少运算次数",
+          "printed_page_start": 11,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.summary",
+          "title": "小结",
+          "printed_page_start": 12,
+          "source_prefix_star": false
+        },
+        {
+          "id": "1.exercises",
+          "title": "习题",
+          "printed_page_start": 12,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2",
+          "title": "插值法",
+          "printed_page_start": 14,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.1",
+          "title": "引言",
+          "printed_page_start": 14,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.2",
+          "title": "Lagrange插值",
+          "printed_page_start": 15,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.2.1",
+          "title": "插值多项式的存在唯一性",
+          "printed_page_start": 15,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.2.2",
+          "title": "线性插值与抛物插值",
+          "printed_page_start": 16,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.2.3",
+          "title": "Lagrange插值多项式",
+          "printed_page_start": 18,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.2.4",
+          "title": "插值余项",
+          "printed_page_start": 19,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.3",
+          "title": "逐次线性插值法",
+          "printed_page_start": 21,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.4",
+          "title": "差商与 Newton插值公式",
+          "printed_page_start": 23,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.4.1",
+          "title": "差商及其性质",
+          "printed_page_start": 23,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.4.2",
+          "title": "Newton插值公式",
+          "printed_page_start": 24,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.5",
+          "title": "差分与等距节点插值公式",
+          "printed_page_start": 26,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.5.1",
+          "title": "差分及其性质",
+          "printed_page_start": 26,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.5.2",
+          "title": "等距节点插值公式",
+          "printed_page_start": 28,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.6",
+          "title": "Hermite插值",
+          "printed_page_start": 29,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 7,
+      "printed_page": 2,
+      "path": "staging/front/pages/pdf-007.md",
+      "sha256": "b82f09a08cea4fa2b934b49b0bd59c54bfd5eede1607382e7205fbc1387b187d",
+      "source_image_sha256": "ec6331757d0659ea610b5c1524cc0a98a5c001a8fc0ce56926dadc8bb7fddd5d",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc2",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 2；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 36,
+      "toc_entries": [
+        {
+          "id": "2.7",
+          "title": "分段低次插值",
+          "printed_page_start": 32,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.7.1",
+          "title": "多项式插值的问题",
+          "printed_page_start": 32,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.7.2",
+          "title": "分段线性插值",
+          "printed_page_start": 33,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.7.3",
+          "title": "分段三次 Hermite 插值",
+          "printed_page_start": 34,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8",
+          "title": "三次样条插值",
+          "printed_page_start": 36,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8.1",
+          "title": "三次样条函数",
+          "printed_page_start": 36,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8.2",
+          "title": "三转角方程",
+          "printed_page_start": 37,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8.3",
+          "title": "三弯矩方程",
+          "printed_page_start": 39,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8.4",
+          "title": "计算步骤与例题",
+          "printed_page_start": 40,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.8.5",
+          "title": "三次样条插值的收敛性",
+          "printed_page_start": 41,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.summary",
+          "title": "小结",
+          "printed_page_start": 42,
+          "source_prefix_star": false
+        },
+        {
+          "id": "2.exercises",
+          "title": "习题",
+          "printed_page_start": 43,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3",
+          "title": "函数逼近与计算",
+          "printed_page_start": 45,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.1",
+          "title": "引言与预备知识",
+          "printed_page_start": 45,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.1.1",
+          "title": "问题的提出",
+          "printed_page_start": 45,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.1.2",
+          "title": "Weierstrass 定理",
+          "printed_page_start": 46,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.1.3",
+          "title": "连续函数空间 C[a,b]",
+          "printed_page_start": 47,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.2",
+          "title": "最佳一致逼近多项式",
+          "printed_page_start": 47,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.2.1",
+          "title": "最佳一致逼近多项式的存在性",
+          "printed_page_start": 47,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.2.2",
+          "title": "Chebyshev 定理",
+          "printed_page_start": 48,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.2.3",
+          "title": "最佳一次逼近多项式",
+          "printed_page_start": 50,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.3",
+          "title": "最佳平方逼近",
+          "printed_page_start": 52,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.3.1",
+          "title": "内积空间",
+          "printed_page_start": 52,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.3.2",
+          "title": "函数的最佳平方逼近",
+          "printed_page_start": 54,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.4",
+          "title": "正交多项式",
+          "printed_page_start": 57,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.4.1",
+          "title": "正交化手续",
+          "printed_page_start": 57,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.4.2",
+          "title": "Legendre 多项式",
+          "printed_page_start": 57,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.4.3",
+          "title": "Chebyshev 多项式",
+          "printed_page_start": 60,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.4.4",
+          "title": "其他常用的正交多项式",
+          "printed_page_start": 62,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.5",
+          "title": "函数按正交多项式展开",
+          "printed_page_start": 63,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.6",
+          "title": "曲线拟合的最小二乘法",
+          "printed_page_start": 65,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.6.1",
+          "title": "一般的最小二乘逼近",
+          "printed_page_start": 65,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.6.2",
+          "title": "用正交函数作最小二乘拟合",
+          "printed_page_start": 69,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.6.3",
+          "title": "多元最小二乘拟合",
+          "printed_page_start": 71,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.7",
+          "title": "Fourier 逼近与快速 Fourier 变换",
+          "printed_page_start": 71,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.7.1",
+          "title": "最佳平方三角逼近与三角插值",
+          "printed_page_start": 71,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 8,
+      "printed_page": 3,
+      "path": "staging/front/pages/pdf-008.md",
+      "sha256": "b29e2c92daa5aff220fb7efb7897da8f5d5069e77d080b0e7d7469a0f6b33573",
+      "source_image_sha256": "f4c2d957624e9a05ce3f22208a7c794749e70e92920872c139b9b65654010a0f",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc3",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 3；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 36,
+      "toc_entries": [
+        {
+          "id": "3.7.2",
+          "title": "快速 Fourier 变换",
+          "printed_page_start": 74,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.summary",
+          "title": "小结",
+          "printed_page_start": 77,
+          "source_prefix_star": false
+        },
+        {
+          "id": "3.exercises",
+          "title": "习题",
+          "printed_page_start": 77,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4",
+          "title": "数值积分与数值微分",
+          "printed_page_start": 80,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.1",
+          "title": "引言",
+          "printed_page_start": 80,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.1.1",
+          "title": "数值求积的基本思想",
+          "printed_page_start": 80,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.1.2",
+          "title": "代数精度的概念",
+          "printed_page_start": 81,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.1.3",
+          "title": "插值型的求积公式",
+          "printed_page_start": 82,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.2",
+          "title": "Newton-Cotes 公式",
+          "printed_page_start": 82,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.2.1",
+          "title": "Cotes 系数",
+          "printed_page_start": 82,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.2.2",
+          "title": "偶阶求积公式的代数精度",
+          "printed_page_start": 84,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.2.3",
+          "title": "几种低阶求积公式的余项",
+          "printed_page_start": 85,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.2.4",
+          "title": "复化求积法及其收敛性",
+          "printed_page_start": 86,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.3",
+          "title": "Romberg 算法",
+          "printed_page_start": 88,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.3.1",
+          "title": "梯形法的递推化",
+          "printed_page_start": 88,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.3.2",
+          "title": "Romberg 公式",
+          "printed_page_start": 89,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.3.3",
+          "title": "Richardson 外推加速法",
+          "printed_page_start": 91,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.3.4",
+          "title": "梯形法的余项展开式",
+          "printed_page_start": 92,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4",
+          "title": "Gauss 公式",
+          "printed_page_start": 93,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4.1",
+          "title": "Gauss 点",
+          "printed_page_start": 94,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4.2",
+          "title": "Gauss-Legendre 公式",
+          "printed_page_start": 95,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4.3",
+          "title": "Gauss 公式的余项",
+          "printed_page_start": 96,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4.4",
+          "title": "Gauss 公式的稳定性",
+          "printed_page_start": 96,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.4.5",
+          "title": "带权的 Gauss 公式",
+          "printed_page_start": 97,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.5",
+          "title": "数值微分",
+          "printed_page_start": 99,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.5.1",
+          "title": "中点方法",
+          "printed_page_start": 99,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.5.2",
+          "title": "插值型的求导公式",
+          "printed_page_start": 100,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.5.3",
+          "title": "实用的五点公式",
+          "printed_page_start": 102,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.5.4",
+          "title": "样条求导",
+          "printed_page_start": 103,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.summary",
+          "title": "小结",
+          "printed_page_start": 104,
+          "source_prefix_star": false
+        },
+        {
+          "id": "4.exercises",
+          "title": "习题",
+          "printed_page_start": 104,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5",
+          "title": "常微分方程数值解法",
+          "printed_page_start": 106,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.1",
+          "title": "引言",
+          "printed_page_start": 106,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.2",
+          "title": "Euler 方法",
+          "printed_page_start": 106,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.2.1",
+          "title": "Euler 格式",
+          "printed_page_start": 106,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.2.2",
+          "title": "后退的 Euler 格式",
+          "printed_page_start": 108,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 9,
+      "printed_page": 4,
+      "path": "staging/front/pages/pdf-009.md",
+      "sha256": "a73a954d32eb4c403a764c32dd6107da107b9104d87652fe683b2391a8f9f919",
+      "source_image_sha256": "09560211c4bec5d3c2d4f1082a12d3d8a5614dd5ed39b77dc94a16cad997815c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc4",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 4；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 36,
+      "toc_entries": [
+        {
+          "id": "5.2.3",
+          "title": "梯形格式",
+          "printed_page_start": 109,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.2.4",
+          "title": "改进的 Euler 格式",
+          "printed_page_start": 110,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.2.5",
+          "title": "Euler 两步格式",
+          "printed_page_start": 111,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3",
+          "title": "Runge-Kutta 方法",
+          "printed_page_start": 113,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.1",
+          "title": "Taylor 级数法",
+          "printed_page_start": 113,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.2",
+          "title": "Runge-Kutta 方法的基本思想",
+          "printed_page_start": 114,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.3",
+          "title": "二阶 Runge-Kutta 方法",
+          "printed_page_start": 115,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.4",
+          "title": "三阶 Runge-Kutta 方法",
+          "printed_page_start": 116,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.5",
+          "title": "四阶 Runge-Kutta 方法",
+          "printed_page_start": 118,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.3.6",
+          "title": "变步长的 Runge-Kutta 方法",
+          "printed_page_start": 119,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.4",
+          "title": "单步法的收敛性和稳定性",
+          "printed_page_start": 120,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.4.1",
+          "title": "单步法的收敛性",
+          "printed_page_start": 120,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.4.2",
+          "title": "单步法的稳定性",
+          "printed_page_start": 122,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5",
+          "title": "线性多步法",
+          "printed_page_start": 124,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.1",
+          "title": "基于数值积分的构造方法",
+          "printed_page_start": 124,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.2",
+          "title": "Adams 显式格式",
+          "printed_page_start": 125,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.3",
+          "title": "Adams 隐式格式",
+          "printed_page_start": 126,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.4",
+          "title": "Adams 预测-校正系统",
+          "printed_page_start": 127,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.5",
+          "title": "基于 Taylor 展开的构造方法",
+          "printed_page_start": 128,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.6",
+          "title": "Milne 格式",
+          "printed_page_start": 130,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.5.7",
+          "title": "Hamming 格式",
+          "printed_page_start": 131,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.6",
+          "title": "方程组与高阶方程的情形",
+          "printed_page_start": 132,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.6.1",
+          "title": "一阶方程组",
+          "printed_page_start": 132,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.6.2",
+          "title": "化高阶方程组为一阶方程组",
+          "printed_page_start": 133,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.7",
+          "title": "边值问题的数值解法",
+          "printed_page_start": 134,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.7.1",
+          "title": "试射法",
+          "printed_page_start": 135,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.7.2",
+          "title": "差分方程的建立",
+          "printed_page_start": 135,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.7.3",
+          "title": "差分问题的可解性",
+          "printed_page_start": 137,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.7.4",
+          "title": "差分方法的收敛性",
+          "printed_page_start": 138,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.summary",
+          "title": "小结",
+          "printed_page_start": 140,
+          "source_prefix_star": false
+        },
+        {
+          "id": "5.exercises",
+          "title": "习题",
+          "printed_page_start": 140,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6",
+          "title": "方程求根",
+          "printed_page_start": 142,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.1",
+          "title": "根的搜索",
+          "printed_page_start": 142,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.1.1",
+          "title": "逐步搜索法",
+          "printed_page_start": 142,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.1.2",
+          "title": "二分法",
+          "printed_page_start": 142,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.2",
+          "title": "迭代法",
+          "printed_page_start": 144,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 10,
+      "printed_page": 5,
+      "path": "staging/front/pages/pdf-010.md",
+      "sha256": "2011a0902bfcd5dee5a6574abe43a08b5b03655605641c37db6669b31a9bc409",
+      "source_image_sha256": "ee856057a5a4ee6f492de7b39797b8553fc6f717aeaa3a008f306d1d0beb2f64",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc5",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 5；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 36,
+      "toc_entries": [
+        {
+          "id": "6.2.1",
+          "title": "迭代过程的收敛性",
+          "printed_page_start": 144,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.2.2",
+          "title": "迭代公式的加工",
+          "printed_page_start": 147,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3",
+          "title": "Newton 法",
+          "printed_page_start": 149,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3.1",
+          "title": "Newton 公式",
+          "printed_page_start": 149,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3.2",
+          "title": "Newton 法的几何解释",
+          "printed_page_start": 150,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3.3",
+          "title": "Newton 法的局部收敛性",
+          "printed_page_start": 151,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3.4",
+          "title": "Newton 法应用举例",
+          "printed_page_start": 152,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.3.5",
+          "title": "Newton 下山法",
+          "printed_page_start": 153,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.4",
+          "title": "弦截法与抛物线法",
+          "printed_page_start": 154,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.4.1",
+          "title": "弦截法",
+          "printed_page_start": 155,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.4.2",
+          "title": "抛物线法",
+          "printed_page_start": 156,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.5",
+          "title": "代数方程求根",
+          "printed_page_start": 158,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.5.1",
+          "title": "多项式求值的秦九韶算法",
+          "printed_page_start": 158,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.5.2",
+          "title": "代数方程的 Newton 法",
+          "printed_page_start": 159,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.5.3",
+          "title": "劈因子法",
+          "printed_page_start": 160,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.summary",
+          "title": "小结",
+          "printed_page_start": 162,
+          "source_prefix_star": false
+        },
+        {
+          "id": "6.exercises",
+          "title": "习题",
+          "printed_page_start": 162,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7",
+          "title": "解线性方程组的直接方法",
+          "printed_page_start": 164,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.1",
+          "title": "引言",
+          "printed_page_start": 164,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.2",
+          "title": "Gauss 消去法",
+          "printed_page_start": 164,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.2.1",
+          "title": "消元手续",
+          "printed_page_start": 165,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.2.2",
+          "title": "矩阵的三角分解",
+          "printed_page_start": 168,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.2.3",
+          "title": "计算量",
+          "printed_page_start": 170,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.3",
+          "title": "Gauss 主元素消去法",
+          "printed_page_start": 171,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.3.1",
+          "title": "完全主元素消去法",
+          "printed_page_start": 172,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.3.2",
+          "title": "列主元素消去法",
+          "printed_page_start": 173,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.3.3",
+          "title": "Gauss-Jordan 消去法",
+          "printed_page_start": 175,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.4",
+          "title": "Gauss 消去法的变形",
+          "printed_page_start": 178,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.4.1",
+          "title": "直接三角分解法",
+          "printed_page_start": 178,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.4.2",
+          "title": "平方根法",
+          "printed_page_start": 181,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.4.3",
+          "title": "追赶法",
+          "printed_page_start": 184,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.5",
+          "title": "向量和矩阵的范数",
+          "printed_page_start": 186,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.6",
+          "title": "误差分析",
+          "printed_page_start": 192,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.6.1",
+          "title": "矩阵的条件数",
+          "printed_page_start": 192,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.6.2",
+          "title": "舍入误差",
+          "printed_page_start": 197,
+          "source_prefix_star": false
+        },
+        {
+          "id": "7.summary",
+          "title": "小结",
+          "printed_page_start": 198,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 11,
+      "printed_page": 6,
+      "path": "staging/front/pages/pdf-011.md",
+      "sha256": "138067cb765dad69b10e8d658c5a17129dc2fc85a751b4546746c63ac8a22032",
+      "source_image_sha256": "31adbe9219103620a329280eab30e6bab0efb9d9997a060153d919a73a0e0d0c",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc6",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 6；目录条目不表示本页含相应正文。",
+        "第 7 章“习题”的目录页码前部残损，末位可辨为 8；不能从本页确认其完整原印数字。正文起始处已回查为 PDF 第 212 页、书页 199，该正文定位不冒充目录原印页码。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 33,
+      "toc_entries": [
+        {
+          "id": "7.exercises",
+          "title": "习题",
+          "printed_page_start": 199,
+          "source_prefix_star": false,
+          "original_toc_page_status": "damaged; final digit 8 legible",
+          "printed_page_start_origin": "body start visually checked at PDF 212"
+        },
+        {
+          "id": "8",
+          "title": "解线性方程组的迭代法",
+          "printed_page_start": 202,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.1",
+          "title": "引言",
+          "printed_page_start": 202,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.2",
+          "title": "Jacobi 迭代法与 Gauss-Seidel 迭代法",
+          "printed_page_start": 204,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.2.1",
+          "title": "Jacobi 迭代法",
+          "printed_page_start": 204,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.2.2",
+          "title": "Gauss-Seidel 迭代法",
+          "printed_page_start": 205,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.3",
+          "title": "迭代法的收敛性",
+          "printed_page_start": 206,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.4",
+          "title": "解线性方程组的超松弛迭代法",
+          "printed_page_start": 213,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.summary",
+          "title": "小结",
+          "printed_page_start": 217,
+          "source_prefix_star": false
+        },
+        {
+          "id": "8.exercises",
+          "title": "习题",
+          "printed_page_start": 217,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9",
+          "title": "矩阵的特征值与特征向量计算",
+          "printed_page_start": 220,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.1",
+          "title": "引言",
+          "printed_page_start": 220,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.2",
+          "title": "幂法及反幂法",
+          "printed_page_start": 222,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.2.1",
+          "title": "幂法",
+          "printed_page_start": 222,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.2.2",
+          "title": "加速方法",
+          "printed_page_start": 225,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.2.3",
+          "title": "反幂法",
+          "printed_page_start": 227,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.3",
+          "title": "Householder 方法",
+          "printed_page_start": 230,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.3.1",
+          "title": "引言",
+          "printed_page_start": 230,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.3.2",
+          "title": "用正交相似变换约化矩阵",
+          "printed_page_start": 232,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.4",
+          "title": "QR算法",
+          "printed_page_start": 237,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.4.1",
+          "title": "引言",
+          "printed_page_start": 237,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.4.2",
+          "title": "QR算法",
+          "printed_page_start": 239,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.4.3",
+          "title": "带原点位移的QR方法",
+          "printed_page_start": 242,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.summary",
+          "title": "小结",
+          "printed_page_start": 246,
+          "source_prefix_star": false
+        },
+        {
+          "id": "9.exercises",
+          "title": "习题",
+          "printed_page_start": 246,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10",
+          "title": "快速算法设计:快速Walsh变换",
+          "printed_page_start": 248,
+          "source_prefix_star": true
+        },
+        {
+          "id": "10.1",
+          "title": "美的Walsh函数",
+          "printed_page_start": 248,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.1.1",
+          "title": "微积分的逼近法",
+          "printed_page_start": 248,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.1.2",
+          "title": "Walsh函数的复杂性",
+          "printed_page_start": 249,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.1.3",
+          "title": "Walsh分析的数学美",
+          "printed_page_start": 250,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.2",
+          "title": "Walsh函数代数化",
+          "printed_page_start": 251,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.2.1",
+          "title": "时基上的二分集",
+          "printed_page_start": 251,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.2.2",
+          "title": "Walsh函数的矩阵表示",
+          "printed_page_start": 252,
+          "source_prefix_star": false
+        }
+      ],
+      "supplementary_source_images": [
+        {
+          "path": "source-images/pdf-212.jpeg",
+          "sha256": "c342dea825ea6690fa94f0a3e7df22c576ddb97746c03501b35057c3820528a7",
+          "purpose": "仅目视核对第 7 章习题起始标题和书页 199，不主张全页转录核验。"
+        }
+      ]
+    },
+    {
+      "pdf_page": 12,
+      "printed_page": 7,
+      "path": "staging/front/pages/pdf-012.md",
+      "sha256": "41619f048f4229ea275fb1990ae2fc00406e84cc73835e8ce981ba838b95827f",
+      "source_image_sha256": "050bb28f4d19f8eb6268dc7ff733363e8cacd29fc2d7bd661e41021c22b27ad6",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc7",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 7；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 35,
+      "toc_entries": [
+        {
+          "id": "10.3",
+          "title": "Walsh 阵的二分演化",
+          "printed_page_start": 252,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.3.1",
+          "title": "矩阵的对称性复制",
+          "printed_page_start": 253,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.3.2",
+          "title": "Walsh 阵的演化生成",
+          "printed_page_start": 253,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.3.3",
+          "title": "Walsh 阵的演化机制",
+          "printed_page_start": 254,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.3.4",
+          "title": "Hadamard 阵的演化生成",
+          "printed_page_start": 255,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.4",
+          "title": "快速变换 FWT",
+          "printed_page_start": 257,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.4.1",
+          "title": "FWT 的设计思想",
+          "printed_page_start": 257,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.4.2",
+          "title": "FWT 的演化机制",
+          "printed_page_start": 258,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.4.3",
+          "title": "FWT 的计算流程",
+          "printed_page_start": 259,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.4.4",
+          "title": "FWT 的算法实现",
+          "printed_page_start": 261,
+          "source_prefix_star": false
+        },
+        {
+          "id": "10.summary",
+          "title": "小结",
+          "printed_page_start": 262,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11",
+          "title": "并行算法设计:递推计算并行化",
+          "printed_page_start": 263,
+          "source_prefix_star": true
+        },
+        {
+          "id": "11.1",
+          "title": "什么是并行计算",
+          "printed_page_start": 263,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.1.1",
+          "title": "一则寓言故事",
+          "printed_page_start": 263,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.1.2",
+          "title": "同步并行算法的设计策略",
+          "printed_page_start": 264,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2",
+          "title": "叠加计算",
+          "printed_page_start": 265,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.1",
+          "title": "倍增技术",
+          "printed_page_start": 265,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.2",
+          "title": "二分手续",
+          "printed_page_start": 267,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.3",
+          "title": "数列求和的二分法",
+          "printed_page_start": 268,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.4",
+          "title": "多项式求值的二分法",
+          "printed_page_start": 269,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.5",
+          "title": "二分算法的效能分析",
+          "printed_page_start": 270,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.2.6",
+          "title": "二分算法的基本特征",
+          "printed_page_start": 271,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.3",
+          "title": "一阶线性递推",
+          "printed_page_start": 272,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.3.1",
+          "title": "相关链的二分手续",
+          "printed_page_start": 272,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.3.2",
+          "title": "算式的建立",
+          "printed_page_start": 273,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.3.3",
+          "title": "二分算法的效能分析",
+          "printed_page_start": 275,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.4",
+          "title": "三对角方程组",
+          "printed_page_start": 275,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.4.1",
+          "title": "相关链的二分手续",
+          "printed_page_start": 276,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.4.2",
+          "title": "算式的建立",
+          "printed_page_start": 277,
+          "source_prefix_star": false
+        },
+        {
+          "id": "11.summary",
+          "title": "小结",
+          "printed_page_start": 279,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12",
+          "title": "加速算法设计:重差加速技术",
+          "printed_page_start": 281,
+          "source_prefix_star": true
+        },
+        {
+          "id": "12.1",
+          "title": "千古疑案",
+          "printed_page_start": 281,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.1.1",
+          "title": "阿基米德的“穷竭法”",
+          "printed_page_start": 281,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.1.2",
+          "title": "祖冲之“缀术”之谜",
+          "printed_page_start": 281,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.2",
+          "title": "神来之笔",
+          "printed_page_start": 282,
+          "source_prefix_star": false
+        }
+      ]
+    },
+    {
+      "pdf_page": 13,
+      "printed_page": 8,
+      "path": "staging/front/pages/pdf-013.md",
+      "sha256": "e137b726e4a58d8741c0627cfcafd5d910c2a8d71c75aa2aba749fb65c53a076",
+      "source_image_sha256": "e99eb34134e545055c74b9e0610007017a272d8f3ccd3518cbdda35626fdea87",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "front.toc8",
+          "title": "目录（续）"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "目录独立编号 8；目录条目不表示本页含相应正文。"
+      ],
+      "toc_only": true,
+      "toc_entry_count": 33,
+      "toc_entries": [
+        {
+          "id": "12.2.1",
+          "title": "数学史上一篇千古奇文",
+          "printed_page_start": 282,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.2.2",
+          "title": "“一飞冲天”的“刘徽神算”",
+          "printed_page_start": 283,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3",
+          "title": "奇光异彩",
+          "printed_page_start": 284,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.1",
+          "title": "刘徽的新视野",
+          "printed_page_start": 285,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.2",
+          "title": "偏差比中传出好“消息”",
+          "printed_page_start": 286,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.3",
+          "title": "只要做一次“俯冲”",
+          "printed_page_start": 286,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.4",
+          "title": "差之毫厘,失之千里",
+          "printed_page_start": 287,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.5",
+          "title": "“缀术”再剖析",
+          "printed_page_start": 288,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.3.6",
+          "title": "平庸的新纪录",
+          "printed_page_start": 289,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.4",
+          "title": "万能引擎",
+          "printed_page_start": 291,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.4.1",
+          "title": "逼近加速的重差公设",
+          "printed_page_start": 292,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.4.2",
+          "title": "重差加速法则",
+          "printed_page_start": 292,
+          "source_prefix_star": false
+        },
+        {
+          "id": "12.4.3",
+          "title": "重差加速的逻辑推理",
+          "printed_page_start": 293,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13",
+          "title": "总览",
+          "printed_page_start": 294,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.1",
+          "title": "算法重在设计",
+          "printed_page_start": 294,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.1.1",
+          "title": "算法设计关系到科学计算的成败",
+          "printed_page_start": 294,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.1.2",
+          "title": "算法设计追求简单与统一",
+          "printed_page_start": 295,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.2",
+          "title": "直接法的缩减技术",
+          "printed_page_start": 295,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.2.1",
+          "title": "数列求和的累加算法",
+          "printed_page_start": 295,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.2.2",
+          "title": "缩减技术的设计机理",
+          "printed_page_start": 296,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.2.3",
+          "title": "多项式求值的秦九韶算法",
+          "printed_page_start": 297,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.3",
+          "title": "迭代法的校正技术",
+          "printed_page_start": 298,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.3.1",
+          "title": "开方算法",
+          "printed_page_start": 298,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.3.2",
+          "title": "校正技术的设计机理",
+          "printed_page_start": 299,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.4",
+          "title": "迭代优化的超松弛技术",
+          "printed_page_start": 300,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.4.1",
+          "title": "超松弛技术的设计机理",
+          "printed_page_start": 300,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.4.2",
+          "title": "刘徽的“割圆术”",
+          "printed_page_start": 300,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.5",
+          "title": "递推加速的二分技术",
+          "printed_page_start": 301,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.5.1",
+          "title": "“结绳记数”的快速算法",
+          "printed_page_start": 301,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.5.2",
+          "title": "二分技术的设计机理",
+          "printed_page_start": 302,
+          "source_prefix_star": false
+        },
+        {
+          "id": "13.summary",
+          "title": "小结",
+          "printed_page_start": 303,
+          "source_prefix_star": false
+        },
+        {
+          "id": "answers",
+          "title": "部分习题答案",
+          "printed_page_start": 305,
+          "source_prefix_star": false
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "printed_page_start": 308,
+          "source_prefix_star": false
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "front-toc-ch7-exercises-page-damage",
+      "pdf_page": 11,
+      "type": "source_damage_and_possible_page_mismatch",
+      "description": "第 7 章习题的目录页码前部扫描残损，末位可辨为 8。原印完整数字不能确认；正文实际开始于书页 199（PDF 212）。",
+      "resolution": "保留原目录残损标记及局部图；以单列正文定位支持检索，不静默补写目录数字。",
+      "status": "documented; no silent correction"
+    }
+  ],
+  "validation_notes": [
+    "指定 PDF 1–13 均已单独打开原图；所有可见文字、年份、作者名、版权号码及 275 个目录条目已对照。",
+    "目录书页为独立编号 1–8；目录项正文页码与本页 printed_page 分开记录。",
+    "第 10、11、12 章标题前原有星号已保留；第 13 章原页无星号。",
+    "第 7 章习题目录数字残损通过原图局部记录，正文页 199 另查 PDF 212；没有把 199 伪装成清晰的目录原印值。",
+    "本 lane 仅交付逐页 Markdown（内含 LaTeX 数学）；独立 LaTeX 合并、编译与全书验收由中央流程承担。"
+  ]
+}

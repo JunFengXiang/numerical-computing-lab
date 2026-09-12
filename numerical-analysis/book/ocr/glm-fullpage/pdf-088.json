@@ -1,0 +1,20 @@
+{
+  "pdf_page": 88,
+  "source_image": "source-images/pdf-088.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "b6edf3a644bb3b458e195ef8609051f47e0343a6d8483628e15ef9158b084343",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 1249,
+  "possibly_truncated": false,
+  "elapsed_seconds": 45.004,
+  "created_utc": "2026-09-12T10:11:57.568652+00:00",
+  "raw_text_sha256": "3cf60cad80ce6282b8512c3ae85dfee7ee80d140f4bb6af38f82e8448c489d94",
+  "raw_text": "若引入记号\n$$\\begin{cases}\nA_0(k_2k_1k_0) = x(k_2k_1k_0), \\\\\nA_1(k_1k_0j_0) = \\sum_{k_2=0}^{1} A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)}, \\\\\nA_2(k_0j_1j_0) = \\sum_{k_1=0}^{1} A_1(k_1k_0j_0)w^{j_1(k_1k_0)}, \\\\\nA_3(j_2j_1j_0) = \\sum_{k_0=0}^{1} A_2(k_0j_1j_0)w^{j_2(k_000)}.\n\\end{cases}$$\n\n则式(3.7.11)变成\n$$C(j_2j_1j_0) = A_3(j_2j_1j_0).$$\n\n它说明利用 $N$ 同余数可把计算 $C_j$ 分为 $p$ 步，用式(3.7.12)计算，每计算一个 $A_q$ 只用 2 次复数乘法，计算一个 $C_j$ 用 2$p$ 次复数乘法，计算全部 $C_j$ 共用 2$pN$ 次复数乘法. 若注意 $w^{j_02^{p-1}} = w^{j_0N/2} = (-1)^j$，式(3.7.12)还可进一步简化为\n$$A_1(k_1k_0j_0) = \\sum_{k_2=0}^{1} A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)} \\\\\n= A_0(0k_1k_0)w^{j_0(0k_1k_0)} + A_0(1k_1k_0)w^{j_02^2}w^{j_0(0k_1k_0)} \\\\\n= [A_0(0k_1k_0) + (-1)^{j_0}A_0(1k_1k_0)]w^{j_0(0k_1k_0)}, \\\\\nA_1(k_1k_00) = A_0(0k_1k_0) + A_0(1k_1k_0), \\\\\nA_1(k_1k_01) = [A_0(0k_1k_0) - A_0(1k_1k_0)]w^{(0k_1k_0)}.$$\n\n将表达式中的二进制表示还原为十进制表示：$k = (0k_1k_0) = k_12^1 + k_02^0$，即 $k = 0, 1, 2, 3$，得\n$$\\begin{cases}\nA_1(2k) = A_0(k) + A_0(k + 2^2), \\\\\nA_1(2k + 1) = [A_0(k) - A_0(k + 2^2)]w^k\n\\end{cases}$$ $(k = 0, 1, 2, 3)$. (3.7.13)\n\n同样，式(3.7.12)中的 $A_2$ 可简化为\n$$A_2(k_0j_1j_0) = [A_1(0k_0j_0) + (-1)^{j_1}A_1(1k_0j_0)]w^{j_1(0k_00)},$$\n即\n$$A_2(k_00j_0) = A_1(0k_0j_0) + A_1(1k_0j_0), \\\\\nA_2(k_01j_0) = [A_1(0k_0j_0) - A_1(1k_0j_0)]w^{(0k_00)}.$$\n\n将表达式中的二进制表示还原为十进制表示，得\n$$\\begin{cases}\nA_2(k2^2 + j) = A_1(2k + j) + A_1(2k + j + 2^2), \\quad k = 0, 1, \\\\\nA_2(k2^2 + j + 2) = [A_1(2k + j) - A_1(2k + j + 2^2)]w^{2k}, \\quad j = 0, 1.\n\\end{cases}$$ (3.7.14)\n\n同样，式(3.7.12)中 $A_3$ 可简化为\n$$A_3(j_2j_1j_0) = A_2(0j_1j_0) + (-1)^{j_2}A_2(1j_1j_0),$$\n即\n$$A_3(0j_1j_0) = A_2(0j_1j_0) + A_2(1j_1j_0), \\\\\nA_3(1j_1j_0) = A_2(0j_1j_0) - A_2(1j_1j_0).$$"
+}

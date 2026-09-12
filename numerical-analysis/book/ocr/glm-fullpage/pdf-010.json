@@ -1,0 +1,20 @@
+{
+  "pdf_page": 10,
+  "source_image": "source-images/pdf-010.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "ee856057a5a4ee6f492de7b39797b8553fc6f717aeaa3a008f306d1d0beb2f64",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 579,
+  "possibly_truncated": false,
+  "elapsed_seconds": 20.268,
+  "created_utc": "2026-09-12T09:28:32.997040+00:00",
+  "raw_text_sha256": "d02ec851c3056194dc5125588f0e8ddedf11648e098f6eb7ecc7e937cadc4dbc",
+  "raw_text": "6.2.1 迭代过程的收敛性 ····· (144)\n6.2.2 迭代公式的加工 ····· (147)\n\n6.3 Newton 法 ····· (149)\n6.3.1 Newton 公式 ····· (149)\n6.3.2 Newton 法的几何解释 ····· (150)\n6.3.3 Newton 法的局部收敛性 ····· (151)\n6.3.4 Newton 法应用举例 ····· (152)\n6.3.5 Newton 下山法 ····· (153)\n\n6.4 弦截法与抛物线法 ····· (154)\n6.4.1 弦截法 ····· (155)\n6.4.2 抛物线法 ····· (156)\n\n6.5 代数方程求根 ····· (158)\n6.5.1 多项式求值的秦九韶算法 ····· (158)\n6.5.2 代数方程的 Newton 法 ····· (159)\n6.5.3 劈因子法 ····· (160)\n\n小结 ····· (162)\n习题 ····· (162)\n\n第 7 章 解线性方程组的直接方法 ····· (164)\n\n7.1 引言 ····· (164)\n\n7.2 Gauss 消去法 ····· (164)\n7.2.1 消元手续 ····· (165)\n7.2.2 矩阵的三角分解 ····· (168)\n7.2.3 计算量 ····· (170)\n\n7.3 Gauss 主元素消去法 ····· (171)\n7.3.1 完全主元素消去法 ····· (172)\n7.3.2 列主元素消去法 ····· (173)\n7.3.3 Gauss-Jordan 消去法 ····· (175)\n\n7.4 Gauss 消去法的变形 ····· (178)\n7.4.1 直接三角分解法 ····· (178)\n7.4.2 平方根法 ····· (181)\n7.4.3 追赶法 ····· (184)\n\n7.5 向量和矩阵的范数 ····· (186)\n\n7.6 误差分析 ····· (192)\n7.6.1 矩阵的条件数 ····· (192)\n7.6.2 舍入误差 ····· (197)\n\n小结 ····· (198)\n\n· 5 ·"
+}

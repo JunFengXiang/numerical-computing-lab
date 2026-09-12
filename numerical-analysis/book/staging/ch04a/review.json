@@ -1,0 +1,436 @@
+{
+  "lane": "ch04a",
+  "reviewer": "Codex agent ch04a",
+  "human_review": false,
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "pages": [
+    {
+      "pdf_page": 93,
+      "printed_page": 80,
+      "path": "staging/ch04a/pages/pdf-093.md",
+      "sha256": "64210cadabfded597ffdfc87d12b5c8b58d0e9add42eb446cc12ee9e3f355ee9",
+      "source_image_sha256": "35cc678a2cfa3925a420e555159bf282b85fa8242285343f035b9af6fae41f3e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4",
+          "title": "数值积分与数值微分"
+        },
+        {
+          "id": "4.1",
+          "title": "引言"
+        },
+        {
+          "id": "4.1.1",
+          "title": "数值求积的基本思想"
+        }
+      ],
+      "formula_ids": [
+        "4.1.1"
+      ],
+      "figures": [
+        "4.1"
+      ],
+      "tables": [],
+      "notes": [
+        "章节首页未印出页码；书页 80 由章节目录及相邻书页 81 定位。",
+        "图 4.1 裁切图已打开核对，标签完整。"
+      ]
+    },
+    {
+      "pdf_page": 94,
+      "printed_page": 81,
+      "path": "staging/ch04a/pages/pdf-094.md",
+      "sha256": "5c36723fea3f428aae44a8cf4be7822a7ccb146a1d2705232f934d7371eda83a",
+      "source_image_sha256": "2625db819446256e9b49a9fa8d775635c253e49656854c69d9753fcbdba173a7",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.1.2",
+          "title": "代数精度的概念"
+        }
+      ],
+      "formula_ids": [
+        "4.1.2",
+        "4.1.3",
+        "4.1.4"
+      ],
+      "figures": [
+        "4.2"
+      ],
+      "tables": [],
+      "notes": [
+        "图 4.2 裁切图已打开核对，标签完整。"
+      ]
+    },
+    {
+      "pdf_page": 95,
+      "printed_page": 82,
+      "path": "staging/ch04a/pages/pdf-095.md",
+      "sha256": "c6d2a7f87cfd3d2589ffc08b4841f044fbb119a5015787cf241ef76466f3d20f",
+      "source_image_sha256": "7599a458448c1d81da84fb2371483a9c5da20ca8ae8df4e045bad616bb924191",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.1.3",
+          "title": "插值型的求积公式"
+        },
+        {
+          "id": "4.2",
+          "title": "Newton-Cotes 公式"
+        },
+        {
+          "id": "4.2.1",
+          "title": "Cotes 系数"
+        }
+      ],
+      "formula_ids": [
+        "4.1.5",
+        "4.1.6",
+        "4.1.7"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式（4.1.7）原印为 f^{n+1}(ξ)，导数阶数无括号；按原式保留并校注。"
+      ]
+    },
+    {
+      "pdf_page": 96,
+      "printed_page": 83,
+      "path": "staging/ch04a/pages/pdf-096.md",
+      "sha256": "775c3059968486df6d97c6d52d00678f049cb18dc763b52b713b75783634c850",
+      "source_image_sha256": "1c92454562d8764b1e6521b08833a046928bbcf9b4cae95e7254f5f4107f7256",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "4.2.1",
+        "4.2.2",
+        "4.2.3",
+        "4.2.4"
+      ],
+      "figures": [],
+      "tables": [
+        "4.1"
+      ],
+      "notes": [
+        "表 4.1 的 C_k^(n) 合并表头展开为 k 列；所有分数按原表保留。"
+      ]
+    },
+    {
+      "pdf_page": 97,
+      "printed_page": 84,
+      "path": "staging/ch04a/pages/pdf-097.md",
+      "sha256": "9003208edca18daed1e4abb2e58178aa06804e9b8f7f1641e36accd6567a35da",
+      "source_image_sha256": "bce6aefc40906cee48f64ff7c607d8cc3763d1fbbba8c6dba37f543f9011d0a8",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.2.2",
+          "title": "偶阶求积公式的代数精度"
+        }
+      ],
+      "formula_ids": [],
+      "figures": [],
+      "tables": [
+        "4.1"
+      ],
+      "notes": [
+        "原书称 n≥8 时 Cotes 系数有正有负；保留原文，附 n=9 全正系数反例，详见 CH04A-E01。"
+      ]
+    },
+    {
+      "pdf_page": 98,
+      "printed_page": 85,
+      "path": "staging/ch04a/pages/pdf-098.md",
+      "sha256": "bea2ed38144638debf4e3b224458f3d540e80518fb9fa9b608908d1c8f6b70bb",
+      "source_image_sha256": "b320fdb722f185feea4fe04b5da40b87f5801471e93cb1686268b75480d60f67",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.2.3",
+          "title": "几种低阶求积公式的余项"
+        }
+      ],
+      "formula_ids": [
+        "4.2.5",
+        "4.2.6",
+        "4.2.7",
+        "4.2.8"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 99,
+      "printed_page": 86,
+      "path": "staging/ch04a/pages/pdf-099.md",
+      "sha256": "b7e19e7eadcc2ea177eddea8c6a685596c28d43a76952413dd77243098348a36",
+      "source_image_sha256": "e794a34aa6326d0db663a8c116e18a00fd3dd9cbad5b2f9edd86167f9a9ec6f8",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.2.4",
+          "title": "复化求积法及其收敛性"
+        }
+      ],
+      "formula_ids": [
+        "4.2.9",
+        "4.2.10",
+        "4.2.11",
+        "4.2.12",
+        "4.2.13",
+        "4.2.14"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 100,
+      "printed_page": 87,
+      "path": "staging/ch04a/pages/pdf-100.md",
+      "sha256": "4f05c5c3c37198bf5db5f38db98883ee46ea6a4c319478a8cea11d0256cd4530",
+      "source_image_sha256": "fe85b2fa39676ef3f4103e274b497ecb56bf98e07787ff39832c2f3d4d170a27",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "4.2.15",
+        "4.2.16",
+        "4.2.17"
+      ],
+      "figures": [],
+      "tables": [
+        "4.2"
+      ],
+      "notes": [
+        "ch03b 独立交叉复核指出首条未编号梯形误差式的求和上下限遗漏；已回看原图补全 k=0 至 n-1。",
+        "例 4.1 有效数字判断疑误已保留原文并校注；本书 1.3.3 定义由 ch01 原图核验回执交叉确认。",
+        "表 4.2 及两条脚注完整转录。"
+      ]
+    },
+    {
+      "pdf_page": 101,
+      "printed_page": 88,
+      "path": "staging/ch04a/pages/pdf-101.md",
+      "sha256": "476f0f65a080a36d7d946707d5ff622b395c340d1675360f044c025c4e8f240d",
+      "source_image_sha256": "d16249093648d0a3f28d240bb10ec574c540199663efc1c0b0f3300d5c319131",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.3",
+          "title": "Romberg 算法"
+        },
+        {
+          "id": "4.3.1",
+          "title": "梯形法的递推化"
+        }
+      ],
+      "formula_ids": [
+        "4.3.1"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": []
+    },
+    {
+      "pdf_page": 102,
+      "printed_page": 89,
+      "path": "staging/ch04a/pages/pdf-102.md",
+      "sha256": "7f306a6c29b269746b34610f4c7598ff254f808fc8f9e190607c92e39a03a423",
+      "source_image_sha256": "856b0faf1f4d77614e5fc932ff8bffc330bc9e4838a77d5c3e268baa0bf169dc",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.3.2",
+          "title": "Romberg 公式"
+        }
+      ],
+      "formula_ids": [
+        "4.3.2",
+        "4.3.3"
+      ],
+      "figures": [],
+      "tables": [
+        "4.3"
+      ],
+      "notes": [
+        "表 4.3 的 9.9456909 已放大原图确认并保留；相关原书疑误 CH04A-E03、CH04A-E04 单列。",
+        "ch03b 独立交叉复核指出 k=5 的原表数值疑误；已重开原图确认 0.9460596，独立以 80 位精度复算 n=32 并新增 CH04A-E07 校注。"
+      ]
+    },
+    {
+      "pdf_page": 103,
+      "printed_page": 90,
+      "path": "staging/ch04a/pages/pdf-103.md",
+      "sha256": "308d3197aa99f945435a25f937dbfc22a3ffc798910ec20b7ccb315ea8c3f9d5",
+      "source_image_sha256": "23e475b4e11dc88fa9239f53f7cc3be6953220a8ecc8525e425ea421bb4da47e",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [],
+      "formula_ids": [
+        "4.3.4",
+        "4.3.5",
+        "4.3.6"
+      ],
+      "figures": [],
+      "tables": [
+        "4.4"
+      ],
+      "notes": [
+        "表 4.4 表头原字位 T_2^k、S_2^(k-1)、C_2^(k-2)、R_2^(k-3) 已放大确认并照录，另注明其对应分段数含义。",
+        "由 Simpson 值构造 Cotes 值一段原引用（4.3.3），已保留，另指出本页实际系数见（4.3.5）。"
+      ]
+    },
+    {
+      "pdf_page": 104,
+      "printed_page": 91,
+      "path": "staging/ch04a/pages/pdf-104.md",
+      "sha256": "46a1e0e8b5cfd04e9d1075417a91ffd5271c8253f61109cd7492cc4783271111",
+      "source_image_sha256": "01def00924b090e59a27b320de37ba447cc2bba3b9dbaf0b315f22a18d0010ea",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.3.3",
+          "title": "Richardson 外推加速法"
+        }
+      ],
+      "formula_ids": [
+        "4.3.7",
+        "4.3.8",
+        "4.3.9",
+        "4.3.10",
+        "4.3.11",
+        "4.3.12",
+        "4.3.13"
+      ],
+      "figures": [],
+      "tables": [],
+      "notes": [
+        "式（4.3.8）α_1、α_2、带帽 α_3、相邻文字带帽 α_k，以及后文带帽 β_2 / 未带帽 β_3 均放大核对并照录。",
+        "递推指标范围与渐近展开含义另见 CH04A-E05、CH04A-E06。"
+      ]
+    },
+    {
+      "pdf_page": 105,
+      "printed_page": 92,
+      "path": "staging/ch04a/pages/pdf-105.md",
+      "sha256": "dcc284c682a5976311b25a2f8aafaf2d0e7c89d4e823e6dfb26a5f0cea9b89d0",
+      "source_image_sha256": "95ed15f9136419bc671d7ad572fc1938abdc37effe4996ead25bffc59d8570ef",
+      "visual_review": "completed",
+      "content_coverage": "complete",
+      "headings": [
+        {
+          "id": "4.3.4",
+          "title": "梯形法的余项展开式"
+        }
+      ],
+      "formula_ids": [
+        "4.3.14",
+        "4.3.15"
+      ],
+      "figures": [],
+      "tables": [
+        "T 数表（无编号）"
+      ],
+      "notes": [
+        "无编号 T 三角数表、全部四步算法和 Taylor 展开逐项转录。",
+        "4.3.4 的后续推导位于 PDF 106，超出本 lane。"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "source_errata": [
+    {
+      "id": "CH04A-E01",
+      "pdf_page": 97,
+      "printed_page": 84,
+      "location": "表 4.1 后首段",
+      "source_statement": "当 n≥8 时，Cotes 系数有正有负",
+      "finding": "n=9 是全部系数为正的反例；原文已保留并单列校注。",
+      "verification": "按式（4.2.2）用 SymPy 有理数符号积分计算全部十个系数。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E02",
+      "pdf_page": 100,
+      "printed_page": 87,
+      "location": "例 4.1 解答第二段",
+      "source_statement": "T8=0.9456909 只有两位有效数字",
+      "finding": "按本书式（1.3.2），0.0003922 < 0.0005 且大于 0.00005，应具有三位有效数字。",
+      "verification": "与本页 I=0.9460831 作有理数差值，并经 ch01 核验的 1.3.3 定义交叉确认。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E03",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3，k=3 的 T_n",
+      "source_statement": "9.9456909",
+      "finding": "首位原印为 9，应为 0；本页下段和例 4.1 都列 T8=0.9456909。原表值已照录。",
+      "verification": "原图局部放大；本章相同 T8 数值交叉核对。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E04",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3 后首句",
+      "source_statement": "用变步长方法二分 9 次得到了这个结果",
+      "finding": "按本页 k 定义和表格，k=9 为 0.9460830，k=10 才列 0.9460831。原句已保留。",
+      "verification": "与同页表 4.3 及 k 为二分次数的定义比较。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E05",
+      "pdf_page": 104,
+      "printed_page": 91,
+      "location": "式（4.3.13）的指标范围",
+      "source_statement": "k=1,2,…",
+      "finding": "下一页三角表和算法需要 T_m^(0)，相同递推式必须允许 k=0。原范围已保留。",
+      "verification": "对照 PDF 105 三角表及算法步 3 的右侧对角元素。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E06",
+      "pdf_page": 104,
+      "printed_page": 91,
+      "related_pdf_pages": [
+        105
+      ],
+      "location": "定理 4.3 / 式（4.3.7），并涉及式（4.3.14）",
+      "source_statement": "仅设 f∈C∞[a,b]，即以等式写出无穷余项级数",
+      "finding": "C∞ 不能单独保证该无穷级数收敛并等于函数；外推分析应采用有限阶截断带余项的渐近展开解释。原条件、等式均保留。",
+      "verification": "区分任意有限阶 Taylor / Euler-Maclaurin 余项展开与无穷级数收敛；属于原书表述的数学限定问题。",
+      "status": "documented"
+    },
+    {
+      "id": "CH04A-E07",
+      "pdf_page": 102,
+      "printed_page": 89,
+      "location": "表 4.3，k=5 的 T_n",
+      "source_statement": "0.9460596",
+      "finding": "复化梯形 n=32 得 0.946058560962768067178414064814380405…，七位小数应为 0.9460586。原表值已保留并单列校注。",
+      "verification": "ch03b 提出后重新打开原图确认；按 f(x)=sin(x)/x、f(0)=1、区间 [0,1] 独立使用 80 位精度计算，见 validation.json。",
+      "status": "documented"
+    }
+  ],
+  "validation_notes": [
+    "全部 13 张指定 source-images 原图均已分别打开；两幅裁切图已再次打开，公式和表格疑难字位另有放大核对。",
+    "此结果为 agent 核验转录；不是人工核验，也不声明数学上绝对无误。",
+    "逐页保留跨页词句、公式编号、表号、原书数值与原书疑误；校注与原书正文分开。",
+    "表 4.1 系数及余项符号的可计算验证见 validation.json。"
+  ]
+}

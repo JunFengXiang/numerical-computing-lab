@@ -1,0 +1,1588 @@
+% Generated from reviewed lane; compile via book/textbook.tex.
+\clearpage
+
+原书 PDF 页 155；印刷页码 142。
+
+\href{source-images/pdf-155.jpeg}{原页}
+
+\section{第 6 章 方程求根}\label{ch06-ux7b2c-6-ux7ae0-ux65b9ux7a0bux6c42ux6839}
+
+\subsection{6.1 根的搜索}\label{ch06-ux6839ux7684ux641cux7d22}
+
+数学、物理中的许多问题常常归结为求解函数方程 \(f(x)=0\)，这里，\(f(x)\) 可以是代数多项式，也可以是超越函数。方程 \(f(x)=0\) 的解 \(x^*\) 称为它的根，或称为 \(f(x)\) 的零点。
+
+设函数 \(f(x)\) 在 \([a,b]\) 上连续，且 \(f(a)f(b)<0\)，根据连续函数的性质可知方程 \(f(x)=0\) 在区间 \((a,b)\) 内一定有实根，这时称 \([a,b]\) 为方程 \(f(x)=0\) 的有根区间。
+
+\subsubsection{6.1.1 逐步搜索法}\label{ch06-ux9010ux6b65ux641cux7d22ux6cd5}
+
+为明确起见，不妨假定 \(f(a)<0,f(b)>0\)。从有根区间 \([a,b]\) 的左端点 \(x_0=a\) 出发，按某个预定的步长 \(h\)（譬如取 \(h=\dfrac{b-a}{N}\)，\(N\) 为正整数）一步一步地向右跨，每跨一步进行一次根的``搜索''，即检查节点 \(x_k=a+kh\) 上的函数值 \(f(x_k)\) 的符号，一旦发现节点 \(x_k\) 与端点 \(a\) 的函数值异号，即 \(f(x_k)>0\)①，则可以确定一个缩小了的有根区间 \([x_{k-1},x_k]\)，其宽度等于预定的步长 \(h\)。
+
+\textbf{例 6.1} 考察方程 \(f(x)=x^3-x-1=0\)。注意到 \(f(0)<0,f(2)>0\)，知 \(f(x)\) 在区间 \((0,2)\) 内至少有一个实根。
+
+\textbf{解} 设从 \(x=0\) 出发，取 \(h=0.5\) 为步长向右进行根的搜索，列表记录各个节点上函数值的符号（见表 6.1），我们发现区间 \((1.0,1.5)\) 内必有一根。
+
+表 6.1
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+\(x\) & \(0\) & \(0.5\) & \(1.0\) & \(1.5\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(f(x)\) 的符号 & \(-\) & \(-\) & \(-\) & \(+\) \\
+\end{longtable}
+}
+
+在具体运用上述方法时，步长 \(h\) 的选择是个关键。很明显，只要步长 \(h\) 取得足够小，利用这种方法可以得到具有任意精度的近似根。不过当 \(h\) 缩小时，所要搜索的步数相应增多，从而使计算量增大。因此，如果精度要求比较高，单用这种逐步搜索方法是不合算的。下述二分法可以看作逐步搜索方法的一种改进。
+
+\subsubsection{6.1.2 二分法}\label{ch06-ux4e8cux5206ux6cd5}
+
+再考察有根区间 \([a,b]\)，取中点 \(x_0=(a+b)/2\) 将它分为两半，然后进行根的搜
+
+① 特别地，可能有 \(f(x_k)=0\)，这时 \(x_k\) 即为所求的根。
+
+\clearpage
+
+原书 PDF 页 156；印刷页码 143。
+
+\href{source-images/pdf-156.jpeg}{原页}
+
+索，即检查 \(f(x_0)\) 与 \(f(a)\) 是否同号，如果确系同号，说明所求的根 \(x^*\) 在 \(x_0\) 的右侧，这时令 \(a_1=x_0,b_1=b\)；否则 \(x^*\) 必在 \(x_0\) 的左侧，这时令 \(a_1=a,b_1=x_0\)（见图 6.1）。不管出现哪一种情况，新的有根区间 \([a_1,b_1]\) 的长度仅为 \([a,b]\) 的一半。
+
+对压缩了的有根区间 \([a_1,b_1]\) 又可施行同样的手续，即用中点 \(x_1=(a_1+b_1)/2\) 将区间 \([a_1,b_1]\) 再分为两半，然后通过根的搜索判定所求的根在 \(x_1\) 的哪一侧，从而又确定一个新的有根区间 \([a_2,b_2]\)，其长度是 \([a_1,b_1]\) 的一半。
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.1 原扫描裁切}]{verified/assets/ch06/fig-6.1.png}
+
+图 6.1
+
+图意（agent 整理）：原图显示二分法的有根区间压缩。曲线标为 \(f(x)\)，坐标轴为 \(x,y\)，原点 \(O\)；横轴标有 \(a,x^*,x_0,b\)，新区间端点标有 \(a_1,b_1\)，其中 \(a_1=a,b_1=x_0\)。
+
+如此反复二分下去，即可得出一系列有根区间
+
+\[
+[a,b]\supseteq[a_1,b_1]\supseteq[a_2,b_2]\supseteq\cdots\supseteq[a_k,b_k]\supseteq\cdots,
+\]
+
+其中每个区间都是前一个区间的一半，因此 \([a_k,b_k]\) 的长度 \(b_k-a_k=(b-a)/2^k\) 当 \(k\to\infty\) 时趋于零。就是说，如果二分过程无限地继续下去，这些区间最终必将收缩于一点 \(x^*\)，该点显然就是所求的根。
+
+每次二分后，设取有根区间 \([a_k,b_k]\) 的中点 \(x_k=(a_k+b_k)/2\) 作为根的近似值，则在二分过程中可以获得一个近似根的序列 \(x_0,\allowbreak x_1,\allowbreak x_2,\allowbreak \cdots,\allowbreak x_k,\allowbreak \cdots\)，该序列必以根 \(x^*\) 为极限。
+
+不过在实际计算时，不可能完成这个无限过程，其实也没有这种必要，因为数值分析的结果允许带有一定的误差。由于
+
+\[
+|x^*-x_k|\leqslant(b_k-a_k)/2=(b-a)/2^{k+1},
+\]
+
+只要二分足够多次（即 \(k\) 充分大），便有 \(|x^*-x_k|<\varepsilon\)，这里 \(\varepsilon\) 为预定的精度。
+
+\textbf{例 6.2} 求方程 \(f(x)=x^3-x-1=0\) 在区间 \((1.0,1.5)\) 内的一个实根，要求准确到小数点后的第二位。
+
+\textbf{解} 这里 \(a=1.0,b=1.5\)，而 \(f(a)<0,f(b)>0\)。取 \((a,b)\) 的中点 \(x_0=1.25\) 将区间二等分，由于 \(f(x_0)<0\)，即 \(f(x_0)\) 与 \(f(a)\) 同号，故所求的根 \(x^*\) 必在 \(x_0\) 右侧，这时应令 \(a_1=x_0=1.25,b_1=b=1.5\)，而得到新的有根区间 \([a_1,b_1]\)。
+
+如此反复二分下去，二分过程无需赘述。现在预估所要二分的次数，按误差估计式（6.1.1），只要二分六次（\(k=6\)），便能达到预定的精度
+
+\[
+|x^*-x_6|\leqslant0.005.
+\]
+
+二分法的计算结果如表 6.2 所示。
+
+二分法是电子计算机上一种常用算法，下面列出计算步骤：
+
+\textbf{步 1} 准备。计算 \(f(x)\) 在有根区间 \([a,b]\) 端点处的值 \(f(a),f(b)\)。
+
+\textbf{步 2} 二分。计算 \(f(x)\) 在区间中点 \(\dfrac{a+b}{2}\) 处的值 \(f\left(\dfrac{a+b}{2}\right)\)。
+
+\begin{quote}
+校注（agent 补充）：原页例 6.2 引用了``误差估计式（6.1.1）''，但本页对应的误差估计式旁未见印刷编号。此处保留原文引用及无编号公式，不补造公式标签；见 \href{verified/assets/ch06/detail-p156-audit.png}{误差估计式原图裁切}。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 157；印刷页码 144。
+
+\href{source-images/pdf-157.jpeg}{原页}
+
+表 6.2
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+\(k\) & \(a_k\) & \(b_k\) & \(x_k\) & \(f(x_k)\) 符号 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(1.0\) & \(1.5\) & \(1.25\) & \(-\) \\
+\(1\) & \(1.25\) & & \(1.375\) & \(+\) \\
+\(2\) & & \(1.375\) & \(1.312\,5\) & \(-\) \\
+\(3\) & \(1.312\,5\) & & \(1.343\,8\) & \(+\) \\
+\(4\) & & \(1.343\,8\) & \(1.328\,1\) & \(+\) \\
+\(5\) & & \(1.328\,1\) & \(1.320\,3\) & \(-\) \\
+\(6\) & \(1.320\,3\) & & \(1.324\,2\) & \(-\) \\
+\end{longtable}
+}
+
+\textbf{步 3} 判断。若 \(f\left(\dfrac{a+b}{2}\right)=0\) 则 \(\dfrac{a+b}{2}\) 即是根，计算过程结束。否则作如下检验：
+
+若 \(f\left(\dfrac{a+b}{2}\right)\) 与 \(f(a)\) 异号，则根位于区间 \(\left(a,\dfrac{a+b}{2}\right)\) 内，这时以 \(\dfrac{a+b}{2}\) 代替 \(b\)；
+
+若 \(f\left(\dfrac{a+b}{2}\right)\) 与 \(f(a)\) 同号，则根位于区间 \(\left(\dfrac{a+b}{2},b\right)\) 内，这时以 \(\dfrac{a+b}{2}\) 代替 \(a\)。
+
+反复执行步 2 和步 3，直到区间 \([a,b]\) 长度缩小到允许误差范围之内，此时区间中点 \(\dfrac{a+b}{2}\) 即可作为所求的根。
+
+二分法的优点是算法简单，而且收敛性总能得到保证。
+
+\subsection{6.2 迭代法}\label{ch06-ux8fedux4ee3ux6cd5}
+
+\subsubsection{6.2.1 迭代过程的收敛性}\label{ch06-ux8fedux4ee3ux8fc7ux7a0bux7684ux6536ux655bux6027}
+
+考察下列形式的方程：
+
+\[
+x=\varphi(x).
+\tag{6.2.1}
+\]
+
+这种方程是隐式的，因而不能直接得出它的根。但如果给出根的某个猜测值 \(x_0\)，将它代入式（6.2.1）的右端，即可求得 \(x_1=\varphi(x_0)\)。然后，又可取 \(x_1\) 作为猜测值，进一步得到 \(x_2=\varphi(x_1)\)。如此反复迭代。如果按公式
+
+\[
+x_{k+1}=\varphi(x_k),\quad k=0,1,2,\cdots
+\tag{6.2.2}
+\]
+
+确定的数列 \(\{x_k\}\) 有极限 \(x^*=\lim\limits_{k\to\infty}x_k\)，则称迭代过程式（6.2.2）收敛，这时极限值 \(x^*\) 显然就是方程（6.2.1）的根。
+
+上述迭代法是一种逐次逼近法，其基本思想是将隐式方程（6.2.1）归结为一组显式的计算公式（6.2.2），就是说，迭代过程实质上是一个逐步显式化的过程。
+
+我们用几何图像来显示这一迭代过程。方程 \(x=\varphi(x)\) 的求根问题在 \(Oxy\) 平面上
+
+\clearpage
+
+原书 PDF 页 158；印刷页码 145。
+
+\href{source-images/pdf-158.jpeg}{原页}
+
+就是要确定曲线 \(y=\varphi(x)\) 与直线 \(y=x\) 的交点 \(P^*\)（见图 6.2）。对于 \(x^*\) 的某个近似值 \(x_0\)，在曲线 \(y=\varphi(x)\) 上可确定一点 \(P_0\)，它以 \(x_0\) 为横坐标，而纵坐标则等于 \(\varphi(x_0)=x_1\)。过 \(P_0\) 引平行 \(x\) 轴的直线，设交直线 \(y=x\) 于点 \(Q_1\)，然后过 \(Q_1\) 再作平行于 \(y\) 轴的直线，它与曲线 \(y=\varphi(x)\) 的交点记作 \(P_1\)，则点 \(P_1\) 的横坐标为 \(x_1\)，纵坐标等于 \(\varphi(x_1)=x_2\)。按图 6.2 中箭头所示的路径继续进行下去，在曲线 \(y=\varphi(x)\) 上得到点列 \(P_1,P_2,\cdots\)，其横坐标分别为依公式 \(x_{k+1}=\varphi(x_k)\) 求得的迭代值 \(x_1,x_2,\cdots\)。如果点列 \(\{P_k\}\) 趋于点 \(P^*\)，则相应的迭代值 \(x_k\) 收敛到所求的根 \(x^*\)。
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.2 原扫描裁切}]{verified/assets/ch06/fig-6.2.png}
+
+图 6.2
+
+图意（agent 整理）：原图用曲线 \(y=\varphi(x)\)、直线 \(y=x\) 和带箭头的水平、竖直折线显示迭代过程。全部文字标签为 \(x,\allowbreak y,\allowbreak O,\allowbreak x^*,\allowbreak x_2,\allowbreak x_1,\allowbreak x_0,\allowbreak P^*,\allowbreak P_2,\allowbreak P_1,\allowbreak P_0,\allowbreak Q_2,\allowbreak Q_1,\allowbreak y=x,\allowbreak y=\varphi(x)\)。
+
+\textbf{例 6.3} 求方程
+
+\[
+f(x)=x^3-x-1=0
+\tag{6.2.3}
+\]
+
+在 \(x_0=1.5\) 附近的根 \(x^*\)。
+
+\textbf{解} 设将方程（6.2.3）改写成 \(x=\sqrt[3]{x+1}\) 的形式，据此建立迭代公式
+
+\[
+x_{k+1}=\sqrt[3]{x_k+1},\quad k=0,1,2,\cdots.
+\]
+
+表 6.3 记录了各步迭代的结果。可以看到，如果仅取六位数字，那么结果 \(x_7\) 与 \(x_8\) 完全相同，这时可以认为 \(x_7\) 实际上已满足方程（6.2.3），即为所求的根。
+
+表 6.3
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+\(k\) & \(x_k\) & \(k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(1.5\) & \(5\) & \(1.324\,76\) \\
+\(1\) & \(1.357\,21\) & \(6\) & \(1.324\,73\) \\
+\(2\) & \(1.330\,86\) & \(7\) & \(1.324\,72\) \\
+\(3\) & \(1.325\,88\) & \(8\) & \(1.324\,72\) \\
+\(4\) & \(1.324\,94\) & & \\
+\end{longtable}
+}
+
+应当指出，迭代法的效果并不是总能令人满意的。譬如，设依方程（6.2.3）的另一种等价形式 \(x=x^3-1\)，建立迭代公式 \(x_{k+1}=x_k^3-1\)，迭代初值仍取 \(x_0=1.5\)，则有
+
+\[
+x_1=2.375,\quad x_2=12.39.
+\]
+
+继续迭代下去已经没有必要，因为结果显然会越来越大，不可能趋于某个极限。称这种不收敛的迭代过程是发散的。一个发散的迭代过程，纵使进行了上千百次迭代，其结果也是毫无价值的。
+
+再考察一般情形。设方程 \(x=\varphi(x)\) 在区间 \((a,b)\) 内有根 \(x^*\)，则保证迭代过程 \(x_{k+1}=\varphi(x_k)\) 收敛的条件可表述为：存在定数 \(0<L<1\)，使对于任意 \(x\in[a,b]\) 成立
+
+\[
+|\varphi'(x)|\leqslant L.
+\tag{6.2.4}
+\]
+
+事实上，由微分中值定理
+
+\[
+x_{k+1}-x^*=\varphi(x_k)-\varphi(x^*)=\varphi'(\xi)(x_k-x^*),
+\]
+
+其中 \(\xi\) 是 \(x^*\) 与 \(x_k\) 之间某一点，当 \(x_k\in[a,b]\) 时 \(\xi\in[a,b]\)。因此利用条件（6.2.4）可以
+
+\clearpage
+
+原书 PDF 页 159；印刷页码 146。
+
+\href{source-images/pdf-159.jpeg}{原页}
+
+断定 \(|x_{k+1}-x^*|\leqslant L|x_k-x^*|\)。据此反复递推，有
+
+\[
+|x_k-x^*|\leqslant L^k|x_0-x^*|,
+\]
+
+故当 \(k\to\infty\) 时，迭代值 \(x_k\) 将收敛到所求的根 \(x^*\)。
+
+需要指出的是，在上述论证过程中，应当保证一切迭代值 \(x_k\) 全落在区间 \((a,b)\) 内，为此要求，对于任意 \(x\in[a,b]\)，总有 \(\varphi(x)\in[a,b]\)。于是有下述论断。
+
+\textbf{定理 6.1} 假定函数 \(\varphi(x)\) 满足下列两项条件：
+
+\(1^\circ\) 对于任意 \(x\in[a,b]\)，有
+
+\[
+a\leqslant\varphi(x)\leqslant b,
+\tag{6.2.5}
+\]
+
+\(2^\circ\) 存在正数 \(L<1\)，使对于任意 \(x\in[a,b]\)①，有
+
+\[
+|\varphi'(x)|\leqslant L<1,
+\tag{6.2.6}
+\]
+
+则迭代过程 \(x_{k+1}=\varphi(x_k)\) 对于任意初值 \(x_0\in[a,b]\) 均收敛于方程 \(x=\varphi(x)\) 的根 \(x^*\)②，且有如下的误差估计式：
+
+\[
+|x_k-x^*|\leqslant\frac{L^k}{1-L}|x_1-x_0|.
+\tag{6.2.7}
+\]
+
+\textbf{证明} 前已证明迭代过程的收敛性，剩下的问题是导出估计式（6.2.7）。按式（6.2.6），有
+
+\[
+|x_{k+1}-x_k|=|\varphi(x_k)-\varphi(x_{k-1})|\leqslant L|x_k-x_{k-1}|.
+\tag{6.2.8}
+\]
+
+据此反复递推得 \(|x_{k+1}-x_k|\leqslant L^k|x_1-x_0|\)。于是对于任意正整数 \(p\)，有
+
+\[
+\begin{aligned}
+|x_{k+p}-x_k|&\leqslant|x_{k+p}-x_{k+p-1}|+|x_{k+p-1}-x_{k+p-2}|+\cdots+|x_{k+1}-x_k|\\
+&\leqslant(L^{k+p-1}+L^{k+p-2}+\cdots+L^k)|x_1-x_0|\leqslant\frac{L^k}{1-L}|x_1-x_0|.
+\end{aligned}
+\]
+
+在上式中令 \(p\to\infty\)，注意到 \(\lim\limits_{p\to\infty}x_{k+p}=x^*\)，即得式（6.2.7）。证毕。
+
+迭代过程是个极限过程。在用迭代法进行实际计算时，必须按精度要求控制迭代次数。误差估计式（6.2.7）原则上可用来确定迭代次数，但它由于含有信息 \(L\) 而不便于实际应用。根据式（6.2.8），对于任意正整数 \(p\)，有
+
+\[
+|x_{k+p}-x_k|\leqslant(L^{p-1}+L^{p-2}+\cdots+1)|x_{k+1}-x_k|\leqslant\frac{1}{1-L}|x_{k+1}-x_k|.
+\]
+
+在上式中令 \(p\to\infty\)，有
+
+\[
+|x^*-x_k|\leqslant\frac{1}{1-L}|x_{k+1}-x_k|.
+\]
+
+由此可见，只要相邻两次计算结果的偏差 \(|x_{k+1}-x_k|\) 足够小，即可保证近似值 \(x_k\) 具有足够的精度，因此可以通过检查 \(|x_{k+1}-x_k|\) 来判断迭代过程应否终止。
+
+① 条件 2 可以放宽为，存在正数 \(L<1\)，使对任意 \(x,\bar{x}\in[a,b]\) 均满足 Lipschitz 条件
+
+\[
+|\varphi(x)-\varphi(\bar{x})|\leqslant L|x-\bar{x}|.
+\]
+
+② 可以证明，当式（6.2.5）、（6.2.6）成立时，方程 \(x=\varphi(x)\) 在 \([a,b]\) 内有且仅有一个根 \(x^*\)。
+
+\clearpage
+
+原书 PDF 页 160；印刷页码 147。
+
+\href{source-images/pdf-160.jpeg}{原页}
+
+下面列出迭代法的计算步骤：
+
+\textbf{步 1　准备} 提供迭代初值 \(x_0\)。
+
+\textbf{步 2　迭代} 计算迭代值 \(x_1=\varphi(x_0)\)。
+
+\textbf{步 3　控制} 检查 \(|x_1-x_0|\)：若 \(|x_1-x_0|>\varepsilon\)（\(\varepsilon\) 为预先指定的精度），则以 \(x_1\) 替换 \(x_0\) 转步 2 继续迭代；当 \(|x_1-x_0|\leqslant\varepsilon\) 时终止计算，取 \(x_1\) 作为所求的结果。
+
+在实际应用迭代法时，通常在所求的根 \(x^*\) 的邻近进行考察，而研究所谓局部收敛性。
+
+\textbf{定义 6.1} 若存在 \(x^*\) 的某个邻域 \(R:|x-x^*|\leqslant\delta\)，使迭代过程 \(x_{k+1}=\varphi(x_k)\) 对于任意初值 \(x_0\in R\) 均收敛，则称迭代过程 \(x_{k+1}=\varphi(x_k)\) 在根 \(x^*\) 邻近具有局部收敛性。
+
+\textbf{定理 6.2} 设 \(x^*\) 为方程 \(x=\varphi(x)\) 的根，\(\varphi'(x)\) 在 \(x^*\) 的邻近连续且 \(|\varphi'(x^*)|<1\)，则迭代过程 \(x_{k+1}=\varphi(x_k)\) 在 \(x^*\) 邻近具有局部收敛性。
+
+\textbf{证明} 由连续函数的性质，存在 \(x^*\) 的某个邻域 \(R:|x-x^*|\leqslant\delta\)，使对于任意 \(x\in R\) 成立 \(|\varphi'(x)|\leqslant L<1\)。此外，对于任意 \(x\in R\)，总有 \(\varphi(x)\in R\)，这是因为
+
+\[
+|\varphi(x)-x^*|=|\varphi(x)-\varphi(x^*)|\leqslant L|x-x^*|\leqslant|x-x^*|,
+\]
+
+于是，依据定理 6.1 可以断定，迭代过程 \(x_{k+1}=\varphi(x_k)\) 对于任意初值 \(x_0\in R\) 均收敛。证毕。
+
+\textbf{例 6.4} 求方程 \(x=\mathrm{e}^{-x}\) 在 \(x=0.5\) 附近的一个根，要求精度 \(\varepsilon=10^{-5}\)。
+
+\textbf{解} 过 \(x=0.5\) 以 \(h=0.1\) 为步长搜索一次，即可发现，所求的根在区间 \((0.5,0.6)\) 内。由于在根的邻近，\(|(\mathrm{e}^{-x})'|\approx0.6\)，这个值小于 1，因此迭代公式 \(x_{k+1}=\mathrm{e}^{-x_k}\) 对于初值 \(x_0=0.5\) 是收敛的。
+
+表 6.4 记录了迭代的结果。比较相邻的两次迭代值，迭代 18 次得所求的根 \(0.567\,14\)。
+
+表 6.4
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(x_k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(x_k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(x_k\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(0.5\) & \(7\) & \(0.568\,438\,0\) & \(14\) & \(0.567\,118\,8\) \\
+\(1\) & \(0.606\,530\,6\) & \(8\) & \(0.566\,409\,4\) & \(15\) & \(0.567\,157\,1\) \\
+\(2\) & \(0.545\,239\,2\) & \(9\) & \(0.567\,559\,6\) & \(16\) & \(0.567\,135\,4\) \\
+\(3\) & \(0.579\,703\,1\) & \(10\) & \(0.566\,907\,2\) & \(17\) & \(0.567\,147\,7\) \\
+\(4\) & \(0.560\,064\,6\) & \(11\) & \(0.567\,277\,2\) & \(18\) & \(0.567\,140\,7\) \\
+\(5\) & \(0.571\,172\,1\) & \(12\) & \(0.567\,067\,3\) & & \\
+\(6\) & \(0.564\,862\,9\) & \(13\) & \(0.567\,186\,3\) & & \\
+\end{longtable}
+}
+
+\subsubsection{6.2.2 迭代公式的加工}\label{ch06-ux8fedux4ee3ux516cux5f0fux7684ux52a0ux5de5}
+
+对于收敛的迭代过程，只要迭代足够多次，就可以使结果达到任意的精度，但有时迭代过程收敛缓慢，从而使计算量变得很大，因此迭代过程的加速是个重要的课题。
+
+\clearpage
+
+原书 PDF 页 161；印刷页码 148。
+
+\href{source-images/pdf-161.jpeg}{原页}
+
+设 \(x_0\) 是根 \(x^*\) 的某个预测值，用迭代公式校正一次得 \(x_1=\varphi(x_0)\)，而由微分中值定理有
+
+\[
+x_1-x^*=\varphi'(\xi)(x_0-x^*),
+\]
+
+其中 \(\xi\) 介于 \(x^*\) 与 \(x_0\) 之间。
+
+假定 \(\varphi'(x)\) 改变不大，近似地取某个近似值 \(L\)，则由
+
+\[
+x_1-x^*\approx L(x_0-x^*),
+\]
+
+得
+
+\[
+x^*=\frac{1}{1-L}x_1-\frac{L}{1-L}x_0.
+\tag{6.2.9}
+\]
+
+可以期望，按上式右端求得的
+
+\[
+x_2=\frac{1}{1-L}x_1-\frac{L}{1-L}x_0=x_1+\frac{L}{1-L}(x_1-x_0)
+\]
+
+是比 \(x_1\) 更好的近似值。
+
+将每得到一次改进值算作一步，并用 \(\bar{x}_k\) 和 \(x_k\) 分别表示第 \(k\) 步的校正值和改进值，则加速迭代计算方案可表述如下：
+
+\[
+\begin{aligned}
+\text{校正}\quad&\bar{x}_{k+1}=\varphi(x_k),\\
+\text{改进}\quad&x_{k+1}=\bar{x}_{k+1}+\frac{L}{1-L}(\bar{x}_{k+1}-x_k).
+\end{aligned}
+\tag{6.2.10}
+\]
+
+\textbf{例 6.5} 求解方程 \(x=\mathrm{e}^{-x}\)。
+
+\textbf{解} 由于在 \(x_0=0.5\) 附近，\((\mathrm{e}^{-x})'\approx-0.6\)，故上述计算公式的具体形式是
+
+\[
+\begin{cases}
+\bar{x}_{k+1}=\mathrm{e}^{-x_k},\\
+x_{k+1}=\bar{x}_{k+1}-\dfrac{0.6}{1.6}(\bar{x}_{k+1}-x_k).
+\end{cases}
+\]
+
+表 6.5 列出了计算结果。
+
+表 6.5
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(k\) & \(\bar{x}_k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & & \(0.5\) \\
+\(1\) & \(0.606\,53\) & \(0.566\,58\) \\
+\(2\) & \(0.567\,46\) & \(0.567\,13\) \\
+\(3\) & \(0.567\,15\) & \(0.567\,14\) \\
+\end{longtable}
+}
+
+例 6.4 迭代 18 次得到精度 \(10^{-5}\) 的结果 \(x=0.567\,14\)，这里只要迭代 3 次同样得出这个结果。加速的效果是相当显著的。
+
+然而上述加速方案有个缺点，由于其中含有导数 \(\varphi'(x)\) 的有关信息 \(L\)，实际使用不便。
+
+仍设已知 \(x^*\) 的某个猜测值为 \(x_0\)，将校正值 \(x_1=\varphi(x_0)\) 再校正一次，又得
+
+\[
+x_2=\varphi(x_1),
+\]
+
+由于 \(x_2-x^*\approx L(x_1-x^*)\) 将它与式（6.2.9）联立，消去未知的 \(L\)，有
+
+\[
+\frac{x_1-x^*}{x_2-x^*}\approx\frac{x_0-x^*}{x_1-x^*}.
+\]
+
+由此推知
+
+\[
+x^*\approx\frac{x_0x_2-x_1^2}{x_0-2x_1+x_2}=x_2-\frac{(x_2-x_1)^2}{x_0-2x_1+x_2}.
+\]
+
+这样构造出的改进公式确实不再含有关于导数的信息，但是它需要用两次迭代
+
+\begin{quote}
+校注（agent 补充）：原页式（6.2.9）确印为等号，转录保留。由于上一步只是用近似常数 \(L\) 得到 \(x_1-x^*\approx L(x_0-x^*)\)，一般只能推出 \(x^*\approx\dfrac{x_1-Lx_0}{1-L}\)；除非该线性误差关系精确成立，式（6.2.9）的等号应作近似关系理解。此为原书等号精度的疑误，非 OCR 误识别。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 162；印刷页码 149。
+
+\href{source-images/pdf-162.jpeg}{原页}
+
+值进行加工。如果将得到一次改进值作为一步，则计算公式如下：
+
+\[
+\begin{aligned}
+\text{校正}\quad&\tilde{x}_{k+1}=\varphi(x_k),\\
+\text{再校正}\quad&\bar{x}_{k+1}=\varphi(\tilde{x}_{k+1}),\\
+\text{改进}\quad&x_{k+1}=\bar{x}_{k+1}-\frac{(\bar{x}_{k+1}-\tilde{x}_{k+1})^2}{\bar{x}_{k+1}-2\tilde{x}_{k+1}+x_k}.
+\end{aligned}
+\tag{6.2.11}
+\]
+
+上述处理过程称为 Aitken 方法。
+
+\textbf{例 6.6} 用 Aitken 方法求解方程（6.2.3）。
+
+\textbf{解} 前面曾经指出，求解这一方程的下述迭代公式是发散的：
+
+\[
+x_{k+1}=x_k^3-1.
+\tag{6.2.12}
+\]
+
+现在以这种迭代公式为基础形成 Aitken 算法，即
+
+\[
+\tilde{x}_{k+1}=x_k^3-1,\quad
+\bar{x}_{k+1}=\tilde{x}_{k+1}^3-1,\quad
+x_{k+1}=\bar{x}_{k+1}-\frac{(\bar{x}_{k+1}-\tilde{x}_{k+1})^2}{\bar{x}_{k+1}-2\tilde{x}_{k+1}+x_k}.
+\]
+
+仍然取 \(x_0=1.5\)，计算结果如表 6.6 所示。
+
+表 6.6
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+\(k\) & \(\tilde{x}_k\) & \(\bar{x}_k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & & & \(1.5\) \\
+\(1\) & \(2.375\,00\) & \(12.396\,5\) & \(1.416\,29\) \\
+\(2\) & \(1.840\,92\) & \(5.238\,88\) & \(1.355\,65\) \\
+\(3\) & \(1.491\,40\) & \(2.317\,28\) & \(1.328\,95\) \\
+\(4\) & \(1.347\,10\) & \(1.444\,35\) & \(1.324\,80\) \\
+\(5\) & \(1.325\,18\) & \(1.327\,14\) & \(1.324\,72\) \\
+\end{longtable}
+}
+
+可以看到，将发散的迭代公式（6.2.12）通过 Aitken 方法处理后，竟获得了相当好的收敛性。在 6.4 节将用几何图像解释这个有趣的现象。
+
+\subsection{6.3 Newton 法}\label{ch06-newton-ux6cd5}
+
+\subsubsection{6.3.1 Newton 公式}\label{ch06-newton-ux516cux5f0f}
+
+对于方程 \(f(x)=0\)，为要应用迭代法，必须先将它改写成 \(x=\varphi(x)\) 的形式，即需要针对所给的函数 \(f(x)\) 构造合适的迭代函数 \(\varphi(x)\)。
+
+迭代函数 \(\varphi(x)\) 可以是多种多样的。例如，可令 \(\varphi(x)=x+f(x)\)，这时相应的迭代公式是
+
+\clearpage
+
+原书 PDF 页 163；印刷页码 150。
+
+\href{source-images/pdf-163.jpeg}{原页}
+
+\[
+x_{k+1}=x_k+f(x_k).
+\tag{6.3.1}
+\]
+
+一般来说，这种迭代公式不一定收敛，或者收敛的速度缓慢。
+
+运用前述加速技巧，对于迭代过程（6.3.1），其加速公式（6.2.10）具有以下形式：
+
+\[
+\begin{cases}
+\bar{x}_{k+1}=x_k+f(x_k),\\
+x_{k+1}=\bar{x}_{k+1}+\dfrac{L}{1-L}(\bar{x}_{k+1}-x_k).
+\end{cases}
+\]
+
+记 \(M=L-1\)，上面两个式子可以合并写成
+
+\[
+x_{k+1}=x_k-\frac{f(x_k)}{M}.
+\]
+
+这种迭代公式通常称为简化的 Newton 公式，其相应的迭代函数是
+
+\[
+\varphi(x)=x-\frac{f(x)}{M}.
+\tag{6.3.2}
+\]
+
+需要注意的是，由于 \(L\) 是 \(\varphi'(x)\) 的估计值，而 \(\varphi(x)=x+f(x)\)，这里的 \(M=L-1\) 实际上是 \(f'(x)\) 的估计值。如果用 \(f'(x)\) 代替式（6.3.2）中的 \(M\)，则得到如下形式的迭代函数：
+
+\[
+\varphi(x)=x-\frac{f(x)}{f'(x)},
+\]
+
+其相应的迭代公式
+
+\[
+x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}
+\tag{6.3.3}
+\]
+
+就是著名的 Newton 公式。
+
+\subsubsection{6.3.2 Newton 法的几何解释}\label{ch06-newton-ux6cd5ux7684ux51e0ux4f55ux89e3ux91ca}
+
+对于方程 \(f(x)=0\)，如果 \(f(x)\) 是线性函数，则对它求根是容易的。Newton 法实质上是一种线性化方法，其基本思想是将非线性方程 \(f(x)=0\) 逐步归结为某种线性方程来求解。
+
+设已知方程 \(f(x)=0\) 有近似根 \(x_k\)，将函数 \(f(x)\) 在点 \(x_k\) 展开，有
+
+\[
+f(x)\approx f(x_k)+f'(x_k)(x-x_k),
+\]
+
+于是方程 \(f(x)=0\) 可近似地表示为
+
+\[
+f(x_k)+f'(x_k)(x-x_k)=0.
+\tag{6.3.4}
+\]
+
+这是个线性方程，记其根为 \(x_{k+1}\)，则 \(x_{k+1}\) 的计算公式就是 Newton 公式（6.3.3）。
+
+Newton 法有明显的几何解释。方程 \(f(x)=0\) 的根 \(x^*\) 可解释为曲线 \(y=f(x)\) 与 \(x\) 轴的交点的横坐标（见图 6.3）。设 \(x_k\) 是根 \(x^*\) 的某个近似值，过曲
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.3 原扫描裁切}]{verified/assets/ch06/fig-6.3.png}
+
+图 6.3
+
+图意（agent 整理）：曲线 \(f(x)\) 在 \(P_k\) 处的切线与 \(x\) 轴相交，其交点横坐标是 \(x_{k+1}\)。全部标签为 \(x,\allowbreak y,\allowbreak O,\allowbreak x^*,\allowbreak x_{k+1},\allowbreak x_k,\allowbreak P_k,\allowbreak f(x)\)。
+
+\clearpage
+
+原书 PDF 页 164；印刷页码 151。
+
+\href{source-images/pdf-164.jpeg}{原页}
+
+线 \(y=f(x)\) 上横坐标为 \(x_k\) 的点 \(P_k\) 引切线，并将该切线与 \(x\) 轴的交点的横坐标 \(x_{k+1}\) 作为 \(x^*\) 的新的近似值。注意到切线方程为
+
+\[
+y=f(x_k)+f'(x_k)(x-x_k).
+\]
+
+这样求得的值 \(x_{k+1}\) 必满足式（6.3.4），从而就是 Newton 公式（6.3.3）的计算结果。由于这种几何背景，Newton 法亦称切线法。
+
+\subsubsection{6.3.3 Newton 法的局部收敛性}\label{ch06-newton-ux6cd5ux7684ux5c40ux90e8ux6536ux655bux6027}
+
+对于一种迭代过程，为了保证它是有效的，需要肯定它的收敛性，同时考察它的收敛速度。所谓迭代过程的收敛速度，是指在接近收敛的过程中迭代误差的下降速度。
+
+\textbf{定义 6.2} 设迭代过程 \(x_{k+1}=\varphi(x_k)\) 收敛于方程 \(x=\varphi(x)\) 的根 \(x^*\)，如果迭代误差 \(e_k=x_k-x^*\) 当 \(k\to\infty\) 时成立下列渐近关系式：
+
+\[
+\frac{e_{k+1}}{e_k^p}\to C\quad(C\ne0\text{ 为常数}),
+\]
+
+则称该迭代过程是 \(p\) 阶收敛的。特别地，\(p=1\) 时称为线性收敛，\(p>1\) 时称为超线性收敛，\(p=2\) 时称为平方收敛。
+
+\textbf{定理 6.3} 对于迭代过程 \(x_{k+1}=\varphi(x_k)\)，如果 \(\varphi^{(p)}(x)\) 在所求根 \(x^*\) 的邻近连续，并且
+
+\[
+\begin{cases}
+\varphi'(x^*)=\varphi''(x^*)=\cdots=\varphi^{(p-1)}(x^*)=0,\\
+\varphi^{(p)}(x^*)\ne0,
+\end{cases}
+\tag{6.3.5}
+\]
+
+则该迭代过程在点 \(x^*\) 邻近是 \(p\) 阶收敛的。
+
+\textbf{证明} 由于 \(\varphi'(x^*)=0\)，据定理 6.2 立即可以断定迭代过程 \(x_{k+1}=\varphi(x_k)\) 具有局部收敛性。
+
+再将 \(\varphi(x_k)\) 在根 \(x^*\) 处展开，利用条件（6.3.5），则有
+
+\[
+\varphi(x_k)=\varphi(x^*)+\frac{\varphi^{(p)}(\zeta)}{p!}(x_k-x^*)^p.
+\]
+
+注意到
+
+\[
+\varphi(x_k)=x_{k+1},\quad\varphi(x^*)=x^*,
+\]
+
+由上式得
+
+\[
+x_{k+1}-x^*=\frac{\varphi^{(p)}(\zeta)}{p!}(x_k-x^*)^p,
+\]
+
+因此对于迭代误差，有 \(\dfrac{e_{k+1}}{e_k^p}\to\dfrac{\varphi^{(p)}(x^*)}{p!}\)。这表明迭代过程 \(x_{k+1}=\varphi(x_k)\) 确实是 \(p\) 阶收敛的。证毕。
+
+由上述定理可知，迭代过程的收敛速度依赖于迭代函数 \(\varphi(x)\) 的选取。如果当 \(x\in[a,b]\) 时 \(\varphi'(x)\ne0\)，则该迭代过程只可能是线性收敛的。
+
+对于 Newton 公式（6.3.3），其迭代函数为
+
+\clearpage
+
+原书 PDF 页 165；印刷页码 152。
+
+\href{source-images/pdf-165.jpeg}{原页}
+
+\[
+\varphi(x)=x-\frac{f(x)}{f'(x)},\quad\varphi'(x)=\frac{f(x)f''(x)}{[f'(x)]^2}.
+\]
+
+假定 \(x^*\) 是 \(f(x)\) 的一个单根，即 \(f(x^*)=0,f'(x^*)\ne0\)，则由上式知 \(\varphi'(x^*)=0\)，于是依据定理 6.3 可以断定，Newton 法在根 \(x^*\) 的邻近是平方收敛的。
+
+\textbf{例 6.7} 用 Newton 法解方程
+
+\[
+x\mathrm{e}^x-1=0.
+\tag{6.3.6}
+\]
+
+\textbf{解} 这里 Newton 公式为 \(x_{k+1}=x_k-\dfrac{x_k-\mathrm{e}^{-x_k}}{1+x_k}\)，取迭代初值 \(x_0=0.5\)，迭代结果列于表 6.7 中。
+
+表 6.7
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(0.5\) \\
+\(1\) & \(0.571\,02\) \\
+\(2\) & \(0.567\,16\) \\
+\(3\) & \(0.567\,14\) \\
+\end{longtable}
+}
+
+所给方程（6.3.6）实际上是方程 \(x=\mathrm{e}^{-x}\) 的等价形式。比较例 6.7 与例 6.5 的计算结果可以看出，Newton 法的收敛速度是很快的。
+
+下面列出 Newton 法的计算步骤：
+
+\textbf{步 1} 准备。选定初始近似值 \(x_0\)，计算 \(f_0=f(x_0),f'_0=f'(x_0)\)。
+
+\textbf{步 2} 迭代。按公式 \(x_1=x_0-f_0/f'_0\) 迭代一次，得新的近似值 \(x_1\)，计算
+
+\[
+f_1=f(x_1),\quad f'_1=f'(x_1).
+\]
+
+\textbf{步 3} 控制。如果 \(x_1\) 满足 \(|\delta|<\varepsilon_1\) 或 \(|f_1|<\varepsilon_2\)，则终止迭代，以 \(x_1\) 作为所求的根；否则转步 4。此处 \(\varepsilon_1,\varepsilon_2\) 是允许误差，而
+
+\[
+\delta=\begin{cases}
+|x_1-x_0|,&\text{当 }|x_1|<C\text{ 时},\\
+\dfrac{|x_1-x_0|}{|x_1|},&\text{当 }|x_1|\geqslant C\text{ 时},
+\end{cases}
+\]
+
+其中 \(C\) 是取绝对误差或相对误差的控制常数，一般可取 \(C=1\)。
+
+\textbf{步 4} 修改。如果迭代次数达到预先指定的次数 \(N\) 或者 \(f'_1=0\)，则方法失败，否则以 \((x_1,f_1,f')\) 代替 \((x_0,f_0,f'_0)\) 转步 2 继续迭代。
+
+\subsubsection{6.3.4 Newton 法应用举例}\label{ch06-newton-ux6cd5ux5e94ux7528ux4e3eux4f8b}
+
+对于给定正数 \(a\)，应用 Newton 法解二次方程 \(x^2-a=0\)，可导出求开方值 \(\sqrt{a}\) 的计算程序
+
+\[
+x_{k+1}=\frac{1}{2}\left(x_k+\frac{a}{x_k}\right).
+\tag{6.3.7}
+\]
+
+下面证明这种迭代公式对于任意初值 \(x_0>0\) 都是收敛的。
+
+事实上，对式（6.3.7）施行配方手续，易知
+
+\[
+x_{k+1}-\sqrt{a}=\frac{1}{2x_k}(x_k-\sqrt{a})^2,\quad
+x_{k+1}+\sqrt{a}=\frac{1}{2x_k}(x_k+\sqrt{a})^2.
+\]
+
+将以上两式相除得
+
+\begin{quote}
+校注（agent 补充）：原页步 4 的替换三元组印为 \((x_1,f_1,f')\)，第三项未印下标 \(1\)，转录保留原式。结合步 2 的定义及被替换的 \(f'_0\)，这里疑应为 \(f'_1\)。这是原扫描上的疑似漏印，非 OCR 改写；局部原图见 \href{verified/assets/ch06/detail-p165-step4.png}{步 4 裁切}。
+\end{quote}
+
+\begin{quote}
+校注（agent 补充）：本页首段``单根''推出``平方收敛''的原文亦予保留。若按前页定义 6.2 要求精确收敛阶的极限常数非零，则还需 \(f''(x^*)\ne0\) 才能断言恰为二阶；在通常光滑性条件下，单根保证的是局部至少二阶收敛。例如 \(f(x)=x+x^3\) 在单根 \(0\) 附近的 Newton 迭代为 \(x_{k+1}=2x_k^3/(1+3x_k^2)\)，实际为三阶。这是原文收敛阶表述的适用条件说明。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 166；印刷页码 153。
+
+\href{source-images/pdf-166.jpeg}{原页}
+
+\[
+\frac{x_{k+1}-\sqrt{a}}{x_{k+1}+\sqrt{a}}=\left[\frac{x_k-\sqrt{a}}{x_k+\sqrt{a}}\right]^2.
+\]
+
+据此反复递推，有
+
+\[
+\frac{x_k-\sqrt{a}}{x_k+\sqrt{a}}=\left[\frac{x_0-\sqrt{a}}{x_0+\sqrt{a}}\right]^{2^k},
+\tag{6.3.8}
+\]
+
+记 \(q=\dfrac{x_0-\sqrt{a}}{x_0+\sqrt{a}}\)，整理式（6.3.8），得
+
+\[
+x_k-\sqrt{a}=2\sqrt{a}\frac{q^{2^k}}{1-q^{2^k}}.
+\]
+
+对于任意 \(x_0>0\)，总有 \(|q|<1\)，故由上式推知，当 \(k\to\infty\) 时 \(x_k\to\sqrt{a}\)，即迭代过程恒收敛。
+
+\textbf{例 6.8} 求 \(\sqrt{115}\)。
+
+\textbf{解} 取初值 \(x_0=10\)，对 \(a=115\) 按式（6.3.7）迭代 3 次便得到精度为 \(10^{-6}\) 的结果（见表 6.8）。
+
+表 6.8
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(10\) \\
+\(1\) & \(10.750\,000\) \\
+\(2\) & \(10.723\,837\) \\
+\(3\) & \(10.723\,805\) \\
+\(4\) & \(10.723\,805\) \\
+\end{longtable}
+}
+
+由于式（6.3.7）对于任意初值 \(x_0>0\) 均收敛，并且收敛的速度很快，因此，可取确定的初值如 \(x_0=1\) 编制通用程序。用这个通用程序求 \(\sqrt{115}\)，也只要迭代 7 次便得到了上面的结果 \(10.723\,805\)。
+
+再举一个例子。
+
+对于给定的正数 \(a\)，应用 Newton 法于方程 \(1/x-a=0\)，可导出求 \(1/a\) 而不用除法的计算程序，即
+
+\[
+x_{k+1}=x_k(2-ax_k).
+\]
+
+这个算法有实际意义，早期设计电子计算机时，为节省硬件设备，曾运用这种技术避开除法操作的设置。
+
+下面证明这一算法当初值 \(x_0\) 满足 \(0<x_0<2/a\) 时是收敛的。事实上，由于
+
+\[
+x_{k+1}-\frac{1}{a}=x_k(2-ax_k)-\frac{1}{a}=-a\left(x_k-\frac{1}{a}\right)^2,
+\]
+
+因而，对 \(r_k=1-ax_k\) 有递推公式 \(r_{k+1}=r_k^2\)。据此反复递推，有
+
+\[
+r_k=r_0^{2^k}.
+\]
+
+若初值满足 \(0<x_0<\dfrac{2}{a}\)，则对 \(r_0=1-ax_0\) 有 \(|r_0|<1\)。这时将有 \(r_k\to0\)，从而迭代收敛。
+
+\subsubsection{6.3.5 Newton 下山法}\label{ch06-newton-ux4e0bux5c71ux6cd5}
+
+前面已经讨论过 Newton 法的局部收敛性。一般来说，Newton 法的收敛性依赖
+
+\clearpage
+
+原书 PDF 页 167；印刷页码 154。
+
+\href{source-images/pdf-167.jpeg}{原页}
+
+于初值 \(x_0\) 的选取，如果 \(x_0\) 偏离所求的根 \(x^*\) 比较远，则 Newton 法可能发散。
+
+例如，用 Newton 法求方程
+
+\[
+x^3-x-1=0,
+\tag{6.3.9}
+\]
+
+在 \(x=1.5\) 附近的一个根 \(x^*\)。设取迭代初值 \(x_0=1.5\)，用 Newton 公式
+
+\[
+x_{k+1}=x_k-\frac{x_k^3-x_k-1}{3x_k^2-1}
+\tag{6.3.10}
+\]
+
+计算，得
+
+\[
+x_1=1.347\,83,\quad x_2=1.325\,20,\quad x_3=1.324\,72.
+\]
+
+迭代三次得到的结果 \(x_3\) 有六位有效数字。
+
+但是，如果改用 \(x_0=0.6\) 作为迭代初值，则依 Newton 公式（6.3.10）迭代一次得
+
+\[
+x_1=17.9.
+\]
+
+这个结果反而比 \(x_0=0.6\) 更偏离了所求的根 \(x^*=1.324\,72\)。
+
+为了防止迭代发散，对迭代过程再附加一项要求，即具有单调性
+
+\[
+|f(x_{k+1})|<|f(x_k)|.
+\tag{6.3.11}
+\]
+
+满足这项要求的算法称为下山法。
+
+将 Newton 法与下山法结合起来使用，即可在下山法保证函数值稳定下降的前提下，用 Newton 法加快收敛速度。为此，将 Newton 法的计算结果 \(\bar{x}_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}\) 与前一步的近似值 \(x_k\) 适当加权平均作为新的改进值，即
+
+\[
+x_{k+1}=\lambda\bar{x}_{k+1}+(1-\lambda)x_k,
+\tag{6.3.12}
+\]
+
+其中 \(\lambda\ (0<\lambda\leqslant1)\) 称为下山因子。在希望挑选下山因子时，希望使单调性条件（6.3.11）成立。
+
+下山因子的选择是个逐步探索的过程。设从 \(\lambda=1\) 开始反复将 \(\lambda\) 减半进行试算，如果能定出值 \(\lambda\) 使单调性条件（6.3.11）成立，则称``下山成功''。与此相反，如果在上述过程中找不到使条件（6.3.11）成立的下山因子 \(\lambda\)，则称``下山失败''，这时需另选初值 \(x_0\) 重算。
+
+\subsection{6.4 弦截法与抛物线法}\label{ch06-ux5f26ux622aux6cd5ux4e0eux629bux7269ux7ebfux6cd5}
+
+上一节介绍了 Newton 法。在用 Newton 公式（6.3.3）求 \(x_{k+1}\) 时，不但要求给出函数值 \(f(x_k)\)，而且要求提供导数值 \(f'(x_k)\)。当函数 \(f\) 比较复杂时，提供它的导数值往往是有困难的。现在设法利用迭代过程中的``老信息''\(f(x_k),f(x_{k-1}),f(x_{k-2}),\cdots\) 来回避导数值 \(f'(x_k)\) 的计算，导出这类求根方法的基础是插值原理。
+
+设 \(x_k,x_{k-1},\cdots,x_{k-r}\) 是 \(f(x)=0\) 的一组近似根，利用函数值 \(f(x_k),f(x_{k-1}),\cdots,f(x_{k-r})\) 构造插值多项式 \(P_r(x)\)，并适当选取 \(P_r(x)=0\) 的一个根作为 \(f(x)=0\) 的新
+
+\clearpage
+
+原书 PDF 页 168；印刷页码 155。
+
+\href{source-images/pdf-168.jpeg}{原页}
+
+的近似根 \(x_{k+1}\)，这就确定了一个迭代过程，记迭代函数为 \(\varphi\)，且
+
+\[
+x_{k+1}=\varphi(x_k,x_{k-1},\cdots,x_{k-r}).
+\]
+
+下面具体考察 \(r=1\)（弦截法）和 \(r=2\)（抛物线法）两种情形。
+
+\subsubsection{6.4.1 弦截法}\label{ch06-ux5f26ux622aux6cd5}
+
+设 \(x_k,x_{k-1}\) 是 \(f(x)=0\) 的近似根，利用 \(f(x_k),f(x_{k-1})\) 构造一次插值多项式 \(P_1(x)\)，并用 \(P_1(x)=0\) 的根作为 \(f(x)=0\) 的新的近似根 \(x_{k+1}\)。由于
+
+\[
+P_1(x)=f(x_k)+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(x-x_k),
+\tag{6.4.1}
+\]
+
+因此有
+
+\[
+x_{k+1}=x_k-\frac{f(x_k)}{f(x_k)-f(x_{k-1})}(x_k-x_{k-1}).
+\tag{6.4.2}
+\]
+
+这样导出的迭代公式（6.4.2）可以看作 Newton 公式 \(x_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}\) 中的导数 \(f'(x)\) 用差商 \(\dfrac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\) 取代的结果。
+
+现在解释这种迭代过程的几何意义。如图 6.4 所示，曲线 \(y=f(x)\) 上横坐标为 \(x_k,x_{k-1}\) 的点分别记作 \(P_k,P_{k-1}\)，则弦线 \(P_kP_{k-1}\) 的斜率等于差商值 \(\dfrac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}\)，其方程是
+
+\[
+f(x_k)+\frac{f(x_k)-f(x_{k-1})}{x_k-x_{k-1}}(x-x_k)=0.
+\]
+
+因此，按式（6.4.2）求得的 \(x_{k+1}\) 实际上是弦线 \(P_kP_{k-1}\) 与 \(x\) 轴交点的横坐标。这种算法因此而称为弦截法。
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.4 原扫描裁切}]{verified/assets/ch06/fig-6.4.png}
+
+图 6.4
+
+图意（agent 整理）：曲线上的 \(P_k,P_{k-1}\) 所连弦线与横轴交于横坐标 \(x_{k+1}\) 的点。全部标签为 \(x,\allowbreak y,\allowbreak O,\allowbreak x^*,\allowbreak x_{k+1},\allowbreak x_k,\allowbreak x_{k-1},\allowbreak P_k,\allowbreak P_{k-1},\allowbreak f(x)\)。
+
+弦截法与切线法（Newton 法）都是线性化方法，但二者有本质的区别。切线法在计算 \(x_{k+1}\) 时只用到前一步的值 \(x_k\)，而弦截法（见式（6.4.2））在求 \(x_{k+1}\) 时要用到前面两步的结果 \(x_k,x_{k-1}\)，因此使用这种方法必须先给出两个开始值 \(x_0,x_1\)。
+
+\textbf{例 6.9} 用弦截法解方程
+
+\[
+f(x)=x\mathrm{e}^x-1=0.
+\]
+
+\textbf{解} 设取 \(x_0=0.5,x_1=0.6\) 作为开始值，用弦截法求得的结果如表 6.9 所示，比较例 6.7 Newton 法的计算结果可以看出，弦截法的收敛速度也是相当快的。
+
+表 6.9
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\(k\) & \(x_k\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(0\) & \(0.5\) \\
+\(1\) & \(0.6\) \\
+\(2\) & \(0.565\,32\) \\
+\(3\) & \(0.567\,09\) \\
+\(4\) & \(0.567\,14\) \\
+\end{longtable}
+}
+
+下述定理断言，弦截法具有超线性的收敛性。
+
+\textbf{定理 6.4} 假设 \(f(x)\) 在根 \(x^*\) 的邻域 \(\Delta:|x-x^*|\leqslant\delta\) 内具有二阶连续导数，且对于任意
+
+\begin{quote}
+校注（agent 补充）：几何解释中原书称``其方程是''，随后印出的却是 \(P_1(x)=0\)，已照录。弦线本身的方程为 \(y=P_1(x)\)；原式表达的是弦线与 \(x\) 轴交点的条件，与随后求 \(x_{k+1}\) 的用途一致。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 169；印刷页码 156。
+
+\href{source-images/pdf-169.jpeg}{原页}
+
+\(x\in\Delta\)，有 \(f'(x)\ne0\)，又初值 \(x_0,x_1\in\Delta\)，那么当邻域 \(\Delta\) 充分小时，弦截法（6.4.2）将按阶 \(p=\dfrac{1+\sqrt{5}}{2}\approx1.618\) 收敛到根 \(x^*\)。
+
+由于定理 4 的证明比较烦琐，故略去不证。下面列出弦截法的计算步骤。
+
+\textbf{步 1} 准备。选取初始近似值 \(x_0,x_1\)，计算相应的函数值 \(f_0=f(x_0),f_1=f(x_1)\)。
+
+\textbf{步 2} 迭代。按公式
+
+\[
+x_2=x_1-f_1\bigg/\frac{f_1-f_0}{x_1-x_0}
+\]
+
+迭代一次得新的近似值 \(x_2\)，计算 \(f_2=f(x_2)\)。
+
+\textbf{步 3} 控制。如果 \(x_2\) 满足 \(|\delta|\leqslant\varepsilon_1\) 或 \(|f_2|\leqslant\varepsilon_2\)，则认为过程收敛，终止迭代而以 \(x_2\) 作为所求的根；否则执行步 4。此处 \(\varepsilon_1,\varepsilon_2\) 是允许误差，而
+
+\[
+\delta=\begin{cases}
+|x_2-x_1|,&\text{当 }|x_2|<C\text{ 时},\\
+\dfrac{|x_2-x_1|}{|x_2|},&\text{当 }|x_2|\geqslant C\text{ 时},
+\end{cases}
+\]
+
+其中 \(C\) 是预先指定的控制数。
+
+\textbf{步 4} 修改。如果迭代次数达到预先指定的次数 \(N\)，则认为过程不收敛，计算失败；否则以 \((x_1,f_1),(x_2,f_2)\) 分别代替 \((x_0,f_0),(x_1,f_1)\)，而后转步 2 继续迭代。
+
+最后用弦截法讨论形如 \(x=\varphi(x)\) 的方程，对 6.2.2 节的 Aitken 算法给出几何解释。
+
+设 \(x_0\) 为方程 \(x=\varphi(x)\) 的一个近似根，依据迭代值 \(x_1=\varphi(x_0),x_2=\varphi(x_1)\) 在曲线 \(y=\varphi(x)\) 上定出两点 \(P_0(x_0,x_1)\) 和 \(P_1(x_1,x_2)\)，引弦线 \(P_0P_1\) 设与直线 \(y=x\) 交于一点 \(P_3\)（见图 6.5），则点 \(P_3\) 的坐标 \(x_3\)（其横坐标与纵坐标相等）满足
+
+\[
+x_3=x_1+\frac{x_2-x_1}{x_1-x_0}(x_3-x_0).
+\]
+
+由此解出
+
+\[
+x_3=\frac{x_0x_2-x_1^2}{x_0-2x_1+x_2},
+\]
+
+此即 Aitken 加速公式（6.2.2 节）。
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.5 原扫描裁切}]{verified/assets/ch06/fig-6.5.png}
+
+图 6.5
+
+图意（agent 整理）：图用递减曲线 \(y=\varphi(x)\)、直线 \(y=x\)、弦线 \(P_0P_1\) 及其与 \(y=x\) 的交点 \(P_3\) 显示加速过程。全部标签为 \(x,\allowbreak y,\allowbreak O,\allowbreak x_1,\allowbreak x^*,\allowbreak x_3,\allowbreak x_0,\allowbreak x_2,\allowbreak P_1,\allowbreak P^*,\allowbreak P_3,\allowbreak P_0,\allowbreak P_2,\allowbreak y=x,\allowbreak y=\varphi(x)\)。
+
+再考察图 6.5，所求的根 \(x^*\) 是曲线 \(y=\varphi(x)\) 与 \(y=x\) 交点 \(P^*\) 的横坐标，从图形上可以看出，尽管迭代值 \(x_2\) 比 \(x_0\) 和 \(x_1\) 更远地偏离了 \(x^*\)，但按上式定出的 \(x_3\) 却明显地扭转了这种发散的趋势。
+
+\subsubsection{6.4.2 抛物线法}\label{ch06-ux629bux7269ux7ebfux6cd5}
+
+设已知方程 \(f(x)=0\) 的三个近似根 \(x_k,x_{k-1},x_{k-2}\)，以这三点为节点构造二次插值多项式 \(P_2(x)\)，并适当选取 \(P_2(x)\) 的一个零点 \(x_{k+1}\) 作为新的近似根，这样确定的迭
+
+\begin{quote}
+校注（agent 补充）：定理 6.4 的原文条件与 \(p=(1+\sqrt5)/2\) 结论均已保留。若将此处``按阶''理解为定义 6.2 中极限常数非零的精确收敛阶，还需 \(f''(x^*)\ne0\) 等非退化条件，并排除有限步已得根的情形。例如一次函数满足原定理的光滑性与导数非零条件，但弦截法可一步得根，不能一概赋予上述精确阶。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 170；印刷页码 157。
+
+\href{source-images/pdf-170.jpeg}{原页}
+
+代过程称为抛物线法。在几何图形上，这种方法的基本思想是用抛物线 \(y=P_2(x)\) 与 \(x\) 轴的交点 \(x_{k+1}\) 作为所求根 \(x^*\) 的近似位置（见图 6.6）。
+
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={图 6.6 原扫描裁切}]{verified/assets/ch06/fig-6.6.png}
+
+图 6.6
+
+图意（agent 整理）：原图以抛物线 \(P_2(x)\) 近似曲线 \(f(x)\)，用抛物线与 \(x\) 轴的交点作为新近似根。全部标签为 \(x,\allowbreak y,\allowbreak O,\allowbreak x^*,\allowbreak x_{k-1},\allowbreak x_{k+1},\allowbreak x_k,\allowbreak x_{k-2},\allowbreak f(x),\allowbreak P_2(x)\)。
+
+现在推导抛物线法的计算公式。插值多项式
+
+\[
+\begin{aligned}
+P_2(x)={}&f(x_k)+f[x_k,x_{k-1}](x-x_k)\\
+&+f[x_k,x_{k-1},x_{k-2}](x-x_k)(x-x_{k-1})
+\end{aligned}
+\]
+
+有两个零点
+
+\[
+x_{k+1}=x_k-\frac{2f(x_k)}{\omega\pm\sqrt{\omega^2-4f(x_k)f[x_k,x_{k-1},x_{k-2}]}},
+\tag{6.4.3}
+\]
+
+其中
+
+\[
+\omega=f[x_k,x_{k-1}]+f[x_k,x_{k-1},x_{k-2}](x_k-x_{k-1}).
+\]
+
+为了从式（6.4.3）定出一个值 \(x_{k+1}\)，需要讨论根式前正负号的取舍问题。
+
+在 \(x_k,x_{k-1},x_{k-2}\) 三个近似根中，自然假定以 \(x_k\) 更接近所求的根 \(x^*\)，这时，为了保证精度，可以选式（6.4.3）中较接近 \(x_k\) 的一个值作为新的近似根 \(x_{k+1}\)，为此，只要令根式前的符号与 \(\omega\) 的符号相同。
+
+\textbf{例 6.10} 用抛物线法求解方程 \(f(x)=x\mathrm{e}^x-1=0\)。
+
+\textbf{解} 设用表 6.9 中的前三个值 \(x_0=0.5,x_1=0.6,x_2=0.565\,32\) 作为开始值，计算得
+
+\[
+\begin{aligned}
+f(x_0)&=-0.175\,639,& f(x_1)&=-0.093\,271,\\
+f(x_2)&=-0.005\,031,& f[x_1,x_0]&=2.689\,10,\\
+f[x_2,x_1]&=2.833\,73,& f[x_2,x_1,x_0]&=2.214\,18,
+\end{aligned}
+\]
+
+故
+
+\[
+\omega=f[x_2,x_1]+f[x_2,x_1,x_0](x_2-x_1)=2.756\,94.
+\]
+
+代入式（6.4.8）求得
+
+\[
+x_3=x_2-\frac{2f(x_2)}{\omega+\sqrt{\omega^2-4f(x_2)f[x_2,x_1,x_0]}}=0.567\,14.
+\]
+
+以上计算表明，抛物线法比弦截法收敛得更快。
+
+事实上，在一定条件下可以证明，对于抛物线法，迭代误差有下列渐近关系式：
+
+\[
+\frac{|e_{k+1}|}{|e_k|^{1.840}}\to\left|\frac{f'''(x^*)}{6f'(x^*)}\right|^{0.42},
+\]
+
+可见抛物线法也是超线性收敛的，其收敛的阶 \(p=1.840\)，收敛速度比弦截法更接近于 Newton 法。
+
+下面列出抛物线法的计算步骤。
+
+\textbf{步 1} 准备。选定初始近似值 \(x_0,x_1,x_2\)，并计算 \(f(x)\) 相应的值 \(f_0,f_1,f_2\)，以及
+
+\[
+\lambda_2=\frac{x_2-x_1}{x_1-x_0}.
+\]
+
+\begin{quote}
+校注（agent 补充）：原页例 6.10 印为 \(f(x_1)=-0.093\,271\)，此处保留原文。由同页 \(x_1=0.6\) 和 \(f(x)=x\mathrm{e}^x-1\)，计算得 \(f(0.6)=0.093\,271\,280\ldots>0\)；同时 \([f(0.6)-f(0.5)]/0.1=2.689\,106\ldots\) 与原页列出的差商一致，因此原页该负号疑为误印。原页的``代入式（6.4.8）''也予保留；该段实际使用的零点公式编号是同页（6.4.3）。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 171；印刷页码 158。
+
+\href{source-images/pdf-171.jpeg}{原页}
+
+\textbf{步 2} 迭代。计算
+
+\[
+\begin{aligned}
+\delta_2&=1+\lambda_2,\quad a=f_0\lambda_2^2-f_1\lambda_2\delta_2+f_2\lambda_2,\\
+b&=f_0\lambda_2^2-f_1\delta_2^2+f_2(\lambda_2+\delta_2),\quad c=f_2\delta_2,\\
+\lambda_3&=\frac{-2c}{b\pm\sqrt{b^2-4ac}}.
+\end{aligned}
+\]
+
+上式分母中的``\(\pm\)''号，是取分母的模较大的一个。于是得新的近似值 \(x_3=x_2+\lambda_3(x_2-x_1)\)，再计算 \(f_3=f(x_3)\)。
+
+\textbf{步 3} 控制。如果 \(x_3\) 满足 \(|\delta|\leqslant\varepsilon_1\) 或 \(|f_3|<\varepsilon_2\)（\(\varepsilon_1,\varepsilon_2\) 和 \(\delta\) 的意义同弦截法的计算步骤），则终止迭代，以 \(x_3\) 作为所求的根；否则执行步 4。
+
+\textbf{步 4} 修改。如果迭代次数达到预先指定的次数 \(N\)，则认为过程不收敛，输出计算失效标志；否则以 \((x_1,\allowbreak x_2,\allowbreak x_3,\allowbreak f_1,\allowbreak f_2,\allowbreak f_3,\allowbreak \lambda_3)\) 分别代替 \((x_0,\allowbreak x_1,\allowbreak x_2,\allowbreak f_0,\allowbreak f_1,\allowbreak f_2,\allowbreak \lambda_2)\) 转步 2 继续迭代。
+
+\subsection{6.5 代数方程求根}\label{ch06-ux4ee3ux6570ux65b9ux7a0bux6c42ux6839}
+
+如果 \(f(x)\) 是多项式，则 \(f(x)=0\) 特别地称为代数方程。前面介绍的求根方法原则上也适用于解代数方程，但由于多项式的特殊性，可以针对其特点提供更为有效的算法。
+
+\subsubsection{6.5.1 多项式求值的秦九韶算法}\label{ch06-ux591aux9879ux5f0fux6c42ux503cux7684ux79e6ux4e5dux97f6ux7b97ux6cd5}
+
+多项式的一个重要特点是求值方便。
+
+设给定多项式
+
+\[
+f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n,
+\]
+
+其中系数 \(a_i\ (0\leqslant i\leqslant n)\) 均为实数。用一次式 \(x-x_0\) 除 \(f(x)\)，商记作 \(P(x)\)，余数显然等于 \(f(x_0)\)，即有
+
+\[
+f(x)=f(x_0)+(x-x_0)P(x).
+\tag{6.5.1}
+\]
+
+现在具体确定 \(P(x)\) 与 \(f(x_0)\)。令
+
+\[
+p(x)=b_0x^{n-1}+b_1x^{n-2}+\cdots+b_{n-2}x+b_{n-1},
+\]
+
+代入式（6.5.1），并比较两端同次幂的系数，得
+
+\[
+\begin{cases}
+a_0=b_0,\\
+a_i=b_i-x_0b_{i-1},\quad1\leqslant i\leqslant n-1,\\
+a_n=f(x_0)-x_0b_{n-1}.
+\end{cases}
+\]
+
+从而有
+
+\[
+\begin{cases}
+b_0=a_0,\\
+b_i=a_i+x_0b_{i-1},\quad1\leqslant i\leqslant n,\\
+f(x_0)=b_n.
+\end{cases}
+\tag{6.5.2}
+\]
+
+\clearpage
+
+原书 PDF 页 172；印刷页码 159。
+
+\href{source-images/pdf-172.jpeg}{原页}
+
+这里提供的一种计算函数值 \(f(x_0)\) 的有效算法称为秦九韶法①。这种算法的优点是计算量小，结构紧凑，容易编制计算程序。
+
+进一步考察 \(f(x)\) 的 Taylor 展开式
+
+\[
+f(x)=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2!}(x-x_0)^2+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+\]
+
+将它表示为式（6.5.1）的形式，则式中
+
+\[
+P(x)=f'(x_0)+\frac{f''(x_0)}{2!}(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n-1}.
+\]
+
+由此可见，导数 \(f'(x_0)\) 又可看作 \(P(x)\) 用因式 \(x-x_0\) 相除得出的余数，即有
+
+\[
+P(x)=f'(x_0)+(x-x_0)Q(x),
+\]
+
+其中 \(Q(x)\) 是 \(n-2\) 次多项式。设
+
+\[
+Q(x)=c_0x^{n-2}+c_1x^{n-3}+\cdots+c_{n-3}x+c_{n-2},
+\]
+
+那么，再用秦九韶算法又可求出值 \(f'(x_0)\)，对应于式（6.5.2），这里计算公式是
+
+\[
+\begin{cases}
+c_0=b_0,\\
+c_i=b_i+x_0c_{i-1},\quad1\leqslant i\leqslant n-1,\\
+f'(x_0)=c_{n-1}.
+\end{cases}
+\tag{6.5.3}
+\]
+
+继续这一过程，可以依次求出 \(f(x)\) 在点 \(x_0\) 的各阶导数。
+
+\subsubsection{6.5.2 代数方程的 Newton 法}\label{ch06-ux4ee3ux6570ux65b9ux7a0bux7684-newton-ux6cd5}
+
+再就多项式方程
+
+\[
+f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n=0
+\]
+
+考察 Newton 公式
+
+\[
+x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}.
+\tag{6.5.4}
+\]
+
+据式（6.5.2）与式（6.5.3），式（6.5.4）中的函数值 \(f(x_k)\) 和导数值 \(f'(x_k)\) 均可方便地求出
+
+\[
+\begin{cases}
+b_0=a_0,\\
+b_i=a_i+x_kb_{i-1},\quad1\leqslant i\leqslant n,\\
+f(x_k)=b_n,
+\end{cases}
+\tag{6.5.5}
+\]
+
+\[
+\begin{cases}
+c_0=b_0,\\
+c_i=b_i+x_kc_{i-1},\quad1\leqslant i\leqslant n-1,\\
+f'(x_k)=c_{n-1}.
+\end{cases}
+\tag{6.5.6}
+\]
+
+① 这种算法是我国宋代的一位数学家秦九韶最先提出的。外国文献中通常称这种算法为 Horner 算法，其实 Horner 的工作比秦九韶晚了五六个世纪。
+
+\clearpage
+
+原书 PDF 页 173；印刷页码 160。
+
+\href{source-images/pdf-173.jpeg}{原页}
+
+\subsubsection{6.5.3 劈因子法}\label{ch06-ux5288ux56e0ux5b50ux6cd5}
+
+如果能从多项式 \(f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n\) 中分离出一个二次因式
+
+\[
+\omega^*(x)=x^2+u^*x+v^*,
+\]
+
+就能获得它的一对共轭复根。劈因子法的基本思想是，从某个近似的二次因子
+
+\[
+\omega(x)=x^2+ux+v
+\]
+
+出发，用某种迭代过程使之逐步精确化。
+
+用二次式 \(\omega(x)\) 除 \(f(x)\)，商记作 \(p(x)\)，它是个 \(n-2\) 次多项式，余式为一次式，记作 \(r_0x+r_1\)，即
+
+\[
+f(x)=(x^2+ux+v)p(x)+r_0x+r_1.
+\tag{6.5.7}
+\]
+
+显然，\(r_0,r_1\) 均为 \(u,v\) 的函数 \(\begin{cases}r_0=r_0(u,v),\\r_1=r_1(u,v).\end{cases}\) 劈因子法的目的就是逐步修改 \(u,v\) 的值，使余数 \(r_0,r_1\) 变得很小。考察方程
+
+\[
+\begin{cases}
+r_0(u,v)=0,\\
+r_1(u,v)=0.
+\end{cases}
+\tag{6.5.8}
+\]
+
+这是关于 \(u,v\) 的非线性方程组，设它有解 \((u^*,v^*)\)，将 \(r_0(u^*,v^*)=0,r_1(u^*,v^*)=0\) 的左端在 \((u,v)\) 展开到一阶项，则有
+
+\[
+\begin{cases}
+r_0+\dfrac{\partial r_0}{\partial u}(u^*-u)+\dfrac{\partial r_0}{\partial v}(v^*-v)\approx0,\\
+r_1+\dfrac{\partial r_1}{\partial u}(u^*-u)+\dfrac{\partial r_1}{\partial v}(v^*-v)\approx0.
+\end{cases}
+\]
+
+这样，用 Newton 法的处理思想将非线性方程组（6.5.8）线性化，归结得到下列线性方程组：
+
+\[
+\begin{cases}
+r_0+\dfrac{\partial r_0}{\partial u}\Delta u+\dfrac{\partial r_0}{\partial v}\Delta v=0,\\
+r_1+\dfrac{\partial r_1}{\partial u}\Delta u+\dfrac{\partial r_1}{\partial v}\Delta v=0.
+\end{cases}
+\tag{6.5.9}
+\]
+
+从方程组（6.5.9）解出增量 \(\Delta u,\Delta v\)，即可得到改进的二次因式
+
+\[
+\omega(x)=x^2+(u+\Delta u)x+v+\Delta v.
+\]
+
+以下具体说明如何计算方程组（6.5.9）的各个系数。
+
+（1）计算 \(r_0\) 和 \(r_1\)。将
+
+\[
+P(x)=b_0x^{n-2}+b_1x^{n-3}+\cdots+b_{n-3}x+b_{n-2}
+\]
+
+代入式（6.5.7），并比较各次幂的系数，易知
+
+\[
+\begin{cases}
+a_0=b_0,\\
+a_1=b_1+ub_0,\\
+a_i=b_i+ub_{i-1}+vb_{i-2},\quad2\leqslant i\leqslant n-2,\\
+a_{n-1}=ub_{n-2}+vb_{n-3}+r_0,\\
+a_n=vb_{n-2}+r_1,
+\end{cases}
+\]
+
+\clearpage
+
+原书 PDF 页 174；印刷页码 161。
+
+\href{source-images/pdf-174.jpeg}{原页}
+
+于是 \(r_0,r_1\) 的计算公式为
+
+\[
+\begin{cases}
+b_0=a_0,\\
+b_1=a_1-ub_0,\\
+b_i=a_i-ub_{i-1}-vb_{i-2},\quad2\leqslant i\leqslant n,\\
+r_0=b_{n-1},\\
+r_1=b_n+ub_{n-1}.
+\end{cases}
+\tag{6.5.10}
+\]
+
+（2）计算 \(\dfrac{\partial r_0}{\partial v},\dfrac{\partial r_1}{\partial v}\)。对式（6.5.7）关于 \(v\) 求导，得
+
+\[
+P(x)=-(x^2+ux+v)\frac{\partial P}{\partial v}+s_0x+s_1,
+\tag{6.5.11}
+\]
+
+其中
+
+\[
+s_0=-\frac{\partial r_0}{\partial v},\quad s_1=-\frac{\partial r_1}{\partial v}.
+\tag{6.5.12}
+\]
+
+可见，用 \(x^2+ux+v\) 除 \(P(x)\)，作为余式可以得到 \(s_0x+s_1\)。由于 \(P(x)\) 是 \(n-2\) 次多项式，这里商 \(\dfrac{\partial P}{\partial v}\) 是 \(n-4\) 次多项式，记
+
+\[
+\frac{\partial P}{\partial v}=c_0x^{n-4}+c_1x^{n-5}+\cdots+c_{n-5}x+c_{n-4},
+\]
+
+则相当于式（6.5.10），这里有
+
+\[
+\begin{cases}
+c_0=b_0,\\
+c_1=b_1-ub_0,\\
+c_i=b_i-uc_{i-1}-vc_{i-2},\quad2\leqslant i\leqslant n-2,\\
+s_0=c_{n-3},\\
+s_1=c_{n-2}+uc_{n-3},
+\end{cases}
+\]
+
+而按式（6.5.12）得
+
+\[
+\frac{\partial r_0}{\partial v}=-s_0,\quad\frac{\partial r_1}{\partial v}=-s_1.
+\]
+
+（3）计算 \(\dfrac{\partial r_0}{\partial u},\dfrac{\partial r_1}{\partial u}\)。对式（6.5.7）关于 \(u\) 求导，得
+
+\[
+xP(x)=-(x^2+ux+v)\frac{\partial P}{\partial u}-\frac{\partial r_0}{\partial u}x-\frac{\partial r_1}{\partial u}.
+\]
+
+另外，由式（6.5.11）有
+
+\[
+\begin{aligned}
+xP(x)&=-(x^2+ux+v)x\frac{\partial P}{\partial v}+(s_0x+s_1)x\\
+&=-(x^2+ux+v)\left(x\frac{\partial P}{\partial v}-s_0\right)-(us_0-s_1)x-vs_0.
+\end{aligned}
+\]
+
+比较以上两式可知
+
+\[
+\frac{\partial r_0}{\partial u}=us_0-s_1,\quad\frac{\partial r_1}{\partial u}=vs_0.
+\]
+
+\begin{quote}
+校注（agent 补充）：本页原文把用 \(x^2+ux+v\) 除 \(P(x)\) 的商记为 \(\partial P/\partial v\)，并给出以 \(c_0=b_0\) 开始的递推。式（6.5.11）本身表明该商应为 \(-\partial P/\partial v\)，因此商的叙述和紧随其后的展开式疑漏印负号。转录保留原文，后续的余数 \(s_0,s_1\) 及其递推亦按原页保留。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 175；印刷页码 162。
+
+\href{source-images/pdf-175.jpeg}{原页}
+
+\subsection{小结}\label{ch06-ux5c0fux7ed3}
+
+方程 \(f(x)=0\) 求根有多种方法，本章重点介绍了 Newton 法。Newton 法是一种行之有效的迭代法，在单根附近具有较高的收敛速度。应用 Newton 法的关键在于选取足够精确的初值。如果初值选取不当（偏离所求的根比较远），则 Newton 法可能发散。Newton 下山法（见 6.3.5 节）有时可用来克服这个局限性。
+
+Newton 法的另一个局限性是要求计算导数值。如果函数 \(f\) 的形式复杂而不便于求导，则可用导数的估值或差商代替导数，而得出简化的 Newton 法（见 6.3.1 节）或近似的 Newton 法（见 6.4.1 节）。不过这样处理势必会影响收敛速度。
+
+应当指出，对于代数方程 \(a_0x^n+a_1x^{n-1}+\cdots+a_n=0\)，其求根问题包含有许多深刻的理论和有效的算法，关于这方面的知识，请读者参看文献 {[}9{]} 的第 6 章《高次代数方程解法》。
+
+\subsection{习题}\label{ch06-ux4e60ux9898}
+
+\textbf{1.} 用二分法求方程 \(x^2-x-1=0\) 的正根，要求误差小于 \(0.05\)。
+
+\textbf{2.} 用比例求根法求 \(f(x)=1-x\sin x=0\) 在区间 \((0,1)\) 内的一个根，直到近似根 \(x_k\) 满足精度 \(|f(x_k)|<0.005\) 时终止计算。
+
+\textbf{3.} 为求方程 \(x^3-x^2-1=0\) 在 \(x_0=1.5\) 附近的一个根，设将方程改写成下列等价形式，并建立相应的迭代公式。
+
+（1）\(x=1+1/x^2\)，迭代公式 \(x_{k+1}=1+1/x_k^2\)；
+
+（2）\(x^3=1+x^2\)，迭代公式 \(x_{k+1}=\sqrt[3]{1+x_k^2}\)；
+
+（3）\(x^2=\dfrac{1}{x-1}\)，迭代公式 \(x_{k+1}=1/\sqrt{x_k-1}\)。
+
+试分析每种迭代公式的收敛性，并选取一种公式求出具有四位有效数字的近似根。
+
+\textbf{4.} 比较以下两种求 \(\mathrm{e}^x+10x-2=0\) 的根到三位小数所需的计算量：
+
+（1）在区间 \((0,1)\) 内用二分法；
+
+（2）用迭代法 \(x_{k+1}=(2-\mathrm{e}^{x_k})/10\)，取初值 \(x_0=0\)。
+
+\textbf{5.} 给定函数 \(f(x)\)，设对一切 \(x\)，\(f'(x)\) 存在且 \(0<m\leqslant f'(x)\leqslant M\)，证明对于范围 \(0<\lambda<2/M\) 内的任意定数 \(\lambda\)，迭代过程 \(x_{k+1}=x_k-\lambda f(x_k)\) 均收敛于 \(f(x)\) 的根 \(x^*\)。
+
+\textbf{6.} 已知 \(x=\varphi(x)\) 在区间 \((a,b)\) 内只有一根，且当 \(a<x<b\) 时，\(|\varphi'(x)|\geqslant k>1\)，
+
+（1）如何将 \(x=\varphi(x)\) 化为适于迭代的形式？
+
+（2）将 \(x=\tan x\) 化为适于迭代的形式，并求 \(x=4.5\ \mathrm{rad}\) 附近的根。
+
+\textbf{7.} 用下列方法求 \(f(x)=x^3-3x-1=0\) 在 \(x_0=2\) 附近的根。根的准确值 \(x^*=1.879\,385\,24\cdots\)，要求计算结果准确到四位有效数字。
+
+（1）用 Newton 法；
+
+（2）用弦截法，取 \(x_0=2,x_1=1.9\)；
+
+（3）用抛物线法，取 \(x_0=1,x_1=3,x_2=2\)。
+
+\begin{quote}
+校注（agent 补充）：习题 2 的区间在原页确为 \((0,1)\)，转录保留。对 \(0<x<1\) 有 \(0<x\sin x<1\)，从而 \(1-x\sin x>0\)，故该区间不含题述方程的根。此为原题条件的疑误；未替教材指定修正后的区间，也未代做该题。
+\end{quote}
+
+\clearpage
+
+原书 PDF 页 176；印刷页码 163。
+
+\href{source-images/pdf-176.jpeg}{原页}
+
+\textbf{8.} 分别用二分法和 Newton 法求 \(x-\tan x=0\) 的最小正根。
+
+\textbf{9.} 研究求 \(\sqrt{a}\) 的 Newton 公式 \(x_{k+1}=\dfrac{1}{2}\left(x_k+\dfrac{a}{x_k}\right)\)，\(x_0>0\)，证明：对于一切 \(k=1,2,\cdots\)，有 \(x_k\geqslant\sqrt{a}\)，且序列 \(x_1,x_2,\cdots\) 是单调递减的。
+
+\textbf{10.} 对于 \(f(x)=0\) 的 Newton 公式 \(x_{k+1}=x_k-\dfrac{f(x_k)}{f'(x_k)}\)，证明
+
+\[
+R_k=\frac{x_k-x_{k-1}}{(x_{k-1}-x_{k-2})^2}
+\]
+
+收敛到 \(-\dfrac{f''(x^*)}{2f'(x^*)}\)，这里 \(x^*\) 为 \(f(x)=0\) 的根。
+
+\textbf{11.} 试就下列函数讨论 Newton 法的收敛性和收敛速度：
+
+（1） \[
+f(x)=\begin{cases}
+\sqrt{x},&x\geqslant0,\\
+-\sqrt{-x},&x<0;
+\end{cases}
+\]
+
+（2） \[
+f(x)=\begin{cases}
+\sqrt[3]{x^2},&x\geqslant0,\\
+-\sqrt[3]{x^2},&x<0.
+\end{cases}
+\]
+
+\textbf{12.} 应用 Newton 法于方程 \(x^3-a=0\)，导出求立方根 \(\sqrt[3]{a}\) 的迭代公式，并讨论其收敛性。
+
+\textbf{13.} 应用 Newton 法于方程 \(f(x)=1-\dfrac{a}{x^2}=0\)，导出求 \(\sqrt{a}\) 的迭代公式，并求 \(\sqrt{115}\) 的值。
+
+\textbf{14.} 应用 Newton 法于方程 \(f(x)=x^n-a=0\) 和 \(f(x)=1-\dfrac{a}{x^n}=0\)，分别导出求 \(\sqrt[n]{a}\) 的迭代公式，并求
+
+\[
+\lim_{k\to\infty}\frac{\sqrt[n]{a}-x_{k+1}}{(\sqrt[n]{a}-x_k)^2}.
+\]
+
+\textbf{15.} 证明迭代公式 \(x_{k+1}=\dfrac{x_k(x_k^2+3a)}{3x_k^2+a}\) 是计算 \(\sqrt{a}\) 的三阶方法。假定初值 \(x_0\) 充分靠近根 \(x^*\)，求
+
+\[
+\lim_{k\to\infty}\frac{\sqrt{a}-x_{k+1}}{(\sqrt{a}-x_k)^3}.
+\]
+

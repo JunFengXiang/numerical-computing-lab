@@ -1,0 +1,172 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={二分算法的效能分析},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{二分算法的效能分析}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{11.2.5　二分算法的效能分析}\label{ux4e8cux5206ux7b97ux6cd5ux7684ux6548ux80fdux5206ux6790}
+
+评价一种并行算法，人们首先关心的是它的算法复杂性，即算法的运行时间（时间复杂性）与所要提供的处理机台数（空间复杂性）。并行算法设计的基本思想是用增加处理机台数的办法来换取算法运行时间的节省。处理机台数充分多时的最少运行时间称作算法的时间界，而算法的运行时间达到时间界时所需提供的（最少的）处理机台数则称作处理机台数界。
+
+为简化分析，今后将假定每台处理机的算术运算（无论是加减还是乘除）的操作时间相同，均取单位时间。这样，在估算算法的运行时间时，只要针对各并行步骤统计运算次数即可。
+
+对于所考察的某个并行算法，记 \(T^*\) 为算法的时间界，\(P^*\) 为处理机台数界，另记 \(T_1\) 为串行算法的运行时间，将
+
+\[
+S=\frac{T_1}{T^*}
+\]
+
+称作该并行算法的加速比，而将
+
+\[
+E=\frac{T_1}{P^*T^*}
+\]
+
+称作其效率。
+
+加速比与效率是评估一种并行算法的``得''与``失''的两项重要指标。加速比 \(S\) 表示该并行算法在运行时间方面的节省；注意到 \(P^*T^*\) 表示并行算法的总计算量，而 \(T_1\) 则表示串行算法的计算量，因而效率 \(E\) 刻画了该并行算法在计算量方面的损耗。
+
+现在分析前述几种二分算法的时间界与处理机台数界。
+
+首先考察数列求和的二分算法------算法 11.2。令式（11.2.4）的各个系数 \(a_i^{(k)}\) 并行计算，则其每一步含一次运算（加法），故其时间界为
+
+\[
+T^*=n=\log_2 N.
+\]
+
+然而，为使每个 \(a_i^{(k)}\) 能并行计算，第 \(k\) 步按式（11.2.4）需提供 \(N_k=N/2^k\) 台处理机，因此算法 11.2 的处理机台数界为
+
+\href{../../source-images/pdf-284.jpeg}{原页图像}
+
+\[
+P^*=\max_{1\le k\le n}\frac{N}{2^k}=\frac{N}{2}.
+\]
+
+注意到数列求和问题（11.2.1）的串行算法的运行时间 \(T_1=N-1\)，算法 11.2 的加速比
+
+\[
+S\approx\frac{N}{\log_2 N},
+\]
+
+而其效率
+
+\[
+E\approx\frac{2}{\log_2 N}.
+\]
+
+不难看出，上述并行求和的二分法是最优的，即其时间界为最小。
+
+再分析多项式求值的二分算法------算法 11.3。首先注意一个事实：算式（11.2.5）中的 \(x_k\) 可与 \(a_i^{(k)}\) 并行计算，为此只要将式 \(x_k=x_{k-1}^2\) 改写成
+
+\[
+x_k=0+x_{k-1}\cdot x_{k-1}
+\]
+
+的形式。这样，算法 11.3 的每一步需做 2 次运算（一次乘法与一次加法），因而其时间界为
+
+\[
+T^*=2\log_2 N.
+\]
+
+此外，为使 \(a_i^{(k)}\) 与 \(x_k\) 按式（11.2.5）并行计算，第 \(k\) 步需处理机 \(N/2^k\) 台，因此算法 11.3 的处理机台数界为
+
+\[
+P^*=\max_{1\le k\le n}\frac{N}{2^k}=\frac{N}{2}.
+\]
+
+注意到多项式求值的串行算法（秦九韶-Horner 算法）需做 \(T_1=2(N-1)\) 次运算，易知算法 11.3 的加速比及效率均与算法 11.2 相同，仍为
+
+\[
+S\approx\frac{N}{\log_2 N},\quad E\approx\frac{2}{\log_2 N}.
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 284 的校注}\label{ux539fux4e66-pdf-ux9875-284-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-284.md}{完整原页转录} · \href{../../source-images/pdf-284.jpeg}{原页图像}
+
+校注记录：CH11-E002。
+
+\begin{quote}
+校注（agent 补充，CH11-E002）：多项式算法的处理机计数按原书照录。上一页的向量形式同时更新 \(N_k\) 个系数及 \(x_k\)，共有 \(N_k+1\) 个分量；在原书所述每个分量完全同步执行一次乘法和一次加法的安排下，处理机数应计入计算 \(x_k\) 的额外一台。原书此处写 \(N/2^k\)，可能省略了常数项或依赖未说明的调度，属处理机台数界的疑误；未据此改动原式。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{CH11-E002}：原书 PDF 页 284
+\end{itemize}
+
+\end{document}

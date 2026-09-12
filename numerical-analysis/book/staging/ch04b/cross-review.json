@@ -1,0 +1,125 @@
+{
+  "lane": "ch04b",
+  "reviewer": "Codex agent ch04a (independent)",
+  "human_review": false,
+  "status": "pass",
+  "pages": [
+    {
+      "pdf_page": 106,
+      "sha256": "b6995e13ae1475db526e5424e903e800ecfbe12bf22a91b3451502c489413a60",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立逐行核对原图：正文、式（4.3.16）至（4.3.18）及未编号式一致。",
+        "确认 CH04B-E001：原印首项 h^2，前页梯形项与本页积分项相减应为 h^3；校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 107,
+      "sha256": "20ab62806c3f70714cf3bf9f1f7348970cebe58429c24682db173fc86573d9e4",
+      "source_visual_review": "completed",
+      "notes": [
+        "原图与正文、Gauss 点定义、定理4.4全部证明和三条编号公式逐项一致。"
+      ]
+    },
+    {
+      "pdf_page": 108,
+      "sha256": "6058a33de679881aed03bf4fca5a5ccb322524f56e084dcfd27450cd832f985e",
+      "source_visual_review": "completed",
+      "notes": [
+        "独立核对 Gauss-Legendre 公式、表4.5全部节点权重与页下注；转录一致。",
+        "确认 CH04B-E002：原表为0.3398810，P4较小正根 sqrt((15-2sqrt(30))/35) 为0.3399810436…，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 109,
+      "sha256": "350190778445ddd15a4f1dce5545f155599c124191f4c26299e5a314744aa2e6",
+      "source_visual_review": "completed",
+      "notes": [
+        "Gauss 余项导数阶数2n+2、阶乘、ω²、Hermite 条件及正权重证明均与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 110,
+      "sha256": "81f809d59cbe990702ee617d24aad8e3d25c10525d3768b78024caa6c423edfa",
+      "source_visual_review": "completed",
+      "notes": [
+        "稳定性误差估计、带权求积定义、Gauss-Chebyshev 节点公式及全部正文与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 111,
+      "sha256": "41ea5a3c77b2d301eefcbe434aaa8b20e20933f24a4f1649c5984af0861a5be9",
+      "source_visual_review": "completed",
+      "notes": [
+        "权函数sqrt(x)的四个矩条件、全部消元步骤、节点权重数值均照原扫描转录。",
+        "确认 CH04B-E003：原印括号后x1²，与上一行代入及下一组对称式不一致；应只乘x1，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 112,
+      "sha256": "5ccfff59a6444d5ac3c9f03e0d76ca5134aa4e0ee4a73002bb13e155a46779a2",
+      "source_visual_review": "completed",
+      "notes": [
+        "三种差商、全部正文及中点Taylor展开与原页一致；图4.3的坐标、A/B/C/T标签均完整。"
+      ]
+    },
+    {
+      "pdf_page": 113,
+      "sha256": "cefb92fd3cdcc387bbec2baa959c86825ffc9bb969048338356ad2b45dc7710b",
+      "source_visual_review": "completed",
+      "notes": [
+        "表4.6九组数值、表4.7、求导余项和全部文字逐项与原图一致。",
+        "确认 CH04B-E004：乘积指标k而因子为x_i，确为不一致；统一为k或统一为i均是正确校注。"
+      ]
+    },
+    {
+      "pdf_page": 114,
+      "sha256": "9dbe9aaadce5d5fba028bfff1abd20d0dd888998456aed4ad85a14992e110d94",
+      "source_visual_review": "completed",
+      "notes": [
+        "两点公式、余项负/正号、三点插值式、变量变换与式（4.5.2）、（4.5.3）均与原图一致。"
+      ]
+    },
+    {
+      "pdf_page": 115,
+      "sha256": "d88c24ee3efdfb058b6f2d1a12f05d69feaa130599ed9b8667db4f555eacf724",
+      "source_visual_review": "completed",
+      "notes": [
+        "三点余项的符号与导数阶数、二阶三点公式均与原图一致。",
+        "一阶五点公式 m0…m4 的全部系数、缺省零项及 12h 分母逐项核对一致。",
+        "独立符号核验：五节点Lagrange基函数的1阶导数给出的全部5×5系数与转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 116,
+      "sha256": "b3af26eb3c6655fc01c3e989d03b5ef8581d71a7d061e977a049134d85d0acbc",
+      "source_visual_review": "completed",
+      "notes": [
+        "二阶五点公式 M0…M4 全部系数及 12h² 分母逐项一致。",
+        "表4.8全部36个数值、缩放表头、样条导数阶次变量a均照原图转录；缩放说明成立。",
+        "独立符号核验：五节点Lagrange基函数的2阶导数给出的全部5×5系数与转录一致。"
+      ]
+    },
+    {
+      "pdf_page": 117,
+      "sha256": "a5714996d85c06da565def854a420271c2440ad996ce47bdb8d780d43b029564",
+      "source_visual_review": "completed",
+      "notes": [
+        "式（4.5.7）、小结全部五段、习题1全部4小题、习题2前2小题逐字逐式一致。",
+        "确认 CH04B-E005：原印分母为1；常数f=1时右端为2h而积分为h，导数修正不能弥补，校注成立。"
+      ]
+    },
+    {
+      "pdf_page": 118,
+      "sha256": "3d6d935ccf5f78b09aebe3910de86d6ba760cb171907135c76dab036912b5d64",
+      "source_visual_review": "completed",
+      "notes": [
+        "习题2后2小题、习题3至12、所有积分边界/幂次/误差要求/卫星参数及表4.9均逐项核对一致。",
+        "第8题原印e^{-x}而不是e^{-x²}，转录保留正确。",
+        "确认 CH04B-E006：原式只有a；圆的特例给πa/2而周长2πa，确少整体系数4。"
+      ]
+    }
+  ],
+  "findings": [],
+  "unresolved": []
+}

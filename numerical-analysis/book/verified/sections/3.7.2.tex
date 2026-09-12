@@ -1,0 +1,362 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  10pt,
+  fontset=fandol]{ctexart}
+\usepackage{xcolor}
+\usepackage[margin=16mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{amsmath,amssymb,mathtools,needspace}
+\xeCJKDeclareCharClass{CJK}{"2032,"0400->"04FF,"2160->"216B,"2460->"2473,"25A0,"25C7,"25CB,"25CF}
+\IfFontExistsTF{Arial Unicode MS}{\xeCJKsetup{AutoFallBack=true}\setCJKfallbackfamilyfont{\CJKrmdefault}{Arial Unicode MS}}{}
+\setcounter{secnumdepth}{0}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={快速 Fourier 变换},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{快速 Fourier 变换}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsubsection{3.7.2 快速 Fourier 变换}\label{ux5febux901f-fourier-ux53d8ux6362}
+
+不论是按式 (3.7.7) 由 \(\{f_k\}\) 求 \(\{C_j\}\)，按式 (3.7.8) 由 \(\{C_j\}\) 求 \(\{f_k\}\)，还是由式 (3.7.4) 计算 Fourier 逼近系数 \(a_k,b_k\)，都可归结为计算
+
+\[
+C_j=\sum_{k=0}^{N-1}x_kw^{kj}\quad(j=0,1,\cdots,N-1),\tag{3.7.9}
+\]
+
+其中 \(w=\exp(-\mathrm i2\pi/N)\)（正变换）或 \(w=\exp(\mathrm i2\pi/N)\)（反变换）；\(\{x_k\}\)（\(k=0,1,\cdots,N-1\)）是已知复数序列。如直接用式 (3.7.9) 计算 \(C_j\)，需要 \(N\) 次复数乘法和 \(N\) 次复数加法（称为 \(N\) 个操作），计算全部 \(C_j\) 共要 \(N^2\) 个操作。当 \(N\) 较大且处理数据很多时，就是用高速的电子计算机，很多实际问题仍然无法计算，直到 20 世纪 60 年代中期产生了快速 Fourier 变换，即 FFT 算法，大大提高了运算速度，才使 Fourier 变换得以广泛应用。FFT 算法的思想就是尽量减少乘法次数，例如，计算 \(ab+ac=a(b+c)\)，用左端计算时做两次乘法，用右端计算时只做一次乘法。用式 (3.7.9) 计算全部 \(C_j\)，表面看要做 \(N^2\) 次乘法，实际上，在所有 \(\exp(\mathrm i2\pi kj/N),\allowbreak \ j,\allowbreak k=0,\allowbreak 1,\allowbreak \cdots,\allowbreak N-1\) 中，只有 \(N\) 个不同的值 \(w^0,w^1,\cdots,w^{N-1}\)，特别当 \(N=2^p\) 时，只有 \(N/2\) 个不同的值。因此，可把同一个 \(w^r\) 对应的 \(x_k\) 相加后再乘 \(w^r\)，这样就能大量减少乘法次数。为了具体推导 FFT 算法，先给出定义：
+
+设正整数 \(m\) 除以 \(N\) 后得商 \(q\) 及余数 \(r\)，则 \(m=qN+r\)，\(r\) 称为 \(m\) 的 \(N\) 同余数。由于 \(w=\exp(\mathrm i2\pi/N),w^N=\mathrm e^{\mathrm i2\pi}=1\)，故有 \(w^m=(w^N)^qw^r=w^r\)。
+
+因此计算 \(w^m\) 时可用 \(w\) 的 \(N\) 同余数 \(r\) 代替 \(m\)，从而推出 FFT 算法。下面以 \(N=2^3\) 为例说明 FFT 的计算方法。由于 \(0\leqslant k,j\leqslant N-1=2^3-1=7\)，则式 (3.7.9) 的和是
+
+\[
+C_j=\sum_{k=0}^7x_kw^{jk}\quad(j=0,1,\cdots,7).\tag{3.7.10}
+\]
+
+将 \(k,j\) 用二进制表示为
+
+\[
+k=k_2 2^2+k_1 2+k_0 2^0=(k_2k_1k_0),
+\]
+
+\[
+j=j_2 2^2+j_1 2^1+j_0 2^0=(j_2j_1j_0),
+\]
+
+其中 \(k_r,j_r\)（\(r=0,1,2\)）只能取 \(0\) 或 \(1\)，例如，\(6=2^2+2^1+0\times2^0=(110)\)。根据 \(k,j\) 表示法，有 \(C_j=C(j_2j_1j_0),x_k=x(k_2k_1k_0)\)。式 (3.7.10) 可表示为
+
+\[
+\begin{aligned}
+C(j_2j_1j_0)&=\sum_{k_0=0}^1\sum_{k_1=0}^1\sum_{k_2=0}^1x(k_2k_1k_0)w^{(k_2k_1k_0)(j_2 2^2+j_1 2^1+j_0 2^0)}\\
+&=\sum_{k_0=0}^1\left\{\sum_{k_1=0}^1\left[\sum_{k_2=0}^1x(k_2k_1k_0)w^{j_0(k_2k_1k_0)}\right]w^{j_1(k_1k_0 0)}\right\}\left(w^{j_2(k_0 00)}\right).
+\end{aligned}\tag{3.7.11}
+\]
+
+\begin{quote}
+校注（agent 补充）：原书``特别当 \(N=2^p\) 时，只有 \(N/2\) 个不同的值''已保留。对原文列出的全部 \(\exp(\mathrm i2\pi kj/N)\) 而言，取 \(j=1\) 已有 \(N\) 个不同值；若利用 \(w^{r+N/2}=-w^r\)，才可用 \(N/2\) 个值及符号表示它们。因此该处``不同的值''疑漏了``除符号外''一类限定。原书``可用 \(w\) 的 \(N\) 同余数 \(r\) 代替 \(m\)''也按原文保留，根据前段定义，此处应是指数 \(m\) 的余数。
+\end{quote}
+
+\href{../../source-images/pdf-088.jpeg}{查看原页}
+
+若引入记号
+
+\[
+\begin{cases}
+A_0(k_2k_1k_0)=x(k_2k_1k_0),\\[4pt]
+A_1(k_1k_0j_0)=\displaystyle\sum_{k_2=0}^1A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)},\\[4pt]
+A_2(k_0j_1j_0)=\displaystyle\sum_{k_1=0}^1A_1(k_1k_0j_0)w^{j_1(k_1k_0 0)},\\[4pt]
+A_3(j_2j_1j_0)=\displaystyle\sum_{k_0=0}^1A_2(k_0j_1j_0)w^{j_2(k_0 00)},
+\end{cases}\tag{3.7.12}
+\]
+
+则式 (3.7.11) 变成
+
+\[
+C(j_2j_1j_0)=A_3(j_2j_1j_0).
+\]
+
+它说明利用 \(N\) 同余数可把计算 \(C_j\) 分为 \(p\) 步，用式 (3.7.12) 计算，每计算一个 \(A_q\) 只用 \(2\) 次复数乘法，计算一个 \(C_j\) 用 \(2p\) 次复数乘法，计算全部 \(C_j\) 共用 \(2pN\) 次复数乘法。若注意 \(w^{j_0 2^{p-1}}=w^{j_0N/2}=(-1)^j\)，式 (3.7.12) 还可进一步简化为
+
+\[
+\begin{aligned}
+A_1(k_1k_0j_0)&=\sum_{k_2=0}^1A_0(k_2k_1k_0)w^{j_0(k_2k_1k_0)}\\
+&=A_0(0k_1k_0)w^{j_0(0k_1k_0)}+A_0(1k_1k_0)w^{j_0 2^2}w^{j_0(0k_1k_0)}\\
+&=[A_0(0k_1k_0)+(-1)^{j_0}A_0(1k_1k_0)]w^{j_0(0k_1k_0)},
+\end{aligned}
+\]
+
+\[
+A_1(k_1k_0 0)=A_0(0k_1k_0)+A_0(1k_1k_0),
+\]
+
+\[
+A_1(k_1k_0 1)=[A_0(0k_1k_0)-A_0(1k_1k_0)]w^{(0k_1k_0)}.
+\]
+
+将表达式中的二进制表示还原为十进制表示：\(k=(0k_1k_0)=k_1 2^1+k_0 2^0\)，即 \(k=0,1,2,3\)，得
+
+\[
+\begin{cases}
+A_1(2k)=A_0(k)+A_0(k+2^2),\\
+A_1(2k+1)=[A_0(k)-A_0(k+2^2)]w^k
+\end{cases}\quad(k=0,1,2,3).\tag{3.7.13}
+\]
+
+同样，式 (3.7.12) 中的 \(A_2\) 可简化为
+
+\[
+A_2(k_0j_1j_0)=[A_1(0k_0j_0)+(-1)^{j_1}A_1(1k_0j_0)]w^{j_1(0k_0 0)},
+\]
+
+即
+
+\[
+A_2(k_0 0j_0)=A_1(0k_0j_0)+A_1(1k_0j_0),
+\]
+
+\[
+A_2(k_0 1j_0)=[A_1(0k_0j_0)-A_1(1k_0j_0)]w^{(0k_0 0)}.
+\]
+
+将表达式中的二进制表示还原为十进制表示，得
+
+\[
+\begin{cases}
+A_2(k2^2+j)=A_1(2k+j)+A_1(2k+j+2^2),\quad k=0,1,\\
+A_2(k2^2+j+2)=[A_1(2k+j)-A_1(2k+j+2^2)]w^{2k},\quad j=0,1.
+\end{cases}\tag{3.7.14}
+\]
+
+同样，式 (3.7.12) 中 \(A_3\) 可简化为
+
+\[
+A_3(j_2j_1j_0)=A_2(0j_1j_0)+(-1)^{j_2}A_2(1j_1j_0),
+\]
+
+即
+
+\[
+A_3(0j_1j_0)=A_2(0j_1j_0)+A_2(1j_1j_0),
+\]
+
+\[
+A_3(1j_1j_0)=A_2(0j_1j_0)-A_2(1j_1j_0).
+\]
+
+\href{../../source-images/pdf-089.jpeg}{查看原页}
+
+将表达式中的二进制表示还原为十进制表示，得
+
+\[
+\begin{cases}
+A_3(j)=A_2(j)+A_2(j+2^2),\\
+A_3(j+2^2)=A_2(j)-A_2(j+2^2)
+\end{cases}\quad(j=0,1,2,3).\tag{3.7.15}
+\]
+
+根据式 (3.7.13)、式 (3.7.14)、式 (3.7.15)，由 \(A_0(k)=x(k)=x_k\)（\(k=0,1,\cdots,7\)）逐次计算到 \(A_3(j)=C_j\)（\(j=0,1,\cdots,7\)），结果如表 3.5 所示。
+
+\textbf{表 3.5}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+单元码号
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(0) 000
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(1) 001
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(2) 010
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(3) 011
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(4) 100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(5) 101
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(6) 110
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(7) 111
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+& & & & & \(w^0=1\) & \(w^1\) & \(w^2\) & \(w^3\) \\
+\(x_k=A_0(k)\) & \(A_0(0)\) & \(A_0(1)\) & \(A_0(2)\) & \(A_0(3)\) & \(A_0(4)\) & \(A_0(5)\) & \(A_0(6)\) & \(A_0(7)\) \\
+\(A_1\) & \(A_0(0)+A_0(4)\) & \([A_0(0)-A_0(4)]w^0\) & \(A_0(1)+A_0(5)\) & \([A_0(1)-A_0(5)]w^1\) & \(A_0(2)+A_0(6)\) & \([A_0(2)-A_0(6)]w^2\) & \(A_0(3)+A_0(7)\) & \([A_0(3)-A_0(7)]w^3\) \\
+\(A_2\) & \(A_1(0)+A_1(4)\) & \(A_1(0)+A_1(5)\) & \([A_1(0)-A_1(4)]w^0\) & \([A_1(1)-A_1(5)]w^0\) & \(A_1(2)+A_1(6)\) & \(A_1(3)+A_1(7)\) & \([A_1(2)-A_1(6)]w^2\) & \([A_1(3)-A_1(7)]w^2\) \\
+\(C_i=A_3(j)\) & \((0)+(4)\) & \((1)+(5)\) & \((2)+(6)\) & \((3)+(7)\) & \((0)-(4)\) & \((1)-(5)\) & \((2)-(6)\) & \((3)-(7)\) \\
+\end{longtable}
+}
+
+\href{../assets/ch03b/table-3-5-source.png}{表 3.5 原图裁切}。
+
+上面推导的 \(N=2^3\) 的计算公式可类似地推广到 \(N=2^p\) 的情形。根据式 (3.7.13)、式 (3.7.14)、式 (3.7.15)，一般情况的 FFT 计算公式如下：
+
+\[
+\left\{\begin{aligned}
+A_q(k2^q+j)&=A_{q-1}(k2^{q-1}+j)+A_{q-1}(k2^{q-1}+j+2^{p-1}),\\
+A_q(k2^q+j+2^{q-1})&=[A_{q-1}(k2^{q-1}+j)-A_{q-1}(k2^{q-1}+j+2^{p-1})]w^{k2^{q-1}},
+\end{aligned}\right.\tag{3.7.16}
+\]
+
+其中 \(q=1,\allowbreak 2,\allowbreak \cdots,\allowbreak p;\ k=0,\allowbreak 1,\allowbreak \cdots,\allowbreak 2^{p-q}-1;\ j=0,\allowbreak 1,\allowbreak \cdots,\allowbreak 2^{q-1}-1\)。\(A_q\) 括号内的数代表它的位置，在计算机中代表存放数的地址。一组 \(A_q\) 占用 \(N\) 个复数单元，计算时需给出两组单元，从 \(A_0(m)\)（\(m=0,1,\cdots,N-1\)）出发，\(q\) 由 \(1\) 到 \(p\) 算到 \(A_p(j)=C_j\)（\(j=0,1,\cdots,N-1\)），即为所求。计算过程中只要按地址号存放 \(A_q\)，最后得到的 \(A_p(j)\) 就是所求离散频谱的次序（注意，目前一些计算机程序计算结果地址是逆序排列，还要增加倒地址的一步才是这里介绍的结果）。这个计算公式不仅具有不倒地址的优点，而且计算只有两重循环，外循环 \(q\) 由 \(1\) 计算到 \(p\)，内循环 \(k\) 由 \(0\) 计算到 \(2^{p-q}-1\)，\(j\) 由 \(0\) 计算到 \(2^{q-1}-1\)，更重要的是整个计算过程计算量小。由公式可看到，算一个 \(A_q\) 共做 \(2^{p-q}2^{q/1}=N/2\) 次复数乘法；而最后一步计算 \(A_p\) 时，由于 \(w^{k2^{p-1}}=(w^{N/2})^k=(-1)^k=(-1)^0=1\)（注意，\(q=p\) 时 \(2^{p-q}-1=0\)，故 \(k=0\)），因此，总共要算 \((p-1)N/2\) 次复数乘法，它比直接用式 (3.7.9) 计算需 \(N^2\) 次乘法快得多，计算量之比是 \(N:(p-1)/2\)。当 \(N=2^{10}\) 时二者之比是 \(1024:4.5\approx230:1\)。它比一般 FFT 的计算量 \(pN\) 次乘法
+
+\begin{quote}
+校注（agent 补充）：表 3.5 的 \(A_2\) 行、单元 (1) 原书为 \(A_1(0)+A_1(5)\)，按式 (3.7.14) 代入 \(k=0,j=1\) 应为 \(A_1(1)+A_1(5)\)；表末行标签原书为 \(C_i=A_3(j)\)，与正文 \(C_j\) 的记号不一致。两处均按原印保留。运算量段落原印为 \(2^{p-q}2^{q/1}=N/2\)，放大可辨指数中为斜杠，依前文循环次数应为 \(2^{p-q}2^{q-1}=N/2\)。见 \href{../assets/ch03b/p089-operation-count.png}{运算量原式裁切}。
+\end{quote}
+
+\href{../../source-images/pdf-090.jpeg}{查看原页}
+
+也快一倍。式 (3.7.16) 的计算公式称为改进的 FFT 算法，下面给出这一算法的程序步骤：
+
+\textbf{步 1} 给出数组 \(A_1(N),A_2(N)\) 及 \(w(N/2)\)。
+
+\textbf{步 2} 将已知的记录复数数组 \(\{x_k\}\) 输入到单元 \(A_1(k)\)（\(k\) 从 \(0\) 到 \(N-1\)）中。
+
+\textbf{步 3} 计算 \(w^m=\exp\left(-\mathrm i\dfrac{2\pi}{N}m\right)\) 或 \(w^m=\exp\left(\mathrm i\dfrac{2\pi}{N}m\right)\)，存放在单元 \(w(m)\)（\(m\) 从 \(0\) 到 \((N/2)-1\)）中。
+
+\textbf{步 4} \(q\) 循环从 \(1\) 到 \(p\)，若 \(q\) 为奇数做步 5，否则做步 6。
+
+\textbf{步 5} \(k\) 循环从 \(0\) 到 \(2^{p-q}-1\)，\(j\) 循环从 \(0\) 到 \(2^{q-1}-1\)，计算
+
+\[
+A_2(k2^q+j)=A_1(k2^{q-1}+j)+A_1(k2^{q-1}+j+2^{p-1}),
+\]
+
+\[
+A_2(k2^q+j+2^{q-1})=[A_1(k2^{q-1}+j)-A_1(k2^{q-1}+j+2^{q-1})]w(k2^{q-1}),
+\]
+
+转步 7。
+
+\textbf{步 6} \(k\) 循环从 \(0\) 到 \(2^{p-q}-1\)，\(j\) 循环从 \(0\) 到 \(2^{q-1}\)，计算
+
+\[
+A_1(k2^q+j)=A_2(k2^{q-1}+j)+A_2(k2^{q-1}+j+2^{p-1}),
+\]
+
+\[
+A_1(k2^q+j+2^{q-1})=[A_2(k2^{q-1}+j)-A_2(k2^{q-1}+j+2^{q-1})]w(k2^{q-1}),
+\]
+
+\(k,j\) 循环结束，做下一步。
+
+\textbf{步 7} 若 \(q=p\) 转步 8，否则 \(q+1\to q\) 转步 4。
+
+\textbf{步 8} \(q\) 循环结束，若 \(p=\text{偶数}\)，将 \(A_1(j)\to A_2(j)\)，则 \(C_j=A_2(j)\)（\(j=0,1,\cdots,N-1\)）即为所求。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{相关原页校注（agent 补充）}\label{ux76f8ux5173ux539fux9875ux6821ux6ce8agent-ux8865ux5145}
+
+以下校注来自本节覆盖的原页，可能也涉及同页相邻小节；原文照录与校正说明分开保留。
+
+\subsubsection{原书 PDF 页 90 的校注}\label{ux539fux4e66-pdf-ux9875-90-ux7684ux6821ux6ce8}
+
+\href{../pages/pdf-090.md}{完整原页转录} · \href{../../source-images/pdf-090.jpeg}{原页图像}
+
+校注记录：ch03b-E020, ch03b-E021。
+
+\begin{quote}
+校注（agent 补充）：步 5、步 6 的差式中，第二个读取地址的偏移量原书均印为 \(2^{q-1}\)，与式 (3.7.16) 的 \(2^{p-1}\) 不一致；正文保留原式。步 6 的 \(j\) 循环上界原印为 \(2^{q-1}\)，相较式 (3.7.16) 与步 5 少了``\(-1\)''。按该上界执行会多计算一个 \(j\)，在 \(q=p\) 时也会越出 \(N\) 个数组单元范围。见 \href{../assets/ch03b/p090-fft-steps.png}{原程序步骤裁切}。
+\end{quote}
+
+\subsection{本节覆盖原页的校注记录}\label{ux672cux8282ux8986ux76d6ux539fux9875ux7684ux6821ux6ce8ux8bb0ux5f55}
+
+下列记录按原页关联，含同页相邻小节的校注；计算时同时读取上文校注和完整原页。
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ch03b-E015}：原书 PDF 页 87
+\item
+  \texttt{ch03b-E016}：原书 PDF 页 87
+\item
+  \texttt{ch03b-E017}：原书 PDF 页 89
+\item
+  \texttt{ch03b-E018}：原书 PDF 页 89
+\item
+  \texttt{ch03b-E019}：原书 PDF 页 89
+\item
+  \texttt{ch03b-E020}：原书 PDF 页 90
+\item
+  \texttt{ch03b-E021}：原书 PDF 页 90
+\end{itemize}
+
+\end{document}

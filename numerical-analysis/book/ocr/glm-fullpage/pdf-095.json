@@ -1,0 +1,20 @@
+{
+  "pdf_page": 95,
+  "source_image": "source-images/pdf-095.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "7599a458448c1d81da84fb2371483a9c5da20ca8ae8df4e045bad616bb924191",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 646,
+  "possibly_truncated": false,
+  "elapsed_seconds": 33.275,
+  "created_utc": "2026-09-12T10:16:11.376215+00:00",
+  "raw_text_sha256": "c382a2973aa94a9ee7e84cc50630fb2e090ddf9adb0b71bfd9f6cd35798f3523",
+  "raw_text": "4.1.3 插值型的求积公式\n\n设给定一组节点\n$$a \\leqslant x_0 < x_1 < x_2 < \\cdots < x_n \\leqslant b$$\n且已知函数 $f(x)$ 在这些节点上的值，作插值函数 $L_n(x)$（参见式(2.2.11)）。由于代数多项式 $L_n(x)$ 的原函数是容易求出的，取 $I_n = \\int_a^b L_n(x) \\mathrm{d}x$ 作为积分 $I = \\int_a^b f(x) \\mathrm{d}x$ 的近似值，这样构造出的求积公式\n$$I_n = \\sum_{k=0}^{n} A_k f(x_k)$$\n(4.1.5)\n是插值型的，其中求积系数 $A_k$ 通过插值基函数 $l_k(x)$ 积分\n$$A_k = \\int_a^b l_k(x) \\mathrm{d}x$$\n(4.1.6)\n得出。\n由插值余项定理（定理2.2）即知，对于插值型的求积公式(4.1.5)，其余项\n$$R[f] = I - I_n = \\int_a^b \\frac{f^{n+1}(\\xi)}{(n+1)!} w(x) \\mathrm{d}x,$$\n(4.1.7)\n其中 $\\xi$ 与变量 $x$ 有关，$w(x) = (x-x_0)(x-x_1) \\cdots (x-x_n)$。\n如果求积公式(4.1.5)是插值型的，按式(4.1.7)，对于次数不大于 $n$ 的多项式 $f(x)$，其余项 $R[f]$ 等于零，因而这时求积公式至少具有 $n$ 次代数精度。\n反之，如果求积公式(4.1.5)至少具有 $n$ 次代数精度，则它必定是插值型的。事实上，这时式(4.1.5)对于插值基函数 $l_k(x)$ 应准确成立，即有\n$$\\int_a^b l_k(x) \\mathrm{d}x = \\sum_{j=0}^{n} A_j l_k(x_j).$$\n注意到 $l_k(x_j) = \\delta_{kj}$，上式右端实际上即等于 $A_k$，因而式(4.1.6)成立。\n综上所述，得到如下结论。\n定理4.1 形如式(4.1.5)的求积公式至少有 $n$ 次代数精度的充分必要条件是，它是插值型的。\n\n4.2 Newton-Cotes公式\n\n4.2.1 Cotes系数\n\n设将积分区间 $[a,b]$ 划分为 $n$ 等份，步长 $h = \\frac{b-a}{n}$，选取等距节点 $x_k = a+kh$ 构"
+}

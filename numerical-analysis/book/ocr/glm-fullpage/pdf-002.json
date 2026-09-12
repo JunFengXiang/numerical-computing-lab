@@ -1,0 +1,20 @@
+{
+  "pdf_page": 2,
+  "source_image": "source-images/pdf-002.jpeg",
+  "source_sha256": "0e6f90896fb560e91f0dbf6855a166673aa908162f999b6c248b2fe6afacf4c2",
+  "source_image_sha256": "f126c397cb5846664f114034a03bbd89861d8fd16620281ae9feb351a168efda",
+  "status": "unverified_ocr_candidate",
+  "engine": "GLM-OCR / MLX-VLM",
+  "model": "mlx-community/GLM-OCR-bf16",
+  "model_revision": "24f15402e83baa0a80eeeaecf5480e172abc6f2e",
+  "mlx_vlm_version": "0.7.0",
+  "prompt": "Text Recognition:",
+  "temperature": 0.0,
+  "max_tokens": 8192,
+  "generation_tokens": 54,
+  "possibly_truncated": false,
+  "elapsed_seconds": 15.065,
+  "created_utc": "2026-09-12T09:45:35.740358+00:00",
+  "raw_text_sha256": "64bb6e792b551c3950125de6cd121fedf354e546cedce325f18d93cced629d56",
+  "raw_text": "普通高等教育“十三五”规划教材\n普通高等院校数学精品教材\n\n数值分析(第5版)\n——数值算法分析与高效算法设计\n\n李庆扬 王能超 易大义 编\n\n华中科技大学出版社\n中国·武汉"
+}
