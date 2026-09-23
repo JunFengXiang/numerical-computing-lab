@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Numerical Computing Lab — Matrix × Vector</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <style>
+    :root {
+      --bg:#f7f8fb; --card:#ffffff; --text:#171a21; --muted:#687080;
+      --line:#dfe3ea; --accent:#3b63d1; --accent-soft:#eef3ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    header{padding:28px 24px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.9);position:sticky;top:0;backdrop-filter:blur(10px);z-index:5}
+    header .wrap,main{max-width:1180px;margin:auto}
+    h1{font-size:22px;margin:0}.sub{color:var(--muted);margin-top:6px;font-size:14px}
+    main{padding:34px 24px 80px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(20,30,50,.04)}
+    h2{font-size:18px;margin:0 0 12px} h3{font-size:15px;margin:0 0 8px}
+    p{line-height:1.7;color:#343a46}.formula{font-size:22px;text-align:center;padding:12px;background:var(--accent-soft);border-radius:12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .control label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input[type=range]{width:100%}.small{font-size:13px;color:var(--muted)}
+    canvas{width:100%;height:360px;border-radius:14px;background:#fbfcff;border:1px solid var(--line)}
+    .toggle{display:flex;gap:8px;margin-bottom:14px}.toggle button{border:1px solid var(--line);background:white;padding:8px 12px;border-radius:999px;cursor:pointer}.toggle button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .matrix{font-family:"Times New Roman",serif;font-size:18px;line-height:1.55;text-align:center;margin:12px 0}
+    .explain{margin-top:18px;padding:16px;border-left:3px solid var(--accent);background:#fafbff;border-radius:10px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    a{color:var(--accent);text-decoration:none}code{background:#f1f3f6;padding:2px 5px;border-radius:5px}
+    @media(max-width:850px){.hero,.row,.grid{grid-template-columns:1fr}header{position:static}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><h1>Numerical Computing Lab</h1><div class="sub">Matrix × Vector · 行视角 / 列视角 · Interactive Lab V0.1</div></div></header>
+<main>
+  <section class="hero">
+    <div class="card">
+      <h2>矩阵乘向量，不只是“按公式算”</h2>
+      <p>固定矩阵 <strong>F</strong>，改变系数向量 <strong>c</strong>。观察同一个乘法 <strong>Fc=d</strong> 如何从两种互补视角理解：列视角强调“列向量的线性组合”，行视角强调“每一行与 c 做内积”。</p>
+      <div class="formula">\[Fc=d\]</div>
+      <div class="matrix" id="matrixText"></div>
+      <div class="grid">
+        <div class="control"><label><span>c₁</span><strong id="c1v">1.0</strong></label><input id="c1" type="range" min="-3" max="3" step="0.1" value="1"></div>
+        <div class="control"><label><span>c₂</span><strong id="c2v">0.5</strong></label><input id="c2" type="range" min="-3" max="3" step="0.1" value="0.5"></div>
+        <div class="control"><label><span>c₃</span><strong id="c3v">-0.5</strong></label><input id="c3" type="range" min="-3" max="3" step="0.1" value="-0.5"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="toggle"><button id="colBtn" class="active">列视角</button><button id="rowBtn">行视角</button></div>
+      <canvas id="plot" width="720" height="520"></canvas>
+      <div class="explain" id="explain"></div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="card"><h2>列视角：组合列，而不是“cF”</h2><p>若 <strong>F=[f₁ f₂ f₃]</strong>，则</p><div class="formula">\[Fc=c_1f_1+c_2f_2+c_3f_3=d.\]</div><p class="small">系数来自右侧向量 c；因此是矩阵 F 的各列按 c 的分量做线性组合。</p></div>
+    <div class="card"><h2>行视角：逐行做内积</h2><p>若 F 的三行为 <strong>r₁ᵀ,r₂ᵀ,r₃ᵀ</strong>，则</p><div class="formula">\[d_i=r_i^Tc.\]</div><p class="small">每个输出分量 dᵢ 都由 F 的第 i 行与 c 的内积产生。</p></div>
+  </section>
+
+  <section class="card" style="margin-top:24px"><h2>与仓库联动</h2><p>这一页对应 <code>linear-algebra/01-matvec</code>。后续可以把 notes.md 中的严谨推导保留在 GitHub，把 Site 专门用于交互、可视化和导航。</p><p><a href="https://github.com/JunFengXiang/numerical-computing-lab/tree/main/linear-algebra/01-matvec" target="_blank" rel="noreferrer">打开 GitHub 中的 01-matvec →</a></p></section>
+</main>
+<script>
+const F=[[2,-1,1],[1,2,0],[-1,1,2]];
+const ids=['c1','c2','c3']; let mode='col';
+const $=id=>document.getElementById(id);
+function vals(){return ids.map(id=>parseFloat($(id).value))}
+function mv(c){return F.map(r=>r.reduce((s,x,j)=>s+x*c[j],0))}
+function fmt(x){return (Math.abs(x)<1e-10?0:x).toFixed(2)}
+function matrix(c,d){$('matrixText').innerHTML=`F = [ [2, -1, 1], [1, 2, 0], [-1, 1, 2] ]<br>c = (${c.map(fmt).join(', ')})ᵀ &nbsp; → &nbsp; d = (${d.map(fmt).join(', ')})ᵀ`}
+function arrow(ctx,ox,oy,x,y,label){const S=52,tx=ox+x*S,ty=oy-y*S;ctx.beginPath();ctx.moveTo(ox,oy);ctx.lineTo(tx,ty);ctx.stroke();const a=Math.atan2(ty-oy,tx-ox);ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx-10*Math.cos(a-.45),ty-10*Math.sin(a-.45));ctx.moveTo(tx,ty);ctx.lineTo(tx-10*Math.cos(a+.45),ty-10*Math.sin(a+.45));ctx.stroke();ctx.fillText(label,tx+7,ty-7)}
+function draw(){const c=vals(),d=mv(c); ids.forEach((id,i)=>$(id+'v').textContent=c[i].toFixed(1)); matrix(c,d); const cv=$('plot'),ctx=cv.getContext('2d'),w=cv.width,h=cv.height,ox=w/2,oy=h/2;ctx.clearRect(0,0,w,h);ctx.lineWidth=1;ctx.strokeStyle='#d9deea';ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(w,oy);ctx.moveTo(ox,0);ctx.lineTo(ox,h);ctx.stroke();ctx.fillStyle='#6a7280';ctx.font='15px system-ui';ctx.fillText('2D projection: first two coordinates',18,26);ctx.lineWidth=3;
+ if(mode==='col'){
+   const cols=[[2,1],[-1,2],[1,0]];const parts=cols.map((v,i)=>[v[0]*c[i],v[1]*c[i]]);let px=ox,py=oy;const labels=['c₁f₁','c₂f₂','c₃f₃'];parts.forEach((v,i)=>{ctx.strokeStyle=['#365fc7','#8b5ab5','#2d8b72'][i];ctx.fillStyle=ctx.strokeStyle;arrow(ctx,px,py,v[0],v[1],labels[i]);px+=v[0]*52;py-=v[1]*52});ctx.strokeStyle='#111827';ctx.fillStyle='#111827';arrow(ctx,ox,oy,d[0],d[1],'d');$('explain').innerHTML=`<strong>列视角：</strong> d = ${fmt(c[0])}f₁ + ${fmt(c[1])}f₂ + ${fmt(c[2])}f₃。图中彩色箭头首尾相接，它们的总和就是 d。`;
+ } else {
+   ctx.strokeStyle='#365fc7';ctx.fillStyle='#365fc7';arrow(ctx,ox,oy,c[0],c[1],'c (前两维)');$('explain').innerHTML=`<strong>行视角：</strong><br>d₁ = 2c₁ − c₂ + c₃ = ${fmt(d[0])}<br>d₂ = c₁ + 2c₂ = ${fmt(d[1])}<br>d₃ = −c₁ + c₂ + 2c₃ = ${fmt(d[2])}`;
+ }}
+ids.forEach(id=>$(id).addEventListener('input',draw));$('colBtn').onclick=()=>{mode='col';$('colBtn').classList.add('active');$('rowBtn').classList.remove('active');draw()};$('rowBtn').onclick=()=>{mode='row';$('rowBtn').classList.add('active');$('colBtn').classList.remove('active');draw()};draw();
+</script>
+</body></html>
